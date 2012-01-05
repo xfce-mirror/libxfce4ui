@@ -1,0 +1,157 @@
+# Norwegian nynorsk translations for libxfce4ui package.
+# Copyright (C) 2008 THE libxfce4ui COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Eivind Ødegård <gingermig@yahoo.no>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: libxfce4ui 1.4.7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-01-05 08:42+0000\n"
+"Last-Translator: Eivind Ødegård <meinmycell-forums@yahoo.no>\n"
+"Language-Team: Norwegian nynorsk <i18n-nn@lister.ping.uio.no>\n"
+"Language: nn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"PO-Revision-Date: \n"
+
+#: ../libxfce4ui/xfce-dialogs.c:69
+msgid "Information"
+msgstr "Informasjon"
+
+#: ../libxfce4ui/xfce-dialogs.c:102
+msgid "Warning"
+msgstr "Åtvaring"
+
+#: ../libxfce4ui/xfce-dialogs.c:136
+msgid "Error"
+msgstr "Feil"
+
+#: ../libxfce4ui/xfce-dialogs.c:187
+msgid "Question"
+msgstr "Spørsmål"
+
+#: ../libxfce4ui/xfce-sm-client.c:1401
+msgid "Session management client ID"
+msgstr "Klient-ID for økthandsaming"
+
+#: ../libxfce4ui/xfce-sm-client.c:1401
+msgid "ID"
+msgstr "ID"
+
+#: ../libxfce4ui/xfce-sm-client.c:1402
+msgid "Disable session management"
+msgstr "Slå av økthandsaming"
+
+#: ../libxfce4ui/xfce-sm-client.c:1412
+msgid "Session management options"
+msgstr "Val for økthandsaming"
+
+#: ../libxfce4ui/xfce-sm-client.c:1413
+msgid "Show session management options"
+msgstr "Vis val for økthandsaming"
+
+#: ../libxfce4ui/xfce-sm-client.c:1589
+#, c-format
+msgid "Failed to connect to the session manager: %s"
+msgstr "Greidde ikkje kopla til økthandsamaren: %s"
+
+#: ../libxfce4ui/xfce-sm-client.c:1596
+#, c-format
+msgid "Session manager did not return a valid client id"
+msgstr "Økthandsamaren gav ikkje ein gyldig klient-ID"
+
+#. print warning for user
+#: ../libxfce4ui/xfce-spawn.c:407
+#, c-format
+msgid "Working directory \"%s\" does not exist. It won't be used when spawning \"%s\"."
+msgstr "Arbeidsmappa «%s» finst ikkje. Me kjem ikkje til å bruka henne når me startar «%s»."
+
+#: ../libxfce4kbd-private/xfce-shortcuts.c:52
+msgid "This shortcut is already being used for another window manager action. Which action do you want to use?"
+msgstr "Denne snarvegen er alt oppteken av ei anna vindaugshandterar-handling. Kva handling vil du bruka?"
+
+#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:56
+#: ../libxfce4kbd-private/xfce-shortcuts.c:59
+#: ../libxfce4kbd-private/xfce-shortcuts.c:62
+#, c-format
+msgid "Use '%s'"
+msgstr "Bruk «%s»"
+
+#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+msgid "Keep the other one"
+msgstr "Behald den andre"
+
+#: ../libxfce4kbd-private/xfce-shortcuts.c:55
+#: ../libxfce4kbd-private/xfce-shortcuts.c:58
+#, c-format
+msgid "This shortcut is already being used for the command '%s'. Which action do you want to use?"
+msgstr "Denne snarvegen er alt oppteken av kommandoen «%s». Kva kommando vil du bruka?"
+
+#: ../libxfce4kbd-private/xfce-shortcuts.c:56
+#: ../libxfce4kbd-private/xfce-shortcuts.c:59
+#, c-format
+msgid "Keep '%s'"
+msgstr "Behald «%s»"
+
+#: ../libxfce4kbd-private/xfce-shortcuts.c:61
+msgid "This shortcut is already being used by a window manager action. Which action do you want to use?"
+msgstr "Denne snarvegen er alt oppteken av ei anna vindaugshandterar-handling. Kva handling vil du  bruka?"
+
+#: ../libxfce4kbd-private/xfce-shortcuts.c:62
+msgid "Keep the window manager action"
+msgstr "Behald vindaugshandterar-handlinga"
+
+#: ../libxfce4kbd-private/xfce-shortcuts.c:95
+#, c-format
+msgid "Conflicting actions for %s"
+msgstr "Konflikt i handlingane for %s"
+
+#: ../libxfce4kbd-private/xfce-shortcuts.c:128
+msgid "This shortcut is already being used for something else."
+msgstr "Denne snarvegen er alt oppteken til noko anna."
+
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:207
+msgid "Window Manager Action Shortcut"
+msgstr "Snarveg til vindaugshandterar-handling"
+
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:208
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:218
+msgid "Action:"
+msgstr "Handling:"
+
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:212
+msgid "Command Shortcut"
+msgstr "Kommandosnarveg"
+
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:213
+msgid "Command:"
+msgstr "Kommando:"
+
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:217
+msgid "Shortcut"
+msgstr "Snarveg"
+
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:258
+msgid "Shortcut:"
+msgstr "Snarveg:"
+
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:303
+msgid "Could not grab the keyboard."
+msgstr "Greidde ikkje fanga opp tastaturet."
+
+#: ../glade/libxfce4ui.xml.in.h:1
+msgid "Subtitle"
+msgstr "Undertittel"
+
+#: ../glade/libxfce4ui.xml.in.h:2
+msgid "Titled Dialog"
+msgstr "Dialogrute med namn"
+
+#: ../glade/libxfce4ui.xml.in.h:3
+msgid "Xfce 4 Widgets"
+msgstr "Småprogram i Xfce 4"
+
