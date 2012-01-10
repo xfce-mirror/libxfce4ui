@@ -156,8 +156,8 @@ msgstr "Napis"
 
 #: ../glade/libxfce4ui.xml.in.h:2
 msgid "Titled Dialog"
-msgstr ""
+msgstr "Tytuł okna dialogowego"
 
 #: ../glade/libxfce4ui.xml.in.h:3
 msgid "Xfce 4 Widgets"
-msgstr ""
+msgstr "Widżety Xfce 4"
