@@ -1,16 +1,17 @@
-# Simplified Chinese translation for the libxfce4ui package.
-# Copyright (C) 2008 The Xfce development team.
-# This file is distributed under the same license as the libxfce4ui package.
+# Simplified Chinese translations for
+# the libxfce4ui package.
+# This file is distributed under the same license as
+# the libxfce4ui package.
 # Chris K. Zhang <plutino@gmail.com>, 2009.
 # Hunt Xu <mhuntxu@gmail.com>, 2009, 2010.
-# Chipong Luo <chipong_l@yahoo.com, 2011.
+# Chipong Luo <chipong.luo@yahoo.com>, 2011, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-23 22:34+0000\n"
+"POT-Creation-Date: 2012-02-10 07:48+0000\n"
 "PO-Revision-Date: 2010-04-06 13:14+0800\n"
-"Last-Translator: Chipong Luo <chipong_l@yahoo.com>\n"
+"Last-Translator: Chipong Luo <chipong.luo@yahoo.com>\n"
 "Language-Team: Simplied Chinese <i18n-xfce@xfce.org>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
