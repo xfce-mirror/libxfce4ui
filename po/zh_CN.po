@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-10 07:48+0000\n"
+"POT-Creation-Date: 2012-03-15 01:39+0000\n"
 "PO-Revision-Date: 2010-04-06 13:14+0800\n"
 "Last-Translator: Chipong Luo <chipong.luo@yahoo.com>\n"
 "Language-Team: Simplied Chinese <i18n-xfce@xfce.org>\n"
@@ -17,6 +17,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../libxfce4ui/xfce-dialogs.c:69
 msgid "Information"
@@ -76,7 +77,7 @@ msgstr "工作目录 “%s” 不存在。启动 “%s” 时将不会使用它�
 msgid ""
 "This shortcut is already being used for another window manager action. Which "
 "action do you want to use?"
-msgstr "该快捷键已被另一个窗口管理器动作所使用。您要使用哪个动作？"
+msgstr "另一个窗口管理器动作已使用此快捷键。您要使用哪个动作？"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:53
 #: ../libxfce4kbd-private/xfce-shortcuts.c:56
@@ -96,7 +97,7 @@ msgstr "保留另外一个"
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr "该快捷键已被命令 “%s” 所使用。您要使用哪个动作？"
+msgstr "命令 “%s” 已使用此快捷键。您要使用哪个动作？"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #: ../libxfce4kbd-private/xfce-shortcuts.c:59
@@ -108,7 +109,7 @@ msgstr "保留 “%s”"
 msgid ""
 "This shortcut is already being used by a window manager action. Which action "
 "do you want to use?"
-msgstr "该快捷键已被一窗口管理器动作使用。您要使用哪个动作？"
+msgstr "一窗口管理器动作已使用此快捷键。您要使用哪个动作？"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:62
 msgid "Keep the window manager action"
