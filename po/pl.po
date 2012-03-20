@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-10 13:36+0000\n"
+"POT-Creation-Date: 2012-03-20 15:03+0000\n"
 "PO-Revision-Date: 2007-01-20 23:10+0200\n"
 "Last-Translator: Piotr Maliński <riklaunim@gmail.com>\n"
 "Language-Team: Polish <xfce-i18n@xfce.org>\n"
@@ -68,13 +68,17 @@ msgstr "Menedżer sesji nie zwrócił prawidłowego ID klienta"
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning \"%s"
 "\"."
-msgstr "Katalog roboczy \"%s\" nie istnieje. Nie zostanie użyty podczas tworzenia \"%s\"."
+msgstr ""
+"Katalog roboczy \"%s\" nie istnieje. Nie zostanie użyty podczas tworzenia "
+"\"%s\"."
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:52
 msgid ""
 "This shortcut is already being used for another window manager action. Which "
 "action do you want to use?"
-msgstr "Skrót ten jest wykorzystywany do innej akcji menadżera okien. Którą akcję chcę wykonać?"
+msgstr ""
+"Skrót ten jest wykorzystywany do innej akcji menadżera okien. Którą akcję "
+"chcę wykonać?"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:53
 #: ../libxfce4kbd-private/xfce-shortcuts.c:56
@@ -94,7 +98,8 @@ msgstr "Zachowaj poprzednią"
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr "Skrót ten jest wykorzystywany przez komendę '%s'. Którą akcję chcę wykonać?"
+msgstr ""
+"Skrót ten jest wykorzystywany przez komendę '%s'. Którą akcję chcę wykonać?"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #: ../libxfce4kbd-private/xfce-shortcuts.c:59
@@ -106,14 +111,16 @@ msgstr "Zachowaj '%s'"
 msgid ""
 "This shortcut is already being used by a window manager action. Which action "
 "do you want to use?"
-msgstr "Skrót ten jest wykorzystywany do innej akcji menadżera okien. Którą akcję chcę wykonać?"
+msgstr ""
+"Skrót ten jest wykorzystywany do innej akcji menadżera okien. Którą akcję "
+"chcę wykonać?"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:62
 msgid "Keep the window manager action"
 msgstr "Zachowaj akcję mendeżera okien"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:95
-#, c-format, fuzzy
+#, c-format
 msgid "Conflicting actions for %s"
 msgstr "Konflikt poleceń dla %s"
 
