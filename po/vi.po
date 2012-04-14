@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-14 04:48+0000\n"
-"PO-Revision-Date: 2012-04-14 03:09-0700\n"
+"PO-Revision-Date: 2012-04-14 03:11-0700\n"
 "Last-Translator: kureikain\n"
 "Language-Team: vi (VN)\n"
 "Language: \n"
@@ -127,11 +127,11 @@ msgstr "Xung đột với hành động %s"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:128
 msgid "This shortcut is already being used for something else."
-msgstr ""
+msgstr "Phím tắt này đã được sử dụng cho một thành phân khác"
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:207
 msgid "Window Manager Action Shortcut"
-msgstr "Phím tắt của "
+msgstr "Phím tắt của trình quản lý cửa sổ"
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:208
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:218
