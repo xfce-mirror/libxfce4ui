@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-14 04:48+0000\n"
-"PO-Revision-Date: 2012-04-15 04:48+0000\n"
+"PO-Revision-Date: 2012-04-14 03:09-0700\n"
 "Last-Translator: kureikain\n"
 "Language-Team: vi (VN)\n"
 "Language: \n"
@@ -113,15 +113,17 @@ msgid ""
 "This shortcut is already being used by a window manager action. Which action "
 "do you want to use?"
 msgstr ""
+"Phím tắt này hiện đã được dùng bởi một hành động quản lý cửa số. Bạn muốn "
+"sử dụng hành động nào?"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:62
 msgid "Keep the window manager action"
-msgstr ""
+msgstr "Giữ hành động quản lý cửa sổ"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:95
 #, c-format
 msgid "Conflicting actions for %s"
-msgstr ""
+msgstr "Xung đột với hành động %s"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:128
 msgid "This shortcut is already being used for something else."
@@ -166,4 +168,4 @@ msgstr "Tiêu đề hộp thoại"
 
 #: ../glade/libxfce4ui.xml.in.h:3
 msgid "Xfce 4 Widgets"
-msgstr ""
+msgstr "Thành tố điều khiển Xfce4"
