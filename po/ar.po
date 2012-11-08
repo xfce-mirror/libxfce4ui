@@ -1,20 +1,22 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+# محمد الحرقان <malham1@gmail.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: libxcfe4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-09 20:18+0000\n"
-"PO-Revision-Date: 2011-08-24 02:20-0000\n"
-"Last-Translator: كريم أولاد الشلحة <herr.linux88@gmail.com>\n"
-"Language-Team: Arabic Xfce Translation Team <herr.linux88@gmail.com>\n"
+"POT-Creation-Date: 2012-11-08 10:00+0000\n"
+"PO-Revision-Date: 2012-11-08 14:26+0300\n"
+"Last-Translator: محمد الحرقان <malham1@gmail.com>\n"
+"Language-Team: http://www.vertaal.com.ar/files/factory/ar/list/\n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ar\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Virtaal 0.7.1\n"
 "X-Poedit-Language: Arabic\n"
 "X-Poedit-Country: MOROCCO\n"
 
@@ -102,15 +104,13 @@ msgstr "مدير الجلسة لم يقم بإرجاع معرف عميل صال�
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning \"%s"
 "\"."
-msgstr "مسار العمل \"%s\" غير موجود. ولن يستخدم عنذ توليد \"%s\"."
+msgstr "مسار العمل \"%s\" غير موجود. ولن يستخدم عند توليد \"%s\"."
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:52
 msgid ""
 "This shortcut is already being used for another window manager action. Which "
 "action do you want to use?"
-msgstr ""
-"هذا الإختصار يستخدم حاليا من طرف مدير عمل النوافذ أخر. أي واحد تريد "
-"الإستعمال؟"
+msgstr "هذا الإختصار يستخدمه مدير عمل نوافذ أخر. أي واحد تريد استعماله؟"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:53
 #: ../libxfce4kbd-private/xfce-shortcuts.c:56
@@ -122,7 +122,7 @@ msgstr "إستعمال '%s'"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:53
 msgid "Keep the other one"
-msgstr "الحفاظ على واحد أخر"
+msgstr "الحفاظ على الأخر"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:55
 #: ../libxfce4kbd-private/xfce-shortcuts.c:58
@@ -130,7 +130,7 @@ msgstr "الحفاظ على واحد أخر"
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr "هذا الإختصار يستعمل حاليا من طرف الأمر '%s'. أي واحد تريد الإستعمال؟"
+msgstr "هذا الإختصار يستعمله الأمر '%s'. أي واحد تريد الإستعمال؟"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #: ../libxfce4kbd-private/xfce-shortcuts.c:59
@@ -142,8 +142,7 @@ msgstr "الحفاظ على '%s'"
 msgid ""
 "This shortcut is already being used by a window manager action. Which action "
 "do you want to use?"
-msgstr ""
-"هذا الإختصار يستخدم حاليا من طرف مدير عمل النوافذ. أي واحد تريد الإستعمال؟"
+msgstr "هذا الإختصار يستخدمه مدير عمل النوافذ. أي واحد تريد إستعماله؟"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:62
 msgid "Keep the window manager action"
@@ -152,15 +151,15 @@ msgstr "الحفاظ على مدير النوافذ نشط"
 #: ../libxfce4kbd-private/xfce-shortcuts.c:95
 #, c-format
 msgid "Conflicting actions for %s"
-msgstr "تعارض الإجراءات لي %s"
+msgstr "تعارض إجراءات %s"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:128
 msgid "This shortcut is already being used for something else."
-msgstr "هذا الإختصار يستخدم حاليا لشيئ أخر"
+msgstr "هذا الإختصار يستخدم حاليا لشيئ أخر."
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:204
 msgid "Window Manager Action Shortcut"
-msgstr "إختصار لإجراءات مدير النوافذ"
+msgstr "إختصارات إجراءات مدير النوافذ"
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:205
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:215
@@ -185,7 +184,7 @@ msgstr "الإختصار:"
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:300
 msgid "Could not grab the keyboard."
-msgstr "لا يمكن إنتزاع لوحة المفايح"
+msgstr "لا يمكن الاستيلاء على لوحة المفايح."
 
 #: ../glade/libxfce4ui.xml.in.h:1
 msgid "Subtitle"
@@ -193,7 +192,7 @@ msgstr "عنوان فرعي"
 
 #: ../glade/libxfce4ui.xml.in.h:2
 msgid "Titled Dialog"
-msgstr "حوار معنون"
+msgstr "عنوان الحوار"
 
 #: ../glade/libxfce4ui.xml.in.h:3
 msgid "Xfce 4 Widgets"
@@ -219,7 +218,7 @@ msgstr "شريط"
 msgid ""
 "Program launchers, window buttons, applications menu, workspace switcher and "
 "more."
-msgstr "مطلق البرامج, أزرار النافذة. قائمة التطبيقات, مبدل مساحات العمل وأكثر."
+msgstr "مطلق البرامج, أزرار النافذة، قائمة التطبيقات, مبدل مساحات العمل وأكثر."
 
 #: ../xfce4-about/main.c:79
 msgid "Desktop Manager"
@@ -230,19 +229,18 @@ msgid ""
 "Sets the background color or image with optional application menu or icons "
 "for minimized applications or launchers, devices and folders."
 msgstr ""
-"حدد لون الخلفية او صورة مع قائمة تطبيقات إختيارية او أيقونات لتطبيقات و "
-"مطلقات المصغرة, أخهزة ومجلدات."
+"حدد لون الخلفية او صورة قائمة التطبيقات الإختيارية او أيقونات لتطبيقات و "
+"مطلقات المصغرة, الأجهزة والمجلدات."
 
 #: ../xfce4-about/main.c:84
 msgid "File Manager "
-msgstr "مدير الملفات"
+msgstr "مدير الملفات "
 
 #: ../xfce4-about/main.c:85
 msgid ""
 "A modern file manager for the Unix/Linux desktop, aiming to be easy-to-use "
 "and fast."
-msgstr ""
-"مدير ملفات حديث لـسطج مكتب  إينكس/لينكس, يهدف ليكون سهل الإستعمال وسريع."
+msgstr "مدير ملفات حديث لـسطج مكتب يونكس/لينكس, سهل الإستعمال وسريع."
 
 #: ../xfce4-about/main.c:89
 msgid "Session Manager"
@@ -263,8 +261,8 @@ msgid ""
 "Configuration system to control various aspects of the desktop like "
 "appearance, display, keyboard and mouse settings."
 msgstr ""
-"تكوين النظام للسيطرة على جوانب مختلفة من سطح المكتب مثل إعدادات المظهر ، "
-"والعرض ، لوحة المفاتيح والفأرة."
+"إعداد النظام للتحكم بسطح المكتب مثل إعدادات المظهر ، والعرض ، لوحة المفاتيح "
+"والفأرة."
 
 #: ../xfce4-about/main.c:99
 msgid "Application Finder"
@@ -274,7 +272,7 @@ msgstr "مكتشف التطبيقات"
 msgid ""
 "Shows the applications installed on your system in categories, so you can "
 "quickly find and launch them."
-msgstr "عرض التطبيقات المثبتة في نظامك في الأصناف, لتتمكن من إجادهم و إطلاقهم."
+msgstr "عرض التطبيقات المثبتة على النظام مصنفة, لتتمكن من ايجادها و إطلاقها."
 
 #: ../xfce4-about/main.c:104
 msgid "Settings Daemon"
@@ -289,8 +287,8 @@ msgid ""
 "Xfce is a collection of programs that together provide a full-featured "
 "desktop environment. The following programs are part of the Xfce core:"
 msgstr ""
-"إكسفس هو مجموعة من البرامج التي توفر معا كامل مميزات بيئة سطح المكتب. "
-"البرامج التالية هي جزء من لب الإكسفس:"
+"إكسفس هو مجموعة من البرامج، توفر معا كامل مميزات بيئة سطح المكتب. البرامج "
+"التالية هي جزء أساسي في الإكسفس:"
 
 #: ../xfce4-about/main.c:136
 msgid ""
@@ -298,7 +296,7 @@ msgid ""
 "programmers create applications that fit in well with the desktop "
 "environment."
 msgstr ""
-"إكسفس هي أيضا توفير منصة تطوير العديد من المكتبات، التي تساعد المبرمجين على "
+"إكسفس توفير أيضاً منصة تطوير لعديد من المكتبات، التي تساعد المبرمجين على "
 "إنشاء التطبيقات التي تتناسب بشكل جيد مع بيئة سطح المكتب."
 
 #: ../xfce4-about/main.c:142
@@ -308,25 +306,25 @@ msgid ""
 "the source code or the Xfce website (http://www.xfce.org) for more "
 "information."
 msgstr ""
-"متويات الإكسفس تحت رخص مجانية أو حرة; رخصة جنو العمومية أو BSDL لتطبيقات و "
-"LGPL أو BSDL للمكتبات. أنظر في الثوتيق, شيفرة المصدر أو موقع إكسفس (http://"
-"www.xfce.org) للمزيد من المعلومات."
+"مكونات الإكسفس تحت رخص مجانية أو حرة; رخصة جنو العمومية أو BSDL لتطبيقات و "
+"LGPL أو BSDL للمكتبات. أنظر في الثوتيق, شيفرة المصدر أو موقع إكسفس "
+"(http://www.xfce.org) للمزيد من المعلومات."
 
 #: ../xfce4-about/main.c:149
 msgid "Thank you for your interest in Xfce."
-msgstr "شكرا لك لإهتمامك بإكسفس"
+msgstr "شكرا لإهتمامك بإكسفس."
 
 #: ../xfce4-about/main.c:153
 msgid "The Xfce Development Team"
-msgstr "فريق تطوير إكسفس."
+msgstr "فريق تطوير إكسفس"
 
 #: ../xfce4-about/main.c:262
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <http://bugzilla.xfce.org> ."
 msgstr ""
-"إذا كنت تعرف أي شيء مفقود في القائمة; لا تتردد و قم بالإبلاغ عنه في <http://"
-"bugzilla.xfce.org> ."
+"إذا وجدت شيء مفقود في القائمة; لا تتردد وقم بالإبلاغ عنه في "
+"<http://bugzilla.xfce.org> ."
 
 #: ../xfce4-about/main.c:266
 msgid "Thanks to all who helped making this software available!"
@@ -338,7 +336,7 @@ msgid ""
 "components are copyrighted by their respective authors."
 msgstr ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). حقوق النشر وتاليف "
-"مختلف مكونات محفوظة لمؤلفيها."
+"مختلف المكونات محفوظة لمؤلفيها."
 
 #: ../xfce4-about/main.c:288
 msgid ""
@@ -371,7 +369,7 @@ msgstr "أكتب '%s --help' لمعلومات الإستعمال."
 
 #: ../xfce4-about/main.c:448
 msgid "Unable to initialize GTK+."
-msgstr "غير قادر على بدء جتك+."
+msgstr "غير قادر على تهيئة GTK+."
 
 #: ../xfce4-about/main.c:457
 msgid "The Xfce development team. All rights reserved."
@@ -408,31 +406,31 @@ msgstr "إصدار %s"
 #. { N_("Project Lead"),
 #. xfce_contributors_lead
 #. },
-#: ../xfce4-about/contributors.h:127
+#: ../xfce4-about/contributors.h:121
 msgid "Core developers"
-msgstr "مطورو اللب"
+msgstr "المطورون الأساسيون"
 
-#: ../xfce4-about/contributors.h:130
+#: ../xfce4-about/contributors.h:124
 msgid "Active contributors"
 msgstr "المساهمون النشطون"
 
-#: ../xfce4-about/contributors.h:133
+#: ../xfce4-about/contributors.h:127
 msgid "Servers maintained by"
-msgstr "صيانة الخوادم من طرف"
+msgstr "صيانة الخوادم من قبل"
 
-#: ../xfce4-about/contributors.h:136
+#: ../xfce4-about/contributors.h:130
 msgid "Goodies supervision"
 msgstr "إشراف على الأشياء الجيدة"
 
-#: ../xfce4-about/contributors.h:139
+#: ../xfce4-about/contributors.h:133
 msgid "Translations supervision"
 msgstr "إشراف على الترجمات"
 
-#: ../xfce4-about/contributors.h:142
+#: ../xfce4-about/contributors.h:136
 msgid "Translators"
 msgstr "مترجمون"
 
-#: ../xfce4-about/contributors.h:145
+#: ../xfce4-about/contributors.h:139
 msgid "Previous contributors"
 msgstr "مساهمون سابقون"
 
@@ -462,7 +460,7 @@ msgstr "حقوق النشر"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:5
 msgid "Credits"
-msgstr "تقدير"
+msgstr "شكر وتقدير"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:6
 msgid "GPL"
@@ -474,4 +472,4 @@ msgstr "رخصة جنو العمومية للمكتبات"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:8
 msgid "License"
-msgstr "رخصة"
+msgstr "الترخيص"
