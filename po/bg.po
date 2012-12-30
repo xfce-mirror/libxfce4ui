@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-28 13:45+0000\n"
-"PO-Revision-Date: 2012-12-28 17:09+0200\n"
+"POT-Creation-Date: 2012-12-30 13:54+0000\n"
+"PO-Revision-Date: 2012-12-30 22:45+0200\n"
 "Last-Translator: cybercop <cybercop_montana@abv.bg>\n"
 "Language-Team: Bulgarian\n"
 "Language: bg\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../libxfce4ui/xfce-dialogs.c:80
 msgid "Failed to open web browser for online documentation"
-msgstr "Не може да бъде открит браузър с който да бъде прегледана докумантацията онлайн"
+msgstr "Не може да бъде отворен браузър с който да бъде прегледана документацията онлайн"
 
 #: ../libxfce4ui/xfce-dialogs.c:195
 #, c-format
@@ -60,7 +60,7 @@ msgstr "Грешка"
 
 #: ../libxfce4ui/xfce-dialogs.c:381
 msgid "Question"
-msgstr "Вопрос"
+msgstr "Въпрос"
 
 #: ../libxfce4ui/xfce-sm-client.c:1402
 msgid "Session management client ID"
@@ -96,7 +96,7 @@ msgstr "Мениджърът на сесиите не е предоставил 
 #: ../libxfce4ui/xfce-spawn.c:406
 #, c-format
 msgid "Working directory \"%s\" does not exist. It won't be used when spawning \"%s\"."
-msgstr "работна директория \"%s\" не съществура. Тя няма да бъде използвана когато размножавате \"%s\"."
+msgstr "Работна директория \"%s\" не съществува. Тя няма да бъде използвана когато размножавате \"%s\"."
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:52
 msgid "This shortcut is already being used for another window manager action. Which action do you want to use?"
@@ -112,7 +112,7 @@ msgstr "Използване на '%s'"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:53
 msgid "Keep the other one"
-msgstr "Запазете другият"
+msgstr "Запазване на другият"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:55
 #: ../libxfce4kbd-private/xfce-shortcuts.c:58
@@ -141,7 +141,7 @@ msgstr "Конфликт на действия за %s"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:128
 msgid "This shortcut is already being used for something else."
-msgstr "тази клавишна комбинация вече е задействана."
+msgstr "Тази клавишна комбинация вече е задействана."
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:204
 msgid "Window Manager Action Shortcut"
@@ -170,7 +170,7 @@ msgstr "Пряк път:"
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:300
 msgid "Could not grab the keyboard."
-msgstr "Не може да вземете клавиатура."
+msgstr "Не може да бъде прихваната клавиатурата."
 
 #: ../glade/libxfce4ui.xml.in.h:1
 msgid "Subtitle"
@@ -218,11 +218,11 @@ msgstr "Файлов мениджър"
 
 #: ../xfce4-about/main.c:85
 msgid "A modern file manager for the Unix/Linux desktop, aiming to be easy-to-use and fast."
-msgstr "Съвременен файлов мениджър за работният плот за  Unix/Linux, създаден да бъде бърз и лесен за ползване."
+msgstr "Съвременен файлов мениджър за работен плот на Unix/Linux, създаден да бъде бърз и лесен за ползване."
 
 #: ../xfce4-about/main.c:89
 msgid "Session Manager"
-msgstr "Мениджър на сесиите"
+msgstr "Мениджър на сесии"
 
 #: ../xfce4-about/main.c:90
 msgid "Restores your session on startup and allows you to shutdown the computer from Xfce."
@@ -262,7 +262,7 @@ msgstr "Xfce е също и платформа, съдържаща няколк�
 
 #: ../xfce4-about/main.c:142
 msgid "Xfce components are licensed under free or open source licences; GPL or BSDL for applications and LGPL or BSDL for libraries. Look at the documentation, the source code or the Xfce website (http://www.xfce.org) for more information."
-msgstr "Компонентите на Xfce се разпространяват под свободен лиценз GPL or BSDL за програмите LGPL или BSDL за библиотеките. Подробности, можете да намерите в документацията, в изходният код и на уеб сайт  (http://www.xfce.org) за повече информация."
+msgstr "Компонентите на Xfce се разпространяват под свободен лиценз GPL за програмите LGPL или BSDL за библиотеките. Подробности, можете да намерите в документацията, в изходният код и на уеб сайт  (http://www.xfce.org) за повече информация."
 
 #: ../xfce4-about/main.c:149
 msgid "Thank you for your interest in Xfce."
@@ -282,11 +282,11 @@ msgstr "Благодарим ви за помощта при осигурява�
 
 #: ../xfce4-about/main.c:283
 msgid "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different components are copyrighted by their respective authors."
-msgstr "Авторските права на Xfce 4 принадлежат на Olivier Fourdan (fourdan@xfce.org). Авторските права на дургите компоненти принадлежат на техните автори."
+msgstr "Авторските права на Xfce 4 принадлежат на Olivier Fourdan (fourdan@xfce.org). Авторските права на другите компоненти принадлежат на техните автори."
 
 #: ../xfce4-about/main.c:288
 msgid "The libxfce4ui, libxfcegui4, libxfce4util, thunar-vfs and exo packages are distributed under the terms of the GNU Library General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version."
-msgstr "Програмното обезпечение на libxfce4ui, libxfcegui4, libxfce4util, thunar-vfs и exo се разпространяват по условията GNU Library General Public License версии 2 или по- нова."
+msgstr "Програмното обезпечение на libxfce4ui, libxfcegui4, libxfce4util, thunar-vfs и exo се разпространяват под условията GNU Library General Public License версии 2 или по- нова."
 
 #: ../xfce4-about/main.c:295
 msgid "The packages thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfce-utils, xfconf, xfdesktop and xfwm4 are distributed under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version."
@@ -295,7 +295,7 @@ msgstr "Програмното обезпечение за thunar, xfce4-appfind
 #: ../xfce4-about/main.c:442
 #, c-format
 msgid "Type '%s --help' for usage information."
-msgstr "Type '%s --help' за да получите допълнителна информация."
+msgstr "Напишете '%s --help' за да получите допълнителна информация."
 
 #: ../xfce4-about/main.c:448
 msgid "Unable to initialize GTK+."
@@ -318,7 +318,7 @@ msgstr "Списък на преводачите от %s."
 
 #: ../xfce4-about/main.c:471
 msgid "Failed to load interface"
-msgstr "не може да бъде зареден интерфейс"
+msgstr "Не може да бъде зареден интерфейс"
 
 #. I18N: first %s will be replaced by the version, second by
 #. * the name of the distribution (--with-vendor-info=NAME)
