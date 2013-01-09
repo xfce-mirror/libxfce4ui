@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-30 13:54+0000\n"
-"PO-Revision-Date: 2012-12-30 22:45+0200\n"
-"Last-Translator: cybercop <cybercop_montana@abv.bg>\n"
+"POT-Creation-Date: 2013-01-09 03:57+0000\n"
+"PO-Revision-Date: 2013-01-09 12:14+0200\n"
+"Last-Translator: Cybercop <cybercop_montana@abv.bg>\n"
 "Language-Team: Bulgarian\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
@@ -226,7 +226,7 @@ msgstr "Мениджър на сесии"
 
 #: ../xfce4-about/main.c:90
 msgid "Restores your session on startup and allows you to shutdown the computer from Xfce."
-msgstr "Възстановява вашата сесия на стартиране и ви позволява да изключване на компютъра в Xfce."
+msgstr "Възстановява вашата сесия на стартиране и ви позволява изключване на компютъра в Xfce."
 
 #: ../xfce4-about/main.c:94
 msgid "Setting System"
