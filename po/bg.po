@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-09 03:57+0000\n"
-"PO-Revision-Date: 2013-01-09 12:14+0200\n"
+"POT-Creation-Date: 2013-01-26 13:15+0000\n"
+"PO-Revision-Date: 2013-01-27 11:49+0200\n"
 "Last-Translator: Cybercop <cybercop_montana@abv.bg>\n"
 "Language-Team: Bulgarian\n"
 "Language: bg\n"
@@ -44,7 +44,7 @@ msgstr "Прочитане онлайн"
 
 #: ../libxfce4ui/xfce-dialogs.c:219
 msgid "_Always go directly to the online documentation"
-msgstr "Винаги отивай директно в онлайн докумантацията"
+msgstr "Винаги отивай директно в онлайн докумeнтацията"
 
 #: ../libxfce4ui/xfce-dialogs.c:263
 msgid "Information"
@@ -90,7 +90,7 @@ msgstr "Не може да се осъществи връзка с менидж�
 #: ../libxfce4ui/xfce-sm-client.c:1597
 #, c-format
 msgid "Session manager did not return a valid client id"
-msgstr "Мениджърът на сесиите не е предоставил валиден индификатор на клиента"
+msgstr "Мениджърът на сесиите не е предоставил валиден индентификатор на клиента"
 
 #. print warning for user
 #: ../libxfce4ui/xfce-spawn.c:406
@@ -124,7 +124,7 @@ msgstr "За тази клавишна комбинация вече е зада
 #: ../libxfce4kbd-private/xfce-shortcuts.c:59
 #, c-format
 msgid "Keep '%s'"
-msgstr "Запази '%s'"
+msgstr "Запазване на '%s'"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:61
 msgid "This shortcut is already being used by a window manager action. Which action do you want to use?"
@@ -154,7 +154,7 @@ msgstr "Действие:"
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:209
 msgid "Command Shortcut"
-msgstr "Команда за пряк път"
+msgstr "Клавишна комбинация за команда"
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:210
 msgid "Command:"
@@ -162,11 +162,11 @@ msgstr "Команда:"
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:214
 msgid "Shortcut"
-msgstr "Пряк път"
+msgstr "Клавишна комбинация"
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:255
 msgid "Shortcut:"
-msgstr "Пряк път:"
+msgstr "Клавишна комбинация:"
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:300
 msgid "Could not grab the keyboard."
@@ -202,7 +202,7 @@ msgstr "Панел"
 
 #: ../xfce4-about/main.c:75
 msgid "Program launchers, window buttons, applications menu, workspace switcher and more."
-msgstr "Стартери на програми, бутони на прозорци, меню на програми, Превключвател на работните места и други."
+msgstr "Стартери на програми, бутони на прозорци, меню на програми, превключвател на работните места и други."
 
 #: ../xfce4-about/main.c:79
 msgid "Desktop Manager"
@@ -210,7 +210,7 @@ msgstr "Мениджър на работният плот"
 
 #: ../xfce4-about/main.c:80
 msgid "Sets the background color or image with optional application menu or icons for minimized applications or launchers, devices and folders."
-msgstr "Задава цвета на фона или изображението с прилагането по избор на меню или икони за минимизираните приложения или стартер, устройства и и папки."
+msgstr "Задава цвета на фона или изображението с прилагането по избор на меню или икони за минимизираните приложения или стартери, устройства и папки."
 
 #: ../xfce4-about/main.c:84
 msgid "File Manager "
