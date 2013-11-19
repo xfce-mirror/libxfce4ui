@@ -1,36 +1,67 @@
-# translation of is.po to Icelandic
-# Copyright (C) 2010 Free Software Foundation
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
-# Sveinn í Felli <sveinki@nett.is>, 2010, 2011.
+# 
+# Translators:
+# Sveinn í Felli <sveinki@nett.is>, 2010-2011
 msgid ""
 msgstr ""
-"Project-Id-Version: is\n"
+"Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-29 05:15+0000\n"
-"PO-Revision-Date: 2011-12-07 07:43+0000\n"
-"Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
-"Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
+"POT-Creation-Date: 2013-07-02 22:59+0200\n"
+"PO-Revision-Date: 2013-11-19 15:13+0000\n"
+"Last-Translator: Nick <nick@xfce.org>\n"
+"Language-Team: Icelandic (http://www.transifex.com/projects/p/xfce/language/is/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: is\n"
-"Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../libxfce4ui/xfce-dialogs.c:68
+#: ../libxfce4ui/xfce-dialogs.c:98
+msgid "Failed to open web browser for online documentation"
+msgstr ""
+
+#: ../libxfce4ui/xfce-dialogs.c:213
+#, c-format
+msgid "Do you want to read the %s manual online?"
+msgstr ""
+
+#: ../libxfce4ui/xfce-dialogs.c:215
+msgid "Do you want to read the manual online?"
+msgstr ""
+
+#: ../libxfce4ui/xfce-dialogs.c:218
+msgid "Online Documentation"
+msgstr ""
+
+#: ../libxfce4ui/xfce-dialogs.c:221
+msgid ""
+"You will be redirected to the documentation website where the help pages are"
+" maintained and translated."
+msgstr ""
+
+#: ../libxfce4ui/xfce-dialogs.c:225
+msgid "_Read Online"
+msgstr ""
+
+#: ../libxfce4ui/xfce-dialogs.c:237
+msgid "_Always go directly to the online documentation"
+msgstr ""
+
+#: ../libxfce4ui/xfce-dialogs.c:281
 msgid "Information"
 msgstr "Upplýsingar"
 
-#: ../libxfce4ui/xfce-dialogs.c:101
+#: ../libxfce4ui/xfce-dialogs.c:314
 msgid "Warning"
 msgstr "Aðvörun"
 
-#: ../libxfce4ui/xfce-dialogs.c:135
+#: ../libxfce4ui/xfce-dialogs.c:348
 msgid "Error"
 msgstr "Villa"
 
-#: ../libxfce4ui/xfce-dialogs.c:186
+#: ../libxfce4ui/xfce-dialogs.c:399
 msgid "Question"
 msgstr "Spurning"
 
@@ -68,14 +99,14 @@ msgstr ""
 #: ../libxfce4ui/xfce-spawn.c:406
 #, c-format
 msgid ""
-"Working directory \"%s\" does not exist. It won't be used when spawning \"%s"
-"\"."
+"Working directory \"%s\" does not exist. It won't be used when spawning "
+"\"%s\"."
 msgstr ""
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:52
 msgid ""
-"This shortcut is already being used for another window manager action. Which "
-"action do you want to use?"
+"This shortcut is already being used for another window manager action. Which"
+" action do you want to use?"
 msgstr ""
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:53
@@ -106,8 +137,8 @@ msgstr "Halda '%s'"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:61
 msgid ""
-"This shortcut is already being used by a window manager action. Which action "
-"do you want to use?"
+"This shortcut is already being used by a window manager action. Which action"
+" do you want to use?"
 msgstr ""
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:62
@@ -153,12 +184,12 @@ msgid "Could not grab the keyboard."
 msgstr ""
 
 #: ../glade/libxfce4ui.xml.in.h:1
-msgid "Subtitle"
-msgstr "Undirtexti"
-
-#: ../glade/libxfce4ui.xml.in.h:2
 msgid "Titled Dialog"
 msgstr "Viðmótsgluggi með titli"
+
+#: ../glade/libxfce4ui.xml.in.h:2
+msgid "Subtitle"
+msgstr "Undirtexti"
 
 #: ../glade/libxfce4ui.xml.in.h:3
 msgid "Xfce 4 Widgets"
@@ -182,8 +213,8 @@ msgstr "Verkefnaspjald"
 
 #: ../xfce4-about/main.c:75
 msgid ""
-"Program launchers, window buttons, applications menu, workspace switcher and "
-"more."
+"Program launchers, window buttons, applications menu, workspace switcher and"
+" more."
 msgstr ""
 
 #: ../xfce4-about/main.c:79
@@ -259,9 +290,9 @@ msgstr ""
 
 #: ../xfce4-about/main.c:142
 msgid ""
-"Xfce components are licensed under free or open source licences; GPL or BSDL "
-"for applications and LGPL or BSDL for libraries. Look at the documentation, "
-"the source code or the Xfce website (http://www.xfce.org) for more "
+"Xfce components are licensed under free or open source licences; GPL or BSDL"
+" for applications and LGPL or BSDL for libraries. Look at the documentation,"
+" the source code or the Xfce website (http://www.xfce.org) for more "
 "information."
 msgstr ""
 
@@ -299,11 +330,11 @@ msgstr ""
 
 #: ../xfce4-about/main.c:295
 msgid ""
-"The packages thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-"
-"settings, xfce-utils, xfconf, xfdesktop and xfwm4 are distributed under the "
-"terms of the GNU General Public License as published by the Free Software "
-"Foundation; either version 2 of the License, or (at your option) any later "
-"version."
+"The packages thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
+"xfce4-settings, xfce-utils, xfconf, xfdesktop and xfwm4 are distributed "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version."
 msgstr ""
 
 #: ../xfce4-about/main.c:442
@@ -350,31 +381,31 @@ msgstr "Útgáfa %s"
 #. { N_("Project Lead"),
 #. xfce_contributors_lead
 #. },
-#: ../xfce4-about/contributors.h:127
+#: ../xfce4-about/contributors.h:121
 msgid "Core developers"
 msgstr "Aðalhönnuðir"
 
-#: ../xfce4-about/contributors.h:130
+#: ../xfce4-about/contributors.h:124
 msgid "Active contributors"
 msgstr "Virkir þáttakendur"
 
-#: ../xfce4-about/contributors.h:133
+#: ../xfce4-about/contributors.h:127
 msgid "Servers maintained by"
 msgstr "Umsjón með kerfum"
 
-#: ../xfce4-about/contributors.h:136
+#: ../xfce4-about/contributors.h:130
 msgid "Goodies supervision"
 msgstr "Umsjón með aukadóti"
 
-#: ../xfce4-about/contributors.h:139
+#: ../xfce4-about/contributors.h:133
 msgid "Translations supervision"
 msgstr "Umsjón með þýðingum"
 
-#: ../xfce4-about/contributors.h:142
+#: ../xfce4-about/contributors.h:136
 msgid "Translators"
 msgstr "Þýðendur"
 
-#: ../xfce4-about/contributors.h:145
+#: ../xfce4-about/contributors.h:139
 msgid "Previous contributors"
 msgstr "Eldri framlög"
 
@@ -387,34 +418,33 @@ msgid "Information about the Xfce Desktop Environment"
 msgstr "Upplýsingar um Xfce skjáborðsumhverfið"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:1
-msgid "About"
-msgstr "Um hugbúnað"
-
-#: ../xfce4-about/xfce4-about-dialog.glade.h:2
 msgid "About the Xfce Desktop Environment"
 msgstr "Um Xfce skjáborðsumhverfið"
 
+#: ../xfce4-about/xfce4-about-dialog.glade.h:2
+msgid "About"
+msgstr "Um hugbúnað"
+
 #: ../xfce4-about/xfce4-about-dialog.glade.h:3
-msgid "BSD"
-msgstr "BSD"
-
-#: ../xfce4-about/xfce4-about-dialog.glade.h:4
-msgid "Copyright"
-msgstr "Höfundarréttur"
-
-#: ../xfce4-about/xfce4-about-dialog.glade.h:5
 msgid "Credits"
 msgstr "Framlög"
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:6
+#: ../xfce4-about/xfce4-about-dialog.glade.h:4
 msgid "GPL"
 msgstr "GPL"
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:7
+#: ../xfce4-about/xfce4-about-dialog.glade.h:5
 msgid "LGPL"
 msgstr "LGPL"
+
+#: ../xfce4-about/xfce4-about-dialog.glade.h:6
+msgid "BSD"
+msgstr "BSD"
+
+#: ../xfce4-about/xfce4-about-dialog.glade.h:7
+msgid "Copyright"
+msgstr "Höfundarréttur"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:8
 msgid "License"
 msgstr "Notkunarskilmálar"
-
