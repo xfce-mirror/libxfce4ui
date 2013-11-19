@@ -1,36 +1,67 @@
-# Vietnamese translations of the libxfce4ui package.
-# Copyright (C) The Xfce development team.
-# This file is distributed under the same license as the
-# libxfce4ui package.
-# Vinh <kureikain@gmail.com>, 2012.
-#
-# , fuzzy
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Vinh <kureikain@gmail.com>, 2012
 msgid ""
 msgstr ""
-"Project-Id-Version: libxfce4ui\n"
+"Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-18 07:33+0000\n"
-"PO-Revision-Date: 2011-12-31 04:47+0800\n"
-"Last-Translator: Vinh Nguyen <kureikain@gmail.com>\n"
-"Language-Team: Vi (Vietnamese)\n"
-"Language: Vi (Vietnamese)\n"
+"POT-Creation-Date: 2013-07-02 22:59+0200\n"
+"PO-Revision-Date: 2013-11-19 15:13+0000\n"
+"Last-Translator: Nick <nick@xfce.org>\n"
+"Language-Team: Vietnamese (http://www.transifex.com/projects/p/xfce/language/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: vi\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../libxfce4ui/xfce-dialogs.c:68
+#: ../libxfce4ui/xfce-dialogs.c:98
+msgid "Failed to open web browser for online documentation"
+msgstr ""
+
+#: ../libxfce4ui/xfce-dialogs.c:213
+#, c-format
+msgid "Do you want to read the %s manual online?"
+msgstr ""
+
+#: ../libxfce4ui/xfce-dialogs.c:215
+msgid "Do you want to read the manual online?"
+msgstr ""
+
+#: ../libxfce4ui/xfce-dialogs.c:218
+msgid "Online Documentation"
+msgstr ""
+
+#: ../libxfce4ui/xfce-dialogs.c:221
+msgid ""
+"You will be redirected to the documentation website where the help pages are"
+" maintained and translated."
+msgstr ""
+
+#: ../libxfce4ui/xfce-dialogs.c:225
+msgid "_Read Online"
+msgstr ""
+
+#: ../libxfce4ui/xfce-dialogs.c:237
+msgid "_Always go directly to the online documentation"
+msgstr ""
+
+#: ../libxfce4ui/xfce-dialogs.c:281
 msgid "Information"
 msgstr "Thông tin"
 
-#: ../libxfce4ui/xfce-dialogs.c:101
+#: ../libxfce4ui/xfce-dialogs.c:314
 msgid "Warning"
 msgstr "Cảnh báo"
 
-#: ../libxfce4ui/xfce-dialogs.c:135
+#: ../libxfce4ui/xfce-dialogs.c:348
 msgid "Error"
 msgstr "Lỗi"
 
-#: ../libxfce4ui/xfce-dialogs.c:186
+#: ../libxfce4ui/xfce-dialogs.c:399
 msgid "Question"
 msgstr "Câu hỏi"
 
@@ -68,19 +99,15 @@ msgstr "Trình quản lý phiên làm việc không trả lại một định da
 #: ../libxfce4ui/xfce-spawn.c:406
 #, c-format
 msgid ""
-"Working directory \"%s\" does not exist. It won't be used when spawning \"%s"
-"\"."
-msgstr ""
-"Thư mục làm việc \"%s\" không tồn tại. Nó sẽ không thể được dùng khi phân tách \"%s"
-"\"."
+"Working directory \"%s\" does not exist. It won't be used when spawning "
+"\"%s\"."
+msgstr "Thư mục làm việc \"%s\" không tồn tại. Nó sẽ không thể được dùng khi phân tách \"%s\"."
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:52
 msgid ""
-"This shortcut is already being used for another window manager action. Which "
-"action do you want to use?"
-msgstr ""
-"Lối tắt này đang được sử dụng cho một hành vi của trình quản lkys cửa số khác. "
-"Bạn muốn sử dụng cho hành vi nào?"
+"This shortcut is already being used for another window manager action. Which"
+" action do you want to use?"
+msgstr "Lối tắt này đang được sử dụng cho một hành vi của trình quản lkys cửa số khác. Bạn muốn sử dụng cho hành vi nào?"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:53
 #: ../libxfce4kbd-private/xfce-shortcuts.c:56
@@ -100,21 +127,18 @@ msgstr "Giữ lại cái kia"
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr ""
-"Lối tắt này đã được sử dụng cho lệnh '%s'. "
-"Bạn muốn sử dụng cho cái nào? "
+msgstr "Lối tắt này đã được sử dụng cho lệnh '%s'. Bạn muốn sử dụng cho cái nào? "
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #: ../libxfce4kbd-private/xfce-shortcuts.c:59
 #, c-format
 msgid "Keep '%s'"
-msgstr ""
-"Giữ '%s'"
+msgstr "Giữ '%s'"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:61
 msgid ""
-"This shortcut is already being used by a window manager action. Which action "
-"do you want to use?"
+"This shortcut is already being used by a window manager action. Which action"
+" do you want to use?"
 msgstr ""
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:62
@@ -160,12 +184,12 @@ msgid "Could not grab the keyboard."
 msgstr "Không thể bắt tín hiệu bàn phím."
 
 #: ../glade/libxfce4ui.xml.in.h:1
-msgid "Subtitle"
-msgstr "Tiêu đề"
-
-#: ../glade/libxfce4ui.xml.in.h:2
 msgid "Titled Dialog"
 msgstr "Tiêu đề hộp thoại"
+
+#: ../glade/libxfce4ui.xml.in.h:2
+msgid "Subtitle"
+msgstr "Tiêu đề"
 
 #: ../glade/libxfce4ui.xml.in.h:3
 msgid "Xfce 4 Widgets"
@@ -189,11 +213,9 @@ msgstr ""
 
 #: ../xfce4-about/main.c:75
 msgid ""
-"Program launchers, window buttons, applications menu, workspace switcher and "
-"more."
-msgstr ""
-"Trình khởi động chương trình, các nútm, trình đơn ứng dụng, thanh chuyển không gian làm việc "
-"và nhiều hơn thế nữa."
+"Program launchers, window buttons, applications menu, workspace switcher and"
+" more."
+msgstr "Trình khởi động chương trình, các nútm, trình đơn ứng dụng, thanh chuyển không gian làm việc và nhiều hơn thế nữa."
 
 #: ../xfce4-about/main.c:79
 msgid "Desktop Manager"
@@ -213,9 +235,7 @@ msgstr ""
 msgid ""
 "A modern file manager for the Unix/Linux desktop, aiming to be easy-to-use "
 "and fast."
-msgstr ""
-"Một chương trình quản lý tập tin hiện đại cho Linux/Unix, hướn đển dễ sử dụng "
-"và tốc độ"
+msgstr "Một chương trình quản lý tập tin hiện đại cho Linux/Unix, hướn đển dễ sử dụng và tốc độ"
 
 #: ../xfce4-about/main.c:89
 msgid "Session Manager"
@@ -225,9 +245,7 @@ msgstr "Trình quản lý phiên làm việc"
 msgid ""
 "Restores your session on startup and allows you to shutdown the computer "
 "from Xfce."
-msgstr ""
-"Khôi phục phiên làm việc lúc khởi động và cho phép bạn tắt máy tính "
-"trong Xfce."
+msgstr "Khôi phục phiên làm việc lúc khởi động và cho phép bạn tắt máy tính trong Xfce."
 
 #: ../xfce4-about/main.c:94
 msgid "Setting System"
@@ -272,16 +290,15 @@ msgstr ""
 
 #: ../xfce4-about/main.c:142
 msgid ""
-"Xfce components are licensed under free or open source licences; GPL or BSDL "
-"for applications and LGPL or BSDL for libraries. Look at the documentation, "
-"the source code or the Xfce website (http://www.xfce.org) for more "
+"Xfce components are licensed under free or open source licences; GPL or BSDL"
+" for applications and LGPL or BSDL for libraries. Look at the documentation,"
+" the source code or the Xfce website (http://www.xfce.org) for more "
 "information."
 msgstr ""
 
 #: ../xfce4-about/main.c:149
 msgid "Thank you for your interest in Xfce."
 msgstr "Cảm ơn cho sự ủng hộ của bạn đối với Xfce"
-
 
 #: ../xfce4-about/main.c:153
 msgid "The Xfce Development Team"
@@ -291,9 +308,7 @@ msgstr "Nhóm phát triển Xfce"
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <http://bugzilla.xfce.org> ."
-msgstr ""
-"Nếu bạn biết bất cứ lỗi nào khoogn có trong danh sách này; đừng ngần ngại để báo cáo lỗi "
-"trên <http://bugzilla.xfce.org> ."
+msgstr "Nếu bạn biết bất cứ lỗi nào khoogn có trong danh sách này; đừng ngần ngại để báo cáo lỗi trên <http://bugzilla.xfce.org> ."
 
 #: ../xfce4-about/main.c:266
 msgid "Thanks to all who helped making this software available!"
@@ -315,17 +330,12 @@ msgstr ""
 
 #: ../xfce4-about/main.c:295
 msgid ""
-"The packages thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-"
-"settings, xfce-utils, xfconf, xfdesktop and xfwm4 are distributed under the "
-"terms of the GNU General Public License as published by the Free Software "
-"Foundation; either version 2 of the License, or (at your option) any later "
-"version."
-msgstr ""
-"Các gói thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-"
-"settings, xfce-utils, xfconf, xfdesktop and xfwm4 được phân phối dưới "
-"các quy định của GNU General Public License khi được xuất bản bởi Tổ chức phần mềm "
-"tự do hoặc là phiên bản 2 của giấy phép, hoặc (tùy bạn) bất cứ phiên bản "
-"nào sau này."
+"The packages thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
+"xfce4-settings, xfce-utils, xfconf, xfdesktop and xfwm4 are distributed "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version."
+msgstr "Các gói thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfce-utils, xfconf, xfdesktop and xfwm4 được phân phối dưới các quy định của GNU General Public License khi được xuất bản bởi Tổ chức phần mềm tự do hoặc là phiên bản 2 của giấy phép, hoặc (tùy bạn) bất cứ phiên bản nào sau này."
 
 #: ../xfce4-about/main.c:442
 #, c-format
@@ -371,31 +381,31 @@ msgstr "Phiên bản %s"
 #. { N_("Project Lead"),
 #. xfce_contributors_lead
 #. },
-#: ../xfce4-about/contributors.h:127
+#: ../xfce4-about/contributors.h:121
 msgid "Core developers"
 msgstr "Các nhà phát triển lõi phần mềm"
 
-#: ../xfce4-about/contributors.h:130
+#: ../xfce4-about/contributors.h:124
 msgid "Active contributors"
 msgstr ""
 
-#: ../xfce4-about/contributors.h:133
+#: ../xfce4-about/contributors.h:127
 msgid "Servers maintained by"
 msgstr "Máy chủ được quản lý bởi"
 
-#: ../xfce4-about/contributors.h:136
+#: ../xfce4-about/contributors.h:130
 msgid "Goodies supervision"
 msgstr ""
 
-#: ../xfce4-about/contributors.h:139
+#: ../xfce4-about/contributors.h:133
 msgid "Translations supervision"
 msgstr "Quản lý dich"
 
-#: ../xfce4-about/contributors.h:142
+#: ../xfce4-about/contributors.h:136
 msgid "Translators"
 msgstr "Người dịch"
 
-#: ../xfce4-about/contributors.h:145
+#: ../xfce4-about/contributors.h:139
 msgid "Previous contributors"
 msgstr "Những nhà phát triển trước"
 
@@ -408,32 +418,32 @@ msgid "Information about the Xfce Desktop Environment"
 msgstr "Thông tin về môi trường màn hình Xfce"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:1
-msgid "About"
-msgstr "Thông tin"
-
-#: ../xfce4-about/xfce4-about-dialog.glade.h:2
 msgid "About the Xfce Desktop Environment"
 msgstr "Thông tin môi trường màn hình Xfce"
 
+#: ../xfce4-about/xfce4-about-dialog.glade.h:2
+msgid "About"
+msgstr "Thông tin"
+
 #: ../xfce4-about/xfce4-about-dialog.glade.h:3
-msgid "BSD"
-msgstr "BSD"
-
-#: ../xfce4-about/xfce4-about-dialog.glade.h:4
-msgid "Copyright"
-msgstr "Bản quyền"
-
-#: ../xfce4-about/xfce4-about-dialog.glade.h:5
 msgid "Credits"
 msgstr "Công trạng"
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:6
+#: ../xfce4-about/xfce4-about-dialog.glade.h:4
 msgid "GPL"
 msgstr "GPL"
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:7
+#: ../xfce4-about/xfce4-about-dialog.glade.h:5
 msgid "LGPL"
 msgstr "LGPL"
+
+#: ../xfce4-about/xfce4-about-dialog.glade.h:6
+msgid "BSD"
+msgstr "BSD"
+
+#: ../xfce4-about/xfce4-about-dialog.glade.h:7
+msgid "Copyright"
+msgstr "Bản quyền"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:8
 msgid "License"
