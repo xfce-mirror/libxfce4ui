@@ -1,68 +1,67 @@
-# Japanese translations for libxfce4ui package.
-# Copyright (C) 2008-2012 THE libxfce4ui'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the libxfce4ui package.
-# Nobuhiro Iwamatsu <iwamatsu@nigauri.org>, 2008.
-# Masato Hashimoto <cabezon.hashimoto@gmail.com>, 2011-2012.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Nobuhiro Iwamatsu <iwamatsu@nigauri.org>, 2008
 msgid ""
 msgstr ""
-"Project-Id-Version: libxfce4ui\n"
+"Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-09 19:32+0900\n"
-"PO-Revision-Date: 2012-04-23 21:07+0900\n"
-"Last-Translator: Masato Hashimoto <cabezon.hashimoto@gmail.com>\n"
-"Language-Team: Japanese <xfce-users-jp@ml.fdiary.net>\n"
-"Language: ja\n"
+"POT-Creation-Date: 2013-07-02 22:59+0200\n"
+"PO-Revision-Date: 2013-11-19 15:13+0000\n"
+"Last-Translator: Nick <nick@xfce.org>\n"
+"Language-Team: Japanese (http://www.transifex.com/projects/p/xfce/language/ja/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Japanese\n"
-"X-Poedit-Country: JAPAN\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../libxfce4ui/xfce-dialogs.c:80
+#: ../libxfce4ui/xfce-dialogs.c:98
 msgid "Failed to open web browser for online documentation"
 msgstr "ウェブブラウザーでオンラインドキュメントを開くことに失敗しました"
 
-#: ../libxfce4ui/xfce-dialogs.c:195
+#: ../libxfce4ui/xfce-dialogs.c:213
 #, c-format
 msgid "Do you want to read the %s manual online?"
 msgstr "%s のマニュアルをオンラインで参照しますか?"
 
-#: ../libxfce4ui/xfce-dialogs.c:197
+#: ../libxfce4ui/xfce-dialogs.c:215
 msgid "Do you want to read the manual online?"
 msgstr "マニュアルをオンラインで参照しますか?"
 
-#: ../libxfce4ui/xfce-dialogs.c:200
+#: ../libxfce4ui/xfce-dialogs.c:218
 msgid "Online Documentation"
 msgstr "オンラインドキュメント"
 
-#: ../libxfce4ui/xfce-dialogs.c:203
+#: ../libxfce4ui/xfce-dialogs.c:221
 msgid ""
-"You will be redirected to the documentation website where the help pages are "
-"maintained and translated."
+"You will be redirected to the documentation website where the help pages are"
+" maintained and translated."
 msgstr "ドキュメントウェブサイトでヘルプページがメンテナンスおよび翻訳されている場合はリダイレクトされます。"
 
-#: ../libxfce4ui/xfce-dialogs.c:207
+#: ../libxfce4ui/xfce-dialogs.c:225
 msgid "_Read Online"
 msgstr "オンラインで読む(_R)"
 
-#: ../libxfce4ui/xfce-dialogs.c:219
+#: ../libxfce4ui/xfce-dialogs.c:237
 msgid "_Always go directly to the online documentation"
 msgstr "常にオンラインドキュメントを開く(_A)"
 
-#: ../libxfce4ui/xfce-dialogs.c:263
+#: ../libxfce4ui/xfce-dialogs.c:281
 msgid "Information"
 msgstr "インフォメーション"
 
-#: ../libxfce4ui/xfce-dialogs.c:296
+#: ../libxfce4ui/xfce-dialogs.c:314
 msgid "Warning"
 msgstr "警告"
 
-#: ../libxfce4ui/xfce-dialogs.c:330
+#: ../libxfce4ui/xfce-dialogs.c:348
 msgid "Error"
 msgstr "エラー"
 
-#: ../libxfce4ui/xfce-dialogs.c:381
+#: ../libxfce4ui/xfce-dialogs.c:399
 msgid "Question"
 msgstr "確認"
 
@@ -100,18 +99,15 @@ msgstr "セッションマネージャーは正常なクライアント ID を�
 #: ../libxfce4ui/xfce-spawn.c:406
 #, c-format
 msgid ""
-"Working directory \"%s\" does not exist. It won't be used when spawning \"%s"
-"\"."
-msgstr ""
-"作業ディレクトリ \"%s\" が存在しません。\"%s\" 起動時にこれは使用されません。"
+"Working directory \"%s\" does not exist. It won't be used when spawning "
+"\"%s\"."
+msgstr "作業ディレクトリ \"%s\" が存在しません。\"%s\" 起動時にこれは使用されません。"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:52
 msgid ""
-"This shortcut is already being used for another window manager action. Which "
-"action do you want to use?"
-msgstr ""
-"このショートカットはすでに他のウィンドウマネージャーあるいはユーザーアクショ"
-"ンで使用されています。どちらで使いますか?"
+"This shortcut is already being used for another window manager action. Which"
+" action do you want to use?"
+msgstr "このショートカットはすでに他のウィンドウマネージャーあるいはユーザーアクションで使用されています。どちらで使いますか?"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:53
 #: ../libxfce4kbd-private/xfce-shortcuts.c:56
@@ -131,9 +127,7 @@ msgstr "他方で使う"
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr ""
-"このショートカットはすでにコマンド '%s' で使用されています。どちらで使います"
-"か?"
+msgstr "このショートカットはすでにコマンド '%s' で使用されています。どちらで使いますか?"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #: ../libxfce4kbd-private/xfce-shortcuts.c:59
@@ -143,11 +137,9 @@ msgstr "'%s' で使う"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:61
 msgid ""
-"This shortcut is already being used by a window manager action. Which action "
-"do you want to use?"
-msgstr ""
-"このショートカットはすでに他のウィンドウマネージャーアクションで使用されてい"
-"ます。どちらで使いますか?"
+"This shortcut is already being used by a window manager action. Which action"
+" do you want to use?"
+msgstr "このショートカットはすでに他のウィンドウマネージャーアクションで使用されています。どちらで使いますか?"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:62
 msgid "Keep the window manager action"
@@ -221,8 +213,8 @@ msgstr "パネル"
 
 #: ../xfce4-about/main.c:75
 msgid ""
-"Program launchers, window buttons, applications menu, workspace switcher and "
-"more."
+"Program launchers, window buttons, applications menu, workspace switcher and"
+" more."
 msgstr "プログラムランチャー、ウィンドウボタン、アプリケーションメニュー、ワークスペーススイッチャーなどがあります。"
 
 #: ../xfce4-about/main.c:79
@@ -298,9 +290,9 @@ msgstr "Xfce はいくつかのライブラリを提供する開発プラット�
 
 #: ../xfce4-about/main.c:142
 msgid ""
-"Xfce components are licensed under free or open source licences; GPL or BSDL "
-"for applications and LGPL or BSDL for libraries. Look at the documentation, "
-"the source code or the Xfce website (http://www.xfce.org) for more "
+"Xfce components are licensed under free or open source licences; GPL or BSDL"
+" for applications and LGPL or BSDL for libraries. Look at the documentation,"
+" the source code or the Xfce website (http://www.xfce.org) for more "
 "information."
 msgstr "Xfce を構成するプログラムはフリーまたはオープンソースライセンスの条項下での利用が認められています。各アプリケーションには GPL または BSDL が、各ライブラリには LGPL または BSDL が適用されます。詳しい情報はソースコードか Xfce ウェブサイト (http://www.xfce.org) にある文書をご覧ください。"
 
@@ -338,11 +330,11 @@ msgstr "libxfce4ui、libxfcegui4、libxfce4util、thunar-vfs、および exo の
 
 #: ../xfce4-about/main.c:295
 msgid ""
-"The packages thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-"
-"settings, xfce-utils, xfconf, xfdesktop and xfwm4 are distributed under the "
-"terms of the GNU General Public License as published by the Free Software "
-"Foundation; either version 2 of the License, or (at your option) any later "
-"version."
+"The packages thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
+"xfce4-settings, xfce-utils, xfconf, xfdesktop and xfwm4 are distributed "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version."
 msgstr "thunar、xfce4-appfinder、xfce4-panel、xfce4-session、xfce4-settings、xfce-utils、xfconf、xfdesktop、および xfwm4 の各パッケージは、フリーソフトウェア財団によって発行された GNU 一般公衆利用許諾契約書 (バージョン2か、希望によってはそれ以降のバージョンのうちどれか) の定める条件の下で配布されています。"
 
 #: ../xfce4-about/main.c:442
@@ -389,31 +381,31 @@ msgstr "バージョン %s"
 #. { N_("Project Lead"),
 #. xfce_contributors_lead
 #. },
-#: ../xfce4-about/contributors.h:127
+#: ../xfce4-about/contributors.h:121
 msgid "Core developers"
 msgstr "中心開発者"
 
-#: ../xfce4-about/contributors.h:130
+#: ../xfce4-about/contributors.h:124
 msgid "Active contributors"
 msgstr "現在の協力者"
 
-#: ../xfce4-about/contributors.h:133
+#: ../xfce4-about/contributors.h:127
 msgid "Servers maintained by"
 msgstr "サーバーの管理"
 
-#: ../xfce4-about/contributors.h:136
+#: ../xfce4-about/contributors.h:130
 msgid "Goodies supervision"
 msgstr "Goodies の監修"
 
-#: ../xfce4-about/contributors.h:139
+#: ../xfce4-about/contributors.h:133
 msgid "Translations supervision"
 msgstr "翻訳の監修"
 
-#: ../xfce4-about/contributors.h:142
+#: ../xfce4-about/contributors.h:136
 msgid "Translators"
 msgstr "翻訳者"
 
-#: ../xfce4-about/contributors.h:145
+#: ../xfce4-about/contributors.h:139
 msgid "Previous contributors"
 msgstr "以前の協力者"
 
@@ -456,31 +448,3 @@ msgstr "著作権"
 #: ../xfce4-about/xfce4-about-dialog.glade.h:8
 msgid "License"
 msgstr "ライセンス"
-
-#~ msgid "<span size='large'><b>%s</b></span>"
-#~ msgstr "<span size='large'><b>%s</b></span>"
-
-#~ msgid "File is not a valid .desktop file"
-#~ msgstr "ファイルは正常な .desktop ファイルではありません"
-
-#~ msgid "Unrecognized desktop file Version '%s'"
-#~ msgstr "'%s' は認識できないデスクトップファイルのバージョンです"
-
-#~ msgid "Application does not accept documents on command line"
-#~ msgstr "アプリケーションはコマンドラインから文書を受け付けません"
-
-#~ msgid "Unrecognized launch option: %d"
-#~ msgstr "認識できない起動オプションです: %d"
-
-#~ msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-#~ msgstr ""
-#~ "デスクトップエントリ 'Type=Link' にドキュメント URI を渡すことができません"
-
-#~ msgid "Not a launchable item"
-#~ msgstr "起動可能なアイテムではありません"
-
-#~ msgid "Specify file containing saved configuration"
-#~ msgstr "保存する設定に含めるファイルを指定する"
-
-#~ msgid "FILE"
-#~ msgstr "FILE"
