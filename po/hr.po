@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-02 22:59+0200\n"
-"PO-Revision-Date: 2014-02-18 00:05+0000\n"
+"PO-Revision-Date: 2014-02-21 13:41+0000\n"
 "Last-Translator: schizo <eveskovic@gmail.com>\n"
 "Language-Team: Croatian (http://www.transifex.com/projects/p/xfce/language/hr/)\n"
 "MIME-Version: 1.0\n"
@@ -270,11 +270,11 @@ msgstr "Prikazuje programe  koje su instalirani na vašem sustavu u kategorijama
 
 #: ../xfce4-about/main.c:104
 msgid "Settings Daemon"
-msgstr ""
+msgstr "Nadzornik postavka"
 
 #: ../xfce4-about/main.c:105
 msgid "D-Bus-based configuration storage system."
-msgstr ""
+msgstr "Sustav za pohranu podešavanja zasnovan na D-Busu"
 
 #: ../xfce4-about/main.c:112
 msgid ""
@@ -327,7 +327,7 @@ msgid ""
 "distributed under the terms of the GNU Library General Public License as "
 "published by the Free Software Foundation; either version 2 of the License, "
 "or (at your option) any later version."
-msgstr ""
+msgstr "Libxfce4ui, libxfcegui4, libxfce4util, thunar-vfs i exo paketi distribuiraju se pod uvjetima GNU Library General Public licence objavljene od strane Free Software Foundation; verzija 2 licence ili (po vašem izboru) neka od kasnijih verzija."
 
 #: ../xfce4-about/main.c:295
 msgid ""
@@ -336,7 +336,7 @@ msgid ""
 "under the terms of the GNU General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
-msgstr ""
+msgstr "Thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfce-utils, xfconf, xfdesktop i xfwm4 paketi distribuiraju se pod uvjetima GNU Library General Public licence objavljene od strane Free Software Foundation; verzija 2 licence ili (po vašem izboru) neka od kasnijih verzija."
 
 #: ../xfce4-about/main.c:442
 #, c-format
@@ -396,7 +396,7 @@ msgstr "Poslužitelje održava"
 
 #: ../xfce4-about/contributors.h:130
 msgid "Goodies supervision"
-msgstr ""
+msgstr "Nadzor goodies dodataka"
 
 #: ../xfce4-about/contributors.h:133
 msgid "Translations supervision"
