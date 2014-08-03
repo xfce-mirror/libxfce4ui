@@ -6,14 +6,15 @@
 # Fabian Nowak <timystery@arcor.de>, 2008
 # Jakob Kramer <jakob.kramer@gmx.de>, 2012
 # Mario Blättermann <mario.blaettermann@gmail.com>, 2012
+# Tobias Bannert, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-02 22:59+0200\n"
-"PO-Revision-Date: 2013-11-19 15:13+0000\n"
-"Last-Translator: Nick <nick@xfce.org>\n"
-"Language-Team: German (http://www.transifex.com/projects/p/xfce/language/de/)\n"
+"PO-Revision-Date: 2014-08-03 14:48+0000\n"
+"Last-Translator: Tobias Bannert\n"
+"Language-Team: German (http://www.transifex.com/projects/p/libxfce4ui/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -221,7 +222,7 @@ msgstr "Programmstarter, Fensterknöpfe, Anwendungsmenü, Arbeitsflächenumschal
 
 #: ../xfce4-about/main.c:79
 msgid "Desktop Manager"
-msgstr "Arbeitsflächenverwaltung"
+msgstr "Schreibtischverwaltung"
 
 #: ../xfce4-about/main.c:80
 msgid ""
@@ -231,13 +232,13 @@ msgstr "Stellt die Hintergrundfarbe oder das Hintergrundbild mit einem optionale
 
 #: ../xfce4-about/main.c:84
 msgid "File Manager "
-msgstr "Dateimanager"
+msgstr "Dateiverwaltung"
 
 #: ../xfce4-about/main.c:85
 msgid ""
 "A modern file manager for the Unix/Linux desktop, aiming to be easy-to-use "
 "and fast."
-msgstr "Ein moderner Dateimanager für die Unix/Linux-Arbeitsumgebung, ausgerichtet auf einfache Bedienung und Geschwindigkeit."
+msgstr "Eine moderne Dateiverwaltung für die Unix/Linux-Arbeitsumgebung, ausgerichtet auf einfache Bedienung und Geschwindigkeit."
 
 #: ../xfce4-about/main.c:89
 msgid "Session Manager"
@@ -417,11 +418,11 @@ msgstr "Über Xfce"
 
 #: ../xfce4-about/xfce4-about.desktop.in.h:2
 msgid "Information about the Xfce Desktop Environment"
-msgstr "Informationen über die Xfce-Desktopumgebung"
+msgstr "Informationen über die Xfce-Arbeitsumgebung"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:1
 msgid "About the Xfce Desktop Environment"
-msgstr "Informationen über die Xfce-Desktopumgebung"
+msgstr "Über die Xfce-Arbeitsumgebung"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:2
 msgid "About"
