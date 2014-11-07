@@ -3,15 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Sveinn í Felli <sveinki@nett.is>, 2010-2011
+# Sveinn í Felli <sv1@fellsnet.is>, 2014
+# Sveinn í Felli <sv1@fellsnet.is>, 2010-2011
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-02 22:59+0200\n"
-"PO-Revision-Date: 2013-11-19 15:13+0000\n"
-"Last-Translator: Nick <nick@xfce.org>\n"
-"Language-Team: Icelandic (http://www.transifex.com/projects/p/xfce/language/is/)\n"
+"PO-Revision-Date: 2014-11-07 09:26+0000\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
+"Language-Team: Icelandic (http://www.transifex.com/projects/p/libxfce4ui/language/is/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,34 +21,34 @@ msgstr ""
 
 #: ../libxfce4ui/xfce-dialogs.c:98
 msgid "Failed to open web browser for online documentation"
-msgstr ""
+msgstr "Mistókst að opna netvafra til að lesa hjálparskjöl á vefnum."
 
 #: ../libxfce4ui/xfce-dialogs.c:213
 #, c-format
 msgid "Do you want to read the %s manual online?"
-msgstr ""
+msgstr "Viltu lesa %s handbókina á netinu?"
 
 #: ../libxfce4ui/xfce-dialogs.c:215
 msgid "Do you want to read the manual online?"
-msgstr ""
+msgstr "Viltu lesa handbókina á netinu?"
 
 #: ../libxfce4ui/xfce-dialogs.c:218
 msgid "Online Documentation"
-msgstr ""
+msgstr "Handbækur á netinu"
 
 #: ../libxfce4ui/xfce-dialogs.c:221
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
-msgstr ""
+msgstr "Þér verður beint á skjölunarvefinn þar sem hjálparsíðum er viðhaldið og þær þýddar."
 
 #: ../libxfce4ui/xfce-dialogs.c:225
 msgid "_Read Online"
-msgstr ""
+msgstr "Lesa á _netinu"
 
 #: ../libxfce4ui/xfce-dialogs.c:237
 msgid "_Always go directly to the online documentation"
-msgstr ""
+msgstr "Fara alltaf beint í handbækur/skjölun á netinu"
 
 #: ../libxfce4ui/xfce-dialogs.c:281
 msgid "Information"
@@ -67,7 +68,7 @@ msgstr "Spurning"
 
 #: ../libxfce4ui/xfce-sm-client.c:1402
 msgid "Session management client ID"
-msgstr ""
+msgstr "Biðlaraauðkenni í setustýringu"
 
 #: ../libxfce4ui/xfce-sm-client.c:1402
 msgid "ID"
@@ -88,12 +89,12 @@ msgstr "Sýna valkosti setustýringar"
 #: ../libxfce4ui/xfce-sm-client.c:1590
 #, c-format
 msgid "Failed to connect to the session manager: %s"
-msgstr ""
+msgstr "Mistókst að tengjast setustýringu: %s"
 
 #: ../libxfce4ui/xfce-sm-client.c:1597
 #, c-format
 msgid "Session manager did not return a valid client id"
-msgstr ""
+msgstr "Setustýringin gaf ekki gilt biðlaraauðkenni"
 
 #. print warning for user
 #: ../libxfce4ui/xfce-spawn.c:406
@@ -101,13 +102,13 @@ msgstr ""
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
 "\"%s\"."
-msgstr ""
+msgstr "Vinnumappan \"%s\" er ekki til. Hún verður ekki notuð við gerð \"%s\"."
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:52
 msgid ""
 "This shortcut is already being used for another window manager action. Which"
 " action do you want to use?"
-msgstr ""
+msgstr "Þessi flýtileið er þegar í notkun fyrir aðra gluggastýringaraðgerð. Hvaða aðgerð viltu nota?"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:53
 #: ../libxfce4kbd-private/xfce-shortcuts.c:56
@@ -127,7 +128,7 @@ msgstr "Halda hinu"
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr ""
+msgstr "Þessi flýtileið er þegar í notkun fyrir '%s' skipunina. Hvaða aðgerð viltu nota?"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #: ../libxfce4kbd-private/xfce-shortcuts.c:59
@@ -139,24 +140,24 @@ msgstr "Halda '%s'"
 msgid ""
 "This shortcut is already being used by a window manager action. Which action"
 " do you want to use?"
-msgstr ""
+msgstr "Þessi flýtileið er þegar í notkun af gluggastýringaraðgerð. Hvaða aðgerð viltu nota?"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:62
 msgid "Keep the window manager action"
-msgstr ""
+msgstr "Halda núverandi gluggastýringaraðgerð"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:95
 #, c-format
 msgid "Conflicting actions for %s"
-msgstr ""
+msgstr "Árekstrar milli aðgerða fyrir %s"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:128
 msgid "This shortcut is already being used for something else."
-msgstr ""
+msgstr "Þessi flýtileið er nú þegar í notkun fyrir eitthvað annað."
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:204
 msgid "Window Manager Action Shortcut"
-msgstr ""
+msgstr "Flýtilykill fyrir gluggastýringaraðgerð"
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:205
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:215
@@ -181,7 +182,7 @@ msgstr "Flýtilykill:"
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:300
 msgid "Could not grab the keyboard."
-msgstr ""
+msgstr "Ekki var hægt að nema lyklaáslátt."
 
 #: ../glade/libxfce4ui.xml.in.h:1
 msgid "Titled Dialog"
@@ -215,7 +216,7 @@ msgstr "Verkefnaspjald"
 msgid ""
 "Program launchers, window buttons, applications menu, workspace switcher and"
 " more."
-msgstr ""
+msgstr "Forritaræsar, gluggahnappar, forritavalmynd, vinnusvæðaskiptir og fleira."
 
 #: ../xfce4-about/main.c:79
 msgid "Desktop Manager"
@@ -225,7 +226,7 @@ msgstr "Skjáborðsstýring"
 msgid ""
 "Sets the background color or image with optional application menu or icons "
 "for minimized applications or launchers, devices and folders."
-msgstr ""
+msgstr "Stillir bakgrunnslit eða bakgrunnsmynd ásamt forritavalmyndum eða táknmyndum fyrir minnkuð forrit, ræsa, tæki og möppur."
 
 #: ../xfce4-about/main.c:84
 msgid "File Manager "
@@ -235,7 +236,7 @@ msgstr "Skráastjóri"
 msgid ""
 "A modern file manager for the Unix/Linux desktop, aiming to be easy-to-use "
 "and fast."
-msgstr ""
+msgstr "Nútímalegur skráastjóri fyrir Unix/Linux skjáborð, með áherslu á að vera einfaldur í notkun og hraðvirkur."
 
 #: ../xfce4-about/main.c:89
 msgid "Session Manager"
@@ -245,7 +246,7 @@ msgstr "Setustýring"
 msgid ""
 "Restores your session on startup and allows you to shutdown the computer "
 "from Xfce."
-msgstr ""
+msgstr "Endurheimtir setuna þína í ræsingu og gerir kleift að skökkva á tölvunni beint úr XFCE."
 
 #: ../xfce4-about/main.c:94
 msgid "Setting System"
@@ -255,7 +256,7 @@ msgstr "Stilling kerfis"
 msgid ""
 "Configuration system to control various aspects of the desktop like "
 "appearance, display, keyboard and mouse settings."
-msgstr ""
+msgstr "Stillingakerfi til að stýra ýmsum hliðum skjáborðsins, svo sem útliti, skjám, lyklaborði og mús."
 
 #: ../xfce4-about/main.c:99
 msgid "Application Finder"
@@ -265,28 +266,28 @@ msgstr "Forritaleit"
 msgid ""
 "Shows the applications installed on your system in categories, so you can "
 "quickly find and launch them."
-msgstr ""
+msgstr "Sýna uppsett forrit í kerfinu þínu í flokkum, þannig að þú getur fundið þau og ræst hraðar."
 
 #: ../xfce4-about/main.c:104
 msgid "Settings Daemon"
-msgstr ""
+msgstr "Stillingamiðlari"
 
 #: ../xfce4-about/main.c:105
 msgid "D-Bus-based configuration storage system."
-msgstr ""
+msgstr "Stillingageymslukerfi byggt á D-Bus."
 
 #: ../xfce4-about/main.c:112
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured "
 "desktop environment. The following programs are part of the Xfce core:"
-msgstr ""
+msgstr "Xfce er safn forrita sem saman mynda samstætt skjáborðsumhverfi. Eftirfarandi forrit eru í kjarna Xfce:"
 
 #: ../xfce4-about/main.c:136
 msgid ""
 "Xfce is also a development platform providing several libraries, that help "
 "programmers create applications that fit in well with the desktop "
 "environment."
-msgstr ""
+msgstr "Xfce er einnig forritunarumhverfi sem býður upp á mörg aðgerðasöfn og hjálpar þannig forriturum að búa til forrit sem virka vel í skjáborðsumhverfinu."
 
 #: ../xfce4-about/main.c:142
 msgid ""
@@ -294,7 +295,7 @@ msgid ""
 " for applications and LGPL or BSDL for libraries. Look at the documentation,"
 " the source code or the Xfce website (http://www.xfce.org) for more "
 "information."
-msgstr ""
+msgstr "Xfce einingar eru gefnar út með frjálsum eða opnum notkunarleyfum; GPL eða BSDL fyrir forrit og LGPL eða BSDL fyrir aðgerðasöfn. Skoðaðu hjálparskjöl, upprunakóða eða leitaðu á Xfce vefnum (http://www.xfce.org) til að vita meira um þetta."
 
 #: ../xfce4-about/main.c:149
 msgid "Thank you for your interest in Xfce."
@@ -308,17 +309,17 @@ msgstr "Xfce þróunarteymið"
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <http://bugzilla.xfce.org> ."
-msgstr ""
+msgstr "Ef þú veist um einhvern sem vantar á þennan lista; ekki hika við að senda það sem villu á <http://bugzilla.xfce.org> ."
 
 #: ../xfce4-about/main.c:266
 msgid "Thanks to all who helped making this software available!"
-msgstr ""
+msgstr "Þakkir til allra sem hjálpuðu með að gera þennan hugbúnað aðgengilegan!"
 
 #: ../xfce4-about/main.c:283
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
-msgstr ""
+msgstr "Höfundarrétt að Xfce 4 á Olivier Fourdan (fourdan@xfce.org). Aðrir hlutar eru með höfundarrétt viðkomandi höfundar."
 
 #: ../xfce4-about/main.c:288
 msgid ""
@@ -326,7 +327,7 @@ msgid ""
 "distributed under the terms of the GNU Library General Public License as "
 "published by the Free Software Foundation; either version 2 of the License, "
 "or (at your option) any later version."
-msgstr ""
+msgstr "libxfce4ui, libxfcegui4, libxfce4util, thunar-vfs og exo pökkunum er dreift samkvæmt skilmálum í almenna GNU GPL notkunarleyfisins eins og það er gefið út af Frjálsu hugbúnaðarstofnuninni; annaðhvort útgáfu 2 af GPL-leyfinu, eða (ef þér sýnist svo) einhverja nýrri útgáfu leyfisins."
 
 #: ../xfce4-about/main.c:295
 msgid ""
@@ -335,7 +336,7 @@ msgid ""
 "under the terms of the GNU General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
-msgstr ""
+msgstr "Hugbúnaðarpökkunum thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfce-utils, xfconf, xfdesktop og xfwm4 er dreift samkvæmt skilmálum í almenna GNU GPL notkunarleyfisins eins og það er gefið út af Frjálsu hugbúnaðarstofnuninni; annaðhvort útgáfu 2 af GPL-leyfinu, eða (ef þér sýnist svo) einhverja nýrri útgáfu leyfisins."
 
 #: ../xfce4-about/main.c:442
 #, c-format
