@@ -4,13 +4,14 @@
 # 
 # Translators:
 # GenghisKhan <genghiskhan@gmx.ca>, 2015
+# GenghisKhan <genghiskhan@gmx.ca>, 2015
 # Hezy Amiel <open@hezyamiel.com>, 2010
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-02 22:59+0200\n"
-"PO-Revision-Date: 2015-01-01 01:36+0000\n"
+"PO-Revision-Date: 2015-01-01 09:16+0000\n"
 "Last-Translator: GenghisKhan <genghiskhan@gmx.ca>\n"
 "Language-Team: Hebrew (http://www.transifex.com/projects/p/libxfce4ui/language/he/)\n"
 "MIME-Version: 1.0\n"
@@ -166,7 +167,7 @@ msgstr "פעולה:"
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:209
 msgid "Command Shortcut"
-msgstr "קיצור פקודה"
+msgstr "קיצור דרך פקודה"
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:210
 msgid "Command:"
@@ -174,11 +175,11 @@ msgstr "פקודה:"
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:214
 msgid "Shortcut"
-msgstr "קיצור-דרך"
+msgstr "קיצור דרך"
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:255
 msgid "Shortcut:"
-msgstr "קיצור-דרך:"
+msgstr "קיצור דרך:"
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:300
 msgid "Could not grab the keyboard."
@@ -190,7 +191,7 @@ msgstr "דו שיח בעל כותרת"
 
 #: ../glade/libxfce4ui.xml.in.h:2
 msgid "Subtitle"
-msgstr "כתובית"
+msgstr "כותרת משנה"
 
 #: ../glade/libxfce4ui.xml.in.h:3
 msgid "Xfce 4 Widgets"
@@ -313,7 +314,7 @@ msgstr "אם אתם יודעים על מישהו אשר חסר מן רשימה �
 
 #: ../xfce4-about/main.c:266
 msgid "Thanks to all who helped making this software available!"
-msgstr "תודה לכל מי אשר סייע להפוך את תכנה זו לזמניה!"
+msgstr "תודה לכל מי אשר סייע להפוך את תכנה זו לזמינה!"
 
 #: ../xfce4-about/main.c:283
 msgid ""
