@@ -6,14 +6,14 @@
 # Fabian Nowak <timystery@arcor.de>, 2008
 # Jakob Kramer <jakob.kramer@gmx.de>, 2012
 # Mario Blättermann <mario.blaettermann@gmail.com>, 2012
-# Tobias Bannert, 2014
+# Tobias Bannert <tobannert@gmail.com>, 2014-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-02 22:59+0200\n"
-"PO-Revision-Date: 2014-08-03 14:48+0000\n"
-"Last-Translator: Tobias Bannert\n"
+"PO-Revision-Date: 2015-02-19 14:23+0000\n"
+"Last-Translator: Tobias Bannert <tobannert@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/libxfce4ui/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,34 +23,34 @@ msgstr ""
 
 #: ../libxfce4ui/xfce-dialogs.c:98
 msgid "Failed to open web browser for online documentation"
-msgstr "Der Webbrowser zum Lesen des Online-Handbuchs konnte nicht geöffnet werden"
+msgstr "Das Internetprogramm zum Lesen des Internethandbuchs konnte nicht geöffnet werden"
 
 #: ../libxfce4ui/xfce-dialogs.c:213
 #, c-format
 msgid "Do you want to read the %s manual online?"
-msgstr "Möchten Sie das Handbuch zu %s online lesen?"
+msgstr "Möchten Sie das %s-Handbuch im Internet lesen?"
 
 #: ../libxfce4ui/xfce-dialogs.c:215
 msgid "Do you want to read the manual online?"
-msgstr "Möchten Sie das Handbuch online lesen?"
+msgstr "Möchten Sie das Handbuch im Internet lesen?"
 
 #: ../libxfce4ui/xfce-dialogs.c:218
 msgid "Online Documentation"
-msgstr "Online-Dokumentation"
+msgstr "Internetdokumentation"
 
 #: ../libxfce4ui/xfce-dialogs.c:221
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
-msgstr "Sie werden zur Webseite mit den Handbüchern weitergeleitet. Dort finden Sie aktuelle und übersetzte Hilfeseiten vor."
+msgstr "Sie werden zur Internetseite mit den Handbüchern weitergeleitet. Dort finden Sie aktuelle und übersetzte Hilfeseiten vor."
 
 #: ../libxfce4ui/xfce-dialogs.c:225
 msgid "_Read Online"
-msgstr "_Online lesen"
+msgstr "_Im Internet lesen"
 
 #: ../libxfce4ui/xfce-dialogs.c:237
 msgid "_Always go directly to the online documentation"
-msgstr "_Immer direkt zu den Online-Handbüchern gehen"
+msgstr "_Immer direkt zu den Internethandbüchern gehen"
 
 #: ../libxfce4ui/xfce-dialogs.c:281
 msgid "Information"
@@ -70,11 +70,11 @@ msgstr "Frage"
 
 #: ../libxfce4ui/xfce-sm-client.c:1402
 msgid "Session management client ID"
-msgstr "ID für die Sitzungsverwaltung"
+msgstr "Kennung der Sitzungsverwaltung"
 
 #: ../libxfce4ui/xfce-sm-client.c:1402
 msgid "ID"
-msgstr "ID"
+msgstr "Kennung"
 
 #: ../libxfce4ui/xfce-sm-client.c:1403
 msgid "Disable session management"
@@ -96,7 +96,7 @@ msgstr "Verbindung zur Sitzungsverwaltung fehlgeschlagen: %s"
 #: ../libxfce4ui/xfce-sm-client.c:1597
 #, c-format
 msgid "Session manager did not return a valid client id"
-msgstr "Die Sitzungsverwaltung hat keinen gültige ID geliefert"
+msgstr "Die Sitzungsverwaltung hat keine gültige Kennung geliefert"
 
 #. print warning for user
 #: ../libxfce4ui/xfce-spawn.c:406
@@ -297,7 +297,7 @@ msgid ""
 " for applications and LGPL or BSDL for libraries. Look at the documentation,"
 " the source code or the Xfce website (http://www.xfce.org) for more "
 "information."
-msgstr "Xfce-Komponenten sind lizenziert unter freien Lizenzen oder Lizenzen für quelloffene Software: GPL oder BSDL für Anwendungen und LGPL oder BSDL für Bibliotheken. Weitere Informationen finden Sie in der Dokumentation, dem Quellcode oder auf der Xfce Webseite (http://www.xfce.org)."
+msgstr "Xfce-Komponenten sind lizenziert unter freien Lizenzen oder Lizenzen für quelloffene Programme: GPL oder BSDL für Anwendungen und LGPL oder BSDL für Bibliotheken. Weitere Informationen finden Sie in der Dokumentation, dem Quelltext oder auf der Xfce-Internetseite (http://www.xfce.org)."
 
 #: ../xfce4-about/main.c:149
 msgid "Thank you for your interest in Xfce."
@@ -305,7 +305,7 @@ msgstr "Danke für Ihr Interesse an Xfce."
 
 #: ../xfce4-about/main.c:153
 msgid "The Xfce Development Team"
-msgstr "Das Xfce-Entwicklerteam"
+msgstr "Die Xfce-Entwicklungsmannschaft"
 
 #: ../xfce4-about/main.c:262
 msgid ""
@@ -315,7 +315,7 @@ msgstr "Sollten Sie jemanden auf dieser Liste vermissen, zögern Sie nicht, unte
 
 #: ../xfce4-about/main.c:266
 msgid "Thanks to all who helped making this software available!"
-msgstr "Danke an alle, die geholfen haben, diese Software verfügbar zu machen!"
+msgstr "Danke an alle, die geholfen haben, dieses Programm verfügbar zu machen!"
 
 #: ../xfce4-about/main.c:283
 msgid ""
@@ -343,7 +343,7 @@ msgstr "Die Pakete thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-se
 #: ../xfce4-about/main.c:442
 #, c-format
 msgid "Type '%s --help' for usage information."
-msgstr "Geben Sie »%s --help« ein, um weitere Informationen zu erhalten."
+msgstr "»%s --help« eingeben, um weitere Informationen zu erhalten."
 
 #: ../xfce4-about/main.c:448
 msgid "Unable to initialize GTK+."
@@ -351,12 +351,12 @@ msgstr "GTK+ konnte nicht initialisiert werden."
 
 #: ../xfce4-about/main.c:457
 msgid "The Xfce development team. All rights reserved."
-msgstr "Das Entwicklerteam von Xfce. Alle Rechte vorbehalten."
+msgstr "Die Entwicklungsmannschaft von Xfce. Alle Rechte vorbehalten."
 
 #: ../xfce4-about/main.c:458
 #, c-format
 msgid "Please report bugs to <%s>."
-msgstr "Bitte melden Sie Fehler an <%s>."
+msgstr "Bitte Fehler an <%s> melden."
 
 #. I18N: date/time the translators list was updated
 #: ../xfce4-about/main.c:461
@@ -446,7 +446,7 @@ msgstr "BSD"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:7
 msgid "Copyright"
-msgstr "Copyright"
+msgstr "Urheberrecht"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:8
 msgid "License"
