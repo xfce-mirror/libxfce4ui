@@ -4,15 +4,15 @@
 # 
 # Translators:
 # Edin Veskovic <edin.veskovic@openmailbox.org>, 2014
-# Ivica  Kolić <ikoli@yahoo.com>, 2013-2014
+# Ivica  Kolić <ikoli@yahoo.com>, 2013-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-02 22:59+0200\n"
-"PO-Revision-Date: 2014-10-09 15:52+0000\n"
+"PO-Revision-Date: 2015-12-06 09:16+0000\n"
 "Last-Translator: Ivica  Kolić <ikoli@yahoo.com>\n"
-"Language-Team: Croatian (http://www.transifex.com/projects/p/libxfce4ui/language/hr/)\n"
+"Language-Team: Croatian (http://www.transifex.com/xfce/libxfce4ui/language/hr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -174,15 +174,15 @@ msgstr "Naredba:"
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:214
 msgid "Shortcut"
-msgstr "Kratica"
+msgstr "Prečac"
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:255
 msgid "Shortcut:"
-msgstr "Kratica:"
+msgstr "Prečac:"
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:300
 msgid "Could not grab the keyboard."
-msgstr "Ne mogu se spojiti na tipkovnicu"
+msgstr "Ne mogu se spojiti na tipkovnicu."
 
 #: ../glade/libxfce4ui.xml.in.h:1
 msgid "Titled Dialog"
