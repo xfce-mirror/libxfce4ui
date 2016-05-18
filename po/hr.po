@@ -4,13 +4,13 @@
 # 
 # Translators:
 # Edin Veskovic <edin.veskovic@openmailbox.org>, 2014
-# Ivica  Kolić <ikoli@yahoo.com>, 2013-2015
+# Ivica  Kolić <ikoli@yahoo.com>, 2013-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-02 22:59+0200\n"
-"PO-Revision-Date: 2015-12-06 09:16+0000\n"
+"PO-Revision-Date: 2016-05-18 04:40+0000\n"
 "Last-Translator: Ivica  Kolić <ikoli@yahoo.com>\n"
 "Language-Team: Croatian (http://www.transifex.com/xfce/libxfce4ui/language/hr/)\n"
 "MIME-Version: 1.0\n"
@@ -102,13 +102,13 @@ msgstr "Upravitelj sesijom nije vratio valjan id klijenta."
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
 "\"%s\"."
-msgstr "Radna mapa \\ \"% s \" ne postoji. Neće se koristiti prilikom gnježđenja \\ \"% s \"."
+msgstr "Radna mapa \"%s\" ne postoji. Neće se koristiti prilikom pokretanja nove instance \"%s\"."
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:52
 msgid ""
 "This shortcut is already being used for another window manager action. Which"
 " action do you want to use?"
-msgstr "Ova kratica je već u upotrebi. Koju radnju želite koristiti?"
+msgstr "Upravitelj prozorima već koristi ovu kraticu za drugu radnju. Koju radnju želite koristiti?"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:53
 #: ../libxfce4kbd-private/xfce-shortcuts.c:56
@@ -149,7 +149,7 @@ msgstr "Zadržite naredbu upravitelja prozorom"
 #: ../libxfce4kbd-private/xfce-shortcuts.c:95
 #, c-format
 msgid "Conflicting actions for %s"
-msgstr "Radnje u konfliktu za %s"
+msgstr "Sukobljene radnje za %s"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:128
 msgid "This shortcut is already being used for something else."
@@ -186,7 +186,7 @@ msgstr "Ne mogu se spojiti na tipkovnicu."
 
 #: ../glade/libxfce4ui.xml.in.h:1
 msgid "Titled Dialog"
-msgstr "Dialog sa nazivom"
+msgstr "Dijalog s naslovom"
 
 #: ../glade/libxfce4ui.xml.in.h:2
 msgid "Subtitle"
@@ -287,7 +287,7 @@ msgid ""
 "Xfce is also a development platform providing several libraries, that help "
 "programmers create applications that fit in well with the desktop "
 "environment."
-msgstr "Xfce je također razvojna platforma pruža nekoliko knjižnica, koje pomažu programerima da stvaraju prgrame koje se dobro uklapaju u  radno okruženje."
+msgstr "Xfce je također i razvojna platforma koja programerima pruža na korištenje određeni broj biblioteka, izrađenih da pomognu u stvaranju aplikacija koje se dobro uklapaju u radno okruženje."
 
 #: ../xfce4-about/main.c:142
 msgid ""
@@ -319,7 +319,7 @@ msgstr "Hvala svima koji su pomogli učiniti ovaj software dostupnim!"
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
-msgstr "Xfce 4 autorsko pravo Olivier Fourdan (fourdan@xfce.org). Različiti dijelovi su autorska prava njihovih poštovanih autora."
+msgstr "Nositelj autorskog prava za Xfce 4 je Olivier Fourdan (fourdan@xfce.org). Različite komponente su pod autorskim pravima dotičnih autora."
 
 #: ../xfce4-about/main.c:288
 msgid ""
@@ -384,7 +384,7 @@ msgstr "Verzija %s"
 #. },
 #: ../xfce4-about/contributors.h:121
 msgid "Core developers"
-msgstr "Temeljni razvijatelji"
+msgstr "Glavni razvijatelji"
 
 #: ../xfce4-about/contributors.h:124
 msgid "Active contributors"
