@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-02 22:59+0200\n"
-"PO-Revision-Date: 2017-01-16 10:44+0000\n"
+"PO-Revision-Date: 2017-01-16 13:07+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/libxfce4ui/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -104,7 +104,7 @@ msgstr "Sessionshåndtering returnerede ikke et gyldigt klientid"
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
 "\"%s\"."
-msgstr "Arbejdsmappen \"%s\" findes ikke. Den vil ikke blive brugt ved klagørelsen af\"%s\"."
+msgstr "Arbejdsmappen \"%s\" findes ikke. Den vil ikke blive brugt ved klargørelsen af\"%s\"."
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:52
 msgid ""
@@ -228,7 +228,7 @@ msgstr "Skrivebordshåndtering"
 msgid ""
 "Sets the background color or image with optional application menu or icons "
 "for minimized applications or launchers, devices and folders."
-msgstr "Indstiller baggrunds-farven eller -billedet med tilvalg af program-menu eller -ikoner for minimerede programmer eller opstartere, enheder og mapper."
+msgstr "Indstiller baggrundsfarven eller -billedet med tilvalg af program-menu eller -ikoner for minimerede programmer eller opstartere, enheder og mapper."
 
 #: ../xfce4-about/main.c:84
 msgid "File Manager "
@@ -394,7 +394,7 @@ msgstr "Aktive udviklere"
 
 #: ../xfce4-about/contributors.h:127
 msgid "Servers maintained by"
-msgstr "Servers vedligeholdt af"
+msgstr "Servere vedligeholdes af"
 
 #: ../xfce4-about/contributors.h:130
 msgid "Goodies supervision"
