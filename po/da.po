@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-02 22:59+0200\n"
-"PO-Revision-Date: 2017-01-17 13:03+0000\n"
+"PO-Revision-Date: 2017-01-20 13:58+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/libxfce4ui/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: ../libxfce4ui/xfce-dialogs.c:98
 msgid "Failed to open web browser for online documentation"
-msgstr "Kunne ikke åbne webbrowser for dokumentation på nettet"
+msgstr "Kunne ikke åbne webbrowser til vises af online-dokumentation"
 
 #: ../libxfce4ui/xfce-dialogs.c:213
 #, c-format
@@ -36,7 +36,7 @@ msgstr "Vil du læse manualen på nettet?"
 
 #: ../libxfce4ui/xfce-dialogs.c:218
 msgid "Online Documentation"
-msgstr "Dokumentation på nettet"
+msgstr "Online-dokumentation"
 
 #: ../libxfce4ui/xfce-dialogs.c:221
 msgid ""
@@ -50,7 +50,7 @@ msgstr "_Læs på nettet"
 
 #: ../libxfce4ui/xfce-dialogs.c:237
 msgid "_Always go directly to the online documentation"
-msgstr "_Gå altid direkte til dokumentationen på nettet"
+msgstr "_Gå altid direkte til online-dokumentationen"
 
 #: ../libxfce4ui/xfce-dialogs.c:281
 msgid "Information"
@@ -351,7 +351,7 @@ msgstr "Kunne ikke klargøre GTK+."
 
 #: ../xfce4-about/main.c:457
 msgid "The Xfce development team. All rights reserved."
-msgstr "Udviklingholdet Xfce. Alle rettigheder forbeholdes."
+msgstr "Xfce's udviklingshold. Alle rettigheder forbeholdes."
 
 #: ../xfce4-about/main.c:458
 #, c-format
@@ -390,7 +390,7 @@ msgstr "Kerneudviklere"
 
 #: ../xfce4-about/contributors.h:124
 msgid "Active contributors"
-msgstr "Aktive udviklere"
+msgstr "Aktive bidragydere"
 
 #: ../xfce4-about/contributors.h:127
 msgid "Servers maintained by"
@@ -410,7 +410,7 @@ msgstr "Oversættere"
 
 #: ../xfce4-about/contributors.h:139
 msgid "Previous contributors"
-msgstr "Tidligere udviklere"
+msgstr "Tidligere bidragydere"
 
 #: ../xfce4-about/xfce4-about.desktop.in.h:1
 msgid "About Xfce"
