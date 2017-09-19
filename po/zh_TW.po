@@ -4,14 +4,15 @@
 # 
 # Translators:
 # Cheng-Chia Tseng <pswo10680@gmail.com>, 2010
+# Walter Cheuk <wwycheuk@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-02 22:59+0200\n"
-"PO-Revision-Date: 2013-11-19 15:13+0000\n"
-"Last-Translator: Nick <nick@xfce.org>\n"
-"Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/xfce/language/zh_TW/)\n"
+"PO-Revision-Date: 2017-09-19 18:02+0000\n"
+"Last-Translator: Walter Cheuk <wwycheuk@gmail.com>\n"
+"Language-Team: Chinese (Taiwan) (http://www.transifex.com/xfce/libxfce4ui/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -39,7 +40,7 @@ msgstr "線上文件"
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
-msgstr "您會被重新引導至文件網站，在那裡我們維護、翻譯幫助頁面。"
+msgstr "您會被重新引導至我們保存和翻譯幫助頁面的說明文件的網站。"
 
 #: ../libxfce4ui/xfce-dialogs.c:225
 msgid "_Read Online"
@@ -93,7 +94,7 @@ msgstr "連接到工作階段管理程式失敗：%s"
 #: ../libxfce4ui/xfce-sm-client.c:1597
 #, c-format
 msgid "Session manager did not return a valid client id"
-msgstr "工作階段管理程式沒有回傳有效的用戶端 id"
+msgstr "工作階段管理程式沒有回傳有效的用戶端 ID"
 
 #. print warning for user
 #: ../libxfce4ui/xfce-spawn.c:406
@@ -107,7 +108,7 @@ msgstr "工作目錄「%s」不存在。當建立「%s」時不會被使用。"
 msgid ""
 "This shortcut is already being used for another window manager action. Which"
 " action do you want to use?"
-msgstr "此捷徑正被其他視窗管理程式的動作使用。您想要使用何動作"
+msgstr "其他視窗管理程式的動作已經用了此捷徑。您想要使用何動作？"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:53
 #: ../libxfce4kbd-private/xfce-shortcuts.c:56
@@ -127,7 +128,7 @@ msgstr "保留其它的"
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr "此捷徑正被指令 '%s' 使用。您想要使用何動作？"
+msgstr "「%s」指令已經用了此捷徑。您想要使用何動作？"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #: ../libxfce4kbd-private/xfce-shortcuts.c:59
@@ -139,7 +140,7 @@ msgstr "保留 '%s'"
 msgid ""
 "This shortcut is already being used by a window manager action. Which action"
 " do you want to use?"
-msgstr "此捷徑正被視窗管理程式的某動作使用。您想要使用何動作？"
+msgstr "視窗管理程式的某動作已經用了此捷徑。您想要使用何動作？"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:62
 msgid "Keep the window manager action"
@@ -152,7 +153,7 @@ msgstr "%s 的動作發生衝突"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:128
 msgid "This shortcut is already being used for something else."
-msgstr "此捷徑正被其它動作使用。"
+msgstr "此捷徑鍵已經用了。"
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:204
 msgid "Window Manager Action Shortcut"
@@ -165,11 +166,11 @@ msgstr "動作："
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:209
 msgid "Command Shortcut"
-msgstr "命令捷徑"
+msgstr "指令捷徑"
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:210
 msgid "Command:"
-msgstr "命令："
+msgstr "指令："
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:214
 msgid "Shortcut"
@@ -193,7 +194,7 @@ msgstr "次標題"
 
 #: ../glade/libxfce4ui.xml.in.h:3
 msgid "Xfce 4 Widgets"
-msgstr "Xfce 4 小工具"
+msgstr "Xfce 4 器件"
 
 #: ../xfce4-about/main.c:52
 msgid "Version information"
@@ -265,7 +266,7 @@ msgstr "應用程式協尋器"
 msgid ""
 "Shows the applications installed on your system in categories, so you can "
 "quickly find and launch them."
-msgstr "將安裝於您系統上的應用程式以類別顯示，這樣您才能快速尋找並啟動它們。"
+msgstr "將安裝於您系統上的應用程式分類顯示，這樣您才能快速尋找並啟動它們。"
 
 #: ../xfce4-about/main.c:104
 msgid "Settings Daemon"
