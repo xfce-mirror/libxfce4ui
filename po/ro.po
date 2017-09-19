@@ -1,72 +1,66 @@
-# Romanian translations for libxfce4ui
-# Traducerea în limba română pentru pachetul libxfce4util.
-# Copyright (C) 2007-2012 THE libxfce4ui's COPYRIGHT HOLDER
-# This file is distributed under the same license as the libxfce4ui package.
-# Mișu Moldovan <dumol@xfce.org>, 2009-2012.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: libxfce4ui 4.10\n"
+"Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-23 07:15+0000\n"
-"PO-Revision-Date: 2012-04-27 14:39+0300\n"
-"Last-Translator: Mișu Moldovan <dumol@xfce.org>\n"
-"Language-Team: Romanian <diacritice@googlegroups.com>\n"
-"Language: ro\n"
+"POT-Creation-Date: 2013-07-02 22:59+0200\n"
+"PO-Revision-Date: 2017-09-19 18:02+0000\n"
+"Last-Translator: Nick Schermer <nick@xfce.org>\n"
+"Language-Team: Romanian (http://www.transifex.com/xfce/libxfce4ui/language/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
-"20)) ? 1 : 2);;\n"
-"X-Generator: Virtaal 0.7.0\n"
+"Language: ro\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
-#: ../libxfce4ui/xfce-dialogs.c:80
+#: ../libxfce4ui/xfce-dialogs.c:98
 msgid "Failed to open web browser for online documentation"
-msgstr ""
-"Nu s-a putut deschide navigatorul web pentru accesarea documentației online"
+msgstr "Nu s-a putut deschide navigatorul web pentru accesarea documentației online"
 
-#: ../libxfce4ui/xfce-dialogs.c:195
+#: ../libxfce4ui/xfce-dialogs.c:213
 #, c-format
 msgid "Do you want to read the %s manual online?"
 msgstr "Doriți să accesați manualul %s online?"
 
-#: ../libxfce4ui/xfce-dialogs.c:197
+#: ../libxfce4ui/xfce-dialogs.c:215
 msgid "Do you want to read the manual online?"
 msgstr "Doriți să citiți manualul online?"
 
-#: ../libxfce4ui/xfce-dialogs.c:200
+#: ../libxfce4ui/xfce-dialogs.c:218
 msgid "Online Documentation"
 msgstr "Documentație online"
 
-#: ../libxfce4ui/xfce-dialogs.c:203
+#: ../libxfce4ui/xfce-dialogs.c:221
 msgid ""
-"You will be redirected to the documentation website where the help pages are "
-"maintained and translated."
-msgstr ""
-"Veți fi redirectat către site-ul cu documentație, unde paginile de ajutor "
-"sunt întreținute și traduse."
+"You will be redirected to the documentation website where the help pages are"
+" maintained and translated."
+msgstr "Veți fi redirectat către site-ul cu documentație, unde paginile de ajutor sunt întreținute și traduse."
 
-#: ../libxfce4ui/xfce-dialogs.c:207
+#: ../libxfce4ui/xfce-dialogs.c:225
 msgid "_Read Online"
 msgstr "_Deschide online"
 
-#: ../libxfce4ui/xfce-dialogs.c:219
+#: ../libxfce4ui/xfce-dialogs.c:237
 msgid "_Always go directly to the online documentation"
 msgstr "Deschide întotdeauna documentația _online"
 
-#: ../libxfce4ui/xfce-dialogs.c:263
+#: ../libxfce4ui/xfce-dialogs.c:281
 msgid "Information"
 msgstr "Detalii"
 
-#: ../libxfce4ui/xfce-dialogs.c:296
+#: ../libxfce4ui/xfce-dialogs.c:314
 msgid "Warning"
 msgstr "Avertizare"
 
-#: ../libxfce4ui/xfce-dialogs.c:330
+#: ../libxfce4ui/xfce-dialogs.c:348
 msgid "Error"
 msgstr "Eroare"
 
-#: ../libxfce4ui/xfce-dialogs.c:381
+#: ../libxfce4ui/xfce-dialogs.c:399
 msgid "Question"
 msgstr "Întrebare"
 
@@ -104,18 +98,15 @@ msgstr "Managerul de sesiune nu a returnat un ID valid de client"
 #: ../libxfce4ui/xfce-spawn.c:406
 #, c-format
 msgid ""
-"Working directory \"%s\" does not exist. It won't be used when spawning \"%s"
-"\"."
-msgstr ""
-"Directorul curent „%s” nu mai există. Nu va fi utilizat la crearea „%s”."
+"Working directory \"%s\" does not exist. It won't be used when spawning "
+"\"%s\"."
+msgstr "Directorul curent „%s” nu mai există. Nu va fi utilizat la crearea „%s”."
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:52
 msgid ""
-"This shortcut is already being used for another window manager action. Which "
-"action do you want to use?"
-msgstr ""
-"Această combinație de taste este deja folosită pentru o altă acțiune a "
-"managerului de ferestre. Ce acțiune doriți să îi fie asociată?"
+"This shortcut is already being used for another window manager action. Which"
+" action do you want to use?"
+msgstr "Această combinație de taste este deja folosită pentru o altă acțiune a managerului de ferestre. Ce acțiune doriți să îi fie asociată?"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:53
 #: ../libxfce4kbd-private/xfce-shortcuts.c:56
@@ -135,9 +126,7 @@ msgstr "Păstrează-o pe cealaltă"
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr ""
-"Această combinație de taste este deja folosită pentru comanda „%s”. Ce "
-"acțiune doriți să îi fie asociată?"
+msgstr "Această combinație de taste este deja folosită pentru comanda „%s”. Ce acțiune doriți să îi fie asociată?"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #: ../libxfce4kbd-private/xfce-shortcuts.c:59
@@ -147,11 +136,9 @@ msgstr "Păstrează „%s”"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:61
 msgid ""
-"This shortcut is already being used by a window manager action. Which action "
-"do you want to use?"
-msgstr ""
-"Această combinație de taste este deja folosită pentru o acțiune a "
-"managerului de ferestre. Ce acțiune doriți să îi fie asociată?"
+"This shortcut is already being used by a window manager action. Which action"
+" do you want to use?"
+msgstr "Această combinație de taste este deja folosită pentru o acțiune a managerului de ferestre. Ce acțiune doriți să îi fie asociată?"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:62
 msgid "Keep the window manager action"
@@ -196,12 +183,12 @@ msgid "Could not grab the keyboard."
 msgstr "Nu s-a putut intercepta tastatura."
 
 #: ../glade/libxfce4ui.xml.in.h:1
-msgid "Subtitle"
-msgstr "Subtitlu"
-
-#: ../glade/libxfce4ui.xml.in.h:2
 msgid "Titled Dialog"
 msgstr "Fereastră cu titlu"
+
+#: ../glade/libxfce4ui.xml.in.h:2
+msgid "Subtitle"
+msgstr "Subtitlu"
 
 #: ../glade/libxfce4ui.xml.in.h:3
 msgid "Xfce 4 Widgets"
@@ -225,11 +212,9 @@ msgstr "Panoul"
 
 #: ../xfce4-about/main.c:75
 msgid ""
-"Program launchers, window buttons, applications menu, workspace switcher and "
-"more."
-msgstr ""
-"Include meniul cu programe, butoanele pentru ferestre, lansatoarele de "
-"programe, comutatorul spațiilor de lucru și altele."
+"Program launchers, window buttons, applications menu, workspace switcher and"
+" more."
+msgstr "Include meniul cu programe, butoanele pentru ferestre, lansatoarele de programe, comutatorul spațiilor de lucru și altele."
 
 #: ../xfce4-about/main.c:79
 msgid "Desktop Manager"
@@ -239,10 +224,7 @@ msgstr "Managerul desktopului"
 msgid ""
 "Sets the background color or image with optional application menu or icons "
 "for minimized applications or launchers, devices and folders."
-msgstr ""
-"Definește culoarea și imaginea fundalului, având opțiuni pentru un meniu de "
-"programe, iconițe pentru ferestrele minimizate și lansatoare, dosare ori "
-"dispozitive de sistem."
+msgstr "Definește culoarea și imaginea fundalului, având opțiuni pentru un meniu de programe, iconițe pentru ferestrele minimizate și lansatoare, dosare ori dispozitive de sistem."
 
 #: ../xfce4-about/main.c:84
 msgid "File Manager "
@@ -252,9 +234,7 @@ msgstr "Managerul de fișiere"
 msgid ""
 "A modern file manager for the Unix/Linux desktop, aiming to be easy-to-use "
 "and fast."
-msgstr ""
-"Un manager de fișiere modern pentru desktopurile Unix/Linux ce încearcă să "
-"fie rapid și ușor de utilizat."
+msgstr "Un manager de fișiere modern pentru desktopurile Unix/Linux ce încearcă să fie rapid și ușor de utilizat."
 
 #: ../xfce4-about/main.c:89
 msgid "Session Manager"
@@ -264,9 +244,7 @@ msgstr "Managerul de sesiune"
 msgid ""
 "Restores your session on startup and allows you to shutdown the computer "
 "from Xfce."
-msgstr ""
-"Vă restaurează sesiunea la autentificare și vă permite să închideți "
-"calculatorul din Xfce."
+msgstr "Vă restaurează sesiunea la autentificare și vă permite să închideți calculatorul din Xfce."
 
 #: ../xfce4-about/main.c:94
 msgid "Setting System"
@@ -276,10 +254,7 @@ msgstr "Sistemul de configurare"
 msgid ""
 "Configuration system to control various aspects of the desktop like "
 "appearance, display, keyboard and mouse settings."
-msgstr ""
-"Un sistem de configurare pentru controlul diferitelor opțiuni ale "
-"desktopului precum aspectul, monitorul ori opțiunile pentru tastatură și "
-"maus."
+msgstr "Un sistem de configurare pentru controlul diferitelor opțiuni ale desktopului precum aspectul, monitorul ori opțiunile pentru tastatură și maus."
 
 #: ../xfce4-about/main.c:99
 msgid "Application Finder"
@@ -289,9 +264,7 @@ msgstr "Unealta pentru pornirea de programe"
 msgid ""
 "Shows the applications installed on your system in categories, so you can "
 "quickly find and launch them."
-msgstr ""
-"Arată pe categorii programele instalate în sistem astfel încât să le găsiți "
-"cu ușurință pentru a le porni."
+msgstr "Arată pe categorii programele instalate în sistem astfel încât să le găsiți cu ușurință pentru a le porni."
 
 #: ../xfce4-about/main.c:104
 msgid "Settings Daemon"
@@ -305,31 +278,22 @@ msgstr "Un sistem de stocare a configurărilor ce utilizează D-Bus."
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured "
 "desktop environment. The following programs are part of the Xfce core:"
-msgstr ""
-"Xfce este o colecție de programe ce împreună oferă un mediu desktop complet "
-"funcțional. Următoarele programe sunt parte din nucleul Xfce:"
+msgstr "Xfce este o colecție de programe ce împreună oferă un mediu desktop complet funcțional. Următoarele programe sunt parte din nucleul Xfce:"
 
 #: ../xfce4-about/main.c:136
 msgid ""
 "Xfce is also a development platform providing several libraries, that help "
 "programmers create applications that fit in well with the desktop "
 "environment."
-msgstr ""
-"Xfce este de asemenea o platformă de dezvoltare ce oferă câteva biblioteci "
-"ce facilitează programatorilor crearea de programe integrate în mediul "
-"desktop."
+msgstr "Xfce este de asemenea o platformă de dezvoltare ce oferă câteva biblioteci ce facilitează programatorilor crearea de programe integrate în mediul desktop."
 
 #: ../xfce4-about/main.c:142
 msgid ""
-"Xfce components are licensed under free or open source licences; GPL or BSDL "
-"for applications and LGPL or BSDL for libraries. Look at the documentation, "
-"the source code or the Xfce website (http://www.xfce.org) for more "
+"Xfce components are licensed under free or open source licences; GPL or BSDL"
+" for applications and LGPL or BSDL for libraries. Look at the documentation,"
+" the source code or the Xfce website (http://www.xfce.org) for more "
 "information."
-msgstr ""
-"Componentele Xfce sunt licențiate în termenii unor licențe libere ori "
-"open-source: GPL ori BSDL pentru programe și LGPL ori BSDL pentru biblioteci."
-" Consultați documentația, codul sursă sau site-ul Xfce (http://www.xfce.org) "
-"pentru mai multe detalii."
+msgstr "Componentele Xfce sunt licențiate în termenii unor licențe libere ori open-source: GPL ori BSDL pentru programe și LGPL ori BSDL pentru biblioteci. Consultați documentația, codul sursă sau site-ul Xfce (http://www.xfce.org) pentru mai multe detalii."
 
 #: ../xfce4-about/main.c:149
 msgid "Thank you for your interest in Xfce."
@@ -343,9 +307,7 @@ msgstr "Echipa de dezvoltare Xfce"
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <http://bugzilla.xfce.org> ."
-msgstr ""
-"Dacă știți pe cineva care lipsește din această listă, nu ezitați să "
-"raportați eroarea la <http://bugzilla.xfce.org> ."
+msgstr "Dacă știți pe cineva care lipsește din această listă, nu ezitați să raportați eroarea la <http://bugzilla.xfce.org> ."
 
 #: ../xfce4-about/main.c:266
 msgid "Thanks to all who helped making this software available!"
@@ -355,10 +317,7 @@ msgstr "Mulțumim tuturor celor ce au facilitat crearea acestui software!"
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
-msgstr ""
-"Drepturile de autor pentru Xfce 4 îi aparțin lui Olivier Fourdan "
-"(fourdan@xfce.org). Drepturile de autor pentru diferitele componente aparțin "
-"autorilor lor."
+msgstr "Drepturile de autor pentru Xfce 4 îi aparțin lui Olivier Fourdan (fourdan@xfce.org). Drepturile de autor pentru diferitele componente aparțin autorilor lor."
 
 #: ../xfce4-about/main.c:288
 msgid ""
@@ -366,24 +325,16 @@ msgid ""
 "distributed under the terms of the GNU Library General Public License as "
 "published by the Free Software Foundation; either version 2 of the License, "
 "or (at your option) any later version."
-msgstr ""
-"Pachetele libxfce4ui, libxfcegui4, libxfce4util, thunar-vfs și exo sunt "
-"distribuite în termenii licenței GNU Library General Public License "
-"publicată de Free Software Foundation, versiunea 2 sau (la alegere) orice "
-"versiune mai nouă."
+msgstr "Pachetele libxfce4ui, libxfcegui4, libxfce4util, thunar-vfs și exo sunt distribuite în termenii licenței GNU Library General Public License publicată de Free Software Foundation, versiunea 2 sau (la alegere) orice versiune mai nouă."
 
 #: ../xfce4-about/main.c:295
 msgid ""
-"The packages thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-"
-"settings, xfce-utils, xfconf, xfdesktop and xfwm4 are distributed under the "
-"terms of the GNU General Public License as published by the Free Software "
-"Foundation; either version 2 of the License, or (at your option) any later "
-"version."
-msgstr ""
-"Pachetele thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
-"xfce4-settings, xfce-utils, xfconf, xfdesktop și xfwm4 sunt distribuite în "
-"termenii licenței GNU General Public License publicată de Free Software "
-"Foundation, versiunea 2 sau (la alegere) orice versiune mai nouă."
+"The packages thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
+"xfce4-settings, xfce-utils, xfconf, xfdesktop and xfwm4 are distributed "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version."
+msgstr "Pachetele thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfce-utils, xfconf, xfdesktop și xfwm4 sunt distribuite în termenii licenței GNU General Public License publicată de Free Software Foundation, versiunea 2 sau (la alegere) orice versiune mai nouă."
 
 #: ../xfce4-about/main.c:442
 #, c-format
@@ -429,31 +380,31 @@ msgstr "Versiunea %s"
 #. { N_("Project Lead"),
 #. xfce_contributors_lead
 #. },
-#: ../xfce4-about/contributors.h:127
+#: ../xfce4-about/contributors.h:121
 msgid "Core developers"
 msgstr "Programatori principali"
 
-#: ../xfce4-about/contributors.h:130
+#: ../xfce4-about/contributors.h:124
 msgid "Active contributors"
 msgstr "Contribuitori activi"
 
-#: ../xfce4-about/contributors.h:133
+#: ../xfce4-about/contributors.h:127
 msgid "Servers maintained by"
 msgstr "Administratori de servere"
 
-#: ../xfce4-about/contributors.h:136
+#: ../xfce4-about/contributors.h:130
 msgid "Goodies supervision"
 msgstr "Supervizori ai proiectului Goodies"
 
-#: ../xfce4-about/contributors.h:139
+#: ../xfce4-about/contributors.h:133
 msgid "Translations supervision"
 msgstr "Supervizori ai localizării"
 
-#: ../xfce4-about/contributors.h:142
+#: ../xfce4-about/contributors.h:136
 msgid "Translators"
 msgstr "Traducători"
 
-#: ../xfce4-about/contributors.h:145
+#: ../xfce4-about/contributors.h:139
 msgid "Previous contributors"
 msgstr "Contribuitori inactivi"
 
@@ -466,32 +417,32 @@ msgid "Information about the Xfce Desktop Environment"
 msgstr "Detalii despre mediul desktop Xfce"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:1
-msgid "About"
-msgstr "Despre"
-
-#: ../xfce4-about/xfce4-about-dialog.glade.h:2
 msgid "About the Xfce Desktop Environment"
 msgstr "Despre mediul desktop Xfce"
 
+#: ../xfce4-about/xfce4-about-dialog.glade.h:2
+msgid "About"
+msgstr "Despre"
+
 #: ../xfce4-about/xfce4-about-dialog.glade.h:3
-msgid "BSD"
-msgstr "BSD"
-
-#: ../xfce4-about/xfce4-about-dialog.glade.h:4
-msgid "Copyright"
-msgstr "Drepturi de autor"
-
-#: ../xfce4-about/xfce4-about-dialog.glade.h:5
 msgid "Credits"
 msgstr "Autori"
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:6
+#: ../xfce4-about/xfce4-about-dialog.glade.h:4
 msgid "GPL"
 msgstr "GPL"
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:7
+#: ../xfce4-about/xfce4-about-dialog.glade.h:5
 msgid "LGPL"
 msgstr "LGPL"
+
+#: ../xfce4-about/xfce4-about-dialog.glade.h:6
+msgid "BSD"
+msgstr "BSD"
+
+#: ../xfce4-about/xfce4-about-dialog.glade.h:7
+msgid "Copyright"
+msgstr "Drepturi de autor"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:8
 msgid "License"
