@@ -1,65 +1,66 @@
-# Uyghur translation for libxfce4ui.
+# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Gheyret Kenji <gheyret@gmail.com>, YEAR.
-#
+# 
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: libxfce4ui\n"
+"Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-11 22:24+0000\n"
-"PO-Revision-Date: 2011-11-09 16:10+0900\n"
-"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
-"Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
-"Language: \n"
+"POT-Creation-Date: 2013-07-02 22:59+0200\n"
+"PO-Revision-Date: 2017-09-19 18:02+0000\n"
+"Last-Translator: Gheyret Kenji\n"
+"Language-Team: Uighur (http://www.transifex.com/xfce/libxfce4ui/language/ug/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ug\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../libxfce4ui/xfce-dialogs.c:80
+#: ../libxfce4ui/xfce-dialogs.c:98
 msgid "Failed to open web browser for online documentation"
 msgstr "توردىكى پۈتۈكلەرنى كۆرۈش ئۈچۈن توركۆرگۈنى ئېچىشتا خاتالىق كۆرۈلدى"
 
-#: ../libxfce4ui/xfce-dialogs.c:195
+#: ../libxfce4ui/xfce-dialogs.c:213
 #, c-format
 msgid "Do you want to read the %s manual online?"
 msgstr "قوللانما %s نى توردا ئوقۇمسىز؟"
 
-#: ../libxfce4ui/xfce-dialogs.c:197
+#: ../libxfce4ui/xfce-dialogs.c:215
 msgid "Do you want to read the manual online?"
 msgstr "قوللانمىنى توردا ئوقۇمسىز؟"
 
-#: ../libxfce4ui/xfce-dialogs.c:200
+#: ../libxfce4ui/xfce-dialogs.c:218
 msgid "Online Documentation"
 msgstr "توردىكى پۈتۈك"
 
-#: ../libxfce4ui/xfce-dialogs.c:203
+#: ../libxfce4ui/xfce-dialogs.c:221
 msgid ""
-"You will be redirected to the documentation website where the help pages are "
-"maintained and translated."
+"You will be redirected to the documentation website where the help pages are"
+" maintained and translated."
 msgstr "سىز ياردەم بەتلىرى ۋە تەرجىمىلىرى بار بەتكە بىۋاسىتە بارىسىز."
 
-#: ../libxfce4ui/xfce-dialogs.c:207
+#: ../libxfce4ui/xfce-dialogs.c:225
 msgid "_Read Online"
 msgstr "توردا ئوقۇ(_R)"
 
-#: ../libxfce4ui/xfce-dialogs.c:219
+#: ../libxfce4ui/xfce-dialogs.c:237
 msgid "_Always go directly to the online documentation"
 msgstr "ھەمىشە توردىكى پۈتۈككە بىۋاسىتە يۆتكەل(_A)"
 
-#: ../libxfce4ui/xfce-dialogs.c:263
+#: ../libxfce4ui/xfce-dialogs.c:281
 msgid "Information"
 msgstr "ئۇچۇر"
 
-#: ../libxfce4ui/xfce-dialogs.c:296
+#: ../libxfce4ui/xfce-dialogs.c:314
 msgid "Warning"
 msgstr "دىققەت"
 
-#: ../libxfce4ui/xfce-dialogs.c:330
+#: ../libxfce4ui/xfce-dialogs.c:348
 msgid "Error"
 msgstr "خاتالىق"
 
-#: ../libxfce4ui/xfce-dialogs.c:381
+#: ../libxfce4ui/xfce-dialogs.c:399
 msgid "Question"
 msgstr "سوئال"
 
@@ -97,14 +98,14 @@ msgstr "ئەڭگىمە باشقۇرغۇ ئىناۋەتلىك خېرىدار كى
 #: ../libxfce4ui/xfce-spawn.c:406
 #, c-format
 msgid ""
-"Working directory \"%s\" does not exist. It won't be used when spawning \"%s"
-"\"."
+"Working directory \"%s\" does not exist. It won't be used when spawning "
+"\"%s\"."
 msgstr "خىزمەت مۇندەرىجىسى «%s» يوق. «%s» نى ھاسىل قىلغاندا ئىشلىتىلمەيدۇ."
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:52
 msgid ""
-"This shortcut is already being used for another window manager action. Which "
-"action do you want to use?"
+"This shortcut is already being used for another window manager action. Which"
+" action do you want to use?"
 msgstr "مەزكۇر تېزلەتمە باشقا كۆزنەك باشقۇرغۇدا ئىشلىتىلىۋاتىدۇ. قايسىنى ئىشلىتىسىز؟"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:53
@@ -135,8 +136,8 @@ msgstr "‹%s› نى ئىشلەت"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:61
 msgid ""
-"This shortcut is already being used by a window manager action. Which action "
-"do you want to use?"
+"This shortcut is already being used by a window manager action. Which action"
+" do you want to use?"
 msgstr "مەزكۇر تېزلەتمە باشقا كۆزنەك باشقۇرغۇدا ئىشلىتىلىۋاتىدۇ. قايسىنى ئىشلىتىسىز؟"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:62
@@ -182,12 +183,12 @@ msgid "Could not grab the keyboard."
 msgstr "ھەرپتاختىنى تۇتقىلى بولمىدى."
 
 #: ../glade/libxfce4ui.xml.in.h:1
-msgid "Subtitle"
-msgstr "كىچىك ماۋزۇ"
-
-#: ../glade/libxfce4ui.xml.in.h:2
 msgid "Titled Dialog"
 msgstr "ماۋزۇلۇق سۆزلەشكۈ"
+
+#: ../glade/libxfce4ui.xml.in.h:2
+msgid "Subtitle"
+msgstr "كىچىك ماۋزۇ"
 
 #: ../glade/libxfce4ui.xml.in.h:3
 msgid "Xfce 4 Widgets"
@@ -211,8 +212,8 @@ msgstr "كۆزنەك"
 
 #: ../xfce4-about/main.c:75
 msgid ""
-"Program launchers, window buttons, applications menu, workspace switcher and "
-"more."
+"Program launchers, window buttons, applications menu, workspace switcher and"
+" more."
 msgstr "ئىجراچىلار، كۆزنەك توپچىلىرى، پروگرامما تىزىملىكى، خىزمەت رايونى ئالماشتۇرغۇ ۋە باشقىلار."
 
 #: ../xfce4-about/main.c:79
@@ -288,9 +289,9 @@ msgstr "مەزكۇر سىستېما ئۈستەلئۈستى سىستېمىسى ب
 
 #: ../xfce4-about/main.c:142
 msgid ""
-"Xfce components are licensed under free or open source licences; GPL or BSDL "
-"for applications and LGPL or BSDL for libraries. Look at the documentation, "
-"the source code or the Xfce website (http://www.xfce.org) for more "
+"Xfce components are licensed under free or open source licences; GPL or BSDL"
+" for applications and LGPL or BSDL for libraries. Look at the documentation,"
+" the source code or the Xfce website (http://www.xfce.org) for more "
 "information."
 msgstr "مەزكۇر سىستېمىنىڭ بارلىق بۆلەكلىرى ئەركىن ياكى ئوچۇق مەنبە ئىجازەتنامىلىرى بىلەن تارقىتىلغان بولۇپ، پروگراممىلار GPL ياكى BSDL ئىجازەتنامىسى بويىچە، ئامبارلار بولسا LGPL ياكى BSDL ئىجازەتنامىسى بويىچە تارقىتىلغان. تەپسىلىي ئۇچۇرلارنى ۋە قوللانمىلارنى Xfce تورتۇراسى (http://www.xfce.org) دىن كۆرۈڭ."
 
@@ -328,11 +329,11 @@ msgstr "بۇ بوغچىلار(ibxfce4ui، libxfcegui4، libxfce4util، thunar-vf
 
 #: ../xfce4-about/main.c:295
 msgid ""
-"The packages thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-"
-"settings, xfce-utils, xfconf, xfdesktop and xfwm4 are distributed under the "
-"terms of the GNU General Public License as published by the Free Software "
-"Foundation; either version 2 of the License, or (at your option) any later "
-"version."
+"The packages thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
+"xfce4-settings, xfce-utils, xfconf, xfdesktop and xfwm4 are distributed "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version."
 msgstr "بۇ بوغچىلار(thunar، xfce4-appfinder، xfce4-panel، xfce4-session، xfce4-settings، xfce-utils، xfconf، xfdesktop ۋە xfwm4) ئەركىن يۇمشاق دېتال فوندىنىڭ GNU General Public License دېگەن ئىجازەتنامىسىنىڭ ئىككىنچى نەشرىنىڭ ياكى كېيىنكى نەشرلىرىنىڭ ماددىلىرى  بويىچە تارقىتىلدى."
 
 #: ../xfce4-about/main.c:442
@@ -416,32 +417,32 @@ msgid "Information about the Xfce Desktop Environment"
 msgstr "مەزكۇر Xfce ئۈستەلئۈستى مۇھىتى ھەققىدە ئۇچۇر"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:1
-msgid "About"
-msgstr "ھەققىدە"
-
-#: ../xfce4-about/xfce4-about-dialog.glade.h:2
 msgid "About the Xfce Desktop Environment"
 msgstr "مەزكۇر ئۈستەلئۈستى مۇھىتى(Xfce) ھەققىدە"
 
+#: ../xfce4-about/xfce4-about-dialog.glade.h:2
+msgid "About"
+msgstr "ھەققىدە"
+
 #: ../xfce4-about/xfce4-about-dialog.glade.h:3
-msgid "BSD"
-msgstr "BSD"
-
-#: ../xfce4-about/xfce4-about-dialog.glade.h:4
-msgid "Copyright"
-msgstr "نەشر ھوقۇقى"
-
-#: ../xfce4-about/xfce4-about-dialog.glade.h:5
 msgid "Credits"
 msgstr "تەشەككۈر"
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:6
+#: ../xfce4-about/xfce4-about-dialog.glade.h:4
 msgid "GPL"
 msgstr "GPL"
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:7
+#: ../xfce4-about/xfce4-about-dialog.glade.h:5
 msgid "LGPL"
 msgstr "LGPL"
+
+#: ../xfce4-about/xfce4-about-dialog.glade.h:6
+msgid "BSD"
+msgstr "BSD"
+
+#: ../xfce4-about/xfce4-about-dialog.glade.h:7
+msgid "Copyright"
+msgstr "نەشر ھوقۇقى"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:8
 msgid "License"
