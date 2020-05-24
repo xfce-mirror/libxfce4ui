@@ -360,7 +360,7 @@ xfce_shortcuts_grabber_grab (XfceShortcutsGrabber *grabber,
         g_array_remove_index(key->keycodes, i);
     }
 
-    g_free (keys);
+  g_free (keys);
 }
 
 
