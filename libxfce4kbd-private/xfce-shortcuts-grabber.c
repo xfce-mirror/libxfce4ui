@@ -74,7 +74,7 @@ struct _XfceKey
 {
   guint keyval;
   guint modifiers;
-  guint keycodes[8];
+  GArray *keycodes;
 };
 
 
@@ -270,21 +270,12 @@ xfce_shortcuts_grabber_grab (XfceShortcutsGrabber *grabber,
     }
 
   /* Get all keys generating keyval */
-  if (grab && !gdk_keymap_get_entries_for_keyval (keymap,key->keyval,
-                                                  &keys, &n_keys))
+  if (!gdk_keymap_get_entries_for_keyval (keymap,key->keyval,
+                                          &keys, &n_keys))
     {
       TRACE ("Got no keys for keyval");
       return;
     }
-
-  if (grab)
-    {
-      if (n_keys > G_N_ELEMENTS(key->keycodes))
-        TRACE ("Got %d keys for keyval but can remember only %d", n_keys,
-               (int)G_N_ELEMENTS(key->keycodes));
-    }
-  else
-    n_keys = G_N_ELEMENTS(key->keycodes);
 
   if (n_keys == 0)
     {
@@ -301,8 +292,7 @@ xfce_shortcuts_grabber_grab (XfceShortcutsGrabber *grabber,
     {
       /* Grab all hardware keys generating keyval */
 
-      if (grab)
-        TRACE ("Keycode: %d", keys[i].keycode);
+      TRACE ("Keycode: %d", keys[i].keycode);
 
       for (j = 0; j < screens; j++)
         {
@@ -344,10 +334,10 @@ xfce_shortcuts_grabber_grab (XfceShortcutsGrabber *grabber,
                           GrabModeAsync,
                           GrabModeAsync);
               else {
-                if (key->keycodes[i] == -1)
+                if (g_array_index (key->keycodes, guint, i) == -1)
                   break;
                 XUngrabKey (GDK_DISPLAY_XDISPLAY (display),
-                            key->keycodes[i],
+                            g_array_index (key->keycodes, guint, i),
                             modifiers | mod_masks [k],
                             root_window);
               }
@@ -364,18 +354,13 @@ xfce_shortcuts_grabber_grab (XfceShortcutsGrabber *grabber,
             }
         }
       /* Remember the old keycode, as we need it to ungrab. */
-      if (grab && i < G_N_ELEMENTS (key->keycodes))
-        key->keycodes[i] = keys[i].keycode;
-      else if (!grab)
-        key->keycodes[i] = -1;
+      if (grab)
+        g_array_append_val(key->keycodes, keys[i].keycode);
+      else
+        g_array_remove_index(key->keycodes, i);
     }
 
-  if (grab)
-    {
-      g_free (keys);
-      for (; i < G_N_ELEMENTS (key->keycodes); i++)
-        key->keycodes[i] = -1;
-    }
+    g_free (keys);
 }
 
 
@@ -523,16 +508,13 @@ void
 xfce_shortcuts_grabber_add (XfceShortcutsGrabber *grabber,
                             const gchar          *shortcut)
 {
-  gint    i;
   XfceKey *key;
 
   g_return_if_fail (XFCE_IS_SHORTCUTS_GRABBER (grabber));
   g_return_if_fail (shortcut != NULL);
 
   key = g_new0 (XfceKey, 1);
-
-  for (i = 0; i < G_N_ELEMENTS (key->keycodes); i++)
-    key->keycodes[i] = -1;
+  key->keycodes = g_array_new (FALSE, TRUE, sizeof (guint));
 
   gtk_accelerator_parse (shortcut, &key->keyval, &key->modifiers);
 
@@ -542,7 +524,10 @@ xfce_shortcuts_grabber_add (XfceShortcutsGrabber *grabber,
       g_hash_table_insert (grabber->priv->keys, g_strdup (shortcut), key);
     }
   else
-    g_free (key);
+    {
+      g_array_free (key->keycodes, TRUE);
+      g_free (key);
+    }
 }
 
 
