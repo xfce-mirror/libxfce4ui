@@ -362,9 +362,10 @@ xfce_shortcuts_grabber_grab (XfceShortcutsGrabber *grabber,
     }
 
   /* Cleanup elements containing UINT_MAX from the key->keycodes array */
-  for (i = 0; i < key->keycodes->len; i ++)
+  for (i = key->keycodes->len - 1; i >= 0; i --)
     {
-      g_array_remove_index(key->keycodes, i);
+      if (g_array_index(key->keycodes, guint, i) == UINT_MAX)
+        g_array_remove_index_fast(key->keycodes, i);
     }
 
   g_free (keys);
