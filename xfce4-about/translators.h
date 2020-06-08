@@ -283,7 +283,7 @@ static const TranslatorInfo xfce_translators_it[] =
 	{ "Cristian Marchi","cri.penta@gmail.com", FALSE },
 	{ "Davide Truffa","davide.truffa@gmail.com", FALSE },
 	{ "Edoardo Maria Elidoro","edoardo.elidoro@gmail.com", FALSE },
-	{ "Emanuele Petriglia","inbox@emanuelepetriglia.me", FALSE },
+	{ "Emanuele Petriglia","inbox@emanuelepetriglia.com", TRUE },
 	{ "Enrico","allin@infinito.it", FALSE },
 	{ "Enrico B.","enricobe@hotmail.com", FALSE },
 	{ "Francesco Galizzi","f.galizzi92@gmail.com", FALSE },
