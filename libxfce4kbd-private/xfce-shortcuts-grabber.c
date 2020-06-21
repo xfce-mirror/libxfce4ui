@@ -365,7 +365,7 @@ xfce_shortcuts_grabber_grab (XfceShortcutsGrabber *grabber,
   for (i = key->keycodes->len - 1; i >= 0; i --)
     {
       if (g_array_index (key->keycodes, guint, i) == UINT_MAX)
-        g_array_remove_index_fast(key->keycodes, i);
+        g_array_remove_index_fast (key->keycodes, i);
     }
 
   g_free (keys);
