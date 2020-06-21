@@ -358,7 +358,7 @@ xfce_shortcuts_grabber_grab (XfceShortcutsGrabber *grabber,
       if (grab)
         g_array_append_val (key->keycodes, keys[i].keycode);
       else
-        g_array_index(key->keycodes, guint, i) = UINT_MAX;
+        g_array_index (key->keycodes, guint, i) = UINT_MAX;
     }
 
   /* Cleanup elements containing UINT_MAX from the key->keycodes array */
