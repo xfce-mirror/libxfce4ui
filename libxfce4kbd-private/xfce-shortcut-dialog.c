@@ -203,6 +203,7 @@ xfce_shortcut_dialog_create_contents (XfceShortcutDialog *dialog,
   GtkWidget   *label;
   const gchar *action_type;
   const gchar *title;
+  const gchar *icon_name;
   const gchar *explanation_label;
   const gchar *text;
   const gchar *format;
@@ -214,6 +215,7 @@ xfce_shortcut_dialog_create_contents (XfceShortcutDialog *dialog,
       /* TRANSLATORS: this string will be used to create an explanation for
        * the user in a following string */
       action_type = _("action");
+      icon_name = "org.xfce.xfwm4";
     }
   else if (g_utf8_collate (provider, "commands") == 0)
     {
@@ -221,6 +223,7 @@ xfce_shortcut_dialog_create_contents (XfceShortcutDialog *dialog,
       /* TRANSLATORS: this string will be used to create an explanation for
        * the user in a following string */
       action_type = _("command");
+      icon_name = "org.xfce.settings.keyboard";
     }
   else
     {
@@ -228,11 +231,12 @@ xfce_shortcut_dialog_create_contents (XfceShortcutDialog *dialog,
       /* TRANSLATORS: this string will be used to create an explanation for
        * the user in a following string */
       action_type = _("action");
+      icon_name = "input-keyboard";
     }
 
   /* Set dialog title */
   gtk_window_set_title (GTK_WINDOW (dialog), title);
-  gtk_window_set_icon_name (GTK_WINDOW (dialog), "input-keyboard");
+  gtk_window_set_icon_name (GTK_WINDOW (dialog), icon_name);
 
   xfce_titled_dialog_create_action_area (XFCE_TITLED_DIALOG (dialog));
 
@@ -422,7 +426,7 @@ xfce_shortcut_dialog_key_pressed (XfceShortcutDialog *dialog,
 
   g_free (label);
   g_free (escaped_label);
-  g_strfreev(keys);
+  g_strfreev (keys);
 
   return FALSE;
 }
