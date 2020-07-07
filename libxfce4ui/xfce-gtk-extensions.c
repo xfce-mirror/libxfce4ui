@@ -937,5 +937,29 @@ xfce_gtk_menu_item_set_accel_label (GtkMenuItem *menu_item,
 
 
 
+gboolean
+xfce_gtk_editable_can_cut (GtkEditable *editable)
+{
+  return gtk_editable_get_editable (editable) &&
+         xfce_gtk_editable_can_copy (editable);
+}
+
+
+
+gboolean
+xfce_gtk_editable_can_copy (GtkEditable *editable)
+{
+  return gtk_editable_get_selection_bounds (editable, NULL,NULL);
+}
+
+
+
+gboolean
+xfce_gtk_editable_can_paste (GtkEditable *editable)
+{
+  return gtk_editable_get_editable (editable);
+}
+
+
 #define __XFCE_GTK_EXTENSIONS_C__
 #include <libxfce4ui/libxfce4ui-aliasdef.c>
