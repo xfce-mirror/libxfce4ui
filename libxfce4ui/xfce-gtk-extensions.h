@@ -157,6 +157,10 @@ GIcon                    *xfce_gicon_from_name                            (const
 void                      xfce_gtk_menu_item_set_accel_label              (GtkMenuItem               *menu_item,
                                                                            const gchar               *accel_path);
 
+gboolean                  xfce_gtk_editable_can_cut                       (GtkEditable *editable);
+gboolean                  xfce_gtk_editable_can_copy                      (GtkEditable *editable);
+gboolean                  xfce_gtk_editable_can_paste                     (GtkEditable *editable);
+
 G_END_DECLS
 
 #endif /* !__XFCE_GTK_EXTENSIONS_H__ */
