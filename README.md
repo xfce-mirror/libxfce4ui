@@ -1,7 +1,7 @@
 [![License](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://gitlab.xfce.org/xfce/libxfce4ui/COPYING)
 
-libxfce4ui
-====================
+# libxfce4ui
+
 
 The libxfce4ui library is used to share commonly used Xfce widgets among the Xfce applications.
 
@@ -24,6 +24,7 @@ See [NEWS](https://gitlab.xfce.org/xfce/libxfce4ui/-/blob/master/NEWS) for detai
 [libxfce4ui archive](https://archive.xfce.org/src/xfce/libxfce4ui)
     or
 [libxfce4ui tags](https://gitlab.xfce.org/xfce/libxfce4ui/-/tags)
+
 ### Installation
 
 From source: 
