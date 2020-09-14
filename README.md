@@ -1,4 +1,4 @@
-[![License](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://gitlab.xfce.org/xfce/libxfce4ui/COPYING)
+[![License](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://gitlab.xfce.org/xfce/libxfce4ui/-/blob/master/COPYING)
 
 # libxfce4ui
 
@@ -9,7 +9,7 @@ The libxfce4ui library is used to share commonly used Xfce widgets among the Xfc
 
 ### Homepage
 
-[libxfce4ui documentation](https://docs.xfce.org/xfce/libxfce4ui/start)
+[Libxfce4ui documentation](https://docs.xfce.org/xfce/libxfce4ui/start)
 
 ### Changelog
 
@@ -17,13 +17,13 @@ See [NEWS](https://gitlab.xfce.org/xfce/libxfce4ui/-/blob/master/NEWS) for detai
 
 ### Source Code Repository
 
-[libxfce4ui source code](https://gitlab.xfce.org/xfce/libxfce4ui)
+[Libxfce4ui source code](https://gitlab.xfce.org/xfce/libxfce4ui)
 
-### Download A Release Tarball
+### Download a Release Tarball
 
-[libxfce4ui archive](https://archive.xfce.org/src/xfce/libxfce4ui)
+[Libxfce4ui archive](https://archive.xfce.org/src/xfce/libxfce4ui)
     or
-[libxfce4ui tags](https://gitlab.xfce.org/xfce/libxfce4ui/-/tags)
+[Libxfce4ui tags](https://gitlab.xfce.org/xfce/libxfce4ui/-/tags)
 
 ### Installation
 
