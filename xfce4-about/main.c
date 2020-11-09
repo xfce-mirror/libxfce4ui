@@ -166,12 +166,12 @@ xfce_about_about (GtkWidget *vbox)
         N_("Stores your settings in a D-Bus-based configuration system.")
       },
       { "garcon",
-        "org.xfce.garcon",
+        "",
         N_("A menu library"),
         N_("Implements a freedesktop.org compliant menu based on GLib and GIO.")
       },
       { "tumbler",
-        "org.xfce.tumbler",
+        "",
         N_("Thumbnails service"),
         N_("Implements the thumbnail management D-Bus specification.")
       }
