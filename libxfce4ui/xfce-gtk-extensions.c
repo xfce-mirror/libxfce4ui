@@ -829,10 +829,11 @@ xfce_widget_reparent (GtkWidget *widget,
  *
  * Since: 4.16
  **/
-const gchar *
+gchar *
 xfce_icon_name_from_desktop_id (const gchar *desktop_id)
 {
     const gchar *icon_file;
+    gchar* filename;
     gchar *resource;
     XfceRc *rcfile;
 
@@ -847,7 +848,21 @@ xfce_icon_name_from_desktop_id (const gchar *desktop_id)
         xfce_rc_set_group (rcfile, "Desktop Entry");
         icon_file = xfce_rc_read_entry (rcfile, "Icon", NULL);
         xfce_rc_close (rcfile);
-        return icon_file;
+
+        if (g_path_is_absolute (icon_file)) {
+            filename = g_path_get_basename (icon_file);
+        }
+        else if (g_str_has_prefix (icon_file, "file://")) {
+            filename = g_filename_from_uri (icon_file, NULL, NULL);
+        }
+        else {
+            filename = g_strdup (icon_file);
+        }
+
+        if (icon_file)
+            g_free (icon_file);
+
+        return filename;
     }
     else
         return NULL;
@@ -872,7 +887,7 @@ xfce_icon_name_from_desktop_id (const gchar *desktop_id)
 GIcon *
 xfce_gicon_from_name (const gchar *name)
 {
-    const gchar *icon_name;
+    gchar *icon_name;
     GIcon *gicon;
     GtkIconInfo *icon_info;
 
@@ -880,6 +895,7 @@ xfce_gicon_from_name (const gchar *name)
     icon_name = xfce_icon_name_from_desktop_id (name);
     if (icon_name) {
         gicon = g_themed_icon_new_with_default_fallbacks (icon_name);
+        g_free (icon_name);
     }
     else {
         gicon = g_themed_icon_new_with_default_fallbacks (name);
