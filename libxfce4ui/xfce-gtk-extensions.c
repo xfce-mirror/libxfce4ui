@@ -875,28 +875,26 @@ GIcon *
 xfce_gicon_from_name (const gchar *name)
 {
     gchar *icon_name;
-    GIcon *gicon;
+    GIcon *gicon = NULL;
     GtkIconInfo *icon_info;
+    GFile *path = NULL;
 
     /* Check if there is a desktop file of 'name' */
     icon_name = xfce_icon_name_from_desktop_id (name);
     if (icon_name) {
         if (g_path_is_absolute (icon_name)) {
-            GFile *path;
-
             path = g_file_new_for_path (icon_name);
-            gicon = g_file_icon_new (path);
-            g_object_unref (path);
         }
         else if (g_str_has_prefix (icon_name, "file://")) {
-            GFile *uri;
-
-            uri = g_file_new_for_uri (icon_name);
-            gicon = g_file_icon_new (path);
-            g_object_unref (path);
+            path = g_file_new_for_uri (icon_name);
         }
         else {
             gicon = g_themed_icon_new_with_default_fallbacks (icon_name);
+        }
+
+        if (path) {
+            gicon = g_file_icon_new (path);
+            g_object_unref (path);
         }
         g_free (icon_name);
     }
@@ -906,15 +904,17 @@ xfce_gicon_from_name (const gchar *name)
 
     /* As g_themed_icon_new_with_default_fallbacks always returns 'something'
        check if there's anything that matches in the icon theme */
-    icon_info = gtk_icon_theme_lookup_by_gicon (gtk_icon_theme_get_default (),
-                                                gicon,
-                                                GTK_ICON_SIZE_BUTTON,
-                                                GTK_ICON_LOOKUP_FORCE_REGULAR);
+    if (gicon) {
+        icon_info = gtk_icon_theme_lookup_by_gicon (gtk_icon_theme_get_default (),
+                                                    gicon,
+                                                    GTK_ICON_SIZE_BUTTON,
+                                                    GTK_ICON_LOOKUP_FORCE_REGULAR);
 
-    if (icon_info)
-        return gicon;
-    else
-        return NULL;
+        if (icon_info)
+            return gicon;
+    }
+
+    return NULL;
 }
 
 
