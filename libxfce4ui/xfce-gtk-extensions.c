@@ -847,7 +847,6 @@ xfce_icon_name_from_desktop_id (const gchar *desktop_id)
     if (rcfile && xfce_rc_has_group (rcfile, "Desktop Entry")) {
         xfce_rc_set_group (rcfile, "Desktop Entry");
         icon_file = xfce_rc_read_entry (rcfile, "Icon", NULL);
-        xfce_rc_close (rcfile);
 
         if (g_path_is_absolute (icon_file)) {
             filename = g_path_get_basename (icon_file);
@@ -861,6 +860,8 @@ xfce_icon_name_from_desktop_id (const gchar *desktop_id)
 
         if (icon_file)
             g_free (icon_file);
+
+        xfce_rc_close (rcfile);
 
         return filename;
     }
