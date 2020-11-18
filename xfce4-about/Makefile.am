@@ -30,12 +30,14 @@ xfce4_about_CFLAGS = \
 	$(LIBXFCE4UTIL_CFLAGS) \
 	$(GTK3_CFLAGS) \
 	$(GLIBTOP_CFLAGS) \
+	$(EPOXY_CFLAGS) \
 	$(PLATFORM_CFLAGS)
 
 xfce4_about_LDADD = \
 	$(top_builddir)/libxfce4ui/libxfce4ui-2.la \
 	$(LIBXFCE4UTIL_LIBS) \
 	$(GLIBTOP_LIBS) \
+	$(EPOXY_LIBS) \
 	$(GTK3_LIBS)
 
 xfce4_about_DEPENDENCIES = \
