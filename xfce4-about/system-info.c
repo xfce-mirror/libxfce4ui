@@ -227,11 +227,19 @@ get_cpu_info (const glibtop_sysinfo *info)
 
 
 
+/**
+ * @memory_size_mib: where to store the GPU memory size, or %NULL.
+ *                   Unit: mebibyte (MiB).
+ *                   The stored value is -1 if the size is unknown.
+ */
 char*
-get_gpu_info (void)
+get_gpu_info (gint *memory_size_mib)
 {
   gchar *result = NULL;
   Display *dpy;
+
+  if (memory_size_mib)
+    *memory_size_mib = -1;
 
 #ifdef HAVE_EPOXY
   dpy = XOpenDisplay (NULL);
@@ -298,6 +306,26 @@ get_gpu_info (void)
 
             result = g_strndup (renderer, length);
           }
+
+          if (memory_size_mib)
+          {
+            if (epoxy_has_glx_extension (dpy, 0, "GLX_MESA_query_renderer"))
+            {
+              unsigned mem_mib = 0;
+              if (glXQueryCurrentRendererIntegerMESA (GLX_RENDERER_VIDEO_MEMORY_MESA, &mem_mib) && mem_mib > 0)
+                *memory_size_mib = mem_mib;
+            }
+
+            if (*memory_size_mib == -1 && epoxy_has_gl_extension ("GL_NVX_gpu_memory_info"))
+            {
+              GLint mem_kib = 0;
+              glGetIntegerv (GL_GPU_MEMORY_INFO_DEDICATED_VIDMEM_NVX, &mem_kib);
+              if (mem_kib > 0)
+                *memory_size_mib = mem_kib >> 10;
+            }
+          }
+
+          /* Deallocate ctx immediately when calling glXDestroyContext() */
           glXMakeCurrent (dpy, None, NULL);
         }
         glXDestroyContext (dpy, ctx);
