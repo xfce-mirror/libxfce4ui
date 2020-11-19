@@ -71,10 +71,12 @@ xfce_about_system (GtkBuilder *builder)
   const glibtop_sysinfo *info;
   g_autofree char *device_text = NULL;
   g_autofree char *cpu_text = NULL;
+  g_autofree char *gpu_memory_text = NULL;
   g_autofree char *gpu_text = NULL;
   g_autofree char *memory_text = NULL;
   g_autofree char *os_name_text = NULL;
   g_autofree char *os_type_text = NULL;
+  gint gpu_memory = -1;
 
   label = gtk_builder_get_object (builder, "device");
   device_text = get_system_info (DEVICE_NAME);
@@ -110,9 +112,18 @@ xfce_about_system (GtkBuilder *builder)
   memory_text = g_format_size_full (mem.total, G_FORMAT_SIZE_IEC_UNITS);
   gtk_label_set_text (GTK_LABEL (label), memory_text ? memory_text : "");
 
-  gpu_text = get_gpu_info ();
+  gpu_text = get_gpu_info (&gpu_memory);
   label = gtk_builder_get_object (builder, "gpu");
   gtk_label_set_text (GTK_LABEL (label), gpu_text ? gpu_text : "");
+
+  label = gtk_builder_get_object (builder, "gpu-memory");
+  if (gpu_memory != -1)
+    {
+      gpu_memory_text = g_format_size_full ((guint64) gpu_memory << 20, G_FORMAT_SIZE_IEC_UNITS);
+      gtk_label_set_text (GTK_LABEL (label), gpu_memory_text ? gpu_memory_text : "");
+    }
+  else
+    gtk_label_set_text (GTK_LABEL (label), _("Unknown"));
 }
 #endif
 
