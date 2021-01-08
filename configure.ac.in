@@ -70,7 +70,7 @@ AC_SUBST(NO_UNDEFINED)
 dnl ********************************
 dnl *** Check for basic programs ***
 dnl ********************************
-AC_PROG_CC()
+AC_PROG_CC_C99
 LT_PATH_LD([])
 AM_PROG_CC_C_O()
 AC_PROG_INSTALL()
