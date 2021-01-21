@@ -284,6 +284,10 @@ xfce_filename_input_finalize (GObject *object)
 {
   XfceFilenameInput *filename_input = XFCE_FILENAME_INPUT (object);
 
+  /* cancel any pending timer */
+  if (filename_input->whitespace_warning_timer_id != 0)
+    g_source_remove (filename_input->whitespace_warning_timer_id);
+
   g_regex_unref (filename_input->whitespace_regex);
   g_regex_unref (filename_input->dir_sep_regex);
 
