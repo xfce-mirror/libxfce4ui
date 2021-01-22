@@ -274,7 +274,7 @@ xfce_sm_client_class_init(XfceSMClientClass *klass)
      * possible, and MUST NOT interact with the user as a part of saving
      * state.
      **/
-    signals[SIG_SAVE_STATE] = g_signal_new(I_("save-state"),
+    signals[SIG_SAVE_STATE] = g_signal_new(_I_("save-state"),
                                            G_TYPE_FROM_CLASS(klass),
                                            G_SIGNAL_RUN_LAST,
                                            G_STRUCT_OFFSET(XfceSMClientClass,
@@ -293,7 +293,7 @@ xfce_sm_client_class_init(XfceSMClientClass *klass)
      * positions.  Most applications should not need to connect to this
      * signal.
      **/
-    signals[SIG_SAVE_STATE_EXTENDED] = g_signal_new(I_("save-state-extended"),
+    signals[SIG_SAVE_STATE_EXTENDED] = g_signal_new(_I_("save-state-extended"),
                                                     G_TYPE_FROM_CLASS(klass),
                                                     G_SIGNAL_RUN_LAST,
                                                     G_STRUCT_OFFSET(XfceSMClientClass,
@@ -318,7 +318,7 @@ xfce_sm_client_class_init(XfceSMClientClass *klass)
      * return %TRUE from the handler.  If the application is satisfied
      * with possibly needing to quit soon, the handler should return %FALSE.
      **/
-    signals[SIG_QUIT_REQUESTED] = g_signal_new(I_("quit-requested"),
+    signals[SIG_QUIT_REQUESTED] = g_signal_new(_I_("quit-requested"),
                                                G_TYPE_FROM_CLASS(klass),
                                                G_SIGNAL_RUN_LAST,
                                                G_STRUCT_OFFSET(XfceSMClientClass,
@@ -340,7 +340,7 @@ xfce_sm_client_class_init(XfceSMClientClass *klass)
      * signal, #XfceSMClient will call <function>exit(3)</function> with
      * an exit code of zero on behalf of the application.
      **/
-    signals[SIG_QUIT] = g_signal_new(I_("quit"),
+    signals[SIG_QUIT] = g_signal_new(_I_("quit"),
                                      G_TYPE_FROM_CLASS(klass),
                                      G_SIGNAL_RUN_LAST,
                                      G_STRUCT_OFFSET(XfceSMClientClass,
@@ -356,7 +356,7 @@ xfce_sm_client_class_init(XfceSMClientClass *klass)
      * Informs the application that it will not need to quit.  In most cases,
      * quit-cancelled will be emitted a short time after quit-requested.
      **/
-    signals[SIG_QUIT_CANCELLED] = g_signal_new(I_("quit-cancelled"),
+    signals[SIG_QUIT_CANCELLED] = g_signal_new(_I_("quit-cancelled"),
                                                G_TYPE_FROM_CLASS(klass),
                                                G_SIGNAL_RUN_LAST,
                                                G_STRUCT_OFFSET(XfceSMClientClass,
