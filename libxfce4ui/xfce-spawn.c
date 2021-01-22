@@ -270,7 +270,7 @@ background_process_call (gpointer _unused)
 {
   /* 1 = leave current working directory unchanged (we already set this)
    * 0 = redirect /dev/{stdin, stdout, stderr} to /dev/null */
-  if (G_UNLIKELY (daemon (1, 0) == -1))
+  if (G_UNLIKELY (daemon (1, 1) == -1))
     {
       perror ("xfce_spawn: daemon() failed");
     }
