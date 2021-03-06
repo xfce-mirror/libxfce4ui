@@ -159,6 +159,10 @@ xfce_titled_dialog_init (XfceTitledDialog *titled_dialog)
   /* connect the private data */
   titled_dialog->priv = XFCE_TITLED_DIALOG_GET_PRIVATE (titled_dialog);
 
+  /* Set type-hint to normal to show min, max and close buttons. */
+  gtk_window_set_type_hint (GTK_WINDOW (titled_dialog), GDK_WINDOW_TYPE_HINT_NORMAL);
+  xfce_gtk_window_center_on_active_screen (GTK_WINDOW (titled_dialog));
+
   /* Get the headerbar of the dialog */
   titled_dialog->priv->headerbar = gtk_dialog_get_header_bar (GTK_DIALOG (titled_dialog));
   g_return_if_fail (GTK_IS_HEADER_BAR (titled_dialog->priv->headerbar));
@@ -427,6 +431,7 @@ xfce_titled_dialog_new_with_buttons (const gchar    *title,
                          "destroy-with-parent", ((flags & GTK_DIALOG_DESTROY_WITH_PARENT) != 0),
                          "modal", ((flags & GTK_DIALOG_MODAL) != 0),
                          "title", title,
+                         "type-hint", GDK_WINDOW_TYPE_HINT_NORMAL,
                          NULL);
 
   /* set the transient parent (if any) */
@@ -495,6 +500,7 @@ xfce_titled_dialog_new_with_mixed_buttons (const gchar    *title,
                          "destroy-with-parent", ((flags & GTK_DIALOG_DESTROY_WITH_PARENT) != 0),
                          "modal", ((flags & GTK_DIALOG_MODAL) != 0),
                          "title", title,
+                         "type-hint", GDK_WINDOW_TYPE_HINT_NORMAL,
                          NULL);
 
   /* set the transient parent (if any) */
