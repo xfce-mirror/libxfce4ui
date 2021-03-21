@@ -326,15 +326,16 @@ get_drm_cards (GList *gpus)
         {
           GUdevDevice *parent;
           const char *property;
+          char *cleanedup_property;
 
           parent = g_udev_device_get_parent (d);
 
           property = g_udev_device_get_property (parent, "ID_MODEL_FROM_DATABASE");
-          if (property)
+          if (property && (cleanedup_property = info_cleanup (property)) != NULL)
             {
               GPUInfo *const gpu = g_new0 (GPUInfo, 1);
 
-              gpu->name = info_cleanup (property);
+              gpu->name = cleanedup_property;
               g_strstrip (gpu->name);
 
               /* Example GPU names before cleanup:
@@ -439,23 +440,23 @@ get_gpu_info (guint *num_gpus)
 	if (glXMakeCurrent (dpy, win, ctx))
         {
           GPUInfo *gpu = g_new0 (GPUInfo, 1);
-          gchar *renderer;
+          gchar *renderer, *cleanedup_renderer;
 
           gpu->is_default = TRUE;
 
           renderer = g_strdup ((const gchar*) glGetString (GL_RENDERER));
-          if (renderer) {
-            gsize length = strlen (renderer);
-            gchar *renderer_lc = g_ascii_strdown (renderer, length);
-            gchar *s;
-            gboolean strip = true;
+          if (renderer && (cleanedup_renderer = info_cleanup (renderer)) != NULL)
+          {
+            gsize length;
+            gchar *renderer_lc;
+            gboolean strip = TRUE;
 
-            s = info_cleanup (renderer);
             g_free (renderer);
-            renderer = s;
+            renderer = cleanedup_renderer;
             length = strlen (renderer);
 
             /* Return full renderer string in the following cases: */
+            renderer_lc = g_ascii_strdown (renderer, length);
             strip = strip && !g_str_has_prefix (renderer_lc, "llvmpipe");
             strip = strip && !g_str_has_prefix (renderer_lc, "softpipe");
             strip = strip && !g_str_has_prefix (renderer_lc, "swr");
@@ -475,8 +476,8 @@ get_gpu_info (guint *num_gpus)
             }
 
             gpu->name = g_strndup (renderer, length);
-            g_free (renderer);
           }
+          g_free (renderer);
 
           if (epoxy_has_glx_extension (dpy, 0, "GLX_MESA_query_renderer"))
           {
