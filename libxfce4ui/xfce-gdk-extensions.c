@@ -54,7 +54,7 @@
  *
  * Return value: index of the @monitor
  **/
-gint
+static gint
 xfce_gdk_monitor_get_number(GdkMonitor *monitor)
 {
     GdkDisplay *display;
