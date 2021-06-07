@@ -46,6 +46,14 @@
 
 
 
+/**
+ * xfce_gdk_monitor_get_number:
+ * @monitor : a #GdkMonitor.
+ *
+ * Returns the index of the @monitor in its display.
+ *
+ * Return value: index of the @monitor
+ **/
 gint
 xfce_gdk_monitor_get_number(GdkMonitor *monitor)
 {
@@ -65,7 +73,6 @@ xfce_gdk_monitor_get_number(GdkMonitor *monitor)
 /**
  * xfce_gdk_screen_get_active:
  * @monitor_return : (out) (allow-none): Address to store the monitor number to or %NULL.
- *                   Under gtk3 this will always be set to '0'.
  *
  * Returns the currently active #GdkScreen, that is, the screen which
  * currently contains the pointer. If no active screen was found, the
