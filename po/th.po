@@ -4,15 +4,15 @@
 # 
 # Translators:
 # Theppitak Karoonboonyanan <thep@linux.thai.net>, 2013
-# Theppitak Karoonboonyanan <theppitak@gmail.com>, 2015-2016,2019
+# Theppitak Karoonboonyanan <theppitak@gmail.com>, 2015-2016,2019,2021
 # Theppitak Karoonboonyanan <theppitak@gmail.com>, 2019
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-23 00:46+0200\n"
-"PO-Revision-Date: 2021-04-22 22:47+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"PO-Revision-Date: 2021-06-28 05:55+0000\n"
+"Last-Translator: Theppitak Karoonboonyanan <theppitak@gmail.com>\n"
 "Language-Team: Thai (http://www.transifex.com/xfce/libxfce4ui/language/th/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -73,20 +73,20 @@ msgstr "ยกเลิก"
 
 #: ../libxfce4ui/xfce-dialogs.c:518
 msgid "Close window with multiple tabs?"
-msgstr ""
+msgstr "ยืนยันปิดหน้าต่างที่มีหลายแท็บหรือไม่?"
 
 #: ../libxfce4ui/xfce-dialogs.c:520
 msgid ""
 "This window has multiple tabs open. Closing this window will also close all "
 "its tabs."
-msgstr ""
+msgstr "หน้าต่างนี้มีแท็บเปิดไว้หลายแท็บ หากปิดหน้าต่างนี้ก็จะปิดแท็บทั้งหมดในหน้าต่างด้วย"
 
 #: ../libxfce4ui/xfce-dialogs.c:523
 #, c-format
 msgid ""
 "This window has %d tabs open. Closing this window will also close all its "
 "tabs."
-msgstr ""
+msgstr "หน้าต่างนี้มีแท็บเปิดไว้ %d แท็บ หากปิดหน้าต่างนี้ก็จะปิดแท็บทั้งหมดในหน้าต่างด้วย"
 
 #: ../libxfce4ui/xfce-dialogs.c:529
 msgid "Warning"
@@ -145,15 +145,15 @@ msgstr "ไดเรกทอรีทำงาน \"%s\" ไม่มีอย�
 #. retrieve the error and warning messages
 #: ../libxfce4ui/xfce-filename-input.c:228
 msgid "Filename is too long"
-msgstr ""
+msgstr "ชื่อแฟ้มยาวเกินไป"
 
 #: ../libxfce4ui/xfce-filename-input.c:229
 msgid "Directory separator illegal in file name"
-msgstr ""
+msgstr "อักขระคั่นไดเรกทอรีในชื่อแฟ้มไม่ถูกต้อง"
 
 #: ../libxfce4ui/xfce-filename-input.c:230
 msgid "Filenames should not start or end with a space"
-msgstr ""
+msgstr "ชื่อแฟ้มไม่ควรขึ้นต้นหรือลงท้ายด้วยช่องว่าง"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:53
 #, c-format
@@ -245,11 +245,11 @@ msgstr "ล้าง"
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:270
 #, c-format
 msgid "Press keyboard keys to trigger the %s '%s'."
-msgstr ""
+msgstr "กดปุ่มแป้นพิมพ์ที่จะเรียก%s '%s'"
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:291
 msgid "Please press a key"
-msgstr ""
+msgstr "กรุณากดปุ่ม"
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:345
 msgid "Could not grab the keyboard."
@@ -573,7 +573,7 @@ msgstr "ข้อมูลรุ่น"
 
 #: ../xfce4-about/main.c:117
 msgid "GPUs"
-msgstr ""
+msgstr "GPUs"
 
 #: ../xfce4-about/main.c:135
 msgid "Window Manager"
@@ -589,7 +589,7 @@ msgstr "พาเนล"
 
 #: ../xfce4-about/main.c:141
 msgid "Provides a home for window buttons, launchers, app menu and more."
-msgstr ""
+msgstr "พื้นที่สำหรับปุ่มเลือกหน้าต่าง, ปุ่มเรียกโปรแกรม, เมนูเรียกแอป และอื่นๆ"
 
 #: ../xfce4-about/main.c:145
 msgid "Desktop Manager"
@@ -597,7 +597,7 @@ msgstr "โปรแกรมจัดการพื้นโต๊ะ"
 
 #: ../xfce4-about/main.c:146
 msgid "Sets desktop backgrounds, handles icons and more."
-msgstr ""
+msgstr "กำหนดพื้นหลังของพื้นโต๊ะ จัดการไอคอนต่างๆ และอื่นๆ"
 
 #: ../xfce4-about/main.c:150
 msgid "File Manager"
@@ -605,15 +605,15 @@ msgstr "โปรแกรมจัดการแฟ้ม"
 
 #: ../xfce4-about/main.c:151
 msgid "Manages your files in a modern, easy-to-use and fast way."
-msgstr ""
+msgstr "จัดการแฟ้มของคุณด้วยวิธีที่ทันสมัย ง่าย และรวดเร็ว"
 
 #: ../xfce4-about/main.c:155
 msgid "Volume Manager"
-msgstr ""
+msgstr "ตัวจัดการโวลุม"
 
 #: ../xfce4-about/main.c:156
 msgid "Manages removable drives and media for Thunar."
-msgstr ""
+msgstr "จัดการไดรว์และสื่อถอดเสียบสำหรับ Thunar"
 
 #: ../xfce4-about/main.c:160
 msgid "Session Manager"
@@ -622,7 +622,7 @@ msgstr "โปรแกรมจัดการวาระ"
 #: ../xfce4-about/main.c:161
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
-msgstr ""
+msgstr "บันทึกและเปิดคืนวาระของคุณ, จัดการการเริ่มวาระ, เปิดโปรแกรมที่เริ่มอัตโนมัติ และการปิดระบบ"
 
 #: ../xfce4-about/main.c:165
 msgid "Setting System"
@@ -630,15 +630,15 @@ msgstr "ระบบตั้งค่า"
 
 #: ../xfce4-about/main.c:166
 msgid "Configures appearance, display, keyboard and mouse settings."
-msgstr ""
+msgstr "ตั้งค่ารูปลักษณ์, จอแสดงผล, แป้นพิมพ์ และเมาส์"
 
 #: ../xfce4-about/main.c:170
 msgid "Application Finder"
-msgstr "เครื่องมือค้นหาโปรแกรม"
+msgstr "เครื่องมือค้นหาแอปพลิเคชัน"
 
 #: ../xfce4-about/main.c:171
 msgid "Quickly finds and launches applications installed on your system."
-msgstr ""
+msgstr "ค้นหาและเรียกทำงานแอปพลิเคชันที่ติดตั้งไว้ในระบบอย่างเร็ว"
 
 #: ../xfce4-about/main.c:175
 msgid "Settings Daemon"
@@ -646,33 +646,33 @@ msgstr "ดีมอนค่าตั้ง"
 
 #: ../xfce4-about/main.c:176
 msgid "Stores your settings in a D-Bus-based configuration system."
-msgstr ""
+msgstr "จัดเก็บค่าตั้งของคุณในระบบตั้งค่าที่ทำงานบน D-Bus"
 
 #: ../xfce4-about/main.c:180
 msgid "A Menu Library"
-msgstr ""
+msgstr "ไลบรารีจัดการเมนู"
 
 #: ../xfce4-about/main.c:181
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
-msgstr ""
+msgstr "จัดทำเมนูตามข้อกำหนดของ freedesktop.org โดยอาศัย GLib และ GIO"
 
 #: ../xfce4-about/main.c:185
 msgid "Thumbnails Service"
-msgstr ""
+msgstr "บริการภาพย่อ"
 
 #: ../xfce4-about/main.c:186
 msgid "Implements the thumbnail management D-Bus specification."
-msgstr ""
+msgstr "จัดการภาพย่อตามข้อกำหนดของ D-Bus"
 
 #: ../xfce4-about/main.c:240
 msgid "Please see <https://www.xfce.org/about/credits>"
-msgstr ""
+msgstr "กรุณาอ่าน <https://www.xfce.org/about/credits>"
 
 #: ../xfce4-about/main.c:300
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
-msgstr ""
+msgstr "หากคุณพบว่ามีผู้ใดตกหล่นจากรายชื่อนี้ ก็โปรดอย่าลังเลที่จะรายงานบั๊กที่ <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues>"
 
 #: ../xfce4-about/main.c:304
 msgid "Thanks to all who helped making this software available!"
@@ -744,7 +744,7 @@ msgstr "ดูแลให้คำปรึกษางานแปล"
 
 #: ../xfce4-about/contributors.h:148
 msgid "Documentation supervision"
-msgstr ""
+msgstr "ดูแลให้คำปรึกษางานเอกสาร"
 
 #: ../xfce4-about/contributors.h:151
 msgid "Translators"
@@ -784,7 +784,7 @@ msgstr "ฉลาก"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:6
 msgid "OS Name"
-msgstr ""
+msgstr "ชื่อ OS"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:7
 msgid "Device"
@@ -792,27 +792,27 @@ msgstr "อุปกรณ์"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:8
 msgid "Memory"
-msgstr ""
+msgstr "หน่วยความจำ"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:9
 msgid "CPU"
-msgstr ""
+msgstr "CPU"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:10
 msgid "OS Type"
-msgstr ""
+msgstr "ชนิด OS"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:11
 msgid "Xfce Version"
-msgstr ""
+msgstr "รุ่นของ Xfce"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:12
 msgid "Distributor"
-msgstr ""
+msgstr "ผู้จัดแจก"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:13
 msgid "GPU"
-msgstr ""
+msgstr "GPU"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:14
 msgid "System"
@@ -822,7 +822,7 @@ msgstr "ระบบ"
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
-msgstr ""
+msgstr "Xfce เป็นชุดของโปรแกรมซึ่งรวมกันเป็นชุดเดสก์ท็อปที่ความสามารถเพียบพร้อม\nส่วนแกนหลักของ Xfce ประกอบด้วยโปรแกรมต่อไปนี้:"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:17
 msgid ""
@@ -833,7 +833,7 @@ msgid ""
 "Thank you for your interest in Xfce.\n"
 "\n"
 "\t- The Xfce Development Team"
-msgstr ""
+msgstr "นอกจากนี้ Xfce ยังเป็นแพลตฟอร์มสำหรับพัฒนาโปรแกรม โดยจัดเตรียมไลบรารีต่างๆ ให้หลายชุด ซึ่งจะช่วยโปรแกรมเมอร์ในการสร้างโปรแกรมที่เข้ากันกับตัวเดสก์ท็อป\n\nองค์ประกอบของ Xfce เผยแพร่ภายใต้เงื่อนไขสัญญาอนุญาตเสรีหรือโอเพนซอร์ส กล่าวคือ GPL หรือ BSDL สำหรับโปรแกรม และ LGPL หรือ BSDL สำหรับไลบรารี คุณสามารถอ่านข้อมูลเพิ่มเติมได้จากเอกสาร ซอร์สโค้ด หรือเว็บไซต์ของ Xfce (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>)\n\nขอขอบคุณที่ให้ความสนใจใน Xfce\n\n\t- ทีมพัฒนา Xfce"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:24
 msgid "About"
@@ -867,16 +867,16 @@ msgstr "ไม่ทราบ"
 #. translators: This is the type of architecture for the OS
 #: ../xfce4-about/system-info.c:639
 msgid "64-bit (32-bit userspace)"
-msgstr ""
+msgstr "64 บิต (userspace 32 บิต)"
 
 #. translators: This is the type of architecture for the OS
 #: ../xfce4-about/system-info.c:642
 msgid "64-bit"
-msgstr ""
+msgstr "64 บิต"
 
 #: ../xfce4-about/system-info.c:642
 msgid "32-bit"
-msgstr ""
+msgstr "32 บิต"
 
 #. translators: This is the name of the OS, followed by the build ID, for
 #. * example:
@@ -885,7 +885,7 @@ msgstr ""
 #: ../xfce4-about/system-info.c:707
 #, c-format
 msgid "%s; Build ID: %s"
-msgstr ""
+msgstr "%s; หมายเลขบิลด์: %s"
 
 #: ../tests/test-ui.c:111
 #, c-format
