@@ -55,18 +55,18 @@
  * Return value: index of the @monitor
  **/
 static gint
-xfce_gdk_monitor_get_number(GdkMonitor *monitor)
+xfce_gdk_monitor_get_number (GdkMonitor *monitor)
 {
-    GdkDisplay *display;
-    int num_monitors;
+  GdkDisplay *display;
+  int num_monitors;
 
-    display = gdk_monitor_get_display(monitor);
-    num_monitors = gdk_display_get_n_monitors(display);
-    for(int i = 0; i < num_monitors; i++)
-        if(gdk_display_get_monitor(display, i) == monitor)
-            return i;
+  display = gdk_monitor_get_display(monitor);
+  num_monitors = gdk_display_get_n_monitors(display);
+  for (int i = 0; i < num_monitors; i++)
+    if (gdk_display_get_monitor(display, i) == monitor)
+      return i;
 
-    return -1;
+  return -1;
 }
 
 
