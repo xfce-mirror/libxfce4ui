@@ -60,10 +60,10 @@ xfce_gdk_monitor_get_number (GdkMonitor *monitor)
   GdkDisplay *display;
   int num_monitors;
 
-  display = gdk_monitor_get_display(monitor);
-  num_monitors = gdk_display_get_n_monitors(display);
+  display = gdk_monitor_get_display (monitor);
+  num_monitors = gdk_display_get_n_monitors (display);
   for (int i = 0; i < num_monitors; i++)
-    if (gdk_display_get_monitor(display, i) == monitor)
+    if (gdk_display_get_monitor (display, i) == monitor)
       return i;
 
   return -1;
@@ -105,8 +105,8 @@ xfce_gdk_screen_get_active (gint *monitor_return)
       /* return the monitor number */
       if (monitor_return != NULL)
         {
-          monitor = gdk_display_get_monitor_at_point(display, rootx, rooty);
-          *monitor_return = xfce_gdk_monitor_get_number(monitor);
+          monitor = gdk_display_get_monitor_at_point (display, rootx, rooty);
+          *monitor_return = xfce_gdk_monitor_get_number (monitor);
         }
     }
 
