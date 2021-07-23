@@ -6,8 +6,8 @@
 # Carles Muñoz Gorriz <carlesmu@internautas.org>, 2013
 # Carles Muñoz Gorriz <carlesmu@internautas.org>, 2013
 # Davidmp <medipas@gmail.com>, 2015
-# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2017-2020
-# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016
+# Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2017-2020
+# Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
