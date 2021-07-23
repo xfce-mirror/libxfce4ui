@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Daniel Muñiz Fontoira <dani@damufo.com>, 2017,2019-2020
+# Daniel Muñiz Fontoira <dani@damufo.eu>, 2017,2019-2020
 # Leandro Regueiro <leandro.regueiro@gmail.com>, 2008-2010,2013
 # Xosé, 2015,2017
 msgid ""
