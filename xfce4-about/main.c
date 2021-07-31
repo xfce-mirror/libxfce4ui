@@ -162,7 +162,7 @@ xfce_about_about (GtkWidget *vbox)
       },
       { "xfce4-settings",
         "org.xfce.settings.manager",
-        N_("Setting System"),
+        N_("Settings Manager"),
         N_("Configures appearance, display, keyboard and mouse settings.")
       },
       { "xfce4-appfinder",
