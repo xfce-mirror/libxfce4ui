@@ -18,8 +18,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-23 00:46+0200\n"
-"PO-Revision-Date: 2021-05-23 12:58+0000\n"
+"POT-Creation-Date: 2021-08-01 00:45+0200\n"
+"PO-Revision-Date: 2021-07-31 22:45+0000\n"
 "Last-Translator: Toni Estévez <toni.estevez@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/xfce/libxfce4ui/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -633,8 +633,8 @@ msgid ""
 msgstr "Guarda y restaura la sesión y gestiona el inicio, el inicio automático y el apagado."
 
 #: ../xfce4-about/main.c:165
-msgid "Setting System"
-msgstr "Configuración del sistema"
+msgid "Settings Manager"
+msgstr "Gestor de configuración"
 
 #: ../xfce4-about/main.c:166
 msgid "Configures appearance, display, keyboard and mouse settings."
