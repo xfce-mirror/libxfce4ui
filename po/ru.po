@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-23 00:46+0200\n"
-"PO-Revision-Date: 2021-04-22 22:47+0000\n"
+"POT-Creation-Date: 2021-08-01 00:45+0200\n"
+"PO-Revision-Date: 2021-07-31 22:45+0000\n"
 "Last-Translator: Xfce Bot <transifex@xfce.org>\n"
 "Language-Team: Russian (http://www.transifex.com/xfce/libxfce4ui/language/ru/)\n"
 "MIME-Version: 1.0\n"
@@ -632,8 +632,8 @@ msgid ""
 msgstr "Сохраняет и восстанавливает ваш сеанс, занимается начальным запуском, автозапуском и завершением работы."
 
 #: ../xfce4-about/main.c:165
-msgid "Setting System"
-msgstr "Поддержка настроек"
+msgid "Settings Manager"
+msgstr "Диспетчер настроек"
 
 #: ../xfce4-about/main.c:166
 msgid "Configures appearance, display, keyboard and mouse settings."
