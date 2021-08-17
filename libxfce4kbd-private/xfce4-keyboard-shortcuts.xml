@@ -88,8 +88,8 @@
       <property name="&lt;Primary&gt;F12" type="string" value="workspace_12_key"/>
       <property name="&lt;Super&gt;KP_Left" type="string" value="tile_left_key"/>
       <property name="&lt;Super&gt;KP_Right" type="string" value="tile_right_key"/>
-      <property name="&lt;Super&gt;KP_Up" type="string" value="tile_down_key"/>
-      <property name="&lt;Super&gt;KP_Down" type="string" value="tile_up_key"/>
+      <property name="&lt;Super&gt;KP_Down" type="string" value="tile_down_key"/>
+      <property name="&lt;Super&gt;KP_Up" type="string" value="tile_up_key"/>
       <property name="&lt;Super&gt;KP_Page_Up" type="string" value="tile_up_right_key"/>
       <property name="&lt;Super&gt;KP_Home" type="string" value="tile_up_left_key"/>
       <property name="&lt;Super&gt;KP_End" type="string" value="tile_down_left_key"/>
