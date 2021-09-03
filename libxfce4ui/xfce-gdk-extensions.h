@@ -33,6 +33,11 @@ GdkScreen    *xfce_gdk_screen_get_active   (gint *monitor_return);
 
 GdkRectangle *xfce_gdk_screen_get_geometry (void);
 
+gboolean      xfce_gdk_device_grab         (GdkSeat            *seat,
+                                            GdkWindow          *window,
+                                            GdkSeatCapabilities capabilities,
+                                            GdkCursor          *cursor);
+
 G_END_DECLS
 
 #endif /* !__XFCE_GDK_EXTENSIONS_H__ */

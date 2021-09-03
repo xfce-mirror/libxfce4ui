@@ -75,6 +75,7 @@ xfce_message_dialog G_GNUC_NULL_TERMINATED
 #if IN_SOURCE(__XFCE_GDK_EXTENSIONS_C__)
 xfce_gdk_screen_get_active
 xfce_gdk_screen_get_geometry
+xfce_gdk_device_grab
 #endif
 #endif
 
