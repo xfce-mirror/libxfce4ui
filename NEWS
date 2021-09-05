@@ -1,3 +1,17 @@
+4.16.1
+======
+- Add 4.16 section to docs
+- about: Replace stock with regular button
+- about: Make Close button translatable (Fixes #41)
+- Fix cast alignment warning
+- Remove Gtk2 leftovers
+- Don't reserve vertical space for subtitles in headerbars
+- Translation Updates:
+  Basque, Belarusian, Bulgarian, Czech, Danish, Estonian, Finnish,
+  French, Hebrew, Indonesian, Interlingue, Japanese, Lithuanian,
+  Norwegian Bokmål, Polish, Portuguese, Portuguese (Brazil), Russian,
+  Serbian, Slovenian, Spanish, Swedish, Turkish
+
 4.16.0
 ======
 - about: Harmonize capitalisation
