@@ -78,6 +78,10 @@
     <title>Index of all symbols</title>
     <xi:include href="xml/api-index-full.xml"><xi:fallback /></xi:include>
   </index>
+  <index id="api-index-4-16">
+    <title>Index of new symbols in 4.16</title>
+    <xi:include href="xml/api-index-4.16.xml"><xi:fallback /></xi:include>
+  </index>
   <index id="api-index-4-14">
     <title>Index of new symbols in 4.14</title>
     <xi:include href="xml/api-index-4.14.xml"><xi:fallback /></xi:include>
