@@ -161,5 +161,49 @@ xfce_gdk_screen_get_geometry (void)
 }
 
 
+
+/**
+ * xfce_gdk_device_grab:
+ * @seat : A #GdkSeat.
+ * @window : The #GdkWindow which will own the grab.
+ * @capabilities : Capabilities that will be grabbed.
+ * @cursor : (nullable): The cursor to display while the grab is active. If this
+ *                      is %NULL then the normal cursors are used for window and
+ *                      its descendants, and the cursor for window is used
+ *                      elsewhere.
+ *
+ * Similar to gdk_seat_grab but tries to grab the seat five times with 100ms
+ * between each attempt.
+ *
+ * Return value: %TRUE on success, %FALSE otherwise.
+ *
+ * Since: 4.18
+ **/
+gboolean
+xfce_gdk_device_grab (GdkSeat            *seat,
+                      GdkWindow          *window,
+                      GdkSeatCapabilities capabilities,
+                      GdkCursor          *cursor)
+{
+  GdkGrabStatus status;
+  gint attempts = 0;
+
+  while (TRUE) {
+    status = gdk_seat_grab (seat, window, capabilities, FALSE, cursor, NULL,
+                            NULL, NULL);
+
+    if (status == GDK_GRAB_SUCCESS)
+      return TRUE;
+    if (attempts++ >= 5)
+      return FALSE;
+
+    /* Wait 100ms before trying again, useful when invoked by global hotkey
+     * because xfsettings will grab the key for a moment */
+    g_usleep(100000);
+  }
+
+  return FALSE;
+}
+
 #define __XFCE_GDK_EXTENSIONS_C__
 #include <libxfce4ui/libxfce4ui-aliasdef.c>
