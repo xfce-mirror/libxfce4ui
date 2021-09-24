@@ -8,16 +8,17 @@
 # GenghisKhan <genghiskhan@gmx.ca>, 2014
 # GenghisKhan <genghiskhan@gmx.ca>, 2014-2016
 # Hezy Amiel <open@hezyamiel.com>, 2010
-# Omer I.S. <omeritzicschwartz@gmail.com>, 2021
-# Omer I.S. <omeritzicschwartz@gmail.com>, 2020
+# Omeritzics Games <omeritzicschwartz@gmail.com>, 2021
+# Omeritzics Games <omeritzicschwartz@gmail.com>, 2021
+# Omeritzics Games <omeritzicschwartz@gmail.com>, 2020
 # Yaron Shahrabani <sh.yaron@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-01 00:45+0200\n"
-"PO-Revision-Date: 2021-07-31 22:45+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"PO-Revision-Date: 2021-09-24 10:43+0000\n"
+"Last-Translator: Omeritzics Games <omeritzicschwartz@gmail.com>\n"
 "Language-Team: Hebrew (http://www.transifex.com/xfce/libxfce4ui/language/he/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -578,7 +579,7 @@ msgstr "מידע גרסה"
 
 #: ../xfce4-about/main.c:117
 msgid "GPUs"
-msgstr "GPUs"
+msgstr "מאיצים גרפיים"
 
 #: ../xfce4-about/main.c:135
 msgid "Window Manager"
@@ -817,7 +818,7 @@ msgstr "מפיץ"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:13
 msgid "GPU"
-msgstr "GPU"
+msgstr "מאיצים גרפיים"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:14
 msgid "System"
@@ -877,11 +878,11 @@ msgstr "64-bit (32-bit userspace)"
 #. translators: This is the type of architecture for the OS
 #: ../xfce4-about/system-info.c:642
 msgid "64-bit"
-msgstr "64-bit"
+msgstr "64 סיביות"
 
 #: ../xfce4-about/system-info.c:642
 msgid "32-bit"
-msgstr "32-bit"
+msgstr "32 סיביות"
 
 #. translators: This is the name of the OS, followed by the build ID, for
 #. * example:
