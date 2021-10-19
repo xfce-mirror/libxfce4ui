@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Hugo Carvalho <hugokarvalho@hotmail.com>, 2019-2020
+# Hugo Carvalho <hugokarvalho@hotmail.com>, 2019-2021
 # Nuno Miguel <nunomgue@gmail.com>, 2015-2017,2019
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-01 00:45+0200\n"
-"PO-Revision-Date: 2021-07-31 22:45+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"PO-Revision-Date: 2021-10-18 22:46+0000\n"
+"Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese (http://www.transifex.com/xfce/libxfce4ui/language/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -608,7 +608,7 @@ msgstr "Gere os seus ficheiros de uma forma moderna, fácil de usar e rápida."
 
 #: ../xfce4-about/main.c:155
 msgid "Volume Manager"
-msgstr "Gestor de volume"
+msgstr "Gestor de Volume"
 
 #: ../xfce4-about/main.c:156
 msgid "Manages removable drives and media for Thunar."
@@ -625,7 +625,7 @@ msgstr "Guarda e restaura a sua sessão, trata do arranque, arranque automático
 
 #: ../xfce4-about/main.c:165
 msgid "Settings Manager"
-msgstr "Gestor de definições"
+msgstr "Gestor de Definições"
 
 #: ../xfce4-about/main.c:166
 msgid "Configures appearance, display, keyboard and mouse settings."
