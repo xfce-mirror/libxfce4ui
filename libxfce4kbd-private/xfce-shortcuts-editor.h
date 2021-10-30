@@ -38,8 +38,10 @@ typedef struct _XfceShortcutsEditor      XfceShortcutsEditor;
 
 GType        xfce_shortcuts_editor_get_type        (void) G_GNUC_CONST;
 
-GtkWidget   *xfce_shortcuts_editor_new             (XfceGtkActionEntry *entries,
-                                                    size_t              entries_count) G_GNUC_MALLOC;
+GtkWidget   *xfce_shortcuts_editor_new             (int     argument_count,
+                                                    ...) G_GNUC_MALLOC;
+GtkWidget   *xfce_shortcuts_editor_new_variadic    (int     argument_count,
+                                                    va_list argument_list) G_GNUC_MALLOC;
 
 G_END_DECLS
 
