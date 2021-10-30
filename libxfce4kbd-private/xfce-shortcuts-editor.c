@@ -37,20 +37,26 @@
 
 
 typedef struct {
-    XfceShortcutsEditor *editor;
-    XfceGtkActionEntry  *entry;
+  XfceShortcutsEditor *editor;
+  XfceGtkActionEntry  *entry;
 } ShortcutClickedData;
 
 typedef struct {
-    gboolean        in_use;
-    GdkModifierType mods;
-    guint           key;
-    gchar          *current_path;
-    gchar          *other_path;
+  gboolean        in_use;
+  GdkModifierType mods;
+  guint           key;
+  gchar          *current_path;
+  gchar          *other_path;
 } ShortcutInfo;
 
+typedef struct {
+  XfceGtkActionEntry *entries;
+  size_t              size;
+} ActionEntryArray;
 
 
+
+static void     xfce_shortcuts_editor_finalize           (GObject             *object);
 static void     xfce_shortcuts_editor_create_contents    (XfceShortcutsEditor *editor);
 static void     xfce_shortcuts_editor_shortcut_clicked   (GtkWidget           *widget,
                                                           ShortcutClickedData *data);
@@ -74,8 +80,8 @@ struct _XfceShortcutsEditor
 {
   GtkVBox             __parent__;
 
-  XfceGtkActionEntry *entries;
-  size_t              entries_count;
+  ActionEntryArray *arrays;
+  size_t            arrays_count;
 };
 
 
@@ -93,6 +99,7 @@ xfce_shortcuts_editor_class_init (XfceShortcutsEditorClass *klass)
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 
   gobject_class = G_OBJECT_CLASS (klass);
+  gobject_class->finalize = xfce_shortcuts_editor_finalize;
 }
 
 
@@ -105,15 +112,54 @@ xfce_shortcuts_editor_init (XfceShortcutsEditor *editor)
 
 
 
+static void
+xfce_shortcuts_editor_finalize (GObject *object)
+{
+  XfceShortcutsEditor *editor = XFCE_SHORTCUTS_EDITOR (object);
+
+  g_free (editor->arrays);
+
+  (*G_OBJECT_CLASS (xfce_shortcuts_editor_parent_class)->finalize) (object);
+}
+
+
+
 GtkWidget*
-xfce_shortcuts_editor_new (XfceGtkActionEntry *entries,
-                           size_t              entries_count)
+xfce_shortcuts_editor_new (int argument_count, ...)
+{
+  GtkWidget *editor;
+  va_list    argument_list;
+
+  va_start (argument_list, argument_count);
+
+  editor = xfce_shortcuts_editor_new_variadic (argument_count, argument_list);
+
+  va_end (argument_list);
+
+  return editor;
+}
+
+
+
+GtkWidget
+*xfce_shortcuts_editor_new_variadic (int     argument_count,
+                                     va_list argument_list)
 {
   XfceShortcutsEditor *editor;
 
+  if (argument_count % 2 != 1)
+    return NULL;
+
   editor = g_object_new (XFCE_TYPE_SHORTCUTS_EDITOR, NULL);
-  editor->entries = entries;
-  editor->entries_count = entries_count;
+
+  editor->arrays_count = (argument_count - 1) / 2;
+  editor->arrays = g_malloc (sizeof (ActionEntryArray) * editor->arrays_count);
+
+  for (int i = 0; i * 2 + 1 < argument_count; i++)
+    {
+      editor->arrays[i].entries = va_arg (argument_list, XfceGtkActionEntry*);
+      editor->arrays[i].size = va_arg (argument_list, size_t);
+    }
 
   xfce_shortcuts_editor_create_contents (editor);
 
@@ -168,37 +214,43 @@ xfce_shortcuts_editor_create_contents (XfceShortcutsEditor *editor)
   gtk_container_add (GTK_CONTAINER (swin), grid);
   gtk_widget_show (grid);
 
-  for (row = 0; row < editor->entries_count; row++)
+  row = 0;
+  for (size_t array_idx = 0; array_idx < editor->arrays_count; array_idx++)
     {
-      ShortcutClickedData *data = malloc (sizeof (ShortcutClickedData));
-      XfceGtkActionEntry   entry = editor->entries[row];
-      GtkAccelKey          key;
-      gchar               *shortcut_text;
+      for (size_t entry_idx = 0; entry_idx < editor->arrays[array_idx].size; entry_idx++)
+        {
+          ShortcutClickedData *data = malloc (sizeof (ShortcutClickedData));
+          XfceGtkActionEntry   entry = editor->arrays[array_idx].entries[entry_idx];
+          GtkAccelKey          key;
+          gchar               *shortcut_text;
 
-      label = gtk_label_new_with_mnemonic (entry.menu_item_label_text);
-      gtk_widget_set_hexpand (label, TRUE);
-      gtk_widget_set_halign (label, GTK_ALIGN_START);
-      gtk_grid_attach (GTK_GRID (grid), label, 0, row, 1, 1);
-      gtk_widget_show (label);
+          label = gtk_label_new_with_mnemonic (entry.menu_item_label_text);
+          gtk_widget_set_hexpand (label, TRUE);
+          gtk_widget_set_halign (label, GTK_ALIGN_START);
+          gtk_grid_attach (GTK_GRID (grid), label, 0, row, 1, 1);
+          gtk_widget_show (label);
 
-      box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 2);
-      gtk_grid_attach (GTK_GRID (grid), box, 1, row, 1, 1);
-      gtk_widget_show (box);
+          box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 2);
+          gtk_grid_attach (GTK_GRID (grid), box, 1, row, 1, 1);
+          gtk_widget_show (box);
 
-      gtk_accel_map_lookup_entry (entry.accel_path, &key);
-      shortcut_text = gtk_accelerator_get_label (key.accel_key, key.accel_mods);
-      shortcut_button = gtk_button_new_with_label (key.accel_key > 0 ? shortcut_text : "...");
-      g_free (shortcut_text);
-      gtk_box_pack_start (GTK_BOX (box), shortcut_button, TRUE, TRUE, 0);
-      gtk_widget_show (shortcut_button);
+          gtk_accel_map_lookup_entry (entry.accel_path, &key);
+          shortcut_text = gtk_accelerator_get_label (key.accel_key, key.accel_mods);
+          shortcut_button = gtk_button_new_with_label (key.accel_key > 0 ? shortcut_text : "...");
+          g_free (shortcut_text);
+          gtk_box_pack_start (GTK_BOX (box), shortcut_button, TRUE, TRUE, 0);
+          gtk_widget_show (shortcut_button);
 
-      data->editor = editor;
-      data->entry = editor->entries + row;
-      g_signal_connect_data (G_OBJECT (shortcut_button), "clicked", G_CALLBACK (xfce_shortcuts_editor_shortcut_clicked), data, free_data, 0);
+          data->editor = editor;
+          data->entry = editor->arrays[array_idx].entries + entry_idx;
+          g_signal_connect_data (G_OBJECT (shortcut_button), "clicked", G_CALLBACK (xfce_shortcuts_editor_shortcut_clicked), data, free_data, 0);
 
-      discard_button = gtk_button_new_from_icon_name ("edit-delete", GTK_ICON_SIZE_BUTTON);
-      gtk_box_pack_end (GTK_BOX (box), discard_button, FALSE, FALSE, 0);
-      gtk_widget_show (discard_button);
+          discard_button = gtk_button_new_from_icon_name ("edit-delete", GTK_ICON_SIZE_BUTTON);
+          gtk_box_pack_end (GTK_BOX (box), discard_button, FALSE, FALSE, 0);
+          gtk_widget_show (discard_button);
+
+          row++;
+        }
     }
 }
 
