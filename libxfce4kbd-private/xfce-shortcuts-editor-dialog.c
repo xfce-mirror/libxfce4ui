@@ -1,6 +1,6 @@
 /* vi:set expandtab sw=2 sts=2: */
 /*
- * Copyright (c) 2008 Jannis Pohlmann <jannis@xfce.org>
+ * Copyright (c) 2021 Sergios - Anestis Kefalidis <sergioskefalidis@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -79,7 +79,7 @@ xfce_shortcuts_editor_dialog_new (int argument_count, ...)
   va_start (argument_list, argument_count);
 
   dialog = g_object_new (XFCE_TYPE_SHORTCUTS_EDITOR_DIALOG, NULL);
-  gtk_window_set_title (GTK_WINDOW (dialog), "Shortcuts Editor");
+  gtk_window_set_title (GTK_WINDOW (dialog), _("Shortcuts Editor"));
   gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), xfce_shortcuts_editor_new_variadic (argument_count, argument_list), TRUE, TRUE, 0);
   gtk_widget_show (GTK_WIDGET (dialog));
 
