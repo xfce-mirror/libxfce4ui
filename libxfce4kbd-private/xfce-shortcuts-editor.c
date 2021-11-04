@@ -69,6 +69,8 @@ static void     xfce_shortcuts_editor_finalize                 (GObject         
 static void     xfce_shortcuts_editor_create_contents          (XfceShortcutsEditor       *editor);
 static void     xfce_shortcuts_editor_shortcut_clicked         (GtkWidget                 *widget,
                                                                 ShortcutClickedData       *data);
+static void     xfce_shortcuts_editor_shortcut_clear_clicked   (GtkWidget                 *widget,
+                                                                ShortcutResetClickedData  *data);
 static void     xfce_shortcuts_editor_shortcut_reset_clicked   (GtkWidget                 *widget,
                                                                 ShortcutResetClickedData  *data);
 static void     xfce_shortcuts_editor_shortcut_check           (gpointer                   data,
@@ -199,8 +201,10 @@ xfce_shortcuts_editor_create_contents (XfceShortcutsEditor *editor)
   GtkWidget *grid;
   GtkWidget *label;
   GtkWidget *box;
+  GtkWidget *box2;
   GtkWidget *shortcut_button;
-  GtkWidget *discard_button;
+  GtkWidget *clear_button;
+  GtkWidget *reset_button;
   size_t     row;
 
   vbox = GTK_WIDGET (editor);
@@ -231,6 +235,7 @@ xfce_shortcuts_editor_create_contents (XfceShortcutsEditor *editor)
       for (size_t entry_idx = 0; entry_idx < editor->arrays[array_idx].size; entry_idx++)
         {
           ShortcutClickedData      *data = malloc (sizeof (ShortcutClickedData));
+          ShortcutResetClickedData *clear_data = malloc (sizeof (ShortcutResetClickedData));
           ShortcutResetClickedData *reset_data = malloc (sizeof (ShortcutResetClickedData));
           XfceGtkActionEntry        entry = editor->arrays[array_idx].entries[entry_idx];
           GtkAccelKey               key;
@@ -242,28 +247,44 @@ xfce_shortcuts_editor_create_contents (XfceShortcutsEditor *editor)
           gtk_grid_attach (GTK_GRID (grid), label, 0, row, 1, 1);
           gtk_widget_show (label);
 
-          box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 2);
+          box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 4);
           gtk_grid_attach (GTK_GRID (grid), box, 1, row, 1, 1);
           gtk_widget_show (box);
 
+          /* contains the edit shortcut button and the clear button */
+          box2 = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
+          gtk_box_pack_start (GTK_BOX (box), box2, TRUE, TRUE, 0);
+          gtk_widget_show (box2);
+
+          /* edit shortcut button */
           gtk_accel_map_lookup_entry (entry.accel_path, &key);
           shortcut_text = gtk_accelerator_get_label (key.accel_key, key.accel_mods);
           shortcut_button = gtk_button_new_with_label (key.accel_key > 0 ? shortcut_text : "...");
           g_free (shortcut_text);
-          gtk_box_pack_start (GTK_BOX (box), shortcut_button, TRUE, TRUE, 0);
+          gtk_box_pack_start (GTK_BOX (box2), shortcut_button, TRUE, TRUE, 0);
           gtk_widget_show (shortcut_button);
 
           data->editor = editor;
           data->entry = editor->arrays[array_idx].entries + entry_idx;
           g_signal_connect_data (G_OBJECT (shortcut_button), "clicked", G_CALLBACK (xfce_shortcuts_editor_shortcut_clicked), data, free_data, 0);
 
-          discard_button = gtk_button_new_from_icon_name ("edit-undo", GTK_ICON_SIZE_BUTTON);
-          gtk_box_pack_end (GTK_BOX (box), discard_button, FALSE, FALSE, 0);
-          gtk_widget_show (discard_button);
+          /* clear button */
+          clear_button = gtk_button_new_from_icon_name ("edit-clear", GTK_ICON_SIZE_BUTTON);
+          gtk_box_pack_end (GTK_BOX (box2), clear_button, FALSE, FALSE, 0);
+          gtk_widget_show (clear_button);
+
+          clear_data->shortcut_button = shortcut_button;
+          clear_data->entry = editor->arrays[array_idx].entries + entry_idx;
+          g_signal_connect_data (G_OBJECT (clear_button), "clicked", G_CALLBACK (xfce_shortcuts_editor_shortcut_clear_clicked), clear_data, free_data, 0);
+
+          /* reset button */
+          reset_button = gtk_button_new_from_icon_name ("edit-undo", GTK_ICON_SIZE_BUTTON);
+          gtk_box_pack_end (GTK_BOX (box), reset_button, FALSE, FALSE, 0);
+          gtk_widget_show (reset_button);
 
           reset_data->shortcut_button = shortcut_button;
           reset_data->entry = editor->arrays[array_idx].entries + entry_idx;
-          g_signal_connect_data (G_OBJECT (discard_button), "clicked", G_CALLBACK (xfce_shortcuts_editor_shortcut_reset_clicked), reset_data, free_data, 0);
+          g_signal_connect_data (G_OBJECT (reset_button), "clicked", G_CALLBACK (xfce_shortcuts_editor_shortcut_reset_clicked), reset_data, free_data, 0);
 
           row++;
         }
@@ -380,6 +401,16 @@ xfce_shortcuts_editor_shortcut_clicked (GtkWidget           *widget,
     }
 
   gtk_widget_destroy (dialog);
+}
+
+
+
+static void
+xfce_shortcuts_editor_shortcut_clear_clicked  (GtkWidget                 *widget,
+                                               ShortcutResetClickedData  *data)
+{
+  gtk_accel_map_change_entry (data->entry->accel_path, 0, 0, TRUE);
+  gtk_button_set_label (GTK_BUTTON (data->shortcut_button), "...");
 }
 
 
