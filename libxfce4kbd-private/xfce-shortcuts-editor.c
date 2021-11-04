@@ -221,6 +221,7 @@ xfce_shortcuts_editor_create_contents (XfceShortcutsEditor *editor)
   gtk_grid_set_row_spacing (GTK_GRID (grid), 6);
   gtk_widget_set_margin_top (GTK_WIDGET (grid), 6);
   gtk_widget_set_margin_start (GTK_WIDGET (grid), 12);
+  gtk_widget_set_margin_end (GTK_WIDGET (grid), 16);
   gtk_container_add (GTK_CONTAINER (swin), grid);
   gtk_widget_show (grid);
 
