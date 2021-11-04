@@ -1,6 +1,6 @@
 /* vi:set expandtab sw=2 sts=2: */
 /*
- * Copyright (c) 2008 Jannis Pohlmann <jannis@xfce.org>
+ * Copyright (c) 2021 Sergios - Anestis Kefalidis <sergioskefalidis@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -36,12 +36,20 @@
 
 
 
-typedef struct {
+typedef struct
+{
   XfceShortcutsEditor *editor;
   XfceGtkActionEntry  *entry;
 } ShortcutClickedData;
 
-typedef struct {
+typedef struct
+{
+    GtkWidget           *shortcut_button;
+    XfceGtkActionEntry  *entry;
+} ShortcutResetClickedData;
+
+typedef struct
+{
   gboolean        in_use;
   GdkModifierType mods;
   guint           key;
@@ -49,25 +57,28 @@ typedef struct {
   gchar          *other_path;
 } ShortcutInfo;
 
-typedef struct {
+typedef struct
+{
   XfceGtkActionEntry *entries;
   size_t              size;
 } ActionEntryArray;
 
 
 
-static void     xfce_shortcuts_editor_finalize           (GObject             *object);
-static void     xfce_shortcuts_editor_create_contents    (XfceShortcutsEditor *editor);
-static void     xfce_shortcuts_editor_shortcut_clicked   (GtkWidget           *widget,
-                                                          ShortcutClickedData *data);
-static void     xfce_shortcuts_editor_shortcut_check     (gpointer             data,
-                                                          const gchar         *path,
-                                                          guint                key,
-                                                          GdkModifierType      mods,
-                                                          gboolean             changed);
-static gboolean xfce_shortcuts_editor_validate_shortcut  (XfceShortcutDialog  *editor,
-                                                          const gchar         *shortcut,
-                                                          ShortcutClickedData *data);
+static void     xfce_shortcuts_editor_finalize                 (GObject                   *object);
+static void     xfce_shortcuts_editor_create_contents          (XfceShortcutsEditor       *editor);
+static void     xfce_shortcuts_editor_shortcut_clicked         (GtkWidget                 *widget,
+                                                                ShortcutClickedData       *data);
+static void     xfce_shortcuts_editor_shortcut_reset_clicked   (GtkWidget                 *widget,
+                                                                ShortcutResetClickedData  *data);
+static void     xfce_shortcuts_editor_shortcut_check           (gpointer                   data,
+                                                                const gchar               *path,
+                                                                guint                      key,
+                                                                GdkModifierType            mods,
+                                                                gboolean                   changed);
+static gboolean xfce_shortcuts_editor_validate_shortcut        (XfceShortcutDialog        *editor,
+                                                                const gchar               *shortcut,
+                                                                ShortcutClickedData       *data);
 
 
 
@@ -194,13 +205,12 @@ xfce_shortcuts_editor_create_contents (XfceShortcutsEditor *editor)
 
   vbox = GTK_WIDGET (editor);
 
-  frame = g_object_new (GTK_TYPE_FRAME, "border-width", 0, "shadow-type", GTK_SHADOW_ETCHED_IN, NULL);
+  frame = g_object_new (GTK_TYPE_FRAME, "border-width", 0, "shadow-type", GTK_SHADOW_NONE, NULL);
   gtk_box_pack_start (GTK_BOX (vbox), frame, FALSE, TRUE, 0);
   gtk_widget_show (frame);
 
   swin = gtk_scrolled_window_new (NULL, NULL);
   gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (swin), GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
-  gtk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (swin), GTK_SHADOW_IN);
   gtk_widget_set_hexpand (swin, TRUE);
   gtk_widget_set_vexpand (swin, TRUE);
   gtk_container_add (GTK_CONTAINER (frame), swin);
@@ -219,10 +229,11 @@ xfce_shortcuts_editor_create_contents (XfceShortcutsEditor *editor)
     {
       for (size_t entry_idx = 0; entry_idx < editor->arrays[array_idx].size; entry_idx++)
         {
-          ShortcutClickedData *data = malloc (sizeof (ShortcutClickedData));
-          XfceGtkActionEntry   entry = editor->arrays[array_idx].entries[entry_idx];
-          GtkAccelKey          key;
-          gchar               *shortcut_text;
+          ShortcutClickedData      *data = malloc (sizeof (ShortcutClickedData));
+          ShortcutResetClickedData *reset_data = malloc (sizeof (ShortcutResetClickedData));
+          XfceGtkActionEntry        entry = editor->arrays[array_idx].entries[entry_idx];
+          GtkAccelKey               key;
+          gchar                    *shortcut_text;
 
           label = gtk_label_new_with_mnemonic (entry.menu_item_label_text);
           gtk_widget_set_hexpand (label, TRUE);
@@ -245,9 +256,13 @@ xfce_shortcuts_editor_create_contents (XfceShortcutsEditor *editor)
           data->entry = editor->arrays[array_idx].entries + entry_idx;
           g_signal_connect_data (G_OBJECT (shortcut_button), "clicked", G_CALLBACK (xfce_shortcuts_editor_shortcut_clicked), data, free_data, 0);
 
-          discard_button = gtk_button_new_from_icon_name ("edit-delete", GTK_ICON_SIZE_BUTTON);
+          discard_button = gtk_button_new_from_icon_name ("edit-undo", GTK_ICON_SIZE_BUTTON);
           gtk_box_pack_end (GTK_BOX (box), discard_button, FALSE, FALSE, 0);
           gtk_widget_show (discard_button);
+
+          reset_data->shortcut_button = shortcut_button;
+          reset_data->entry = editor->arrays[array_idx].entries + entry_idx;
+          g_signal_connect_data (G_OBJECT (discard_button), "clicked", G_CALLBACK (xfce_shortcuts_editor_shortcut_reset_clicked), reset_data, free_data, 0);
 
           row++;
         }
@@ -364,4 +379,58 @@ xfce_shortcuts_editor_shortcut_clicked (GtkWidget           *widget,
     }
 
   gtk_widget_destroy (dialog);
+}
+
+
+
+static void
+xfce_shortcuts_editor_shortcut_reset_clicked  (GtkWidget                 *widget,
+                                               ShortcutResetClickedData  *data)
+{
+  GdkModifierType  accel_mods;
+  guint            accel_key;
+  gchar           *label;
+  ShortcutInfo     info;
+  gchar           *command, *message;
+
+  gtk_accelerator_parse (data->entry->default_accelerator, &accel_key, &accel_mods);
+
+  /* check if the default accelerator is used by another action */
+  info.in_use = FALSE;
+  info.mods = accel_mods;
+  info.key = accel_key;
+  info.current_path = data->entry->accel_path;
+  info.other_path = NULL;
+
+  gtk_accel_map_foreach_unfiltered (&info, xfce_shortcuts_editor_shortcut_check);
+
+  /* an empty default accelerator is always available */
+  if (g_strcmp0 (data->entry->default_accelerator, "") != 0 && info.in_use == TRUE)
+    {
+      command = g_strrstr (info.other_path, "/");
+      command = command == NULL ?
+                info.other_path :
+                command + 1; /* skip leading slash */
+
+      message = g_strdup_printf (_("This keyboard shortcut is currently used by: '%s'"),
+                                 command);
+      xfce_dialog_show_warning (GTK_WINDOW (gtk_widget_get_toplevel (widget)), message,
+                                _("Keyboard shortcut already in use"));
+      g_free (message);
+    }
+  else
+    {
+      /* if the default accelerator is available change to that */
+      gtk_accel_map_change_entry (data->entry->accel_path, accel_key, accel_mods, TRUE);
+
+      if (accel_key > 0)
+        label = gtk_accelerator_get_label (accel_key, accel_mods);
+      else
+        label = g_strdup ("...");
+      gtk_button_set_label (GTK_BUTTON (data->shortcut_button), label);
+
+      g_free (label);
+    }
+
+  g_free (info.other_path);
 }
