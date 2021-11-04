@@ -1,6 +1,6 @@
 /* vi:set expandtab sw=2 sts=2: */
 /*
- * Copyright (c) 2008 Jannis Pohlmann <jannis@xfce.org>
+ * Copyright (c) 2021 Sergios - Anestis Kefalidis <sergioskefalidis@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
