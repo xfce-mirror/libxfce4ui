@@ -53,7 +53,7 @@ typedef struct
   gboolean        in_use;
   GdkModifierType mods;
   guint           key;
-  gchar          *current_path;
+  const gchar    *current_path;
   gchar          *other_path;
 } ShortcutInfo;
 
@@ -81,6 +81,8 @@ static void     xfce_shortcuts_editor_shortcut_check           (gpointer        
 static gboolean xfce_shortcuts_editor_validate_shortcut        (XfceShortcutDialog        *editor,
                                                                 const gchar               *shortcut,
                                                                 ShortcutClickedData       *data);
+static void     free_data                                      (gpointer                   data,
+                                                                GClosure                  *closure);
 
 
 
