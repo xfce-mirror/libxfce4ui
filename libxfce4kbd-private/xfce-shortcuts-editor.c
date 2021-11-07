@@ -263,6 +263,7 @@ xfce_shortcuts_editor_create_contents (XfceShortcutsEditor *editor)
           gtk_accel_map_lookup_entry (entry.accel_path, &key);
           shortcut_text = gtk_accelerator_get_label (key.accel_key, key.accel_mods);
           shortcut_button = gtk_button_new_with_label (key.accel_key > 0 ? shortcut_text : "...");
+          gtk_widget_set_tooltip_text (shortcut_button, _("The current shortcut. Press to edit..."));
           g_free (shortcut_text);
           gtk_box_pack_start (GTK_BOX (box2), shortcut_button, TRUE, TRUE, 0);
           gtk_widget_show (shortcut_button);
@@ -273,6 +274,7 @@ xfce_shortcuts_editor_create_contents (XfceShortcutsEditor *editor)
 
           /* clear button */
           clear_button = gtk_button_new_from_icon_name ("edit-clear", GTK_ICON_SIZE_BUTTON);
+          gtk_widget_set_tooltip_text (clear_button, _("Clear the shortcut"));
           gtk_box_pack_end (GTK_BOX (box2), clear_button, FALSE, TRUE, 0);
           gtk_widget_show (clear_button);
 
@@ -282,6 +284,7 @@ xfce_shortcuts_editor_create_contents (XfceShortcutsEditor *editor)
 
           /* reset button */
           reset_button = gtk_button_new_from_icon_name ("edit-undo", GTK_ICON_SIZE_BUTTON);
+          gtk_widget_set_tooltip_text (reset_button, _("Restore the default shortcut"));
           gtk_box_pack_end (GTK_BOX (box), reset_button, FALSE, FALSE, 0);
           gtk_widget_show (reset_button);
 
