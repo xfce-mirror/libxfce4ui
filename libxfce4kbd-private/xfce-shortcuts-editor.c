@@ -59,6 +59,7 @@ typedef struct
 
 typedef struct
 {
+  gchar              *section_name;
   XfceGtkActionEntry *entries;
   size_t              size;
 } ActionEntryArray;
@@ -132,6 +133,8 @@ xfce_shortcuts_editor_finalize (GObject *object)
 {
   XfceShortcutsEditor *editor = XFCE_SHORTCUTS_EDITOR (object);
 
+  for (size_t i = 0; i < editor->arrays_count; i++)
+    g_free (editor->arrays[i].section_name);
   g_free (editor->arrays);
 
   (*G_OBJECT_CLASS (xfce_shortcuts_editor_parent_class)->finalize) (object);
@@ -139,6 +142,7 @@ xfce_shortcuts_editor_finalize (GObject *object)
 
 
 
+// TODO: comment
 GtkWidget*
 xfce_shortcuts_editor_new (int argument_count, ...)
 {
@@ -156,22 +160,24 @@ xfce_shortcuts_editor_new (int argument_count, ...)
 
 
 
+// TODO: comment
 GtkWidget
 *xfce_shortcuts_editor_new_variadic (int     argument_count,
                                      va_list argument_list)
 {
   XfceShortcutsEditor *editor;
 
-  if (argument_count % 2 != 1)
+  if (argument_count % 3 != 1)
     return NULL;
 
   editor = g_object_new (XFCE_TYPE_SHORTCUTS_EDITOR, NULL);
 
-  editor->arrays_count = (argument_count - 1) / 2;
+  editor->arrays_count = (argument_count - 1) / 3;
   editor->arrays = g_malloc (sizeof (ActionEntryArray) * editor->arrays_count);
 
-  for (int i = 0; i * 2 + 1 < argument_count; i++)
+  for (int i = 0; i * 3 + 1 < argument_count; i++)
     {
+      editor->arrays[i].section_name = strdup (va_arg (argument_list, gchar*));
       editor->arrays[i].entries = va_arg (argument_list, XfceGtkActionEntry*);
       editor->arrays[i].size = va_arg (argument_list, size_t);
     }
@@ -234,6 +240,24 @@ xfce_shortcuts_editor_create_contents (XfceShortcutsEditor *editor)
   row = 0;
   for (size_t array_idx = 0; array_idx < editor->arrays_count; array_idx++)
     {
+      gchar *markup;
+
+      /* section name */
+      if (g_strcmp0 (editor->arrays[array_idx].section_name, "") != 0)
+        {
+          label  = gtk_label_new ("");
+          markup = g_strconcat ("<b>", editor->arrays[array_idx].section_name, "</b>");
+          gtk_label_set_markup (GTK_LABEL (label), markup);
+          g_free (markup);
+          gtk_widget_set_vexpand (label, TRUE);
+          gtk_widget_set_hexpand (label, TRUE);
+          gtk_widget_set_halign (label, GTK_ALIGN_START);
+          gtk_grid_attach (GTK_GRID (grid), label, 0, row, 1, 3);
+          gtk_widget_show (label);
+          row += 3;
+        }
+
+      /* section shortcut entries */
       for (size_t entry_idx = 0; entry_idx < editor->arrays[array_idx].size; entry_idx++)
         {
           ShortcutClickedData      *data = malloc (sizeof (ShortcutClickedData));
