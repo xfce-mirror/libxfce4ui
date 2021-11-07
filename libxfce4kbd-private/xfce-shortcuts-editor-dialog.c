@@ -70,6 +70,7 @@ xfce_shortcuts_editor_dialog_init (XfceShortcutsEditorDialog *dialog)
 
 
 
+// TODO: comment
 GtkWidget*
 xfce_shortcuts_editor_dialog_new (int argument_count, ...)
 {
