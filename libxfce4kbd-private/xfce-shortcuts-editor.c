@@ -246,7 +246,7 @@ xfce_shortcuts_editor_create_contents (XfceShortcutsEditor *editor)
       if (g_strcmp0 (editor->arrays[array_idx].section_name, "") != 0)
         {
           label  = gtk_label_new ("");
-          markup = g_strconcat ("<b>", editor->arrays[array_idx].section_name, "</b>");
+          markup = g_strconcat ("<b>", editor->arrays[array_idx].section_name, "</b>", NULL);
           gtk_label_set_markup (GTK_LABEL (label), markup);
           g_free (markup);
           gtk_widget_set_vexpand (label, TRUE);
