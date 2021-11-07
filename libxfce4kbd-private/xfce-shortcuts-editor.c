@@ -255,6 +255,7 @@ xfce_shortcuts_editor_create_contents (XfceShortcutsEditor *editor)
           box2 = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
           gtk_box_pack_start (GTK_BOX (box), box2, TRUE, TRUE, 0);
           gtk_widget_show (box2);
+          gtk_style_context_add_class (gtk_widget_get_style_context (box2), "linked");
 
           /* edit shortcut button */
           gtk_accel_map_lookup_entry (entry.accel_path, &key);
@@ -270,7 +271,7 @@ xfce_shortcuts_editor_create_contents (XfceShortcutsEditor *editor)
 
           /* clear button */
           clear_button = gtk_button_new_from_icon_name ("edit-clear", GTK_ICON_SIZE_BUTTON);
-          gtk_box_pack_end (GTK_BOX (box2), clear_button, FALSE, FALSE, 0);
+          gtk_box_pack_end (GTK_BOX (box2), clear_button, FALSE, TRUE, 0);
           gtk_widget_show (clear_button);
 
           clear_data->shortcut_button = shortcut_button;
