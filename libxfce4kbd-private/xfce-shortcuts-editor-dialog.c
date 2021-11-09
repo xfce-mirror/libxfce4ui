@@ -70,7 +70,13 @@ xfce_shortcuts_editor_dialog_init (XfceShortcutsEditorDialog *dialog)
 
 
 
-// TODO: comment
+/**
+ * xfce_shortcuts_editor_dialog_new:
+ * @argument_count : #int, the number of arguments, including this one.
+ *
+ * Returns a dialog that includes a XfceShortcutsEditor.
+ * See xfce_shortcuts_editor_new_variadic for the expected types of the variable argument list.
+ **/
 GtkWidget*
 xfce_shortcuts_editor_dialog_new (int argument_count, ...)
 {
