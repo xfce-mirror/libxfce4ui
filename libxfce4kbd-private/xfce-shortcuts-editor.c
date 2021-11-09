@@ -142,7 +142,13 @@ xfce_shortcuts_editor_finalize (GObject *object)
 
 
 
-// TODO: comment
+/**
+ * xfce_shortcuts_editor_new:
+ * @argument_count : #int, the number of arguments, including this one.
+ *
+ * A variable arguments version of xfce_shortcuts_editor_new_variadic.
+ *
+ **/
 GtkWidget*
 xfce_shortcuts_editor_new (int argument_count, ...)
 {
@@ -160,10 +166,25 @@ xfce_shortcuts_editor_new (int argument_count, ...)
 
 
 
-// TODO: comment
-GtkWidget
-*xfce_shortcuts_editor_new_variadic (int     argument_count,
-                                     va_list argument_list)
+/**
+ * xfce_shortcuts_editor_new_variadic:
+ * @argument_count : #int, the number of arguments, including this one.
+ * @argument_list : a #va_list containing the arguments
+ *
+ * Create a new Shortcuts Editor from XfceGtkActionEntry arrays.
+ *
+ * The @argument_list consists of triads of arguments.
+ * The types of a triad are the following: (gchar*, XfceGtkActionEntry[], size_t).
+ *
+ * The first member of a triad is the name of the section in the editor.
+ * The second member of a triad is the array of XfceGtkActionEntries which are
+ * used to handle the shortcuts.
+ * The third member is the size of that array.
+ *
+ **/
+GtkWidget*
+xfce_shortcuts_editor_new_variadic (int     argument_count,
+                                    va_list argument_list)
 {
   XfceShortcutsEditor *editor;
 
@@ -191,7 +212,7 @@ GtkWidget
 
 
 
-void
+static void
 free_data (gpointer  data,
            GClosure *closure)
 {
