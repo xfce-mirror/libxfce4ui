@@ -40,13 +40,13 @@ typedef struct
 {
   XfceShortcutsEditor *editor;
   XfceGtkActionEntry  *entry;
-} ShortcutClickedData;
+} ShortcutEditClickedData;
 
 typedef struct
 {
-    GtkWidget           *shortcut_button;
-    XfceGtkActionEntry  *entry;
-} ShortcutResetClickedData;
+  GtkWidget           *shortcut_button;
+  XfceGtkActionEntry  *entry;
+} ShortcutOtherClickedData;
 
 typedef struct
 {
@@ -62,18 +62,18 @@ typedef struct
   gchar              *section_name;
   XfceGtkActionEntry *entries;
   size_t              size;
-} ActionEntryArray;
+} Section;
 
 
 
 static void     xfce_shortcuts_editor_finalize                 (GObject                   *object);
 static void     xfce_shortcuts_editor_create_contents          (XfceShortcutsEditor       *editor);
 static void     xfce_shortcuts_editor_shortcut_clicked         (GtkWidget                 *widget,
-                                                                ShortcutClickedData       *data);
+                                                                ShortcutEditClickedData   *data);
 static void     xfce_shortcuts_editor_shortcut_clear_clicked   (GtkWidget                 *widget,
-                                                                ShortcutResetClickedData  *data);
+                                                                ShortcutOtherClickedData  *data);
 static void     xfce_shortcuts_editor_shortcut_reset_clicked   (GtkWidget                 *widget,
-                                                                ShortcutResetClickedData  *data);
+                                                                ShortcutOtherClickedData  *data);
 static void     xfce_shortcuts_editor_shortcut_check           (gpointer                   data,
                                                                 const gchar               *path,
                                                                 guint                      key,
@@ -81,7 +81,7 @@ static void     xfce_shortcuts_editor_shortcut_check           (gpointer        
                                                                 gboolean                   changed);
 static gboolean xfce_shortcuts_editor_validate_shortcut        (XfceShortcutDialog        *editor,
                                                                 const gchar               *shortcut,
-                                                                ShortcutClickedData       *data);
+                                                                ShortcutEditClickedData   *data);
 static void     free_data                                      (gpointer                   data,
                                                                 GClosure                  *closure);
 
@@ -96,8 +96,8 @@ struct _XfceShortcutsEditor
 {
   GtkVBox             __parent__;
 
-  ActionEntryArray *arrays;
-  size_t            arrays_count;
+  Section *arrays;
+  size_t  arrays_count;
 };
 
 
@@ -194,7 +194,7 @@ xfce_shortcuts_editor_new_variadic (int     argument_count,
   editor = g_object_new (XFCE_TYPE_SHORTCUTS_EDITOR, NULL);
 
   editor->arrays_count = (argument_count - 1) / 3;
-  editor->arrays = g_malloc (sizeof (ActionEntryArray) * editor->arrays_count);
+  editor->arrays = g_malloc (sizeof (Section) * editor->arrays_count);
 
   for (int i = 0; i * 3 + 1 < argument_count; i++)
     {
@@ -281,12 +281,22 @@ xfce_shortcuts_editor_create_contents (XfceShortcutsEditor *editor)
       /* section shortcut entries */
       for (size_t entry_idx = 0; entry_idx < editor->arrays[array_idx].size; entry_idx++)
         {
-          ShortcutClickedData      *data = malloc (sizeof (ShortcutClickedData));
-          ShortcutResetClickedData *clear_data = malloc (sizeof (ShortcutResetClickedData));
-          ShortcutResetClickedData *reset_data = malloc (sizeof (ShortcutResetClickedData));
-          XfceGtkActionEntry        entry = editor->arrays[array_idx].entries[entry_idx];
+          ShortcutEditClickedData  *data;
+          ShortcutOtherClickedData *clear_data;
+          ShortcutOtherClickedData *reset_data;
+          XfceGtkActionEntry       entry;
           GtkAccelKey               key;
           gchar                    *shortcut_text;
+
+          entry = editor->arrays[array_idx].entries[entry_idx];
+
+          /* ignore entries that don't do something when activated */
+          if (entry.callback == NULL)
+            continue;
+
+          data = malloc (sizeof (ShortcutEditClickedData));
+          clear_data = malloc (sizeof (ShortcutOtherClickedData));
+          reset_data = malloc (sizeof (ShortcutOtherClickedData));
 
           label = gtk_label_new_with_mnemonic (entry.menu_item_label_text);
           gtk_widget_set_hexpand (label, TRUE);
@@ -345,7 +355,7 @@ xfce_shortcuts_editor_create_contents (XfceShortcutsEditor *editor)
 
 
 static void
-xfce_shortcuts_editor_shortcut_check (gpointer       data,
+xfce_shortcuts_editor_shortcut_check (gpointer        data,
                                       const gchar    *path,
                                       guint           key,
                                       GdkModifierType mods,
@@ -366,9 +376,9 @@ xfce_shortcuts_editor_shortcut_check (gpointer       data,
 
 
 static gboolean
-xfce_shortcuts_editor_validate_shortcut (XfceShortcutDialog        *editor,
-                                        const gchar                *shortcut,
-                                        ShortcutClickedData        *data)
+xfce_shortcuts_editor_validate_shortcut (XfceShortcutDialog      *editor,
+                                         const gchar             *shortcut,
+                                         ShortcutEditClickedData *data)
 {
   GdkModifierType accel_mods;
   guint           accel_key;
@@ -424,8 +434,8 @@ xfce_shortcuts_editor_validate_shortcut (XfceShortcutDialog        *editor,
 
 
 static void
-xfce_shortcuts_editor_shortcut_clicked (GtkWidget           *widget,
-                                        ShortcutClickedData *data)
+xfce_shortcuts_editor_shortcut_clicked (GtkWidget               *widget,
+                                        ShortcutEditClickedData *data)
 {
   GtkWidget       *dialog;
   gint             response;
@@ -458,7 +468,7 @@ xfce_shortcuts_editor_shortcut_clicked (GtkWidget           *widget,
 
 static void
 xfce_shortcuts_editor_shortcut_clear_clicked  (GtkWidget                 *widget,
-                                               ShortcutResetClickedData  *data)
+                                               ShortcutOtherClickedData  *data)
 {
   gtk_accel_map_change_entry (data->entry->accel_path, 0, 0, TRUE);
   gtk_button_set_label (GTK_BUTTON (data->shortcut_button), "...");
@@ -468,7 +478,7 @@ xfce_shortcuts_editor_shortcut_clear_clicked  (GtkWidget                 *widget
 
 static void
 xfce_shortcuts_editor_shortcut_reset_clicked  (GtkWidget                 *widget,
-                                               ShortcutResetClickedData  *data)
+                                               ShortcutOtherClickedData  *data)
 {
   GdkModifierType  accel_mods;
   guint            accel_key;
