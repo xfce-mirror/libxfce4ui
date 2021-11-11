@@ -224,17 +224,18 @@ free_data (gpointer  data,
 static void
 xfce_shortcuts_editor_create_contents (XfceShortcutsEditor *editor)
 {
-  GtkWidget *vbox;
-  GtkWidget *frame;
-  GtkWidget *swin;
-  GtkWidget *grid;
-  GtkWidget *label;
-  GtkWidget *box;
-  GtkWidget *box2;
-  GtkWidget *shortcut_button;
-  GtkWidget *clear_button;
-  GtkWidget *reset_button;
-  size_t     row;
+  GtkAdjustment *adjustment;
+  GtkWidget     *vbox;
+  GtkWidget     *frame;
+  GtkWidget     *swin;
+  GtkWidget     *grid;
+  GtkWidget     *label;
+  GtkWidget     *box;
+  GtkWidget     *box2;
+  GtkWidget     *shortcut_button;
+  GtkWidget     *clear_button;
+  GtkWidget     *reset_button;
+  size_t         row;
 
   vbox = GTK_WIDGET (editor);
 
@@ -248,6 +249,10 @@ xfce_shortcuts_editor_create_contents (XfceShortcutsEditor *editor)
   gtk_widget_set_vexpand (swin, TRUE);
   gtk_container_add (GTK_CONTAINER (frame), swin);
   gtk_widget_show (swin);
+
+  adjustment = gtk_scrolled_window_get_hadjustment (GTK_SCROLLED_WINDOW (swin));
+  gtk_adjustment_set_value (adjustment, 0);
+  gtk_scrolled_window_set_hadjustment (GTK_SCROLLED_WINDOW (swin), adjustment);
 
   grid = gtk_grid_new ();
   gtk_grid_set_column_spacing (GTK_GRID (grid), 12);
