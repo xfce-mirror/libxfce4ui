@@ -82,6 +82,7 @@ xfce_shortcuts_editor_dialog_new (int argument_count, ...)
 {
   XfceShortcutsEditorDialog *dialog;
   va_list                    argument_list;
+  GdkGeometry                windowProperties;
 
   va_start (argument_list, argument_count);
 
@@ -89,6 +90,10 @@ xfce_shortcuts_editor_dialog_new (int argument_count, ...)
   gtk_window_set_title (GTK_WINDOW (dialog), _("Shortcuts Editor"));
   gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), xfce_shortcuts_editor_new_variadic (argument_count, argument_list), TRUE, TRUE, 0);
   gtk_widget_show (GTK_WIDGET (dialog));
+
+  windowProperties.min_width = 500;
+  windowProperties.min_height = 600;
+  gtk_window_set_geometry_hints(GTK_WINDOW(dialog), NULL, &windowProperties, GDK_HINT_MIN_SIZE);
 
   va_end (argument_list);
 
