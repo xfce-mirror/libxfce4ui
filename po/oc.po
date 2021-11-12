@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-01 00:45+0200\n"
-"PO-Revision-Date: 2021-11-11 21:58+0000\n"
+"PO-Revision-Date: 2021-11-12 16:32+0000\n"
 "Last-Translator: Quentin PAGÈS\n"
 "Language-Team: Occitan (post 1500) (http://www.transifex.com/xfce/libxfce4ui/language/oc/)\n"
 "MIME-Version: 1.0\n"
@@ -589,7 +589,7 @@ msgstr "Panèl"
 
 #: ../xfce4-about/main.c:141
 msgid "Provides a home for window buttons, launchers, app menu and more."
-msgstr ""
+msgstr "Provesís una zòna pels botons de fenèstras, aviadors, menús d’aplicacions e encara mai."
 
 #: ../xfce4-about/main.c:145
 msgid "Desktop Manager"
@@ -597,7 +597,7 @@ msgstr "Gestionari del burèu"
 
 #: ../xfce4-about/main.c:146
 msgid "Sets desktop backgrounds, handles icons and more."
-msgstr ""
+msgstr "Definís los rèireplans, gerís las icònas e mai."
 
 #: ../xfce4-about/main.c:150
 msgid "File Manager"
@@ -605,7 +605,7 @@ msgstr "Gestionari de fichièrs"
 
 #: ../xfce4-about/main.c:151
 msgid "Manages your files in a modern, easy-to-use and fast way."
-msgstr ""
+msgstr "Gerís los fichièrs d’un biais modèrn, de bon utilizar e rapid."
 
 #: ../xfce4-about/main.c:155
 msgid "Volume Manager"
@@ -613,7 +613,7 @@ msgstr "Gestionari de son"
 
 #: ../xfce4-about/main.c:156
 msgid "Manages removable drives and media for Thunar."
-msgstr ""
+msgstr "Gerís los lectors amovibles e los mèdias per Thunar."
 
 #: ../xfce4-about/main.c:160
 msgid "Session Manager"
@@ -622,7 +622,7 @@ msgstr "Gestionari de sesilhas"
 #: ../xfce4-about/main.c:161
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
-msgstr ""
+msgstr "Enregistra e restaura la session, gerís las aviadas, los lançaments automatics e l’extincion."
 
 #: ../xfce4-about/main.c:165
 msgid "Settings Manager"
@@ -630,7 +630,7 @@ msgstr "Gestionari de paramètres"
 
 #: ../xfce4-about/main.c:166
 msgid "Configures appearance, display, keyboard and mouse settings."
-msgstr ""
+msgstr "Configura las aparéncias, los paramètres d’afichatge, del clavièr e de la mirga."
 
 #: ../xfce4-about/main.c:170
 msgid "Application Finder"
@@ -638,7 +638,7 @@ msgstr "Lista de las aplicacions"
 
 #: ../xfce4-about/main.c:171
 msgid "Quickly finds and launches applications installed on your system."
-msgstr ""
+msgstr "Tròba e lança rapidament las aplicacions installadas sul sistèma."
 
 #: ../xfce4-about/main.c:175
 msgid "Settings Daemon"
@@ -646,7 +646,7 @@ msgstr "Paramètres demòni"
 
 #: ../xfce4-about/main.c:176
 msgid "Stores your settings in a D-Bus-based configuration system."
-msgstr ""
+msgstr "Garda vòstres paramètres dins un sistèma de configuracion de tipe D-Bus."
 
 #: ../xfce4-about/main.c:180
 msgid "A Menu Library"
@@ -654,15 +654,15 @@ msgstr "Una bibliotèca de menú"
 
 #: ../xfce4-about/main.c:181
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
-msgstr ""
+msgstr "Implementa un menú compatible freedesktop.org basat sus GLib e GIO."
 
 #: ../xfce4-about/main.c:185
 msgid "Thumbnails Service"
-msgstr ""
+msgstr "Servici de vinhetas"
 
 #: ../xfce4-about/main.c:186
 msgid "Implements the thumbnail management D-Bus specification."
-msgstr ""
+msgstr "Implementa la gestion de las vinhetas segon las especificacion D-Bus."
 
 #: ../xfce4-about/main.c:240
 msgid "Please see <https://www.xfce.org/about/credits>"
@@ -672,7 +672,7 @@ msgstr "Vejatz <https://www.xfce.org/about/credits>"
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
-msgstr ""
+msgstr "Se vesètz que manca quicòm a la lista ; esitetz pas e garnissètz un rapòrt sus <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues>."
 
 #: ../xfce4-about/main.c:304
 msgid "Thanks to all who helped making this software available!"
@@ -690,7 +690,7 @@ msgid ""
 "terms of the GNU Library General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
-msgstr ""
+msgstr "Los paquets libxfce4ui, libxfce4util, e exo son distribuits jols tèrmes de la GNU Library General Public License tala coma publicada per la Free Software Foundation; que siá en version 2, o (coma volètz) tota version ulteriora."
 
 #: ../xfce4-about/main.c:333
 msgid ""
@@ -699,7 +699,7 @@ msgid ""
 "of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
+msgstr "Los paquets thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop e xfwm4 son distribuïts segon los tèrmes de la licéncia publica generala GNU Licéncia publica generala publicada per la Free Software Foundation ; siá dins la version 2 de la licéncia, o (coma volètz) o dins una superiora."
 
 #: ../xfce4-about/main.c:479
 #, c-format
@@ -744,7 +744,7 @@ msgstr "Supervision de las traduccions"
 
 #: ../xfce4-about/contributors.h:148
 msgid "Documentation supervision"
-msgstr ""
+msgstr "Supervision de la documentacion"
 
 #: ../xfce4-about/contributors.h:151
 msgid "Translators"
@@ -822,7 +822,7 @@ msgstr "Sistèma"
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
-msgstr ""
+msgstr "Xfce es un ensemble de programas que, ensemble, provesisson un environament de burèu complet.\nLos programas seguents fan partida del còr de Xfce :"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:17
 msgid ""
@@ -833,7 +833,7 @@ msgid ""
 "Thank you for your interest in Xfce.\n"
 "\n"
 "\t- The Xfce Development Team"
-msgstr ""
+msgstr "Xfce es tanben una platafòrma de desvolopament que fornís mantuna bibliotèca qu’ajudan los desvolopaires a crear d’aplicacions que van ben amb l’environament de burèu.\n\nLos compausants Xfce  son jos licéncia liura o open source ; GPL o BSDL per las aplicacions e LGPL o BSDL per las bibliotèca. Vejatz la documentacion, lo còdi font o lo site web de Xfce (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) per mai d’informacions.\n\nMercés de vòstre interès per Xfce.\n\n\t- L’equipa de desvolopament de Xfce"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:24
 msgid "About"
