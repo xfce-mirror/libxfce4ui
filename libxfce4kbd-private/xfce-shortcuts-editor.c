@@ -299,6 +299,10 @@ xfce_shortcuts_editor_create_contents (XfceShortcutsEditor *editor)
           if (entry.callback == NULL)
             continue;
 
+          /* ignore entries that don't have an accelerator path */
+          if (g_strcmp0 (entry.accel_path, "") == 0)
+            continue;
+
           data = malloc (sizeof (ShortcutEditClickedData));
           clear_data = malloc (sizeof (ShortcutOtherClickedData));
           reset_data = malloc (sizeof (ShortcutOtherClickedData));
