@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-01 00:45+0200\n"
-"PO-Revision-Date: 2021-07-31 22:45+0000\n"
+"POT-Creation-Date: 2021-11-15 00:45+0100\n"
+"PO-Revision-Date: 2021-11-14 23:45+0000\n"
 "Last-Translator: Xfce Bot <transifex@xfce.org>\n"
 "Language-Team: Norwegian Nynorsk (http://www.transifex.com/xfce/libxfce4ui/language/nn/)\n"
 "MIME-Version: 1.0\n"
@@ -211,6 +211,34 @@ msgstr "Konflikt i handlingane for %s"
 #: ../libxfce4kbd-private/xfce-shortcuts.c:178
 msgid "This shortcut is already being used for something else."
 msgstr "Denne snarvegen er alt oppteken til noko anna."
+
+#: ../libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:90
+msgid "Shortcuts Editor"
+msgstr ""
+
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:330
+msgid "The current shortcut. Press to edit..."
+msgstr ""
+
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:341
+msgid "Clear the shortcut"
+msgstr ""
+
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:351
+msgid "Restore the default shortcut"
+msgstr ""
+
+#. skip leading slash
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:426
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:517
+#, c-format
+msgid "This keyboard shortcut is currently used by: '%s'"
+msgstr "Denne tastatursnarvegen er for tida i bruk av: «%s»"
+
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:429
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:520
+msgid "Keyboard shortcut already in use"
+msgstr "Tastatursnarveg allereie i bruk"
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:214
 msgid "Window Manager Action Shortcut"
