@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-01 00:45+0200\n"
-"PO-Revision-Date: 2021-10-18 22:46+0000\n"
-"Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
+"POT-Creation-Date: 2021-11-15 00:45+0100\n"
+"PO-Revision-Date: 2021-11-14 23:45+0000\n"
+"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
 "Language-Team: Portuguese (http://www.transifex.com/xfce/libxfce4ui/language/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -211,6 +211,34 @@ msgstr "Ações em conflito para %s"
 #: ../libxfce4kbd-private/xfce-shortcuts.c:178
 msgid "This shortcut is already being used for something else."
 msgstr "Este atalho já está a ser usado para outra coisa."
+
+#: ../libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:90
+msgid "Shortcuts Editor"
+msgstr ""
+
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:330
+msgid "The current shortcut. Press to edit..."
+msgstr ""
+
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:341
+msgid "Clear the shortcut"
+msgstr ""
+
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:351
+msgid "Restore the default shortcut"
+msgstr ""
+
+#. skip leading slash
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:426
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:517
+#, c-format
+msgid "This keyboard shortcut is currently used by: '%s'"
+msgstr "Este atalho de teclado está em uso por: '%s'"
+
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:429
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:520
+msgid "Keyboard shortcut already in use"
+msgstr "Atalho de teclado já em uso"
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:214
 msgid "Window Manager Action Shortcut"
