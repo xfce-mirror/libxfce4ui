@@ -12,13 +12,14 @@
 # Michael Martins <michaelfm21@gmail.com>, 2019-2020
 # Rafael Fontenelle <rffontenelle@gmail.com>, 2019
 # The Cat, 2020
+# Wellington Almeida <wsalmeida6@gmail.com>, 2021
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-01 00:45+0200\n"
-"PO-Revision-Date: 2021-09-05 22:16+0000\n"
-"Last-Translator: Michael Martins <michaelfm21@gmail.com>\n"
+"POT-Creation-Date: 2021-11-15 00:45+0100\n"
+"PO-Revision-Date: 2021-11-15 00:51+0000\n"
+"Last-Translator: Wellington Almeida <wsalmeida6@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/xfce/libxfce4ui/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -218,6 +219,34 @@ msgstr "Ações em conflito para %s"
 #: ../libxfce4kbd-private/xfce-shortcuts.c:178
 msgid "This shortcut is already being used for something else."
 msgstr "Este atalho já está em uso para outra coisa."
+
+#: ../libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:90
+msgid "Shortcuts Editor"
+msgstr "Editor de Atalhos "
+
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:330
+msgid "The current shortcut. Press to edit..."
+msgstr "O atalho atual. Pressione para editar ... "
+
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:341
+msgid "Clear the shortcut"
+msgstr "Limpe o atalho "
+
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:351
+msgid "Restore the default shortcut"
+msgstr "Restaurar o atalho padrão "
+
+#. skip leading slash
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:426
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:517
+#, c-format
+msgid "This keyboard shortcut is currently used by: '%s'"
+msgstr "Esta tecla atalho está sendo usada por: '%s'"
+
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:429
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:520
+msgid "Keyboard shortcut already in use"
+msgstr "A tecla atalho já está em uso"
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:214
 msgid "Window Manager Action Shortcut"
