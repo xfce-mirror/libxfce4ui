@@ -6,7 +6,7 @@
 # Ayhan YALÇINSOY <ayhanyalcinsoy@gmail.com>, 2010
 # Butterfly <gokhanlnx@gmail.com>, 2020
 # 0d1bdb3b9a0d4e8f77bc854af8bf3dfc_e6913f4, 2019
-# Demiray Muhterem <mdemiray@msn.com>, 2019-2020
+# Demiray Muhterem <mdemiray@msn.com>, 2019-2021
 # Emin Tufan Çetin <etcetin@gmail.com>, 2020
 # Emin Tufan Çetin <etcetin@gmail.com>, 2020
 # Gökmen Görgen <gkmngrgn@gmail.com>, 2008
@@ -18,9 +18,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-01 00:45+0200\n"
-"PO-Revision-Date: 2021-07-31 22:45+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"POT-Creation-Date: 2021-11-15 00:45+0100\n"
+"PO-Revision-Date: 2021-11-15 05:33+0000\n"
+"Last-Translator: Demiray Muhterem <mdemiray@msn.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/xfce/libxfce4ui/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -220,6 +220,34 @@ msgstr "%s için çelişen eylemler"
 #: ../libxfce4kbd-private/xfce-shortcuts.c:178
 msgid "This shortcut is already being used for something else."
 msgstr "Bu kısayol başka bir şey için de kullanılmış durumda."
+
+#: ../libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:90
+msgid "Shortcuts Editor"
+msgstr "Kısayol Düzenleyici"
+
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:330
+msgid "The current shortcut. Press to edit..."
+msgstr "Geçerli kısayol. Düzenlemek için basın..."
+
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:341
+msgid "Clear the shortcut"
+msgstr "Kısayolu temizle"
+
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:351
+msgid "Restore the default shortcut"
+msgstr "Varsayılan kısayolu geri yükle"
+
+#. skip leading slash
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:426
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:517
+#, c-format
+msgid "This keyboard shortcut is currently used by: '%s'"
+msgstr "Bu klavye kısayolu kullanılıyor: '%s'"
+
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:429
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:520
+msgid "Keyboard shortcut already in use"
+msgstr "Klavye kısayolu zaten kullanılıyor"
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:214
 msgid "Window Manager Action Shortcut"
