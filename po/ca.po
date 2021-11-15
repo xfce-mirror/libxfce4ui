@@ -6,14 +6,14 @@
 # Carles Muñoz Gorriz <carlesmu@internautas.org>, 2013
 # Carles Muñoz Gorriz <carlesmu@internautas.org>, 2013
 # Davidmp <medipas@gmail.com>, 2015
-# Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2017-2020
-# Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2016
+# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2017-2020
+# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-01 00:45+0200\n"
-"PO-Revision-Date: 2021-07-31 22:45+0000\n"
+"POT-Creation-Date: 2021-11-15 00:45+0100\n"
+"PO-Revision-Date: 2021-11-14 23:45+0000\n"
 "Last-Translator: Xfce Bot <transifex@xfce.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/xfce/libxfce4ui/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -214,6 +214,34 @@ msgstr "Conflicte d'accions per %s"
 #: ../libxfce4kbd-private/xfce-shortcuts.c:178
 msgid "This shortcut is already being used for something else."
 msgstr "Aquesta drecera ja s'està utilitzant per a alguna altra cosa."
+
+#: ../libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:90
+msgid "Shortcuts Editor"
+msgstr ""
+
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:330
+msgid "The current shortcut. Press to edit..."
+msgstr ""
+
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:341
+msgid "Clear the shortcut"
+msgstr ""
+
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:351
+msgid "Restore the default shortcut"
+msgstr ""
+
+#. skip leading slash
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:426
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:517
+#, c-format
+msgid "This keyboard shortcut is currently used by: '%s'"
+msgstr "Actualment aquesta drecera de teclat és utilitzada per: '%s'"
+
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:429
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:520
+msgid "Keyboard shortcut already in use"
+msgstr "Drecera de teclat ja en ús"
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:214
 msgid "Window Manager Action Shortcut"
