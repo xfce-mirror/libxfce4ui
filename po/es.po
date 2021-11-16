@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-15 00:45+0100\n"
-"PO-Revision-Date: 2021-11-14 23:45+0000\n"
+"PO-Revision-Date: 2021-11-16 21:59+0000\n"
 "Last-Translator: Toni Estévez <toni.estevez@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/xfce/libxfce4ui/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -223,19 +223,19 @@ msgstr "Este atajo ya está asignado a otra acción."
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:90
 msgid "Shortcuts Editor"
-msgstr ""
+msgstr "Editor de atajos"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:330
 msgid "The current shortcut. Press to edit..."
-msgstr ""
+msgstr "El atajo actual. Pulse para editarlo..."
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:341
 msgid "Clear the shortcut"
-msgstr ""
+msgstr "Borar el atajo"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:351
 msgid "Restore the default shortcut"
-msgstr ""
+msgstr "Restaurar el atajo predeterminado"
 
 #. skip leading slash
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:426
