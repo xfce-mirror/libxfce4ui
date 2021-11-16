@@ -80,6 +80,7 @@ struct _XfceTitledDialogPrivate
   GtkWidget *action_area;
   GdkPixbuf *pixbuf;
   gchar     *subtitle;
+  gboolean  *use_header;
 };
 
 typedef struct _ResponseData ResponseData;
@@ -146,7 +147,6 @@ xfce_titled_dialog_constructor (GType                  type,
   object = G_OBJECT_CLASS (xfce_titled_dialog_parent_class)->constructor (type,
                                                            n_construct_params,
                                                            construct_params);
-  g_object_set (G_OBJECT (object), "use-header-bar", TRUE, NULL);
 
   return object;
 }
@@ -156,22 +156,32 @@ xfce_titled_dialog_constructor (GType                  type,
 static void
 xfce_titled_dialog_init (XfceTitledDialog *titled_dialog)
 {
+  GtkSettings *settings;
+
   /* connect the private data */
   titled_dialog->priv = XFCE_TITLED_DIALOG_GET_PRIVATE (titled_dialog);
 
-  /* Get the headerbar of the dialog */
-  titled_dialog->priv->headerbar = gtk_dialog_get_header_bar (GTK_DIALOG (titled_dialog));
-  g_return_if_fail (GTK_IS_HEADER_BAR (titled_dialog->priv->headerbar));
+  settings = gtk_settings_get_default ();
+  g_object_get (settings, "gtk-dialogs-use-header", &titled_dialog->priv->use_header, NULL);
 
-  /* Don't reserve vertical space for subtitles */
-  gtk_header_bar_set_has_subtitle (GTK_HEADER_BAR (titled_dialog->priv->headerbar), FALSE);
+  if (titled_dialog->priv->use_header)
+  {
+    g_object_set (G_OBJECT (titled_dialog), "use-header-bar", TRUE, NULL);
 
-  /* Pack the window icon into the headerbar */
-  titled_dialog->priv->icon = gtk_image_new ();
-  gtk_header_bar_pack_start (GTK_HEADER_BAR (titled_dialog->priv->headerbar), titled_dialog->priv->icon);
-  gtk_header_bar_set_show_close_button (GTK_HEADER_BAR (titled_dialog->priv->headerbar), TRUE);
-  gtk_widget_show (titled_dialog->priv->icon);
-  titled_dialog->priv->pixbuf = NULL;
+    /* Get the headerbar of the dialog */
+    titled_dialog->priv->headerbar = gtk_dialog_get_header_bar (GTK_DIALOG (titled_dialog));
+    g_return_if_fail (GTK_IS_HEADER_BAR (titled_dialog->priv->headerbar));
+
+    /* Don't reserve vertical space for subtitles */
+    gtk_header_bar_set_has_subtitle (GTK_HEADER_BAR (titled_dialog->priv->headerbar), FALSE);
+
+    /* Pack the window icon into the headerbar */
+    titled_dialog->priv->icon = gtk_image_new ();
+    gtk_header_bar_pack_start (GTK_HEADER_BAR (titled_dialog->priv->headerbar), titled_dialog->priv->icon);
+    gtk_header_bar_set_show_close_button (GTK_HEADER_BAR (titled_dialog->priv->headerbar), TRUE);
+    gtk_widget_show (titled_dialog->priv->icon);
+    titled_dialog->priv->pixbuf = NULL;
+  }
 
   /* make sure to update the icon whenever one of the relevant window properties changes */
   g_signal_connect (G_OBJECT (titled_dialog), "notify::icon", G_CALLBACK (xfce_titled_dialog_update_icon), NULL);
@@ -266,9 +276,12 @@ xfce_titled_dialog_close (GtkDialog *dialog)
 static void
 xfce_titled_dialog_update_icon (XfceTitledDialog *titled_dialog)
 {
-  const gchar *icon_name = gtk_window_get_icon_name (GTK_WINDOW (titled_dialog));
+  const gchar *icon_name;
 
-  g_return_if_fail (GTK_IS_HEADER_BAR (titled_dialog->priv->headerbar));
+  if (!titled_dialog->priv->use_header)
+    return;
+
+  icon_name = gtk_window_get_icon_name (GTK_WINDOW (titled_dialog));
 
   if (icon_name)
     {
@@ -451,7 +464,8 @@ G_GNUC_BEGIN_IGNORE_DEPRECATIONS
       button = gtk_button_new_from_stock (button_text);
 G_GNUC_END_IGNORE_DEPRECATIONS
       gtk_dialog_add_action_widget (GTK_DIALOG (dialog), button, response_id);
-      xfce_titled_dialog_repack_dialog (action_area, headerbar, button, response_id);
+      if (XFCE_TITLED_DIALOG (dialog)->priv->use_header)
+        xfce_titled_dialog_repack_dialog (action_area, headerbar, button, response_id);
       button_text = va_arg (args, const gchar *);
     }
   va_end (args);
@@ -527,7 +541,8 @@ G_GNUC_END_IGNORE_DEPRECATIONS
       gtk_widget_set_can_default (button, TRUE);
 
       gtk_dialog_add_action_widget (GTK_DIALOG (dialog), button, response_id);
-      xfce_titled_dialog_repack_dialog (action_area, headerbar, button, response_id);
+      if (XFCE_TITLED_DIALOG (dialog)->priv->use_header)
+        xfce_titled_dialog_repack_dialog (action_area, headerbar, button, response_id);
       gtk_widget_show (button);
 
       /* this is to pickup for the next button.
@@ -738,6 +753,9 @@ xfce_titled_dialog_set_subtitle (XfceTitledDialog *titled_dialog,
 {
   g_return_if_fail (XFCE_IS_TITLED_DIALOG (titled_dialog));
   g_return_if_fail (subtitle == NULL || g_utf8_validate (subtitle, -1, NULL));
+
+  if (!titled_dialog->priv->use_header)
+    return;
 
   /* release the previous subtitle */
   g_free (titled_dialog->priv->subtitle);
