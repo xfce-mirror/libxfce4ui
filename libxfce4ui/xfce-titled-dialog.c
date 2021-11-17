@@ -557,7 +557,8 @@ G_GNUC_END_IGNORE_DEPRECATIONS
   va_end (args);
 
   /* since we just removed all buttons from the headerbar we have to show the close button again explicitly */
-  gtk_header_bar_set_show_close_button (GTK_HEADER_BAR (headerbar), TRUE);
+  if (XFCE_TITLED_DIALOG (dialog)->priv->use_header)
+    gtk_header_bar_set_show_close_button (GTK_HEADER_BAR (headerbar), TRUE);
 
   return dialog;
 }
