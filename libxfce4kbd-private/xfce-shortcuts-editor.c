@@ -148,6 +148,7 @@ xfce_shortcuts_editor_finalize (GObject *object)
  *
  * A variable arguments version of xfce_shortcuts_editor_new_variadic.
  *
+ * Since: 4.17.2
  **/
 GtkWidget*
 xfce_shortcuts_editor_new (int argument_count, ...)
@@ -181,6 +182,7 @@ xfce_shortcuts_editor_new (int argument_count, ...)
  * used to handle the shortcuts.
  * The third member is the size of that array.
  *
+ * Since: 4.17.2
  **/
 GtkWidget*
 xfce_shortcuts_editor_new_variadic (int     argument_count,
