@@ -72,6 +72,7 @@ xfce_shortcuts_editor_dialog_init (XfceShortcutsEditorDialog *dialog)
 
 /**
  * xfce_shortcuts_editor_dialog_new:
+ * @ellipsize : #gboolean, controls whether the shortcut labels will be ellipsized or not
  * @argument_count : #int, the number of arguments, including this one.
  *
  * Returns a dialog that includes a XfceShortcutsEditor.
@@ -80,7 +81,9 @@ xfce_shortcuts_editor_dialog_init (XfceShortcutsEditorDialog *dialog)
  * Since: 4.17.2
  **/
 GtkWidget*
-xfce_shortcuts_editor_dialog_new (int argument_count, ...)
+xfce_shortcuts_editor_dialog_new (gboolean ellipsize,
+                                  int      argument_count,
+                                  ...)
 {
   XfceShortcutsEditorDialog *dialog;
   va_list                    argument_list;
@@ -90,7 +93,7 @@ xfce_shortcuts_editor_dialog_new (int argument_count, ...)
 
   dialog = g_object_new (XFCE_TYPE_SHORTCUTS_EDITOR_DIALOG, NULL);
   gtk_window_set_title (GTK_WINDOW (dialog), _("Shortcuts Editor"));
-  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), xfce_shortcuts_editor_new_variadic (argument_count, argument_list), TRUE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), xfce_shortcuts_editor_new_variadic (ellipsize, argument_count, argument_list), TRUE, TRUE, 0);
   gtk_widget_show (GTK_WIDGET (dialog));
 
   windowProperties.min_width = 500;

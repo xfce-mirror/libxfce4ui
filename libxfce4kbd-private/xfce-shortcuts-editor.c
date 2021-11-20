@@ -96,8 +96,9 @@ struct _XfceShortcutsEditor
 {
   GtkVBox             __parent__;
 
-  Section *arrays;
-  size_t  arrays_count;
+  Section  *arrays;
+  size_t    arrays_count;
+  gboolean  ellipsize;
 };
 
 
@@ -144,6 +145,7 @@ xfce_shortcuts_editor_finalize (GObject *object)
 
 /**
  * xfce_shortcuts_editor_new:
+ * @ellipsize : #gboolean, controls whether the shortcut labels will be ellipsized or not
  * @argument_count : #int, the number of arguments, including this one.
  *
  * A variable arguments version of xfce_shortcuts_editor_new_variadic.
@@ -151,14 +153,16 @@ xfce_shortcuts_editor_finalize (GObject *object)
  * Since: 4.17.2
  **/
 GtkWidget*
-xfce_shortcuts_editor_new (int argument_count, ...)
+xfce_shortcuts_editor_new (gboolean ellipsize,
+                           int      argument_count,
+                           ...)
 {
   GtkWidget *editor;
   va_list    argument_list;
 
   va_start (argument_list, argument_count);
 
-  editor = xfce_shortcuts_editor_new_variadic (argument_count, argument_list);
+  editor = xfce_shortcuts_editor_new_variadic (ellipsize, argument_count, argument_list);
 
   va_end (argument_list);
 
@@ -169,6 +173,7 @@ xfce_shortcuts_editor_new (int argument_count, ...)
 
 /**
  * xfce_shortcuts_editor_new_variadic:
+ * @ellipsize : #gboolean, controls whether the shortcut labels will be ellipsized or not
  * @argument_count : #int, the number of arguments, including this one.
  * @argument_list : a #va_list containing the arguments
  *
@@ -185,20 +190,22 @@ xfce_shortcuts_editor_new (int argument_count, ...)
  * Since: 4.17.2
  **/
 GtkWidget*
-xfce_shortcuts_editor_new_variadic (int     argument_count,
-                                    va_list argument_list)
+xfce_shortcuts_editor_new_variadic (gboolean  ellipsize,
+                                    int       argument_count,
+                                    va_list   argument_list)
 {
   XfceShortcutsEditor *editor;
 
-  if (argument_count % 3 != 1)
+  if (argument_count % 3 != 2)
     return NULL;
 
   editor = g_object_new (XFCE_TYPE_SHORTCUTS_EDITOR, NULL);
 
-  editor->arrays_count = (argument_count - 1) / 3;
+  editor->ellipsize = ellipsize;
+  editor->arrays_count = (argument_count - 2) / 3;
   editor->arrays = g_malloc (sizeof (Section) * editor->arrays_count);
 
-  for (int i = 0; i * 3 + 1 < argument_count; i++)
+  for (int i = 0; i * 3 + 2 < argument_count; i++)
     {
       editor->arrays[i].section_name = strdup (va_arg (argument_list, gchar*));
       editor->arrays[i].entries = va_arg (argument_list, XfceGtkActionEntry*);
@@ -319,6 +326,11 @@ xfce_shortcuts_editor_create_contents (XfceShortcutsEditor *editor)
           reset_data = malloc (sizeof (ShortcutOtherClickedData));
 
           label = gtk_label_new_with_mnemonic (entry.menu_item_label_text);
+          if (editor->ellipsize == TRUE)
+            {
+              gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
+              gtk_widget_set_tooltip_text (label, entry.menu_item_label_text);
+            }
           gtk_widget_set_hexpand (label, TRUE);
           gtk_widget_set_halign (label, GTK_ALIGN_START);
           gtk_widget_set_margin_start (label, 10);
