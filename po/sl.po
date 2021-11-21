@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-15 00:45+0100\n"
-"PO-Revision-Date: 2021-11-14 23:45+0000\n"
+"PO-Revision-Date: 2021-11-21 19:39+0000\n"
 "Last-Translator: Arnold Marko <arnold.marko@gmail.com>\n"
 "Language-Team: Slovenian (http://www.transifex.com/xfce/libxfce4ui/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -216,19 +216,19 @@ msgstr "Ta bližnjica se že uporablja za nekaj drugega."
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:90
 msgid "Shortcuts Editor"
-msgstr ""
+msgstr "Urejevalnik bližnjic"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:330
 msgid "The current shortcut. Press to edit..."
-msgstr ""
+msgstr "Trenutna bližnjica. Pritisni za urejanje..."
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:341
 msgid "Clear the shortcut"
-msgstr ""
+msgstr "Zbriši bližnjico"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:351
 msgid "Restore the default shortcut"
-msgstr ""
+msgstr "Povrni privzeto bližnjico"
 
 #. skip leading slash
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:426
