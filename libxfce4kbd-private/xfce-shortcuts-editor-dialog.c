@@ -76,6 +76,8 @@ xfce_shortcuts_editor_dialog_init (XfceShortcutsEditorDialog *dialog)
  *
  * Returns a dialog that includes a XfceShortcutsEditor.
  * See xfce_shortcuts_editor_new_variadic for the expected types of the variable argument list.
+ *
+ * Since: 4.17.2
  **/
 GtkWidget*
 xfce_shortcuts_editor_dialog_new (int argument_count, ...)
