@@ -273,7 +273,7 @@ xfce_shortcuts_editor_create_contents (XfceShortcutsEditor *editor)
       /* leave an empty row before each section */
       if (array_idx != 0)
         {
-          label  = gtk_label_new ("");
+          label = gtk_label_new ("");
           gtk_grid_attach (GTK_GRID (grid), label, 0, row, 2, 1);
           gtk_widget_show (label);
           row++;
