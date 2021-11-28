@@ -319,6 +319,8 @@ xfce_shortcuts_editor_create_contents (XfceShortcutsEditor *editor)
           reset_data = malloc (sizeof (ShortcutOtherClickedData));
 
           label = gtk_label_new_with_mnemonic (entry.menu_item_label_text);
+          gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
+          gtk_widget_set_tooltip_text (label, entry.menu_item_label_text);
           gtk_widget_set_hexpand (label, TRUE);
           gtk_widget_set_halign (label, GTK_ALIGN_START);
           gtk_widget_set_margin_start (label, 10);
