@@ -148,6 +148,7 @@ xfce_shortcuts_editor_finalize (GObject *object)
  *
  * A variable arguments version of xfce_shortcuts_editor_new_variadic.
  *
+ * Since: 4.17.2
  **/
 GtkWidget*
 xfce_shortcuts_editor_new (int argument_count, ...)
@@ -181,6 +182,7 @@ xfce_shortcuts_editor_new (int argument_count, ...)
  * used to handle the shortcuts.
  * The third member is the size of that array.
  *
+ * Since: 4.17.2
  **/
 GtkWidget*
 xfce_shortcuts_editor_new_variadic (int     argument_count,
@@ -268,6 +270,15 @@ xfce_shortcuts_editor_create_contents (XfceShortcutsEditor *editor)
     {
       gchar *markup;
 
+      /* leave an empty row before each section */
+      if (array_idx != 0)
+        {
+          label = gtk_label_new ("");
+          gtk_grid_attach (GTK_GRID (grid), label, 0, row, 2, 1);
+          gtk_widget_show (label);
+          row++;
+        }
+
       /* section name */
       if (g_strcmp0 (editor->arrays[array_idx].section_name, "") != 0)
         {
@@ -278,9 +289,9 @@ xfce_shortcuts_editor_create_contents (XfceShortcutsEditor *editor)
           gtk_widget_set_vexpand (label, TRUE);
           gtk_widget_set_hexpand (label, TRUE);
           gtk_widget_set_halign (label, GTK_ALIGN_START);
-          gtk_grid_attach (GTK_GRID (grid), label, 0, row, 1, 3);
+          gtk_grid_attach (GTK_GRID (grid), label, 0, row, 1, 1);
           gtk_widget_show (label);
-          row += 3;
+          row++;
         }
 
       /* section shortcut entries */
@@ -308,8 +319,11 @@ xfce_shortcuts_editor_create_contents (XfceShortcutsEditor *editor)
           reset_data = malloc (sizeof (ShortcutOtherClickedData));
 
           label = gtk_label_new_with_mnemonic (entry.menu_item_label_text);
+          gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
+          gtk_widget_set_tooltip_text (label, entry.menu_item_label_text);
           gtk_widget_set_hexpand (label, TRUE);
           gtk_widget_set_halign (label, GTK_ALIGN_START);
+          gtk_widget_set_margin_start (label, 10);
           gtk_grid_attach (GTK_GRID (grid), label, 0, row, 1, 1);
           gtk_widget_show (label);
 
