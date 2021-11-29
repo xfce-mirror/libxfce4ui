@@ -80,7 +80,7 @@ struct _XfceTitledDialogPrivate
   GtkWidget *action_area;
   GdkPixbuf *pixbuf;
   gchar     *subtitle;
-  gboolean  *use_header;
+  gboolean   use_header;
 };
 
 typedef struct _ResponseData ResponseData;
