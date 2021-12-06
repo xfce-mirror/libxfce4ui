@@ -404,6 +404,104 @@ xfce_gtk_menu_append_seperator (GtkMenuShell *menu)
 
 
 
+static void
+mark_user_disabled_accelerators_as_changed (gpointer        data,
+                                            const gchar    *accel_path,
+                                            guint           accel_key,
+                                            GdkModifierType accel_mods,
+                                            gboolean        changed)
+{
+  for (GList *lp = data; lp != NULL; lp = lp->next)
+    {
+      gchar *path = lp->data;
+      if (g_strcmp0 (accel_path, path) == 0)
+        {
+          if (accel_key == 0 && accel_mods == 0 && changed == FALSE)
+            {
+              /* change the both the "standard" and actual accelerators to 1 and 1 */
+              gtk_accel_map_add_entry (accel_path, 1, 1);
+
+              /* reset the actual accelerator to 0 and 0 (disabled), this way gtk_accel_map_save
+               * will think that the accelarator was changed at runtime (1 != 0) */
+              gtk_accel_map_change_entry (accel_path, 0, 0, FALSE);
+            }
+        }
+    }
+}
+
+
+
+/**
+ * xfce_gtk_accel_map_save:
+ * @path : A file containing accelerator specifications, in the GLib file name encoding.
+ * @user_disabled_shortcuts : a #GList that contains the accelerator paths of actions that have been manually disabled.
+ *
+ * This function, in combination with xfce_gtk_accel_map_load, enables setting accelerators to empty, essentially disabling them.
+ *
+ * gtk_accel_map_save comments-out accelerators that have been set to 0-0 (accelerator key and modifier both 0) and are not
+ * marked as changed, meaning that they weren't changed during runtime. That means that shortcuts that the user has disabled
+ * will be loaded properly once, i.e. disabled, but saving again will comment out their lines in accels.scm. That will lead to the default
+ * accelerators being  re-enabled at the 2nd program startup.
+ *
+ * xfce_gtk_accel_map_save circumvents that by manually setting the changed value of entries in @user_disabled_shortcuts to TRUE.
+ *
+ * Since: 4.17.2
+ **/
+void
+xfce_gtk_accel_map_save (gchar *path,
+                         GList *user_disabled_shortcuts)
+{
+  gtk_accel_map_foreach_unfiltered (user_disabled_shortcuts, mark_user_disabled_accelerators_as_changed);
+  gtk_accel_map_save (path);
+}
+
+
+
+static void
+store_user_disabled_accelerators (gpointer        data,
+                                  const gchar    *accel_path,
+                                  guint           accel_key,
+                                  GdkModifierType accel_mods,
+                                  gboolean        changed)
+{
+  GList *list = data;
+
+  /* if the accelerator is disabled and not marked as "changed" add it to the accelerators that must be reset before saving */
+  if (accel_key == 0 && accel_mods == 0 && changed == FALSE)
+    list = g_list_append (list, g_strdup (accel_path));
+}
+
+
+
+/**
+ * xfce_gtk_accel_map_load:
+ * @path : A file containing accelerator specifications, in the GLib file name encoding.
+ *
+ * This function, in combination with xfce_gtk_accel_map_save, enables setting accelerators to empty, essentially disabling them.
+ * See xfce_gtk_accel_map_save for more information.
+ *
+ * Return value: (transfer full): a #GList that will be filled with the accelerator paths of actions that have been manually disabled.
+ * Must be freed by the caller.
+ *
+ * Since: 4.17.2
+ **/
+GList*
+xfce_gtk_accel_map_load (gchar *path)
+{
+  /* make sure that the list exists */
+  GList *list = g_list_prepend (NULL, NULL);
+
+  /* load the accelerator map */
+  gtk_accel_map_load (path);
+
+  /* remember the user disabled accelerators */
+  gtk_accel_map_foreach_unfiltered (list, store_user_disabled_accelerators);
+
+  return list;
+}
+
+
+
 /**
  * xfce_gtk_accel_map_add_entries:
  * @action_entries : array of action_entries to be added

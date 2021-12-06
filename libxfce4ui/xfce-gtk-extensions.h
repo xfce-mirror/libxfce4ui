@@ -113,6 +113,9 @@ GtkWidget                *xfce_gtk_toggle_menu_item_new_from_action_entry (const
 GtkWidget                *xfce_gtk_tool_button_new_from_action_entry      (const XfceGtkActionEntry *action_entry,
                                                                            GObject                  *callback_param,
                                                                            GtkToolbar               *toolbar_to_append_item);
+void                      xfce_gtk_accel_map_save                         (gchar                    *path,
+                                                                           GList                    *user_disabled_shortcuts);
+GList*                    xfce_gtk_accel_map_load                         (gchar                    *path);
 void                      xfce_gtk_accel_map_add_entries                  (const XfceGtkActionEntry *action_entries,
                                                                            guint                     n_action_entries);
 void                      xfce_gtk_accel_group_connect_action_entries     (GtkAccelGroup            *accel_group,
