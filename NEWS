@@ -1,3 +1,19 @@
+4.17.2
+======
+- xfce-about: Fix potential NULL pointer access
+- Introduce a shortcuts editor widget
+- Translation Updates:
+  Albanian, Amharic, Arabic, Armenian, Armenian (Armenia), Basque,
+  Belarusian, Bengali, Bulgarian, Catalan, Chinese (China), Chinese
+  (Hong Kong), Chinese (Taiwan), Croatian, Czech, Danish, Dutch,
+  Eastern Armenian, English (Australia), English (United Kingdom),
+  Estonian, Finnish, French, Galician, German, Greek, Hebrew,
+  Hungarian, Icelandic, Indonesian, Interlingue, Italian, Japanese,
+  Kazakh, Korean, Latvian, Lithuanian, Malay, Norwegian Bokmål,
+  Norwegian Nynorsk, Occitan (post 1500), Polish, Portuguese,
+  Portuguese (Brazil), Romanian, Russian, Serbian, Slovak, Slovenian,
+  Spanish, Swedish, Telugu, Thai, Turkish, Ukrainian, Uyghur, Welsh
+
 4.17.1
 ======
 - Add xfce_gdk_device_grab
