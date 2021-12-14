@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-15 00:45+0100\n"
-"PO-Revision-Date: 2021-12-03 16:09+0000\n"
+"PO-Revision-Date: 2021-12-14 17:11+0000\n"
 "Last-Translator: Ivica  Kolić <ikoli@yahoo.com>\n"
 "Language-Team: Croatian (http://www.transifex.com/xfce/libxfce4ui/language/hr/)\n"
 "MIME-Version: 1.0\n"
@@ -228,7 +228,7 @@ msgstr "Očisti prečac"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:351
 msgid "Restore the default shortcut"
-msgstr ""
+msgstr "Obnovi zadani prečac"
 
 #. skip leading slash
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:426
