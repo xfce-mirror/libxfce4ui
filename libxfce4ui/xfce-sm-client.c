@@ -859,7 +859,7 @@ xsmp_ice_io_error_handler(IceConn connection)
 static void
 xsmp_ice_init(void)
 {
-    static volatile gsize inited = 0;
+    static gsize inited = 0;
 
     if(g_once_init_enter(&inited)) {
         IceIOErrorHandler default_handler;
