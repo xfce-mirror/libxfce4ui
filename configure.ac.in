@@ -143,6 +143,13 @@ AC_DEFINE(GDK_VERSION_MIN_REQUIRED, GDK_VERSION_3_22, [Ignore post 3.22 deprecat
 AC_DEFINE(GDK_VERSION_MAX_ALLOWED, GDK_VERSION_3_22, [Prevent post 3.22 APIs])
 
 dnl **************************************************************
+dnl *** Check time.h and sys/time.h for libgtop ***
+dnl **************************************************************
+if test x"$GLIBTOP_FOUND" = x"yes"; then
+  AC_CHECK_HEADERS([time.h sys/time.h])
+fi
+
+dnl **************************************************************
 dnl *** Optional support for system information based on epoxy ***
 dnl **************************************************************
 EPOXY_FOUND="no"
