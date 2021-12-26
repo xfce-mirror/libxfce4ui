@@ -127,6 +127,16 @@ const XfceGtkActionEntry *xfce_gtk_get_action_entry_by_id                 (const
                                                                            guint                     id);
 void                      xfce_gtk_translate_action_entries               (XfceGtkActionEntry       *action_entries,
                                                                            guint                     n_action_entries);
+gboolean                  xfce_gtk_handle_tab_accels                      (GdkEventKey              *key_event,
+                                                                           GtkAccelGroup            *accel_group,
+                                                                           gpointer                  data,
+                                                                           XfceGtkActionEntry       *entries,
+                                                                           size_t                    entry_count);
+
+gboolean                  xfce_gtk_execute_tab_accel                      (const gchar              *accel_path,
+                                                                           gpointer                  data,
+                                                                           XfceGtkActionEntry       *entries,
+                                                                           size_t                    entry_count);
 void                      xfce_gtk_menu_append_seperator                  (GtkMenuShell             *menu);
 
 GtkWidget                *xfce_gtk_button_new_mixed                       (const gchar              *stock_id,
