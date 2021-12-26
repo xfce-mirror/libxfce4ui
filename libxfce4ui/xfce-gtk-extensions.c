@@ -556,6 +556,82 @@ xfce_gtk_translate_action_entries (XfceGtkActionEntry *action_entries,
 
 
 /**
+ * xfce_gtk_handle_tab_accels
+ * @key_event   : the #GdkEventKey that might trigger a shortcut
+ * @accel_group : the #GtkAccelGroup that will be get queried
+ * @data        : a pointer of data that will be passed to the callback if a tab-shortcut is found
+ * @entries     : a #XfceGtkActionEntry[]
+ * @entry_count : the number of entries in @entries
+ *
+ * The Tab key is used to navigate the interface by GTK+ so we need to handle shortcuts with the Tab accelerator manually.
+ * Tab sometimes becomes ISO_Left_Tab (e.g. in Ctrl+Shift+Tab) so check both here.
+ *
+ * Return value: a boolean that is TRUE if the event was handled, otherwise it is FALSE
+**/
+gboolean
+xfce_gtk_handle_tab_accels (GdkEventKey        *key_event,
+                            GtkAccelGroup      *accel_group,
+                            gpointer            data,
+                            XfceGtkActionEntry *entries,
+                            size_t              entry_count)
+{
+  const guint modifiers = key_event->state & gtk_accelerator_get_default_mod_mask ();
+
+  if (G_UNLIKELY (key_event->keyval == GDK_KEY_Tab || key_event->keyval == GDK_KEY_ISO_Left_Tab) && key_event->type == GDK_KEY_PRESS)
+    {
+      GtkAccelGroupEntry  *group_entries;
+      guint                group_entries_count;
+
+      group_entries = gtk_accel_group_query (accel_group, key_event->keyval, modifiers, &group_entries_count);
+      if (group_entries_count > 1)
+        {
+          g_error ("Found multiple shortcuts that include the Tab key and the same modifiers.");
+        }
+      else if (group_entries_count == 1)
+        {
+          const gchar *path = g_quark_to_string (group_entries[0].accel_path_quark);
+          return xfce_gtk_execute_tab_accel (path, data, entries, entry_count);
+        }
+    }
+
+  return GDK_EVENT_PROPAGATE;
+}
+
+
+
+/**
+ * xfce_gtk_execute_tab_accel
+ * @accel_path : the accelerator path of the action that we want to activate
+ * @data        : a pointer of data that will be passed to the callback if a tab-shortcut is found
+ * @entries     : a #XfceGtkActionEntry[]
+ * @entry_count : the number of entries in @entries
+ *
+ * Activates the callback function of the #XfceGtkActionEntry that corresponds to @accel_path. If no such action
+ * exists in @entries, then nothing happens.
+ *
+ * Return value: a boolean that is TRUE if the action was found, otherwise it is FALSE
+**/
+gboolean
+xfce_gtk_execute_tab_accel (const gchar        *accel_path,
+                            gpointer            data,
+                            XfceGtkActionEntry *entries,
+                            size_t              entry_count)
+{
+  for (size_t i = 0; i < entry_count; i++)
+    {
+      if (g_strcmp0 (accel_path, entries[i].accel_path) == 0)
+        {
+          ((void (*) (void *)) entries[i].callback) (data);
+          return GDK_EVENT_STOP;
+        }
+    }
+
+  return GDK_EVENT_PROPAGATE;
+}
+
+
+
+/**
  * xfce_gtk_button_new_mixed:
  * @stock_id : the name of the stock item.
  * @label    : the text of the button, with an underscore in front of
