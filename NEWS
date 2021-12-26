@@ -1,3 +1,10 @@
+4.17.3
+======
+- Add functions for handling accelerators that use the Tab key
+- Check time.h and sys/time.h for libgtop
+- `g_once_init_enter()` parameter shouldn't be volatile anymore.
+- Translation Updates: Croatian
+
 4.17.2
 ======
 - xfce-about: Fix potential NULL pointer access
