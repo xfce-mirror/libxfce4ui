@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-15 00:45+0100\n"
-"PO-Revision-Date: 2021-11-14 23:45+0000\n"
+"PO-Revision-Date: 2021-12-29 06:29+0000\n"
 "Last-Translator: Quentin PAGÈS\n"
 "Language-Team: Occitan (post 1500) (http://www.transifex.com/xfce/libxfce4ui/language/oc/)\n"
 "MIME-Version: 1.0\n"
@@ -215,19 +215,19 @@ msgstr "Aqueste acorchi es ja utilizat per quicòm mai."
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:90
 msgid "Shortcuts Editor"
-msgstr ""
+msgstr "Editor d’acorchis"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:330
 msgid "The current shortcut. Press to edit..."
-msgstr ""
+msgstr "L’acorchi actual. Quitatz per modificar..."
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:341
 msgid "Clear the shortcut"
-msgstr ""
+msgstr "Escafar l’acorchi"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:351
 msgid "Restore the default shortcut"
-msgstr ""
+msgstr "Restaurar l’acorchi per defaut"
 
 #. skip leading slash
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:426
