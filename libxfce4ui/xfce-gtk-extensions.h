@@ -64,6 +64,7 @@ struct _XfceGtkActionEntry
   const gchar     *menu_item_icon_name;    /* optional icon name which will be used to find a image for the item */
 
   GCallback        callback;               /* The callback which will be triggered on activation */
+                                           /* The callback has to return TRUE to signal that the accelerator was activated and handled */
 };
 typedef struct _XfceGtkActionEntry XfceGtkActionEntry;
 
