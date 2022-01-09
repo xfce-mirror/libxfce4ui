@@ -558,14 +558,17 @@ get_gpu_info (guint *num_gpus)
 
 
 
+/**
+ * Unquote the given string if both leading and trailing quotes are present,
+ * and if the quotes are of the same type (single or double).
+ */
 static gchar *
 unquote_value (gchar *value)
 {
   gint size = 0;
 
-  /* Eventually jump the ' " ' character */
-  /* Don't consider the last ' " ' too */
-  if (g_str_has_prefix (value, "\"") && g_str_has_suffix (value, "\""))
+  if ((g_str_has_prefix (value, "\"") && g_str_has_suffix (value, "\""))
+      || (g_str_has_prefix (value, "\'") && g_str_has_suffix (value, "\'")))
     {
       value += strlen ("\"");
       size -= strlen ("\"");
