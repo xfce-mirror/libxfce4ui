@@ -558,6 +558,29 @@ get_gpu_info (guint *num_gpus)
 
 
 
+/**
+ * Unquote the given string if both leading and trailing quotes are present,
+ * and if the quotes are of the same type (single or double).
+ */
+static gchar *
+unquote_value (gchar *value)
+{
+  gint size = 0;
+
+  if ((g_str_has_prefix (value, "\"") && g_str_has_suffix (value, "\""))
+      || (g_str_has_prefix (value, "\'") && g_str_has_suffix (value, "\'")))
+    {
+      value += strlen ("\"");
+      size -= strlen ("\"");
+    }
+
+  size += strlen (value);
+
+  return g_strndup (value, size);
+}
+
+
+
 static GHashTable*
 get_os_info (void)
 {
@@ -585,7 +608,6 @@ get_os_info (void)
 
           if (delimiter != NULL)
             {
-              gint size;
               gchar *key, *value;
 
               key = g_strndup (lines[i], delimiter - lines[i]);
@@ -593,17 +615,7 @@ get_os_info (void)
               /* Jump the '=' */
               delimiter += strlen ("=");
 
-              /* Eventually jump the ' " ' character */
-              if (g_str_has_prefix (delimiter, "\""))
-                delimiter += strlen ("\"");
-
-              size = strlen (delimiter);
-
-              /* Don't consider the last ' " ' too */
-              if (g_str_has_suffix (delimiter, "\""))
-                size -= strlen ("\"");
-
-              value = g_strndup (delimiter, size);
+              value = unquote_value (delimiter);
 
               g_hash_table_insert (hashtable, key, value);
             }
