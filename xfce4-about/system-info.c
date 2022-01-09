@@ -561,17 +561,17 @@ get_gpu_info (guint *num_gpus)
 static gchar *
 unquote_value (gchar *value)
 {
-  gint size;
+  gint size = 0;
 
   /* Eventually jump the ' " ' character */
-  if (g_str_has_prefix (value, "\""))
-    value += strlen ("\"");
-
-  size = strlen (value);
-
   /* Don't consider the last ' " ' too */
-  if (g_str_has_suffix (value, "\""))
-    size -= strlen ("\"");
+  if (g_str_has_prefix (value, "\"") && g_str_has_suffix (value, "\""))
+    {
+      value += strlen ("\"");
+      size -= strlen ("\"");
+    }
+
+  size += strlen (value);
 
   return g_strndup (value, size);
 }
