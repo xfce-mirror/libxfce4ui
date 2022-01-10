@@ -563,7 +563,7 @@ get_gpu_info (guint *num_gpus)
  * and if the quotes are of the same type (single or double).
  */
 static gchar *
-unquote_value (const gchar *value)
+unquote_string (const gchar *value)
 {
   gint size = 0;
 
@@ -615,7 +615,7 @@ get_os_info (void)
               /* Jump the '=' */
               delimiter += strlen ("=");
 
-              value = unquote_value (delimiter);
+              value = unquote_string (delimiter);
 
               g_hash_table_insert (hashtable, key, value);
             }
