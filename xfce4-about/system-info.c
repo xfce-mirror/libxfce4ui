@@ -563,20 +563,20 @@ get_gpu_info (guint *num_gpus)
  * and if the quotes are of the same type (single or double).
  */
 static gchar *
-unquote_string (const gchar *value)
+unquote_string (const gchar *string)
 {
   gint size = 0;
 
-  if ((g_str_has_prefix (value, "\"") && g_str_has_suffix (value, "\""))
-      || (g_str_has_prefix (value, "\'") && g_str_has_suffix (value, "\'")))
+  if ((g_str_has_prefix (string, "\"") && g_str_has_suffix (string, "\""))
+      || (g_str_has_prefix (string, "\'") && g_str_has_suffix (string, "\'")))
     {
-      value += 1;
+      string += 1;
       size -= 1;
     }
 
-  size += strlen (value);
+  size += strlen (string);
 
-  return g_strndup (value, size);
+  return g_strndup (string, size);
 }
 
 
