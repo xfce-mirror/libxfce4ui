@@ -559,8 +559,13 @@ get_gpu_info (guint *num_gpus)
 
 
 /**
- * Unquote the given string if both leading and trailing quotes are present,
+ * @string: A string which might be quoted with ' or ".
+ *
+ * Unquotes the given string if both leading and trailing quotes are present,
  * and if the quotes are of the same type (single or double).
+ * The returned string has to be freed with g_free() when no longer needed. 
+ *
+ * Return value: A newly-allocated, unquoted string.
  */
 static gchar *
 unquote_string (const gchar *string)
