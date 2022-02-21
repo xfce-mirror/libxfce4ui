@@ -1,3 +1,13 @@
+4.17.4 (2022-02-21)
+======
+- Replace duplicate logic with xfce_str_replace
+- Use headerbars for dialogs if Gtk/DialogsUseHeader is enabled (#14)
+- Add new method "xfce_gtk_menu_append_separator" (Issue #49)
+- xfce4-about - improve /etc/os-release value unquoting (Issue #47)
+- Add comment to return gboolean in XfceGtkActionEntry
+- Translation Updates:
+  Czech, Hebrew, Occitan (post 1500), Romanian, Ukrainian
+
 4.17.3
 ======
 - Add functions for handling accelerators that use the Tab key
