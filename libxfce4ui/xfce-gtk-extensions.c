@@ -405,6 +405,27 @@ xfce_gtk_menu_append_seperator (GtkMenuShell *menu)
 
 
 /**
+ * xfce_gtk_menu_append_separator:
+ * @menu : #GtkMenuShell on which the separator should be appended
+ *
+ * Convenience method do add separators, used to prevent code duplication
+ *
+ * Since: 4.16
+ **/
+void
+xfce_gtk_menu_append_separator (GtkMenuShell *menu)
+{
+  GtkWidget *item;
+
+  g_return_if_fail (GTK_IS_MENU_SHELL (menu));
+
+  item = gtk_separator_menu_item_new ();
+  gtk_menu_shell_append (menu, item);
+}
+
+
+
+/**
  * xfce_gtk_accel_map_add_entries:
  * @action_entries : array of action_entries to be added
  * @n_action_entries : size of the action_entries array
