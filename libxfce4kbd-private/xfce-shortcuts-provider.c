@@ -599,39 +599,9 @@ xfce_shortcuts_provider_has_shortcut (XfceShortcutsProvider *provider,
        * GTK+ used <Control> and this might be stored in Xfconf. We need
        * to check for this too. */
 
-      const gchar *primary;
-      const gchar *p, *s;
-      GString     *replaced;
       gchar       *with_control_shortcut;
 
-      replaced = g_string_sized_new (strlen (shortcut));
-      primary = "Primary";
-
-      /* Replace Primary in the string by Control using the same logic
-       * as exo_str_replace. */
-
-      while (*shortcut != '\0')
-        {
-          if (G_UNLIKELY (*shortcut == *primary))
-            {
-              /* compare the pattern to the current string */
-              for (p = primary + 1, s = shortcut + 1; *p == *s; ++s, ++p)
-                if (*p == '\0' || *s == '\0')
-                  break;
-
-              /* check if the pattern fully matched */
-              if (G_LIKELY (*p == '\0'))
-                {
-                  g_string_append (replaced, "Control");
-                  shortcut = s;
-                  continue;
-                }
-            }
-
-          g_string_append_c (replaced, *shortcut++);
-        }
-
-      with_control_shortcut = g_string_free (replaced, FALSE);
+      with_control_shortcut = xfce_str_replace (shortcut, "Primary", "Control");
 
       DBG ("Looking for old GTK+ shortcut %s", with_control_shortcut);
 
