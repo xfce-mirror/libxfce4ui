@@ -38,8 +38,9 @@ typedef struct _XfceShortcutsEditorDialog      XfceShortcutsEditorDialog;
 
 GType        xfce_shortcuts_editor_dialog_get_type        (void) G_GNUC_CONST;
 
-GtkWidget   *xfce_shortcuts_editor_dialog_new             (int argument_count,
-                                                           ...) G_GNUC_MALLOC;
+GtkWidget   *xfce_shortcuts_editor_dialog_new             (GtkWindow *parent,
+                                                           int        argument_count,
+                                                           ...        ) G_GNUC_MALLOC;
 
 G_END_DECLS
 
