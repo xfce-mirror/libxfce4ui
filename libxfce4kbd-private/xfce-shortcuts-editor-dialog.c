@@ -84,18 +84,57 @@ xfce_shortcuts_editor_dialog_new (int argument_count, ...)
 {
   XfceShortcutsEditorDialog *dialog;
   va_list                    argument_list;
-  GdkGeometry                windowProperties;
 
   va_start (argument_list, argument_count);
 
   dialog = g_object_new (XFCE_TYPE_SHORTCUTS_EDITOR_DIALOG, NULL);
   gtk_window_set_title (GTK_WINDOW (dialog), _("Shortcuts Editor"));
   gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), xfce_shortcuts_editor_new_variadic (argument_count, argument_list), TRUE, TRUE, 0);
+
+  /* set a reasonable default size */
+  gtk_window_set_default_size (GTK_WINDOW (dialog), 500, 600);
+
   gtk_widget_show (GTK_WIDGET (dialog));
 
-  windowProperties.min_width = 500;
-  windowProperties.min_height = 600;
-  gtk_window_set_geometry_hints(GTK_WINDOW(dialog), NULL, &windowProperties, GDK_HINT_MIN_SIZE);
+  va_end (argument_list);
+
+  return GTK_WIDGET (dialog);
+}
+
+
+
+/**
+ * xfce_shortcuts_editor_dialog_new_with_parent:
+ * @parent         : #GtkWindow, the parent window of the dialog, used in gtk_window_set_transient_for (can be NULL).
+ * @argument_count : #int, the number of arguments, including this one.
+ *
+ * Returns a dialog that includes a XfceShortcutsEditor.
+ * See xfce_shortcuts_editor_new_variadic for the expected types of the variable argument list.
+ *
+ * Since: 4.17.5
+ **/
+GtkWidget*
+xfce_shortcuts_editor_dialog_new_with_parent (GtkWindow *parent,
+                                              int        argument_count,
+                                              ...        )
+{
+  XfceShortcutsEditorDialog *dialog;
+  va_list                    argument_list;
+
+  va_start (argument_list, argument_count);
+
+  /* create the dialog and its content */
+  dialog = g_object_new (XFCE_TYPE_SHORTCUTS_EDITOR_DIALOG, NULL);
+  gtk_window_set_title (GTK_WINDOW (dialog), _("Shortcuts Editor"));
+  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), xfce_shortcuts_editor_new_variadic (argument_count, argument_list), TRUE, TRUE, 0);
+
+  /* set a reasonable default size */
+  gtk_window_set_default_size (GTK_WINDOW (dialog), 500, 600);
+
+  /* center the dialog on top of the parent widget */
+  gtk_window_set_transient_for (GTK_WINDOW (dialog), GTK_WINDOW (parent));
+
+  gtk_widget_show (GTK_WIDGET (dialog));
 
   va_end (argument_list);
 
