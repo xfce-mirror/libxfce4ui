@@ -41,6 +41,10 @@ GType        xfce_shortcuts_editor_dialog_get_type        (void) G_GNUC_CONST;
 GtkWidget   *xfce_shortcuts_editor_dialog_new             (int argument_count,
                                                            ...) G_GNUC_MALLOC;
 
+GtkWidget   *xfce_shortcuts_editor_dialog_new_with_parent (GtkWindow *parent,
+                                                           int        argument_count,
+                                                           ...        ) G_GNUC_MALLOC;
+
 G_END_DECLS
 
 #endif /* !__XFCE_SHORTCUTS_EDITOR_DIALOG_H__ */
