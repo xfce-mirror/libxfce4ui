@@ -417,7 +417,7 @@ G_GNUC_END_IGNORE_DEPRECATIONS
       if (G_LIKELY (sn_launcher != NULL))
         {
           /* start a timeout to stop the startup notification sequence after
-           * a certain time, to handle applications that do not
+           * about XFCE_SPAWN_STARTUP_TIMEOUT seconds, to handle applications that do not
            * properly implement startup notify */
           spawn_data->sn_launcher = sn_launcher;
           spawn_data->timeout_id = g_timeout_add_seconds_full (G_PRIORITY_LOW,
