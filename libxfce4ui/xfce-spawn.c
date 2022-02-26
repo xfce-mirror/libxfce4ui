@@ -100,20 +100,8 @@ typedef struct
 static gboolean
 xfce_spawn_startup_timeout (gpointer user_data)
 {
-  XfceSpawnData *spawn_data = user_data;
-  GTimeVal       now;
-  gdouble        elapsed;
-  glong          tv_sec;
-  glong          tv_usec;
-
-  g_return_val_if_fail (spawn_data->sn_launcher != NULL, FALSE);
-
-  /* determine the amount of elapsed time */
-  g_get_current_time (&now);
-  sn_launcher_context_get_last_active_time (spawn_data->sn_launcher, &tv_sec, &tv_usec);
-  elapsed = now.tv_sec - tv_sec + ((gdouble) (now.tv_usec - tv_usec) / G_USEC_PER_SEC);
-
-  return elapsed < XFCE_SPAWN_STARTUP_TIMEOUT;
+  /* timeout reached, lets stop the startup notification */
+  return FALSE;
 }
 
 
@@ -429,7 +417,7 @@ G_GNUC_END_IGNORE_DEPRECATIONS
       if (G_LIKELY (sn_launcher != NULL))
         {
           /* start a timeout to stop the startup notification sequence after
-           * a certain about of time, to handle applications that do not
+           * a certain time, to handle applications that do not
            * properly implement startup notify */
           spawn_data->sn_launcher = sn_launcher;
           spawn_data->timeout_id = g_timeout_add_seconds_full (G_PRIORITY_LOW,
