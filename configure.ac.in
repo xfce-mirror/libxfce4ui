@@ -108,7 +108,7 @@ dnl ***************************************
 AC_CHECK_HEADERS([crt_externs.h errno.h fcntl.h limits.h locale.h math.h \
                   memory.h signal.h stdarg.h stdlib.h string.h unistd.h])
 AC_CHECK_DECLS([environ])
-AC_CHECK_FUNCS([_NSGetEnviron])
+AC_CHECK_FUNCS([_NSGetEnviron bind_textdomain_codeset])
 
 dnl ******************************
 dnl *** Check for i18n support ***
