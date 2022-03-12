@@ -93,7 +93,10 @@ xfce_shortcut_conflict_dialog (GtkWindow   *parent,
   handled = FALSE;
 
   /* Make sure to use the translations from libxfce4ui */
-  xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
+  bindtextdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR);
+#ifdef HAVE_BIND_TEXTDOMAIN_CODESET
+  bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
+#endif
 
   if (g_utf8_collate (owner, other) == 0 && ignore_same_provider)
     return GTK_RESPONSE_ACCEPT;
