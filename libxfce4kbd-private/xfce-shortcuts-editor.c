@@ -177,7 +177,8 @@ xfce_shortcuts_editor_new (int argument_count, ...)
  * The @argument_list consists of triads of arguments.
  * The types of a triad are the following: (gchar*, XfceGtkActionEntry[], size_t).
  *
- * The first member of a triad is the name of the section in the editor.
+ * The first member of a triad is the name of the section in the editor. Specify
+ * an empty string so that no section appears.
  * The second member of a triad is the array of XfceGtkActionEntries which are
  * used to handle the shortcuts.
  * The third member is the size of that array.
