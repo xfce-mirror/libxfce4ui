@@ -178,7 +178,8 @@ xfce_shortcuts_editor_new (int argument_count, ...)
  * The @argument_list consists of triads of arguments.
  * The types of a triad are the following: (gchar*, XfceGtkActionEntry[], size_t).
  *
- * The first member of a triad is the name of the section in the editor.
+ * The first member of a triad is the name of the section in the editor. Specify
+ * %NULL or an empty string so that no section appears.
  * The second member of a triad is the array of XfceGtkActionEntries which are
  * used to handle the shortcuts.
  * The third member is the size of that array.
@@ -201,7 +202,7 @@ xfce_shortcuts_editor_new_variadic (int     argument_count,
 
   for (int i = 0; i * 3 + 1 < argument_count; i++)
     {
-      editor->arrays[i].section_name = strdup (va_arg (argument_list, gchar*));
+      editor->arrays[i].section_name = g_strdup (va_arg (argument_list, gchar*));
       editor->arrays[i].entries = va_arg (argument_list, XfceGtkActionEntry*);
       editor->arrays[i].size = va_arg (argument_list, size_t);
     }
@@ -281,7 +282,7 @@ xfce_shortcuts_editor_create_contents (XfceShortcutsEditor *editor)
         }
 
       /* section name */
-      if (g_strcmp0 (editor->arrays[array_idx].section_name, "") != 0)
+      if (! xfce_str_is_empty (editor->arrays[array_idx].section_name))
         {
           label  = gtk_label_new ("");
           markup = g_strconcat ("<b>", editor->arrays[array_idx].section_name, "</b>", NULL);
