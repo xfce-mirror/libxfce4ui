@@ -40,6 +40,7 @@ typedef struct
 {
   XfceShortcutsEditor *editor;
   XfceGtkActionEntry  *entry;
+  const gchar         *displayed_label;
 } ShortcutEditClickedData;
 
 typedef struct
@@ -319,8 +320,9 @@ xfce_shortcuts_editor_create_contents (XfceShortcutsEditor *editor)
           reset_data = malloc (sizeof (ShortcutOtherClickedData));
 
           label = gtk_label_new_with_mnemonic (entry.menu_item_label_text);
+          data->displayed_label = gtk_label_get_text (GTK_LABEL (label));
           gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
-          gtk_widget_set_tooltip_text (label, gtk_label_get_text (GTK_LABEL (label))); /* this way mnemonics are removed */
+          gtk_widget_set_tooltip_text (label, data->displayed_label);
           gtk_widget_set_hexpand (label, TRUE);
           gtk_widget_set_halign (label, GTK_ALIGN_START);
           gtk_widget_set_margin_start (label, 10);
@@ -467,7 +469,7 @@ xfce_shortcuts_editor_shortcut_clicked (GtkWidget               *widget,
   guint            accel_key;
   gchar           *label;
 
-  dialog = xfce_shortcut_dialog_new ("", data->entry->menu_item_label_text, "");
+  dialog = xfce_shortcut_dialog_new ("", data->displayed_label, "");
 
   g_signal_connect (dialog, "validate-shortcut", G_CALLBACK (xfce_shortcuts_editor_validate_shortcut), data);
 
