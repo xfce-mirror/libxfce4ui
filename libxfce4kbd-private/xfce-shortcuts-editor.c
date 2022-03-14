@@ -58,13 +58,6 @@ typedef struct
   gchar          *other_path;
 } ShortcutInfo;
 
-typedef struct
-{
-  gchar              *section_name;
-  XfceGtkActionEntry *entries;
-  size_t              size;
-} Section;
-
 
 
 static void     xfce_shortcuts_editor_finalize                 (GObject                   *object);
@@ -97,8 +90,8 @@ struct _XfceShortcutsEditor
 {
   GtkVBox             __parent__;
 
-  Section *arrays;
-  size_t  arrays_count;
+  XfceShortcutsEditorSection *arrays;
+  size_t                      arrays_count;
 };
 
 
@@ -169,6 +162,43 @@ xfce_shortcuts_editor_new (int argument_count, ...)
 
 
 /**
+ * xfce_shortcuts_editor_new_array:
+ * @sections   : an array of XfceShortcutsEditorSection triads (see
+ *               xfce_shortcuts_editor_new_variadic for a description).
+ * @n_sections : #int, the size of the array.
+ *
+ * A vectorized version of xfce_shortcuts_editor_new.
+ *
+ * Since: 4.17.5
+ **/
+GtkWidget*
+xfce_shortcuts_editor_new_array (XfceShortcutsEditorSection *sections,
+                                 int                         n_sections)
+{
+  XfceShortcutsEditor *editor;
+
+  editor = g_object_new (XFCE_TYPE_SHORTCUTS_EDITOR, NULL);
+
+  editor->arrays_count = n_sections;
+  editor->arrays = g_new (XfceShortcutsEditorSection, n_sections);
+
+  for (int i = 0; i < n_sections; i++)
+    {
+      editor->arrays[i].section_name = g_strdup (sections[i].section_name);
+      editor->arrays[i].entries = sections[i].entries;
+      editor->arrays[i].size = sections[i].size;
+    }
+
+  xfce_shortcuts_editor_create_contents (editor);
+
+  gtk_widget_show (GTK_WIDGET (editor));
+
+  return GTK_WIDGET (editor);
+}
+
+
+
+/**
  * xfce_shortcuts_editor_new_variadic:
  * @argument_count : #int, the number of arguments, including this one.
  * @argument_list : a #va_list containing the arguments
@@ -197,7 +227,7 @@ xfce_shortcuts_editor_new_variadic (int     argument_count,
   editor = g_object_new (XFCE_TYPE_SHORTCUTS_EDITOR, NULL);
 
   editor->arrays_count = (argument_count - 1) / 3;
-  editor->arrays = g_malloc (sizeof (Section) * editor->arrays_count);
+  editor->arrays = g_malloc (sizeof (XfceShortcutsEditorSection) * editor->arrays_count);
 
   for (int i = 0; i * 3 + 1 < argument_count; i++)
     {
