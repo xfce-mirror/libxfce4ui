@@ -36,12 +36,21 @@ typedef struct _XfceShortcutsEditor      XfceShortcutsEditor;
 #define XFCE_IS_SHORTCUTS_EDITOR_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), XFCE_TYPE_SHORTCUTS_EDITOR))
 #define XFCE_SHORTCUTS_EDITOR_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), XFCE_TYPE_SHORTCUTS_EDITOR, XfceShortcutsEditorClass))
 
+typedef struct
+{
+  gchar              *section_name;
+  XfceGtkActionEntry *entries;
+  size_t              size;
+} XfceShortcutsEditorSection;
+
 GType        xfce_shortcuts_editor_get_type        (void) G_GNUC_CONST;
 
-GtkWidget   *xfce_shortcuts_editor_new             (int     argument_count,
+GtkWidget   *xfce_shortcuts_editor_new             (int                         argument_count,
                                                     ...) G_GNUC_MALLOC;
-GtkWidget   *xfce_shortcuts_editor_new_variadic    (int     argument_count,
-                                                    va_list argument_list) G_GNUC_MALLOC;
+GtkWidget   *xfce_shortcuts_editor_new_array       (XfceShortcutsEditorSection *sections,
+                                                    int                         n_sections) G_GNUC_MALLOC;
+GtkWidget   *xfce_shortcuts_editor_new_variadic    (int                         argument_count,
+                                                    va_list                     argument_list) G_GNUC_MALLOC;
 
 G_END_DECLS
 
