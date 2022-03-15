@@ -1,3 +1,14 @@
+4.17.5
+======
+- XfceShortcutsEditor: Allow NULL for section name and document it
+- XfceShortcutsEditor: Add new vectorized constructor
+- i18n: Do not use textdomain() in libs
+- XfceShortcutsEditor: Remove label formatting if necessary
+- Simplify startup notification timeout
+- XfceShortcutsDialog: center the dialog on the parent window
+- Translation Updates:
+  Danish, Russian
+
 4.17.4 (2022-02-21)
 ======
 - Replace duplicate logic with xfce_str_replace
