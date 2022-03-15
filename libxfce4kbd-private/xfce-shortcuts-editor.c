@@ -113,7 +113,10 @@ xfce_shortcuts_editor_class_init (XfceShortcutsEditorClass *klass)
   GObjectClass *gobject_class;
 
   /* Make sure to use the translations from libxfce4ui */
-  xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
+  bindtextdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR);
+#ifdef HAVE_BIND_TEXTDOMAIN_CODESET
+  bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
+#endif
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->finalize = xfce_shortcuts_editor_finalize;

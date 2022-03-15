@@ -57,7 +57,10 @@ static void
 xfce_shortcuts_editor_dialog_class_init (XfceShortcutsEditorDialogClass *klass)
 {
   /* Make sure to use the translations from libxfce4ui */
-  xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
+  bindtextdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR);
+#ifdef HAVE_BIND_TEXTDOMAIN_CODESET
+  bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
+#endif
 }
 
 
