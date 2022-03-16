@@ -204,9 +204,9 @@ xfce_shortcut_dialog_create_contents (XfceShortcutDialog *dialog,
   const gchar *action_type;
   const gchar *title;
   const gchar *icon_name;
-  const gchar *explanation_label;
   const gchar *text;
   const gchar *format;
+  gchar       *explanation_label;
   gchar       *markup;
 
   if (g_utf8_collate (provider, "xfwm4") == 0)
@@ -275,6 +275,7 @@ xfce_shortcut_dialog_create_contents (XfceShortcutDialog *dialog,
   gtk_label_set_line_wrap (GTK_LABEL (label), TRUE);
   gtk_container_add (GTK_CONTAINER (content_box), label);
   gtk_widget_show (label);
+  g_free (explanation_label);
 
   /* Box and labels to display the shortcut currently being grabbed.
    * It will be updated to key-press events. */
