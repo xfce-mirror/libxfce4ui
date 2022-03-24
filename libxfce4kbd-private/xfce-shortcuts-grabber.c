@@ -459,7 +459,7 @@ xfce_shortcuts_grabber_regrab_all (XfceShortcutsGrabber *grabber)
   if (G_UNLIKELY (group == -1))
     group = 0;
 
-  regrab = g_malloc (g_hash_table_size (grabber->priv->keys) * sizeof (*regrab));
+  regrab = g_new (XfceKey *, g_hash_table_size (grabber->priv->keys));
 
   /* Phase 1: Ungrab all keys that need to be re-grabbed
    *          and collect them into the 'regrab' list */

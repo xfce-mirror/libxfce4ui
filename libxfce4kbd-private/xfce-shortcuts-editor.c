@@ -231,7 +231,7 @@ xfce_shortcuts_editor_new_variadic (int     argument_count,
   editor = g_object_new (XFCE_TYPE_SHORTCUTS_EDITOR, NULL);
 
   editor->arrays_count = (argument_count - 1) / 3;
-  editor->arrays = g_malloc (sizeof (XfceShortcutsEditorSection) * editor->arrays_count);
+  editor->arrays = g_new (XfceShortcutsEditorSection, editor->arrays_count);
 
   for (int i = 0; i * 3 + 1 < argument_count; i++)
     {
@@ -349,9 +349,9 @@ xfce_shortcuts_editor_create_contents (XfceShortcutsEditor *editor)
           if (entry.accel_path == NULL || g_strcmp0 (entry.accel_path, "") == 0)
             continue;
 
-          data = malloc (sizeof (ShortcutEditClickedData));
-          clear_data = malloc (sizeof (ShortcutOtherClickedData));
-          reset_data = malloc (sizeof (ShortcutOtherClickedData));
+          data = g_new (ShortcutEditClickedData, 1);
+          clear_data = g_new (ShortcutOtherClickedData, 1);
+          reset_data = g_new (ShortcutOtherClickedData, 1);
 
           label = gtk_label_new_with_mnemonic (entry.menu_item_label_text);
           data->displayed_label = gtk_label_get_text (GTK_LABEL (label));
