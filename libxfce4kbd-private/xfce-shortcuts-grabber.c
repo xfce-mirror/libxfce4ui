@@ -398,7 +398,7 @@ get_entries_for_keyval (GdkKeymap     *keymap,
   if (G_UNLIKELY (n_keys1 == 0))
     {
       g_free (keys1);
-      keys1 = NULL;
+      return FALSE;
     }
 
   *keys = keys1;
