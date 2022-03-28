@@ -384,6 +384,46 @@ xfce_gtk_tool_button_new_from_action_entry (const XfceGtkActionEntry *action_ent
 
 
 /**
+ * xfce_gtk_toggle_tool_button_new_from_action_entry:
+ * @action_entry : Label to use for the #GtkToolButton
+ * @callback_param : optional callback parameter, or %NULL.
+ * @active : boolean value indicating whether the toggle is initially active.
+ * @toolbar_to_append_item : #GtkToolBar on which the item should be appended
+ *
+ * Method to create a toolbar toggle-button from the passed action entry.
+ *
+ * Return value: (transfer full): A new #GtkToggleToolButton
+ *
+ * Since: 4.17.6
+ **/
+GtkWidget*
+xfce_gtk_toggle_tool_button_new_from_action_entry (const XfceGtkActionEntry *action_entry,
+                                                   GObject                  *callback_param,
+                                                   gboolean                  active,
+                                                   GtkToolbar               *toolbar_to_append_item)
+{
+  GtkToolButton *tool_item;
+  GtkWidget     *image;
+
+  g_return_val_if_fail (action_entry != NULL, NULL);
+
+  tool_item = GTK_TOOL_BUTTON (gtk_toggle_tool_button_new ());
+  image = gtk_image_new_from_icon_name (action_entry->menu_item_icon_name, GTK_ICON_SIZE_LARGE_TOOLBAR);
+  gtk_tool_button_set_label (tool_item, action_entry->menu_item_label_text);
+  gtk_tool_button_set_icon_widget (tool_item, image);
+  gtk_widget_set_tooltip_text (GTK_WIDGET (tool_item), action_entry->menu_item_tooltip_text);
+  gtk_toolbar_insert (toolbar_to_append_item, GTK_TOOL_ITEM (tool_item), -1);
+
+  /* 'gtk_check_menu_item_set_active' has to be done before 'g_signal_connect_swapped', to don't trigger the callback */
+  gtk_toggle_tool_button_set_active (GTK_TOGGLE_TOOL_BUTTON (tool_item), active);
+  g_signal_connect_swapped (G_OBJECT (tool_item), "toggled", action_entry->callback, callback_param);
+
+  return GTK_WIDGET (tool_item);
+}
+
+
+
+/**
  * xfce_gtk_menu_append_seperator:
  * @menu : #GtkMenuShell on which the separator should be appended
  *
