@@ -353,13 +353,13 @@ xfce_gtk_toggle_menu_item_new_from_action_entry (const XfceGtkActionEntry *actio
 
 /**
  * xfce_gtk_tool_button_new_from_action_entry:
- * @action_entry : Label to use for the #GtkTolButton
- * @callback_param : optional callback parameter, or NULL.
+ * @action_entry : Label to use for the #GtkToolButton
+ * @callback_param : optional callback parameter, or %NULL.
  * @toolbar_to_append_item : #GtkToolBar on which the item should be appended
  *
- * Method to create a toolbar button from the passed action entry
+ * Method to create a toolbar button from the passed action entry.
  *
- * Return value: (transfer full): A new #GtkTolButton
+ * Return value: (transfer full): A new #GtkToolButton
  *
  * Since: 4.16
  **/
