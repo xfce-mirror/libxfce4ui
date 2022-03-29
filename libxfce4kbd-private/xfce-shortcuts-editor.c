@@ -451,11 +451,6 @@ xfce_shortcuts_editor_validate_shortcut (XfceShortcutDialog      *editor,
   if (G_UNLIKELY (g_utf8_strlen (shortcut, -1) == 0))
     return FALSE;
 
-  /* Ignore raw 'Return' and 'space' since that may have been used to activate the shortcut row */
-  if (G_UNLIKELY (g_utf8_collate (shortcut, "Return") == 0 ||
-                  g_utf8_collate (shortcut, "space") == 0))
-    return FALSE;
-
   gtk_accelerator_parse (shortcut, &accel_key, &accel_mods);
 
   info.in_use = FALSE;
