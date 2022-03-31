@@ -615,100 +615,100 @@ msgstr "Panel"
 
 #: ../xfce4-about/main.c:141
 msgid "Provides a home for window buttons, launchers, app menu and more."
-msgstr ""
+msgstr "Pəncərə düymələri, başladanlar, uyğulama seçməsi və daha çoxu üçün ev sağlayır."
 
 #: ../xfce4-about/main.c:145
 msgid "Desktop Manager"
-msgstr ""
+msgstr "İş qoyağı Yönəldəni"
 
 #: ../xfce4-about/main.c:146
 msgid "Sets desktop backgrounds, handles icons and more."
-msgstr ""
+msgstr "İş qoyağı arxalıqlarını, imgələri, və daha çoxunu ayarlayır."
 
 #: ../xfce4-about/main.c:150
 msgid "File Manager"
-msgstr ""
+msgstr "Düzüm Yönəldəni"
 
 #: ../xfce4-about/main.c:151
 msgid "Manages your files in a modern, easy-to-use and fast way."
-msgstr ""
+msgstr "Düzümlərinizi, çağdaş, asan işlənişli, sürətli yol ilə yönəldir."
 
 #: ../xfce4-about/main.c:155
 msgid "Volume Manager"
-msgstr ""
+msgstr "Tutum Yönəldəni"
 
 #: ../xfce4-about/main.c:156
 msgid "Manages removable drives and media for Thunar."
-msgstr ""
+msgstr "Thunar üçün çıxabilən sürgüləri, ortamları yönəldir."
 
 #: ../xfce4-about/main.c:160
 msgid "Session Manager"
-msgstr ""
+msgstr "Oturum Yönəldəni"
 
 #: ../xfce4-about/main.c:161
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
-msgstr ""
+msgstr "Oturumunuzu qoruyur, qaytarır, açılış, özaçılış, söndürmə işlərini ələ alır."
 
 #: ../xfce4-about/main.c:165
 msgid "Settings Manager"
-msgstr ""
+msgstr "Ayarları Yönəldən"
 
 #: ../xfce4-about/main.c:166
 msgid "Configures appearance, display, keyboard and mouse settings."
-msgstr ""
+msgstr "Görünüş, göstərici, düyməlik, siçan ayarlarını quruluşlayır."
 
 #: ../xfce4-about/main.c:170
 msgid "Application Finder"
-msgstr ""
+msgstr "Uyğulama Tapıcı"
 
 #: ../xfce4-about/main.c:171
 msgid "Quickly finds and launches applications installed on your system."
-msgstr ""
+msgstr "Sisteminizdə qurulmuş uyğulamaları tez tapır, başladır. "
 
 #: ../xfce4-about/main.c:175
 msgid "Settings Daemon"
-msgstr ""
+msgstr "Ayarlar Qulluğu"
 
 #: ../xfce4-about/main.c:176
 msgid "Stores your settings in a D-Bus-based configuration system."
-msgstr ""
+msgstr "Ayarlarınızı D-Bus dabanlı quruluşlanış sistemində saxlayır."
 
 #: ../xfce4-about/main.c:180
 msgid "A Menu Library"
-msgstr ""
+msgstr "Seçmə Bitikliyi"
 
 #: ../xfce4-about/main.c:181
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
-msgstr ""
+msgstr "GLib, GIO dabanlı freedesktop.org uyumlu seçməni uyğulayır."
 
 #: ../xfce4-about/main.c:185
 msgid "Thumbnails Service"
-msgstr ""
+msgstr "Kiçik Görsəl Qulluğu"
 
 #: ../xfce4-about/main.c:186
 msgid "Implements the thumbnail management D-Bus specification."
-msgstr ""
+msgstr "Kiçik görsəl yönətimi D-Bus özəllşdirməsini uyğulayır. "
 
 #: ../xfce4-about/main.c:240
 msgid "Please see <https://www.xfce.org/about/credits>"
-msgstr ""
+msgstr "Buna baxın: <https://www.xfce.org/about/credits>"
 
 #: ../xfce4-about/main.c:300
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
-msgstr ""
+msgstr "Bu sıralanışda əksik birini görürsünüzsə, ilişməyin, böcəyi (yanlışı) <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> üzərindən bildirin."
 
 #: ../xfce4-about/main.c:304
 msgid "Thanks to all who helped making this software available!"
-msgstr ""
+msgstr "Bu incəgeyimi əlçatan edən hamı sağolsun!"
 
 #: ../xfce4-about/main.c:321
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
-msgstr ""
+msgstr "Xfce 4 Olivier Fourdan'ın (fourdan@xfce.org) köçürüm özgüsüdür. Seçkin biləşənlər, onların ilgili yazarlarının köçürüm özgüləridir."
 
 #: ../xfce4-about/main.c:326
 msgid ""
@@ -716,7 +716,7 @@ msgid ""
 "terms of the GNU Library General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
-msgstr ""
+msgstr "Libxfce 4ui, libxfceutil, exo bağlamaları Özgür Yazılım Quruluşunun yayımlanışı kimi GNU Bitiklik Toplam Kamu Yolverişi qoşulları altında yayılmaqdadır; istər Yolverişin 2., istərsə (seçiminizə uyğun) daha sonrakı sürümü olsun."
 
 #: ../xfce4-about/main.c:333
 msgid ""
@@ -725,16 +725,16 @@ msgid ""
 "of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
+msgstr "thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop, xfwm4 bağlamaları Özgür Yazılım Quruluşunun yayımlanışı kimi GNU Bitiklik Toplam Kamu Yolverişi qoşulları altında yayılmaqdadır; istər Yolverişin 2., istərsə (seçiminizə uyğun) daha sonrakı sürümü olsun."
 
 #: ../xfce4-about/main.c:479
 #, c-format
 msgid "Type '%s --help' for usage information."
-msgstr ""
+msgstr "İşləniş bilgisi üçün '%s --help' yazın."
 
 #: ../xfce4-about/main.c:485
 msgid "Unable to initialize GTK+."
-msgstr ""
+msgstr "GTK+ hazırlanışı alınmır"
 
 #: ../xfce4-about/main.c:494
 msgid "The Xfce development team. All rights reserved."
@@ -747,54 +747,54 @@ msgstr "Böcəkləri <%s> yerinə bildirmənizi istərdik."
 
 #: ../xfce4-about/main.c:505
 msgid "Failed to load interface"
-msgstr ""
+msgstr "Arayüzün yüklənişi alınmadı"
 
 #. { N_("Project Lead"),
 #. xfce_contributors_lead
 #. },
 #: ../xfce4-about/contributors.h:136
 msgid "Core developers"
-msgstr ""
+msgstr "Kök gəliştiriciləri"
 
 #: ../xfce4-about/contributors.h:139
 msgid "Active contributors"
-msgstr ""
+msgstr "İşlək qatqıcılar"
 
 #: ../xfce4-about/contributors.h:142
 msgid "Servers maintained by"
-msgstr ""
+msgstr "Qulluqçuların baxımını edənlər"
 
 #: ../xfce4-about/contributors.h:145
 msgid "Translations supervision"
-msgstr ""
+msgstr "Çeviri yükümlüsü"
 
 #: ../xfce4-about/contributors.h:148
 msgid "Documentation supervision"
-msgstr ""
+msgstr "Bəlgələndirmə dənətimi"
 
 #: ../xfce4-about/contributors.h:151
 msgid "Translators"
-msgstr ""
+msgstr "Çevirmənlər"
 
 #: ../xfce4-about/contributors.h:154
 msgid "Previous contributors"
-msgstr ""
+msgstr "Öncəki qatqıçılar"
 
 #: ../xfce4-about/xfce4-about.desktop.in.h:1
 msgid "About Xfce"
-msgstr ""
+msgstr "Xfce ilə bağlı"
 
 #: ../xfce4-about/xfce4-about.desktop.in.h:2
 msgid "Information about the Xfce Desktop Environment"
-msgstr ""
+msgstr "Xfce İş qoyağı Ortamı ilə bağlı bilgi"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:1
 msgid "License"
-msgstr ""
+msgstr "Yolveriş"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:2
 msgid "About the Xfce Desktop Environment"
-msgstr ""
+msgstr "Xfce İş qoyağı Ortamı ilə bağlı"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:3
 msgid "_Help"
@@ -806,49 +806,49 @@ msgstr "_Bağla"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:5
 msgid "label"
-msgstr ""
+msgstr "yarlıq"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:6
 msgid "OS Name"
-msgstr ""
+msgstr "İS Adı"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:7
 msgid "Device"
-msgstr ""
+msgstr "Qurğu"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:8
 msgid "Memory"
-msgstr ""
+msgstr "Yaddaş"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:9
 msgid "CPU"
-msgstr ""
+msgstr "OİB"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:10
 msgid "OS Type"
-msgstr ""
+msgstr "İS Biçimi"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:11
 msgid "Xfce Version"
-msgstr ""
+msgstr "Sxfce Sürümü"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:12
 msgid "Distributor"
-msgstr ""
+msgstr "Paylayıcı"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:13
 msgid "GPU"
-msgstr ""
+msgstr "GİB"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:14
 msgid "System"
-msgstr ""
+msgstr "Sistem"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:15
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
-msgstr ""
+msgstr "Xfce, birlikdə bütün-özəllikli iş qoyağı ortamı sağlayan proqram toplusudur.\nSıradakı proqramlar Xfce özəyinin bölükləridir:"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:17
 msgid ""
@@ -859,31 +859,31 @@ msgid ""
 "Thank you for your interest in Xfce.\n"
 "\n"
 "\t- The Xfce Development Team"
-msgstr ""
+msgstr "Xfce, eləcə də, yazılımçıların iş qoyağı ortamına yaxşı oturan uyğulamalar yaratmasına yardımçı olan seçkin bitik evləri sağlayan gəliştirmə platformudur.\n\nXfce biləşənləri, özgür ya da açıq qaynaq yolverişləri altında yolverişlənir; Uyğulamalar üçün GPL ya da BSDL, bitik evləri üçün LGPL ya da BSDL. Daha çox bilgi üçün bəlgələndirmə, qaynaq koduna ya ad Xfce tor saytına (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) baxın.\n\nXfce ilə ilgiləndiyiniz üçün çox sağolun.\n\n\t- Xfce Gəliştirmə Tağımı"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:24
 msgid "About"
-msgstr ""
+msgstr "Bilgi"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:25
 msgid "Credits"
-msgstr ""
+msgstr "Gəliştiricilər"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:26
 msgid "GPL"
-msgstr ""
+msgstr "GPL"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:27
 msgid "LGPL"
-msgstr ""
+msgstr "LGPL"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:28
 msgid "BSD"
-msgstr ""
+msgstr "BSD"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:29
 msgid "Copyright"
-msgstr ""
+msgstr "Köçürüm özgüsü"
 
 #: ../xfce4-about/system-info.c:531 ../xfce4-about/system-info.c:553
 #: ../xfce4-about/system-info.c:654 ../xfce4-about/system-info.c:699
@@ -893,16 +893,16 @@ msgstr "Bilinməyən"
 #. translators: This is the type of architecture for the OS
 #: ../xfce4-about/system-info.c:639
 msgid "64-bit (32-bit userspace)"
-msgstr ""
+msgstr "64-bit (32-bit işlədən alanı)"
 
 #. translators: This is the type of architecture for the OS
 #: ../xfce4-about/system-info.c:642
 msgid "64-bit"
-msgstr ""
+msgstr "64-bit"
 
 #: ../xfce4-about/system-info.c:642
 msgid "32-bit"
-msgstr ""
+msgstr "32-bit"
 
 #. translators: This is the name of the OS, followed by the build ID, for
 #. * example:
@@ -911,19 +911,19 @@ msgstr ""
 #: ../xfce4-about/system-info.c:707
 #, c-format
 msgid "%s; Build ID: %s"
-msgstr ""
+msgstr "%s; Yığılış Kimliyi: %s"
 
 #: ../tests/test-ui.c:111
 #, c-format
 msgid ""
 "A file named \"%s\" already exists in this directory, the file hasn't been "
 "added."
-msgstr ""
+msgstr "\"%s\" adlı düzüm bu dizində artıq var olduğu üçün düzüm artırılmadı."
 
 #: ../tests/test-ui.c:122
 msgid "Failed to migrate the old panel configuration"
-msgstr ""
+msgstr "Əski panel quruluşlamasını köçürmək alınmadı"
 
 #: ../tests/test-ui.c:170 ../tests/test-ui.c:195
 msgid "Customize settings stored by Xfconf"
-msgstr ""
+msgstr "Xconf'un saxladığı ayarları özəlləşdir"
