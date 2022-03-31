@@ -432,7 +432,7 @@ xfce_shortcut_dialog_key_pressed (XfceShortcutDialog *dialog,
   g_free (escaped_label);
   g_strfreev (keys);
 
-  return FALSE;
+  return TRUE;
 }
 
 
@@ -473,7 +473,7 @@ xfce_shortcut_dialog_key_released (XfceShortcutDialog *dialog,
       gtk_widget_hide (dialog->key_box);
     }
 
-  return FALSE;
+  return TRUE;
 }
 
 
