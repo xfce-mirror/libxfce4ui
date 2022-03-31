@@ -1,3 +1,18 @@
+4.17.6
+======
+- XfceShortcutsEditor: Do not update editor if shortcut change failed
+- XfceShortcutsEditor: Allow to choose "Space" or "Enter" as shortcut
+- XfceShortcutDialog: Do not propagate key events
+- Function description spelling and format.
+- Add new function xfce_gtk_toggle_tool_button_new_from_action_entry
+- XfceShortcutsGrabber: Fix `-Wanalyzer-null-dereference` warning
+- Secure memory allocations
+- Update COPYING
+- XfceShortcutsGrabber: Detect auto-repeat key press
+- XfceShortcutDialog: Fix a memory leak
+- Translation Updates:
+  Azerbaijani
+
 4.17.5
 ======
 - XfceShortcutsEditor: Allow NULL for section name and document it
