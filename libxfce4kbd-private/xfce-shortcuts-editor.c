@@ -451,12 +451,9 @@ xfce_shortcuts_editor_validate_shortcut (XfceShortcutDialog      *editor,
   if (G_UNLIKELY (g_utf8_strlen (shortcut, -1) == 0))
     return FALSE;
 
-  /* Ignore raw 'Return' and 'space' since that may have been used to activate the shortcut row */
-  if (G_UNLIKELY (g_utf8_collate (shortcut, "Return") == 0 ||
-                  g_utf8_collate (shortcut, "space") == 0))
-    return FALSE;
-
   gtk_accelerator_parse (shortcut, &accel_key, &accel_mods);
+  if (accel_key == 0)
+    return FALSE;
 
   info.in_use = FALSE;
   info.mods = accel_mods;
@@ -478,16 +475,14 @@ xfce_shortcuts_editor_validate_shortcut (XfceShortcutDialog      *editor,
       xfce_dialog_show_warning (GTK_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (editor))), message,
                                 _("Keyboard shortcut already in use"));
       g_free (message);
-    }
-  else
-    {
-      if (accel_key > 0)
-        gtk_accel_map_change_entry (data->entry->accel_path, accel_key, accel_mods, TRUE);
-    }
+      g_free (info.other_path);
 
-  g_free (info.other_path);
+      return FALSE;
+    }
+  else if (! gtk_accel_map_change_entry (data->entry->accel_path, accel_key, accel_mods, TRUE))
+    return FALSE;
 
-  return !info.in_use;
+  return TRUE;
 }
 
 
@@ -529,8 +524,8 @@ static void
 xfce_shortcuts_editor_shortcut_clear_clicked  (GtkWidget                 *widget,
                                                ShortcutOtherClickedData  *data)
 {
-  gtk_accel_map_change_entry (data->entry->accel_path, 0, 0, TRUE);
-  gtk_button_set_label (GTK_BUTTON (data->shortcut_button), "...");
+  if (gtk_accel_map_change_entry (data->entry->accel_path, 0, 0, TRUE))
+    gtk_button_set_label (GTK_BUTTON (data->shortcut_button), "...");
 }
 
 
@@ -570,11 +565,9 @@ xfce_shortcuts_editor_shortcut_reset_clicked  (GtkWidget                 *widget
                                 _("Keyboard shortcut already in use"));
       g_free (message);
     }
-  else
+  /* if the default accelerator is available change to that */
+  else if (gtk_accel_map_change_entry (data->entry->accel_path, accel_key, accel_mods, TRUE))
     {
-      /* if the default accelerator is available change to that */
-      gtk_accel_map_change_entry (data->entry->accel_path, accel_key, accel_mods, TRUE);
-
       if (accel_key > 0)
         label = gtk_accelerator_get_label (accel_key, accel_mods);
       else
