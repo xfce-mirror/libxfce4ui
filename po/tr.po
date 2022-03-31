@@ -7,7 +7,7 @@
 # Butterfly <gokhanlnx@gmail.com>, 2020
 # 0d1bdb3b9a0d4e8f77bc854af8bf3dfc_e6913f4, 2019
 # Demiray Muhterem <mdemiray@msn.com>, 2019-2021
-# Emin Tufan Çetin <etcetin@gmail.com>, 2020
+# Emin Tufan Çetin <etcetin@gmail.com>, 2020,2022
 # Emin Tufan Çetin <etcetin@gmail.com>, 2020
 # Gökmen Görgen <gkmngrgn@gmail.com>, 2008
 # Natavan Mirzayeva <mirzayevanatavan@gmail.com>, 2015
@@ -19,8 +19,8 @@ msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-15 00:45+0100\n"
-"PO-Revision-Date: 2021-11-15 05:33+0000\n"
-"Last-Translator: Demiray Muhterem <mdemiray@msn.com>\n"
+"PO-Revision-Date: 2013-07-02 20:33+0000\n"
+"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>, 2020,2022\n"
 "Language-Team: Turkish (http://www.transifex.com/xfce/libxfce4ui/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -227,7 +227,7 @@ msgstr "Kısayol Düzenleyici"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:330
 msgid "The current shortcut. Press to edit..."
-msgstr "Geçerli kısayol. Düzenlemek için basın..."
+msgstr "Geçerli kısayol. Düzenlemek için dokun..."
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:341
 msgid "Clear the shortcut"
@@ -242,7 +242,7 @@ msgstr "Varsayılan kısayolu geri yükle"
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:517
 #, c-format
 msgid "This keyboard shortcut is currently used by: '%s'"
-msgstr "Bu klavye kısayolu kullanılıyor: '%s'"
+msgstr "Bu klavye kısayolunu şu kullanıyor: '%s'"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:429
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:520
