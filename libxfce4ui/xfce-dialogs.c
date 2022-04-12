@@ -612,6 +612,7 @@ xfce_message_dialog_new_valist (GtkWindow   *parent,
   content_area = GTK_WIDGET (gtk_dialog_get_content_area (GTK_DIALOG (dialog)));
   children = gtk_container_get_children (GTK_CONTAINER (content_area));
   gtk_container_remove (GTK_CONTAINER (content_area), GTK_WIDGET ((g_list_nth (children, 1))->data));
+  g_list_free (children);
 
   if (parent)
     {
