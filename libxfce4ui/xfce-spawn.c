@@ -280,6 +280,7 @@ xfce_spawn_process (GdkScreen    *screen,
                     gboolean      child_process)
 {
   gboolean            succeed;
+  gboolean            is_x11_display = FALSE;
   gchar             **cenvp;
   guint               n;
   guint               n_cenvp;
@@ -319,20 +320,28 @@ xfce_spawn_process (GdkScreen    *screen,
     envp = (gchar **) environ;
   for (n = 0; envp[n] != NULL; ++n);
   cenvp = g_new0 (gchar *, n + 3);
+#ifdef GDK_WINDOWING_X11
+  is_x11_display = GDK_IS_X11_DISPLAY (gdk_screen_get_display (screen));
+#endif
   for (n_cenvp = n = 0; envp[n] != NULL; ++n)
     {
-      if (strncmp (envp[n], "DESKTOP_STARTUP_ID", 18) != 0
-          && strncmp (envp[n], "DISPLAY", 7) != 0)
+      if (strncmp (envp[n], "DESKTOP_STARTUP_ID=", 19) != 0
+          && (!is_x11_display || strncmp (envp[n], "DISPLAY=", 8) != 0))
         cenvp[n_cenvp++] = g_strdup (envp[n]);
     }
 
-  /* add the real display name for the screen */
+#ifdef GDK_WINDOWING_X11
+  if (is_x11_display)
+    {
+      /* add the real display name for the screen */
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-  /* TODO: Move xfwm_make_display_name to libxfce4ui */
-  display_name = gdk_screen_make_display_name (screen);
+      /* TODO: Move xfwm_make_display_name to libxfce4ui */
+      display_name = gdk_screen_make_display_name (screen);
 G_GNUC_END_IGNORE_DEPRECATIONS
-  cenvp[n_cenvp++] = g_strconcat ("DISPLAY=", display_name, NULL);
-  g_free (display_name);
+      cenvp[n_cenvp++] = g_strconcat ("DISPLAY=", display_name, NULL);
+      g_free (display_name);
+    }
+#endif
 
 #ifdef HAVE_LIBSTARTUP_NOTIFICATION
   /* initialize the sn launcher context */
