@@ -325,8 +325,8 @@ xfce_spawn_process (GdkScreen    *screen,
 #endif
   for (n_cenvp = n = 0; envp[n] != NULL; ++n)
     {
-      if (strncmp (envp[n], "DESKTOP_STARTUP_ID", 18) != 0
-          && (!is_x11_display || strncmp (envp[n], "DISPLAY", 7) != 0))
+      if (strncmp (envp[n], "DESKTOP_STARTUP_ID=", 19) != 0
+          && (!is_x11_display || strncmp (envp[n], "DISPLAY=", 8) != 0))
         cenvp[n_cenvp++] = g_strdup (envp[n]);
     }
 
