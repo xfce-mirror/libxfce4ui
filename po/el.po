@@ -722,7 +722,7 @@ msgid ""
 "terms of the GNU Library General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
-msgstr "Τα πακέτα, libxfce4ui, libxfce4util και exo διανέμονται υπό τους όρους της GNU Library General Public License, όπως δημοσιεύονται από το Free Software Foundation, είτε την έκδοση 2 της άδειας, είτε (κατ' επιλογή σας) σε οποιαδήποτε μεταγενέστερη έκδοση."
+msgstr "Τα πακέτα, libxfce4ui, libxfce4util και exo διανέμονται υπό τους όρους της Γενικής Άδειας Δημόσιας Χρήσης GNU όπως αυτή έχει δημοσιευτεί από Free Software Foundation, είτε την έκδοση 2 της άδειας, είτε (κατ' επιλογήν) σε οποιαδήποτε μεταγενέστερη έκδοση."
 
 #: ../xfce4-about/main.c:333
 msgid ""
@@ -731,7 +731,7 @@ msgid ""
 "of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr "Τα πακέτα, thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop και xfwm4 διανέμονται υπό τους όρους της GNU Library General Public License, όπως δημοσιεύονται από το Free Software Foundation, είτε την έκδοση 2 της άδειας, είτε (κατ' επιλογή σας) σε οποιαδήποτε μεταγενέστερη έκδοση."
+msgstr "Τα πακέτα, thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop και xfwm4 διανέμονται υπό τους όρους της Γενικής Άδειας Δημόσιας Χρήσης GNU όπως αυτή έχει δημοσιευτεί από Free Software Foundation, είτε την έκδοση 2 της άδειας, είτε (κατ' επιλογήν) σε οποιαδήποτε μεταγενέστερη έκδοση."
 
 #: ../xfce4-about/main.c:479
 #, c-format
