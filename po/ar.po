@@ -222,15 +222,15 @@ msgstr "محرر الإختصارات"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:330
 msgid "The current shortcut. Press to edit..."
-msgstr ""
+msgstr "اﻻختصار الحالي.أضغط للتعديل"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:341
 msgid "Clear the shortcut"
-msgstr ""
+msgstr "امسح اﻻختصار"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:351
 msgid "Restore the default shortcut"
-msgstr ""
+msgstr "استرجاع اﻻختصار اﻻفتراضي"
 
 #. skip leading slash
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:426
