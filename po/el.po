@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-15 00:45+0100\n"
+"POT-Creation-Date: 2022-06-10 00:45+0200\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: Ioannis LM, 2022\n"
 "Language-Team: Greek (http://www.transifex.com/xfce/libxfce4ui/language/el/)\n"
@@ -45,7 +45,7 @@ msgstr "Θα μετακινηθείτε στην ιστοσελίδα τεκμη
 
 #. Create cancel button
 #: ../libxfce4ui/xfce-dialogs.c:275 ../libxfce4ui/xfce-dialogs.c:533
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:253
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:256
 msgid "_Cancel"
 msgstr "Ά_κυρο"
 
@@ -139,7 +139,7 @@ msgid "Session manager did not return a valid client id"
 msgstr "Ο διαχειριστής συνεδρίας επέστρεψε μη έγκυρο id πελάτη"
 
 #. print warning for user
-#: ../libxfce4ui/xfce-spawn.c:400
+#: ../libxfce4ui/xfce-spawn.c:397
 #, c-format
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
@@ -199,91 +199,92 @@ msgstr "Αυτή η συντόμευση χρησιμοποιείται ήδη �
 
 #. This shortcut already exists in the provider, we don't want it twice
 #. Warn the user
-#: ../libxfce4kbd-private/xfce-shortcuts.c:110
+#: ../libxfce4kbd-private/xfce-shortcuts.c:113
 msgid "Please use another key combination."
 msgstr "Παρακαλώ χρησιμοποιήστε άλλο συνδυασμό πλήκτρων."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:111
+#: ../libxfce4kbd-private/xfce-shortcuts.c:114
 #, c-format
 msgid "%s already triggers this action."
 msgstr "%s  ενεργοποιεί ήδη αυτήν την ενέργεια."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:116
+#: ../libxfce4kbd-private/xfce-shortcuts.c:119
 #, c-format
 msgid "Conflicting actions for %s"
 msgstr "Συγκρουόμενες ενέργειες για το %s"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:178
+#: ../libxfce4kbd-private/xfce-shortcuts.c:181
 msgid "This shortcut is already being used for something else."
 msgstr "Αυτή η συντόμευση χρησιμοποιείται ήδη για κάτι άλλο."
 
-#: ../libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:90
+#: ../libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:94
+#: ../libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:131
 msgid "Shortcuts Editor"
 msgstr "Επεξεργαστής συντομεύσεων"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:330
-msgid "The current shortcut. Press to edit..."
-msgstr "Η τρέχουσα συντόμευση. Πατήστε για επεξεργασία..."
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:380
+msgid "The current shortcut. Click to edit..."
+msgstr ""
 
-#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:341
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:391
 msgid "Clear the shortcut"
 msgstr "Αφαίρεση της συντόμευσης"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:351
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:401
 msgid "Restore the default shortcut"
 msgstr "Επαναφορά προεπιλεγμένης συντόμευσης"
 
 #. skip leading slash
-#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:426
-#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:517
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:473
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:562
 #, c-format
 msgid "This keyboard shortcut is currently used by: '%s'"
 msgstr "Η συντόμευση πληκτρολογίου χρησιμοποιείται από το: '%s'"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:429
-#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:520
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:476
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:565
 msgid "Keyboard shortcut already in use"
 msgstr "Η συντόμευση πληκτρολογίου χρησιμοποιείται ήδη"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:214
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:217
 msgid "Window Manager Action Shortcut"
 msgstr "Συντόμευση ενέργειας διαχειριστή παραθύρων"
 
 #. TRANSLATORS: this string will be used to create an explanation for
 #. * the user in a following string
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:217
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:233
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:220
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:236
 msgid "action"
 msgstr "ενέργεια"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:222
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:225
 msgid "Command Shortcut"
 msgstr "Συντόμευση εντολής"
 
 #. TRANSLATORS: this string will be used to create an explanation for
 #. * the user in a following string
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:225
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:228
 msgid "command"
 msgstr "εντολή"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:230
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:233
 msgid "Shortcut"
 msgstr "Συντόμευση"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:247
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:250
 msgid "Clear"
 msgstr "Καθαρισμός"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:270
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:273
 #, c-format
 msgid "Press keyboard keys to trigger the %s '%s'."
 msgstr "Πατήστε πλήκτρα στο πληκτρολόγιο για να ενεργοποιήσετε την %s '%s'."
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:291
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:295
 msgid "Please press a key"
 msgstr "Παρακαλώ πατήστε ένα πλήκτρο"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:345
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:349
 msgid "Could not grab the keyboard."
 msgstr "Δεν είναι δυνατή η δέσμευση του πληκτρολογίου."
 
@@ -891,22 +892,22 @@ msgstr "BSD"
 msgid "Copyright"
 msgstr "Πνευματικά δικαιώματα"
 
-#: ../xfce4-about/system-info.c:531 ../xfce4-about/system-info.c:553
-#: ../xfce4-about/system-info.c:654 ../xfce4-about/system-info.c:699
+#: ../xfce4-about/system-info.c:532 ../xfce4-about/system-info.c:554
+#: ../xfce4-about/system-info.c:672 ../xfce4-about/system-info.c:717
 msgid "Unknown"
 msgstr "Άγνωστο"
 
 #. translators: This is the type of architecture for the OS
-#: ../xfce4-about/system-info.c:639
+#: ../xfce4-about/system-info.c:657
 msgid "64-bit (32-bit userspace)"
 msgstr "64-bit (σε περιβάλλον 32-bit)"
 
 #. translators: This is the type of architecture for the OS
-#: ../xfce4-about/system-info.c:642
+#: ../xfce4-about/system-info.c:660
 msgid "64-bit"
 msgstr "64-bit"
 
-#: ../xfce4-about/system-info.c:642
+#: ../xfce4-about/system-info.c:660
 msgid "32-bit"
 msgstr "32-bit"
 
@@ -914,7 +915,7 @@ msgstr "32-bit"
 #. * example:
 #. * "Fedora 25 (Workstation Edition); Build ID: xyz" or
 #. * "Ubuntu 16.04 LTS; Build ID: jki"
-#: ../xfce4-about/system-info.c:707
+#: ../xfce4-about/system-info.c:725
 #, c-format
 msgid "%s; Build ID: %s"
 msgstr "%s; ID κατασκευής: %s"
