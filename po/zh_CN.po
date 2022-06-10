@@ -9,16 +9,16 @@
 # Hunt Xu <mhuntxu@gmail.com>, 2009-2010,2012
 # Levi Zhou <congzhou821@gmail.com>, 2016
 # Mingcong Bai <jeffbai@aosc.xyz>, 2015-2016
-# Xiaobo Zhou <zhouxiaobo.500@gmail.com>, 2017
-# 玉堂白鹤 <yjwork@qq.com>, 2015,2017,2019-2021
+# Cally Mal <zhouxiaobo.500@gmail.com>, 2017
+# 玉堂白鹤 <yjwork@qq.com>, 2015,2017,2019-2022
 # Mingcong Bai <jeffbai@aosc.xyz>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-15 00:45+0100\n"
-"PO-Revision-Date: 2021-11-16 05:36+0000\n"
-"Last-Translator: 玉堂白鹤 <yjwork@qq.com>\n"
+"POT-Creation-Date: 2022-06-10 00:45+0200\n"
+"PO-Revision-Date: 2013-07-02 20:33+0000\n"
+"Last-Translator: 玉堂白鹤 <yjwork@qq.com>, 2015,2017,2019-2022\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/xfce/libxfce4ui/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -47,7 +47,7 @@ msgstr "您将被重定向至维护和翻译帮助文档的网站。"
 
 #. Create cancel button
 #: ../libxfce4ui/xfce-dialogs.c:275 ../libxfce4ui/xfce-dialogs.c:533
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:253
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:256
 msgid "_Cancel"
 msgstr "取消 (_C)"
 
@@ -141,7 +141,7 @@ msgid "Session manager did not return a valid client id"
 msgstr "会话管理器未返回一个有效的客户端 ID"
 
 #. print warning for user
-#: ../libxfce4ui/xfce-spawn.c:400
+#: ../libxfce4ui/xfce-spawn.c:397
 #, c-format
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
@@ -201,91 +201,92 @@ msgstr "该快捷键已被动作 '%s' 使用。您要使用哪个动作？"
 
 #. This shortcut already exists in the provider, we don't want it twice
 #. Warn the user
-#: ../libxfce4kbd-private/xfce-shortcuts.c:110
+#: ../libxfce4kbd-private/xfce-shortcuts.c:113
 msgid "Please use another key combination."
 msgstr "请使用另一组按键组合。"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:111
+#: ../libxfce4kbd-private/xfce-shortcuts.c:114
 #, c-format
 msgid "%s already triggers this action."
 msgstr "%s 已经触发此动作。"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:116
+#: ../libxfce4kbd-private/xfce-shortcuts.c:119
 #, c-format
 msgid "Conflicting actions for %s"
 msgstr "因 %s 冲突的动作"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:178
+#: ../libxfce4kbd-private/xfce-shortcuts.c:181
 msgid "This shortcut is already being used for something else."
 msgstr "其它动作在使用此快捷键。"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:90
+#: ../libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:94
+#: ../libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:131
 msgid "Shortcuts Editor"
 msgstr "快捷键编辑器"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:330
-msgid "The current shortcut. Press to edit..."
-msgstr "当前快捷键。按下以编辑..."
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:380
+msgid "The current shortcut. Click to edit..."
+msgstr "当前快捷键。点击以编辑..."
 
-#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:341
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:391
 msgid "Clear the shortcut"
 msgstr "清除快捷键"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:351
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:401
 msgid "Restore the default shortcut"
 msgstr "重置默认快捷键"
 
 #. skip leading slash
-#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:426
-#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:517
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:473
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:562
 #, c-format
 msgid "This keyboard shortcut is currently used by: '%s'"
 msgstr "此键盘快捷键正被: '%s'使用"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:429
-#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:520
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:476
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:565
 msgid "Keyboard shortcut already in use"
 msgstr "键盘快捷键已被使用"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:214
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:217
 msgid "Window Manager Action Shortcut"
 msgstr "窗口管理器动作快捷键"
 
 #. TRANSLATORS: this string will be used to create an explanation for
 #. * the user in a following string
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:217
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:233
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:220
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:236
 msgid "action"
 msgstr "动作"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:222
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:225
 msgid "Command Shortcut"
 msgstr "命令快捷键"
 
 #. TRANSLATORS: this string will be used to create an explanation for
 #. * the user in a following string
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:225
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:228
 msgid "command"
 msgstr "命令"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:230
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:233
 msgid "Shortcut"
 msgstr "快捷键"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:247
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:250
 msgid "Clear"
 msgstr "清除"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:270
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:273
 #, c-format
 msgid "Press keyboard keys to trigger the %s '%s'."
 msgstr "按键触发 %s '%s'."
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:291
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:295
 msgid "Please press a key"
 msgstr "请按一个键"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:345
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:349
 msgid "Could not grab the keyboard."
 msgstr "未能捕获键盘输入。"
 
@@ -893,22 +894,22 @@ msgstr "BSD"
 msgid "Copyright"
 msgstr "版权"
 
-#: ../xfce4-about/system-info.c:531 ../xfce4-about/system-info.c:553
-#: ../xfce4-about/system-info.c:654 ../xfce4-about/system-info.c:699
+#: ../xfce4-about/system-info.c:532 ../xfce4-about/system-info.c:554
+#: ../xfce4-about/system-info.c:672 ../xfce4-about/system-info.c:717
 msgid "Unknown"
 msgstr "未知"
 
 #. translators: This is the type of architecture for the OS
-#: ../xfce4-about/system-info.c:639
+#: ../xfce4-about/system-info.c:657
 msgid "64-bit (32-bit userspace)"
 msgstr "64 位 (32 位用户空间)"
 
 #. translators: This is the type of architecture for the OS
-#: ../xfce4-about/system-info.c:642
+#: ../xfce4-about/system-info.c:660
 msgid "64-bit"
 msgstr "64 位"
 
-#: ../xfce4-about/system-info.c:642
+#: ../xfce4-about/system-info.c:660
 msgid "32-bit"
 msgstr "32 位"
 
@@ -916,7 +917,7 @@ msgstr "32 位"
 #. * example:
 #. * "Fedora 25 (Workstation Edition); Build ID: xyz" or
 #. * "Ubuntu 16.04 LTS; Build ID: jki"
-#: ../xfce4-about/system-info.c:707
+#: ../xfce4-about/system-info.c:725
 #, c-format
 msgid "%s; Build ID: %s"
 msgstr "%s; 内部版本 ID : %s"
