@@ -69,6 +69,7 @@ static void     xfce_titled_dialog_set_property   (GObject                *objec
                                                    const GValue           *value,
                                                    GParamSpec             *pspec);
 static void     xfce_titled_dialog_close          (GtkDialog              *dialog);
+static void     xfce_titled_dialog_update_window  (XfceTitledDialog       *titled_dialog);
 static void     xfce_titled_dialog_update_icon    (XfceTitledDialog       *titled_dialog);
 
 
@@ -181,11 +182,14 @@ xfce_titled_dialog_init (XfceTitledDialog *titled_dialog)
     gtk_header_bar_set_show_close_button (GTK_HEADER_BAR (titled_dialog->priv->headerbar), TRUE);
     gtk_widget_show (titled_dialog->priv->icon);
     titled_dialog->priv->pixbuf = NULL;
-  }
 
-  /* make sure to update the icon whenever one of the relevant window properties changes */
-  g_signal_connect (G_OBJECT (titled_dialog), "notify::icon", G_CALLBACK (xfce_titled_dialog_update_icon), NULL);
-  g_signal_connect (G_OBJECT (titled_dialog), "notify::icon-name", G_CALLBACK (xfce_titled_dialog_update_icon), NULL);
+    /* Adjust window buttons and window placement */
+    g_signal_connect (G_OBJECT (titled_dialog), "notify::window", G_CALLBACK (xfce_titled_dialog_update_window), NULL);
+
+    /* Make sure to update the icon whenever one of the relevant window properties changes */
+    g_signal_connect (G_OBJECT (titled_dialog), "notify::icon", G_CALLBACK (xfce_titled_dialog_update_icon), NULL);
+    g_signal_connect (G_OBJECT (titled_dialog), "notify::icon-name", G_CALLBACK (xfce_titled_dialog_update_icon), NULL);
+  }
 }
 
 
@@ -274,12 +278,21 @@ xfce_titled_dialog_close (GtkDialog *dialog)
 
 
 static void
+xfce_titled_dialog_update_window (XfceTitledDialog *titled_dialog)
+{
+  /* set type-hint to normal to show min, max and close buttons */
+  gtk_window_set_type_hint (GTK_WINDOW (titled_dialog), GDK_WINDOW_TYPE_HINT_NORMAL);
+
+  /* center window on the active screen */
+  xfce_gtk_window_center_on_active_screen (GTK_WINDOW (titled_dialog));
+}
+
+
+
+static void
 xfce_titled_dialog_update_icon (XfceTitledDialog *titled_dialog)
 {
   const gchar *icon_name;
-
-  if (!titled_dialog->priv->use_header)
-    return;
 
   icon_name = gtk_window_get_icon_name (GTK_WINDOW (titled_dialog));
 
