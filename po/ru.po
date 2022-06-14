@@ -228,7 +228,7 @@ msgstr "Редактор сочетаний клавиш"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:380
 msgid "The current shortcut. Click to edit..."
-msgstr ""
+msgstr "Текущее сочетание клавиш. Щёлкните для правки…"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:391
 msgid "Clear the shortcut"
