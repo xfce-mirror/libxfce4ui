@@ -224,7 +224,7 @@ msgstr "Επεξεργαστής συντομεύσεων"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:380
 msgid "The current shortcut. Click to edit..."
-msgstr ""
+msgstr "Η τρέχουσα συντόμευση. Πατήστε για επεξεργασία..."
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:391
 msgid "Clear the shortcut"
