@@ -37,7 +37,7 @@
 enum
 {
     PROP_COLUMN_NAME,
-    PROP_COLUMN_TYPE_NAME,
+    PROP_COLUMN_DESC,
     PROP_COLUMN_VALUE,
     PROP_COLUMN_LOCKED,
     N_PROP_COLUMNS
@@ -45,15 +45,14 @@ enum
 
 
 
-static void     xfce_settings_editor_finalize                 (GObject              *object);
-static void     xfce_settings_editor_create_contents          (XfceSettingsEditor   *editor);
-static void     xfce_settings_editor_load_properties          (XfceSettingsEditor   *editor);
+static void     xfce_settings_editor_finalize             (GObject              *object);
+static void     xfce_settings_editor_create_contents      (XfceSettingsEditor   *editor);
+static void     xfce_settings_editor_load_properties      (XfceSettingsEditor   *editor);
 
-static const gchar *xfce_settings_editor_box_type_name        (const GValue         *value);
-static void         xfce_settings_editor_box_value_changed    (GtkCellRenderer      *renderer,
-                                                               const gchar          *str_path,
-                                                               const GValue         *new_value,
-                                                               XfceSettingsEditor   *self);
+static void     xfce_settings_editor_box_value_changed    (GtkCellRenderer      *renderer,
+                                                           const gchar          *str_path,
+                                                           const GValue         *new_value,
+                                                           XfceSettingsEditor   *self);
 
 
 
@@ -64,13 +63,14 @@ struct _XfceSettingsEditorClass
 
 struct _XfceSettingsEditor
 {
-  GtkVBox       __parent__;
+  GtkVBox                 __parent__;
 
-  XfconfChannel  *channel;
-  gchar         **properties;
+  XfconfChannel           *channel;
+  XfceSettingsEditorEntry *properties;
+  gsize                    property_count;
 
-  GtkWidget      *treeview;
-  GtkTreeStore   *model;
+  GtkWidget               *treeview;
+  GtkTreeStore            *model;
 };
 
 
@@ -118,51 +118,20 @@ xfce_settings_editor_finalize (GObject *object)
  *
  * A variable arguments version of xfce_shortcuts_editor_new_variadic.
  *
- * Since: 4.17.2
+ * Since: 4.17.7
  **/
 GtkWidget*
-xfce_settings_editor_new (gchar *channel,
-                          int    argument_count,
-                          ...)
-{
-  GtkWidget *editor;
-  va_list    argument_list;
-
-  va_start (argument_list, argument_count);
-
-  editor = xfce_settings_editor_new_variadic (channel, argument_count, argument_list);
-
-  va_end (argument_list);
-
-  return editor;
-}
-
-
-
-/**
- * xfce_shortcuts_editor_new_variadic:
- * @argument_count : #int, the number of arguments, including this one.
- * @argument_list : a #va_list containing the arguments
- *
- * Create a new Settings Editor.
- *
- * Since: 4.17.2
- **/
-GtkWidget*
-xfce_settings_editor_new_variadic (gchar   *channel,
-                                   int      argument_count,
-                                   va_list  argument_list)
+xfce_settings_editor_new (gchar                   *channel,
+                          XfceSettingsEditorEntry *properties,
+                          int                      property_count)
 {
   XfceSettingsEditor *editor;
 
   editor = g_object_new (XFCE_TYPE_SETTINGS_EDITOR, NULL);
 
   editor->channel = xfconf_channel_get (channel);
-  editor->properties = g_malloc (sizeof (char*) * (argument_count + 1));
-  editor->properties[argument_count] = NULL;
-
-  for (int i = 0; i < argument_count; i++)
-    editor->properties[i] = g_strdup (va_arg (argument_list, gchar*));
+  editor->properties = properties;
+  editor->property_count = property_count;
 
   xfce_settings_editor_create_contents (editor);
 
@@ -209,19 +178,13 @@ xfce_settings_editor_create_contents (XfceSettingsEditor *editor)
   editor->treeview = gtk_tree_view_new_with_model (GTK_TREE_MODEL (editor->model));
   gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (editor->treeview), TRUE);
   gtk_tree_view_set_headers_clickable (GTK_TREE_VIEW (editor->treeview), FALSE);
+  gtk_tree_view_set_tooltip_column (GTK_TREE_VIEW (editor->treeview), 1);
   gtk_container_add (GTK_CONTAINER (swin), editor->treeview);
   gtk_widget_show (editor->treeview);
 
   render = gtk_cell_renderer_text_new ();
   column = gtk_tree_view_column_new_with_attributes (_("Property"), render,
                                                      "text", PROP_COLUMN_NAME,
-                                                     NULL);
-  gtk_tree_view_column_set_sizing (column, GTK_TREE_VIEW_COLUMN_AUTOSIZE);
-  gtk_tree_view_append_column (GTK_TREE_VIEW (editor->treeview), column);
-
-  render = gtk_cell_renderer_text_new ();
-  column = gtk_tree_view_column_new_with_attributes (_("Type"), render,
-                                                     "text", PROP_COLUMN_TYPE_NAME,
                                                      NULL);
   gtk_tree_view_column_set_sizing (column, GTK_TREE_VIEW_COLUMN_AUTOSIZE);
   gtk_tree_view_append_column (GTK_TREE_VIEW (editor->treeview), column);
@@ -253,56 +216,21 @@ xfce_settings_editor_load_properties (XfceSettingsEditor *editor)
 
   gtk_tree_store_clear (editor->model);
 
-  for (guint i = 0; i < g_strv_length (editor->properties); i++)
+  for (guint i = 0; i < editor->property_count; i++)
     {
       GValue value = G_VALUE_INIT;
 
-      xfconf_channel_get_property (editor->channel, editor->properties[i], &value);
+      xfconf_channel_get_property (editor->channel, editor->properties[i].property_name, &value);
       gtk_tree_store_append (editor->model, &iter, NULL);
       gtk_tree_store_set (editor->model, &iter,
-                          PROP_COLUMN_NAME, g_strdup (editor->properties[i]),
-                          PROP_COLUMN_TYPE_NAME, xfce_settings_editor_box_type_name (&value),
+                          PROP_COLUMN_NAME, g_strdup (editor->properties[i].label),
+                          PROP_COLUMN_DESC, g_strdup (editor->properties[i].description),
                           PROP_COLUMN_VALUE, &value,
                           PROP_COLUMN_LOCKED, FALSE,
                           -1);
     }
 
   g_signal_connect_swapped (G_OBJECT (editor->channel), "property-changed", G_CALLBACK (xfce_settings_editor_load_properties), editor);
-}
-
-
-
-static const gchar *
-xfce_settings_editor_box_type_name (const GValue *value)
-{
-  if (G_UNLIKELY (value == NULL))
-    return _("Empty");
-
-  if (G_UNLIKELY (G_VALUE_TYPE (value) == xfce_settings_array_type ()))
-    return _("Array");
-
-  switch (G_VALUE_TYPE (value))
-    {
-      case G_TYPE_STRING:
-        return _("String");
-
-      /* show non-technical name here, the tooltip
-       * contains the full type name */
-      case G_TYPE_INT:
-      case G_TYPE_UINT:
-      case G_TYPE_INT64:
-      case G_TYPE_UINT64:
-        return _("Integer");
-
-      case G_TYPE_BOOLEAN:
-        return _("Boolean");
-
-      case G_TYPE_DOUBLE:
-        return _("Double");
-
-      default:
-        return G_VALUE_TYPE_NAME (value);
-    }
 }
 
 

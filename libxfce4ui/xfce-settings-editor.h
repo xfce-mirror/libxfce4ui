@@ -35,15 +35,18 @@ typedef struct _XfceSettingsEditor      XfceSettingsEditor;
 #define XFCE_IS_SETTINGS_EDITOR_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass),   XFCE_TYPE_SETTINGS_EDITOR))
 #define XFCE_SETTINGS_EDITOR_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj),   XFCE_TYPE_SETTINGS_EDITOR, XfceSettingsEditorClass))
 
+typedef struct
+{
+    gchar              *property_name;
+    gchar              *label;
+    gchar              *description;
+} XfceSettingsEditorEntry;
+
 GType        xfce_settings_editor_get_type     (void) G_GNUC_CONST;
 
-GtkWidget   *xfce_settings_editor_new          (gchar   *channel,
-                                                int      argument_count,
-                                                ...) G_GNUC_MALLOC;
-
-GtkWidget   *xfce_settings_editor_new_variadic (gchar   *channel,
-                                                int      argument_count,
-                                                va_list  argument_list) G_GNUC_MALLOC;
+GtkWidget   *xfce_settings_editor_new          (gchar                   *channel,
+                                                XfceSettingsEditorEntry *properties,
+                                                int                      property_count) G_GNUC_MALLOC;
 
 G_END_DECLS
 
