@@ -78,14 +78,14 @@ msgstr "Ai cau ffenestr gyda tabiau lluosog?"
 msgid ""
 "This window has multiple tabs open. Closing this window will also close all "
 "its tabs."
-msgstr ""
+msgstr "Mae gyda'r ffenestr yma tabiau lluosog. Bydd yn cau y ffenestr hwn hefyd yn cau ei dabiau i gyd."
 
 #: ../libxfce4ui/xfce-dialogs.c:523
 #, c-format
 msgid ""
 "This window has %d tabs open. Closing this window will also close all its "
 "tabs."
-msgstr ""
+msgstr "Mae gyda'r ffenestr yma %d tab lluosog. Bydd yn cau y ffenestr hwn hefyd yn cau ei dabiau i gyd."
 
 #: ../libxfce4ui/xfce-dialogs.c:529
 msgid "Warning"
@@ -93,15 +93,15 @@ msgstr "Rhybudd"
 
 #: ../libxfce4ui/xfce-dialogs.c:534
 msgid "Close T_ab"
-msgstr ""
+msgstr "Cau T_ab"
 
 #: ../libxfce4ui/xfce-dialogs.c:535
 msgid "Close _Window"
-msgstr ""
+msgstr "Cau _Ffenestr"
 
 #: ../libxfce4ui/xfce-dialogs.c:540
 msgid "Do _not ask me again"
-msgstr ""
+msgstr "Peidiwch â'm _gofyn eto"
 
 #: ../libxfce4ui/xfce-sm-client.c:1427
 msgid "Session management client ID"
@@ -144,15 +144,15 @@ msgstr "Nid yw'r ffolder \"%s\" yn bodoli. Ni gaiff ei ddefnyddio wrth silio \"%
 #. retrieve the error and warning messages
 #: ../libxfce4ui/xfce-filename-input.c:228
 msgid "Filename is too long"
-msgstr ""
+msgstr "Mae ffeilenw yn rhy hir"
 
 #: ../libxfce4ui/xfce-filename-input.c:229
 msgid "Directory separator illegal in file name"
-msgstr ""
+msgstr "Gwahanwr Cyfeiriadur anghyfreithlon yn enw ffeil"
 
 #: ../libxfce4ui/xfce-filename-input.c:230
 msgid "Filenames should not start or end with a space"
-msgstr ""
+msgstr "Ni ddylent ffeilenwau dechreu neu orffen gyda gwagle."
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:53
 #, c-format
@@ -215,31 +215,31 @@ msgstr "Mae'r byrlwybr yn cael ei ddefnyddio ar gyfer rhywbeth arall."
 #: ../libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:94
 #: ../libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:131
 msgid "Shortcuts Editor"
-msgstr ""
+msgstr "Golygydd Byrlwybrau"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:380
 msgid "The current shortcut. Click to edit..."
-msgstr ""
+msgstr "Y byrlwybr cyfredol. Cliciwch i olygu..."
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:391
 msgid "Clear the shortcut"
-msgstr ""
+msgstr "Clirio y byrlwybr"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:401
 msgid "Restore the default shortcut"
-msgstr ""
+msgstr "Adfer y byrlwybr rhagosodedig"
 
 #. skip leading slash
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:473
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:562
 #, c-format
 msgid "This keyboard shortcut is currently used by: '%s'"
-msgstr ""
+msgstr "Mae'r byrlwybr bysellfwrdd yma yn ei ddefnyddio yn cyfredol gyda: '%s'"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:476
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:565
 msgid "Keyboard shortcut already in use"
-msgstr ""
+msgstr "Byrlwybr bysellfwrdd yn eisoes ei ddefnyddiwyd"
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:217
 msgid "Window Manager Action Shortcut"
@@ -268,16 +268,16 @@ msgstr "Byrlwybr"
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:250
 msgid "Clear"
-msgstr ""
+msgstr "Clirio"
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:273
 #, c-format
 msgid "Press keyboard keys to trigger the %s '%s'."
-msgstr ""
+msgstr "Pwyswch y bysellau i sbarduno'r %s '%s'."
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:295
 msgid "Please press a key"
-msgstr ""
+msgstr "Atolwg pwyswch bysell"
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:349
 msgid "Could not grab the keyboard."
@@ -601,7 +601,7 @@ msgstr "Gwybodaeth fersiwn"
 
 #: ../xfce4-about/main.c:117
 msgid "GPUs"
-msgstr ""
+msgstr "GPUau"
 
 #: ../xfce4-about/main.c:135
 msgid "Window Manager"
@@ -617,7 +617,7 @@ msgstr "Panel"
 
 #: ../xfce4-about/main.c:141
 msgid "Provides a home for window buttons, launchers, app menu and more."
-msgstr ""
+msgstr "Cynnig cartref am botymau ffenestr, lansiwyr, dewislen âp a mwy."
 
 #: ../xfce4-about/main.c:145
 msgid "Desktop Manager"
@@ -625,23 +625,23 @@ msgstr "Rheolwr Penfwrdd"
 
 #: ../xfce4-about/main.c:146
 msgid "Sets desktop backgrounds, handles icons and more."
-msgstr ""
+msgstr "Gosodi cefndiroedd penbwrdd, triniaethu eiconau a mwy."
 
 #: ../xfce4-about/main.c:150
 msgid "File Manager"
-msgstr ""
+msgstr "Rheoliwr Ffeil"
 
 #: ../xfce4-about/main.c:151
 msgid "Manages your files in a modern, easy-to-use and fast way."
-msgstr ""
+msgstr "Rheoli eich ffeiliau yn fodd cyfoes, hawdd-i-ddefnyddio a chyflym."
 
 #: ../xfce4-about/main.c:155
 msgid "Volume Manager"
-msgstr ""
+msgstr "Rheoliwr Cyfrol"
 
 #: ../xfce4-about/main.c:156
 msgid "Manages removable drives and media for Thunar."
-msgstr ""
+msgstr "Rheoli gyriannau a chyfryngau tynniadwy am Thunar"
 
 #: ../xfce4-about/main.c:160
 msgid "Session Manager"
@@ -650,7 +650,7 @@ msgstr "Rheolwr Sesiwn"
 #: ../xfce4-about/main.c:161
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
-msgstr ""
+msgstr "Achub ac adfer eich cyfeistedd, triniaethu uwchgychwyn, hunangychwyn a llawrgau."
 
 #: ../xfce4-about/main.c:165
 msgid "Settings Manager"
@@ -658,7 +658,7 @@ msgstr "Rheoliwr Gosodiadau"
 
 #: ../xfce4-about/main.c:166
 msgid "Configures appearance, display, keyboard and mouse settings."
-msgstr ""
+msgstr "Ffurfweddu dangosiad, ardangosfa, bysellfwrdd a gosodiadau llygoden."
 
 #: ../xfce4-about/main.c:170
 msgid "Application Finder"
@@ -666,7 +666,7 @@ msgstr "Chwiliwr Rhaglenni"
 
 #: ../xfce4-about/main.c:171
 msgid "Quickly finds and launches applications installed on your system."
-msgstr ""
+msgstr "Canfod a lansio yn gyflym cymhwysiadau mewnsefydlwyd ar eich cyfundrefn."
 
 #: ../xfce4-about/main.c:175
 msgid "Settings Daemon"
@@ -674,15 +674,15 @@ msgstr "Ellyll Gosodiadau"
 
 #: ../xfce4-about/main.c:176
 msgid "Stores your settings in a D-Bus-based configuration system."
-msgstr ""
+msgstr "Achub eich gosodiadau yn gyfundrefn ffurfweddiad D-Bus-seiliedig."
 
 #: ../xfce4-about/main.c:180
 msgid "A Menu Library"
-msgstr ""
+msgstr "Llyfgell Dewislen"
 
 #: ../xfce4-about/main.c:181
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
-msgstr ""
+msgstr "Mewndrefnu dewislen freedesktop.org ufuddhiedig seiliedig ar GLib a GIO."
 
 #: ../xfce4-about/main.c:185
 msgid "Thumbnails Service"
@@ -690,17 +690,17 @@ msgstr "Gwasanaeth Bawdewinnau"
 
 #: ../xfce4-about/main.c:186
 msgid "Implements the thumbnail management D-Bus specification."
-msgstr ""
+msgstr "Mewndrefnu y manyliadaeth D-Bus rheoliad bawdewin."
 
 #: ../xfce4-about/main.c:240
 msgid "Please see <https://www.xfce.org/about/credits>"
-msgstr ""
+msgstr "Atolwg gweler <https://www.xfce.org/about/credits>"
 
 #: ../xfce4-about/main.c:300
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
-msgstr ""
+msgstr "Os y gwyddoch am rhywun sydd ar goll o'r rhestr yma, peidiwch ag oedi: rhestrwch nam ar <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues>."
 
 #: ../xfce4-about/main.c:304
 msgid "Thanks to all who helped making this software available!"
@@ -718,7 +718,7 @@ msgid ""
 "terms of the GNU Library General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
-msgstr ""
+msgstr "Dosbarthir y pecynnau libxfce4ui, libxfce4util ac exo o dan amodau'r GNU Library General Public License fel y cyhoeddir gan y Free Software Foundation; naill ai fersiwn 2 o'r Trwydded, neu (ar eich dewis chi) unrhyw fersiwn diweddarach."
 
 #: ../xfce4-about/main.c:333
 msgid ""
@@ -727,7 +727,7 @@ msgid ""
 "of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
+msgstr "Dosbarthir y pecynnau thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop ac xfwm4 o dan amodau'r GNU General Public License fel y cyfoeddir gan y Free Software Foundation; naill ai fersiwn 2 o'r Trwydded, neu (ar eich dewis chi) unrhyw fersiwn diweddarach."
 
 #: ../xfce4-about/main.c:479
 #, c-format
@@ -772,7 +772,7 @@ msgstr "Cynorthwyo cyfieithu"
 
 #: ../xfce4-about/contributors.h:148
 msgid "Documentation supervision"
-msgstr ""
+msgstr "Goruwchwyliad dogfenniaeth"
 
 #: ../xfce4-about/contributors.h:151
 msgid "Translators"
@@ -800,7 +800,7 @@ msgstr "Ynghylch yr Amgylchedd Penfwrdd Xfce"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:3
 msgid "_Help"
-msgstr ""
+msgstr "_Cymhorth"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:4
 msgid "_Close"
@@ -808,39 +808,39 @@ msgstr "_Cau"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:5
 msgid "label"
-msgstr ""
+msgstr "llabed"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:6
 msgid "OS Name"
-msgstr ""
+msgstr "Enw OS"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:7
 msgid "Device"
-msgstr ""
+msgstr "Dyfais"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:8
 msgid "Memory"
-msgstr ""
+msgstr "Côf"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:9
 msgid "CPU"
-msgstr ""
+msgstr "CPU"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:10
 msgid "OS Type"
-msgstr ""
+msgstr "Math OS"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:11
 msgid "Xfce Version"
-msgstr ""
+msgstr "Fersiwn Xfce"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:12
 msgid "Distributor"
-msgstr ""
+msgstr "Dosbarthwr"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:13
 msgid "GPU"
-msgstr ""
+msgstr "GPU"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:14
 msgid "System"
@@ -850,7 +850,7 @@ msgstr "System"
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
-msgstr ""
+msgstr "Mae Xfce yn gasgliad o raglenni sydd yn cyfuno i ddarparu amgylchedd penfwrdd cyflawn. \nMae'r rhaglenni canlynol yn ffurfio rhanbarth o'r craidd Xfce:"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:17
 msgid ""
@@ -861,7 +861,7 @@ msgid ""
 "Thank you for your interest in Xfce.\n"
 "\n"
 "\t- The Xfce Development Team"
-msgstr ""
+msgstr "Mae Xfce hefyd yn lwyfan datblygiad sydd yn darparu amryw llyfrgelleodd sydd yn cymhorthwyo rhaglennwyr i greu cymhwysiadau sydd yn ffitio i mewn yn dda gyda'r amgylchiad penfwrdd.\n\nMae cydrannau Xfce yn eu thrwyddedwyd dan trwyddedau tarddiad agored rhydwd; GPL neu BDSL am gymhwysiadai ac LGPL neu BSDL am lyfrgelloedd. Edrychwch ar y dogfenniaeth, y côd tarddiad neu'r wefan Xfce (https://www.xfce.org) am fwy o wybodaeth.\n\nDiolch i chi an eich diddordeb yn Xfce.\n\n - Y Carfan Datblygiad Xfce"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:24
 msgid "About"
