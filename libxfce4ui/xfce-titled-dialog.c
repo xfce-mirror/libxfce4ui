@@ -280,6 +280,10 @@ xfce_titled_dialog_close (GtkDialog *dialog)
 static void
 xfce_titled_dialog_update_window (XfceTitledDialog *titled_dialog)
 {
+  /* skip if the dialog is a normal window by design (e.g. Settings Editor) */
+  if (gtk_window_get_type_hint (GTK_WINDOW (titled_dialog)) == GDK_WINDOW_TYPE_HINT_NORMAL)
+    return;
+
   /* set type-hint to normal to show min, max and close buttons */
   gtk_window_set_type_hint (GTK_WINDOW (titled_dialog), GDK_WINDOW_TYPE_HINT_NORMAL);
 
