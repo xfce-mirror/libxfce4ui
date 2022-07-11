@@ -656,7 +656,6 @@ NO WARRANTY
               <object class="GtkScrolledWindow" id="scrolledwindow1">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <property name="border_width">6</property>
                 <property name="hscrollbar_policy">never</property>
                 <child>
                   <object class="GtkViewport">
@@ -667,7 +666,7 @@ NO WARRANTY
                       <object class="GtkBox" id="about-xfce-box">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="border_width">12</property>
+                        <property name="border_width">18</property>
                         <property name="orientation">vertical</property>
                         <property name="spacing">12</property>
                         <child>
@@ -768,12 +767,12 @@ Thank you for your interest in Xfce.
               <object class="GtkScrolledWindow" id="scrolledwindow2">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <property name="border_width">6</property>
                 <property name="shadow_type">etched-in</property>
                 <child>
                   <object class="GtkTextView" id="credits-textview">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="border_width">12</property>
                     <property name="editable">False</property>
                     <property name="wrap_mode">word</property>
                     <property name="left_margin">3</property>
@@ -801,12 +800,12 @@ Thank you for your interest in Xfce.
             <child>
               <object class="GtkScrolledWindow" id="vendor-tab">
                 <property name="can_focus">True</property>
-                <property name="border_width">6</property>
                 <property name="shadow_type">etched-in</property>
                 <child>
                   <object class="GtkTextView" id="vendor-textview">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="border_width">12</property>
                     <property name="editable">False</property>
                     <property name="wrap_mode">word</property>
                     <property name="left_margin">3</property>
@@ -845,6 +844,7 @@ Thank you for your interest in Xfce.
                       <object class="GtkTextView" id="copyright-textview">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
+                        <property name="border_width">6</property>
                         <property name="editable">False</property>
                         <property name="wrap_mode">word</property>
                         <property name="left_margin">3</property>
