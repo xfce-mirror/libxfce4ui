@@ -256,6 +256,7 @@ xfce_about_credits (GtkTextBuffer *buffer)
   g_return_if_fail (GTK_IS_TEXT_BUFFER (buffer));
 
   title = gtk_text_buffer_create_tag (buffer, "title",
+                                      "pixels-below-lines", 6,
                                       "scale", 1.1,
                                       "weight", PANGO_WEIGHT_BOLD, NULL);
 
