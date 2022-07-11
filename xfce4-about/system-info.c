@@ -69,6 +69,7 @@ static const gchar *const arch_64[] = {
   "aarch64",
   "amd64",
   "ia64",
+  "loongarch64",
   "ppc64",
   "sparc64",
   "x86_64",
@@ -201,7 +202,7 @@ get_cpu_info (const glibtop_sysinfo *info)
   /* count duplicates */
   for (i = 0; i != info->ncpu; ++i)
     {
-      const char * const keys[] = { "model name", "cpu", "Processor" };
+      const char * const keys[] = { "model name", "cpu", "Model Name", "Processor" };
       char *model;
       int  *count;
 
