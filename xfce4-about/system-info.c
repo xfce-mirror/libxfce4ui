@@ -682,6 +682,9 @@ get_system_info (guint infotype)
       case DEVICE_NAME:
         result = g_strdup (buffer.nodename);
         break;
+      case KERNEL:
+        result = g_strdup (buffer.release);
+        break;
     }
 
   return result;

@@ -71,6 +71,8 @@ xfce_about_system (GtkBuilder *builder)
   g_autofree char *device_text = NULL;
   g_autofree char *cpu_text = NULL;
   g_autofree char *gpu_text = NULL;
+  g_autofree char *gtk_text = NULL;
+  g_autofree char *kernel_text = NULL;
   g_autofree char *memory_text = NULL;
   g_autofree char *os_name_text = NULL;
   g_autofree char *os_type_text = NULL;
@@ -88,17 +90,26 @@ xfce_about_system (GtkBuilder *builder)
   os_type_text = get_os_type ();
   gtk_label_set_text (GTK_LABEL (label), os_type_text ? os_type_text : "");
 
-  label = gtk_builder_get_object (builder, "xfce-version");
-  gtk_label_set_text (GTK_LABEL (label), xfce_version_string ());
-
   label = gtk_builder_get_object (builder, "vendor-info");
   vendor_info = gtk_builder_get_object (builder, "vendor-info-label");
 #ifdef VENDOR_INFO
   gtk_label_set_text (GTK_LABEL (label), VENDOR_INFO);
+  gtk_widget_show (GTK_WIDGET (vendor_info));
 #else
   gtk_widget_hide (GTK_WIDGET (vendor_info));
   gtk_widget_hide (GTK_WIDGET (label));
 #endif
+
+  label = gtk_builder_get_object (builder, "xfce-version");
+  gtk_label_set_text (GTK_LABEL (label), xfce_version_string ());
+
+  label = gtk_builder_get_object (builder, "gtk-version");
+  gtk_text = g_strdup_printf ("%d.%d.%d", gtk_get_major_version (), gtk_get_minor_version (), gtk_get_micro_version ());
+  gtk_label_set_text (GTK_LABEL (label), gtk_text);
+
+  label = gtk_builder_get_object (builder, "kernel-version");
+  kernel_text = get_system_info (KERNEL);
+  gtk_label_set_text (GTK_LABEL (label), kernel_text ? kernel_text : "");
 
   label = gtk_builder_get_object (builder, "cpu");
   info = glibtop_get_sysinfo ();

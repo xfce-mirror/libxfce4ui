@@ -42,8 +42,8 @@
 enum
 {
   OS_NAME,
-  ARCH,
-  DEVICE_NAME
+  DEVICE_NAME,
+  KERNEL
 };
 
 char *get_os_type (void);
