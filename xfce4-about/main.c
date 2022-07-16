@@ -64,10 +64,12 @@ static GOptionEntry opt_entries[] =
 static void
 xfce_about_system (GtkBuilder *builder)
 {
+  GObject *image;
   GObject *label;
   GObject *vendor_info;
   glibtop_mem mem;
   const glibtop_sysinfo *info;
+  g_autofree char *distributor_logo = NULL;
   g_autofree char *device_text = NULL;
   g_autofree char *cpu_text = NULL;
   g_autofree char *gpu_text = NULL;
@@ -77,6 +79,14 @@ xfce_about_system (GtkBuilder *builder)
   g_autofree char *os_name_text = NULL;
   g_autofree char *os_type_text = NULL;
   guint num_gpus = 0;
+
+  distributor_logo = get_distributor_logo ();
+  if (distributor_logo)
+    {
+      image = gtk_builder_get_object (builder, "distributor-logo");
+      gtk_image_set_from_icon_name (GTK_IMAGE (image), distributor_logo,
+                                    gtk_image_get_pixel_size (GTK_IMAGE (image)));
+    }
 
   label = gtk_builder_get_object (builder, "device");
   device_text = get_system_info (DEVICE_NAME);
