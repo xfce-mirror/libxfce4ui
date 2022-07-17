@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-10 00:45+0200\n"
+"POT-Creation-Date: 2022-07-16 00:45+0200\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: Ian Low, 2022\n"
 "Language-Team: Welsh (http://www.transifex.com/xfce/libxfce4ui/language/cy/)\n"
@@ -599,120 +599,120 @@ msgstr "Celfigion Xfce 4"
 msgid "Version information"
 msgstr "Gwybodaeth fersiwn"
 
-#: ../xfce4-about/main.c:117
+#: ../xfce4-about/main.c:128
 msgid "GPUs"
 msgstr "GPUau"
 
-#: ../xfce4-about/main.c:135
+#: ../xfce4-about/main.c:146
 msgid "Window Manager"
 msgstr "Rheolwr Ffenestr"
 
-#: ../xfce4-about/main.c:136
+#: ../xfce4-about/main.c:147
 msgid "Handles the placement of windows on the screen."
 msgstr "Yn rheoli gosod ffenestri ar y sgrin."
 
-#: ../xfce4-about/main.c:140
+#: ../xfce4-about/main.c:151
 msgid "Panel"
 msgstr "Panel"
 
-#: ../xfce4-about/main.c:141
+#: ../xfce4-about/main.c:152
 msgid "Provides a home for window buttons, launchers, app menu and more."
 msgstr "Cynnig cartref am botymau ffenestr, lansiwyr, dewislen âp a mwy."
 
-#: ../xfce4-about/main.c:145
+#: ../xfce4-about/main.c:156
 msgid "Desktop Manager"
 msgstr "Rheolwr Penfwrdd"
 
-#: ../xfce4-about/main.c:146
+#: ../xfce4-about/main.c:157
 msgid "Sets desktop backgrounds, handles icons and more."
 msgstr "Gosodi cefndiroedd penbwrdd, triniaethu eiconau a mwy."
 
-#: ../xfce4-about/main.c:150
+#: ../xfce4-about/main.c:161
 msgid "File Manager"
 msgstr "Rheoliwr Ffeil"
 
-#: ../xfce4-about/main.c:151
+#: ../xfce4-about/main.c:162
 msgid "Manages your files in a modern, easy-to-use and fast way."
 msgstr "Rheoli eich ffeiliau yn fodd cyfoes, hawdd-i-ddefnyddio a chyflym."
 
-#: ../xfce4-about/main.c:155
+#: ../xfce4-about/main.c:166
 msgid "Volume Manager"
 msgstr "Rheoliwr Cyfrol"
 
-#: ../xfce4-about/main.c:156
+#: ../xfce4-about/main.c:167
 msgid "Manages removable drives and media for Thunar."
 msgstr "Rheoli gyriannau a chyfryngau tynniadwy am Thunar"
 
-#: ../xfce4-about/main.c:160
+#: ../xfce4-about/main.c:171
 msgid "Session Manager"
 msgstr "Rheolwr Sesiwn"
 
-#: ../xfce4-about/main.c:161
+#: ../xfce4-about/main.c:172
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
 msgstr "Achub ac adfer eich cyfeistedd, triniaethu uwchgychwyn, hunangychwyn a llawrgau."
 
-#: ../xfce4-about/main.c:165
+#: ../xfce4-about/main.c:176
 msgid "Settings Manager"
 msgstr "Rheoliwr Gosodiadau"
 
-#: ../xfce4-about/main.c:166
+#: ../xfce4-about/main.c:177
 msgid "Configures appearance, display, keyboard and mouse settings."
 msgstr "Ffurfweddu dangosiad, ardangosfa, bysellfwrdd a gosodiadau llygoden."
 
-#: ../xfce4-about/main.c:170
+#: ../xfce4-about/main.c:181
 msgid "Application Finder"
 msgstr "Chwiliwr Rhaglenni"
 
-#: ../xfce4-about/main.c:171
+#: ../xfce4-about/main.c:182
 msgid "Quickly finds and launches applications installed on your system."
 msgstr "Canfod a lansio yn gyflym cymhwysiadau mewnsefydlwyd ar eich cyfundrefn."
 
-#: ../xfce4-about/main.c:175
+#: ../xfce4-about/main.c:186
 msgid "Settings Daemon"
 msgstr "Ellyll Gosodiadau"
 
-#: ../xfce4-about/main.c:176
+#: ../xfce4-about/main.c:187
 msgid "Stores your settings in a D-Bus-based configuration system."
 msgstr "Achub eich gosodiadau yn gyfundrefn ffurfweddiad D-Bus-seiliedig."
 
-#: ../xfce4-about/main.c:180
+#: ../xfce4-about/main.c:191
 msgid "A Menu Library"
 msgstr "Llyfgell Dewislen"
 
-#: ../xfce4-about/main.c:181
+#: ../xfce4-about/main.c:192
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
 msgstr "Mewndrefnu dewislen freedesktop.org ufuddhiedig seiliedig ar GLib a GIO."
 
-#: ../xfce4-about/main.c:185
+#: ../xfce4-about/main.c:196
 msgid "Thumbnails Service"
 msgstr "Gwasanaeth Bawdewinnau"
 
-#: ../xfce4-about/main.c:186
+#: ../xfce4-about/main.c:197
 msgid "Implements the thumbnail management D-Bus specification."
 msgstr "Mewndrefnu y manyliadaeth D-Bus rheoliad bawdewin."
 
-#: ../xfce4-about/main.c:240
+#: ../xfce4-about/main.c:251
 msgid "Please see <https://www.xfce.org/about/credits>"
 msgstr "Atolwg gweler <https://www.xfce.org/about/credits>"
 
-#: ../xfce4-about/main.c:300
+#: ../xfce4-about/main.c:312
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 msgstr "Os y gwyddoch am rhywun sydd ar goll o'r rhestr yma, peidiwch ag oedi: rhestrwch nam ar <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues>."
 
-#: ../xfce4-about/main.c:304
+#: ../xfce4-about/main.c:316
 msgid "Thanks to all who helped making this software available!"
 msgstr "Diolch i bawb sydd wedi helpu darparu'r meddalwedd yma!"
 
-#: ../xfce4-about/main.c:321
+#: ../xfce4-about/main.c:333
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
 msgstr "Mae Xfce 4 yn hawlfraint Olivier Fourdan (fourdan@xfce.org). Mae'r gwahanol cydrannau'n hawlfraint eu hawduron priodol."
 
-#: ../xfce4-about/main.c:326
+#: ../xfce4-about/main.c:338
 msgid ""
 "The libxfce4ui, libxfce4util and exo packages are distributed under the "
 "terms of the GNU Library General Public License as published by the Free "
@@ -720,7 +720,7 @@ msgid ""
 "any later version."
 msgstr "Dosbarthir y pecynnau libxfce4ui, libxfce4util ac exo o dan amodau'r GNU Library General Public License fel y cyhoeddir gan y Free Software Foundation; naill ai fersiwn 2 o'r Trwydded, neu (ar eich dewis chi) unrhyw fersiwn diweddarach."
 
-#: ../xfce4-about/main.c:333
+#: ../xfce4-about/main.c:345
 msgid ""
 "The packages thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
 "xfce4-settings, xfconf, xfdesktop and xfwm4 are distributed under the terms "
@@ -729,25 +729,25 @@ msgid ""
 "version."
 msgstr "Dosbarthir y pecynnau thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop ac xfwm4 o dan amodau'r GNU General Public License fel y cyfoeddir gan y Free Software Foundation; naill ai fersiwn 2 o'r Trwydded, neu (ar eich dewis chi) unrhyw fersiwn diweddarach."
 
-#: ../xfce4-about/main.c:479
+#: ../xfce4-about/main.c:491
 #, c-format
 msgid "Type '%s --help' for usage information."
 msgstr "Teipiwch '%s --help' am wybodaeth defnydd."
 
-#: ../xfce4-about/main.c:485
+#: ../xfce4-about/main.c:497
 msgid "Unable to initialize GTK+."
 msgstr "Methu ymgychwyn GTK+."
 
-#: ../xfce4-about/main.c:494
+#: ../xfce4-about/main.c:506
 msgid "The Xfce development team. All rights reserved."
 msgstr "Tim datblygu Xfce. Cedwir pob hawl."
 
-#: ../xfce4-about/main.c:495
+#: ../xfce4-about/main.c:507
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "Adroddwch namau at <%s>."
 
-#: ../xfce4-about/main.c:505
+#: ../xfce4-about/main.c:517
 msgid "Failed to load interface"
 msgstr "Methu llwytho'r rhyngwyneb"
 
@@ -807,52 +807,60 @@ msgid "_Close"
 msgstr "_Cau"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:5
-msgid "label"
-msgstr "llabed"
-
-#: ../xfce4-about/xfce4-about-dialog.glade.h:6
-msgid "OS Name"
-msgstr "Enw OS"
-
-#: ../xfce4-about/xfce4-about-dialog.glade.h:7
 msgid "Device"
 msgstr "Dyfais"
 
+#: ../xfce4-about/xfce4-about-dialog.glade.h:6
+msgid "label"
+msgstr "llabed"
+
+#: ../xfce4-about/xfce4-about-dialog.glade.h:7
+msgid "OS Name"
+msgstr "Enw OS"
+
 #: ../xfce4-about/xfce4-about-dialog.glade.h:8
-msgid "Memory"
-msgstr "Côf"
-
-#: ../xfce4-about/xfce4-about-dialog.glade.h:9
-msgid "CPU"
-msgstr "CPU"
-
-#: ../xfce4-about/xfce4-about-dialog.glade.h:10
 msgid "OS Type"
 msgstr "Math OS"
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:11
-msgid "Xfce Version"
-msgstr "Fersiwn Xfce"
-
-#: ../xfce4-about/xfce4-about-dialog.glade.h:12
+#: ../xfce4-about/xfce4-about-dialog.glade.h:9
 msgid "Distributor"
 msgstr "Dosbarthwr"
 
+#: ../xfce4-about/xfce4-about-dialog.glade.h:10
+msgid "Xfce Version"
+msgstr "Fersiwn Xfce"
+
+#: ../xfce4-about/xfce4-about-dialog.glade.h:11
+msgid "GTK Version"
+msgstr "Fersiwn GTK"
+
+#: ../xfce4-about/xfce4-about-dialog.glade.h:12
+msgid "Kernel Version"
+msgstr "Fersiwn Cnewyll"
+
 #: ../xfce4-about/xfce4-about-dialog.glade.h:13
+msgid "CPU"
+msgstr "CPU"
+
+#: ../xfce4-about/xfce4-about-dialog.glade.h:14
+msgid "Memory"
+msgstr "Côf"
+
+#: ../xfce4-about/xfce4-about-dialog.glade.h:15
 msgid "GPU"
 msgstr "GPU"
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:14
+#: ../xfce4-about/xfce4-about-dialog.glade.h:16
 msgid "System"
 msgstr "System"
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:15
+#: ../xfce4-about/xfce4-about-dialog.glade.h:17
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
 msgstr "Mae Xfce yn gasgliad o raglenni sydd yn cyfuno i ddarparu amgylchedd penfwrdd cyflawn. \nMae'r rhaglenni canlynol yn ffurfio rhanbarth o'r craidd Xfce:"
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:17
+#: ../xfce4-about/xfce4-about-dialog.glade.h:19
 msgid ""
 "Xfce is also a development platform providing several libraries that help programmers create applications that fit in well with the desktop environment.\n"
 "\n"
@@ -863,46 +871,46 @@ msgid ""
 "\t- The Xfce Development Team"
 msgstr "Mae Xfce hefyd yn lwyfan datblygiad sydd yn darparu amryw llyfrgelleodd sydd yn cymhorthwyo rhaglennwyr i greu cymhwysiadau sydd yn ffitio i mewn yn dda gyda'r amgylchiad penfwrdd.\n\nMae cydrannau Xfce yn eu thrwyddedwyd dan trwyddedau tarddiad agored rhydwd; GPL neu BDSL am gymhwysiadai ac LGPL neu BSDL am lyfrgelloedd. Edrychwch ar y dogfenniaeth, y côd tarddiad neu'r wefan Xfce (https://www.xfce.org) am fwy o wybodaeth.\n\nDiolch i chi an eich diddordeb yn Xfce.\n\n - Y Carfan Datblygiad Xfce"
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:24
+#: ../xfce4-about/xfce4-about-dialog.glade.h:26
 msgid "About"
 msgstr "Ynghylch"
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:25
+#: ../xfce4-about/xfce4-about-dialog.glade.h:27
 msgid "Credits"
 msgstr "Clodrestr"
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:26
+#: ../xfce4-about/xfce4-about-dialog.glade.h:28
 msgid "GPL"
 msgstr "GPL"
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:27
+#: ../xfce4-about/xfce4-about-dialog.glade.h:29
 msgid "LGPL"
 msgstr "LGPL"
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:28
+#: ../xfce4-about/xfce4-about-dialog.glade.h:30
 msgid "BSD"
 msgstr "BSD"
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:29
+#: ../xfce4-about/xfce4-about-dialog.glade.h:31
 msgid "Copyright"
 msgstr "Hawlfraint"
 
-#: ../xfce4-about/system-info.c:532 ../xfce4-about/system-info.c:554
-#: ../xfce4-about/system-info.c:672 ../xfce4-about/system-info.c:717
+#: ../xfce4-about/system-info.c:533 ../xfce4-about/system-info.c:555
+#: ../xfce4-about/system-info.c:673 ../xfce4-about/system-info.c:721
 msgid "Unknown"
 msgstr "Anwybyddus"
 
 #. translators: This is the type of architecture for the OS
-#: ../xfce4-about/system-info.c:657
+#: ../xfce4-about/system-info.c:658
 msgid "64-bit (32-bit userspace)"
 msgstr "64-did (32-did defnyddiwrofod)"
 
 #. translators: This is the type of architecture for the OS
-#: ../xfce4-about/system-info.c:660
+#: ../xfce4-about/system-info.c:661
 msgid "64-bit"
 msgstr "64-did"
 
-#: ../xfce4-about/system-info.c:660
+#: ../xfce4-about/system-info.c:661
 msgid "32-bit"
 msgstr "32-did"
 
@@ -910,7 +918,7 @@ msgstr "32-did"
 #. * example:
 #. * "Fedora 25 (Workstation Edition); Build ID: xyz" or
 #. * "Ubuntu 16.04 LTS; Build ID: jki"
-#: ../xfce4-about/system-info.c:725
+#: ../xfce4-about/system-info.c:729
 #, c-format
 msgid "%s; Build ID: %s"
 msgstr "%s; Hunaniaeth Adeiladu: %s"
