@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# zura davitashvili <zdavitashvili0@gmail.com>, 2020
+# ზურაბი დავითაშვილი <zurabi@tuta.io>, 2020
+# ზურაბი დავითაშვილი <zurabi@tuta.io>, 2020
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-07 12:45+0200\n"
-"PO-Revision-Date: 2020-07-07 10:45+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"POT-Creation-Date: 2022-07-16 00:45+0200\n"
+"PO-Revision-Date: 2013-07-02 20:33+0000\n"
+"Last-Translator: ზურაბი დავითაშვილი <zurabi@tuta.io>, 2020\n"
 "Language-Team: Georgian (http://www.transifex.com/xfce/libxfce4ui/language/ka/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -39,13 +40,13 @@ msgstr ""
 
 #. Create cancel button
 #: ../libxfce4ui/xfce-dialogs.c:275 ../libxfce4ui/xfce-dialogs.c:533
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:253
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:256
 msgid "_Cancel"
 msgstr "გაუქმება"
 
 #: ../libxfce4ui/xfce-dialogs.c:277
 msgid "_Read Online"
-msgstr ""
+msgstr "ონლაინ _ნახვა"
 
 #: ../libxfce4ui/xfce-dialogs.c:286
 msgid "_Always go directly to the online documentation"
@@ -104,7 +105,7 @@ msgstr "აღარ მკითხო"
 
 #: ../libxfce4ui/xfce-sm-client.c:1427
 msgid "Session management client ID"
-msgstr ""
+msgstr "სესიის მართვის კლიენტის "
 
 #: ../libxfce4ui/xfce-sm-client.c:1427
 msgid "ID"
@@ -112,15 +113,15 @@ msgstr "აიდი"
 
 #: ../libxfce4ui/xfce-sm-client.c:1428
 msgid "Disable session management"
-msgstr ""
+msgstr "სესიების მართვის გამორთვა"
 
 #: ../libxfce4ui/xfce-sm-client.c:1438
 msgid "Session management options"
-msgstr ""
+msgstr "სესიის მმართველის პარამეტრები"
 
 #: ../libxfce4ui/xfce-sm-client.c:1439
 msgid "Show session management options"
-msgstr ""
+msgstr "სესიის მმართველის პარამეტრები ჩვენება"
 
 #: ../libxfce4ui/xfce-sm-client.c:1614
 #, c-format
@@ -133,28 +134,25 @@ msgid "Session manager did not return a valid client id"
 msgstr ""
 
 #. print warning for user
-#: ../libxfce4ui/xfce-spawn.c:423
+#: ../libxfce4ui/xfce-spawn.c:397
 #, c-format
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
 "\"%s\"."
 msgstr ""
 
-#. the string contains a directory separator
-#: ../libxfce4ui/xfce-filename-input.c:414
+#. retrieve the error and warning messages
+#: ../libxfce4ui/xfce-filename-input.c:228
+msgid "Filename is too long"
+msgstr "ფაილის სახელი ძალიან გრძელია"
+
+#: ../libxfce4ui/xfce-filename-input.c:229
 msgid "Directory separator illegal in file name"
 msgstr ""
 
-#. the string is too long
-#: ../libxfce4ui/xfce-filename-input.c:422
-msgid "Filename is too long"
-msgstr ""
-
-#. the string starts or ends with whitespace
-#. * this does not make the filename invalid, but we warn the user about it
-#: ../libxfce4ui/xfce-filename-input.c:430
+#: ../libxfce4ui/xfce-filename-input.c:230
 msgid "Filenames should not start or end with a space"
-msgstr ""
+msgstr "ფაილის სახელი არ შეიძლება, ჰარეთი მთავრდებოდეს"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:53
 #, c-format
@@ -169,7 +167,7 @@ msgstr ""
 #: ../libxfce4kbd-private/xfce-shortcuts.c:63
 #, c-format
 msgid "Use '%s'"
-msgstr ""
+msgstr "%s-ის გამოყენება"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:54
 #: ../libxfce4kbd-private/xfce-shortcuts.c:57
@@ -177,7 +175,7 @@ msgstr ""
 #: ../libxfce4kbd-private/xfce-shortcuts.c:63
 #, c-format
 msgid "Keep '%s'"
-msgstr ""
+msgstr "%s-ის შენარჩუნება"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #: ../libxfce4kbd-private/xfce-shortcuts.c:59
@@ -196,63 +194,92 @@ msgstr ""
 
 #. This shortcut already exists in the provider, we don't want it twice
 #. Warn the user
-#: ../libxfce4kbd-private/xfce-shortcuts.c:110
+#: ../libxfce4kbd-private/xfce-shortcuts.c:113
 msgid "Please use another key combination."
 msgstr ""
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:111
+#: ../libxfce4kbd-private/xfce-shortcuts.c:114
 #, c-format
 msgid "%s already triggers this action."
 msgstr ""
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:116
+#: ../libxfce4kbd-private/xfce-shortcuts.c:119
 #, c-format
 msgid "Conflicting actions for %s"
 msgstr ""
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:178
+#: ../libxfce4kbd-private/xfce-shortcuts.c:181
 msgid "This shortcut is already being used for something else."
 msgstr ""
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:214
+#: ../libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:94
+#: ../libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:131
+msgid "Shortcuts Editor"
+msgstr ""
+
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:380
+msgid "The current shortcut. Click to edit..."
+msgstr ""
+
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:391
+msgid "Clear the shortcut"
+msgstr ""
+
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:401
+msgid "Restore the default shortcut"
+msgstr ""
+
+#. skip leading slash
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:473
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:562
+#, c-format
+msgid "This keyboard shortcut is currently used by: '%s'"
+msgstr ""
+
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:476
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:565
+msgid "Keyboard shortcut already in use"
+msgstr ""
+
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:217
 msgid "Window Manager Action Shortcut"
 msgstr "ფანჯრის მმართველის მოქმედების მალსახმობი"
 
 #. TRANSLATORS: this string will be used to create an explanation for
 #. * the user in a following string
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:217
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:233
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:220
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:236
 msgid "action"
 msgstr "მოქმედება"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:222
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:225
 msgid "Command Shortcut"
 msgstr "ბრძამების მალსახმობი"
 
 #. TRANSLATORS: this string will be used to create an explanation for
 #. * the user in a following string
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:225
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:228
 msgid "command"
 msgstr "ბრძანება"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:230
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:233
 msgid "Shortcut"
 msgstr "მალსახმობი"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:247
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:250
 msgid "Clear"
 msgstr "გაწმენდა"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:270
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:273
 #, c-format
 msgid "Press keyboard keys to trigger the %s '%s'."
 msgstr ""
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:291
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:295
 msgid "Please press a key"
 msgstr ""
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:345
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:349
 msgid "Could not grab the keyboard."
 msgstr ""
 
@@ -314,11 +341,11 @@ msgstr "ფანჯრის დამალვა"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:51
 msgid "Move window"
-msgstr ""
+msgstr "ფანჯრის გადაადგილება"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:52
 msgid "Resize window"
-msgstr ""
+msgstr "ფანჯრის ზომის შეცვლა"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:53
 msgid "Shade window"
@@ -342,7 +369,7 @@ msgstr ""
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:58
 msgid "Fill window"
-msgstr ""
+msgstr "შეავსე ფანჯარა"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:59
 msgid "Fill window horizontally"
@@ -358,7 +385,7 @@ msgstr ""
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:62
 msgid "Toggle fullscreen"
-msgstr ""
+msgstr "მთელ ეკრანზე გატანის ჩართ/გამორთ"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:63
 msgid "Move window to upper workspace"
@@ -562,122 +589,130 @@ msgstr ""
 
 #: ../glade/libxfce4ui-2.xml.in.h:2
 msgid "Subtitle"
-msgstr ""
+msgstr "სუბტიტრები"
 
 #: ../glade/libxfce4ui-2.xml.in.h:3
 msgid "Xfce 4 Widgets"
-msgstr ""
+msgstr "Xfce 4 -ის ვიჯეტები"
 
-#: ../xfce4-about/main.c:59
+#: ../xfce4-about/main.c:58
 msgid "Version information"
 msgstr "ვერსიის შესახებ ინფორმაცია"
 
-#: ../xfce4-about/main.c:125
+#: ../xfce4-about/main.c:128
+msgid "GPUs"
+msgstr "GPU-ები"
+
+#: ../xfce4-about/main.c:146
 msgid "Window Manager"
 msgstr "ფანჯრის მმართველი"
 
-#: ../xfce4-about/main.c:126
+#: ../xfce4-about/main.c:147
 msgid "Handles the placement of windows on the screen."
 msgstr ""
 
-#: ../xfce4-about/main.c:130
+#: ../xfce4-about/main.c:151
 msgid "Panel"
 msgstr "პანელი"
 
-#: ../xfce4-about/main.c:131
+#: ../xfce4-about/main.c:152
 msgid "Provides a home for window buttons, launchers, app menu and more."
 msgstr ""
 
-#: ../xfce4-about/main.c:135
+#: ../xfce4-about/main.c:156
 msgid "Desktop Manager"
 msgstr "სამუშაო მაგიდის მმართველი"
 
-#: ../xfce4-about/main.c:136
+#: ../xfce4-about/main.c:157
 msgid "Sets desktop backgrounds, handles icons and more."
 msgstr ""
 
-#: ../xfce4-about/main.c:140
+#: ../xfce4-about/main.c:161
 msgid "File Manager"
 msgstr "ფაილების მმართველი"
 
-#: ../xfce4-about/main.c:141
+#: ../xfce4-about/main.c:162
 msgid "Manages your files in a modern, easy-to-use and fast way."
 msgstr ""
 
-#: ../xfce4-about/main.c:145
-msgid "Volume manager"
+#: ../xfce4-about/main.c:166
+msgid "Volume Manager"
 msgstr ""
 
-#: ../xfce4-about/main.c:146
+#: ../xfce4-about/main.c:167
 msgid "Manages removable drives and media for Thunar."
 msgstr ""
 
-#: ../xfce4-about/main.c:150
+#: ../xfce4-about/main.c:171
 msgid "Session Manager"
 msgstr "სესსის მმართველი"
 
-#: ../xfce4-about/main.c:151
+#: ../xfce4-about/main.c:172
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
 msgstr ""
 
-#: ../xfce4-about/main.c:155
-msgid "Setting System"
-msgstr ""
+#: ../xfce4-about/main.c:176
+msgid "Settings Manager"
+msgstr "პარამეტრების მმართველი"
 
-#: ../xfce4-about/main.c:156
+#: ../xfce4-about/main.c:177
 msgid "Configures appearance, display, keyboard and mouse settings."
 msgstr ""
 
-#: ../xfce4-about/main.c:160
+#: ../xfce4-about/main.c:181
 msgid "Application Finder"
 msgstr "პროგრამის მპოვნელი"
 
-#: ../xfce4-about/main.c:161
+#: ../xfce4-about/main.c:182
 msgid "Quickly finds and launches applications installed on your system."
 msgstr ""
 
-#: ../xfce4-about/main.c:165
+#: ../xfce4-about/main.c:186
 msgid "Settings Daemon"
 msgstr ""
 
-#: ../xfce4-about/main.c:166
+#: ../xfce4-about/main.c:187
 msgid "Stores your settings in a D-Bus-based configuration system."
 msgstr ""
 
-#: ../xfce4-about/main.c:170
-msgid "A menu library"
-msgstr "მენიუს ბიბლიოთეკა"
+#: ../xfce4-about/main.c:191
+msgid "A Menu Library"
+msgstr ""
 
-#: ../xfce4-about/main.c:171
+#: ../xfce4-about/main.c:192
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
 msgstr ""
 
-#: ../xfce4-about/main.c:175
-msgid "Thumbnails service"
+#: ../xfce4-about/main.c:196
+msgid "Thumbnails Service"
 msgstr ""
 
-#: ../xfce4-about/main.c:176
+#: ../xfce4-about/main.c:197
 msgid "Implements the thumbnail management D-Bus specification."
 msgstr ""
 
-#: ../xfce4-about/main.c:329
+#: ../xfce4-about/main.c:251
+msgid "Please see <https://www.xfce.org/about/credits>"
+msgstr ""
+
+#: ../xfce4-about/main.c:312
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 msgstr ""
 
-#: ../xfce4-about/main.c:333
+#: ../xfce4-about/main.c:316
 msgid "Thanks to all who helped making this software available!"
 msgstr "მადლობას ვუხდით ყველას, ვინც დაგვეხმარა ამ პროგრამის განვითარებაში!"
 
-#: ../xfce4-about/main.c:350
+#: ../xfce4-about/main.c:333
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
 msgstr ""
 
-#: ../xfce4-about/main.c:355
+#: ../xfce4-about/main.c:338
 msgid ""
 "The libxfce4ui, libxfce4util and exo packages are distributed under the "
 "terms of the GNU Library General Public License as published by the Free "
@@ -685,7 +720,7 @@ msgid ""
 "any later version."
 msgstr ""
 
-#: ../xfce4-about/main.c:362
+#: ../xfce4-about/main.c:345
 msgid ""
 "The packages thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
 "xfce4-settings, xfconf, xfdesktop and xfwm4 are distributed under the terms "
@@ -694,65 +729,56 @@ msgid ""
 "version."
 msgstr ""
 
-#: ../xfce4-about/main.c:509
+#: ../xfce4-about/main.c:491
 #, c-format
 msgid "Type '%s --help' for usage information."
 msgstr ""
 
-#: ../xfce4-about/main.c:515
+#: ../xfce4-about/main.c:497
 msgid "Unable to initialize GTK+."
-msgstr ""
+msgstr "GTK+-ის ინიციალიზაციის შეცდომა"
 
-#: ../xfce4-about/main.c:524
+#: ../xfce4-about/main.c:506
 msgid "The Xfce development team. All rights reserved."
 msgstr "Xfce-ის განვითარების ჯგუფი. ყველა უფლება დაცულია."
 
-#: ../xfce4-about/main.c:525
+#: ../xfce4-about/main.c:507
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "გთხოვთ, შეცდომების შესახებ გვაცნობეთ აქ <%s>."
 
-#: ../xfce4-about/main.c:535
+#: ../xfce4-about/main.c:517
 msgid "Failed to load interface"
-msgstr ""
-
-#. I18N: first %s will be replaced by the version, second by
-#. * the name of the distribution (--with-vendor-info=NAME)
-#: ../xfce4-about/main.c:549
-#, c-format
-msgid "Version %s, distributed by %s"
-msgstr ""
-
-#. I18N: %s will be replaced by the Xfce version number
-#: ../xfce4-about/main.c:553
-#, c-format
-msgid "Version %s"
-msgstr "ვერსია %s"
+msgstr "ინტერფეისის ჩატვირთვის შეცდომა"
 
 #. { N_("Project Lead"),
 #. xfce_contributors_lead
 #. },
-#: ../xfce4-about/contributors.h:128
+#: ../xfce4-about/contributors.h:136
 msgid "Core developers"
-msgstr ""
+msgstr "ძირითადი პროგრამისტები"
 
-#: ../xfce4-about/contributors.h:131
+#: ../xfce4-about/contributors.h:139
 msgid "Active contributors"
-msgstr ""
+msgstr "აქტიური მოხალისეები"
 
-#: ../xfce4-about/contributors.h:134
+#: ../xfce4-about/contributors.h:142
 msgid "Servers maintained by"
 msgstr ""
 
-#: ../xfce4-about/contributors.h:137
+#: ../xfce4-about/contributors.h:145
 msgid "Translations supervision"
-msgstr ""
+msgstr "თარგმანების მართვა"
 
-#: ../xfce4-about/contributors.h:140
+#: ../xfce4-about/contributors.h:148
+msgid "Documentation supervision"
+msgstr "დოკუმენტაციის მართვა"
+
+#: ../xfce4-about/contributors.h:151
 msgid "Translators"
 msgstr "მთარგმნელები"
 
-#: ../xfce4-about/contributors.h:143
+#: ../xfce4-about/contributors.h:154
 msgid "Previous contributors"
 msgstr ""
 
@@ -773,48 +799,68 @@ msgid "About the Xfce Desktop Environment"
 msgstr ""
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:3
-msgid "label"
-msgstr ""
+msgid "_Help"
+msgstr "_დახმარება"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:4
-msgid "OS Name"
-msgstr ""
+msgid "_Close"
+msgstr "დახურვა"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:5
 msgid "Device"
 msgstr "მოწყობილობა"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:6
-msgid "Memory"
-msgstr "მეხსიერება"
+msgid "label"
+msgstr "ჭდე"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:7
-msgid "CPU"
-msgstr ""
+msgid "OS Name"
+msgstr "ოს-ის სახელი"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:8
 msgid "OS Type"
-msgstr ""
+msgstr "ოს-ის ტიპი"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:9
+msgid "Distributor"
+msgstr "დისტრიბუტორი"
+
+#: ../xfce4-about/xfce4-about-dialog.glade.h:10
 msgid "Xfce Version"
 msgstr "Xfce-ის ვერსია"
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:10
-msgid "Distributor"
-msgstr ""
-
 #: ../xfce4-about/xfce4-about-dialog.glade.h:11
+msgid "GTK Version"
+msgstr "GTK-ის ვერსია"
+
+#: ../xfce4-about/xfce4-about-dialog.glade.h:12
+msgid "Kernel Version"
+msgstr "ბირთვის ვერსია"
+
+#: ../xfce4-about/xfce4-about-dialog.glade.h:13
+msgid "CPU"
+msgstr "CPU"
+
+#: ../xfce4-about/xfce4-about-dialog.glade.h:14
+msgid "Memory"
+msgstr "მეხსიერება"
+
+#: ../xfce4-about/xfce4-about-dialog.glade.h:15
+msgid "GPU"
+msgstr "GPU"
+
+#: ../xfce4-about/xfce4-about-dialog.glade.h:16
 msgid "System"
 msgstr "სისტემა"
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:12
+#: ../xfce4-about/xfce4-about-dialog.glade.h:17
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
 msgstr ""
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:14
+#: ../xfce4-about/xfce4-about-dialog.glade.h:19
 msgid ""
 "Xfce is also a development platform providing several libraries that help programmers create applications that fit in well with the desktop environment.\n"
 "\n"
@@ -825,39 +871,54 @@ msgid ""
 "\t- The Xfce Development Team"
 msgstr ""
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:21
+#: ../xfce4-about/xfce4-about-dialog.glade.h:26
 msgid "About"
 msgstr "შესახებ"
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:22
+#: ../xfce4-about/xfce4-about-dialog.glade.h:27
 msgid "Credits"
-msgstr ""
+msgstr "კრედიტები"
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:23
+#: ../xfce4-about/xfce4-about-dialog.glade.h:28
 msgid "GPL"
-msgstr ""
+msgstr "GPL"
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:24
+#: ../xfce4-about/xfce4-about-dialog.glade.h:29
 msgid "LGPL"
-msgstr ""
+msgstr "LGPL"
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:25
+#: ../xfce4-about/xfce4-about-dialog.glade.h:30
 msgid "BSD"
-msgstr ""
+msgstr "BSD"
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:26
+#: ../xfce4-about/xfce4-about-dialog.glade.h:31
 msgid "Copyright"
 msgstr "საავტორო უფლებები"
 
-#: ../xfce4-about/system-info.c:274 ../xfce4-about/system-info.c:322
+#: ../xfce4-about/system-info.c:533 ../xfce4-about/system-info.c:555
+#: ../xfce4-about/system-info.c:673 ../xfce4-about/system-info.c:721
 msgid "Unknown"
 msgstr "უცნობი"
+
+#. translators: This is the type of architecture for the OS
+#: ../xfce4-about/system-info.c:658
+msgid "64-bit (32-bit userspace)"
+msgstr ""
+
+#. translators: This is the type of architecture for the OS
+#: ../xfce4-about/system-info.c:661
+msgid "64-bit"
+msgstr "64-ბიტიანი"
+
+#: ../xfce4-about/system-info.c:661
+msgid "32-bit"
+msgstr "32-ბიტიანი"
 
 #. translators: This is the name of the OS, followed by the build ID, for
 #. * example:
 #. * "Fedora 25 (Workstation Edition); Build ID: xyz" or
 #. * "Ubuntu 16.04 LTS; Build ID: jki"
-#: ../xfce4-about/system-info.c:330
+#: ../xfce4-about/system-info.c:729
 #, c-format
 msgid "%s; Build ID: %s"
 msgstr "%s; აგების აიდი: %s"
