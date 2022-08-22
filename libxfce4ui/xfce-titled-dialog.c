@@ -168,30 +168,30 @@ xfce_titled_dialog_init (XfceTitledDialog *titled_dialog)
   g_object_get (settings, "gtk-dialogs-use-header", &titled_dialog->priv->use_header, NULL);
 
   if (titled_dialog->priv->use_header)
-  {
-    g_object_set (G_OBJECT (titled_dialog), "use-header-bar", TRUE, NULL);
+    {
+      g_object_set (G_OBJECT (titled_dialog), "use-header-bar", TRUE, NULL);
 
-    /* Get the headerbar of the dialog */
-    titled_dialog->priv->headerbar = gtk_dialog_get_header_bar (GTK_DIALOG (titled_dialog));
-    g_return_if_fail (GTK_IS_HEADER_BAR (titled_dialog->priv->headerbar));
+      /* Get the headerbar of the dialog */
+      titled_dialog->priv->headerbar = gtk_dialog_get_header_bar (GTK_DIALOG (titled_dialog));
+      g_return_if_fail (GTK_IS_HEADER_BAR (titled_dialog->priv->headerbar));
 
-    /* Don't reserve vertical space for subtitles */
-    gtk_header_bar_set_has_subtitle (GTK_HEADER_BAR (titled_dialog->priv->headerbar), FALSE);
+      /* Don't reserve vertical space for subtitles */
+      gtk_header_bar_set_has_subtitle (GTK_HEADER_BAR (titled_dialog->priv->headerbar), FALSE);
 
-    /* Pack the window icon into the headerbar */
-    titled_dialog->priv->icon = gtk_image_new ();
-    gtk_header_bar_pack_start (GTK_HEADER_BAR (titled_dialog->priv->headerbar), titled_dialog->priv->icon);
-    gtk_header_bar_set_show_close_button (GTK_HEADER_BAR (titled_dialog->priv->headerbar), TRUE);
-    gtk_widget_show (titled_dialog->priv->icon);
-    titled_dialog->priv->pixbuf = NULL;
+      /* Pack the window icon into the headerbar */
+      titled_dialog->priv->icon = gtk_image_new ();
+      gtk_header_bar_pack_start (GTK_HEADER_BAR (titled_dialog->priv->headerbar), titled_dialog->priv->icon);
+      gtk_header_bar_set_show_close_button (GTK_HEADER_BAR (titled_dialog->priv->headerbar), TRUE);
+      gtk_widget_show (titled_dialog->priv->icon);
+      titled_dialog->priv->pixbuf = NULL;
 
-    /* Adjust window buttons and window placement */
-    g_signal_connect (G_OBJECT (titled_dialog), "notify::window", G_CALLBACK (xfce_titled_dialog_update_window), NULL);
+      /* Adjust window buttons and window placement */
+      g_signal_connect (G_OBJECT (titled_dialog), "notify::window", G_CALLBACK (xfce_titled_dialog_update_window), NULL);
 
-    /* Make sure to update the icon whenever one of the relevant window properties changes */
-    g_signal_connect (G_OBJECT (titled_dialog), "notify::icon", G_CALLBACK (xfce_titled_dialog_update_icon), NULL);
-    g_signal_connect (G_OBJECT (titled_dialog), "notify::icon-name", G_CALLBACK (xfce_titled_dialog_update_icon), NULL);
-  }
+      /* Make sure to update the icon whenever one of the relevant window properties changes */
+      g_signal_connect (G_OBJECT (titled_dialog), "notify::icon", G_CALLBACK (xfce_titled_dialog_update_icon), NULL);
+      g_signal_connect (G_OBJECT (titled_dialog), "notify::icon-name", G_CALLBACK (xfce_titled_dialog_update_icon), NULL);
+    }
   else
     {
       GtkWidget *vbox;
