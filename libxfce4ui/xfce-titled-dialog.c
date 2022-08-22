@@ -194,8 +194,7 @@ xfce_titled_dialog_init (XfceTitledDialog *titled_dialog)
     }
   else
     {
-      GtkWidget *vbox;
-      GtkWidget *content_area;
+      GtkWidget *vbox, *widget, *content_area;
 
       /* remove the main dialog box from the window */
       content_area = gtk_dialog_get_content_area (GTK_DIALOG (titled_dialog));
@@ -206,13 +205,15 @@ xfce_titled_dialog_init (XfceTitledDialog *titled_dialog)
       gtk_container_add (GTK_CONTAINER (titled_dialog), vbox);
       gtk_widget_show (vbox);
 
-      titled_dialog->priv->subtitle_label = gtk_label_new (NULL);
-      gtk_box_pack_start (GTK_BOX (vbox), titled_dialog->priv->subtitle_label, FALSE, FALSE, 0);
-      gtk_widget_set_no_show_all (titled_dialog->priv->subtitle_label, TRUE);
+      widget = titled_dialog->priv->subtitle_label = gtk_label_new (NULL);
+      gtk_box_pack_start (GTK_BOX (vbox), widget, FALSE, FALSE, 0);
+      gtk_widget_set_no_show_all (widget, TRUE);
+      gtk_style_context_add_class (gtk_widget_get_style_context (widget), "xfce-titled-dialog-subtitle");
 
-      titled_dialog->priv->subtitle_separator = gtk_separator_new (GTK_ORIENTATION_HORIZONTAL);
-      gtk_box_pack_start (GTK_BOX (vbox), titled_dialog->priv->subtitle_separator, FALSE, FALSE, 0);
-      gtk_widget_set_no_show_all (titled_dialog->priv->subtitle_separator, TRUE);
+      widget = titled_dialog->priv->subtitle_separator = gtk_separator_new (GTK_ORIENTATION_HORIZONTAL);
+      gtk_box_pack_start (GTK_BOX (vbox), widget, FALSE, FALSE, 0);
+      gtk_widget_set_no_show_all (widget, TRUE);
+      gtk_style_context_add_class (gtk_widget_get_style_context (widget), "xfce-titled-dialog-separator");
 
       gtk_box_pack_start (GTK_BOX (vbox), content_area, TRUE, TRUE, 0);
       g_object_unref (G_OBJECT(content_area));
