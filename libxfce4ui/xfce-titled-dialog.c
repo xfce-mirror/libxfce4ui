@@ -209,6 +209,8 @@ xfce_titled_dialog_init (XfceTitledDialog *titled_dialog)
       gtk_box_pack_start (GTK_BOX (vbox), widget, FALSE, FALSE, 0);
       gtk_widget_set_no_show_all (widget, TRUE);
       gtk_style_context_add_class (gtk_widget_get_style_context (widget), "xfce-titled-dialog-subtitle");
+      gtk_widget_set_margin_start (widget, 8);
+      gtk_widget_set_margin_end (widget, 8);
 
       widget = titled_dialog->priv->subtitle_separator = gtk_separator_new (GTK_ORIENTATION_HORIZONTAL);
       gtk_box_pack_start (GTK_BOX (vbox), widget, FALSE, FALSE, 0);
