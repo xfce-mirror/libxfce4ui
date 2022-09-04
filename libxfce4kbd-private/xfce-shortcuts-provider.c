@@ -701,7 +701,7 @@ xfce_shortcuts_provider_reset_shortcut (XfceShortcutsProvider *provider,
 
   DBG ("property = %s", property);
 
-  xfconf_channel_reset_property (provider->priv->channel, property, FALSE);
+  xfconf_channel_reset_property (provider->priv->channel, property, TRUE);
   g_free (property);
 }
 
