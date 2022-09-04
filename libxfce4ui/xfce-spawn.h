@@ -47,7 +47,8 @@ gboolean xfce_spawn_on_screen                  (GdkScreen    *screen,
                                                 gboolean      startup_notify,
                                                 guint32       startup_timestamp,
                                                 const gchar  *startup_icon_name,
-                                                GError      **error);
+                                                GError      **error)
+G_GNUC_DEPRECATED_FOR (xfce_spawn());
 
 gboolean xfce_spawn                            (GdkScreen    *screen,
                                                 const gchar  *working_directory,
@@ -64,7 +65,8 @@ gboolean xfce_spawn_command_line_on_screen     (GdkScreen    *screen,
                                                 const gchar  *command_line,
                                                 gboolean      in_terminal,
                                                 gboolean      startup_notify,
-                                                GError      **error);
+                                                GError      **error)
+G_GNUC_DEPRECATED_FOR (xfce_spawn_command_line());
 
 gboolean xfce_spawn_command_line               (GdkScreen    *screen,
                                                 const gchar  *command_line,

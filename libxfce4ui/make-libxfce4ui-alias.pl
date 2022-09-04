@@ -34,6 +34,9 @@ print <<EOF;
 
 #include <glib.h>
 
+/* silence '-Wdeprecated-declarations' warnings from our own deprecations */
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+
 EOF
 
 my $in_comment = 0;
@@ -148,6 +151,8 @@ EOF
   }
 
 print <<EOF;
+
+G_GNUC_END_IGNORE_DEPRECATIONS
 
 #endif /* HAVE_GNUC_VISIBILITY */
 EOF

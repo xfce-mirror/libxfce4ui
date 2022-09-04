@@ -72,7 +72,8 @@ GtkWidget            *xfce_titled_dialog_new_with_buttons (const gchar      *tit
                                                            GtkWindow        *parent,
                                                            GtkDialogFlags    flags,
                                                            const gchar      *first_button_text,
-                                                           ...) G_GNUC_MALLOC;
+                                                           ...)
+G_GNUC_MALLOC G_GNUC_DEPRECATED_FOR (xfce_titled_dialog_new_with_mixed_buttons());
 
 GtkWidget            *xfce_titled_dialog_new_with_mixed_buttons (const gchar    *title,
                                                                  GtkWindow      *parent,
