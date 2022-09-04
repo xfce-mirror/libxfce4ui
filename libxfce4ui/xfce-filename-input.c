@@ -92,6 +92,11 @@ struct _XfceFilenameInputClass
   void (*text_invalid) (XfceFilenameInput *filename_input);
 };
 
+/**
+ * XfceFilenameInput:
+ *
+ * An opaque structure with only private fields.
+ **/
 struct _XfceFilenameInput
 {
   GtkBox    parent;

@@ -28,10 +28,16 @@
 
 G_BEGIN_DECLS
 
-/*
- * List of item types which are supported by the XfceGtkActionEntry
- * To be extended if required
-*/
+/**
+ * XfceGtkMenuItem:
+ * @XFCE_GTK_MENU_ITEM: see #GtkMenuItem
+ * @XFCE_GTK_IMAGE_MENU_ITEM: see #GtkImageMenuItem
+ * @XFCE_GTK_CHECK_MENU_ITEM: see #GtkCheckMenuItem
+ * @XFCE_GTK_RADIO_MENU_ITEM: see #GtkRadioMenuItem
+ *
+ * List of item types which are supported by the #XfceGtkActionEntry.
+ * To be extended if required.
+ **/
 typedef enum
 {
   XFCE_GTK_MENU_ITEM,
@@ -42,29 +48,38 @@ typedef enum
 
 
 
+/**
+ * XfceGtkActionEntry:
+ * @id: unique identifier for instances of this structure (you might want to use a enum)
+ * @accel_path: the unique path, used to identify the accelerator
+ * @default_accelerator: the default key and modifier to trigger the callback linked to the entry
+ * @menu_item_type: the type of the item which should be used for creation
+ * @menu_item_label_text: text which should be shown in the menu
+ * @menu_item_tooltip_text: optional tooltip of the item
+ * @menu_item_icon_name: optional icon name which will be used to find a image for the item
+ * @callback: the callback which will be triggered on activation. The callback has to return %TRUE
+ *            to signal that the accelerator was activated and handled
+ *
+ * Replacement for the deprecated #GtkActionEntry.
+ * The idea is to provide a fixed list of #XfceGtkActionEntrys:
+ * - use xfce_gtk_translate_action_entries() once to translate the list
+ * - use xfce_gtk_accel_map_add_entries() once to register the provided accelerators
+ * - use xfce_gtk_get_action_entry_by_id() to find a single entry, e.g. by using a enumeration
+ * - use xfce_gtk_*_new_from_action_entry() to create the specific menu- or tool-items from the entry
+ **/
 struct _XfceGtkActionEntry
 {
-  /*
-   * Replacement for the deprecated GtkActionEntry
-   * The idea is to provide a fixed list of XfceGtkActionEntrys
-   * - use 'xfce_gtk_translate_action_entries' once to translate the list
-   * - use 'xfce_gtk_accel_map_add_entries' once to register the provided accelerators
-   * - use 'xfce_gtk_get_action_entry_by_id' to find a single entry, e.g. by using a enumeration
-   * - use 'xfce_gtk_***_new_from_action_entry' to create the specific menu- or tool-items from the entry
-  */
-
-  guint            id;                     /* unique identifier for instances of this structure (you might want to use a enum) */
-  const gchar     *accel_path;             /* The unique path, used to identify the accelerator */
-  const gchar     *default_accelerator;    /* The default key and modifier to trigger the callback linked to the entry */
+  guint            id;
+  const gchar     *accel_path;
+  const gchar     *default_accelerator;
 
   /* menu_item data is optional, only relevant if there exists a menu_item for that accelerator */
-  XfceGtkMenuItem  menu_item_type;         /* The type of the item which should be used for creation */
-  gchar           *menu_item_label_text;   /* text which should be shown in the menu */
-  gchar           *menu_item_tooltip_text; /* optional tooltip of the item */
-  const gchar     *menu_item_icon_name;    /* optional icon name which will be used to find a image for the item */
+  XfceGtkMenuItem  menu_item_type;
+  gchar           *menu_item_label_text;
+  gchar           *menu_item_tooltip_text;
+  const gchar     *menu_item_icon_name;
 
-  GCallback        callback;               /* The callback which will be triggered on activation */
-                                           /* The callback has to return TRUE to signal that the accelerator was activated and handled */
+  GCallback        callback;
 };
 typedef struct _XfceGtkActionEntry XfceGtkActionEntry;
 
