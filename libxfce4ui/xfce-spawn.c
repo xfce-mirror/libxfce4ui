@@ -605,7 +605,7 @@ xfce_spawn_on_screen_with_child_watch (GdkScreen    *screen,
  * @startup_icon_name : (allow-none): application icon or %NULL.
  * @error             : (out) (allow-none) (transfer full): return location for errors or %NULL.
  *
- * Like gdk_spawn_on_screen(), but also supports startup notification
+ * Like gdk_spawn_on_screen() (GDK 2), but also supports startup notification
  * (if Libxfce4ui was built with startup notification support).
  *
  * Return value: %TRUE on success, %FALSE if @error is set.
@@ -653,7 +653,7 @@ xfce_spawn_on_screen (GdkScreen    *screen,
  *                      %FALSE if it should be reparented to init.
  * @error             : (out) (allow-none) (transfer full): return location for errors or %NULL.
  *
- * Like gdk_spawn_on_screen(), but also supports startup notification
+ * Like gdk_spawn_on_screen() (GDK 2), but also supports startup notification
  * (if Libxfce4ui was built with startup notification support).
  *
  * Return value: %TRUE on success, %FALSE if @error is set.

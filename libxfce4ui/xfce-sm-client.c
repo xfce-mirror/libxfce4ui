@@ -1453,13 +1453,8 @@ xfce_sm_client_get_option_group(gint  argc,
  * command line parsing will figure out many of the SM client's
  * required property values for you.
  *
- * If you are not using Gtk or Glib's command-line option parser,
- * take a look at xfce_sm_client_new_with_argv() and
- * xfce_sm_client_new_full().
- *
  * If you have already created an #XfceSMClient instance using
- * this function or one of the xfce_sm_client_new_*() functions,
- * this will return the same instance.
+ * this function, this will return the same instance.
  *
  * Returns: (transfer full): A new or existing #XfceSMClient
  **/
@@ -2187,8 +2182,7 @@ xfce_sm_client_get_client_id(XfceSMClient *sm_client)
  * and handle state cleanup (setting of the discard command) for you.
  *
  * Before calling this function, the application must have a
- * valid program identifier set (see xfce_sm_client_set_program())
- * and a valid client ID (see xfce_sm_client_get_client_id()).
+ * valid client ID (see xfce_sm_client_get_client_id()).
  *
  * Returns: a file name string, owned by the object or %NULL if
  *          the session client is disabled.
