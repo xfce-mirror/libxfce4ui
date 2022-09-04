@@ -215,7 +215,7 @@ show_xfce_gdk_screen_get_active (GtkButton *button,
   screen = xfce_gdk_screen_get_active (&monitor_num);
 
   xfce_dialog_show_info (NULL, NULL, "monitor num: %d of %d",
-                         monitor_num, gdk_screen_get_n_monitors (screen));
+                         monitor_num, gdk_display_get_n_monitors (gdk_screen_get_display (screen)));
 }
 
 static void
