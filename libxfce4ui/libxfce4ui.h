@@ -22,7 +22,7 @@
 
 #include <libxfce4util/libxfce4util.h>
 
-#define LIBXFCE4UI_INSIDE_LIBXFCE4UI_H
+#define _LIBXFCE4UI_INSIDE_LIBXFCE4UI_H
 
 #include <libxfce4ui/libxfce4ui-config.h>
 #include <libxfce4ui/xfce-dialogs.h>
@@ -34,6 +34,6 @@
 #include <libxfce4ui/xfce-titled-dialog.h>
 #include <libxfce4ui/libxfce4ui-enum-types.h>
 
-#undef LIBXFCE4UI_INSIDE_LIBXFCE4UI_H
+#undef _LIBXFCE4UI_INSIDE_LIBXFCE4UI_H
 
 #endif /* !__LIBXFCE4UI_H__ */

@@ -148,6 +148,8 @@ xfce_sm_client_get_type
 xfce_sm_client_restart_style_get_type
 xfce_sm_client_shutdown_hint_get_type
 xfce_sm_client_error_quark
+xfce_sm_client_error_enum_get_type
+XFCE_TYPE_SM_CLIENT_ERROR_ENUM
 </SECTION>
 
 <SECTION>

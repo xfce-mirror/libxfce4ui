@@ -28,9 +28,6 @@
 
 G_BEGIN_DECLS
 
-/* support for canonical representations of strings */
-#define I_(string) (g_intern_static_string ((string)))
-
 #ifndef NDEBUG
 #define _libxfce4ui_assert(expr)                 g_assert (expr)
 #define _libxfce4ui_assert_not_reached()         g_assert_not_reached ()
