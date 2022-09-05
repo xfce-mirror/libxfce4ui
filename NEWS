@@ -1,3 +1,33 @@
+4.17.7 (2022-09-05)
+======
+- Update copyright year
+- docs: Add missing index of deprecated symbols
+- libxfce4kbd-private: Reset shortcut recursively (#53)
+- tests: Fix deprecation warning
+- docs: Fix some broken links
+- docs: Fix "unused declarations" warning
+- docs: Add missing documentation
+- docs: Add missing deprecation guards
+- docs: Update `.gitignore`
+- Fix titled dialog subtitle when headerbar is not used (!78)
+- xfce-about: Add kernel and gtk version to system tab (!76)
+- titled-dialog: Exclude normal windows from CSD adjustments (!72)
+- xfce-about: Slightly tweak padding (!75)
+- xfce4-about: Add support for 3A5000/loongarch64 (!74)
+- titled-dialog: CSD XfceTitledDialog improvements (#26, !71)
+- Shortcuts Editor: Tooltip improvement (!70)
+- Fix intltool lock file problem during make distcheck (!69)
+- xfce-spawn: Do not change DISPLAY on non-X11 displays (#13, !68)
+- xfce-dialogs: Fix a memory leak
+- Bump minimal required libxfce4util to 4.17.2
+- Translation Updates:
+  Albanian, Arabic, Azerbaijani, Basque, Bulgarian, Chinese (China),
+  Chinese (Taiwan), Croatian, Czech, Danish, Dutch, Estonian, French,
+  Georgian, German, Greek, Hebrew, Hungarian, Indonesian, Italian,
+  Japanese, Korean, Lithuanian, Norwegian Bokmål, Occitan (post 1500),
+  Polish, Portuguese, Portuguese (Brazil), Romanian, Russian, Serbian,
+  Slovenian, Spanish, Swedish, Turkish, Ukrainian, Welsh
+
 4.17.6
 ======
 - XfceShortcutsEditor: Do not update editor if shortcut change failed
