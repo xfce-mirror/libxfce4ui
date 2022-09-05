@@ -1,5 +1,5 @@
 dnl
-dnl Copyright (c) 2007-2020 The Xfce development team
+dnl Copyright (c) 2007-2022 The Xfce development team
 dnl
 
 dnl ***************************
@@ -30,7 +30,7 @@ m4_define([libxfce4ui_debug_default], [ifelse(libxfce4ui_version_tag(), [git], [
 dnl ***************************
 dnl *** Initialize autoconf ***
 dnl ***************************
-AC_COPYRIGHT([Copyright (c) 2007-2019 The Xfce development team])
+AC_COPYRIGHT([Copyright (c) 2007-2022 The Xfce development team])
 AC_INIT([libxfce4ui], [libxfce4ui_version], [https://gitlab.xfce.org/xfce/libxfce4ui/-/issues], [libxfce4ui])
 AC_PREREQ([2.69])
 AC_CONFIG_MACRO_DIRS([m4])
