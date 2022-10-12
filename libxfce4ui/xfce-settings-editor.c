@@ -37,6 +37,7 @@
 enum
 {
     PROP_COLUMN_NAME,
+    PROP_COLUMN_LABEL,
     PROP_COLUMN_DESC,
     PROP_COLUMN_VALUE,
     PROP_COLUMN_LOCKED,
@@ -170,21 +171,22 @@ xfce_settings_editor_create_contents (XfceSettingsEditor *editor)
   editor->model = gtk_tree_store_new (N_PROP_COLUMNS,
                                       G_TYPE_STRING,
                                       G_TYPE_STRING,
+                                      G_TYPE_STRING,
                                       G_TYPE_VALUE,
                                       G_TYPE_BOOLEAN);
   gtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (editor->model),
-                                        PROP_COLUMN_NAME, GTK_SORT_ASCENDING);
+                                        PROP_COLUMN_LABEL, GTK_SORT_ASCENDING);
 
   editor->treeview = gtk_tree_view_new_with_model (GTK_TREE_MODEL (editor->model));
   gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (editor->treeview), TRUE);
   gtk_tree_view_set_headers_clickable (GTK_TREE_VIEW (editor->treeview), FALSE);
-  gtk_tree_view_set_tooltip_column (GTK_TREE_VIEW (editor->treeview), 1);
+  gtk_tree_view_set_tooltip_column (GTK_TREE_VIEW (editor->treeview), PROP_COLUMN_DESC);
   gtk_container_add (GTK_CONTAINER (swin), editor->treeview);
   gtk_widget_show (editor->treeview);
 
   render = gtk_cell_renderer_text_new ();
   column = gtk_tree_view_column_new_with_attributes (_("Property"), render,
-                                                     "text", PROP_COLUMN_NAME,
+                                                     "text", PROP_COLUMN_LABEL,
                                                      NULL);
   gtk_tree_view_column_set_sizing (column, GTK_TREE_VIEW_COLUMN_AUTOSIZE);
   gtk_tree_view_append_column (GTK_TREE_VIEW (editor->treeview), column);
@@ -200,7 +202,7 @@ xfce_settings_editor_create_contents (XfceSettingsEditor *editor)
   g_signal_connect (G_OBJECT (render), "value-changed", G_CALLBACK (xfce_settings_editor_box_value_changed), editor);
 
   gtk_tree_view_set_enable_search (GTK_TREE_VIEW (editor->treeview), TRUE);
-  gtk_tree_view_set_search_column (GTK_TREE_VIEW (editor->treeview), PROP_COLUMN_NAME);
+  gtk_tree_view_set_search_column (GTK_TREE_VIEW (editor->treeview), PROP_COLUMN_LABEL);
 
   xfce_settings_editor_load_properties (editor);
 }
@@ -223,7 +225,8 @@ xfce_settings_editor_load_properties (XfceSettingsEditor *editor)
       xfconf_channel_get_property (editor->channel, editor->properties[i].property_name, &value);
       gtk_tree_store_append (editor->model, &iter, NULL);
       gtk_tree_store_set (editor->model, &iter,
-                          PROP_COLUMN_NAME, g_strdup (editor->properties[i].label),
+                          PROP_COLUMN_NAME, g_strdup (editor->properties[i].property_name),
+                          PROP_COLUMN_LABEL, g_strdup (editor->properties[i].label),
                           PROP_COLUMN_DESC, g_strdup (editor->properties[i].description),
                           PROP_COLUMN_VALUE, &value,
                           PROP_COLUMN_LOCKED, FALSE,
@@ -245,16 +248,12 @@ xfce_settings_editor_box_value_changed (GtkCellRenderer          *renderer,
   GtkTreePath      *path;
   GtkTreeIter       iter;
   gchar            *property;
-  GtkTreeSelection *selection;
 
   g_return_if_fail (G_IS_VALUE (new_value));
   g_return_if_fail (XFCE_IS_SETTINGS_EDITOR (self));
 
-  /* only change values on selected paths, this to avoid miss clicking */
   path = gtk_tree_path_new_from_string (str_path);
-  selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (self->treeview));
-  if (gtk_tree_selection_path_is_selected (selection, path)
-      && gtk_tree_model_get_iter (model, &iter, path))
+  if (gtk_tree_model_get_iter (model, &iter, path))
     {
       gtk_tree_model_get (model, &iter, PROP_COLUMN_NAME, &property, -1);
       if (G_LIKELY (property != NULL))
