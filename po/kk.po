@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2009,2015-2017,2019-2021
+# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2009,2015-2017,2019-2022
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-15 00:45+0100\n"
-"PO-Revision-Date: 2021-11-14 23:45+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"POT-Creation-Date: 2022-07-16 00:45+0200\n"
+"PO-Revision-Date: 2013-07-02 20:33+0000\n"
+"Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2009,2015-2017,2019-2022\n"
 "Language-Team: Kazakh (http://www.transifex.com/xfce/libxfce4ui/language/kk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -39,7 +39,7 @@ msgstr "Сіз құжаттама парақтары әзірленіп, ауд�
 
 #. Create cancel button
 #: ../libxfce4ui/xfce-dialogs.c:275 ../libxfce4ui/xfce-dialogs.c:533
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:253
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:256
 msgid "_Cancel"
 msgstr "Ба_с тарту"
 
@@ -58,7 +58,7 @@ msgstr "Жабу"
 
 #: ../libxfce4ui/xfce-dialogs.c:453
 msgid "No"
-msgstr "Жабу"
+msgstr "Жоқ"
 
 #: ../libxfce4ui/xfce-dialogs.c:455
 msgid "Yes"
@@ -133,7 +133,7 @@ msgid "Session manager did not return a valid client id"
 msgstr "Сессияны басқарушысы дұрыс клиент ID-ін қайтармады"
 
 #. print warning for user
-#: ../libxfce4ui/xfce-spawn.c:400
+#: ../libxfce4ui/xfce-spawn.c:397
 #, c-format
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
@@ -193,91 +193,92 @@ msgstr "Жарлық қазір '%s' командасы үшін қолданы�
 
 #. This shortcut already exists in the provider, we don't want it twice
 #. Warn the user
-#: ../libxfce4kbd-private/xfce-shortcuts.c:110
+#: ../libxfce4kbd-private/xfce-shortcuts.c:113
 msgid "Please use another key combination."
 msgstr "Басқа пернелер комбинациясын қолданыңыз."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:111
+#: ../libxfce4kbd-private/xfce-shortcuts.c:114
 #, c-format
 msgid "%s already triggers this action."
 msgstr "Бұл әрекетті %s іске қосуға бапталған."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:116
+#: ../libxfce4kbd-private/xfce-shortcuts.c:119
 #, c-format
 msgid "Conflicting actions for %s"
 msgstr "%s үшін ерегісетін әрекеттер"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:178
+#: ../libxfce4kbd-private/xfce-shortcuts.c:181
 msgid "This shortcut is already being used for something else."
 msgstr "Жарлық қазір басқа бір әрекет үшін орнатылып тұр."
 
-#: ../libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:90
+#: ../libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:94
+#: ../libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:131
 msgid "Shortcuts Editor"
-msgstr ""
+msgstr "Жарлықтар түзеткіші"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:330
-msgid "The current shortcut. Press to edit..."
-msgstr ""
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:380
+msgid "The current shortcut. Click to edit..."
+msgstr "Ағымдағы жарлық. Түзету үшін шертіңіз..."
 
-#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:341
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:391
 msgid "Clear the shortcut"
-msgstr ""
+msgstr "Жарлықты тазарту"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:351
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:401
 msgid "Restore the default shortcut"
-msgstr ""
+msgstr "Бастапқы жарлықты қалпына келтіру"
 
 #. skip leading slash
-#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:426
-#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:517
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:473
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:562
 #, c-format
 msgid "This keyboard shortcut is currently used by: '%s'"
 msgstr "Бұл пернетақта жарлығы келесі үшін қолданылуда: '%s'"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:429
-#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:520
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:476
+#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:565
 msgid "Keyboard shortcut already in use"
 msgstr "Пернетақта қолданылуда болып тұр"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:214
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:217
 msgid "Window Manager Action Shortcut"
 msgstr "Терезелер басқарушысы әрекетінің жарлығы"
 
 #. TRANSLATORS: this string will be used to create an explanation for
 #. * the user in a following string
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:217
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:233
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:220
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:236
 msgid "action"
 msgstr "әрекет"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:222
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:225
 msgid "Command Shortcut"
 msgstr "Команда жарлығы"
 
 #. TRANSLATORS: this string will be used to create an explanation for
 #. * the user in a following string
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:225
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:228
 msgid "command"
 msgstr "команда"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:230
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:233
 msgid "Shortcut"
 msgstr "Жарлық"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:247
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:250
 msgid "Clear"
 msgstr "Тазарту"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:270
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:273
 #, c-format
 msgid "Press keyboard keys to trigger the %s '%s'."
 msgstr "%s '%s' жөнелту үшін пернетақта пернелерін басыңыз."
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:291
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:295
 msgid "Please press a key"
 msgstr "Пернені басыңыз"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:345
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:349
 msgid "Could not grab the keyboard."
 msgstr "Пернетақта басқаруын алу мүмкін емес."
 
@@ -597,120 +598,120 @@ msgstr "Xfce 4 виджеттері"
 msgid "Version information"
 msgstr "Нұсқа ақпараты"
 
-#: ../xfce4-about/main.c:117
+#: ../xfce4-about/main.c:128
 msgid "GPUs"
 msgstr "Видеокарталар"
 
-#: ../xfce4-about/main.c:135
+#: ../xfce4-about/main.c:146
 msgid "Window Manager"
 msgstr "Терезелер басқарушысы"
 
-#: ../xfce4-about/main.c:136
+#: ../xfce4-about/main.c:147
 msgid "Handles the placement of windows on the screen."
 msgstr "Экрандағы терезелердің орналасуын басқарады."
 
-#: ../xfce4-about/main.c:140
+#: ../xfce4-about/main.c:151
 msgid "Panel"
 msgstr "Панель"
 
-#: ../xfce4-about/main.c:141
+#: ../xfce4-about/main.c:152
 msgid "Provides a home for window buttons, launchers, app menu and more."
 msgstr "Терезе батырмалары, жөнелткіштер, қолданбалар мәзірі және басқаларды сақтайды."
 
-#: ../xfce4-about/main.c:145
+#: ../xfce4-about/main.c:156
 msgid "Desktop Manager"
 msgstr "Жұмыс үстел басқарушысы"
 
-#: ../xfce4-about/main.c:146
+#: ../xfce4-about/main.c:157
 msgid "Sets desktop backgrounds, handles icons and more."
 msgstr "Жұмыс үстел тұсқағазын орнатады, таңбашаларды басқарады және т.б."
 
-#: ../xfce4-about/main.c:150
+#: ../xfce4-about/main.c:161
 msgid "File Manager"
 msgstr "Файлдар басқарушысы"
 
-#: ../xfce4-about/main.c:151
+#: ../xfce4-about/main.c:162
 msgid "Manages your files in a modern, easy-to-use and fast way."
 msgstr "Файлдарыңызды заманауи, қолдануға жеңіл және жылдам тәсілмен басқарады."
 
-#: ../xfce4-about/main.c:155
+#: ../xfce4-about/main.c:166
 msgid "Volume Manager"
 msgstr "Бөлімдерді басқарушысы"
 
-#: ../xfce4-about/main.c:156
+#: ../xfce4-about/main.c:167
 msgid "Manages removable drives and media for Thunar."
 msgstr "Thunar үшін ауыстырмалы тасушылар мен дисктерді басқарады."
 
-#: ../xfce4-about/main.c:160
+#: ../xfce4-about/main.c:171
 msgid "Session Manager"
 msgstr "Сессиялар басқарушысы"
 
-#: ../xfce4-about/main.c:161
+#: ../xfce4-about/main.c:172
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
 msgstr "Сессияңызды сақтайды және қалпына келтіреді, іске қосылу, автожөнелту және сөндіруді басқарады."
 
-#: ../xfce4-about/main.c:165
+#: ../xfce4-about/main.c:176
 msgid "Settings Manager"
 msgstr "Баптаулар басқарушысы"
 
-#: ../xfce4-about/main.c:166
+#: ../xfce4-about/main.c:177
 msgid "Configures appearance, display, keyboard and mouse settings."
 msgstr "Сыртқы түрі, дисплей, пернетақта және тышқанды баптайды."
 
-#: ../xfce4-about/main.c:170
+#: ../xfce4-about/main.c:181
 msgid "Application Finder"
 msgstr "Қолданбаларды табушы"
 
-#: ../xfce4-about/main.c:171
+#: ../xfce4-about/main.c:182
 msgid "Quickly finds and launches applications installed on your system."
 msgstr "Жүйеңізде орнатылған қолданбаларды жылдам табады және орындайды."
 
-#: ../xfce4-about/main.c:175
+#: ../xfce4-about/main.c:186
 msgid "Settings Daemon"
 msgstr "Баптаулар басқарушысының қызметі"
 
-#: ../xfce4-about/main.c:176
+#: ../xfce4-about/main.c:187
 msgid "Stores your settings in a D-Bus-based configuration system."
 msgstr "Баптауларыңызды D-Bus негізіндегі баптаулар жүйесінде сақтайды."
 
-#: ../xfce4-about/main.c:180
+#: ../xfce4-about/main.c:191
 msgid "A Menu Library"
 msgstr "Мәзір библиотекасы"
 
-#: ../xfce4-about/main.c:181
+#: ../xfce4-about/main.c:192
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
 msgstr "GLib және GIO негізіндегі freedesktop.org-үйлесімді мәзірді іске асырады."
 
-#: ../xfce4-about/main.c:185
+#: ../xfce4-about/main.c:196
 msgid "Thumbnails Service"
 msgstr "Кіші көріністер қызметі"
 
-#: ../xfce4-about/main.c:186
+#: ../xfce4-about/main.c:197
 msgid "Implements the thumbnail management D-Bus specification."
 msgstr "Кіші көріністерді басқару D-Bus спецификациясын іске асырады."
 
-#: ../xfce4-about/main.c:240
+#: ../xfce4-about/main.c:251
 msgid "Please see <https://www.xfce.org/about/credits>"
 msgstr "<https://www.xfce.org/about/credits> қараңыз"
 
-#: ../xfce4-about/main.c:300
+#: ../xfce4-about/main.c:312
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 msgstr "Бұл тізімнен қалып қойған біреуді білсеңіз, ақаулық хабарламасын <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> жеріне жазыңыз."
 
-#: ../xfce4-about/main.c:304
+#: ../xfce4-about/main.c:316
 msgid "Thanks to all who helped making this software available!"
 msgstr "Осы бағдарламалық қамтаманы қолжетерлік қылуға көмектескен барлық адамдарға рахмет!"
 
-#: ../xfce4-about/main.c:321
+#: ../xfce4-about/main.c:333
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
 msgstr "Xfce 4 құқықтарына Olivier Fourdan (fourdan@xfce.org) ие. Әр түрлі құрауыштар өз авторларының меншігі болып табылады."
 
-#: ../xfce4-about/main.c:326
+#: ../xfce4-about/main.c:338
 msgid ""
 "The libxfce4ui, libxfce4util and exo packages are distributed under the "
 "terms of the GNU Library General Public License as published by the Free "
@@ -718,7 +719,7 @@ msgid ""
 "any later version."
 msgstr "libxfce4ui, libxfce4util және exo дестелері Free Software Foundation жариялаған GNU Library General Public License аясында таратылады; нұсқасы 2 немесе (таңдауыңызша) одан кейін шыққан кез-келгені."
 
-#: ../xfce4-about/main.c:333
+#: ../xfce4-about/main.c:345
 msgid ""
 "The packages thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
 "xfce4-settings, xfconf, xfdesktop and xfwm4 are distributed under the terms "
@@ -727,25 +728,25 @@ msgid ""
 "version."
 msgstr "thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop және xfwm4 дестелері Free Software Foundation жариялаған GNU General Public License аясында таратылады; нұсқасы 2 немесе (таңдауыңызша) одан кейін шыққан кез-келгені."
 
-#: ../xfce4-about/main.c:479
+#: ../xfce4-about/main.c:491
 #, c-format
 msgid "Type '%s --help' for usage information."
 msgstr "Қолдану ақпаратын қарау үшін '%s --help' енгізіңіз."
 
-#: ../xfce4-about/main.c:485
+#: ../xfce4-about/main.c:497
 msgid "Unable to initialize GTK+."
 msgstr "GTK+ іске қосу мүмкін емес."
 
-#: ../xfce4-about/main.c:494
+#: ../xfce4-about/main.c:506
 msgid "The Xfce development team. All rights reserved."
 msgstr "Xfce өндіру тобы. Барлық құқықтары қорғалған."
 
-#: ../xfce4-about/main.c:495
+#: ../xfce4-about/main.c:507
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "Қателер жөнінде осында хабарлаңыз: <%s>."
 
-#: ../xfce4-about/main.c:505
+#: ../xfce4-about/main.c:517
 msgid "Failed to load interface"
 msgstr "Интерфейсті жүктеу сәтсіз"
 
@@ -805,52 +806,60 @@ msgid "_Close"
 msgstr "Жаб_у"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:5
-msgid "label"
-msgstr "белгі"
-
-#: ../xfce4-about/xfce4-about-dialog.glade.h:6
-msgid "OS Name"
-msgstr "ОЖ атауы"
-
-#: ../xfce4-about/xfce4-about-dialog.glade.h:7
 msgid "Device"
 msgstr "Құрылғы"
 
+#: ../xfce4-about/xfce4-about-dialog.glade.h:6
+msgid "label"
+msgstr "белгі"
+
+#: ../xfce4-about/xfce4-about-dialog.glade.h:7
+msgid "OS Name"
+msgstr "ОЖ атауы"
+
 #: ../xfce4-about/xfce4-about-dialog.glade.h:8
-msgid "Memory"
-msgstr "Жады"
-
-#: ../xfce4-about/xfce4-about-dialog.glade.h:9
-msgid "CPU"
-msgstr "Процессор"
-
-#: ../xfce4-about/xfce4-about-dialog.glade.h:10
 msgid "OS Type"
 msgstr "ОЖ түрі"
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:11
-msgid "Xfce Version"
-msgstr "Xfce нұсқасы"
-
-#: ../xfce4-about/xfce4-about-dialog.glade.h:12
+#: ../xfce4-about/xfce4-about-dialog.glade.h:9
 msgid "Distributor"
 msgstr "Таратушы"
 
+#: ../xfce4-about/xfce4-about-dialog.glade.h:10
+msgid "Xfce Version"
+msgstr "Xfce нұсқасы"
+
+#: ../xfce4-about/xfce4-about-dialog.glade.h:11
+msgid "GTK Version"
+msgstr "GTK нұсқасы"
+
+#: ../xfce4-about/xfce4-about-dialog.glade.h:12
+msgid "Kernel Version"
+msgstr "Ядро нұсқасы"
+
 #: ../xfce4-about/xfce4-about-dialog.glade.h:13
+msgid "CPU"
+msgstr "Процессор"
+
+#: ../xfce4-about/xfce4-about-dialog.glade.h:14
+msgid "Memory"
+msgstr "Жады"
+
+#: ../xfce4-about/xfce4-about-dialog.glade.h:15
 msgid "GPU"
 msgstr "Видеокарта"
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:14
+#: ../xfce4-about/xfce4-about-dialog.glade.h:16
 msgid "System"
 msgstr "Жүйелік"
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:15
+#: ../xfce4-about/xfce4-about-dialog.glade.h:17
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
 msgstr "Xfce - бұл мүмкіндіктері көп жұмыс үстел ортасын құрайтын бірнеше бағдарламалардың жинағы.\nКелесі бағдарламалар Xfce өзегін құрайды:"
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:17
+#: ../xfce4-about/xfce4-about-dialog.glade.h:19
 msgid ""
 "Xfce is also a development platform providing several libraries that help programmers create applications that fit in well with the desktop environment.\n"
 "\n"
@@ -861,46 +870,46 @@ msgid ""
 "\t- The Xfce Development Team"
 msgstr "Сонымен қатар, Xfce бағдарламашыларға жұмыс үстеліне сәйкес келетін қолданбаларды жасауға көмектесетін бірнеше библиотекаларды ұсынатын әзірлеу платформасы болып табылады.\n\nXfce құрауыштары еркін не ашық лицензиялар аясында таратылады; қолданбалар үшін GPL не BSDL, жинақтар үшін LGPL не BSDL. Көбірек білу үшін құжаттаманы, бастапқы кодты мен Xfce веб сайтын (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) қараңыз.\n\nXfce жобасына көрсеткен қызығыңыз үшін рахмет.\n\n\t- Xfce әзірлеушілер тобы"
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:24
+#: ../xfce4-about/xfce4-about-dialog.glade.h:26
 msgid "About"
 msgstr "Осы туралы"
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:25
+#: ../xfce4-about/xfce4-about-dialog.glade.h:27
 msgid "Credits"
 msgstr "Жасағандар"
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:26
+#: ../xfce4-about/xfce4-about-dialog.glade.h:28
 msgid "GPL"
 msgstr "GPL"
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:27
+#: ../xfce4-about/xfce4-about-dialog.glade.h:29
 msgid "LGPL"
 msgstr "LGPL"
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:28
+#: ../xfce4-about/xfce4-about-dialog.glade.h:30
 msgid "BSD"
 msgstr "BSD"
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:29
+#: ../xfce4-about/xfce4-about-dialog.glade.h:31
 msgid "Copyright"
 msgstr "Copyright"
 
-#: ../xfce4-about/system-info.c:531 ../xfce4-about/system-info.c:553
-#: ../xfce4-about/system-info.c:654 ../xfce4-about/system-info.c:699
+#: ../xfce4-about/system-info.c:533 ../xfce4-about/system-info.c:555
+#: ../xfce4-about/system-info.c:673 ../xfce4-about/system-info.c:721
 msgid "Unknown"
 msgstr "Белгісіз"
 
 #. translators: This is the type of architecture for the OS
-#: ../xfce4-about/system-info.c:639
+#: ../xfce4-about/system-info.c:658
 msgid "64-bit (32-bit userspace)"
 msgstr "64-bit (32-биттік пайдаланушы ортасы)"
 
 #. translators: This is the type of architecture for the OS
-#: ../xfce4-about/system-info.c:642
+#: ../xfce4-about/system-info.c:661
 msgid "64-bit"
 msgstr "64-биттік"
 
-#: ../xfce4-about/system-info.c:642
+#: ../xfce4-about/system-info.c:661
 msgid "32-bit"
 msgstr "32-биттік"
 
@@ -908,7 +917,7 @@ msgstr "32-биттік"
 #. * example:
 #. * "Fedora 25 (Workstation Edition); Build ID: xyz" or
 #. * "Ubuntu 16.04 LTS; Build ID: jki"
-#: ../xfce4-about/system-info.c:707
+#: ../xfce4-about/system-info.c:729
 #, c-format
 msgid "%s; Build ID: %s"
 msgstr "%s; Жинақ ID: %s"
