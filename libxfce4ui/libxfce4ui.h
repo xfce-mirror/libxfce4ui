@@ -32,6 +32,7 @@
 #include <libxfce4ui/xfce-filename-input.h>
 #include <libxfce4ui/xfce-sm-client.h>
 #include <libxfce4ui/xfce-titled-dialog.h>
+#include <libxfce4ui/xfce-settings-editor.h>
 #include <libxfce4ui/libxfce4ui-enum-types.h>
 
 #undef _LIBXFCE4UI_INSIDE_LIBXFCE4UI_H

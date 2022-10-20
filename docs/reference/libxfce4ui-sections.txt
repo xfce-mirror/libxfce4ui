@@ -82,6 +82,23 @@ XFCE_BUTTON_TYPE_PIXBUF
 </SECTION>
 
 <SECTION>
+<FILE>xfce-settings-editor</FILE>
+XfceSettingsEditor
+xfce_settings_editor_new
+xfce_settings_editor_new_variadic
+<SUBSECTION Standard>
+XfceSettingsEditorClass
+XFCE_TYPE_SETTINGS_EDITOR
+XFCE_SETTINGS_EDITOR
+XFCE_SETTINGS_EDITOR_CLASS
+XFCE_IS_SETTINGS_EDITOR
+XFCE_IS_SETTINGS_EDITOR_CLASS
+XFCE_SETTINGS_EDITOR_GET_CLASS
+<SUBSECTION Private>
+xfce_settings_editor_get_type
+</SECTION>
+
+<SECTION>
 <FILE>xfce-titled-dialog</FILE>
 XfceTitledDialog
 xfce_titled_dialog_new
