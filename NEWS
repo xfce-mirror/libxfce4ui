@@ -1,3 +1,9 @@
+4.17.8 (2022-10-31)
+======
+- Bump GObject Introspection minim version to 1.66 (xfconf#8, !79)
+- Translation Updates:
+  Basque, Kazakh, Occitan (post 1500), Slovenian
+
 4.17.7 (2022-09-05)
 ======
 - Update copyright year
