@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 Xfce Development Team
+ * Copyright (C) 2022 Xfce Development Team
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -36,26 +36,27 @@ ContributorGroup;
 static const ContributorInfo xfce_contributors_core[] =
 {
   { "Alexander Schwinn", "alexxcons@xfce.org" },
-  { "Ali Abdallah", "ali@xfce.org" },
   { "Andre Miranda", "andreldm@xfce.org" },
+  { "Brian J. Tarricone", "kelnos@xfce.org" },
+  { "Gaël Bonithon", "gael@xfce.org" },
   { "Olivier Fourdan", "fourdan@xfce.org" },
   { "Romain Bouvier", "skunnyk@alteroot.org" },
-  { "Sean Davis", "bluesabre@xfce.org" },
+  { "Sergios Anestis Kefalidis", "skefalidis@xfce.org" },
   { "Simon Steinbeiß", "simon@xfce.org" },
+  { "Theo Linkspfeifer", "lastonestanding@tutanota.com" },
   { NULL, NULL}
 };
 
 static const ContributorInfo xfce_contributors_active[] =
 {
   { "Alistair Buxton", "a.j.buxton@gmail.com" },
-  { "Gaël Bonithon", "gael@xfce.org" },
+  { "Ali Abdallah", "ali@xfce.org" },
   { "Igor", "f2404@yandex.ru" },
-  { "Maurizio Galli", "maurizio.galli@gmail.com" },
   { "Landry Breuil", "landry@xfce.org" },
-  { "Olivier Duchateau", "duchateau.olivier@gmail.com" },
-  { "Theo Linkspfeifer", "lastonestanding@tutanota.com" },
+  { "Sean Davis", "bluesabre@xfce.org" },
   { "Tony Paulic", "tony.paulic@gmail.com" },
-  { "Yves-Alexis Perez", "corsac@debian.org" },
+  { "Jan Ziak", "0xe2.0x9a.0x9b@xfce.org" },
+  { "Yongha Hwang", "mshrimp@sogang.ac.kr" },
   { NULL, NULL }
 };
 
@@ -80,12 +81,15 @@ static const ContributorInfo xfce_contributors_documentation_supervision[] =
 
 static const ContributorInfo xfce_contributors_previous[] =
 {
+  { "Igor", "f2404@yandex.ru" },
+  { "Maurizio Galli", "maurizio.galli@gmail.com" },
+  { "Olivier Duchateau", "duchateau.olivier@gmail.com" },
+  { "Yves-Alexis Perez", "corsac@debian.org" },
   { "Andrzej Radecki", "ndrwrdck@gmail.com" },
   { "Auke Kok", "sofar@foo-projects.org" },
   { "Benedikt Meurer", "benny@xfce.org" },
   { "Bernhard Walle", "bernhard.walle@gmx.de" },
   { "Biju Chacko", "botsie@xfce.org" },
-  { "Brian J. Tarricone", "kelnos@xfce.org" },
   { "Craig Betts", "craig.betts@dfrc.nasa.gov" },
   { "Daichi Kawahata", "daichi@xfce.org" },
   { "Danny Milosavljevic", "dannym@xfce.org" },
