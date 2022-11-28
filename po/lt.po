@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-16 00:45+0200\n"
+"POT-Creation-Date: 2022-11-28 14:58+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: Moo, 2015-2017,2019-2022\n"
 "Language-Team: Lithuanian (http://www.transifex.com/xfce/libxfce4ui/language/lt/)\n"
@@ -123,12 +123,12 @@ msgstr "Seanso tvarkymo parametrai"
 msgid "Show session management options"
 msgstr "Rodyti seanso tvarkymo parametrus"
 
-#: ../libxfce4ui/xfce-sm-client.c:1614
+#: ../libxfce4ui/xfce-sm-client.c:1609
 #, c-format
 msgid "Failed to connect to the session manager: %s"
 msgstr "Nepavyko prisijungti prie seansų tvarkytuvės: %s"
 
-#: ../libxfce4ui/xfce-sm-client.c:1620
+#: ../libxfce4ui/xfce-sm-client.c:1615
 #, c-format
 msgid "Session manager did not return a valid client id"
 msgstr "Seansų tvarkytuvė negrąžino tinkamo kliento id"
@@ -142,15 +142,15 @@ msgid ""
 msgstr "Darbinio katalogo „%s“ nėra. Jis nebus naudojamas atvaizduojant „%s“."
 
 #. retrieve the error and warning messages
-#: ../libxfce4ui/xfce-filename-input.c:228
+#: ../libxfce4ui/xfce-filename-input.c:233
 msgid "Filename is too long"
 msgstr "Failo pavadinimas yra per ilgas"
 
-#: ../libxfce4ui/xfce-filename-input.c:229
+#: ../libxfce4ui/xfce-filename-input.c:234
 msgid "Directory separator illegal in file name"
 msgstr "Katalogų skirtukas failo pavadinime yra neleistinas"
 
-#: ../libxfce4ui/xfce-filename-input.c:230
+#: ../libxfce4ui/xfce-filename-input.c:235
 msgid "Filenames should not start or end with a space"
 msgstr "Failo pavadinimai neturėtų prasidėti ar baigtis tarpu"
 
@@ -388,198 +388,214 @@ msgid "Toggle fullscreen"
 msgstr "Perjungti viso ekrano veikseną"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:63
+msgid "Move window to lower monitor"
+msgstr "Perkelti langą į apatinį monitorių"
+
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:64
+msgid "Move window to left monitor"
+msgstr "Perkelti langą į kairįjį monitorių"
+
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:65
+msgid "Move window to right monitor"
+msgstr "Perkelti langą į dešinįjį monitorių"
+
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:66
+msgid "Move window to upper monitor"
+msgstr "Perkelti langą į viršutinį monitorių"
+
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:67
 msgid "Move window to upper workspace"
 msgstr "Perkelti langą į aukštesniąją darbo sritį"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:64
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:68
 msgid "Move window to bottom workspace"
 msgstr "Perkelti langą į žemesniąją darbo sritį"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:65
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:69
 msgid "Move window to left workspace"
 msgstr "Perkelti langą į kairiąją darbo sritį"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:66
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:70
 msgid "Move window to right workspace"
 msgstr "Perkelti langą į dešiniąją darbo sritį"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:67
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:71
 msgid "Move window to previous workspace"
 msgstr "Perkelti langą į buvusią darbo sritį"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:68
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:72
 msgid "Move window to next workspace"
 msgstr "Perkelti langą į kitą darbo sritį"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:69
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:73
 msgid "Move window to workspace 1"
 msgstr "Perkelti langą į darbo sritį 1"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:70
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:74
 msgid "Move window to workspace 2"
 msgstr "Perkelti langą į darbo sritį 2"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:71
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:75
 msgid "Move window to workspace 3"
 msgstr "Perkelti langą į darbo sritį 3"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:72
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:76
 msgid "Move window to workspace 4"
 msgstr "Perkelti langą į darbo sritį 4"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:73
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:77
 msgid "Move window to workspace 5"
 msgstr "Perkelti langą į darbo sritį 5"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:74
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:78
 msgid "Move window to workspace 6"
 msgstr "Perkelti langą į darbo sritį 6"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:75
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:79
 msgid "Move window to workspace 7"
 msgstr "Perkelti langą į darbo sritį 7"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:76
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:80
 msgid "Move window to workspace 8"
 msgstr "Perkelti langą į darbo sritį 8"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:77
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:81
 msgid "Move window to workspace 9"
 msgstr "Perkelti langą į darbo sritį 9"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:78
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:82
 msgid "Move window to workspace 10"
 msgstr "Perkelti langą į darbo sritį 10"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:79
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:83
 msgid "Move window to workspace 11"
 msgstr "Perkelti langą į darbo sritį 11"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:80
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:84
 msgid "Move window to workspace 12"
 msgstr "Perkelti langą į darbo sritį 12"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:81
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:85
 msgid "Tile window to the top"
 msgstr "Perkelti langą į aukštesniąją darbo sritį"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:82
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:86
 msgid "Tile window to the bottom"
 msgstr "Perkelti langą į žemesniąją darbo sritį"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:83
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:87
 msgid "Tile window to the left"
 msgstr "Perkelti langą į kairiąją darbo sritį"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:84
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:88
 msgid "Tile window to the right"
 msgstr "Perkelti langą į dešinąją darbo sritį"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:85
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:89
 msgid "Tile window to the top-left"
 msgstr "Iškloti langą viršuje kairėje"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:86
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:90
 msgid "Tile window to the top-right"
 msgstr "Iškloti langą viršuje dešinėje"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:87
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:91
 msgid "Tile window to the bottom-left"
 msgstr "Iškloti langą apačioje kairėje"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:88
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:92
 msgid "Tile window to the bottom-right"
 msgstr "Iškloti langą apačioje dešinėje"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:89
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:93
 msgid "Show desktop"
 msgstr "Rodyti darbalaukį"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:90
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:94
 msgid "Upper workspace"
 msgstr "Viršutinė darbo sritis"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:91
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:95
 msgid "Bottom workspace"
 msgstr "Žemutinė darbo sritis"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:92
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:96
 msgid "Left workspace"
 msgstr "Kairioji darbo sritis"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:93
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:97
 msgid "Right workspace"
 msgstr "Dešinioji darbo sritis"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:94
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:98
 msgid "Previous workspace"
 msgstr "Ankstesnė darbo sritis"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:95
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:99
 msgid "Next workspace"
 msgstr "Kita darbo sritis"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:96
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:100
 msgid "Workspace 1"
 msgstr "Darbo sritis 1"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:97
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:101
 msgid "Workspace 2"
 msgstr "Darbo sritis 2"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:98
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:102
 msgid "Workspace 3"
 msgstr "Darbo sritis 3"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:99
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:103
 msgid "Workspace 4"
 msgstr "Darbo sritis 4"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:100
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:104
 msgid "Workspace 5"
 msgstr "Darbo sritis 5"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:101
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:105
 msgid "Workspace 6"
 msgstr "Darbo sritis 6"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:102
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:106
 msgid "Workspace 7"
 msgstr "Darbo sritis 7"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:103
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:107
 msgid "Workspace 8"
 msgstr "Darbo sritis 8"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:104
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:108
 msgid "Workspace 9"
 msgstr "Darbo sritis 9"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:105
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:109
 msgid "Workspace 10"
 msgstr "Darbo sritis 10"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:106
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:110
 msgid "Workspace 11"
 msgstr "Darbo sritis 11"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:107
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:111
 msgid "Workspace 12"
 msgstr "Darbo sritis 12"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:108
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:112
 msgid "Add workspace"
 msgstr "Pridėti darbo sritį"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:109
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:113
 msgid "Add adjacent workspace"
 msgstr "Pridėti darbo sritį šalia"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:110
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:114
 msgid "Delete last workspace"
 msgstr "Pašalinti paskutinę darbo sritį"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:111
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:115
 msgid "Delete active workspace"
 msgstr "Pašalinti aktyvią darbo sritį"
 
@@ -934,6 +950,6 @@ msgstr "Failas, pavadinimu „%s“ šiame kataloge jau yra, failas nebuvo prid�
 msgid "Failed to migrate the old panel configuration"
 msgstr "Nepavyko atkelti senos skydelio konfigūracijos"
 
-#: ../tests/test-ui.c:170 ../tests/test-ui.c:195
+#: ../tests/test-ui.c:172 ../tests/test-ui.c:197
 msgid "Customize settings stored by Xfconf"
 msgstr "Derinkite Xfconf saugomus nustatymus"
