@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-16 00:45+0200\n"
+"POT-Creation-Date: 2022-11-28 14:58+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: Dmytro Tokayev, 2022\n"
 "Language-Team: Italian (http://www.transifex.com/xfce/libxfce4ui/language/it/)\n"
@@ -126,12 +126,12 @@ msgstr "Opzioni di gestione della sessione"
 msgid "Show session management options"
 msgstr "Mostra le opzioni di gestione della sessione"
 
-#: ../libxfce4ui/xfce-sm-client.c:1614
+#: ../libxfce4ui/xfce-sm-client.c:1609
 #, c-format
 msgid "Failed to connect to the session manager: %s"
 msgstr "Impossibile connettersi al gestore della sessione: %s"
 
-#: ../libxfce4ui/xfce-sm-client.c:1620
+#: ../libxfce4ui/xfce-sm-client.c:1615
 #, c-format
 msgid "Session manager did not return a valid client id"
 msgstr "Il gestore della sessione non ha restituito un client ID valido"
@@ -145,15 +145,15 @@ msgid ""
 msgstr "La cartella di lavoro \"%s\" non esiste. Non verrà utilizzata per deporre \"%s\"."
 
 #. retrieve the error and warning messages
-#: ../libxfce4ui/xfce-filename-input.c:228
+#: ../libxfce4ui/xfce-filename-input.c:233
 msgid "Filename is too long"
 msgstr "Il nome del file è troppo lungo"
 
-#: ../libxfce4ui/xfce-filename-input.c:229
+#: ../libxfce4ui/xfce-filename-input.c:234
 msgid "Directory separator illegal in file name"
 msgstr "Il separatore di cartelle è vietato nel nome del file"
 
-#: ../libxfce4ui/xfce-filename-input.c:230
+#: ../libxfce4ui/xfce-filename-input.c:235
 msgid "Filenames should not start or end with a space"
 msgstr "Il nome del file non dovrebbe iniziare o finire con uno spazio"
 
@@ -391,198 +391,214 @@ msgid "Toggle fullscreen"
 msgstr "Abilita a schermo intero"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:63
+msgid "Move window to lower monitor"
+msgstr ""
+
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:64
+msgid "Move window to left monitor"
+msgstr ""
+
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:65
+msgid "Move window to right monitor"
+msgstr ""
+
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:66
+msgid "Move window to upper monitor"
+msgstr ""
+
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:67
 msgid "Move window to upper workspace"
 msgstr "Sposta la finestra nello spazio di lavoro superiore"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:64
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:68
 msgid "Move window to bottom workspace"
 msgstr "Sposta la finestra nello spazio di lavoro inferiore"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:65
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:69
 msgid "Move window to left workspace"
 msgstr "Sposta la finestra nello spazio di lavoro di sinistra"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:66
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:70
 msgid "Move window to right workspace"
 msgstr "Sposta la finestra nello spazio di lavoro di destra"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:67
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:71
 msgid "Move window to previous workspace"
 msgstr "Sposta la finestra nello spazio di lavoro precedente"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:68
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:72
 msgid "Move window to next workspace"
 msgstr "Sposta la finestra nello spazio di lavoro successivo"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:69
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:73
 msgid "Move window to workspace 1"
 msgstr "Sposta la finestra nello spazio di lavoro 1"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:70
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:74
 msgid "Move window to workspace 2"
 msgstr "Sposta la finestra nello spazio di lavoro 2"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:71
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:75
 msgid "Move window to workspace 3"
 msgstr "Sposta la finestra nello spazio di lavoro 3"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:72
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:76
 msgid "Move window to workspace 4"
 msgstr "Sposta la finestra nello spazio di lavoro 4"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:73
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:77
 msgid "Move window to workspace 5"
 msgstr "Sposta la finestra nello spazio di lavoro 5"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:74
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:78
 msgid "Move window to workspace 6"
 msgstr "Sposta la finestra nello spazio di lavoro 6"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:75
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:79
 msgid "Move window to workspace 7"
 msgstr "Sposta la finestra nello spazio di lavoro 7"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:76
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:80
 msgid "Move window to workspace 8"
 msgstr "Sposta la finestra nello spazio di lavoro 8"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:77
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:81
 msgid "Move window to workspace 9"
 msgstr "Sposta la finestra nello spazio di lavoro 9"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:78
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:82
 msgid "Move window to workspace 10"
 msgstr "Sposta la finestra nello spazio di lavoro 10"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:79
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:83
 msgid "Move window to workspace 11"
 msgstr "Sposta la finestra nello spazio di lavoro 11"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:80
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:84
 msgid "Move window to workspace 12"
 msgstr "Sposta la finestra nello spazio di lavoro 12"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:81
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:85
 msgid "Tile window to the top"
 msgstr "Riquadra la finestra in alto"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:82
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:86
 msgid "Tile window to the bottom"
 msgstr "Riquadra la finestra in basso"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:83
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:87
 msgid "Tile window to the left"
 msgstr "Riquadra la finestra a sinistra"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:84
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:88
 msgid "Tile window to the right"
 msgstr "Riquadra la finestra a destra"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:85
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:89
 msgid "Tile window to the top-left"
 msgstr "Riquadra la finestra in alto a sinistra"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:86
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:90
 msgid "Tile window to the top-right"
 msgstr "Riquadra la finestra in alto a destra"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:87
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:91
 msgid "Tile window to the bottom-left"
 msgstr "Riquadra la finestra in basso a sinistra"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:88
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:92
 msgid "Tile window to the bottom-right"
 msgstr "Riquadra la finestra in basso a destra"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:89
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:93
 msgid "Show desktop"
 msgstr "Mostra la scrivania"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:90
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:94
 msgid "Upper workspace"
 msgstr "Spazio di lavoro superiore"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:91
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:95
 msgid "Bottom workspace"
 msgstr "Spazio di lavoro inferiore"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:92
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:96
 msgid "Left workspace"
 msgstr "Spazio di lavoro di sinistra"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:93
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:97
 msgid "Right workspace"
 msgstr "Spazio di lavoro di destra"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:94
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:98
 msgid "Previous workspace"
 msgstr "Spazio di lavoro precedente"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:95
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:99
 msgid "Next workspace"
 msgstr "Spazio di lavoro successivo"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:96
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:100
 msgid "Workspace 1"
 msgstr "Spazio di lavoro 1"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:97
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:101
 msgid "Workspace 2"
 msgstr "Spazio di lavoro 2"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:98
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:102
 msgid "Workspace 3"
 msgstr "Spazio di lavoro 3"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:99
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:103
 msgid "Workspace 4"
 msgstr "Spazio di lavoro 4"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:100
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:104
 msgid "Workspace 5"
 msgstr "Spazio di lavoro 5"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:101
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:105
 msgid "Workspace 6"
 msgstr "Spazio di lavoro 6"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:102
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:106
 msgid "Workspace 7"
 msgstr "Spazio di lavoro 7"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:103
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:107
 msgid "Workspace 8"
 msgstr "Spazio di lavoro 8"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:104
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:108
 msgid "Workspace 9"
 msgstr "Spazio di lavoro 9"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:105
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:109
 msgid "Workspace 10"
 msgstr "Spazio di lavoro 10"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:106
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:110
 msgid "Workspace 11"
 msgstr "Spazio di lavoro 11"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:107
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:111
 msgid "Workspace 12"
 msgstr "Spazio di lavoro 12"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:108
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:112
 msgid "Add workspace"
 msgstr "Aggiungi spazio di lavoro"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:109
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:113
 msgid "Add adjacent workspace"
 msgstr "Aggiungi uno spazio di lavoro adiacente"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:110
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:114
 msgid "Delete last workspace"
 msgstr "Elimina l'ultimo spazio di lavoro"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:111
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:115
 msgid "Delete active workspace"
 msgstr "Elimina lo spazio di lavoro attivo"
 
@@ -937,6 +953,6 @@ msgstr "Un file di nome \"%s\" esiste già in questa cartella e quindi non è st
 msgid "Failed to migrate the old panel configuration"
 msgstr "Impossibile migrare la configurazione del vecchio pannello"
 
-#: ../tests/test-ui.c:170 ../tests/test-ui.c:195
+#: ../tests/test-ui.c:172 ../tests/test-ui.c:197
 msgid "Customize settings stored by Xfconf"
 msgstr "Personalizzazione delle impostazioni immagazzinate da Xfconf"
