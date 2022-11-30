@@ -1,3 +1,10 @@
+4.17.9 (2022-11-30)
+======
+- Added move-window-to-monitor shortcut options (!80)
+- Translation Updates:
+  Albanian, Bulgarian, Chinese (Taiwan), Dutch, Estonian, French,
+  Italian, Japanese, Kazakh, Lithuanian, Polish, Portuguese, Spanish
+
 4.17.8 (2022-10-31)
 ======
 - Bump GObject Introspection minim version to 1.66 (xfconf#8, !79)
