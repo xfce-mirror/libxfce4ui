@@ -124,8 +124,8 @@ XDT_CHECK_LIBSM()
 dnl ***********************************
 dnl *** Check for required packages ***
 dnl ***********************************
-XDT_CHECK_PACKAGE([GLIB], [glib-2.0], [2.50.0])
-XDT_CHECK_PACKAGE([GTK3], [gtk+-3.0], [3.22.0])
+XDT_CHECK_PACKAGE([GLIB], [glib-2.0], [2.66.0])
+XDT_CHECK_PACKAGE([GTK3], [gtk+-3.0], [3.24.0])
 XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [4.17.2])
 
 dnl ****************************************************************
@@ -136,11 +136,11 @@ XDT_CHECK_OPTIONAL_PACKAGE([GLIBTOP],
                            [GLIBTOP support])
 AM_CONDITIONAL([ENABLE_GLIBTOP], [test "x$GLIBTOP_FOUND" = "xyes"])
 
-AC_DEFINE(GLIB_VERSION_MIN_REQUIRED, GLIB_VERSION_2_50, [Ignore post 2.50 deprecations])
-AC_DEFINE(GLIB_VERSION_MAX_ALLOWED, GLIB_VERSION_2_50, [Prevent post 2.50 APIs])
+AC_DEFINE(GLIB_VERSION_MIN_REQUIRED, GLIB_VERSION_2_66, [Ignore post 2.66 deprecations])
+AC_DEFINE(GLIB_VERSION_MAX_ALLOWED, GLIB_VERSION_2_66, [Prevent post 2.66 APIs])
 
-AC_DEFINE(GDK_VERSION_MIN_REQUIRED, GDK_VERSION_3_22, [Ignore post 3.22 deprecations])
-AC_DEFINE(GDK_VERSION_MAX_ALLOWED, GDK_VERSION_3_22, [Prevent post 3.22 APIs])
+AC_DEFINE(GDK_VERSION_MIN_REQUIRED, GDK_VERSION_3_24, [Ignore post 3.24 deprecations])
+AC_DEFINE(GDK_VERSION_MAX_ALLOWED, GDK_VERSION_3_24, [Prevent post 3.24 APIs])
 
 dnl **************************************************************
 dnl *** Check time.h and sys/time.h for libgtop ***

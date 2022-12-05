@@ -41,7 +41,6 @@
 
 
 
-#define XFCE_SHORTCUTS_GRABBER_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), XFCE_TYPE_SHORTCUTS_GRABBER, XfceShortcutsGrabberPrivate))
 #define MODIFIERS_ERROR ((GdkModifierType)(-1))
 #define MODIFIERS_NONE 0
 
@@ -102,7 +101,7 @@ typedef guint XfceXGrabRefcount;
 
 
 
-G_DEFINE_TYPE (XfceShortcutsGrabber, xfce_shortcuts_grabber, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (XfceShortcutsGrabber, xfce_shortcuts_grabber, G_TYPE_OBJECT)
 
 
 
@@ -110,8 +109,6 @@ static void
 xfce_shortcuts_grabber_class_init (XfceShortcutsGrabberClass *klass)
 {
   GObjectClass *gobject_class;
-
-  g_type_class_add_private (klass, sizeof (XfceShortcutsGrabberPrivate));
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->constructed = xfce_shortcuts_grabber_constructed;
@@ -176,7 +173,7 @@ xfce_shortcuts_grabber_init (XfceShortcutsGrabber *grabber)
   GdkDisplay      *display;
   GdkKeymap       *keymap;
 
-  grabber->priv = XFCE_SHORTCUTS_GRABBER_GET_PRIVATE (grabber);
+  grabber->priv = xfce_shortcuts_grabber_get_instance_private (grabber);
   grabber->priv->keys = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, free_key);
   grabber->priv->pressed_keys = g_hash_table_new (g_direct_hash, g_direct_equal);
   grabber->priv->grabbed_keycodes = g_hash_table_new_full (xgrab_hash, xgrab_equal, xgrab_free, g_free);
