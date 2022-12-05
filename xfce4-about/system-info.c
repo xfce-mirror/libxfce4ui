@@ -737,3 +737,34 @@ get_os_name (void)
 
   return result;
 }
+
+
+
+char *
+get_distributor_logo (void)
+{
+  GHashTable *os_info;
+  gchar *id, *distributor_logo;
+  gchar *result = NULL;
+
+  os_info = get_os_info ();
+
+  /* If we're not on Linux we return NULL */
+  if (!os_info)
+    return NULL;
+
+  id = g_hash_table_lookup (os_info, "ID");
+
+  if (id)
+    {
+      distributor_logo = g_strdup_printf ("distributor-logo-%s", id);
+      if (gtk_icon_theme_has_icon (gtk_icon_theme_get_default (), distributor_logo))
+        result = g_strdup (distributor_logo);
+
+      g_free (distributor_logo);
+    }
+
+  g_clear_pointer (&os_info, g_hash_table_destroy);
+
+  return result;
+}
