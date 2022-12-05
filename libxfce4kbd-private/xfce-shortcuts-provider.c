@@ -36,11 +36,6 @@
 
 
 
-#define XFCE_SHORTCUTS_PROVIDER_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), \
-    XFCE_TYPE_SHORTCUTS_PROVIDER, XfceShortcutsProviderPrivate))
-
-
-
 /* Property identifiers */
 enum
 {
@@ -90,7 +85,7 @@ struct _XfceShortcutsProviderContext
 
 
 
-G_DEFINE_TYPE (XfceShortcutsProvider, xfce_shortcuts_provider, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (XfceShortcutsProvider, xfce_shortcuts_provider, G_TYPE_OBJECT)
 
 
 
@@ -98,8 +93,6 @@ static void
 xfce_shortcuts_provider_class_init (XfceShortcutsProviderClass *klass)
 {
   GObjectClass *gobject_class;
-
-  g_type_class_add_private (klass, sizeof (XfceShortcutsProviderPrivate));
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->constructed = xfce_shortcuts_provider_constructed;
@@ -145,7 +138,7 @@ xfce_shortcuts_provider_class_init (XfceShortcutsProviderClass *klass)
 static void
 xfce_shortcuts_provider_init (XfceShortcutsProvider *provider)
 {
-  provider->priv = XFCE_SHORTCUTS_PROVIDER_GET_PRIVATE (provider);
+  provider->priv = xfce_shortcuts_provider_get_instance_private (provider);
 
   provider->priv->channel = xfconf_channel_new ("xfce4-keyboard-shortcuts");
 

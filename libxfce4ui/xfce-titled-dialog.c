@@ -97,7 +97,7 @@ struct _ResponseData
 
 
 
-G_DEFINE_TYPE (XfceTitledDialog, xfce_titled_dialog, GTK_TYPE_DIALOG)
+G_DEFINE_TYPE_WITH_PRIVATE (XfceTitledDialog, xfce_titled_dialog, GTK_TYPE_DIALOG)
 
 
 
@@ -107,9 +107,6 @@ xfce_titled_dialog_class_init (XfceTitledDialogClass *klass)
   GtkDialogClass *gtkdialog_class;
   GtkBindingSet  *binding_set;
   GObjectClass   *gobject_class;
-
-  /* add our private data to the class */
-  g_type_class_add_private (klass, sizeof (XfceTitledDialogPrivate));
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->constructor = xfce_titled_dialog_constructor;
@@ -164,7 +161,7 @@ xfce_titled_dialog_init (XfceTitledDialog *titled_dialog)
   GtkSettings *settings;
 
   /* connect the private data */
-  titled_dialog->priv = XFCE_TITLED_DIALOG_GET_PRIVATE (titled_dialog);
+  titled_dialog->priv = xfce_titled_dialog_get_instance_private (titled_dialog);
 
   settings = gtk_settings_get_default ();
   g_object_get (settings, "gtk-dialogs-use-header", &titled_dialog->priv->use_header, NULL);
