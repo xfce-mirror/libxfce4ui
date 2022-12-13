@@ -234,7 +234,7 @@ msgstr "Atkurti numatytąjį susiejimą"
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:562
 #, c-format
 msgid "This keyboard shortcut is currently used by: '%s'"
-msgstr "Šį klaviatūros susiejimą šiuo metu naudoja: \"%s\""
+msgstr "Šį klaviatūros susiejimą šiuo metu naudoja: „%s“"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:476
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:565
