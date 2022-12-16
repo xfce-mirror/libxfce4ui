@@ -29,6 +29,6 @@ EOF
   exit 1
 }
 
-XDT_AUTOGEN_REQUIRED_VERSION="4.12.0" exec xdt-autogen $@
+XDT_AUTOGEN_REQUIRED_VERSION="4.17.1" exec xdt-autogen $@
 
 # vi:set ts=2 sw=2 et ai:
