@@ -7,21 +7,22 @@
 # Aleksandr P, 2010
 # Andrei Stepanov, 2022
 # Artem Zolochevskiy <artem.zolochevskiy@gmail.com>, 2011
-# Alexander Filёv, 2021
+# AlexanderFilev, 2021
 # Denis Koryavov <dkoryavov@yandex.ru>, 2010
 # Igor <f2404@yandex.ru>, 2016-2017,2019-2020
 # Igor Vornovskii, 2022
 # ivmazurenko <ivmazurenko@yandex.ru>, 2021
+# ndvio, 2022
 # Sergey Alyoshin <alyoshin.s@gmail.com>, 2014-2015,2021
 # Simple88, 2016
-# Alexander Filёv, 2020
+# AlexanderFilev, 2020
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-16 00:45+0200\n"
+"POT-Creation-Date: 2022-11-28 14:58+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Igor Vornovskii, 2022\n"
+"Last-Translator: ndvio, 2022\n"
 "Language-Team: Russian (http://www.transifex.com/xfce/libxfce4ui/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -133,12 +134,12 @@ msgstr "Параметры менеджера сеансов"
 msgid "Show session management options"
 msgstr "Показать параметры менеджера сеансов"
 
-#: ../libxfce4ui/xfce-sm-client.c:1614
+#: ../libxfce4ui/xfce-sm-client.c:1609
 #, c-format
 msgid "Failed to connect to the session manager: %s"
 msgstr "Не удалось подключиться к менеджеру сеансов: %s"
 
-#: ../libxfce4ui/xfce-sm-client.c:1620
+#: ../libxfce4ui/xfce-sm-client.c:1615
 #, c-format
 msgid "Session manager did not return a valid client id"
 msgstr "Менеджер сеансов не предоставил допустимый идентификатор клиента"
@@ -152,15 +153,15 @@ msgid ""
 msgstr "Рабочий каталог «%s» не существует. Он не будет использоваться для вызова «%s»."
 
 #. retrieve the error and warning messages
-#: ../libxfce4ui/xfce-filename-input.c:228
+#: ../libxfce4ui/xfce-filename-input.c:233
 msgid "Filename is too long"
 msgstr "Имя файла слишком длинное"
 
-#: ../libxfce4ui/xfce-filename-input.c:229
+#: ../libxfce4ui/xfce-filename-input.c:234
 msgid "Directory separator illegal in file name"
 msgstr "Разделитель каталогов запрещён в имени файла"
 
-#: ../libxfce4ui/xfce-filename-input.c:230
+#: ../libxfce4ui/xfce-filename-input.c:235
 msgid "Filenames should not start or end with a space"
 msgstr "Имена файлов не должны начинаться или заканчиваться пробелом"
 
@@ -398,198 +399,214 @@ msgid "Toggle fullscreen"
 msgstr "Полноэкранный режим"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:63
+msgid "Move window to lower monitor"
+msgstr "Переместить окно в нижнюю часть экрана"
+
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:64
+msgid "Move window to left monitor"
+msgstr "Переместить окно в левую часть экрана"
+
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:65
+msgid "Move window to right monitor"
+msgstr "Переместить окно в правую часть экрана"
+
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:66
+msgid "Move window to upper monitor"
+msgstr "Переместить окно в верхнюю часть экрана"
+
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:67
 msgid "Move window to upper workspace"
 msgstr "Переместить окно на верхнее рабочее место"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:64
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:68
 msgid "Move window to bottom workspace"
 msgstr "Переместить окно на нижнее рабочее место"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:65
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:69
 msgid "Move window to left workspace"
 msgstr "Переместить окно на левое рабочее место"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:66
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:70
 msgid "Move window to right workspace"
 msgstr "Переместить окно на правое рабочее место"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:67
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:71
 msgid "Move window to previous workspace"
 msgstr "Переместить окно на предыдущее рабочее место"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:68
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:72
 msgid "Move window to next workspace"
 msgstr "Переместить окно на следующее рабочее место"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:69
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:73
 msgid "Move window to workspace 1"
 msgstr "Переместить окно на рабочее место 1"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:70
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:74
 msgid "Move window to workspace 2"
 msgstr "Переместить окно на рабочее место 2"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:71
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:75
 msgid "Move window to workspace 3"
 msgstr "Переместить окно на рабочее место 3"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:72
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:76
 msgid "Move window to workspace 4"
 msgstr "Переместить окно на рабочее место 4"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:73
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:77
 msgid "Move window to workspace 5"
 msgstr "Переместить окно на рабочее место 5"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:74
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:78
 msgid "Move window to workspace 6"
 msgstr "Переместить окно на рабочее место 6"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:75
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:79
 msgid "Move window to workspace 7"
 msgstr "Переместить окно на рабочее место 7"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:76
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:80
 msgid "Move window to workspace 8"
 msgstr "Переместить окно на рабочее место 8"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:77
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:81
 msgid "Move window to workspace 9"
 msgstr "Переместить окно на рабочее место 9"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:78
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:82
 msgid "Move window to workspace 10"
 msgstr "Переместить окно на рабочее место 10"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:79
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:83
 msgid "Move window to workspace 11"
 msgstr "Переместить окно на рабочее место 11"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:80
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:84
 msgid "Move window to workspace 12"
 msgstr "Переместить окно на рабочее место 12"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:81
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:85
 msgid "Tile window to the top"
 msgstr "Разместить в верхней половине"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:82
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:86
 msgid "Tile window to the bottom"
 msgstr "Разместить в нижней половине"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:83
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:87
 msgid "Tile window to the left"
 msgstr "Разместить в левой половине"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:84
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:88
 msgid "Tile window to the right"
 msgstr "Разместить в правой половине"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:85
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:89
 msgid "Tile window to the top-left"
 msgstr "Разместить вверху слева"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:86
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:90
 msgid "Tile window to the top-right"
 msgstr "Разместить вверху справа"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:87
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:91
 msgid "Tile window to the bottom-left"
 msgstr "Разместить внизу слева"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:88
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:92
 msgid "Tile window to the bottom-right"
 msgstr "Разместить внизу справа"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:89
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:93
 msgid "Show desktop"
 msgstr "Показать рабочий стол"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:90
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:94
 msgid "Upper workspace"
 msgstr "Верхнее рабочее место"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:91
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:95
 msgid "Bottom workspace"
 msgstr "Нижнее рабочее место"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:92
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:96
 msgid "Left workspace"
 msgstr "Левое рабочее место"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:93
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:97
 msgid "Right workspace"
 msgstr "Правое рабочее место"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:94
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:98
 msgid "Previous workspace"
 msgstr "Предыдущее рабочее место"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:95
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:99
 msgid "Next workspace"
 msgstr "Следующее рабочее место"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:96
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:100
 msgid "Workspace 1"
 msgstr "Рабочее место 1"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:97
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:101
 msgid "Workspace 2"
 msgstr "Рабочее место 2"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:98
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:102
 msgid "Workspace 3"
 msgstr "Рабочее место 3"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:99
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:103
 msgid "Workspace 4"
 msgstr "Рабочее место 4"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:100
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:104
 msgid "Workspace 5"
 msgstr "Рабочее место 5"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:101
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:105
 msgid "Workspace 6"
 msgstr "Рабочее место 6"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:102
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:106
 msgid "Workspace 7"
 msgstr "Рабочее место 7"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:103
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:107
 msgid "Workspace 8"
 msgstr "Рабочее место 8"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:104
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:108
 msgid "Workspace 9"
 msgstr "Рабочее место 9"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:105
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:109
 msgid "Workspace 10"
 msgstr "Рабочее место 10"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:106
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:110
 msgid "Workspace 11"
 msgstr "Рабочее место 11"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:107
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:111
 msgid "Workspace 12"
 msgstr "Рабочее место 12"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:108
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:112
 msgid "Add workspace"
 msgstr "Добавить рабочее место"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:109
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:113
 msgid "Add adjacent workspace"
 msgstr "Добавить соседнее рабочее место"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:110
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:114
 msgid "Delete last workspace"
 msgstr "Удалить последнее рабочее место"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:111
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:115
 msgid "Delete active workspace"
 msgstr "Удалить текущее рабочее место"
 
@@ -944,6 +961,6 @@ msgstr "«%s» уже существует в этом каталоге, фай�
 msgid "Failed to migrate the old panel configuration"
 msgstr "Не удалось перенести конфигурацию старой панели"
 
-#: ../tests/test-ui.c:170 ../tests/test-ui.c:195
+#: ../tests/test-ui.c:172 ../tests/test-ui.c:197
 msgid "Customize settings stored by Xfconf"
 msgstr "Изменение настроек, хранимых в Xfconf"
