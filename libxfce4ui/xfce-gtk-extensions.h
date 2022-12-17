@@ -194,6 +194,28 @@ gboolean                  xfce_has_gtk_frame_extents                      (GdkWi
 void                      xfce_gtk_label_set_a11y_relation                (GtkLabel                  *label,
                                                                            GtkWidget                 *widget);
 
+GtkIconInfo              *xfce_gtk_icon_theme_lookup_icon_for_scale       (GtkIconTheme      *icon_theme,
+                                                                           const gchar       *icon_name,
+                                                                           gint               size,
+                                                                           gint               scale,
+                                                                           GtkIconLookupFlags flags);
+GtkIconInfo              *xfce_gtk_icon_theme_choose_icon_for_scale       (GtkIconTheme      *icon_theme,
+                                                                           const gchar      **icon_names,
+                                                                           gint               size,
+                                                                           gint               scale,
+                                                                           GtkIconLookupFlags flags);
+GtkIconInfo              *xfce_gtk_icon_theme_lookup_by_gicon_for_scale   (GtkIconTheme      *icon_theme,
+                                                                           GIcon             *icon,
+                                                                           gint               size,
+                                                                           gint               scale,
+                                                                           GtkIconLookupFlags flags);
+GdkPixbuf                *xfce_gtk_icon_theme_load_icon_for_scale         (GtkIconTheme *icon_theme,
+                                                                           const gchar *icon_name,
+                                                                           gint size,
+                                                                           gint scale,
+                                                                           GtkIconLookupFlags flags,
+                                                                           GError **error);
+
 G_END_DECLS
 
 #endif /* !__XFCE_GTK_EXTENSIONS_H__ */
