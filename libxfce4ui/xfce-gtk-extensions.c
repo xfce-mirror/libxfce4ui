@@ -1194,5 +1194,177 @@ xfce_gtk_label_set_a11y_relation (GtkLabel  *label,
 
 
 
+GtkIconInfo *
+xfce_gtk_icon_theme_lookup_icon_for_scale (GtkIconTheme      *icon_theme,
+                                           const gchar       *icon_name,
+                                           gint               size,
+                                           gint               scale,
+                                           GtkIconLookupFlags flags)
+{
+  g_return_val_if_fail (GTK_IS_ICON_THEME (icon_theme), NULL);
+  g_return_val_if_fail (icon_name != NULL && icon_name[0] != '\0', NULL);
+  g_return_val_if_fail (size > 0 && scale > 0, NULL);
+
+  if ((flags & (GTK_ICON_LOOKUP_FORCE_SVG | GTK_ICON_LOOKUP_NO_SVG)) != 0)
+    {
+      // Caller knows what they want, so just give it to them.
+      return gtk_icon_theme_lookup_icon_for_scale (icon_theme, icon_name, size, scale, flags);
+    }
+  else
+    {
+      // First look up the icon without accepting SVG icons.  If SVG icons are allowed, then
+      // GtkIconTheme will "give up" too easily and pick the SVG icon when there might be a
+      // PNG icon that matches better (even if it might need to be scaled down).
+      GtkIconInfo *icon_info = gtk_icon_theme_lookup_icon_for_scale (icon_theme,
+                                                                     icon_name,
+                                                                     size, scale,
+                                                                     flags | GTK_ICON_LOOKUP_NO_SVG);
+
+      if (icon_info != NULL)
+        {
+          gint found_size = gtk_icon_info_get_base_size (icon_info);
+          gint found_scale = gtk_icon_info_get_base_scale (icon_info);
+
+          if (found_size * found_scale >= size * scale)
+            {
+              // Good: we found a PNG icon at the correct scale that is at least as large as
+              // we want, or we found an icon at any scale that is at least the size that
+              // we need it to be rendered at.
+              return icon_info;
+            }
+          else
+            {
+              // As it turns out, there really isn't a non-SVG icon that works for this size,
+              // so just let gtk's default behavior do its thing.
+              g_object_unref (icon_info);
+              return gtk_icon_theme_lookup_icon_for_scale (icon_theme, icon_name, size, scale, flags);
+            }
+        }
+      else
+      {
+        // There may have been no non-SVG icons at all, so repeat the search with SVGs allowed.
+        return gtk_icon_theme_lookup_icon_for_scale (icon_theme, icon_name, size, scale, flags);
+      }
+    }
+}
+
+
+
+GtkIconInfo *
+xfce_gtk_icon_theme_choose_icon_for_scale (GtkIconTheme      *icon_theme,
+                                           const gchar      **icon_names,
+                                           gint               size,
+                                           gint               scale,
+                                           GtkIconLookupFlags flags)
+{
+  GtkIconInfo *best_match = NULL;
+  GList       *icon_infos = NULL;
+
+  g_return_val_if_fail (GTK_IS_ICON_THEME (icon_theme), NULL);
+  g_return_val_if_fail (icon_names != NULL && icon_names[0] != NULL, NULL);
+  g_return_val_if_fail (size > 0 && scale > 0, NULL);
+
+  for (gint i = 0; icon_names[i] != NULL; ++i)
+    {
+      GtkIconInfo *icon_info = xfce_gtk_icon_theme_lookup_icon_for_scale (icon_theme,
+                                                                          icon_names[i],
+                                                                          size,
+                                                                          scale,
+                                                                          flags);
+
+      if (icon_info != NULL)
+        {
+          icon_infos = g_list_append (icon_infos, icon_info);
+        }
+    }
+
+  for (GList *l = icon_infos; l != NULL;  l = l->next)
+    {
+      GtkIconInfo *icon_info = (GtkIconInfo *) l->data;
+      gint         found_size = gtk_icon_info_get_base_size(icon_info);
+      gint         found_scale = gtk_icon_info_get_base_scale(icon_info);
+
+      if (found_size * found_scale >= size * scale)
+        {
+          best_match = g_object_ref (icon_info);
+          break;
+        }
+    }
+
+  if (best_match == NULL && icon_infos != NULL)
+    {
+      best_match = g_object_ref (icon_infos->data);
+    }
+
+  g_list_free_full (icon_infos, g_object_unref);
+
+  return best_match;
+}
+
+
+
+GtkIconInfo *
+xfce_gtk_icon_theme_lookup_by_gicon_for_scale (GtkIconTheme      *icon_theme,
+                                               GIcon             *icon,
+                                               gint               size,
+                                               gint               scale,
+                                               GtkIconLookupFlags flags)
+{
+  g_return_val_if_fail (GTK_IS_ICON_THEME (icon_theme), NULL);
+  g_return_val_if_fail (G_IS_ICON (icon), NULL);
+  g_return_val_if_fail (size > 0 && scale > 0, NULL);
+
+  if (G_IS_THEMED_ICON (icon))
+    {
+      GThemedIcon         *themed_icon = G_THEMED_ICON (icon);
+      const gchar * const *names = g_themed_icon_get_names (themed_icon);
+      return xfce_gtk_icon_theme_choose_icon_for_scale (icon_theme, (const gchar **) names, size, scale, flags);
+    }
+  else if (G_IS_EMBLEMED_ICON (icon))
+    {
+      // Unfortunately we're unable to do anything with this, as GtkIconInfo needs to hold
+      // information about the emblems.  We could look up the base icon and emblems
+      // independently, but we cannot then combine them into a single GtkIconInfo, as an API
+      // for that is not exposed.
+      return gtk_icon_theme_lookup_by_gicon (icon_theme, icon, size, scale);
+    }
+  else
+    {
+      // Other icon types don't look at the icon theme and can be looked up directly.
+      return gtk_icon_theme_lookup_by_gicon (icon_theme, icon, size, scale);
+    }
+}
+
+
+
+GdkPixbuf *
+xfce_gtk_icon_theme_load_icon_for_scale (GtkIconTheme *icon_theme,
+                                         const gchar *icon_name,
+                                         gint size,
+                                         gint scale,
+                                         GtkIconLookupFlags flags,
+                                         GError **error)
+{
+  GtkIconInfo *icon_info;
+
+  g_return_val_if_fail (GTK_IS_ICON_THEME (icon_theme), NULL);
+  g_return_val_if_fail (icon_name != NULL && icon_name[0] != '\0', NULL);
+  g_return_val_if_fail (size > 0 && scale > 0, NULL);
+
+  icon_info = xfce_gtk_icon_theme_lookup_icon_for_scale (icon_theme, icon_name, size, scale, flags);
+  if (icon_info != NULL)
+    {
+      GdkPixbuf *pix = gtk_icon_info_load_icon (icon_info, error);
+      g_object_unref (icon_info);
+      return pix;
+    }
+  else
+    {
+      return NULL;
+    }
+}
+
+
+
 #define __XFCE_GTK_EXTENSIONS_C__
 #include <libxfce4ui/libxfce4ui-aliasdef.c>
