@@ -35,6 +35,7 @@
 #include <gtk/gtk.h>
 
 #include <libxfce4util/libxfce4util.h>
+#include <xfconf/xfconf.h>
 
 #include <libxfce4kbd-private/xfce-shortcuts-grabber.h>
 #include <libxfce4kbd-private/xfce-shortcuts-marshal.h>
@@ -70,6 +71,7 @@ struct _XfceShortcutsGrabberPrivate
   /* Maps a shortcut string to a pointer to XfceKey */
   GHashTable *keys;
   GHashTable *pressed_keys;
+  XfconfChannel *channel;
 
   /* Maps an XfceXGrab to a reference count.
    * The reference count tracks the number of shortcuts that grab the XfceXGrab. */
@@ -99,6 +101,14 @@ typedef struct
 
 typedef guint XfceXGrabRefcount;
 
+/* shortcut status */
+enum
+{
+  INIT,
+  ACTIVATED_ONCE,
+  REPETITION_ALLOWED,
+  BLOCKED
+};
 
 
 G_DEFINE_TYPE_WITH_PRIVATE (XfceShortcutsGrabber, xfce_shortcuts_grabber, G_TYPE_OBJECT)
@@ -177,6 +187,7 @@ xfce_shortcuts_grabber_init (XfceShortcutsGrabber *grabber)
   grabber->priv->keys = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, free_key);
   grabber->priv->pressed_keys = g_hash_table_new (g_direct_hash, g_direct_equal);
   grabber->priv->grabbed_keycodes = g_hash_table_new_full (xgrab_hash, xgrab_equal, xgrab_free, g_free);
+  grabber->priv->channel = xfconf_channel_new ("xfce4-keyboard-shortcuts");
 
   /* Workaround: Make sure modmap is up to date
    * There is possibly a bug in GTK+ where virtual modifiers are not
@@ -230,6 +241,7 @@ xfce_shortcuts_grabber_finalize (GObject *object)
   g_hash_table_unref (grabber->priv->keys);
   g_hash_table_unref (grabber->priv->pressed_keys);
   g_hash_table_unref (grabber->priv->grabbed_keycodes);
+  g_object_unref (grabber->priv->channel);
 
   (*G_OBJECT_CLASS (xfce_shortcuts_grabber_parent_class)->finalize) (object);
 }
@@ -792,6 +804,7 @@ xfce_shortcuts_grabber_event_filter (GdkXEvent *gdk_xevent,
   guint                       keyval, mod_mask;
   gchar                      *raw_shortcut_name;
   gint                        timestamp;
+  gpointer                    status = GINT_TO_POINTER (INIT);
 
   g_return_val_if_fail (XFCE_IS_SHORTCUTS_GRABBER (grabber), GDK_FILTER_CONTINUE);
 
@@ -817,10 +830,10 @@ xfce_shortcuts_grabber_event_filter (GdkXEvent *gdk_xevent,
   if (xevent->type != KeyPress)
     return GDK_FILTER_CONTINUE;
 
-  if (g_hash_table_contains (grabber->priv->pressed_keys, GINT_TO_POINTER (xevent->xkey.keycode)))
+  if (g_hash_table_lookup_extended (grabber->priv->pressed_keys,
+                                    GINT_TO_POINTER (xevent->xkey.keycode), NULL, &status)
+      && GPOINTER_TO_INT (status) == BLOCKED)
     return GDK_FILTER_CONTINUE;
-
-  g_hash_table_add (grabber->priv->pressed_keys, GINT_TO_POINTER (xevent->xkey.keycode));
 
   context.result = NULL;
   timestamp = xevent->xkey.time;
@@ -878,17 +891,55 @@ xfce_shortcuts_grabber_event_filter (GdkXEvent *gdk_xevent,
   gtk_accelerator_parse (raw_shortcut_name, &context.keyval, &context.modifiers);
 
   TRACE ("Looking for %s", raw_shortcut_name);
-  g_free (raw_shortcut_name);
 
   g_hash_table_find (grabber->priv->keys,
                      (GHRFunc) (void (*)(void)) find_event_key,
                      &context);
 
-  if (G_LIKELY (context.result != NULL))
-    /* We had a positive match */
-    g_signal_emit_by_name (grabber, "shortcut-activated",
-                           context.result, timestamp);
+  /* We had a positive match */
+  if (G_UNLIKELY (context.result != NULL))
+    {
+      gchar *property;
+      switch (GPOINTER_TO_INT (status))
+        {
+        case INIT:
+          g_hash_table_insert (grabber->priv->pressed_keys,
+                               GINT_TO_POINTER (xevent->xkey.keycode),
+                               GINT_TO_POINTER (ACTIVATED_ONCE));
+          g_signal_emit_by_name (grabber, "shortcut-activated", context.result, timestamp);
+          break;
 
+        case ACTIVATED_ONCE:
+          property = g_strdup_printf ("/commands/custom/%s/auto-repeat", raw_shortcut_name);
+          if (xfconf_channel_get_bool (grabber->priv->channel, property, FALSE))
+            {
+              g_hash_table_replace (grabber->priv->pressed_keys,
+                                    GINT_TO_POINTER (xevent->xkey.keycode),
+                                    GINT_TO_POINTER (REPETITION_ALLOWED));
+              g_signal_emit_by_name (grabber, "shortcut-activated", context.result, timestamp);
+            }
+          else
+            g_hash_table_replace (grabber->priv->pressed_keys,
+                                  GINT_TO_POINTER (xevent->xkey.keycode),
+                                  GINT_TO_POINTER (BLOCKED));
+          g_free (property);
+          break;
+
+        case REPETITION_ALLOWED:
+          g_signal_emit_by_name (grabber, "shortcut-activated", context.result, timestamp);
+          break;
+
+        default:
+          g_warn_if_reached ();
+          break;
+        }
+    }
+  else
+    g_hash_table_insert (grabber->priv->pressed_keys,
+                         GINT_TO_POINTER (xevent->xkey.keycode),
+                         GINT_TO_POINTER (BLOCKED));
+
+  g_free (raw_shortcut_name);
   gdk_display_flush (display);
   gdk_x11_display_error_trap_pop_ignored (display);
 
