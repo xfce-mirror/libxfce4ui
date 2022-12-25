@@ -40,27 +40,32 @@ typedef struct _XfceShortcutsProvider        XfceShortcutsProvider;
 
 GType xfce_shortcuts_provider_get_type (void) G_GNUC_CONST;
 
-XfceShortcutsProvider  *xfce_shortcuts_provider_new               (const gchar           *name) G_GNUC_MALLOC;
-GList                  *xfce_shortcuts_provider_get_providers     (void) G_GNUC_MALLOC;
-void                    xfce_shortcuts_provider_free_providers    (GList                 *providers);
-const gchar            *xfce_shortcuts_provider_get_name          (XfceShortcutsProvider *provider);
-gboolean                xfce_shortcuts_provider_is_custom         (XfceShortcutsProvider *provider);
-void                    xfce_shortcuts_provider_reset_to_defaults (XfceShortcutsProvider *provider);
-void                    xfce_shortcuts_provider_clone_defaults    (XfceShortcutsProvider *provider);
-GList                  *xfce_shortcuts_provider_get_shortcuts     (XfceShortcutsProvider *provider);
-XfceShortcut           *xfce_shortcuts_provider_get_shortcut      (XfceShortcutsProvider *provider,
-                                                                   const gchar           *shortcut);
-gboolean                xfce_shortcuts_provider_has_shortcut      (XfceShortcutsProvider *provider,
-                                                                   const gchar           *shortcut);
-void                    xfce_shortcuts_provider_set_shortcut      (XfceShortcutsProvider *provider,
-                                                                   const gchar           *shortcut,
-                                                                   const gchar           *command,
-                                                                   gboolean               snotify);
-void                    xfce_shortcuts_provider_reset_shortcut    (XfceShortcutsProvider *provider,
-                                                                   const gchar           *shortcut);
+XfceShortcutsProvider  *xfce_shortcuts_provider_new                   (const gchar           *name) G_GNUC_MALLOC;
+GList                  *xfce_shortcuts_provider_get_providers         (void) G_GNUC_MALLOC;
+void                    xfce_shortcuts_provider_free_providers        (GList                 *providers);
+const gchar            *xfce_shortcuts_provider_get_name              (XfceShortcutsProvider *provider);
+gboolean                xfce_shortcuts_provider_is_custom             (XfceShortcutsProvider *provider);
+void                    xfce_shortcuts_provider_reset_to_defaults     (XfceShortcutsProvider *provider);
+void                    xfce_shortcuts_provider_clone_defaults        (XfceShortcutsProvider *provider);
+GList                  *xfce_shortcuts_provider_get_shortcuts         (XfceShortcutsProvider *provider);
+XfceShortcut           *xfce_shortcuts_provider_get_shortcut          (XfceShortcutsProvider *provider,
+                                                                       const gchar           *shortcut);
+gboolean                xfce_shortcuts_provider_has_shortcut          (XfceShortcutsProvider *provider,
+                                                                       const gchar           *shortcut);
+void                    xfce_shortcuts_provider_set_shortcut          (XfceShortcutsProvider *provider,
+                                                                       const gchar           *shortcut,
+                                                                       const gchar           *command,
+                                                                       gboolean               snotify);
+void                    xfce_shortcuts_provider_set_shortcut_extended (XfceShortcutsProvider *provider,
+                                                                       const gchar           *shortcut,
+                                                                       const gchar           *command,
+                                                                       const gchar           *first_property,
+                                                                       ...) G_GNUC_NULL_TERMINATED;
+void                    xfce_shortcuts_provider_reset_shortcut        (XfceShortcutsProvider *provider,
+                                                                       const gchar           *shortcut);
 
-void                    xfce_shortcuts_free                       (GList                 *shortcuts);
-void                    xfce_shortcut_free                        (XfceShortcut          *shortcut);
+void                    xfce_shortcuts_free                           (GList                 *shortcuts);
+void                    xfce_shortcut_free                            (XfceShortcut          *shortcut);
 
 
 
@@ -82,6 +87,7 @@ struct _XfceShortcut
   gchar *shortcut;
   gchar *command;
   guint  snotify : 1;
+  guint  auto_repeat : 1;
 };
 
 G_END_DECLS
