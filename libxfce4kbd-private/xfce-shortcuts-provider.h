@@ -56,6 +56,11 @@ void                    xfce_shortcuts_provider_set_shortcut      (XfceShortcuts
                                                                    const gchar           *shortcut,
                                                                    const gchar           *command,
                                                                    gboolean               snotify);
+void                    xfce_shortcuts_provider_set_shortcut_extended (XfceShortcutsProvider *provider,
+                                                                       const gchar           *shortcut,
+                                                                       const gchar           *command,
+                                                                       const gchar           *first_property,
+                                                                       ...) G_GNUC_NULL_TERMINATED;
 void                    xfce_shortcuts_provider_reset_shortcut    (XfceShortcutsProvider *provider,
                                                                    const gchar           *shortcut);
 
@@ -82,6 +87,7 @@ struct _XfceShortcut
   gchar *shortcut;
   gchar *command;
   guint  snotify : 1;
+  guint  auto_repeat : 1;
 };
 
 G_END_DECLS
