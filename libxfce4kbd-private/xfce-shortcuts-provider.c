@@ -292,7 +292,8 @@ xfce_shortcuts_provider_property_changed (XfconfChannel         *channel,
     }
   g_free (override_property);
 
-  if (g_str_has_suffix (property, "/startup-notify"))
+  if (g_str_has_suffix (property, "/startup-notify")
+      || g_str_has_suffix (property, "/auto-repeat"))
     return;
 
   shortcut = property + strlen (provider->priv->custom_base_property) + strlen ("/");
@@ -457,8 +458,8 @@ _xfce_shortcuts_provider_get_shortcut (const gchar                  *property,
   XfceShortcut *sc;
   const gchar  *shortcut;
   const gchar  *command;
-  const GValue *snotify;
-  gchar        *snotify_prop;
+  const GValue *value2;
+  gchar        *property2;
 
   g_return_val_if_fail (context != NULL, TRUE);
   g_return_val_if_fail (XFCE_IS_SHORTCUTS_PROVIDER (context->provider), TRUE);
@@ -485,13 +486,23 @@ _xfce_shortcuts_provider_get_shortcut (const gchar                  *property,
       sc->command = g_strdup (command);
 
       /* Lookup startup notify in the hash table */
-      snotify_prop = g_strconcat (property, "/startup-notify", NULL);
-      snotify = g_hash_table_lookup (context->properties, snotify_prop);
-      if (snotify != NULL)
-        sc->snotify = g_value_get_boolean (snotify);
+      property2 = g_strconcat (property, "/startup-notify", NULL);
+      value2 = g_hash_table_lookup (context->properties, property2);
+      if (value2 != NULL)
+        sc->snotify = g_value_get_boolean (value2);
       else
         sc->snotify = FALSE;
-      g_free (snotify_prop);
+      g_free (property2);
+
+      /* Lookup auto-repeat in the hash table */
+      property2 = g_strconcat (property, "/auto-repeat", NULL);
+      value2 = g_hash_table_lookup (context->properties, property2);
+      if (value2 != NULL)
+        sc->auto_repeat = g_value_get_boolean (value2);
+      else
+        sc->auto_repeat = FALSE;
+      g_free (property2);
+
       context->list = g_list_append (context->list, sc);
     }
 
@@ -534,7 +545,7 @@ xfce_shortcuts_provider_get_shortcut (XfceShortcutsProvider *provider,
   gchar        *property;
   gchar        *command;
   gchar        *property2;
-  gboolean      snotify;
+  gboolean      snotify, auto_repeat;
 
   g_return_val_if_fail (XFCE_IS_SHORTCUTS_PROVIDER (provider), NULL);
   g_return_val_if_fail (XFCONF_IS_CHANNEL (provider->priv->channel), NULL);
@@ -551,12 +562,17 @@ xfce_shortcuts_provider_get_shortcut (XfceShortcutsProvider *provider,
     {
       property2 = g_strconcat (property, "/startup-notify", NULL);
       snotify = xfconf_channel_get_bool (provider->priv->channel, property2, FALSE);
+      g_free (property2);
+      property2 = g_strconcat (property, "/auto-repeat", NULL);
+      auto_repeat = xfconf_channel_get_bool (provider->priv->channel, property2, FALSE);
+      g_free (property2);
 
       sc = g_slice_new0 (XfceShortcut);
       sc->command = command;
       sc->property_name = g_strdup (property);
       sc->shortcut = g_strdup (shortcut);
       sc->snotify = snotify;
+      sc->auto_repeat = auto_repeat;
     }
 
   g_free (property);
@@ -640,10 +656,69 @@ xfce_shortcuts_provider_set_shortcut (XfceShortcutsProvider *provider,
       g_free (property2);
     }
 
+  /* must be done last so "shortcut-added" is emitted with "startup-notify" set */
   xfconf_channel_set_string (provider->priv->channel, property, command);
 
   g_free (property);
 
+}
+
+
+
+void
+xfce_shortcuts_provider_set_shortcut_extended (XfceShortcutsProvider *provider,
+                                               const gchar           *shortcut,
+                                               const gchar           *command,
+                                               const gchar           *first_property,
+                                               ...)
+{
+  gchar *property;
+  gchar *property2;
+  va_list args;
+
+  g_return_if_fail (XFCE_IS_SHORTCUTS_PROVIDER (provider));
+  g_return_if_fail (XFCONF_IS_CHANNEL (provider->priv->channel));
+  g_return_if_fail (shortcut != NULL && command != NULL);
+
+  /* Only allow custom shortcuts to be changed */
+  if (G_UNLIKELY (!xfce_shortcuts_provider_is_custom (provider)))
+    return;
+
+  property = g_strconcat (provider->priv->custom_base_property, "/", shortcut, NULL);
+  if (xfconf_channel_has_property (provider->priv->channel, property))
+    xfconf_channel_reset_property (provider->priv->channel, property, TRUE);
+
+  va_start (args, first_property);
+  for (const gchar *prop = first_property; prop != NULL; )
+    {
+      if (g_strcmp0 (prop, "startup-notify") == 0)
+        {
+          if (va_arg (args, gboolean))
+            {
+              property2 = g_strconcat (property, "/startup-notify", NULL);
+              xfconf_channel_set_bool (provider->priv->channel, property2, TRUE);
+              g_free (property2);
+            }
+        }
+      else if (g_strcmp0 (prop, "auto-repeat") == 0)
+        {
+          if (va_arg (args, gboolean))
+            {
+              property2 = g_strconcat (property, "/auto-repeat", NULL);
+              xfconf_channel_set_bool (provider->priv->channel, property2, TRUE);
+              g_free (property2);
+            }
+        }
+      else
+        g_warning ("Invalid shortcut property");
+
+      prop = va_arg (args, const gchar *);
+    }
+
+  /* must be done last so "shortcut-added" is emitted with all properties set */
+  xfconf_channel_set_string (provider->priv->channel, property, command);
+
+  g_free (property);
 }
 
 
