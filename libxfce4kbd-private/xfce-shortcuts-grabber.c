@@ -70,7 +70,6 @@ struct _XfceShortcutsGrabberPrivate
 {
   /* Maps a shortcut string to a pointer to XfceKey */
   GHashTable *keys;
-  GHashTable *pressed_keys;
 
   /* Maps an XfceXGrab to a reference count.
    * The reference count tracks the number of shortcuts that grab the XfceXGrab. */
@@ -178,7 +177,6 @@ xfce_shortcuts_grabber_init (XfceShortcutsGrabber *grabber)
 
   grabber->priv = XFCE_SHORTCUTS_GRABBER_GET_PRIVATE (grabber);
   grabber->priv->keys = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, free_key);
-  grabber->priv->pressed_keys = g_hash_table_new (g_direct_hash, g_direct_equal);
   grabber->priv->grabbed_keycodes = g_hash_table_new_full (xgrab_hash, xgrab_equal, xgrab_free, g_free);
 
   /* Workaround: Make sure modmap is up to date
@@ -189,9 +187,6 @@ xfce_shortcuts_grabber_init (XfceShortcutsGrabber *grabber)
   display = gdk_display_get_default ();
   keymap = gdk_keymap_get_for_display (display);
   (void) gdk_keymap_have_bidi_layouts (keymap);
-
-  /* make sure to detect auto-repeat key press to activate shortcuts only once */
-  XkbSetDetectableAutoRepeat (GDK_DISPLAY_XDISPLAY (display), TRUE, NULL);
 }
 
 
@@ -231,7 +226,6 @@ xfce_shortcuts_grabber_finalize (GObject *object)
 
   xfce_shortcuts_grabber_ungrab_all (grabber);
   g_hash_table_unref (grabber->priv->keys);
-  g_hash_table_unref (grabber->priv->pressed_keys);
   g_hash_table_unref (grabber->priv->grabbed_keycodes);
 
   (*G_OBJECT_CLASS (xfce_shortcuts_grabber_parent_class)->finalize) (object);
@@ -814,16 +808,8 @@ xfce_shortcuts_grabber_event_filter (GdkXEvent *gdk_xevent,
         }
     }
 
-  if (xevent->type == KeyRelease)
-    g_hash_table_remove (grabber->priv->pressed_keys, GINT_TO_POINTER (xevent->xkey.keycode));
-
   if (xevent->type != KeyPress)
     return GDK_FILTER_CONTINUE;
-
-  if (g_hash_table_contains (grabber->priv->pressed_keys, GINT_TO_POINTER (xevent->xkey.keycode)))
-    return GDK_FILTER_CONTINUE;
-
-  g_hash_table_add (grabber->priv->pressed_keys, GINT_TO_POINTER (xevent->xkey.keycode));
 
   context.result = NULL;
   timestamp = xevent->xkey.time;
