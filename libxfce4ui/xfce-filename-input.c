@@ -239,12 +239,17 @@ xfce_filename_input_init (XfceFilenameInput *filename_input)
                       strlen (filename_input->sep_illegal_mssg));
   width_needed = MAX (width_needed, strlen (filename_input->whitespace_mssg));
 
+  /* Fine to wrap the message into two lines (otherwise the required hotizontal space can get rather long) */
+  width_needed = width_needed / 2;
+
   /* set up the GtkLabel to display any error or warning messages */
   filename_input->label = GTK_LABEL (gtk_label_new(""));
   gtk_label_set_xalign (filename_input->label, 0.0f);
   gtk_widget_set_hexpand (GTK_WIDGET (filename_input->label), TRUE);
   gtk_label_set_width_chars (filename_input->label, width_needed);
   gtk_box_pack_start (GTK_BOX (filename_input), GTK_WIDGET (filename_input->label), FALSE, FALSE, 0);
+  gtk_label_set_line_wrap (filename_input->label, TRUE);
+  gtk_label_set_lines (filename_input->label, 2);
 
   /* allow reverting the filename with ctrl + z */
   g_signal_connect (filename_input->entry, "key-press-event",
