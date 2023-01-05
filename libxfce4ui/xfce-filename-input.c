@@ -209,7 +209,6 @@ static void
 xfce_filename_input_init (XfceFilenameInput *filename_input)
 {
   GError *err = NULL;
-  gsize   width_needed;
 
   /* by default there is no maximum length for the filename and no original filename */
   filename_input->max_text_length = -1;
@@ -234,17 +233,11 @@ xfce_filename_input_init (XfceFilenameInput *filename_input)
   filename_input->sep_illegal_mssg = _("Directory separator illegal in file name");
   filename_input->whitespace_mssg = _("Filenames should not start or end with a space");
 
-  /* caluclate the maximum length of message that the widget might need to display */
-  width_needed = MAX (strlen (filename_input->too_long_mssg),
-                      strlen (filename_input->sep_illegal_mssg));
-  width_needed = MAX (width_needed, strlen (filename_input->whitespace_mssg));
-
   /* set up the GtkLabel to display any error or warning messages */
   filename_input->label = GTK_LABEL (gtk_label_new(""));
   gtk_label_set_xalign (filename_input->label, 0.0f);
-  gtk_widget_set_hexpand (GTK_WIDGET (filename_input->label), TRUE);
-  gtk_label_set_width_chars (filename_input->label, width_needed);
   gtk_box_pack_start (GTK_BOX (filename_input), GTK_WIDGET (filename_input->label), FALSE, FALSE, 0);
+  gtk_label_set_line_wrap (filename_input->label, TRUE);
 
   /* allow reverting the filename with ctrl + z */
   g_signal_connect (filename_input->entry, "key-press-event",
