@@ -1,3 +1,11 @@
+4.18.1 (2023-01-05)
+======
+- XfceFileNameInput - wrap error message (Issue #60)
+- xfce4-about: Removed excess square brackets
+- Revert "XfceShortcutsGrabber: Detect auto-repeat key press"
+- Translation Updates:
+  Hebrew, Russian, Swedish
+
 4.18.0 (2022-12-15)
 ======
 - Update About credits
