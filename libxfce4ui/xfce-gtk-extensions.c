@@ -1052,8 +1052,13 @@ xfce_gicon_from_name (const gchar *name)
                                                     GTK_ICON_SIZE_BUTTON,
                                                     GTK_ICON_LOOKUP_FORCE_REGULAR);
 
-        if (icon_info)
+        if (icon_info) {
+            g_object_unref (icon_info);
             return gicon;
+        }
+        else {
+            g_object_unref (gicon);
+        }
     }
 
     return NULL;
