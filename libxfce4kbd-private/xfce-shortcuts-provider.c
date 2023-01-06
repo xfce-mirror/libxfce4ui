@@ -551,6 +551,7 @@ xfce_shortcuts_provider_get_shortcut (XfceShortcutsProvider *provider,
     {
       property2 = g_strconcat (property, "/startup-notify", NULL);
       snotify = xfconf_channel_get_bool (provider->priv->channel, property2, FALSE);
+      g_free (property2);
 
       sc = g_slice_new0 (XfceShortcut);
       sc->command = command;
