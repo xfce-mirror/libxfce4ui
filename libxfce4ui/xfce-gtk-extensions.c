@@ -974,7 +974,7 @@ xfce_widget_reparent (GtkWidget *widget,
 gchar *
 xfce_icon_name_from_desktop_id (const gchar *desktop_id)
 {
-    gchar *icon_file;
+    gchar *icon_file = NULL;
     gchar *resource;
     XfceRc *rcfile;
 
@@ -985,16 +985,16 @@ xfce_icon_name_from_desktop_id (const gchar *desktop_id)
                                   resource, TRUE);
     g_free (resource);
 
-    if (rcfile && xfce_rc_has_group (rcfile, "Desktop Entry")) {
-        xfce_rc_set_group (rcfile, "Desktop Entry");
-        icon_file = g_strdup (xfce_rc_read_entry (rcfile, "Icon", NULL));
+    if (rcfile != NULL) {
+        if (xfce_rc_has_group (rcfile, "Desktop Entry")) {
+            xfce_rc_set_group (rcfile, "Desktop Entry");
+            icon_file = g_strdup (xfce_rc_read_entry (rcfile, "Icon", NULL));
+        }
 
         xfce_rc_close (rcfile);
-
-        return icon_file;
     }
-    else
-        return NULL;
+
+    return icon_file;
 }
 
 
