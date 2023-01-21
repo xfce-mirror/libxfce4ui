@@ -222,15 +222,15 @@ msgstr "Editor de dreceres"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:380
 msgid "The current shortcut. Click to edit..."
-msgstr ""
+msgstr "Drecera actial. Premeu per a editar..."
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:391
 msgid "Clear the shortcut"
-msgstr ""
+msgstr "Neteja la drecera"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:401
 msgid "Restore the default shortcut"
-msgstr ""
+msgstr "Restaura la drecera per defecte"
 
 #. skip leading slash
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:473
@@ -392,19 +392,19 @@ msgstr "Commuta a pantalla sencera"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:63
 msgid "Move window to lower monitor"
-msgstr ""
+msgstr "Mou la finestra al monitor de sota"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:64
 msgid "Move window to left monitor"
-msgstr ""
+msgstr "Mou la finestra al monitor de l'esquerra"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:65
 msgid "Move window to right monitor"
-msgstr ""
+msgstr "Mou la finestra al monitor de la dreta"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:66
 msgid "Move window to upper monitor"
-msgstr ""
+msgstr "Mou la finestra al monitor de sobre"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:67
 msgid "Move window to upper workspace"
@@ -851,11 +851,11 @@ msgstr "Versió de Xfce"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:11
 msgid "GTK Version"
-msgstr ""
+msgstr "Versió del GTK"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:12
 msgid "Kernel Version"
-msgstr ""
+msgstr "Versió del nucli"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:13
 msgid "CPU"
