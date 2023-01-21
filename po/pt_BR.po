@@ -6,7 +6,7 @@
 # Andre Miranda <andre42m@gmail.com>, 2017,2019,2021-2022
 # Andre Miranda <andre42m@gmail.com>, 2016
 # Andre Miranda <andre42m@gmail.com>, 2015
-# C. E., 2020
+# Giálisson Rocha, 2020
 # Fábio Nogueira <deb-user-ba@ubuntu.com>, 2008
 # Lucas Wilm <lucaswilm@gmail.com>, 2020
 # Michael Martins <michaelfm21@gmail.com>, 2019-2020
