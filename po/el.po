@@ -50,7 +50,7 @@ msgstr "Θα μετακινηθείτε στην ιστοσελίδα τεκμη
 #: ../libxfce4ui/xfce-dialogs.c:275 ../libxfce4ui/xfce-dialogs.c:533
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:256
 msgid "_Cancel"
-msgstr "Ά_κυρο"
+msgstr "Άκ_υρο"
 
 #: ../libxfce4ui/xfce-dialogs.c:277
 msgid "_Read Online"
@@ -160,7 +160,7 @@ msgstr "Μη έγκυρο διαχωριστικό καταλόγου στο ό�
 
 #: ../libxfce4ui/xfce-filename-input.c:235
 msgid "Filenames should not start or end with a space"
-msgstr "Το όνομα του αρχείου δεν πρέπει ν' αρχίζει ή να τελειώνει με κενό χαρακτήρα"
+msgstr "Τα ονόματα αρχείων δεν πρέπει να αρχίζουν ή να τελειώνουν με κενό χαρακτήρα"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:53
 #, c-format
@@ -209,7 +209,7 @@ msgstr "Παρακαλώ χρησιμοποιήστε άλλο συνδυασμ�
 #: ../libxfce4kbd-private/xfce-shortcuts.c:114
 #, c-format
 msgid "%s already triggers this action."
-msgstr "%s  ενεργοποιεί ήδη αυτήν την ενέργεια."
+msgstr "Το %s ενεργοποιεί ήδη αυτήν την ενέργεια."
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:119
 #, c-format
@@ -235,7 +235,7 @@ msgstr "Αφαίρεση της συντόμευσης"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:401
 msgid "Restore the default shortcut"
-msgstr "Επαναφορά προεπιλεγμένης συντόμευσης"
+msgstr "Επαναφορά της προεπιλεγμένης συντόμευσης"
 
 #. skip leading slash
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:473
@@ -389,7 +389,7 @@ msgstr "Κάθετη μεγιστοποίηση παραθύρου"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:61
 msgid "Toggle above"
-msgstr "Εναλλαγή με το παραπάνω"
+msgstr "Εναλλαγή επάνω"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:62
 msgid "Toggle fullscreen"
@@ -609,7 +609,7 @@ msgstr "Διαγραφή ενεργού χώρου εργασίας"
 
 #: ../glade/libxfce4ui-2.xml.in.h:1
 msgid "Titled Dialog"
-msgstr "Διάλογος με τίτλο"
+msgstr "Παράθυρο με τίτλο"
 
 #: ../glade/libxfce4ui-2.xml.in.h:2
 msgid "Subtitle"
@@ -617,7 +617,7 @@ msgstr "Υπότιτλος"
 
 #: ../glade/libxfce4ui-2.xml.in.h:3
 msgid "Xfce 4 Widgets"
-msgstr "Xfce4 Widgets"
+msgstr "Γραφικά στοιχεία Xfce 4"
 
 #: ../xfce4-about/main.c:58
 msgid "Version information"
