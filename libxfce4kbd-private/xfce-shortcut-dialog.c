@@ -327,7 +327,8 @@ xfce_shortcut_dialog_run (XfceShortcutDialog *dialog,
 
   /* Take control on the keyboard */
   if (gdk_seat_grab (seat,
-                 gdk_screen_get_root_window (gdk_display_get_default_screen (display)),
+                 parent != NULL ? gtk_widget_get_window (parent)
+                                : gdk_screen_get_root_window (gdk_display_get_default_screen (display)),
                  GDK_SEAT_CAPABILITY_KEYBOARD, TRUE, NULL, NULL,
                  xfce_shortcut_dialog_prepare_grab, NULL) == GDK_GRAB_SUCCESS)
     {
