@@ -157,7 +157,6 @@ gboolean                  xfce_gtk_execute_tab_accel                      (const
                                                                            gpointer                  data,
                                                                            XfceGtkActionEntry       *entries,
                                                                            size_t                    entry_count);
-void                      xfce_gtk_menu_append_seperator                  (GtkMenuShell             *menu);
 void                      xfce_gtk_menu_append_separator                  (GtkMenuShell             *menu);
 
 GtkWidget                *xfce_gtk_button_new_mixed                       (const gchar              *stock_id,
