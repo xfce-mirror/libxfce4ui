@@ -23,6 +23,8 @@ libxfce4ui_headers = \
 	xfce-dialogs.h \
 	xfce-gdk-extensions.h \
 	xfce-gtk-extensions.h \
+	xfce-settings-editor.h \
+	xfce-settings-cell-renderer.h\
 	xfce-spawn.h \
 	xfce-filename-input.h \
 	xfce-titled-dialog.h \
@@ -46,6 +48,8 @@ libxfce4ui_sources = \
 	xfce-dialogs.c \
 	xfce-gdk-extensions.c \
 	xfce-gtk-extensions.c \
+	xfce-settings-editor.c \
+	xfce-settings-cell-renderer.c\
 	xfce-sm-client.c \
 	xfce-spawn.c \
 	xfce-filename-input.c \
@@ -74,6 +78,7 @@ libxfce4ui_2_la_CFLAGS = \
 	$(LIBX11_CFLAGS) \
 	$(LIBSTARTUP_NOTIFICATION_CFLAGS) \
 	$(LIBXFCE4UTIL_CFLAGS) \
+	$(XFCONF_CFLAGS) \
 	$(PLATFORM_CFLAGS)
 
 libxfce4ui_2_la_LDFLAGS = \
@@ -90,7 +95,10 @@ libxfce4ui_2_la_LIBADD = \
 	$(GTK3_LIBS) \
 	$(LIBX11_LIBS) \
 	$(LIBSTARTUP_NOTIFICATION_LIBS) \
-	$(LIBXFCE4UTIL_LIBS)
+	$(LIBXFCE4UTIL_LIBS) \
+	$(XFCONF_LIBS)
+
+settingsdir = $(sysconfdir)/xdg/xfce4/xfconf/xfce-perchannel-xml
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA += \
