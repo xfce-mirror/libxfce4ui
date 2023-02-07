@@ -355,7 +355,7 @@ xfce_gtk_toggle_menu_item_new_from_action_entry (const XfceGtkActionEntry *actio
  * xfce_gtk_tool_button_new_from_action_entry:
  * @action_entry : Label to use for the #GtkToolButton
  * @callback_param : optional callback parameter, or %NULL.
- * @toolbar_to_append_item : #GtkToolBar on which the item should be appended
+ * @toolbar_to_append_item : #GtkToolbar on which the item should be appended
  *
  * Method to create a toolbar button from the passed action entry.
  *
@@ -388,7 +388,7 @@ xfce_gtk_tool_button_new_from_action_entry (const XfceGtkActionEntry *action_ent
  * @action_entry : Label to use for the #GtkToggleToolButton
  * @callback_param : optional callback parameter, or %NULL.
  * @active : boolean value indicating whether the toggle is initially active.
- * @toolbar_to_append_item : #GtkToolBar on which the item should be appended
+ * @toolbar_to_append_item : #GtkToolbar on which the item should be appended
  *
  * Method to create a toolbar toggle-button from the passed action entry.
  *
@@ -1175,7 +1175,7 @@ xfce_has_gtk_frame_extents (GdkWindow *window,
  * @label  : a #GtkLabel.
  * @widget : a #GtkWidget.
  *
- * Sets the %ATK_RELATION_LABEL_FOR relation on @label for @widget, which means
+ * Sets the `ATK_RELATION_LABEL_FOR` relation on @label for @widget, which means
  * accessiblity tools will identify @label as descriptive item for the specified
  * @widget.
  **/
