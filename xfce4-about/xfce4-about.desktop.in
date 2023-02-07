@@ -7,5 +7,5 @@ StartupNotify=false
 Terminal=false
 Categories=Utility;X-XFCE;X-Xfce-Toplevel;
 OnlyShowIn=XFCE;
-_Name=About Xfce
-_Comment=Information about the Xfce Desktop Environment
+Name=About Xfce
+Comment=Information about the Xfce Desktop Environment

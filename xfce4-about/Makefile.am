@@ -50,7 +50,9 @@ xfce4_about_DEPENDENCIES = \
 desktopdir = $(datadir)/applications
 desktop_in_files = xfce4-about.desktop.in
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
-@INTLTOOL_DESKTOP_RULE@
+
+xfce4-about.desktop: xfce4-about.desktop.in
+	$(AM_V_GEN)$(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@
 
 DISTCLEANFILES = \
 	$(desktop_DATA)
