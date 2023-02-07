@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glade-catalog version="4.12.0" supports="gtkbuilder" name="libxfce4ui-2" library="xfce4uiglade2" domain="glade3" depends="gtk+" book="xfce4">
+  <glade-widget-classes>
+    <glade-widget-class name="XfceTitledDialog" generic-name="xfce-titled-dialog" title="Titled Dialog">
+      <post-create-function>glade_xfce_titled_dialog_post_create</post-create-function>
+      <get-internal-child-function>glade_xfce_titled_dialog_get_internal_child</get-internal-child-function>
+      <get-children-function>glade_xfce_titled_dialog_get_children</get-children-function>
+      <properties>
+        <property translatable="True" ignore="False" id="subtitle" name="Subtitle"></property>
+        <property translatable="True" ignore="False" id="title"/>
+        <property ignore="True" id="icon"/>
+        <property themed-icon="True" ignore="False" id="icon-name"/>
+      </properties>
+    </glade-widget-class>
+  </glade-widget-classes>
+  <glade-widget-group name="xfce4-widgets" title="Xfce 4 Widgets">
+    <glade-widget-class-ref name="XfceTitledDialog"/>
+  </glade-widget-group>
+</glade-catalog>
