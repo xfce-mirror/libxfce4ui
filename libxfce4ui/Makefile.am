@@ -51,6 +51,13 @@ libxfce4ui_sources = \
 	xfce-filename-input.c \
 	xfce-titled-dialog.c
 
+if ENABLE_SCREENSAVER
+libxfce4ui_headers += \
+	xfce-screensaver.h
+libxfce4ui_sources += \
+	xfce-screensaver.c
+endif
+
 ##
 ## GTK+ 3 support library
 ##
@@ -72,6 +79,7 @@ libxfce4ui_2_la_CFLAGS = \
 	$(GDK_CFLAGS) \
 	$(GTK3_CFLAGS) \
 	$(LIBX11_CFLAGS) \
+	$(XFCONF_CFLAGS) \
 	$(LIBSTARTUP_NOTIFICATION_CFLAGS) \
 	$(LIBXFCE4UTIL_CFLAGS) \
 	$(PLATFORM_CFLAGS)
@@ -89,6 +97,7 @@ libxfce4ui_2_la_LIBADD = \
 	$(GDK_LIBS) \
 	$(GTK3_LIBS) \
 	$(LIBX11_LIBS) \
+	$(XFCONF_LIBS) \
 	$(LIBSTARTUP_NOTIFICATION_LIBS) \
 	$(LIBXFCE4UTIL_LIBS)
 
