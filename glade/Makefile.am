@@ -42,13 +42,12 @@ gladecatalogdir = \
 	$(GLADEUI2_CATALOGDIR)
 gladecatalog_DATA = \
 	libxfce4ui-2.xml
-@INTLTOOL_XML_NOMERGE_RULE@
 endif
 
 CLEANFILES = \
 	libxfce4ui-2.xml
 
 EXTRA_DIST = \
-	libxfce4ui-2.xml.in
+	libxfce4ui-2.xml
 
 # vi:set ts=8 sw=8 noet ai nocindent syntax=automake:
