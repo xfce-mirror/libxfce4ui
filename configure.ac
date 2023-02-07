@@ -1,19 +1,14 @@
 dnl
-dnl Copyright (c) 2007-2022 The Xfce development team
+dnl Copyright (c) 2007-2023 The Xfce development team
 dnl
 
 dnl ***************************
 dnl *** Version information ***
 dnl ***************************
+XDT_VERSION_INIT([4.18.0], [git])
+
 m4_define([libxfce4ui_verinfo], [0:0:0])
 m4_define([libxfce4ui_version_api], [2])
-m4_define([libxfce4ui_version_major], [4])
-m4_define([libxfce4ui_version_minor], [18])
-m4_define([libxfce4ui_version_micro], [0])
-m4_define([libxfce4ui_version_nano], []) dnl leave this empty to have no nano version
-m4_define([libxfce4ui_version_build], [@REVISION@])
-m4_define([libxfce4ui_version_tag], [git])
-m4_define([libxfce4ui_version], [libxfce4ui_version_major().libxfce4ui_version_minor().libxfce4ui_version_micro()ifelse(libxfce4ui_version_nano(), [], [], [.libxfce4ui_version_nano()])ifelse(libxfce4ui_version_tag(), [git], [libxfce4ui_version_tag()-libxfce4ui_version_build()], [libxfce4ui_version_tag()])])
 
 m4_define([libxfce4kbd_private_verinfo], [0:0:0])
 m4_define([libxfce4kbd_private_version_api], [3])
@@ -21,20 +16,14 @@ m4_define([libxfce4kbd_private_version_api], [3])
 dnl # DO NOT MODIFY ANYTHING BELOW THIS LINE, UNLESS YOU KNOW WHAT
 dnl # YOU ARE DOING.
 
-
-dnl ********************************************
-dnl *** Full debug support for GIT snapshots ***
-dnl ********************************************
-m4_define([libxfce4ui_debug_default], [ifelse(libxfce4ui_version_tag(), [git], [yes], [minimum])])
-
 dnl ***************************
 dnl *** Initialize autoconf ***
 dnl ***************************
-AC_COPYRIGHT([Copyright (c) 2007-2022 The Xfce development team])
-AC_INIT([libxfce4ui], [libxfce4ui_version], [https://gitlab.xfce.org/xfce/libxfce4ui/-/issues], [libxfce4ui])
+AC_COPYRIGHT([Copyright (c) 2007-2023 The Xfce development team])
+AC_INIT([libxfce4ui], [xdt_version], [https://gitlab.xfce.org/xfce/libxfce4ui/-/issues], [libxfce4ui])
 AC_PREREQ([2.69])
 AC_CONFIG_MACRO_DIRS([m4])
-AC_REVISION([libxfce4ui_version_build])
+AC_REVISION([xdt_version_build])
 AC_CANONICAL_TARGET()
 
 dnl ***************************
@@ -88,9 +77,9 @@ dnl *** Substitute version information ***
 dnl **************************************
 LIBXFCE4UI_VERINFO=libxfce4ui_verinfo()
 LIBXFCE4UI_VERSION_API=libxfce4ui_version_api()
-LIBXFCE4UI_VERSION_MAJOR=libxfce4ui_version_major()
-LIBXFCE4UI_VERSION_MINOR=libxfce4ui_version_minor()
-LIBXFCE4UI_VERSION_MICRO=libxfce4ui_version_micro()
+LIBXFCE4UI_VERSION_MAJOR=xdt_version_major()
+LIBXFCE4UI_VERSION_MINOR=xdt_version_minor()
+LIBXFCE4UI_VERSION_MICRO=xdt_version_micro()
 LIBXFCE4KBD_PRIVATE_VERINFO=libxfce4kbd_private_verinfo()
 LIBXFCE4KBD_PRIVATE_VERSION_API=libxfce4kbd_private_version_api()
 AC_SUBST([LIBXFCE4UI_VERINFO])
@@ -273,7 +262,7 @@ GTK_DOC_CHECK([1.0])
 dnl ***********************************
 dnl *** Check for debugging support ***
 dnl ***********************************
-XDT_FEATURE_DEBUG([libxfce4ui_debug_default])
+XDT_FEATURE_DEBUG([xdt_debug_default])
 
 dnl **************************************
 dnl *** Check for linker optimizations ***
