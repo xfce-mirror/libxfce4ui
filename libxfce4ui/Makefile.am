@@ -13,11 +13,24 @@ AM_CPPFLAGS = \
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\" \
 	$(PLATFORM_CPPFLAGS)
 
+if ENABLE_SCREENSAVER
+libxfce4ui_screensaver_headers = \
+	xfce-screensaver.h
+libxfce4ui_screensaver_sources = \
+	xfce-screensaver.c
+libxfce4ui.h: libxfce4ui.h.in
+	$(SED) -e "s,@xfce-screensaver-header@,#include <libxfce4ui/xfce-screensaver.h>," < $< > $@
+else
+libxfce4ui.h: libxfce4ui.h.in
+	$(SED) -e "s,@xfce-screensaver-header@,," < $< > $@
+endif
+
 libxfce4ui_enum_headers = \
 	xfce-sm-client.h
 
 libxfce4ui_headers = \
-	libxfce4ui.h \
+	$(libxfce4ui_enum_headers) \
+	$(libxfce4ui_screensaver_headers) \
 	libxfce4ui-config.h \
 	libxfce4ui-enum-types.h \
 	xfce-dialogs.h \
@@ -25,10 +38,10 @@ libxfce4ui_headers = \
 	xfce-gtk-extensions.h \
 	xfce-spawn.h \
 	xfce-filename-input.h \
-	xfce-titled-dialog.h \
-	$(libxfce4ui_enum_headers)
+	xfce-titled-dialog.h
 
 libxfce4ui_built_sources = \
+	libxfce4ui.h \
 	libxfce4ui-alias.h \
 	libxfce4ui-aliasdef.c \
 	libxfce4ui-enum-types.c \
@@ -41,6 +54,7 @@ libxfce4ui_built_sources = \
 libxfce4ui_sources = \
 	$(libxfce4ui_headers) \
 	$(libxfce4ui_built_sources) \
+	$(libxfce4ui_screensaver_sources) \
 	libxfce4ui-config.c \
 	libxfce4ui-private.h \
 	xfce-dialogs.c \
@@ -59,7 +73,8 @@ libxfce4ui2_includedir = \
 	$(includedir)/xfce4/libxfce4ui-2/libxfce4ui
 
 libxfce4ui2_include_HEADERS = \
-	$(libxfce4ui_headers)
+	$(libxfce4ui_headers) \
+	libxfce4ui.h
 
 lib_LTLIBRARIES += \
 	libxfce4ui-2.la
@@ -72,6 +87,7 @@ libxfce4ui_2_la_CFLAGS = \
 	$(GDK_CFLAGS) \
 	$(GTK3_CFLAGS) \
 	$(LIBX11_CFLAGS) \
+	$(XFCONF_CFLAGS) \
 	$(LIBSTARTUP_NOTIFICATION_CFLAGS) \
 	$(LIBXFCE4UTIL_CFLAGS) \
 	$(PLATFORM_CFLAGS)
@@ -89,6 +105,7 @@ libxfce4ui_2_la_LIBADD = \
 	$(GDK_LIBS) \
 	$(GTK3_LIBS) \
 	$(LIBX11_LIBS) \
+	$(XFCONF_LIBS) \
 	$(LIBSTARTUP_NOTIFICATION_LIBS) \
 	$(LIBXFCE4UTIL_LIBS)
 
