@@ -165,6 +165,15 @@ xfce_sm_client_get_current_directory
 #endif
 #endif
 
+/* xfce-screensaver functions */
+#if IN_HEADER(__XFCE_SCREENSAVER_H__)
+#if IN_SOURCE(__XFCE_SCREENSAVER_C__)
+xfce_screensaver_new
+xfce_screensaver_inhibit
+xfce_screensaver_lock
+#endif
+#endif
+
 /* xfce-titled-dialog functions */
 #if IN_HEADER(__XFCE_TITLED_DIALOG_H__)
 #if IN_SOURCE(__XFCE_TITLED_DIALOG_C__)
