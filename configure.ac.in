@@ -77,7 +77,6 @@ AC_PROG_INSTALL()
 IT_PROG_INTLTOOL([0.35.0])
 AC_CHECK_PROGS([PERL], [perl5 perl])
 AC_PATH_PROG([GLIB_COMPILE_RESOURCES],[glib-compile-resources])
-AC_PROG_SED
 
 dnl **************************
 dnl *** Initialize libtool ***
@@ -128,6 +127,7 @@ dnl ***********************************
 XDT_CHECK_PACKAGE([GLIB], [glib-2.0], [2.66.0])
 XDT_CHECK_PACKAGE([GTK3], [gtk+-3.0], [3.24.0])
 XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [4.17.2])
+XDT_CHECK_PACKAGE([XFCONF], [libxfconf-0], [4.12.0])
 
 dnl ****************************************************************
 dnl *** Optional support for system information based on glibtop ***
@@ -194,19 +194,6 @@ AC_ARG_ENABLE([keyboard-library],
                               [Do not compile the keyboard library needed by xfwm4 and xfce4-settings (default=enabled)])],
               [enable_keyboard_library=$enableval], [enable_keyboard_library=yes])
 AM_CONDITIONAL([ENABLE_KEYBOARD_LIBRARY], [test "x$enable_keyboard_library" = "xyes"])
-
-dnl **************************************************
-dnl *** Check whether to build screensaver support ***
-dnl **************************************************
-AC_ARG_ENABLE([screensaver],
-              [AS_HELP_STRING([--disable-screensaver],
-                              [Do not compile screensaver support needed by xfce4-power-manager and xfce4-session (default=enabled)])],
-              [enable_screensaver=$enableval], [enable_screensaver=yes])
-AM_CONDITIONAL([ENABLE_SCREENSAVER], [test "x$enable_screensaver" = "xyes"])
-
-if test "x$enable_keyboard_library" = "xyes" || test "x$enable_screensaver" = "xyes"; then
-  XDT_CHECK_PACKAGE([XFCONF], [libxfconf-0], [4.12.0])
-fi
 
 dnl *********************************************
 dnl *** Check for vendor specific information ***
@@ -402,7 +389,6 @@ echo "* Keyboard library support:  yes"
 else
 echo "* Keyboard library support:  no"
 fi
-echo "* Screensaver support:       $enable_screensaver"
 if test x"$LIBSTARTUP_NOTIFICATION_FOUND" = x"yes"; then
 echo "* Startup notification:      yes"
 else

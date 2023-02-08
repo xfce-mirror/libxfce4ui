@@ -6,7 +6,7 @@ DOC_MODULE=libxfce4ui
 DOC_MAIN_SGML_FILE=$(DOC_MODULE)-docs.xml
 
 # Extra options to supply to gtkdoc-scan
-SCAN_OPTIONS= --deprecated-guards="XFCE_DISABLE_DEPRECATED" --rebuild-types
+SCAN_OPTIONS= --deprecated-guards="XFCE_DISABLE_DEPRECATED"
 
 # The directory containing the source code. Relative to $(srcdir)
 DOC_SOURCE_DIR=$(top_srcdir)/libxfce4ui
@@ -22,14 +22,9 @@ HFILE_GLOB=
 CFILE_GLOB=
 
 # Header files to ignore when scanning
-if ! ENABLE_SCREENSAVER
-libxfce4ui_screensaver_headers = \
-	xfce-screensaver.h
-endif
-IGNORE_HFILES= \
-	$(libxfce4ui_screensaver_headers) \
-	libxfce4ui-alias.h
 
+
+IGNORE_HFILES=
 # Extra files to add when scanning (relative to $srcdir)
 EXTRA_HFILES=
 
