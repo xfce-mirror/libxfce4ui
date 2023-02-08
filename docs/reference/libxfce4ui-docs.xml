@@ -50,6 +50,7 @@
   <part id="libxfce4ui-sm">
     <title>Xfce Session Management Support</title>
     <xi:include href="xml/xfce-sm-client.xml"/>
+    <xi:include href="xml/xfce-screensaver.xml"/>
   </part>
   <index id="api-index-full">
     <title>Index of all symbols</title>
@@ -63,6 +64,7 @@
     <title>Index of new symbols in 4.18</title>
     <xi:include href="xml/api-index-4.17.6.xml"><xi:fallback /></xi:include>
     <xi:include href="xml/api-index-4.18.xml"><xi:fallback /></xi:include>
+    <xi:include href="xml/api-index-4.18.2.xml"><xi:fallback /></xi:include>
   </index>
   <index id="api-index-4-16">
     <title>Index of new symbols in 4.16</title>
