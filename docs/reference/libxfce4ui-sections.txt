@@ -153,6 +153,18 @@ XFCE_TYPE_SM_CLIENT_ERROR_ENUM
 </SECTION>
 
 <SECTION>
+<TITLE>Xfce Screensaver</TITLE>
+<FILE>xfce-screensaver</FILE>
+XfceScreensaver
+xfce_screensaver_new
+xfce_screensaver_inhibit
+xfce_screensaver_lock
+<SUBSECTION Standard>
+XFCE_TYPE_SCREENSAVER
+xfce_screensaver_get_type
+</SECTION>
+
+<SECTION>
 <FILE>xfce-filename-input</FILE>
 XfceFilenameInput
 xfce_filename_input_get_text
