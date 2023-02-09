@@ -23,6 +23,7 @@ libxfce4ui_headers = \
 	xfce-dialogs.h \
 	xfce-gdk-extensions.h \
 	xfce-gtk-extensions.h \
+	xfce-screensaver.h \
 	xfce-spawn.h \
 	xfce-filename-input.h \
 	xfce-titled-dialog.h \
@@ -47,6 +48,7 @@ libxfce4ui_sources = \
 	xfce-gdk-extensions.c \
 	xfce-gtk-extensions.c \
 	xfce-sm-client.c \
+	xfce-screensaver.c \
 	xfce-spawn.c \
 	xfce-filename-input.c \
 	xfce-titled-dialog.c
@@ -72,6 +74,7 @@ libxfce4ui_2_la_CFLAGS = \
 	$(GDK_CFLAGS) \
 	$(GTK3_CFLAGS) \
 	$(LIBX11_CFLAGS) \
+	$(XFCONF_CFLAGS) \
 	$(LIBSTARTUP_NOTIFICATION_CFLAGS) \
 	$(LIBXFCE4UTIL_CFLAGS) \
 	$(PLATFORM_CFLAGS)
@@ -89,6 +92,7 @@ libxfce4ui_2_la_LIBADD = \
 	$(GDK_LIBS) \
 	$(GTK3_LIBS) \
 	$(LIBX11_LIBS) \
+	$(XFCONF_LIBS) \
 	$(LIBSTARTUP_NOTIFICATION_LIBS) \
 	$(LIBXFCE4UTIL_LIBS)
 
