@@ -22,15 +22,8 @@
 #include <config.h>
 #endif
 
-#include <glib.h>
-
-#include <X11/Xlib.h>
-
-#include <gtk/gtk.h>
-
 #include <libxfce4util/libxfce4util.h>
 #include <libxfce4ui/libxfce4ui.h>
-#include <xfconf/xfconf.h>
 
 #include <libxfce4kbd-private/xfce-shortcuts.h>
 #include <libxfce4kbd-private/xfce-shortcuts-xfwm4.h>

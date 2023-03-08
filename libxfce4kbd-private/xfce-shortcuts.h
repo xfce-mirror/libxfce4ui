@@ -21,8 +21,7 @@
 #ifndef __XFCE_SHORTCUTS_H__
 #define __XFCE_SHORTCUTS_H__
 
-#include <X11/Xlib.h>
-#include <xfconf/xfconf.h>
+#include <gtk/gtk.h>
 
 G_BEGIN_DECLS
 

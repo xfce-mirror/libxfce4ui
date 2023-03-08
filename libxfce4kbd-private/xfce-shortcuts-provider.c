@@ -69,6 +69,7 @@ static void xfce_shortcuts_provider_property_changed (XfconfChannel             
 
 struct _XfceShortcutsProviderPrivate
 {
+  gboolean       xfconf_initialized;
   XfconfChannel *channel;
   gchar         *name;
   gchar         *default_base_property;
@@ -138,12 +139,22 @@ xfce_shortcuts_provider_class_init (XfceShortcutsProviderClass *klass)
 static void
 xfce_shortcuts_provider_init (XfceShortcutsProvider *provider)
 {
+  GError *error = NULL;
+
   provider->priv = xfce_shortcuts_provider_get_instance_private (provider);
 
-  provider->priv->channel = xfconf_channel_new ("xfce4-keyboard-shortcuts");
-
-  g_signal_connect (provider->priv->channel, "property-changed",
-                    G_CALLBACK (xfce_shortcuts_provider_property_changed), provider);
+  if (! xfconf_init (&error))
+    {
+      g_critical ("Xfconf initialization failed: %s\n", error->message);
+      g_error_free (error);
+    }
+  else
+    {
+      provider->priv->xfconf_initialized = TRUE;
+      provider->priv->channel = xfconf_channel_get ("xfce4-keyboard-shortcuts");
+      g_signal_connect (provider->priv->channel, "property-changed",
+                        G_CALLBACK (xfce_shortcuts_provider_property_changed), provider);
+    }
 }
 
 
@@ -173,7 +184,13 @@ xfce_shortcuts_provider_finalize (GObject *object)
   g_free (provider->priv->custom_base_property);
   g_free (provider->priv->default_base_property);
 
-  g_object_unref (provider->priv->channel);
+  if (provider->priv->xfconf_initialized)
+    {
+      g_signal_handlers_disconnect_by_func (provider->priv->channel,
+                                            xfce_shortcuts_provider_property_changed,
+                                            provider);
+      xfconf_shutdown ();
+    }
 
   (*G_OBJECT_CLASS (xfce_shortcuts_provider_parent_class)->finalize) (object);
 }
@@ -234,6 +251,7 @@ xfce_shortcuts_provider_register (XfceShortcutsProvider *provider)
   const gchar  *name;
 
   g_return_if_fail (XFCE_IS_SHORTCUTS_PROVIDER (provider));
+  g_return_if_fail (XFCONF_IS_CHANNEL (provider->priv->channel));
 
   name = xfce_shortcuts_provider_get_name (provider);
   if (G_UNLIKELY (name == NULL))
