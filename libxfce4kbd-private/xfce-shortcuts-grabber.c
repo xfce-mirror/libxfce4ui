@@ -35,6 +35,7 @@
 #include <gtk/gtk.h>
 
 #include <libxfce4util/libxfce4util.h>
+#include <xfconf/xfconf.h>
 
 #include <libxfce4kbd-private/xfce-shortcuts-grabber.h>
 #include <libxfce4kbd-private/xfce-shortcuts-marshal.h>
@@ -67,6 +68,10 @@ static GdkFilterReturn xfce_shortcuts_grabber_event_filter     (GdkXEvent       
 
 struct _XfceShortcutsGrabberPrivate
 {
+  gboolean xfconf_initialized;
+  XfconfChannel *channel;
+  gboolean ignore_layout_change;
+
   /* Maps a shortcut string to a pointer to XfceKey */
   GHashTable *keys;
 
@@ -165,14 +170,46 @@ xgrab_hash (gconstpointer data)
 
 
 
+static void
+xfce_shortcuts_grabber_ignore_layout_change_changed (XfconfChannel *channel,
+                                                     char *property,
+                                                     GValue *value,
+                                                     gpointer data)
+{
+  XfceShortcutsGrabber *grabber = data;
+
+  if (G_VALUE_TYPE (value) == G_TYPE_INVALID)
+    grabber->priv->ignore_layout_change = FALSE;
+  else
+    grabber->priv->ignore_layout_change = g_value_get_boolean (value);
+}
+
+
 
 static void
 xfce_shortcuts_grabber_init (XfceShortcutsGrabber *grabber)
 {
-  GdkDisplay      *display;
-  GdkKeymap       *keymap;
+  GdkDisplay *display;
+  GdkKeymap *keymap;
+  GError *error = NULL;
 
   grabber->priv = xfce_shortcuts_grabber_get_instance_private (grabber);
+
+  if (! xfconf_init (&error))
+    {
+      g_critical ("Xfconf initialization failed: %s\n", error->message);
+      g_error_free (error);
+    }
+  else
+    {
+      grabber->priv->xfconf_initialized = TRUE;
+      grabber->priv->channel = xfconf_channel_get ("xfce4-keyboard-shortcuts");
+      grabber->priv->ignore_layout_change =
+        xfconf_channel_get_bool (grabber->priv->channel, "/ignore-layout-change", FALSE);
+      g_signal_connect (grabber->priv->channel, "property-changed::/ignore-layout-change",
+                        G_CALLBACK (xfce_shortcuts_grabber_ignore_layout_change_changed), grabber);
+    }
+
   grabber->priv->keys = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, free_key);
   grabber->priv->grabbed_keycodes = g_hash_table_new_full (xgrab_hash, xgrab_equal, xgrab_free, g_free);
 
@@ -205,7 +242,7 @@ xfce_shortcuts_grabber_constructed (GObject *object)
 
   if (G_UNLIKELY (!XkbQueryExtension (xdisplay, 0, &grabber->priv->xkbEventType, 0, 0, 0)))
     grabber->priv->xkbEventType = -1;
-  grabber->priv->xkbStateGroup = -1;
+  grabber->priv->xkbStateGroup = 0;
 
   /* Flush events before adding the event filter */
   XAllowEvents (xdisplay, AsyncBoth, CurrentTime);
@@ -224,6 +261,14 @@ xfce_shortcuts_grabber_finalize (GObject *object)
   xfce_shortcuts_grabber_ungrab_all (grabber);
   g_hash_table_unref (grabber->priv->keys);
   g_hash_table_unref (grabber->priv->grabbed_keycodes);
+
+  if (grabber->priv->xfconf_initialized)
+    {
+      g_signal_handlers_disconnect_by_func (grabber->priv->channel,
+                                            xfce_shortcuts_grabber_ignore_layout_change_changed,
+                                            grabber);
+      xfconf_shutdown ();
+    }
 
   (*G_OBJECT_CLASS (xfce_shortcuts_grabber_parent_class)->finalize) (object);
 }
@@ -447,8 +492,6 @@ xfce_shortcuts_grabber_regrab_all (XfceShortcutsGrabber *grabber)
   numlock_modifier = XkbKeysymToModifiers (xdisplay, GDK_KEY_Num_Lock);
   grabbed_keycodes = grabber->priv->grabbed_keycodes;
   group = grabber->priv->xkbStateGroup;
-  if (G_UNLIKELY (group == -1))
-    group = 0;
 
   regrab = g_new (XfceKey *, g_hash_table_size (grabber->priv->keys));
 
@@ -601,8 +644,6 @@ xfce_shortcuts_grabber_grab (XfceShortcutsGrabber *grabber, XfceKey *key)
   numlock_modifier = XkbKeysymToModifiers (xdisplay, GDK_KEY_Num_Lock);
   grabbed_keycodes = grabber->priv->grabbed_keycodes;
   group = grabber->priv->xkbStateGroup;
-  if (G_UNLIKELY (group == -1))
-    group = 0;
 
   if (!map_virtual_modifiers (keymap, key->modifiers, &non_virtual_modifiers))
     return;
@@ -791,7 +832,7 @@ xfce_shortcuts_grabber_event_filter (GdkXEvent *gdk_xevent,
 
   xevent = (XEvent *) gdk_xevent;
 
-  if (xevent->type == grabber->priv->xkbEventType)
+  if (! grabber->priv->ignore_layout_change && xevent->type == grabber->priv->xkbEventType)
     {
       const XkbEvent *e = (const XkbEvent*) xevent;
       if (e->any.xkb_type == XkbStateNotify)
