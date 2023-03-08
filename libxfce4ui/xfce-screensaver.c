@@ -45,7 +45,7 @@
 #define XFSM_CHANNEL            "xfce4-session"
 #define XFSM_PROPERTIES_PREFIX  "/general/"
 
-static void      xfce_screensvaer_finalize        (GObject         *object);
+static void      xfce_screensaver_finalize        (GObject         *object);
 static void      xfce_screensaver_get_property    (GObject         *object,
                                                    guint            property_id,
                                                    GValue          *value,
@@ -86,6 +86,7 @@ struct _XfceScreensaver
   GDBusProxy *proxy;
   guint screensaver_id;
   ScreensaverType screensaver_type;
+  gboolean xfconf_initialized;
   XfconfChannel *xfpm_channel;
   XfconfChannel *xfsm_channel;
 };
@@ -101,7 +102,7 @@ xfce_screensaver_class_init (XfceScreensaverClass *klass)
 {
   GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
-  object_class->finalize = xfce_screensvaer_finalize;
+  object_class->finalize = xfce_screensaver_finalize;
   object_class->set_property = xfce_screensaver_set_property;
   object_class->get_property = xfce_screensaver_get_property;
 
@@ -183,6 +184,7 @@ xfce_screensaver_init (XfceScreensaver *saver)
     }
   else
     {
+      saver->xfconf_initialized = TRUE;
       saver->xfpm_channel = xfconf_channel_get (XFPM_CHANNEL);
       saver->xfsm_channel = xfconf_channel_get (XFSM_CHANNEL);
     }
@@ -294,7 +296,7 @@ xfce_screensaver_set_property (GObject *object,
 
 
 static void
-xfce_screensvaer_finalize (GObject *object)
+xfce_screensaver_finalize (GObject *object)
 {
   XfceScreensaver *saver = XFCE_SCREENSAVER (object);
 
@@ -320,6 +322,12 @@ xfce_screensvaer_finalize (GObject *object)
     {
       g_free (saver->heartbeat_command);
       saver->heartbeat_command = NULL;
+    }
+
+  if (saver->xfconf_initialized)
+    {
+      xfconf_g_property_unbind_all (saver);
+      xfconf_shutdown ();
     }
 }
 
@@ -350,16 +358,19 @@ xfce_screensaver_new (void)
       saver = g_object_new (XFCE_TYPE_SCREENSAVER, NULL);
       g_object_add_weak_pointer (G_OBJECT (saver), (gpointer *) &saver);
 
-      xfconf_g_property_bind (XFCE_SCREENSAVER (saver)->xfpm_channel,
-                              XFPM_PROPERTIES_PREFIX HEARTBEAT_COMMAND,
-                              G_TYPE_STRING,
-                              G_OBJECT (saver),
-                              HEARTBEAT_COMMAND);
-      xfconf_g_property_bind (XFCE_SCREENSAVER (saver)->xfsm_channel,
-                              XFSM_PROPERTIES_PREFIX "LockCommand",
-                              G_TYPE_STRING,
-                              G_OBJECT (saver),
-                              LOCK_COMMAND);
+      if (XFCE_SCREENSAVER (saver)->xfconf_initialized)
+        {
+          xfconf_g_property_bind (XFCE_SCREENSAVER (saver)->xfpm_channel,
+                                  XFPM_PROPERTIES_PREFIX HEARTBEAT_COMMAND,
+                                  G_TYPE_STRING,
+                                  G_OBJECT (saver),
+                                  HEARTBEAT_COMMAND);
+          xfconf_g_property_bind (XFCE_SCREENSAVER (saver)->xfsm_channel,
+                                  XFSM_PROPERTIES_PREFIX "LockCommand",
+                                  G_TYPE_STRING,
+                                  G_OBJECT (saver),
+                                  LOCK_COMMAND);
+        }
     }
 
   return XFCE_SCREENSAVER (saver);
