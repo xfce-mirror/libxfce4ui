@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <channel name="xfce4-keyboard-shortcuts" version="1.0">
+  <property name="ignore-layout-change" type="bool" value="false"/>
   <property name="commands" type="empty">
     <property name="default" type="empty">
       <property name="&lt;Alt&gt;F1" type="string" value="xfce4-popup-applicationsmenu"/>
