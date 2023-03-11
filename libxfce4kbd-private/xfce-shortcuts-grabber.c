@@ -44,6 +44,20 @@
 #define MODIFIERS_ERROR ((GdkModifierType)(-1))
 #define MODIFIERS_NONE 0
 
+/*
+ * It is not clear what the correct behavior is in this regard, so this is disabled rather
+ * than removed, in order to preserve the changes that took place during cycle 4.17 and to
+ * facilitate a possible reversal of this choice.
+ * The arguments for this deactivation are in essence:
+ * - Xfce users are used to the previous behavior and see this as a regression
+ * - The old behavior better matches the behavior of other keyboard shortcuts in Xfce (xfwm4,
+ *   GTK 3 apps)
+ * - Adding an option for this is like solving a bug by adding an option and therefore does
+ *   not seem to be a good idea
+ * See also https://gitlab.xfce.org/xfce/libxfce4ui/-/merge_requests/91
+ */
+#define TRACK_LAYOUT_CHANGE FALSE
+
 
 typedef struct _XfceKey XfceKey;
 
@@ -205,7 +219,11 @@ xfce_shortcuts_grabber_constructed (GObject *object)
 
   if (G_UNLIKELY (!XkbQueryExtension (xdisplay, 0, &grabber->priv->xkbEventType, 0, 0, 0)))
     grabber->priv->xkbEventType = -1;
+#if TRACK_LAYOUT_CHANGE
   grabber->priv->xkbStateGroup = -1;
+#else
+  grabber->priv->xkbStateGroup = 0;
+#endif
 
   /* Flush events before adding the event filter */
   XAllowEvents (xdisplay, AsyncBoth, CurrentTime);
@@ -791,6 +809,7 @@ xfce_shortcuts_grabber_event_filter (GdkXEvent *gdk_xevent,
 
   xevent = (XEvent *) gdk_xevent;
 
+#if TRACK_LAYOUT_CHANGE
   if (xevent->type == grabber->priv->xkbEventType)
     {
       const XkbEvent *e = (const XkbEvent*) xevent;
@@ -804,6 +823,7 @@ xfce_shortcuts_grabber_event_filter (GdkXEvent *gdk_xevent,
             }
         }
     }
+#endif
 
   if (xevent->type != KeyPress)
     return GDK_FILTER_CONTINUE;
