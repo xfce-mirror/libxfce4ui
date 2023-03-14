@@ -325,10 +325,7 @@ xfce_screensaver_finalize (GObject *object)
     }
 
   if (saver->xfconf_initialized)
-    {
-      xfconf_g_property_unbind_all (saver);
-      xfconf_shutdown ();
-    }
+    xfconf_shutdown ();
 }
 
 
