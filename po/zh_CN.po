@@ -1,20 +1,27 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Xfce Bot <transifex@xfce.org>, 2023
-# 
-#, fuzzy
+# Chipong Luo <chipong.luo@yahoo.com>, 2011-2012
+# Chris K. Zhang <plutino@gmail.com>, 2009
+# dylanchu <chudongyu@126.com>, 2019
+# Hunt Xu <mhuntxu@gmail.com>, 2009-2010,2012
+# Levi Zhou <congzhou821@gmail.com>, 2016
+# Mingcong Bai <jeffbai@aosc.xyz>, 2015-2016
+# Cally Mal <zhouxiaobo.500@gmail.com>, 2017
+# Zhou Yuheng <wojiushixxx@126.com>, 2022
+# 浩翔 赵 <1637979429@qq.com>, 2023
+# 玉堂白鹤 <yjwork@qq.com>, 2015,2017,2019-2022
+# Mingcong Bai <jeffbai@aosc.xyz>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: libxfce4ui\n"
+"Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-20 12:56+0100\n"
-"PO-Revision-Date: 2023-02-20 11:56+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>, 2023\n"
-"Language-Team: Chinese (China) (https://www.transifex.com/xfce/teams/16840/zh_CN/)\n"
+"POT-Creation-Date: 2022-11-28 14:58+0100\n"
+"PO-Revision-Date: 2013-07-02 20:33+0000\n"
+"Last-Translator: 浩翔 赵 <1637979429@qq.com>, 2023\n"
+"Language-Team: Chinese (China) (http://www.transifex.com/xfce/libxfce4ui/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -23,7 +30,7 @@ msgstr ""
 
 #: ../libxfce4ui/xfce-dialogs.c:110
 msgid "Failed to open web browser for online documentation"
-msgstr "无法打开网络浏览器以获取在线文档"
+msgstr "无法打开网络浏览器来获取在线文档"
 
 #: ../libxfce4ui/xfce-dialogs.c:265
 #, c-format
@@ -144,15 +151,15 @@ msgid ""
 msgstr "工作目录 \"%s\" 不存在。启动 \"%s\" 时不会使用它。"
 
 #. retrieve the error and warning messages
-#: ../libxfce4ui/xfce-filename-input.c:232
+#: ../libxfce4ui/xfce-filename-input.c:233
 msgid "Filename is too long"
 msgstr "文件名太长"
 
-#: ../libxfce4ui/xfce-filename-input.c:233
+#: ../libxfce4ui/xfce-filename-input.c:234
 msgid "Directory separator illegal in file name"
 msgstr "文件名中的目录分隔符非法"
 
-#: ../libxfce4ui/xfce-filename-input.c:234
+#: ../libxfce4ui/xfce-filename-input.c:235
 msgid "Filenames should not start or end with a space"
 msgstr "文件名不应以空格开头或结尾"
 
@@ -279,9 +286,9 @@ msgstr "按键触发 %s '%s'."
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:295
 msgid "Please press a key"
-msgstr "请按一个键"
+msgstr "请按下一个键"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:350
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:349
 msgid "Could not grab the keyboard."
 msgstr "未能捕获键盘输入。"
 
@@ -718,9 +725,7 @@ msgstr "请参阅 <https://www.xfce.org/about/credits>"
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
-msgstr ""
-"如果您知道此列表漏掉了某个人，请毫不犹豫地在 <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> "
-"上提交缺陷。"
+msgstr "如果您知道此列表遗漏了某个人，请毫不犹豫地在 <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> 上提交缺陷。"
 
 #: ../xfce4-about/main.c:316
 msgid "Thanks to all who helped making this software available!"
@@ -738,9 +743,7 @@ msgid ""
 "terms of the GNU Library General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
-msgstr ""
-"libxfce4ui、libxfce4util 和 exo 软件包以自由软件基金会发布的 GNU 宽通用公共许可协议第 2 "
-"版或按（您可以选择的）更高版本发布。"
+msgstr "libxfce4ui、libxfce4util 和 exo 软件包以自由软件基金会发布的 GNU 宽通用公共许可协议第 2 版或按（您可以选择的）更高版本发布。"
 
 #: ../xfce4-about/main.c:345
 msgid ""
@@ -749,9 +752,7 @@ msgid ""
 "of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
-"thunar、xfce4-appfinder、xfce4-panel、xfce4-session、xfce4-settings、xfconf、xfdesktop"
-" 和 xfwm4 软件包以自由软件基金会发布的 GNU 通用公共许可协议的第 2 版或按（您可以选择的）更高版本发布。"
+msgstr "thunar、xfce4-appfinder、xfce4-panel、xfce4-session、xfce4-settings、xfconf、xfdesktop 和 xfwm4 软件包以自由软件基金会发布的 GNU 通用公共许可协议的第 2 版或按（您可以选择的）更高版本发布。"
 
 #: ../xfce4-about/main.c:491
 #, c-format
@@ -778,31 +779,31 @@ msgstr "无法载入界面"
 #. { N_("Project Lead"),
 #. xfce_contributors_lead
 #. },
-#: ../xfce4-about/contributors.h:144
+#: ../xfce4-about/contributors.h:136
 msgid "Core developers"
 msgstr "核心开发者"
 
-#: ../xfce4-about/contributors.h:147
+#: ../xfce4-about/contributors.h:139
 msgid "Active contributors"
 msgstr "活跃贡献者"
 
-#: ../xfce4-about/contributors.h:150
+#: ../xfce4-about/contributors.h:142
 msgid "Servers maintained by"
 msgstr "服务器维护者"
 
-#: ../xfce4-about/contributors.h:153
+#: ../xfce4-about/contributors.h:145
 msgid "Translations supervision"
 msgstr "翻译管理"
 
-#: ../xfce4-about/contributors.h:156
+#: ../xfce4-about/contributors.h:148
 msgid "Documentation supervision"
 msgstr "文档管理"
 
-#: ../xfce4-about/contributors.h:159
+#: ../xfce4-about/contributors.h:151
 msgid "Translators"
 msgstr "翻译者"
 
-#: ../xfce4-about/contributors.h:162
+#: ../xfce4-about/contributors.h:154
 msgid "Previous contributors"
 msgstr "先前的贡献者"
 
@@ -882,9 +883,7 @@ msgstr "系统"
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
-msgstr ""
-"Xfce 是一个提供全功能桌面环境的程序集。\n"
-"以下程序是 Xfce 核心的部分："
+msgstr "Xfce 是一个提供全功能桌面环境的程序集。\n以下程序是 Xfce 核心的部分："
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:19
 msgid ""
@@ -895,14 +894,7 @@ msgid ""
 "Thank you for your interest in Xfce.\n"
 "\n"
 "\t- The Xfce Development Team"
-msgstr ""
-"Xfce 还是一个开发平台，提供了多个库，可帮助程序员创建与桌面环境相适应的应用程序。\n"
-"\n"
-"Xfce 组件以自由或开源许可协议授权；应用程序以 GPL 或 BSDL，库文件以 LGPL 或BSDL 授权。浏览文档、源代码或 Xfce 站点 (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) 以获取详情。\n"
-"\n"
-"感谢您对 Xfce 的关注。\n"
-"\n"
-"\t- Xfce 开发团队"
+msgstr "Xfce 还是一个开发平台，提供了多个库，可帮助程序员创建与桌面环境相适应的应用程序。\n\nXfce 组件以自由或开源许可协议授权；应用程序以 GPL 或 BSDL，库文件以 LGPL 或BSDL 授权。浏览文档、源代码或 Xfce 站点 (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) 以获取详情。\n\n感谢您对 Xfce 的关注。\n\n\t- Xfce 开发团队"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:26
 msgid "About"
