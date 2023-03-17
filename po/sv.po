@@ -1,20 +1,20 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Daniel Nylander <po@danielnylander.se>, 2008-2009
-# Luna Jernberg <bittin@cafe8bitar.se>, 2020-2022
-# Påvel Nicklasson <pavel2@frimix.se>, 2015,2018
-# Påvel Nicklasson<pavel@frimix.se>, 2015
+# Xfce Bot <transifex@xfce.org>, 2023
+# 
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Libxfce4ui\n"
+"Project-Id-Version: libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-28 14:58+0100\n"
-"PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Luna Jernberg <bittin@cafe8bitar.se>, 2020-2022\n"
-"Language-Team: Swedish (http://www.transifex.com/xfce/libxfce4ui/language/sv/)\n"
+"POT-Creation-Date: 2023-02-20 12:56+0100\n"
+"PO-Revision-Date: 2023-02-20 11:56+0000\n"
+"Last-Translator: Xfce Bot <transifex@xfce.org>, 2023\n"
+"Language-Team: Swedish (https://www.transifex.com/xfce/teams/16840/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -38,7 +38,9 @@ msgstr "Vill du läsa manualen online?"
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
-msgstr "Du kommer att skickas vidare till hemsidan för dokumentation där hjälpsidorna finns och översätts."
+msgstr ""
+"Du kommer att skickas vidare till hemsidan för dokumentation där "
+"hjälpsidorna finns och översätts."
 
 #. Create cancel button
 #: ../libxfce4ui/xfce-dialogs.c:275 ../libxfce4ui/xfce-dialogs.c:533
@@ -80,14 +82,18 @@ msgstr "Stäng fönster med flera flikar?"
 msgid ""
 "This window has multiple tabs open. Closing this window will also close all "
 "its tabs."
-msgstr "Detta fönster har flera flikar öppna. Att stänga fönstret kommer också att stänga alla dess flikar."
+msgstr ""
+"Detta fönster har flera flikar öppna. Att stänga fönstret kommer också att "
+"stänga alla dess flikar."
 
 #: ../libxfce4ui/xfce-dialogs.c:523
 #, c-format
 msgid ""
 "This window has %d tabs open. Closing this window will also close all its "
 "tabs."
-msgstr "Detta fönster har %d flikar öppna.  Att stänga detta fönster kommer också att stänga alla dess flikar."
+msgstr ""
+"Detta fönster har %d flikar öppna.  Att stänga detta fönster kommer också "
+"att stänga alla dess flikar."
 
 #: ../libxfce4ui/xfce-dialogs.c:529
 msgid "Warning"
@@ -141,18 +147,20 @@ msgstr "Sessionshanteraren returnerade inte ett giltigt klient-id"
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
 "\"%s\"."
-msgstr "Arbetskatalogen \"%s\" finns inte. Den kommer inte att användas när \"%s\" startas."
+msgstr ""
+"Arbetskatalogen \"%s\" finns inte. Den kommer inte att användas när \"%s\" "
+"startas."
 
 #. retrieve the error and warning messages
-#: ../libxfce4ui/xfce-filename-input.c:233
+#: ../libxfce4ui/xfce-filename-input.c:232
 msgid "Filename is too long"
 msgstr "Filnamnet är för långt"
 
-#: ../libxfce4ui/xfce-filename-input.c:234
+#: ../libxfce4ui/xfce-filename-input.c:233
 msgid "Directory separator illegal in file name"
 msgstr "Katalogavgränsare olagligt i filnamn"
 
-#: ../libxfce4ui/xfce-filename-input.c:235
+#: ../libxfce4ui/xfce-filename-input.c:234
 msgid "Filenames should not start or end with a space"
 msgstr "Filnamn ska inte börja eller sluta med ett mellanslag"
 
@@ -161,7 +169,9 @@ msgstr "Filnamn ska inte börja eller sluta med ett mellanslag"
 msgid ""
 "This shortcut is already being used for the action '%s'. Which action do you"
 " want to use?"
-msgstr "Denna genväg används redan för funktionen '%s'. Vilken funktion vill du använda?"
+msgstr ""
+"Denna genväg används redan för funktionen '%s'. Vilken funktion vill du "
+"använda?"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:54
 #: ../libxfce4kbd-private/xfce-shortcuts.c:57
@@ -185,14 +195,18 @@ msgstr "Behåll \"%s\""
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr "Denna genväg används redan för kommandot '%s'. Vilken åtgärd vill du använda?"
+msgstr ""
+"Denna genväg används redan för kommandot '%s'. Vilken åtgärd vill du "
+"använda?"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:62
 #, c-format
 msgid ""
 "This shortcut is already being used by the action '%s'. Which action do you "
 "want to use?"
-msgstr "Denna genväg används redan av funktionen '%s'. Vilken funktion vill du använda?"
+msgstr ""
+"Denna genväg används redan av funktionen '%s'. Vilken funktion vill du "
+"använda?"
 
 #. This shortcut already exists in the provider, we don't want it twice
 #. Warn the user
@@ -281,7 +295,7 @@ msgstr "Tryck på tangentbordstangenterna för att utlösa %s '%s'."
 msgid "Please press a key"
 msgstr "Tryck på en tangent"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:349
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:350
 msgid "Could not grab the keyboard."
 msgstr "Det gick inte att fånga tangentbordet."
 
@@ -668,7 +682,9 @@ msgstr "Sessionshanterare"
 #: ../xfce4-about/main.c:172
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
-msgstr "Sparar och återställer din session, hanterar start, autostart och avstängning."
+msgstr ""
+"Sparar och återställer din session, hanterar start, autostart och "
+"avstängning."
 
 #: ../xfce4-about/main.c:176
 msgid "Settings Manager"
@@ -700,7 +716,8 @@ msgstr "Ett meny bibliotek"
 
 #: ../xfce4-about/main.c:192
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
-msgstr "Implementerar en freedesktop.org-kompatibel meny baserad på GLib och GIO."
+msgstr ""
+"Implementerar en freedesktop.org-kompatibel meny baserad på GLib och GIO."
 
 #: ../xfce4-about/main.c:196
 msgid "Thumbnails Service"
@@ -718,17 +735,22 @@ msgstr "Titta på <https://www.xfce.org/about/credits>"
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
-msgstr "Om du känner till någon som saknas från den här listan; tveka inte att posta en felrapport på <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
+msgstr ""
+"Om du känner till någon som saknas från den här listan; tveka inte att posta"
+" en felrapport på <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 
 #: ../xfce4-about/main.c:316
 msgid "Thanks to all who helped making this software available!"
-msgstr "Tack till alla som hjälpt till att göra denna programvara tillgänglig!"
+msgstr ""
+"Tack till alla som hjälpt till att göra denna programvara tillgänglig!"
 
 #: ../xfce4-about/main.c:333
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
-msgstr "Xfce 4 är copyright Olivier Fourdan (fourdan@xfce.org). De olika komponenterna är skyddade av upphovsrätt av deras respektive författare."
+msgstr ""
+"Xfce 4 är copyright Olivier Fourdan (fourdan@xfce.org). De olika "
+"komponenterna är skyddade av upphovsrätt av deras respektive författare."
 
 #: ../xfce4-about/main.c:338
 msgid ""
@@ -736,7 +758,11 @@ msgid ""
 "terms of the GNU Library General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
-msgstr "libxfce4ui, libxfce4util och exo paketen distribueras under villkoren i GNU Library General Public License såsom publicerad av the Free Software Foundation; antingen version 2 av licensen, eller (om du så önskar) någon senare version."
+msgstr ""
+"libxfce4ui, libxfce4util och exo paketen distribueras under villkoren i GNU "
+"Library General Public License såsom publicerad av the Free Software "
+"Foundation; antingen version 2 av licensen, eller (om du så önskar) någon "
+"senare version."
 
 #: ../xfce4-about/main.c:345
 msgid ""
@@ -745,7 +771,12 @@ msgid ""
 "of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr "Paketen: thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop och xfwm4 distribueras under villkoren i GNU General Public License såsom publicerade av the Free Software Foundation; antingen version 2 av licensen, eller (om du så önskar) någon senare version."
+msgstr ""
+"Paketen: thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
+"xfce4-settings, xfconf, xfdesktop och xfwm4 distribueras under villkoren i "
+"GNU General Public License såsom publicerade av the Free Software "
+"Foundation; antingen version 2 av licensen, eller (om du så önskar) någon "
+"senare version."
 
 #: ../xfce4-about/main.c:491
 #, c-format
@@ -772,31 +803,31 @@ msgstr "Misslyckades läsa in gränssnittet"
 #. { N_("Project Lead"),
 #. xfce_contributors_lead
 #. },
-#: ../xfce4-about/contributors.h:136
+#: ../xfce4-about/contributors.h:144
 msgid "Core developers"
 msgstr "Kärnutvecklare"
 
-#: ../xfce4-about/contributors.h:139
+#: ../xfce4-about/contributors.h:147
 msgid "Active contributors"
 msgstr "Aktiva bidragsgivare"
 
-#: ../xfce4-about/contributors.h:142
+#: ../xfce4-about/contributors.h:150
 msgid "Servers maintained by"
 msgstr "Servrar tillhandahållna av"
 
-#: ../xfce4-about/contributors.h:145
+#: ../xfce4-about/contributors.h:153
 msgid "Translations supervision"
 msgstr "Tillsyn översättningar"
 
-#: ../xfce4-about/contributors.h:148
+#: ../xfce4-about/contributors.h:156
 msgid "Documentation supervision"
 msgstr "Tillsyn Dokumentation"
 
-#: ../xfce4-about/contributors.h:151
+#: ../xfce4-about/contributors.h:159
 msgid "Translators"
 msgstr "Översättare"
 
-#: ../xfce4-about/contributors.h:154
+#: ../xfce4-about/contributors.h:162
 msgid "Previous contributors"
 msgstr "Tidigare bidragsgivare"
 
@@ -876,7 +907,9 @@ msgstr "System"
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
-msgstr "Xfce är en samling av program som tillsammans tillhandahåller en komplett skrivbordsmiljö. Följande program är delar av Xfce:s kärna:"
+msgstr ""
+"Xfce är en samling av program som tillsammans tillhandahåller en komplett "
+"skrivbordsmiljö. Följande program är delar av Xfce:s kärna:"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:19
 msgid ""
@@ -887,7 +920,14 @@ msgid ""
 "Thank you for your interest in Xfce.\n"
 "\n"
 "\t- The Xfce Development Team"
-msgstr "Xfce är också en utvecklingsplattform med flera bibliotek som hjälper programmerare att ska program som passar bra in i skrivbordsmiljön.\n\nXfce-komponenter är licensierade under fria öppenkällkodslicenser GPL eller BSDL för program och LGPL eller BSDL för bibliotek. Titta i dokumentationen, källkoden eller på Xfce:s hemsida (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) för mer information.\n\nTack för du visar intresse för Xfce.\n\n\t-Xfce-utvecklingsteamet"
+msgstr ""
+"Xfce är också en utvecklingsplattform med flera bibliotek som hjälper programmerare att ska program som passar bra in i skrivbordsmiljön.\n"
+"\n"
+"Xfce-komponenter är licensierade under fria öppenkällkodslicenser GPL eller BSDL för program och LGPL eller BSDL för bibliotek. Titta i dokumentationen, källkoden eller på Xfce:s hemsida (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) för mer information.\n"
+"\n"
+"Tack för du visar intresse för Xfce.\n"
+"\n"
+"\t-Xfce-utvecklingsteamet"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:26
 msgid "About"
@@ -946,7 +986,9 @@ msgstr "%s; Bygg ID: %s"
 msgid ""
 "A file named \"%s\" already exists in this directory, the file hasn't been "
 "added."
-msgstr "En fil med namnet \"%s\" finns redan i den här katalogen, filen har inte lagts till."
+msgstr ""
+"En fil med namnet \"%s\" finns redan i den här katalogen, filen har inte "
+"lagts till."
 
 #: ../tests/test-ui.c:122
 msgid "Failed to migrate the old panel configuration"
