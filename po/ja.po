@@ -1,18 +1,20 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Nobuhiro Iwamatsu <iwamatsu@nigauri.org>, 2008,2016-2017,2019-2020
-# UTUMI Hirosi <utuhiro78@yahoo.co.jp>, 2020-2022
+# Xfce Bot <transifex@xfce.org>, 2023
+# 
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Libxfce4ui\n"
+"Project-Id-Version: libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-28 14:58+0100\n"
-"PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: UTUMI Hirosi <utuhiro78@yahoo.co.jp>, 2020-2022\n"
-"Language-Team: Japanese (http://www.transifex.com/xfce/libxfce4ui/language/ja/)\n"
+"POT-Creation-Date: 2023-02-20 12:56+0100\n"
+"PO-Revision-Date: 2023-02-20 11:56+0000\n"
+"Last-Translator: Xfce Bot <transifex@xfce.org>, 2023\n"
+"Language-Team: Japanese (https://www.transifex.com/xfce/teams/16840/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -142,15 +144,15 @@ msgid ""
 msgstr "作業ディレクトリ \"%s\" が存在しません。\"%s\" 起動時にこれは使用されません。"
 
 #. retrieve the error and warning messages
-#: ../libxfce4ui/xfce-filename-input.c:233
+#: ../libxfce4ui/xfce-filename-input.c:232
 msgid "Filename is too long"
 msgstr "ファイル名が長すぎます"
 
-#: ../libxfce4ui/xfce-filename-input.c:234
+#: ../libxfce4ui/xfce-filename-input.c:233
 msgid "Directory separator illegal in file name"
 msgstr "ファイル名のディレクトリ区切り文字が無効です"
 
-#: ../libxfce4ui/xfce-filename-input.c:235
+#: ../libxfce4ui/xfce-filename-input.c:234
 msgid "Filenames should not start or end with a space"
 msgstr "ファイル名の先頭または末尾にスペースを使用しないでください"
 
@@ -279,7 +281,7 @@ msgstr "%s '%s' のトリガーにするキーを押してください。"
 msgid "Please press a key"
 msgstr "キーを押してください"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:349
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:350
 msgid "Could not grab the keyboard."
 msgstr "キーボードを取得できませんでした。"
 
@@ -716,7 +718,9 @@ msgstr "<https://www.xfce.org/about/credits> をご覧ください"
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
-msgstr "このリストに記載ミスがある場合は、<https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> までバグとしてお知らせください。"
+msgstr ""
+"このリストに記載ミスがある場合は、<https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> "
+"までバグとしてお知らせください。"
 
 #: ../xfce4-about/main.c:316
 msgid "Thanks to all who helped making this software available!"
@@ -726,7 +730,9 @@ msgstr "このソフトウェアを利用できるよう協力して下さった
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
-msgstr "Xfce の著作権は Olivier Fourdan (fourdan@xfce.org) が保有しています。各コンポーネントの著作権はそれぞれの製作者が保有しています。"
+msgstr ""
+"Xfce の著作権は Olivier Fourdan (fourdan@xfce.org) "
+"が保有しています。各コンポーネントの著作権はそれぞれの製作者が保有しています。"
 
 #: ../xfce4-about/main.c:338
 msgid ""
@@ -734,7 +740,9 @@ msgid ""
 "terms of the GNU Library General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
-msgstr "libxfce4ui、libxfce4util、および exo の各パッケージは、フリーソフトウェア財団によって発行された GNU ライブラリ一般公衆使用許諾契約書 (バージョン2か、希望によってはそれ以降のバージョンのうちどれか) の定める条件下で配布されています。"
+msgstr ""
+"libxfce4ui、libxfce4util、および exo の各パッケージは、フリーソフトウェア財団によって発行された GNU "
+"ライブラリ一般公衆使用許諾契約書 (バージョン2か、希望によってはそれ以降のバージョンのうちどれか) の定める条件下で配布されています。"
 
 #: ../xfce4-about/main.c:345
 msgid ""
@@ -743,7 +751,10 @@ msgid ""
 "of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr "thunar、xfce4-appfinder、xfce4-panel、xfce4-session、xfce4-settings、xfconf、xfdesktop および xfwm4 の各パッケージは、フリーソフトウェア財団によって発行された GNU ライブラリ一般公衆使用許諾契約書 (バージョン2か、希望によってはそれ以降のバージョンのうちどれか) の定める条件下で配布されています。"
+msgstr ""
+"thunar、xfce4-appfinder、xfce4-panel、xfce4-session、xfce4-settings、xfconf、xfdesktop"
+" および xfwm4 の各パッケージは、フリーソフトウェア財団によって発行された GNU ライブラリ一般公衆使用許諾契約書 "
+"(バージョン2か、希望によってはそれ以降のバージョンのうちどれか) の定める条件下で配布されています。"
 
 #: ../xfce4-about/main.c:491
 #, c-format
@@ -770,31 +781,31 @@ msgstr "インターフェイスの読込みに失敗しました"
 #. { N_("Project Lead"),
 #. xfce_contributors_lead
 #. },
-#: ../xfce4-about/contributors.h:136
+#: ../xfce4-about/contributors.h:144
 msgid "Core developers"
 msgstr "中心開発者"
 
-#: ../xfce4-about/contributors.h:139
+#: ../xfce4-about/contributors.h:147
 msgid "Active contributors"
 msgstr "現在の協力者"
 
-#: ../xfce4-about/contributors.h:142
+#: ../xfce4-about/contributors.h:150
 msgid "Servers maintained by"
 msgstr "サーバーの管理"
 
-#: ../xfce4-about/contributors.h:145
+#: ../xfce4-about/contributors.h:153
 msgid "Translations supervision"
 msgstr "翻訳の監修"
 
-#: ../xfce4-about/contributors.h:148
+#: ../xfce4-about/contributors.h:156
 msgid "Documentation supervision"
 msgstr "ドキュメントの監修"
 
-#: ../xfce4-about/contributors.h:151
+#: ../xfce4-about/contributors.h:159
 msgid "Translators"
 msgstr "翻訳者"
 
-#: ../xfce4-about/contributors.h:154
+#: ../xfce4-about/contributors.h:162
 msgid "Previous contributors"
 msgstr "以前の協力者"
 
@@ -874,7 +885,9 @@ msgstr "システム"
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
-msgstr "Xfceは、すべての機能を備えたデスクトップ環境を提供するプログラムのコレクションです。\n以下のプログラムはXfceコアの一部です:"
+msgstr ""
+"Xfceは、すべての機能を備えたデスクトップ環境を提供するプログラムのコレクションです。\n"
+"以下のプログラムはXfceコアの一部です:"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:19
 msgid ""
@@ -885,7 +898,14 @@ msgid ""
 "Thank you for your interest in Xfce.\n"
 "\n"
 "\t- The Xfce Development Team"
-msgstr "Xfceは、プログラマーがデスクトップ環境にうまく適合するアプリケーションを作成するのに役立ついくつかのライブラリーを提供する開発プラットフォームでもあります。\n\nXfceコンポーネントは、フリーまたはオープンソースのライセンスに基づいてライセンスされます。アプリケーションの場合はGPLまたはBSDL、ライブラリの場合はLGPLまたはBSDLです。詳細についてはドキュメント、ソースコード、またはXfce Webサイト (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) をご覧ください。\n\nXfceに関心をお寄せいただきありがとうございます。\n\n\t- Xfce開発チーム"
+msgstr ""
+"Xfceは、プログラマーがデスクトップ環境にうまく適合するアプリケーションを作成するのに役立ついくつかのライブラリーを提供する開発プラットフォームでもあります。\n"
+"\n"
+"Xfceコンポーネントは、フリーまたはオープンソースのライセンスに基づいてライセンスされます。アプリケーションの場合はGPLまたはBSDL、ライブラリの場合はLGPLまたはBSDLです。詳細についてはドキュメント、ソースコード、またはXfce Webサイト (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) をご覧ください。\n"
+"\n"
+"Xfceに関心をお寄せいただきありがとうございます。\n"
+"\n"
+"\t- Xfce開発チーム"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:26
 msgid "About"
