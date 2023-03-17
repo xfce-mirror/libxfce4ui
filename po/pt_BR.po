@@ -1,26 +1,20 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Andre Miranda <andre42m@gmail.com>, 2017,2019,2021-2022
-# Andre Miranda <andre42m@gmail.com>, 2016
-# Andre Miranda <andre42m@gmail.com>, 2015
-# Giálisson Rocha, 2020
-# Fábio Nogueira <deb-user-ba@ubuntu.com>, 2008
-# Lucas Wilm <lucaswilm@gmail.com>, 2020
-# Michael Martins <michaelfm21@gmail.com>, 2019-2020
-# Rafael Fontenelle <rffontenelle@gmail.com>, 2019
-# The Cat, 2020
-# Wellington Almeida <wsalmeida6@gmail.com>, 2021
+# Xfce Bot <transifex@xfce.org>, 2023
+# 
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Libxfce4ui\n"
+"Project-Id-Version: libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-28 14:58+0100\n"
-"PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Andre Miranda <andre42m@gmail.com>, 2017,2019,2021-2022\n"
-"Language-Team: Portuguese (Brazil) (http://www.transifex.com/xfce/libxfce4ui/language/pt_BR/)\n"
+"POT-Creation-Date: 2023-02-20 12:56+0100\n"
+"PO-Revision-Date: 2023-02-20 11:56+0000\n"
+"Last-Translator: Xfce Bot <transifex@xfce.org>, 2023\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/xfce/teams/16840/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -44,7 +38,9 @@ msgstr "Você quer ler o manual online?"
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
-msgstr "Você será redirecionado ao site de documentação, onde as páginas de ajuda são mantidas e traduzidas."
+msgstr ""
+"Você será redirecionado ao site de documentação, onde as páginas de ajuda "
+"são mantidas e traduzidas."
 
 #. Create cancel button
 #: ../libxfce4ui/xfce-dialogs.c:275 ../libxfce4ui/xfce-dialogs.c:533
@@ -86,14 +82,18 @@ msgstr "Fechar janela com várias abas?"
 msgid ""
 "This window has multiple tabs open. Closing this window will also close all "
 "its tabs."
-msgstr "Esta janela possui múltiplas abas abertas. Fechar esta janela também fechará todas as suas abas."
+msgstr ""
+"Esta janela possui múltiplas abas abertas. Fechar esta janela também fechará"
+" todas as suas abas."
 
 #: ../libxfce4ui/xfce-dialogs.c:523
 #, c-format
 msgid ""
 "This window has %d tabs open. Closing this window will also close all its "
 "tabs."
-msgstr "Esta janela tem %d abas abertas. Fechar esta janela também fechará todas as suas abas."
+msgstr ""
+"Esta janela tem %d abas abertas. Fechar esta janela também fechará todas as "
+"suas abas."
 
 #: ../libxfce4ui/xfce-dialogs.c:529
 msgid "Warning"
@@ -147,18 +147,20 @@ msgstr "O gerenciador de sessão não retornou um ID de cliente válido"
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
 "\"%s\"."
-msgstr "O diretório de trabalho \"%s\" não existe. Ele não será usado quando gerando \"%s\"."
+msgstr ""
+"O diretório de trabalho \"%s\" não existe. Ele não será usado quando gerando"
+" \"%s\"."
 
 #. retrieve the error and warning messages
-#: ../libxfce4ui/xfce-filename-input.c:233
+#: ../libxfce4ui/xfce-filename-input.c:232
 msgid "Filename is too long"
 msgstr "Nome do arquivo é muito longo"
 
-#: ../libxfce4ui/xfce-filename-input.c:234
+#: ../libxfce4ui/xfce-filename-input.c:233
 msgid "Directory separator illegal in file name"
 msgstr "Separador de diretório ilegal em nome do arquivo"
 
-#: ../libxfce4ui/xfce-filename-input.c:235
+#: ../libxfce4ui/xfce-filename-input.c:234
 msgid "Filenames should not start or end with a space"
 msgstr "Nomes de arquivos não devem começar ou terminar com um espaço"
 
@@ -191,7 +193,8 @@ msgstr "Manter \"%s\""
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr "Este atalho já está em uso pelo comando \"%s\". Qual ação você deseja usar?"
+msgstr ""
+"Este atalho já está em uso pelo comando \"%s\". Qual ação você deseja usar?"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:62
 #, c-format
@@ -287,7 +290,7 @@ msgstr "Pressione as teclas para executar %s '%s'."
 msgid "Please press a key"
 msgstr "Por favor, pressione uma tecla"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:349
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:350
 msgid "Could not grab the keyboard."
 msgstr "Não foi possível capturar o teclado:"
 
@@ -641,7 +644,9 @@ msgstr "Painel"
 
 #: ../xfce4-about/main.c:152
 msgid "Provides a home for window buttons, launchers, app menu and more."
-msgstr "Fornece um lugar para os botões de janela, lançadores, menu de aplicações e mais."
+msgstr ""
+"Fornece um lugar para os botões de janela, lançadores, menu de aplicações e "
+"mais."
 
 #: ../xfce4-about/main.c:156
 msgid "Desktop Manager"
@@ -674,7 +679,9 @@ msgstr "Gerenciador de sessão"
 #: ../xfce4-about/main.c:172
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
-msgstr "Salva e restaura sua sessão, controla inicialização, início automático e desligamento."
+msgstr ""
+"Salva e restaura sua sessão, controla inicialização, início automático e "
+"desligamento."
 
 #: ../xfce4-about/main.c:176
 msgid "Settings Manager"
@@ -698,7 +705,8 @@ msgstr "Daemon de configurações"
 
 #: ../xfce4-about/main.c:187
 msgid "Stores your settings in a D-Bus-based configuration system."
-msgstr "Armazena suas configurações em um sistema de configuração baseado em D-Bus."
+msgstr ""
+"Armazena suas configurações em um sistema de configuração baseado em D-Bus."
 
 #: ../xfce4-about/main.c:191
 msgid "A Menu Library"
@@ -706,7 +714,8 @@ msgstr "Uma Biblioteca de Menus"
 
 #: ../xfce4-about/main.c:192
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
-msgstr "Implementa um menu compatível com freedesktop.org baseado em GLib e GIO."
+msgstr ""
+"Implementa um menu compatível com freedesktop.org baseado em GLib e GIO."
 
 #: ../xfce4-about/main.c:196
 msgid "Thumbnails Service"
@@ -724,17 +733,22 @@ msgstr "Consulte <https://www.xfce.org/about/credits>"
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
-msgstr "Se você conhece alguém que está faltando nesta lista, não hesite e registre um relatório de erro em <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues>"
+msgstr ""
+"Se você conhece alguém que está faltando nesta lista, não hesite e registre "
+"um relatório de erro em <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues>"
 
 #: ../xfce4-about/main.c:316
 msgid "Thanks to all who helped making this software available!"
-msgstr "Obrigado a todos aqueles que ajudaram tornar este software disponível."
+msgstr ""
+"Obrigado a todos aqueles que ajudaram tornar este software disponível."
 
 #: ../xfce4-about/main.c:333
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
-msgstr "O Xfce 4 é uma marca registrada de Olivier Fourdan (fourdan@xfce.org). Os componentes diferentes são marcas registradas de seus respectivos autores."
+msgstr ""
+"O Xfce 4 é uma marca registrada de Olivier Fourdan (fourdan@xfce.org). Os "
+"componentes diferentes são marcas registradas de seus respectivos autores."
 
 #: ../xfce4-about/main.c:338
 msgid ""
@@ -742,7 +756,11 @@ msgid ""
 "terms of the GNU Library General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
-msgstr "Os pacotes libxfce4ui, libxfce4util e exo são distribuídos sob os termos da Licença Pública Geral de Biblioteca GNU como publicado pela Free Software Foundation, assim como a versão 2 da licença ou (à sua opção) qualquer versão posterior."
+msgstr ""
+"Os pacotes libxfce4ui, libxfce4util e exo são distribuídos sob os termos da "
+"Licença Pública Geral de Biblioteca GNU como publicado pela Free Software "
+"Foundation, assim como a versão 2 da licença ou (à sua opção) qualquer "
+"versão posterior."
 
 #: ../xfce4-about/main.c:345
 msgid ""
@@ -751,7 +769,12 @@ msgid ""
 "of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr "Os pacotes thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfce-xfconf, xfdesktop e xfwm4 são distribuídos sob os termos da Licença Pública Geral GNU como publicado pela Free Software Foundation, assim como a versão 2 da licença ou (à sua opção) qualquer versão posterior."
+msgstr ""
+"Os pacotes thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
+"xfce4-settings, xfce-xfconf, xfdesktop e xfwm4 são distribuídos sob os "
+"termos da Licença Pública Geral GNU como publicado pela Free Software "
+"Foundation, assim como a versão 2 da licença ou (à sua opção) qualquer "
+"versão posterior."
 
 #: ../xfce4-about/main.c:491
 #, c-format
@@ -778,31 +801,31 @@ msgstr "Falhou ao carregar a interface"
 #. { N_("Project Lead"),
 #. xfce_contributors_lead
 #. },
-#: ../xfce4-about/contributors.h:136
+#: ../xfce4-about/contributors.h:144
 msgid "Core developers"
 msgstr "Desenvolvedores principais"
 
-#: ../xfce4-about/contributors.h:139
+#: ../xfce4-about/contributors.h:147
 msgid "Active contributors"
 msgstr "Contribuidores ativos"
 
-#: ../xfce4-about/contributors.h:142
+#: ../xfce4-about/contributors.h:150
 msgid "Servers maintained by"
 msgstr "Servidores mantidos por"
 
-#: ../xfce4-about/contributors.h:145
+#: ../xfce4-about/contributors.h:153
 msgid "Translations supervision"
 msgstr "Supervisão de traduções"
 
-#: ../xfce4-about/contributors.h:148
+#: ../xfce4-about/contributors.h:156
 msgid "Documentation supervision"
 msgstr "Supervisão de documentação"
 
-#: ../xfce4-about/contributors.h:151
+#: ../xfce4-about/contributors.h:159
 msgid "Translators"
 msgstr "Tradutores"
 
-#: ../xfce4-about/contributors.h:154
+#: ../xfce4-about/contributors.h:162
 msgid "Previous contributors"
 msgstr "Contribuidores anteriores"
 
@@ -882,7 +905,9 @@ msgstr "Sistema"
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
-msgstr "O Xfce é uma coleção de programas que juntos fornecem um ambiente de desktop completo.\nOs programas seguintes fazem parte do núcleo do Xfce:"
+msgstr ""
+"O Xfce é uma coleção de programas que juntos fornecem um ambiente de desktop completo.\n"
+"Os programas seguintes fazem parte do núcleo do Xfce:"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:19
 msgid ""
@@ -893,7 +918,14 @@ msgid ""
 "Thank you for your interest in Xfce.\n"
 "\n"
 "\t- The Xfce Development Team"
-msgstr "O Xfce também é uma plataforma de desenvolvimento que fornece várias bibliotecas que ajudam os programadores a criar aplicativos que se encaixam bem no ambiente de desktop.\n\nOs componentes do Xfce são licenciados sob licenças gratuitas ou de código aberto; GPL ou BSDL para aplicativos e LGPL ou BSDL para bibliotecas. Veja a documentação, o código fonte ou o site do Xfce (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) para mais informação.\n\nAgradecemos seu interesse pelo Xfce.\n\n\t- A equipe de desenvolvimento do Xfce"
+msgstr ""
+"O Xfce também é uma plataforma de desenvolvimento que fornece várias bibliotecas que ajudam os programadores a criar aplicativos que se encaixam bem no ambiente de desktop.\n"
+"\n"
+"Os componentes do Xfce são licenciados sob licenças gratuitas ou de código aberto; GPL ou BSDL para aplicativos e LGPL ou BSDL para bibliotecas. Veja a documentação, o código fonte ou o site do Xfce (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) para mais informação.\n"
+"\n"
+"Agradecemos seu interesse pelo Xfce.\n"
+"\n"
+"\t- A equipe de desenvolvimento do Xfce"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:26
 msgid "About"
@@ -952,7 +984,9 @@ msgstr "%s; Build ID: %s"
 msgid ""
 "A file named \"%s\" already exists in this directory, the file hasn't been "
 "added."
-msgstr "Um arquivo chamado \"%s\" já existe neste diretório, o arquivo não foi adicionado."
+msgstr ""
+"Um arquivo chamado \"%s\" já existe neste diretório, o arquivo não foi "
+"adicionado."
 
 #: ../tests/test-ui.c:122
 msgid "Failed to migrate the old panel configuration"
