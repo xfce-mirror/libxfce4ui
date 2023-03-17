@@ -1,17 +1,20 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Behzad A <behzad.a_ir@hotmail.com>, 2021
+# Xfce Bot <transifex@xfce.org>, 2023
+# 
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Libxfce4ui\n"
+"Project-Id-Version: libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-28 14:58+0100\n"
-"PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Behzad A <behzad.a_ir@hotmail.com>, 2021\n"
-"Language-Team: Persian (Iran) (http://www.transifex.com/xfce/libxfce4ui/language/fa_IR/)\n"
+"POT-Creation-Date: 2023-02-20 12:56+0100\n"
+"PO-Revision-Date: 2023-02-20 11:56+0000\n"
+"Last-Translator: Xfce Bot <transifex@xfce.org>, 2023\n"
+"Language-Team: Persian (Iran) (https://www.transifex.com/xfce/teams/16840/fa_IR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -35,7 +38,9 @@ msgstr "آیا می‌خواهید راهنمای آنلاین را بخوانی
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
-msgstr "شما به وب سایت مستندات که صفحات راهنما در آن نگهداری و ترجمه می شوند ، هدایت خواهید شد."
+msgstr ""
+"شما به وب سایت مستندات که صفحات راهنما در آن نگهداری و ترجمه می شوند ، هدایت"
+" خواهید شد."
 
 #. Create cancel button
 #: ../libxfce4ui/xfce-dialogs.c:275 ../libxfce4ui/xfce-dialogs.c:533
@@ -77,14 +82,18 @@ msgstr "بستن پنجره با چندین زبانه؟"
 msgid ""
 "This window has multiple tabs open. Closing this window will also close all "
 "its tabs."
-msgstr "این پنجره دارای چندین زبانه باز است، بستن این پنجره باعث بسته شدن تمام این زبانه‌ها خواهد شد."
+msgstr ""
+"این پنجره دارای چندین زبانه باز است، بستن این پنجره باعث بسته شدن تمام این "
+"زبانه‌ها خواهد شد."
 
 #: ../libxfce4ui/xfce-dialogs.c:523
 #, c-format
 msgid ""
 "This window has %d tabs open. Closing this window will also close all its "
 "tabs."
-msgstr "این پنجره دارای %d زبانه باز است، بستن این پنجره باعث بسته شدن تمام این زبانه‌ها خواهد شد."
+msgstr ""
+"این پنجره دارای %d زبانه باز است، بستن این پنجره باعث بسته شدن تمام این "
+"زبانه‌ها خواهد شد."
 
 #: ../libxfce4ui/xfce-dialogs.c:529
 msgid "Warning"
@@ -141,15 +150,15 @@ msgid ""
 msgstr ""
 
 #. retrieve the error and warning messages
-#: ../libxfce4ui/xfce-filename-input.c:233
+#: ../libxfce4ui/xfce-filename-input.c:232
 msgid "Filename is too long"
 msgstr "نام فایل خیلی طولانی است"
 
-#: ../libxfce4ui/xfce-filename-input.c:234
+#: ../libxfce4ui/xfce-filename-input.c:233
 msgid "Directory separator illegal in file name"
 msgstr ""
 
-#: ../libxfce4ui/xfce-filename-input.c:235
+#: ../libxfce4ui/xfce-filename-input.c:234
 msgid "Filenames should not start or end with a space"
 msgstr "نام فایل نباید با فاصله آغاز یا به پایان رسد"
 
@@ -158,7 +167,9 @@ msgstr "نام فایل نباید با فاصله آغاز یا به پایان
 msgid ""
 "This shortcut is already being used for the action '%s'. Which action do you"
 " want to use?"
-msgstr "این میانبر  در حال حاضر برای عملکرد '%s' استفاده می‌شود. شما می‌خواهید برای کدام عملکرد استفاده کنید؟"
+msgstr ""
+"این میانبر  در حال حاضر برای عملکرد '%s' استفاده می‌شود. شما می‌خواهید برای "
+"کدام عملکرد استفاده کنید؟"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:54
 #: ../libxfce4kbd-private/xfce-shortcuts.c:57
@@ -182,14 +193,18 @@ msgstr "حفظ '%s'"
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr "این میانبر  در حال حاضر برای فرمان '%s' استفاده می‌شود. شما می‌خواهید برای کدام عملکرد استفاده کنید؟"
+msgstr ""
+"این میانبر  در حال حاضر برای فرمان '%s' استفاده می‌شود. شما می‌خواهید برای "
+"کدام عملکرد استفاده کنید؟"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:62
 #, c-format
 msgid ""
 "This shortcut is already being used by the action '%s'. Which action do you "
 "want to use?"
-msgstr "این میانبر  در حال حاضر توسط عملکرد '%s' استفاده می‌شود. شما می‌خواهید برای کدام عملکرد استفاده کنید؟"
+msgstr ""
+"این میانبر  در حال حاضر توسط عملکرد '%s' استفاده می‌شود. شما می‌خواهید برای "
+"کدام عملکرد استفاده کنید؟"
 
 #. This shortcut already exists in the provider, we don't want it twice
 #. Warn the user
@@ -278,7 +293,7 @@ msgstr ""
 msgid "Please press a key"
 msgstr "لطفا یک کلید را فشار دهید"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:349
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:350
 msgid "Could not grab the keyboard."
 msgstr ""
 
@@ -769,31 +784,31 @@ msgstr ""
 #. { N_("Project Lead"),
 #. xfce_contributors_lead
 #. },
-#: ../xfce4-about/contributors.h:136
+#: ../xfce4-about/contributors.h:144
 msgid "Core developers"
 msgstr ""
 
-#: ../xfce4-about/contributors.h:139
+#: ../xfce4-about/contributors.h:147
 msgid "Active contributors"
 msgstr "مشارکت کننده‌‌گان فعال"
 
-#: ../xfce4-about/contributors.h:142
+#: ../xfce4-about/contributors.h:150
 msgid "Servers maintained by"
 msgstr "نگهداری سرورها توسط"
 
-#: ../xfce4-about/contributors.h:145
+#: ../xfce4-about/contributors.h:153
 msgid "Translations supervision"
 msgstr "نظارت بر ترجمه‌ها"
 
-#: ../xfce4-about/contributors.h:148
+#: ../xfce4-about/contributors.h:156
 msgid "Documentation supervision"
 msgstr "نظارت بر اسناد"
 
-#: ../xfce4-about/contributors.h:151
+#: ../xfce4-about/contributors.h:159
 msgid "Translators"
 msgstr "مترجمین"
 
-#: ../xfce4-about/contributors.h:154
+#: ../xfce4-about/contributors.h:162
 msgid "Previous contributors"
 msgstr "مشارکت کننده‌گان قبلی"
 
@@ -873,7 +888,9 @@ msgstr "سیستم"
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
-msgstr "Xfce مجموعه‌ای از برنامه‌ها هست که در کنار هم یک محیط دسکتاپ با امکانات کامل را فراهم می‌کنند.\nبرنامه‌هایی که در ادامه قید شده‌اند بخشی از هسته Xfce هستند:"
+msgstr ""
+"Xfce مجموعه‌ای از برنامه‌ها هست که در کنار هم یک محیط دسکتاپ با امکانات کامل را فراهم می‌کنند.\n"
+"برنامه‌هایی که در ادامه قید شده‌اند بخشی از هسته Xfce هستند:"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:19
 msgid ""
@@ -943,7 +960,8 @@ msgstr ""
 msgid ""
 "A file named \"%s\" already exists in this directory, the file hasn't been "
 "added."
-msgstr "پرونده‌ای به نام «%s» در حال حاضر در این شاخه موجود است، پرونده افزوده نشد."
+msgstr ""
+"پرونده‌ای به نام «%s» در حال حاضر در این شاخه موجود است، پرونده افزوده نشد."
 
 #: ../tests/test-ui.c:122
 msgid "Failed to migrate the old panel configuration"
