@@ -1,20 +1,20 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Cheng-Chia Tseng <pswo10680@gmail.com>, 2010,2017
-# 黃柏諺 <s8321414@gmail.com>, 2015-2017,2019
-# Walter Cheuk <wwycheuk@gmail.com>, 2013
-# 黃柏諺 <s8321414@gmail.com>, 2019-2022
+# Xfce Bot <transifex@xfce.org>, 2023
+# 
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Libxfce4ui\n"
+"Project-Id-Version: libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-28 14:58+0100\n"
-"PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: 黃柏諺 <s8321414@gmail.com>, 2019-2022\n"
-"Language-Team: Chinese (Taiwan) (http://www.transifex.com/xfce/libxfce4ui/language/zh_TW/)\n"
+"POT-Creation-Date: 2023-02-20 12:56+0100\n"
+"PO-Revision-Date: 2023-02-20 11:56+0000\n"
+"Last-Translator: Xfce Bot <transifex@xfce.org>, 2023\n"
+"Language-Team: Chinese (Taiwan) (https://www.transifex.com/xfce/teams/16840/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -144,15 +144,15 @@ msgid ""
 msgstr "工作目錄「%s」不存在。當建立「%s」時不會被使用。"
 
 #. retrieve the error and warning messages
-#: ../libxfce4ui/xfce-filename-input.c:233
+#: ../libxfce4ui/xfce-filename-input.c:232
 msgid "Filename is too long"
 msgstr "檔案名稱太長"
 
-#: ../libxfce4ui/xfce-filename-input.c:234
+#: ../libxfce4ui/xfce-filename-input.c:233
 msgid "Directory separator illegal in file name"
 msgstr "檔案名稱中的目錄分隔符號並不合法"
 
-#: ../libxfce4ui/xfce-filename-input.c:235
+#: ../libxfce4ui/xfce-filename-input.c:234
 msgid "Filenames should not start or end with a space"
 msgstr "檔案名稱不應以空格開始或結束"
 
@@ -281,7 +281,7 @@ msgstr "按下鍵盤按鍵以觸發 %s「%s」。"
 msgid "Please press a key"
 msgstr "請按下按鍵"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:349
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:350
 msgid "Could not grab the keyboard."
 msgstr "無法抓取鍵盤。"
 
@@ -718,7 +718,9 @@ msgstr "請見 <https://www.xfce.org/about/credits>"
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
-msgstr "若您發現清單中有些人沒有列出來，請不要猶豫在 <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> 遞交臭蟲回報。"
+msgstr ""
+"若您發現清單中有些人沒有列出來，請不要猶豫在 <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> "
+"遞交臭蟲回報。"
 
 #: ../xfce4-about/main.c:316
 msgid "Thanks to all who helped making this software available!"
@@ -728,7 +730,8 @@ msgstr "感謝所有幫助製作出這個軟體的人！"
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
-msgstr "Xfce 4 著作權所有者為 Olivier Fourdan (fourdan@xfce.org)。不同的部件是由其各自的作者擁有其著作權。"
+msgstr ""
+"Xfce 4 著作權所有者為 Olivier Fourdan (fourdan@xfce.org)。不同的部件是由其各自的作者擁有其著作權。"
 
 #: ../xfce4-about/main.c:338
 msgid ""
@@ -736,7 +739,9 @@ msgid ""
 "terms of the GNU Library General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
-msgstr "libxfce4ui、libxfce4util 與 exo 套件是基於自由軟體基金會發佈的 GNU Library General Public License 授權條款給予授權；不管是該授權的第 2 版，或（根據您自己選擇）的後續版本都可以。"
+msgstr ""
+"libxfce4ui、libxfce4util 與 exo 套件是基於自由軟體基金會發佈的 GNU Library General Public "
+"License 授權條款給予授權；不管是該授權的第 2 版，或（根據您自己選擇）的後續版本都可以。"
 
 #: ../xfce4-about/main.c:345
 msgid ""
@@ -745,7 +750,10 @@ msgid ""
 "of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr "thunar、xfce4-appfinder、xfce-panel、xfce4-session、xfce4-settings、xfconf、xfdeskop 與 xfwm4 套件是基於自由軟體基金會發佈的 GNU General Public License 授權條款給予授權；不管是該授權的第 2 版，或（根據您自己選擇）的後續版本都可以。"
+msgstr ""
+"thunar、xfce4-appfinder、xfce-"
+"panel、xfce4-session、xfce4-settings、xfconf、xfdeskop 與 xfwm4 套件是基於自由軟體基金會發佈的 "
+"GNU General Public License 授權條款給予授權；不管是該授權的第 2 版，或（根據您自己選擇）的後續版本都可以。"
 
 #: ../xfce4-about/main.c:491
 #, c-format
@@ -772,31 +780,31 @@ msgstr "無法載入介面"
 #. { N_("Project Lead"),
 #. xfce_contributors_lead
 #. },
-#: ../xfce4-about/contributors.h:136
+#: ../xfce4-about/contributors.h:144
 msgid "Core developers"
 msgstr "核心開發者"
 
-#: ../xfce4-about/contributors.h:139
+#: ../xfce4-about/contributors.h:147
 msgid "Active contributors"
 msgstr "活躍的開發者"
 
-#: ../xfce4-about/contributors.h:142
+#: ../xfce4-about/contributors.h:150
 msgid "Servers maintained by"
 msgstr "伺服器維護者"
 
-#: ../xfce4-about/contributors.h:145
+#: ../xfce4-about/contributors.h:153
 msgid "Translations supervision"
 msgstr "翻譯監督"
 
-#: ../xfce4-about/contributors.h:148
+#: ../xfce4-about/contributors.h:156
 msgid "Documentation supervision"
 msgstr "文件監督"
 
-#: ../xfce4-about/contributors.h:151
+#: ../xfce4-about/contributors.h:159
 msgid "Translators"
 msgstr "翻譯者"
 
-#: ../xfce4-about/contributors.h:154
+#: ../xfce4-about/contributors.h:162
 msgid "Previous contributors"
 msgstr "之前的貢獻者"
 
@@ -876,7 +884,9 @@ msgstr "系統"
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
-msgstr "Xfce 是個程式的集合，這些程式一同提供多功能的桌面環境。\n下列程式為 Xfce 的核心部份："
+msgstr ""
+"Xfce 是個程式的集合，這些程式一同提供多功能的桌面環境。\n"
+"下列程式為 Xfce 的核心部份："
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:19
 msgid ""
@@ -887,7 +897,14 @@ msgid ""
 "Thank you for your interest in Xfce.\n"
 "\n"
 "\t- The Xfce Development Team"
-msgstr "Xfce 也是一個提供許多協助程式設計師建立適於桌面環境使用的應用程式的函式庫之開發平臺。\n\nXfce 元件以自由或開放原始碼的授權條款提供；應用程式使用 GPL 或 BSDL，而函式庫則使用 LGPL 或 BSDL。請見文件、原始碼或 Xfce 網站 (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) 以取得更多資訊。\n\n感謝您對 Xfce 的關心。\n\n\t- Xfce 開發團隊"
+msgstr ""
+"Xfce 也是一個提供許多協助程式設計師建立適於桌面環境使用的應用程式的函式庫之開發平臺。\n"
+"\n"
+"Xfce 元件以自由或開放原始碼的授權條款提供；應用程式使用 GPL 或 BSDL，而函式庫則使用 LGPL 或 BSDL。請見文件、原始碼或 Xfce 網站 (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) 以取得更多資訊。\n"
+"\n"
+"感謝您對 Xfce 的關心。\n"
+"\n"
+"\t- Xfce 開發團隊"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:26
 msgid "About"
