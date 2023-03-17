@@ -1,21 +1,20 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Dušan Kazik <prescott66@gmail.com>, 2016-2017,2019-2020
-# 785411ef824cced88d3e197f5af1b61a_da6a977 <e5fae5b35c0c625157d991b31e113de3_956341>, 2021
-# Robert Hartl <hartl.robert@gmail.com>, 2009
-# Slavko <linux@slavino.sk>, 2014-2015,2023
-# 7dcd6f74323fe8d9c477949ff8fcbb1c_c427b63 <3fcd202e3dfab15fda15b8e88e54d449_7173>, 2011-2012
+# Xfce Bot <transifex@xfce.org>, 2023
+# 
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Libxfce4ui\n"
+"Project-Id-Version: libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-28 14:58+0100\n"
-"PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Slavko <linux@slavino.sk>, 2014-2015,2023\n"
-"Language-Team: Slovak (http://www.transifex.com/xfce/libxfce4ui/language/sk/)\n"
+"POT-Creation-Date: 2023-02-20 12:56+0100\n"
+"PO-Revision-Date: 2023-02-20 11:56+0000\n"
+"Last-Translator: Xfce Bot <transifex@xfce.org>, 2023\n"
+"Language-Team: Slovak (https://www.transifex.com/xfce/teams/16840/sk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -39,7 +38,9 @@ msgstr "Chcete si prečítať online príručku?"
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
-msgstr "Budete presmerovaní na webovú stránku dokumentácie, kde sa stránky pomocníka udržujú a prekladajú."
+msgstr ""
+"Budete presmerovaní na webovú stránku dokumentácie, kde sa stránky pomocníka"
+" udržujú a prekladajú."
 
 #. Create cancel button
 #: ../libxfce4ui/xfce-dialogs.c:275 ../libxfce4ui/xfce-dialogs.c:533
@@ -81,14 +82,18 @@ msgstr "Zavrieť okno s viacerými kartami?"
 msgid ""
 "This window has multiple tabs open. Closing this window will also close all "
 "its tabs."
-msgstr "Okno má otvorených viacero kariet. Zavretím tohto okna budú tiež zavreté všetky jeho karty."
+msgstr ""
+"Okno má otvorených viacero kariet. Zavretím tohto okna budú tiež zavreté "
+"všetky jeho karty."
 
 #: ../libxfce4ui/xfce-dialogs.c:523
 #, c-format
 msgid ""
 "This window has %d tabs open. Closing this window will also close all its "
 "tabs."
-msgstr "Toto okno má otvorených %d kariet. Zatvorením tohto okna sa zatvoria aj všetky jeho karty."
+msgstr ""
+"Toto okno má otvorených %d kariet. Zatvorením tohto okna sa zatvoria aj "
+"všetky jeho karty."
 
 #: ../libxfce4ui/xfce-dialogs.c:529
 msgid "Warning"
@@ -145,15 +150,15 @@ msgid ""
 msgstr "Pracovný adresár \"%s\" neexistuje.  Pri spustení \"%s\" nebude použitý."
 
 #. retrieve the error and warning messages
-#: ../libxfce4ui/xfce-filename-input.c:233
+#: ../libxfce4ui/xfce-filename-input.c:232
 msgid "Filename is too long"
 msgstr "Názov súboru je príliš dlhý"
 
-#: ../libxfce4ui/xfce-filename-input.c:234
+#: ../libxfce4ui/xfce-filename-input.c:233
 msgid "Directory separator illegal in file name"
 msgstr "Oddeľovač adresárov, neplatný v mene súboru"
 
-#: ../libxfce4ui/xfce-filename-input.c:235
+#: ../libxfce4ui/xfce-filename-input.c:234
 msgid "Filenames should not start or end with a space"
 msgstr "Názvy súborov by nemali začínať ani končiť medzerou"
 
@@ -282,7 +287,7 @@ msgstr "Stlačte klávesy na spustenie  %s '%s'."
 msgid "Please press a key"
 msgstr "Prosím, stlačte kláves"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:349
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:350
 msgid "Could not grab the keyboard."
 msgstr "Nemožno zachytiť klávesnicu"
 
@@ -636,7 +641,8 @@ msgstr "Panel"
 
 #: ../xfce4-about/main.c:152
 msgid "Provides a home for window buttons, launchers, app menu and more."
-msgstr "Poskytuje miesto pre tlačidlá okien, spúšťače, menu aplikácie a ďalšie."
+msgstr ""
+"Poskytuje miesto pre tlačidlá okien, spúšťače, menu aplikácie a ďalšie."
 
 #: ../xfce4-about/main.c:156
 msgid "Desktop Manager"
@@ -669,7 +675,9 @@ msgstr "Správca relácií"
 #: ../xfce4-about/main.c:172
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
-msgstr "Ukladá a obnovuje vaše sedenie, spravuje spúšťanie, automatické spúšťanie a vypínanie."
+msgstr ""
+"Ukladá a obnovuje vaše sedenie, spravuje spúšťanie, automatické spúšťanie a "
+"vypínanie."
 
 #: ../xfce4-about/main.c:176
 msgid "Settings Manager"
@@ -719,17 +727,22 @@ msgstr "Prosím, pozrite <https://www.xfce.org/about/credits>"
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
-msgstr "Ak viete o niekom, kto v tomto zozname chýba, nehanbite sa a nahláste chybu na  <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
+msgstr ""
+"Ak viete o niekom, kto v tomto zozname chýba, nehanbite sa a nahláste chybu "
+"na  <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 
 #: ../xfce4-about/main.c:316
 msgid "Thanks to all who helped making this software available!"
-msgstr "Ďakujeme všetkým, ktorí pomohli k tomu, aby bol tento softvér prístupný."
+msgstr ""
+"Ďakujeme všetkým, ktorí pomohli k tomu, aby bol tento softvér prístupný."
 
 #: ../xfce4-about/main.c:333
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
-msgstr "Xfce 4 je autorským právom Oliviera Fourdana (fourdan@xfce.org). Rôzne komponenty sú chránené autorskými právami ich autorov."
+msgstr ""
+"Xfce 4 je autorským právom Oliviera Fourdana (fourdan@xfce.org). Rôzne "
+"komponenty sú chránené autorskými právami ich autorov."
 
 #: ../xfce4-about/main.c:338
 msgid ""
@@ -737,7 +750,11 @@ msgid ""
 "terms of the GNU Library General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
-msgstr "Balíčky libxfce4ui, libxfce4util a exo sú šírené pod podmienkami licencie GNU Library General Public License vydanou nadáciou  Free Software Foundation, buď verzie 2 tejto licencie alebo (podľa vášho uváženia) ktorejkoľvek neskoršej verzie."
+msgstr ""
+"Balíčky libxfce4ui, libxfce4util a exo sú šírené pod podmienkami licencie "
+"GNU Library General Public License vydanou nadáciou  Free Software "
+"Foundation, buď verzie 2 tejto licencie alebo (podľa vášho uváženia) "
+"ktorejkoľvek neskoršej verzie."
 
 #: ../xfce4-about/main.c:345
 msgid ""
@@ -746,7 +763,11 @@ msgid ""
 "of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr "Balíčky thunar, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop a xfwm4 sú šírené pod podmienkami licencie GNU General Public License, vydanou nadáciou Free Software Foundation; buď verzie 2 tejto licencie alebo (podľa vášho uváženia) ktorejkoľvek neskoršej verzie."
+msgstr ""
+"Balíčky thunar, xfce4-panel, xfce4-session, xfce4-settings, xfconf, "
+"xfdesktop a xfwm4 sú šírené pod podmienkami licencie GNU General Public "
+"License, vydanou nadáciou Free Software Foundation; buď verzie 2 tejto "
+"licencie alebo (podľa vášho uváženia) ktorejkoľvek neskoršej verzie."
 
 #: ../xfce4-about/main.c:491
 #, c-format
@@ -773,31 +794,31 @@ msgstr "Načítanie rozhrania zlyhalo"
 #. { N_("Project Lead"),
 #. xfce_contributors_lead
 #. },
-#: ../xfce4-about/contributors.h:136
+#: ../xfce4-about/contributors.h:144
 msgid "Core developers"
 msgstr "Vývojári jadra"
 
-#: ../xfce4-about/contributors.h:139
+#: ../xfce4-about/contributors.h:147
 msgid "Active contributors"
 msgstr "Aktívni prispievateia"
 
-#: ../xfce4-about/contributors.h:142
+#: ../xfce4-about/contributors.h:150
 msgid "Servers maintained by"
 msgstr "Servery spravujú"
 
-#: ../xfce4-about/contributors.h:145
+#: ../xfce4-about/contributors.h:153
 msgid "Translations supervision"
 msgstr "Dohľad nad prekladmi"
 
-#: ../xfce4-about/contributors.h:148
+#: ../xfce4-about/contributors.h:156
 msgid "Documentation supervision"
 msgstr "Dohľad nad dokumentáciou"
 
-#: ../xfce4-about/contributors.h:151
+#: ../xfce4-about/contributors.h:159
 msgid "Translators"
 msgstr "Preklady"
 
-#: ../xfce4-about/contributors.h:154
+#: ../xfce4-about/contributors.h:162
 msgid "Previous contributors"
 msgstr "Predošlí prispievatelia"
 
@@ -877,7 +898,9 @@ msgstr "Systém"
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
-msgstr "Xfce je zbierkou aplikácií, ktoré dokopy poskytujú plne vybavené pracovné prostredie. Súčasťou jadra Xfce sú tieto aplikácie:"
+msgstr ""
+"Xfce je zbierkou aplikácií, ktoré dokopy poskytujú plne vybavené pracovné "
+"prostredie. Súčasťou jadra Xfce sú tieto aplikácie:"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:19
 msgid ""
@@ -888,7 +911,14 @@ msgid ""
 "Thank you for your interest in Xfce.\n"
 "\n"
 "\t- The Xfce Development Team"
-msgstr "Xfce je aj vývojová platforma, poskytujúca viacero knižníc na pomoc programátorom vytvárať aplikácie, ktorá zapadajú do pracovného prostredia.\n\nKomponenty Xfce sú licencované pod slobodnými licenciami; GPL alebo BSDL pre aplikácie a LGPL alebo BSDL pre knižnice. Ďalšie informácie nájdete v dokumentácii, zdrojovom kóde alebo na webovej stránke Xfce (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>).\n\nVďaka za Váš podiel v Xfce.\n\n\t- Vývojový tím Xfce"
+msgstr ""
+"Xfce je aj vývojová platforma, poskytujúca viacero knižníc na pomoc programátorom vytvárať aplikácie, ktorá zapadajú do pracovného prostredia.\n"
+"\n"
+"Komponenty Xfce sú licencované pod slobodnými licenciami; GPL alebo BSDL pre aplikácie a LGPL alebo BSDL pre knižnice. Ďalšie informácie nájdete v dokumentácii, zdrojovom kóde alebo na webovej stránke Xfce (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>).\n"
+"\n"
+"Vďaka za Váš podiel v Xfce.\n"
+"\n"
+"\t- Vývojový tím Xfce"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:26
 msgid "About"
@@ -947,7 +977,8 @@ msgstr "%s; ID zostavy: %s"
 msgid ""
 "A file named \"%s\" already exists in this directory, the file hasn't been "
 "added."
-msgstr "Súbor s názvom „%s“ už existuje v tomto adresári. Súbor nebol pridaný."
+msgstr ""
+"Súbor s názvom „%s“ už existuje v tomto adresári. Súbor nebol pridaný."
 
 #: ../tests/test-ui.c:122
 msgid "Failed to migrate the old panel configuration"
