@@ -1,18 +1,20 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Geraint Rowlands <ansbaradigeidfran@gmail.com>, 2018
-# Ian Low, 2022
+# Xfce Bot <transifex@xfce.org>, 2023
+# 
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Libxfce4ui\n"
+"Project-Id-Version: libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-16 00:45+0200\n"
-"PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Ian Low, 2022\n"
-"Language-Team: Welsh (http://www.transifex.com/xfce/libxfce4ui/language/cy/)\n"
+"POT-Creation-Date: 2023-02-20 12:56+0100\n"
+"PO-Revision-Date: 2023-02-20 11:56+0000\n"
+"Last-Translator: Xfce Bot <transifex@xfce.org>, 2023\n"
+"Language-Team: Welsh (https://www.transifex.com/xfce/teams/16840/cy/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -36,7 +38,9 @@ msgstr "Ydych eisiau darllen y llawlyfr ar-lein?"
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
-msgstr "Cewch eich dargyfeirio at y wefan dogfenyddiaeth ble mae'r tudalennau cymorth yn cael eu cynnal a'u cyfieithu."
+msgstr ""
+"Cewch eich dargyfeirio at y wefan dogfenyddiaeth ble mae'r tudalennau "
+"cymorth yn cael eu cynnal a'u cyfieithu."
 
 #. Create cancel button
 #: ../libxfce4ui/xfce-dialogs.c:275 ../libxfce4ui/xfce-dialogs.c:533
@@ -78,14 +82,18 @@ msgstr "Ai cau ffenestr gyda tabiau lluosog?"
 msgid ""
 "This window has multiple tabs open. Closing this window will also close all "
 "its tabs."
-msgstr "Mae gyda'r ffenestr yma tabiau lluosog. Bydd yn cau y ffenestr hwn hefyd yn cau ei dabiau i gyd."
+msgstr ""
+"Mae gyda'r ffenestr yma tabiau lluosog. Bydd yn cau y ffenestr hwn hefyd yn "
+"cau ei dabiau i gyd."
 
 #: ../libxfce4ui/xfce-dialogs.c:523
 #, c-format
 msgid ""
 "This window has %d tabs open. Closing this window will also close all its "
 "tabs."
-msgstr "Mae gyda'r ffenestr yma %d tab lluosog. Bydd yn cau y ffenestr hwn hefyd yn cau ei dabiau i gyd."
+msgstr ""
+"Mae gyda'r ffenestr yma %d tab lluosog. Bydd yn cau y ffenestr hwn hefyd yn "
+"cau ei dabiau i gyd."
 
 #: ../libxfce4ui/xfce-dialogs.c:529
 msgid "Warning"
@@ -123,12 +131,12 @@ msgstr "Dewisiadau rheolaeth sesiwn"
 msgid "Show session management options"
 msgstr "Dangos dewisiadau rheolaeth sesiwn"
 
-#: ../libxfce4ui/xfce-sm-client.c:1614
+#: ../libxfce4ui/xfce-sm-client.c:1609
 #, c-format
 msgid "Failed to connect to the session manager: %s"
 msgstr "Methu cysylltu a'r rheolwr sesiwn: %s"
 
-#: ../libxfce4ui/xfce-sm-client.c:1620
+#: ../libxfce4ui/xfce-sm-client.c:1615
 #, c-format
 msgid "Session manager did not return a valid client id"
 msgstr "Ni gafwyd rhif adnabod gwestai dilys gan y rheolwr sesiwn"
@@ -142,15 +150,15 @@ msgid ""
 msgstr "Nid yw'r ffolder \"%s\" yn bodoli. Ni gaiff ei ddefnyddio wrth silio \"%s\"."
 
 #. retrieve the error and warning messages
-#: ../libxfce4ui/xfce-filename-input.c:228
+#: ../libxfce4ui/xfce-filename-input.c:232
 msgid "Filename is too long"
 msgstr "Mae ffeilenw yn rhy hir"
 
-#: ../libxfce4ui/xfce-filename-input.c:229
+#: ../libxfce4ui/xfce-filename-input.c:233
 msgid "Directory separator illegal in file name"
 msgstr "Gwahanwr Cyfeiriadur anghyfreithlon yn enw ffeil"
 
-#: ../libxfce4ui/xfce-filename-input.c:230
+#: ../libxfce4ui/xfce-filename-input.c:234
 msgid "Filenames should not start or end with a space"
 msgstr "Ni ddylent ffeilenwau dechreu neu orffen gyda gwagle."
 
@@ -159,7 +167,9 @@ msgstr "Ni ddylent ffeilenwau dechreu neu orffen gyda gwagle."
 msgid ""
 "This shortcut is already being used for the action '%s'. Which action do you"
 " want to use?"
-msgstr "Mae'r byrlwybr yma mewn defnydd ar gyfer y weithred '%s'. Pa weithred ydych am ei ddefnyddio?"
+msgstr ""
+"Mae'r byrlwybr yma mewn defnydd ar gyfer y weithred '%s'. Pa weithred ydych "
+"am ei ddefnyddio?"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:54
 #: ../libxfce4kbd-private/xfce-shortcuts.c:57
@@ -183,14 +193,18 @@ msgstr "Cadw '%s'"
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr "Mae'r byrlwybr yma mewn defnydd ar gyfer y gorchymyn '%s'. Pa weithred ydych am ei ddefnyddio?"
+msgstr ""
+"Mae'r byrlwybr yma mewn defnydd ar gyfer y gorchymyn '%s'. Pa weithred ydych"
+" am ei ddefnyddio?"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:62
 #, c-format
 msgid ""
 "This shortcut is already being used by the action '%s'. Which action do you "
 "want to use?"
-msgstr "Mae'r byrlwybr yma yn cael ei ddefnyddio gan y weithred '%s'. Pa weithred ydych am ei ddefnyddio?"
+msgstr ""
+"Mae'r byrlwybr yma yn cael ei ddefnyddio gan y weithred '%s'. Pa weithred "
+"ydych am ei ddefnyddio?"
 
 #. This shortcut already exists in the provider, we don't want it twice
 #. Warn the user
@@ -234,7 +248,8 @@ msgstr "Adfer y byrlwybr rhagosodedig"
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:562
 #, c-format
 msgid "This keyboard shortcut is currently used by: '%s'"
-msgstr "Mae'r byrlwybr bysellfwrdd yma yn ei ddefnyddio yn cyfredol gyda: '%s'"
+msgstr ""
+"Mae'r byrlwybr bysellfwrdd yma yn ei ddefnyddio yn cyfredol gyda: '%s'"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:476
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:565
@@ -279,7 +294,7 @@ msgstr "Pwyswch y bysellau i sbarduno'r %s '%s'."
 msgid "Please press a key"
 msgstr "Atolwg pwyswch bysell"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:349
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:350
 msgid "Could not grab the keyboard."
 msgstr "Methu ymafael a'r allweddfwrdd."
 
@@ -388,198 +403,214 @@ msgid "Toggle fullscreen"
 msgstr "Toglo sgrin lawn"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:63
+msgid "Move window to lower monitor"
+msgstr ""
+
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:64
+msgid "Move window to left monitor"
+msgstr ""
+
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:65
+msgid "Move window to right monitor"
+msgstr ""
+
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:66
+msgid "Move window to upper monitor"
+msgstr ""
+
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:67
 msgid "Move window to upper workspace"
 msgstr "Symud ffenestr i'r gweithle uwch"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:64
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:68
 msgid "Move window to bottom workspace"
 msgstr "Symud ffenestr i'r gweithle is"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:65
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:69
 msgid "Move window to left workspace"
 msgstr "Symud ffenestr i'r gweithle chwith"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:66
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:70
 msgid "Move window to right workspace"
 msgstr "Symud ffenestr i'r gweithle dde"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:67
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:71
 msgid "Move window to previous workspace"
 msgstr "Symud ffenestr i'r gweithle blaenorol"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:68
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:72
 msgid "Move window to next workspace"
 msgstr "Symud ffenestr i'r gweithle nesaf"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:69
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:73
 msgid "Move window to workspace 1"
 msgstr "Symud ffenestr i weithle 1"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:70
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:74
 msgid "Move window to workspace 2"
 msgstr "Symud ffenestr i weithle 2"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:71
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:75
 msgid "Move window to workspace 3"
 msgstr "Symud ffenestr i weithle 3"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:72
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:76
 msgid "Move window to workspace 4"
 msgstr "Symud ffenestr i weithle 4"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:73
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:77
 msgid "Move window to workspace 5"
 msgstr "Symud ffenestr i weithle 5"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:74
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:78
 msgid "Move window to workspace 6"
 msgstr "Symud ffenestr i weithle 6"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:75
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:79
 msgid "Move window to workspace 7"
 msgstr "Symud ffenestr i weithle 7"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:76
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:80
 msgid "Move window to workspace 8"
 msgstr "Symud ffenestr i weithle 8"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:77
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:81
 msgid "Move window to workspace 9"
 msgstr "Symud ffenestr i weithle 9"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:78
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:82
 msgid "Move window to workspace 10"
 msgstr "Symud ffenestr i weithle 10"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:79
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:83
 msgid "Move window to workspace 11"
 msgstr "Symud ffenestr i weithle 11"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:80
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:84
 msgid "Move window to workspace 12"
 msgstr "Symud ffenestr i weithle 12"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:81
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:85
 msgid "Tile window to the top"
 msgstr "Teilio ffenestr i'r brig"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:82
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:86
 msgid "Tile window to the bottom"
 msgstr "Teilio ffenestr i'r gwaelod"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:83
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:87
 msgid "Tile window to the left"
 msgstr "Teilio ffenestr i'r chwith"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:84
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:88
 msgid "Tile window to the right"
 msgstr "Teilio ffenestr i'r dde"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:85
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:89
 msgid "Tile window to the top-left"
 msgstr "Teilio ffenestr ar y brig-chwith"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:86
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:90
 msgid "Tile window to the top-right"
 msgstr "Teilio ffenestr ar y brig-dde"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:87
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:91
 msgid "Tile window to the bottom-left"
 msgstr "Teilio ffenestr ar y gwaelod-chwith"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:88
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:92
 msgid "Tile window to the bottom-right"
 msgstr "Teilio ffenestr ar y gwaelod-dde"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:89
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:93
 msgid "Show desktop"
 msgstr "Dangos y penfwrdd"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:90
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:94
 msgid "Upper workspace"
 msgstr "Gweithle uwch"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:91
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:95
 msgid "Bottom workspace"
 msgstr "Gweithle is"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:92
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:96
 msgid "Left workspace"
 msgstr "Gweithle chwith"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:93
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:97
 msgid "Right workspace"
 msgstr "Gweithle dde"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:94
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:98
 msgid "Previous workspace"
 msgstr "Gweithle blaenorol"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:95
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:99
 msgid "Next workspace"
 msgstr "Gweithle nesaf"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:96
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:100
 msgid "Workspace 1"
 msgstr "Gweithle 1"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:97
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:101
 msgid "Workspace 2"
 msgstr "Gweithle 2"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:98
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:102
 msgid "Workspace 3"
 msgstr "Gweithle 3"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:99
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:103
 msgid "Workspace 4"
 msgstr "Gweithle 4"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:100
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:104
 msgid "Workspace 5"
 msgstr "Gweithle 5"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:101
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:105
 msgid "Workspace 6"
 msgstr "Gweithle 6"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:102
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:106
 msgid "Workspace 7"
 msgstr "Gweithle 7"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:103
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:107
 msgid "Workspace 8"
 msgstr "Gweithle 8"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:104
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:108
 msgid "Workspace 9"
 msgstr "Gweithle 9"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:105
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:109
 msgid "Workspace 10"
 msgstr "Gweithle 10"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:106
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:110
 msgid "Workspace 11"
 msgstr "Gweithle 11"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:107
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:111
 msgid "Workspace 12"
 msgstr "Gweithle 12"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:108
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:112
 msgid "Add workspace"
 msgstr "Ychwanegu gweithle"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:109
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:113
 msgid "Add adjacent workspace"
 msgstr "Ychwanegu gweithle cyfagos"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:110
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:114
 msgid "Delete last workspace"
 msgstr "Dileu'r gweithle olaf"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:111
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:115
 msgid "Delete active workspace"
 msgstr "Dileu'r gweithle bresennol"
 
@@ -650,7 +681,9 @@ msgstr "Rheolwr Sesiwn"
 #: ../xfce4-about/main.c:172
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
-msgstr "Achub ac adfer eich cyfeistedd, triniaethu uwchgychwyn, hunangychwyn a llawrgau."
+msgstr ""
+"Achub ac adfer eich cyfeistedd, triniaethu uwchgychwyn, hunangychwyn a "
+"llawrgau."
 
 #: ../xfce4-about/main.c:176
 msgid "Settings Manager"
@@ -666,7 +699,8 @@ msgstr "Chwiliwr Rhaglenni"
 
 #: ../xfce4-about/main.c:182
 msgid "Quickly finds and launches applications installed on your system."
-msgstr "Canfod a lansio yn gyflym cymhwysiadau mewnsefydlwyd ar eich cyfundrefn."
+msgstr ""
+"Canfod a lansio yn gyflym cymhwysiadau mewnsefydlwyd ar eich cyfundrefn."
 
 #: ../xfce4-about/main.c:186
 msgid "Settings Daemon"
@@ -682,7 +716,8 @@ msgstr "Llyfgell Dewislen"
 
 #: ../xfce4-about/main.c:192
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
-msgstr "Mewndrefnu dewislen freedesktop.org ufuddhiedig seiliedig ar GLib a GIO."
+msgstr ""
+"Mewndrefnu dewislen freedesktop.org ufuddhiedig seiliedig ar GLib a GIO."
 
 #: ../xfce4-about/main.c:196
 msgid "Thumbnails Service"
@@ -700,7 +735,9 @@ msgstr "Atolwg gweler <https://www.xfce.org/about/credits>"
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
-msgstr "Os y gwyddoch am rhywun sydd ar goll o'r rhestr yma, peidiwch ag oedi: rhestrwch nam ar <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues>."
+msgstr ""
+"Os y gwyddoch am rhywun sydd ar goll o'r rhestr yma, peidiwch ag oedi: "
+"rhestrwch nam ar <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues>."
 
 #: ../xfce4-about/main.c:316
 msgid "Thanks to all who helped making this software available!"
@@ -710,7 +747,9 @@ msgstr "Diolch i bawb sydd wedi helpu darparu'r meddalwedd yma!"
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
-msgstr "Mae Xfce 4 yn hawlfraint Olivier Fourdan (fourdan@xfce.org). Mae'r gwahanol cydrannau'n hawlfraint eu hawduron priodol."
+msgstr ""
+"Mae Xfce 4 yn hawlfraint Olivier Fourdan (fourdan@xfce.org). Mae'r gwahanol "
+"cydrannau'n hawlfraint eu hawduron priodol."
 
 #: ../xfce4-about/main.c:338
 msgid ""
@@ -718,7 +757,11 @@ msgid ""
 "terms of the GNU Library General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
-msgstr "Dosbarthir y pecynnau libxfce4ui, libxfce4util ac exo o dan amodau'r GNU Library General Public License fel y cyhoeddir gan y Free Software Foundation; naill ai fersiwn 2 o'r Trwydded, neu (ar eich dewis chi) unrhyw fersiwn diweddarach."
+msgstr ""
+"Dosbarthir y pecynnau libxfce4ui, libxfce4util ac exo o dan amodau'r GNU "
+"Library General Public License fel y cyhoeddir gan y Free Software "
+"Foundation; naill ai fersiwn 2 o'r Trwydded, neu (ar eich dewis chi) unrhyw "
+"fersiwn diweddarach."
 
 #: ../xfce4-about/main.c:345
 msgid ""
@@ -727,7 +770,11 @@ msgid ""
 "of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr "Dosbarthir y pecynnau thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop ac xfwm4 o dan amodau'r GNU General Public License fel y cyfoeddir gan y Free Software Foundation; naill ai fersiwn 2 o'r Trwydded, neu (ar eich dewis chi) unrhyw fersiwn diweddarach."
+msgstr ""
+"Dosbarthir y pecynnau thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
+"xfce4-settings, xfconf, xfdesktop ac xfwm4 o dan amodau'r GNU General Public"
+" License fel y cyfoeddir gan y Free Software Foundation; naill ai fersiwn 2 "
+"o'r Trwydded, neu (ar eich dewis chi) unrhyw fersiwn diweddarach."
 
 #: ../xfce4-about/main.c:491
 #, c-format
@@ -754,31 +801,31 @@ msgstr "Methu llwytho'r rhyngwyneb"
 #. { N_("Project Lead"),
 #. xfce_contributors_lead
 #. },
-#: ../xfce4-about/contributors.h:136
+#: ../xfce4-about/contributors.h:144
 msgid "Core developers"
 msgstr "Prif ddatblygwyr"
 
-#: ../xfce4-about/contributors.h:139
+#: ../xfce4-about/contributors.h:147
 msgid "Active contributors"
 msgstr "Cyfranwyr presennol"
 
-#: ../xfce4-about/contributors.h:142
+#: ../xfce4-about/contributors.h:150
 msgid "Servers maintained by"
 msgstr "Cynnal gweinyddion"
 
-#: ../xfce4-about/contributors.h:145
+#: ../xfce4-about/contributors.h:153
 msgid "Translations supervision"
 msgstr "Cynorthwyo cyfieithu"
 
-#: ../xfce4-about/contributors.h:148
+#: ../xfce4-about/contributors.h:156
 msgid "Documentation supervision"
 msgstr "Goruwchwyliad dogfenniaeth"
 
-#: ../xfce4-about/contributors.h:151
+#: ../xfce4-about/contributors.h:159
 msgid "Translators"
 msgstr "Cyfieithwyr"
 
-#: ../xfce4-about/contributors.h:154
+#: ../xfce4-about/contributors.h:162
 msgid "Previous contributors"
 msgstr "Cyfranwyr cynt"
 
@@ -858,7 +905,9 @@ msgstr "System"
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
-msgstr "Mae Xfce yn gasgliad o raglenni sydd yn cyfuno i ddarparu amgylchedd penfwrdd cyflawn. \nMae'r rhaglenni canlynol yn ffurfio rhanbarth o'r craidd Xfce:"
+msgstr ""
+"Mae Xfce yn gasgliad o raglenni sydd yn cyfuno i ddarparu amgylchedd penfwrdd cyflawn. \n"
+"Mae'r rhaglenni canlynol yn ffurfio rhanbarth o'r craidd Xfce:"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:19
 msgid ""
@@ -869,7 +918,14 @@ msgid ""
 "Thank you for your interest in Xfce.\n"
 "\n"
 "\t- The Xfce Development Team"
-msgstr "Mae Xfce hefyd yn lwyfan datblygiad sydd yn darparu amryw llyfrgelleodd sydd yn cymhorthwyo rhaglennwyr i greu cymhwysiadau sydd yn ffitio i mewn yn dda gyda'r amgylchiad penfwrdd.\n\nMae cydrannau Xfce yn eu thrwyddedwyd dan trwyddedau tarddiad agored rhydwd; GPL neu BDSL am gymhwysiadai ac LGPL neu BSDL am lyfrgelloedd. Edrychwch ar y dogfenniaeth, y côd tarddiad neu'r wefan Xfce (https://www.xfce.org) am fwy o wybodaeth.\n\nDiolch i chi an eich diddordeb yn Xfce.\n\n - Y Carfan Datblygiad Xfce"
+msgstr ""
+"Mae Xfce hefyd yn lwyfan datblygiad sydd yn darparu amryw llyfrgelleodd sydd yn cymhorthwyo rhaglennwyr i greu cymhwysiadau sydd yn ffitio i mewn yn dda gyda'r amgylchiad penfwrdd.\n"
+"\n"
+"Mae cydrannau Xfce yn eu thrwyddedwyd dan trwyddedau tarddiad agored rhydwd; GPL neu BDSL am gymhwysiadai ac LGPL neu BSDL am lyfrgelloedd. Edrychwch ar y dogfenniaeth, y côd tarddiad neu'r wefan Xfce (https://www.xfce.org) am fwy o wybodaeth.\n"
+"\n"
+"Diolch i chi an eich diddordeb yn Xfce.\n"
+"\n"
+" - Y Carfan Datblygiad Xfce"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:26
 msgid "About"
@@ -928,12 +984,14 @@ msgstr "%s; Hunaniaeth Adeiladu: %s"
 msgid ""
 "A file named \"%s\" already exists in this directory, the file hasn't been "
 "added."
-msgstr "Mae ffeil o'r enw \"%s\" eisoes yn bodoli yn y ffolder yma, ni ychwanegwyd y ffeil."
+msgstr ""
+"Mae ffeil o'r enw \"%s\" eisoes yn bodoli yn y ffolder yma, ni ychwanegwyd y"
+" ffeil."
 
 #: ../tests/test-ui.c:122
 msgid "Failed to migrate the old panel configuration"
 msgstr "Methu mudo'r hen ffurfweddiad panel"
 
-#: ../tests/test-ui.c:170 ../tests/test-ui.c:195
+#: ../tests/test-ui.c:172 ../tests/test-ui.c:197
 msgid "Customize settings stored by Xfconf"
 msgstr "Addasu gosodiadau a storir gan Xfconf"
