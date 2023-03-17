@@ -1,20 +1,20 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# 8b03701f910565d01acaec9ce3f558ab_e9f0fee <b5b06e8f85fb8288fe43ad0bc2422d94_32848>, 2013,2017
-# Arnold Marko <arnold.marko@gmail.com>, 2019-2022
-# Kernc, 2014,2016
-# Kernc, 2017
+# Xfce Bot <transifex@xfce.org>, 2023
+# 
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Libxfce4ui\n"
+"Project-Id-Version: libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-28 14:58+0100\n"
-"PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Arnold Marko <arnold.marko@gmail.com>, 2019-2022\n"
-"Language-Team: Slovenian (http://www.transifex.com/xfce/libxfce4ui/language/sl/)\n"
+"POT-Creation-Date: 2023-02-20 12:56+0100\n"
+"PO-Revision-Date: 2023-02-20 11:56+0000\n"
+"Last-Translator: Xfce Bot <transifex@xfce.org>, 2023\n"
+"Language-Team: Slovenian (https://www.transifex.com/xfce/teams/16840/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -38,7 +38,9 @@ msgstr "Želite prebrati priročnik na spletu?"
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
-msgstr "Preusmerjeni boste na spletno stran dokumentacije, kjer se vzdržujejo in prevajajo strani pomoči."
+msgstr ""
+"Preusmerjeni boste na spletno stran dokumentacije, kjer se vzdržujejo in "
+"prevajajo strani pomoči."
 
 #. Create cancel button
 #: ../libxfce4ui/xfce-dialogs.c:275 ../libxfce4ui/xfce-dialogs.c:533
@@ -80,14 +82,17 @@ msgstr "Zaprem okno z več zavihki?"
 msgid ""
 "This window has multiple tabs open. Closing this window will also close all "
 "its tabs."
-msgstr "To okno ima odprto več zavihkov. Zaprtje tega okna bo zaprlo tudi te zavihke."
+msgstr ""
+"To okno ima odprto več zavihkov. Zaprtje tega okna bo zaprlo tudi te "
+"zavihke."
 
 #: ../libxfce4ui/xfce-dialogs.c:523
 #, c-format
 msgid ""
 "This window has %d tabs open. Closing this window will also close all its "
 "tabs."
-msgstr "To okno ima odprto %d zavihkov. Zaprtje tega okna bo zaprlo tudi ze zavihke."
+msgstr ""
+"To okno ima odprto %d zavihkov. Zaprtje tega okna bo zaprlo tudi ze zavihke."
 
 #: ../libxfce4ui/xfce-dialogs.c:529
 msgid "Warning"
@@ -144,15 +149,15 @@ msgid ""
 msgstr "Imenik \"%s\" ne obstaja in ne bo uporabljen ob zagonu \"%s\"."
 
 #. retrieve the error and warning messages
-#: ../libxfce4ui/xfce-filename-input.c:233
+#: ../libxfce4ui/xfce-filename-input.c:232
 msgid "Filename is too long"
 msgstr "Ime datoteke je predolgo"
 
-#: ../libxfce4ui/xfce-filename-input.c:234
+#: ../libxfce4ui/xfce-filename-input.c:233
 msgid "Directory separator illegal in file name"
 msgstr "Ločilnik imenika v imenu datoteke ni pravilen"
 
-#: ../libxfce4ui/xfce-filename-input.c:235
+#: ../libxfce4ui/xfce-filename-input.c:234
 msgid "Filenames should not start or end with a space"
 msgstr "Imena datotek se naj ne bi začela ali končala s presledkom"
 
@@ -161,7 +166,9 @@ msgstr "Imena datotek se naj ne bi začela ali končala s presledkom"
 msgid ""
 "This shortcut is already being used for the action '%s'. Which action do you"
 " want to use?"
-msgstr "Ta bližnjica se že uporablja za dejanje '%s'. Katero dejanje želite uporabiti?"
+msgstr ""
+"Ta bližnjica se že uporablja za dejanje '%s'. Katero dejanje želite "
+"uporabiti?"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:54
 #: ../libxfce4kbd-private/xfce-shortcuts.c:57
@@ -185,14 +192,16 @@ msgstr "Obdrži '%s'"
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr "Ta bližnjica se že uporablja za ukaz '%s'. Katero dejanje želite uporabiti?"
+msgstr ""
+"Ta bližnjica se že uporablja za ukaz '%s'. Katero dejanje želite uporabiti?"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:62
 #, c-format
 msgid ""
 "This shortcut is already being used by the action '%s'. Which action do you "
 "want to use?"
-msgstr "To bližnjico že uporablja dejanje '%s'. Katero dejanje želite uporabiti?"
+msgstr ""
+"To bližnjico že uporablja dejanje '%s'. Katero dejanje želite uporabiti?"
 
 #. This shortcut already exists in the provider, we don't want it twice
 #. Warn the user
@@ -281,7 +290,7 @@ msgstr "Pritisnite tipke na tipkovnici za aktivacijo %s '%s'."
 msgid "Please press a key"
 msgstr "Pritisnite tipko"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:349
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:350
 msgid "Could not grab the keyboard."
 msgstr "Ni mogoče zgrabiti tipkovnice."
 
@@ -668,7 +677,9 @@ msgstr "Upravljalnik seje"
 #: ../xfce4-about/main.c:172
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
-msgstr "Shrani in obnovi seanso, skrbi za zagon, samodejni zagon in ustavljanje sistema."
+msgstr ""
+"Shrani in obnovi seanso, skrbi za zagon, samodejni zagon in ustavljanje "
+"sistema."
 
 #: ../xfce4-about/main.c:176
 msgid "Settings Manager"
@@ -718,7 +729,9 @@ msgstr "Preberite <https://www.xfce.org/about/credits>"
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
-msgstr "Če poznate koga, ki na tem seznamu manjka, to prijavite na <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
+msgstr ""
+"Če poznate koga, ki na tem seznamu manjka, to prijavite na "
+"<https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 
 #: ../xfce4-about/main.c:316
 msgid "Thanks to all who helped making this software available!"
@@ -728,7 +741,9 @@ msgstr "Hvala vsem, ki so omogočili izdelavo te programske opreme!"
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
-msgstr "Avtorske pravice nad Xfce 4 ima Olivier Fourdan (fourdan@xfce.org). Avtorske pravice nad posameznimi komponentami imajo njihovi avtorji."
+msgstr ""
+"Avtorske pravice nad Xfce 4 ima Olivier Fourdan (fourdan@xfce.org). Avtorske"
+" pravice nad posameznimi komponentami imajo njihovi avtorji."
 
 #: ../xfce4-about/main.c:338
 msgid ""
@@ -736,7 +751,11 @@ msgid ""
 "terms of the GNU Library General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
-msgstr "libxfce4ui, libxfce4util in exo paketi so distribuirani pod licenco GNU Library General Public License, kot je objavljena s strani organizacije Free Software Foundation; bodisi različice 2 licence ali (kot možnost) katerekoli poznejše različice."
+msgstr ""
+"libxfce4ui, libxfce4util in exo paketi so distribuirani pod licenco GNU "
+"Library General Public License, kot je objavljena s strani organizacije Free"
+" Software Foundation; bodisi različice 2 licence ali (kot možnost) "
+"katerekoli poznejše različice."
 
 #: ../xfce4-about/main.c:345
 msgid ""
@@ -745,7 +764,12 @@ msgid ""
 "of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr "Paketi thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop in xfwm4 so distribuirani pod pogoji licence GNU General Public License, kot je objavljena s strani organizacije Free Software Foundation; bodisi različice 2 licence ali (kot možnost) katerekoli poznejše različice."
+msgstr ""
+"Paketi thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, "
+"xfconf, xfdesktop in xfwm4 so distribuirani pod pogoji licence GNU General "
+"Public License, kot je objavljena s strani organizacije Free Software "
+"Foundation; bodisi različice 2 licence ali (kot možnost) katerekoli poznejše"
+" različice."
 
 #: ../xfce4-about/main.c:491
 #, c-format
@@ -772,31 +796,31 @@ msgstr "Nalaganje vmesnika ni uspelo"
 #. { N_("Project Lead"),
 #. xfce_contributors_lead
 #. },
-#: ../xfce4-about/contributors.h:136
+#: ../xfce4-about/contributors.h:144
 msgid "Core developers"
 msgstr "Glavni razvijalci"
 
-#: ../xfce4-about/contributors.h:139
+#: ../xfce4-about/contributors.h:147
 msgid "Active contributors"
 msgstr "Aktivni sodelavci"
 
-#: ../xfce4-about/contributors.h:142
+#: ../xfce4-about/contributors.h:150
 msgid "Servers maintained by"
 msgstr "Strežnike vzdržuje"
 
-#: ../xfce4-about/contributors.h:145
+#: ../xfce4-about/contributors.h:153
 msgid "Translations supervision"
 msgstr "Nadzor nad prevajalci"
 
-#: ../xfce4-about/contributors.h:148
+#: ../xfce4-about/contributors.h:156
 msgid "Documentation supervision"
 msgstr "Nadzor nad dokumentacijo"
 
-#: ../xfce4-about/contributors.h:151
+#: ../xfce4-about/contributors.h:159
 msgid "Translators"
 msgstr "Prevajalci"
 
-#: ../xfce4-about/contributors.h:154
+#: ../xfce4-about/contributors.h:162
 msgid "Previous contributors"
 msgstr "Predhodni sodelavci"
 
@@ -876,7 +900,9 @@ msgstr "Sistem"
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
-msgstr "Xfce je zbirka programov, ki skupaj sestavljajo polno-zmogljivo namizno okolje.\nNaslednji programi so del Xfce jedra:"
+msgstr ""
+"Xfce je zbirka programov, ki skupaj sestavljajo polno-zmogljivo namizno okolje.\n"
+"Naslednji programi so del Xfce jedra:"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:19
 msgid ""
@@ -887,7 +913,14 @@ msgid ""
 "Thank you for your interest in Xfce.\n"
 "\n"
 "\t- The Xfce Development Team"
-msgstr "Xfce je tudi razvojna platforma, ki ponuja številne knjižnice, ki so v pomoč programerjem pri razvoju aplikaciji, ki se dobro zlivajo z namiznim okoljem.\n\nXfce komponenete so licencirane pod prostokodne ali odprtokodne licence; GPL ali BSDL za aplikacije in LGPL ali BSDL za knjižnice. Za če podatkov si oglejte dokumentacijo, izvorno kodo ali Xfce spletno stran (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>).\n\nHvala za vaše zanimanje za Xfce.\n\n\t-Xfce razvojna skupina"
+msgstr ""
+"Xfce je tudi razvojna platforma, ki ponuja številne knjižnice, ki so v pomoč programerjem pri razvoju aplikaciji, ki se dobro zlivajo z namiznim okoljem.\n"
+"\n"
+"Xfce komponenete so licencirane pod prostokodne ali odprtokodne licence; GPL ali BSDL za aplikacije in LGPL ali BSDL za knjižnice. Za če podatkov si oglejte dokumentacijo, izvorno kodo ali Xfce spletno stran (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>).\n"
+"\n"
+"Hvala za vaše zanimanje za Xfce.\n"
+"\n"
+"\t-Xfce razvojna skupina"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:26
 msgid "About"
