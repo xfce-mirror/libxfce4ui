@@ -1,20 +1,20 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Andhika Padmawan <andhika.padmawan@gmail.com>, 2009
-# Ardjuna <Asyura.x@gmail.com>, 2015,2017,2021
-# Triyan W. Nugroho <triyan.wn@gmail.com>, 2020,2022
-# William Thomas <littlecloudydev@gmail.com>, 2017
+# Xfce Bot <transifex@xfce.org>, 2023
+# 
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Libxfce4ui\n"
+"Project-Id-Version: libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-16 00:45+0200\n"
-"PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Triyan W. Nugroho <triyan.wn@gmail.com>, 2020,2022\n"
-"Language-Team: Indonesian (http://www.transifex.com/xfce/libxfce4ui/language/id/)\n"
+"POT-Creation-Date: 2023-02-20 12:56+0100\n"
+"PO-Revision-Date: 2023-02-20 11:56+0000\n"
+"Last-Translator: Xfce Bot <transifex@xfce.org>, 2023\n"
+"Language-Team: Indonesian (https://www.transifex.com/xfce/teams/16840/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -38,7 +38,8 @@ msgstr "Anda ingin membaca dokumentasi secara daring?"
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
-msgstr "Anda akan diarahkan ke situs web dokumentasi yang memuat halaman bantuan."
+msgstr ""
+"Anda akan diarahkan ke situs web dokumentasi yang memuat halaman bantuan."
 
 #. Create cancel button
 #: ../libxfce4ui/xfce-dialogs.c:275 ../libxfce4ui/xfce-dialogs.c:533
@@ -80,14 +81,18 @@ msgstr "Tutup jendela dengan banyak tab?"
 msgid ""
 "This window has multiple tabs open. Closing this window will also close all "
 "its tabs."
-msgstr "Jendela ini memiliki banyak tab terbuka. Menutup jendela ini juga akan menutup semua tab."
+msgstr ""
+"Jendela ini memiliki banyak tab terbuka. Menutup jendela ini juga akan "
+"menutup semua tab."
 
 #: ../libxfce4ui/xfce-dialogs.c:523
 #, c-format
 msgid ""
 "This window has %d tabs open. Closing this window will also close all its "
 "tabs."
-msgstr "Jendela ini memiliki %d tab yang terbuka. Menutup jendela ini juga akan menutup semua tab."
+msgstr ""
+"Jendela ini memiliki %d tab yang terbuka. Menutup jendela ini juga akan "
+"menutup semua tab."
 
 #: ../libxfce4ui/xfce-dialogs.c:529
 msgid "Warning"
@@ -125,12 +130,12 @@ msgstr "Opsi manajemen sesi"
 msgid "Show session management options"
 msgstr "Tampilkan opsi manajemen sesi"
 
-#: ../libxfce4ui/xfce-sm-client.c:1614
+#: ../libxfce4ui/xfce-sm-client.c:1609
 #, c-format
 msgid "Failed to connect to the session manager: %s"
 msgstr "Gagal mengoneksi ke manajer sesi: %s"
 
-#: ../libxfce4ui/xfce-sm-client.c:1620
+#: ../libxfce4ui/xfce-sm-client.c:1615
 #, c-format
 msgid "Session manager did not return a valid client id"
 msgstr "Manajer sesi tidak mengembalikan identitas klien yang sah"
@@ -141,18 +146,20 @@ msgstr "Manajer sesi tidak mengembalikan identitas klien yang sah"
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
 "\"%s\"."
-msgstr "Direktori kerja \"%s\" tidak ada. Direktori tidak akan digunakan ketika memijahkan \"%s\"."
+msgstr ""
+"Direktori kerja \"%s\" tidak ada. Direktori tidak akan digunakan ketika "
+"memijahkan \"%s\"."
 
 #. retrieve the error and warning messages
-#: ../libxfce4ui/xfce-filename-input.c:228
+#: ../libxfce4ui/xfce-filename-input.c:232
 msgid "Filename is too long"
 msgstr "Nama berkas terlalu panjang"
 
-#: ../libxfce4ui/xfce-filename-input.c:229
+#: ../libxfce4ui/xfce-filename-input.c:233
 msgid "Directory separator illegal in file name"
 msgstr "Nama berkas tidak boleh menggunakan pemisah direktori"
 
-#: ../libxfce4ui/xfce-filename-input.c:230
+#: ../libxfce4ui/xfce-filename-input.c:234
 msgid "Filenames should not start or end with a space"
 msgstr "Nama berkas tidak boleh dimulai atau diakhiri dengan spasi"
 
@@ -161,7 +168,8 @@ msgstr "Nama berkas tidak boleh dimulai atau diakhiri dengan spasi"
 msgid ""
 "This shortcut is already being used for the action '%s'. Which action do you"
 " want to use?"
-msgstr "Pintasan ini telah digunakan untuk '%s'. Aksi mana yang ingin anda gunakan?"
+msgstr ""
+"Pintasan ini telah digunakan untuk '%s'. Aksi mana yang ingin anda gunakan?"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:54
 #: ../libxfce4kbd-private/xfce-shortcuts.c:57
@@ -185,14 +193,16 @@ msgstr "Simpan '%s'"
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr "Pintasan ini telah digunakan oleh'%s'. Aksi mana yang ingin anda gunakan?"
+msgstr ""
+"Pintasan ini telah digunakan oleh'%s'. Aksi mana yang ingin anda gunakan?"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:62
 #, c-format
 msgid ""
 "This shortcut is already being used by the action '%s'. Which action do you "
 "want to use?"
-msgstr "Pintasan ini telah digunakan oleh '%s'. Aksi mana yang ingin anda gunakan?"
+msgstr ""
+"Pintasan ini telah digunakan oleh '%s'. Aksi mana yang ingin anda gunakan?"
 
 #. This shortcut already exists in the provider, we don't want it twice
 #. Warn the user
@@ -281,7 +291,7 @@ msgstr "Tekan tombol papan tik untuk memicu %s '%s'."
 msgid "Please press a key"
 msgstr "Tekan sebuah tombol"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:349
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:350
 msgid "Could not grab the keyboard."
 msgstr "Tidak mendapat masukan dari papan ketik."
 
@@ -390,198 +400,214 @@ msgid "Toggle fullscreen"
 msgstr "Ubah ke layar penuh"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:63
+msgid "Move window to lower monitor"
+msgstr ""
+
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:64
+msgid "Move window to left monitor"
+msgstr ""
+
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:65
+msgid "Move window to right monitor"
+msgstr ""
+
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:66
+msgid "Move window to upper monitor"
+msgstr ""
+
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:67
 msgid "Move window to upper workspace"
 msgstr "Pindah jendela ke ruang kerja sebelah atas"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:64
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:68
 msgid "Move window to bottom workspace"
 msgstr "Pindah jendela ke ruang kerja sebelah bawah"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:65
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:69
 msgid "Move window to left workspace"
 msgstr "Pindah jendela ke ruang kerja sebelah kiri"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:66
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:70
 msgid "Move window to right workspace"
 msgstr "Pindah jendela ke ruang kerja sebelah kanan"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:67
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:71
 msgid "Move window to previous workspace"
 msgstr "Pindah jendela ke ruang kerja sebelumnya"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:68
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:72
 msgid "Move window to next workspace"
 msgstr "Pindah jendela ke ruang kerja selanjutnya"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:69
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:73
 msgid "Move window to workspace 1"
 msgstr "Pindah jendela ke ruang kerja 1"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:70
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:74
 msgid "Move window to workspace 2"
 msgstr "Pindah jendela ke ruang kerja 2"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:71
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:75
 msgid "Move window to workspace 3"
 msgstr "Pindah jendela ke ruang kerja 3"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:72
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:76
 msgid "Move window to workspace 4"
 msgstr "Pindah jendela ke ruang kerja 4"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:73
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:77
 msgid "Move window to workspace 5"
 msgstr "Pindah jendela ke ruang kerja 5"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:74
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:78
 msgid "Move window to workspace 6"
 msgstr "Pindah jendela ke ruang kerja 6"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:75
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:79
 msgid "Move window to workspace 7"
 msgstr "Pindah jendela ke ruang kerja 7"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:76
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:80
 msgid "Move window to workspace 8"
 msgstr "Pindah jendela ke ruang kerja 8"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:77
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:81
 msgid "Move window to workspace 9"
 msgstr "Pindah jendela ke ruang kerja 9"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:78
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:82
 msgid "Move window to workspace 10"
 msgstr "Pindah jendela ke ruang kerja 10"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:79
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:83
 msgid "Move window to workspace 11"
 msgstr "Pindah jendela ke ruang kerja 11"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:80
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:84
 msgid "Move window to workspace 12"
 msgstr "Pindah jendela ke ruang kerja 12"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:81
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:85
 msgid "Tile window to the top"
 msgstr "Tempatkan jendela di atas"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:82
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:86
 msgid "Tile window to the bottom"
 msgstr "Tempatkan jendela ke bawah"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:83
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:87
 msgid "Tile window to the left"
 msgstr "Tempatkan jendela di kiri"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:84
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:88
 msgid "Tile window to the right"
 msgstr "Tempatkan jendela ke kanan"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:85
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:89
 msgid "Tile window to the top-left"
 msgstr "Tempatkan jendela ke kiri atas"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:86
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:90
 msgid "Tile window to the top-right"
 msgstr "Tempatkan jendela ke kanan atas"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:87
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:91
 msgid "Tile window to the bottom-left"
 msgstr "Tempatkan jendela ke kiri bawah"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:88
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:92
 msgid "Tile window to the bottom-right"
 msgstr "Tempatkan jendela ke kanan bawah"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:89
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:93
 msgid "Show desktop"
 msgstr "Tampilkan destop"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:90
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:94
 msgid "Upper workspace"
 msgstr "Bagian atas ruang kerja"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:91
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:95
 msgid "Bottom workspace"
 msgstr "Bagian bawah ruang kerja"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:92
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:96
 msgid "Left workspace"
 msgstr "Bagian kiri ruang kerja"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:93
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:97
 msgid "Right workspace"
 msgstr "Bagian kanan ruang kerja"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:94
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:98
 msgid "Previous workspace"
 msgstr "Ruang kerja sebelumnya"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:95
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:99
 msgid "Next workspace"
 msgstr "Ruang kerja selanjutnya"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:96
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:100
 msgid "Workspace 1"
 msgstr "Ruang kerja 1"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:97
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:101
 msgid "Workspace 2"
 msgstr "Ruang kerja 2"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:98
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:102
 msgid "Workspace 3"
 msgstr "Ruang kerja 3"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:99
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:103
 msgid "Workspace 4"
 msgstr "Ruang kerja 4"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:100
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:104
 msgid "Workspace 5"
 msgstr "Ruang kerja 5"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:101
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:105
 msgid "Workspace 6"
 msgstr "Ruang kerja 6"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:102
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:106
 msgid "Workspace 7"
 msgstr "Ruang kerja 7"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:103
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:107
 msgid "Workspace 8"
 msgstr "Ruang kerja 8"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:104
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:108
 msgid "Workspace 9"
 msgstr "Ruang kerja 9"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:105
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:109
 msgid "Workspace 10"
 msgstr "Ruang kerja 10"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:106
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:110
 msgid "Workspace 11"
 msgstr "Ruang kerja 11"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:107
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:111
 msgid "Workspace 12"
 msgstr "Ruang kerja 12"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:108
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:112
 msgid "Add workspace"
 msgstr "Tambah ruang kerja"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:109
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:113
 msgid "Add adjacent workspace"
 msgstr "Tambah ruang kerja berdampingan"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:110
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:114
 msgid "Delete last workspace"
 msgstr "Hapus ruang kerja terakhir"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:111
+#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:115
 msgid "Delete active workspace"
 msgstr "Hapus ruang kerja aktif"
 
@@ -619,7 +645,9 @@ msgstr "Panel"
 
 #: ../xfce4-about/main.c:152
 msgid "Provides a home for window buttons, launchers, app menu and more."
-msgstr "Menyediakan tempat untuk tombol jendela, peluncur, menu aplikasi dan lebih banyak lagi."
+msgstr ""
+"Menyediakan tempat untuk tombol jendela, peluncur, menu aplikasi dan lebih "
+"banyak lagi."
 
 #: ../xfce4-about/main.c:156
 msgid "Desktop Manager"
@@ -627,7 +655,9 @@ msgstr "Manajer Destop"
 
 #: ../xfce4-about/main.c:157
 msgid "Sets desktop backgrounds, handles icons and more."
-msgstr "Menyetel gambar latar belakang desktop, menangani ikon dan lebih banyak lagi."
+msgstr ""
+"Menyetel gambar latar belakang desktop, menangani ikon dan lebih banyak "
+"lagi."
 
 #: ../xfce4-about/main.c:161
 msgid "File Manager"
@@ -635,7 +665,8 @@ msgstr "Manajer Berkas"
 
 #: ../xfce4-about/main.c:162
 msgid "Manages your files in a modern, easy-to-use and fast way."
-msgstr "Mengelola berkas Anda dengan cara yang modern, mudah digunakan dan cepat."
+msgstr ""
+"Mengelola berkas Anda dengan cara yang modern, mudah digunakan dan cepat."
 
 #: ../xfce4-about/main.c:166
 msgid "Volume Manager"
@@ -652,7 +683,9 @@ msgstr "Manajer Sesi"
 #: ../xfce4-about/main.c:172
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
-msgstr "Menyimpan dan mengembalikan sesi Anda, menangani saat hidupkan, mulai otomatis, dan matikan."
+msgstr ""
+"Menyimpan dan mengembalikan sesi Anda, menangani saat hidupkan, mulai "
+"otomatis, dan matikan."
 
 #: ../xfce4-about/main.c:176
 msgid "Settings Manager"
@@ -668,7 +701,9 @@ msgstr "Pencari Aplikasi"
 
 #: ../xfce4-about/main.c:182
 msgid "Quickly finds and launches applications installed on your system."
-msgstr "Mencari dan meluncurkan aplikasi yang terpasang pada komputer Anda dengan cepat."
+msgstr ""
+"Mencari dan meluncurkan aplikasi yang terpasang pada komputer Anda dengan "
+"cepat."
 
 #: ../xfce4-about/main.c:186
 msgid "Settings Daemon"
@@ -692,7 +727,8 @@ msgstr "Layanan Citra Miniatur"
 
 #: ../xfce4-about/main.c:197
 msgid "Implements the thumbnail management D-Bus specification."
-msgstr "Mengimplementasikan spesifikasi D-Bus untuk manajemen gambar miniatur."
+msgstr ""
+"Mengimplementasikan spesifikasi D-Bus untuk manajemen gambar miniatur."
 
 #: ../xfce4-about/main.c:251
 msgid "Please see <https://www.xfce.org/about/credits>"
@@ -702,17 +738,24 @@ msgstr "Silahkan kunjungi <https://www.xfce.org/about/credits>"
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
-msgstr "Jika Anda merasa ada yang terlewat pada daftar ini, jangan ragu untuk mengirimkan laporan kutu ke <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
+msgstr ""
+"Jika Anda merasa ada yang terlewat pada daftar ini, jangan ragu untuk "
+"mengirimkan laporan kutu ke "
+"<https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 
 #: ../xfce4-about/main.c:316
 msgid "Thanks to all who helped making this software available!"
-msgstr "Terima kasih pada semua pihak yang terlibat sehingga peranti lunak ini tersedia."
+msgstr ""
+"Terima kasih pada semua pihak yang terlibat sehingga peranti lunak ini "
+"tersedia."
 
 #: ../xfce4-about/main.c:333
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
-msgstr "Xfce 4 adalah hak cipta Olivier Fourdan (fourdan@xfce.org). Komponen berbeda merupakan hak cipta masing-masing pembuatnya."
+msgstr ""
+"Xfce 4 adalah hak cipta Olivier Fourdan (fourdan@xfce.org). Komponen berbeda"
+" merupakan hak cipta masing-masing pembuatnya."
 
 #: ../xfce4-about/main.c:338
 msgid ""
@@ -720,7 +763,10 @@ msgid ""
 "terms of the GNU Library General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
-msgstr "Paket libxfce4ui, libxfce4util dan exo didistribusikan di bawah ketentuan GNU Library General Public License yang dipublikasikan oleh Free Software Foundation; baik versi 2 maupun (sesuai pilihan Anda) versi berikutnya."
+msgstr ""
+"Paket libxfce4ui, libxfce4util dan exo didistribusikan di bawah ketentuan "
+"GNU Library General Public License yang dipublikasikan oleh Free Software "
+"Foundation; baik versi 2 maupun (sesuai pilihan Anda) versi berikutnya."
 
 #: ../xfce4-about/main.c:345
 msgid ""
@@ -729,7 +775,11 @@ msgid ""
 "of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr "Paket thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop dan xfwm4 didistribusikan di bawah ketentuan GNU General Public License yang dipublikasikan oleh Free Software Foundation; baik versi 2 maupun (sesuai pilihan Anda) versi berikutnya."
+msgstr ""
+"Paket thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, "
+"xfconf, xfdesktop dan xfwm4 didistribusikan di bawah ketentuan GNU General "
+"Public License yang dipublikasikan oleh Free Software Foundation; baik versi"
+" 2 maupun (sesuai pilihan Anda) versi berikutnya."
 
 #: ../xfce4-about/main.c:491
 #, c-format
@@ -756,31 +806,31 @@ msgstr "Gagal memuat antar muka"
 #. { N_("Project Lead"),
 #. xfce_contributors_lead
 #. },
-#: ../xfce4-about/contributors.h:136
+#: ../xfce4-about/contributors.h:144
 msgid "Core developers"
 msgstr "Pengembang inti"
 
-#: ../xfce4-about/contributors.h:139
+#: ../xfce4-about/contributors.h:147
 msgid "Active contributors"
 msgstr "Kontributor aktif"
 
-#: ../xfce4-about/contributors.h:142
+#: ../xfce4-about/contributors.h:150
 msgid "Servers maintained by"
 msgstr "Server dikelola oleh"
 
-#: ../xfce4-about/contributors.h:145
+#: ../xfce4-about/contributors.h:153
 msgid "Translations supervision"
 msgstr "Pengawas terjemahan"
 
-#: ../xfce4-about/contributors.h:148
+#: ../xfce4-about/contributors.h:156
 msgid "Documentation supervision"
 msgstr "Pengawasan dokumentasi"
 
-#: ../xfce4-about/contributors.h:151
+#: ../xfce4-about/contributors.h:159
 msgid "Translators"
 msgstr "Penerjemah"
 
-#: ../xfce4-about/contributors.h:154
+#: ../xfce4-about/contributors.h:162
 msgid "Previous contributors"
 msgstr "Kontributor terdahulu"
 
@@ -860,7 +910,9 @@ msgstr "Sistem"
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
-msgstr "Xfce adalah sekumpulan program yang secara bersama-sama menyediakan sebuah lingkungan desktop dengan fitur yang lengkap.\nProgram-program berikut adalah bagian dari inti Xfce:"
+msgstr ""
+"Xfce adalah sekumpulan program yang secara bersama-sama menyediakan sebuah lingkungan desktop dengan fitur yang lengkap.\n"
+"Program-program berikut adalah bagian dari inti Xfce:"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:19
 msgid ""
@@ -871,7 +923,14 @@ msgid ""
 "Thank you for your interest in Xfce.\n"
 "\n"
 "\t- The Xfce Development Team"
-msgstr "Xfce juga menjadi sebuah platform pengembangan yang menyediakan beberapa pustaka yang membantu pemrogram membuat aplikasi yang pas dengan lingkungan desktop.\n\nKomponen-komponen Xfce dilisensikan di bawah lisensi bebas atau sumber-terbuka; GPL atau BSDL untuk aplikasi dan LGPL atau BSDL untuk pustaka. Lihat pada dokumentasi, kode sumber atau situs web Xfce (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) untuk informasi lebih lanjut.\n\nTerimakasih atas ketertarikan Anda pada Xfce.\n\n\t- Tim Pengembang Xfce"
+msgstr ""
+"Xfce juga menjadi sebuah platform pengembangan yang menyediakan beberapa pustaka yang membantu pemrogram membuat aplikasi yang pas dengan lingkungan desktop.\n"
+"\n"
+"Komponen-komponen Xfce dilisensikan di bawah lisensi bebas atau sumber-terbuka; GPL atau BSDL untuk aplikasi dan LGPL atau BSDL untuk pustaka. Lihat pada dokumentasi, kode sumber atau situs web Xfce (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) untuk informasi lebih lanjut.\n"
+"\n"
+"Terimakasih atas ketertarikan Anda pada Xfce.\n"
+"\n"
+"\t- Tim Pengembang Xfce"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:26
 msgid "About"
@@ -930,12 +989,14 @@ msgstr "%s; Build ID: %s"
 msgid ""
 "A file named \"%s\" already exists in this directory, the file hasn't been "
 "added."
-msgstr "Sebuah berkas bernama \"%s\" sudah ada di direktori ini, berkas tersebut belum ditambahkan."
+msgstr ""
+"Sebuah berkas bernama \"%s\" sudah ada di direktori ini, berkas tersebut "
+"belum ditambahkan."
 
 #: ../tests/test-ui.c:122
 msgid "Failed to migrate the old panel configuration"
 msgstr "Gagal untuk migrasi konfigurasi panel lama"
 
-#: ../tests/test-ui.c:170 ../tests/test-ui.c:195
+#: ../tests/test-ui.c:172 ../tests/test-ui.c:197
 msgid "Customize settings stored by Xfconf"
 msgstr "Merubah konfigurasi yang disimpan di Xfconf"
