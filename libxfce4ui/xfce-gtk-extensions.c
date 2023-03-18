@@ -56,11 +56,11 @@
 /**
  * xfce_gtk_menu_item_fill_base:
  * @item : #GtkMenuItem which should be filled
- * @tooltip_text : Tooltip to add on the passed item, or NULL
- * @accel_path : Unique path, used to identify the accelerator, or NULL
- * @callback: (scope notified): #GCallback which will be triggered on activation, or NULL
- * @callback_param : optional callback parameter, or NULL.
- * @menu_to_append_item : #GtkMenuShell on which the item should be appended, or NULL
+ * @tooltip_text: (nullable): Tooltip to add on the passed item, or NULL
+ * @accel_path: (nullable): Unique path, used to identify the accelerator, or NULL
+ * @callback: (scope notified) (nullable): #GCallback which will be triggered on activation, or NULL
+ * @callback_param: (nullable): optional callback parameter, or NULL.
+ * @menu_to_append_item: (nullable): #GtkMenuShell on which the item should be appended, or NULL
  *
  * internal Convenience method to fill a menu item.
  *
@@ -92,11 +92,11 @@ xfce_gtk_menu_item_fill_base (GtkWidget    *item,
 /**
  * xfce_gtk_menu_item_new:
  * @label_text : Label to use for the #GtkMenuItem
- * @tooltip_text : Tooltip to add on the passed item, or NULL
- * @accel_path : Unique path, used to identify the accelerator, or NULL
- * @callback: (scope notified): #GCallback which will be triggered on activation, or NULL
- * @callback_param : optional callback parameter, or NULL.
- * @menu_to_append_item : #GtkMenuShell on which the item should be appended, or NULL
+ * @tooltip_text: (nullable): Tooltip to add on the passed item, or NULL
+ * @accel_path: (nullable): Unique path, used to identify the accelerator, or NULL
+ * @callback: (scope notified) (nullable): #GCallback which will be triggered on activation, or NULL
+ * @callback_param: (nullable): optional callback parameter, or NULL.
+ * @menu_to_append_item: (nullable): #GtkMenuShell on which the item should be appended, or NULL
  *
  * Convenience method to create a #GtkMenuItem and preconfigure it with the passed parameters.
  *
@@ -124,12 +124,12 @@ xfce_gtk_menu_item_new (const gchar  *label_text,
 /**
  * xfce_gtk_image_menu_item_new_from_icon_name:
  * @label_text : Label to use for the #GtkImageMenuItem
- * @tooltip_text : Tooltip to add on the passed item, or NULL
- * @accel_path : Unique path, used to identify the accelerator, or NULL
- * @callback: (scope notified): #GCallback which will be triggered on activation, or NULL
- * @callback_param : optional callback parameter, or NULL.
- * @icon_name : name of the icon to use for the #GtkImageMenuItem, or NULL
- * @menu_to_append_item : #GtkMenuShell on which the item should be appended, or NULL
+ * @tooltip_text: (nullable): Tooltip to add on the passed item, or NULL
+ * @accel_path: (nullable): Unique path, used to identify the accelerator, or NULL
+ * @callback: (scope notified) (nullable): #GCallback which will be triggered on activation, or NULL
+ * @callback_param: (nullable): optional callback parameter, or NULL.
+ * @icon_name: (nullable): name of the icon to use for the #GtkImageMenuItem, or NULL
+ * @menu_to_append_item: (nullable): #GtkMenuShell on which the item should be appended, or NULL
  *
  * Convenience method to create a #GtkImageMenuItem and preconfigure it with the passed parameters.
  *
@@ -158,12 +158,12 @@ xfce_gtk_image_menu_item_new_from_icon_name (const gchar  *label_text,
 /**
  * xfce_gtk_image_menu_item_new:
  * @label_text : Label to use for the #GtkImageMenuItem
- * @tooltip_text : Tooltip to add on the passed item, or NULL
- * @accel_path : Unique path, used to identify the accelerator, or NULL
- * @callback: (scope notified): #GCallback which will be triggered on activation, or NULL
- * @callback_param : optional callback parameter, or NULL.
- * @image : a widget to set as the image for the menu item, or NULL
- * @menu_to_append_item : #GtkMenuShell on which the item should be appended, or NULL
+ * @tooltip_text: (nullable): Tooltip to add on the passed item, or NULL
+ * @accel_path: (nullable): Unique path, used to identify the accelerator, or NULL
+ * @callback: (scope notified) (nullable): #GCallback which will be triggered on activation, or NULL
+ * @callback_param: (nullable): optional callback parameter, or NULL.
+ * @image: (nullable): a widget to set as the image for the menu item, or NULL
+ * @menu_to_append_item: (nullable): #GtkMenuShell on which the item should be appended, or NULL
  *
  * Convenience method to create a deprecated #GtkImageMenuItem and preconfigure it with the passed parameters.
  * In order to prevent G_GNUC_BEGIN_IGNORE_DEPRECATIONS in all xfce projects, this method can be used
@@ -201,12 +201,12 @@ xfce_gtk_image_menu_item_new (const gchar  *label_text,
 /**
  * xfce_gtk_check_menu_item_new:
  * @label_text : Label to use for the #GtkCheckMenuItem
- * @tooltip_text : Tooltip to add on the passed item, or NULL
- * @accel_path : Unique path, used to identify the accelerator, or NULL
- * @callback: (scope notified): #GCallback which will be triggered on activation, or NULL
- * @callback_param : optional callback parameter, or NULL.
+ * @tooltip_text: (nullable): Tooltip to add on the passed item, or NULL
+ * @accel_path: (nullable): Unique path, used to identify the accelerator, or NULL
+ * @callback: (scope notified) (nullable): #GCallback which will be triggered on activation, or NULL
+ * @callback_param: (nullable): optional callback parameter, or NULL.
  * @active : boolean value indicating whether the check box is active.
- * @menu_to_append_item : #GtkMenuShell on which the item should be appended, or NULL
+ * @menu_to_append_item: (nullable): #GtkMenuShell on which the item should be appended, or NULL
  *
  * Convenience method to create a #GtkCheckMenuItem and preconfigure it with the passed parameters.
  *
@@ -241,12 +241,12 @@ xfce_gtk_check_menu_item_new (const gchar  *label_text,
 /**
  * xfce_gtk_radio_menu_item_new:
  * @label_text : Label to use for the #GtkCheckMenuItem
- * @tooltip_text : Tooltip to add on the passed item, or NULL
- * @accel_path : Unique path, used to identify the accelerator, or NULL
- * @callback: (scope notified): #GCallback which will be triggered on activation, or NULL
- * @callback_param : optional callback parameter, or NULL.
+ * @tooltip_text: (nullable): Tooltip to add on the passed item, or NULL
+ * @accel_path: (nullable): Unique path, used to identify the accelerator, or NULL
+ * @callback: (scope notified) (nullable): #GCallback which will be triggered on activation, or NULL
+ * @callback_param: (nullable): optional callback parameter, or NULL.
  * @active : boolean value indicating whether the check box is active.
- * @menu_to_append_item : #GtkMenuShell on which the item should be appended, or NULL
+ * @menu_to_append_item: (nullable): #GtkMenuShell on which the item should be appended, or NULL
  *
  * Convenience method to create a #GtkCheckMenuItem and preconfigure it with the passed parameters.
  * In order to simplify usage, a #GtkCheckMenuItem is created and drawn as radio-item
@@ -278,8 +278,8 @@ xfce_gtk_radio_menu_item_new (const gchar  *label_text,
 /**
  * xfce_gtk_menu_item_new_from_action_entry:
  * @action_entry : Label to use for the #GtkCheckMenuItem
- * @callback_param : optional callback parameter, or NULL.
- * @menu_to_append_item : #GtkMenuShell on which the item should be appended, or NULL
+ * @callback_param: (nullable): optional callback parameter, or NULL.
+ * @menu_to_append_item: (nullable): #GtkMenuShell on which the item should be appended, or NULL
  *
  * Method to create a menu item from the passed action entry
  *
@@ -315,9 +315,9 @@ xfce_gtk_menu_item_new_from_action_entry (const XfceGtkActionEntry *action_entry
 /**
  * xfce_gtk_toggle_menu_item_new_from_action_entry:
  * @action_entry : Label to use for the #GtkCheckMenuItem
- * @callback_param : optional callback parameter, or NULL.
+ * @callback_param: (nullable): optional callback parameter, or NULL.
  * @active : boolean value indicating whether the check box is active.
- * @menu_to_append_item : #GtkMenuShell on which the item should be appended, or NULL
+ * @menu_to_append_item: (nullable): #GtkMenuShell on which the item should be appended, or NULL
  *
  * Method to create a toggle menu item from the passed action entry
  *
@@ -354,7 +354,7 @@ xfce_gtk_toggle_menu_item_new_from_action_entry (const XfceGtkActionEntry *actio
 /**
  * xfce_gtk_tool_button_new_from_action_entry:
  * @action_entry : Label to use for the #GtkToolButton
- * @callback_param : optional callback parameter, or %NULL.
+ * @callback_param: (nullable): optional callback parameter, or %NULL.
  * @toolbar_to_append_item : #GtkToolbar on which the item should be appended
  *
  * Method to create a toolbar button from the passed action entry.
@@ -386,7 +386,7 @@ xfce_gtk_tool_button_new_from_action_entry (const XfceGtkActionEntry *action_ent
 /**
  * xfce_gtk_toggle_tool_button_new_from_action_entry:
  * @action_entry : Label to use for the #GtkToggleToolButton
- * @callback_param : optional callback parameter, or %NULL.
+ * @callback_param: (nullable): optional callback parameter, or %NULL.
  * @active : boolean value indicating whether the toggle is initially active.
  * @toolbar_to_append_item : #GtkToolbar on which the item should be appended
  *
@@ -694,9 +694,9 @@ xfce_gtk_execute_tab_accel (const gchar        *accel_path,
 
 /**
  * xfce_gtk_button_new_mixed:
- * @stock_id : the name of the stock item.
- * @label    : the text of the button, with an underscore in front of
- *             the mnemonic character.
+ * @stock_id: (nullable): the name of the stock item.
+ * @label:    (nullable): the text of the button, with an underscore
+ *                        in front of the mnemonic character.
  *
  * Creates a new #GtkButton containing a mnemonic label and a stock icon.
  * The @stock_id could be something like #GTK_STOCK_OK or #GTK_STOCK_APPLY.
@@ -1069,7 +1069,7 @@ xfce_gicon_from_name (const gchar *name)
 /**
  * xfce_gtk_menu_item_set_accel_label:
  * @menu_item : #GtkMenuItem on which the accel label is to set
- * @accel_path : Unique path, used to identify the accelerator, or NULL to show no accelerator
+ * @accel_path: (nullable): Unique path, used to identify the accelerator, or NULL to show no accelerator
 *
  * Use the passed accel_path show the related #GtkAccelLabel with the correct accelerator on the item.
  *
