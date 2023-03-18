@@ -1546,7 +1546,7 @@ xfce_sm_client_get_full(XfceSMClientRestartStyle restart_style,
 /**
  * xfce_sm_client_connect:
  * @sm_client: An #XfceSMClient
- * @error: (out) (allow-none) (transfer full): A #GError location.
+ * @error: (out) (nullable) (transfer full): A #GError location.
  *
  * Attempts to connect to the session manager.
  *
