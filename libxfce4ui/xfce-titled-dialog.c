@@ -788,7 +788,7 @@ xfce_titled_dialog_get_subtitle (XfceTitledDialog *titled_dialog)
 /**
  * xfce_titled_dialog_set_subtitle:
  * @titled_dialog : a #XfceTitledDialog.
- * @subtitle      : the new subtitle for the @titled_dialog, or %NULL.
+ * @subtitle: (nullable): the new subtitle for the @titled_dialog, or %NULL.
  *
  * Sets the subtitle displayed by @titled_dialog to @subtitle; if
  * @subtitle is %NULL no subtitle will be displayed by the @titled_dialog.
