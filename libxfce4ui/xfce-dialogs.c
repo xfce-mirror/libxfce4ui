@@ -571,7 +571,7 @@ xfce_dialog_confirm_close_tabs (GtkWindow *parent,
  * See xfce_message_dialog_new(), this version takes a va_list for
  * language bindings to use.
  *
- * Returns: (transfer full): A new #GtkMessageDialog.
+ * Returns: (transfer none): A new #GtkMessageDialog.
  **/
 GtkWidget *
 xfce_message_dialog_new_valist (GtkWindow   *parent,
@@ -808,7 +808,7 @@ xfce_message_dialog_new_valist (GtkWindow   *parent,
  * </programlisting>
  * </example>
  *
- * Return value: (transfer full): A new #GtkMessageDialog.
+ * Return value: (transfer none): A new #GtkMessageDialog.
  **/
 GtkWidget *
 xfce_message_dialog_new (GtkWindow   *parent,
