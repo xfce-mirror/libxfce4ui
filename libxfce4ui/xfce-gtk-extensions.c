@@ -100,7 +100,7 @@ xfce_gtk_menu_item_fill_base (GtkWidget    *item,
  *
  * Convenience method to create a #GtkMenuItem and preconfigure it with the passed parameters.
  *
- * Return value: (transfer full): A new #GtkMenuItem.
+ * Return value: (transfer floating): A new #GtkMenuItem.
  *
  * Since: 4.16
  **/
@@ -133,7 +133,7 @@ xfce_gtk_menu_item_new (const gchar  *label_text,
  *
  * Convenience method to create a #GtkImageMenuItem and preconfigure it with the passed parameters.
  *
- * Return value: (transfer full): A new #GtkImageMenuItem.
+ * Return value: (transfer floating): A new #GtkImageMenuItem.
  *
  * Since: 4.16
  **/
@@ -168,7 +168,7 @@ xfce_gtk_image_menu_item_new_from_icon_name (const gchar  *label_text,
  * Convenience method to create a deprecated #GtkImageMenuItem and preconfigure it with the passed parameters.
  * In order to prevent G_GNUC_BEGIN_IGNORE_DEPRECATIONS in all xfce projects, this method can be used
  *
- * Return value: (transfer full): A new #GtkImageMenuItem.
+ * Return value: (transfer floating): A new #GtkImageMenuItem.
  *
  * Since: 4.16
  **/
@@ -210,7 +210,7 @@ xfce_gtk_image_menu_item_new (const gchar  *label_text,
  *
  * Convenience method to create a #GtkCheckMenuItem and preconfigure it with the passed parameters.
  *
- * Return value: (transfer full): A new #GtkCheckMenuItem.
+ * Return value: (transfer floating): A new #GtkCheckMenuItem.
  *
  * Since: 4.16
  **/
@@ -251,7 +251,7 @@ xfce_gtk_check_menu_item_new (const gchar  *label_text,
  * Convenience method to create a #GtkCheckMenuItem and preconfigure it with the passed parameters.
  * In order to simplify usage, a #GtkCheckMenuItem is created and drawn as radio-item
  *
- * Return value: (transfer full): A new #GtkCheckMenuItem.
+ * Return value: (transfer floating): A new #GtkCheckMenuItem.
  *
  * Since: 4.16
  **/
@@ -283,7 +283,7 @@ xfce_gtk_radio_menu_item_new (const gchar  *label_text,
  *
  * Method to create a menu item from the passed action entry
  *
- * Return value: (transfer full) (nullable): A new #GtkMenuItem or NULL
+ * Return value: (transfer floating) (nullable): A new #GtkMenuItem or NULL
  *
  * Since: 4.16
  **/
@@ -321,7 +321,7 @@ xfce_gtk_menu_item_new_from_action_entry (const XfceGtkActionEntry *action_entry
  *
  * Method to create a toggle menu item from the passed action entry
  *
- * Return value: (transfer full) (nullable): A new #GtkMenuItem or NULL
+ * Return value: (transfer floating) (nullable): A new #GtkMenuItem or NULL
  *
  * Since: 4.16
  **/
@@ -359,7 +359,7 @@ xfce_gtk_toggle_menu_item_new_from_action_entry (const XfceGtkActionEntry *actio
  *
  * Method to create a toolbar button from the passed action entry.
  *
- * Return value: (transfer full): A new #GtkToolButton
+ * Return value: (transfer floating): A new #GtkToolButton
  *
  * Since: 4.16
  **/
@@ -392,7 +392,7 @@ xfce_gtk_tool_button_new_from_action_entry (const XfceGtkActionEntry *action_ent
  *
  * Method to create a toolbar toggle-button from the passed action entry.
  *
- * Return value: (transfer full): A new #GtkToggleToolButton
+ * Return value: (transfer floating): A new #GtkToggleToolButton
  *
  * Since: 4.17.6
  **/
@@ -705,7 +705,7 @@ xfce_gtk_execute_tab_accel (const gchar        *accel_path,
  * when @label is %NULL a stock button will be created. This behaviour
  * is added for xfce_message_dialog_new().
  *
- * Return value: (transfer full): the newly created #GtkButton widget.
+ * Return value: (transfer floating): the newly created #GtkButton widget.
  **/
 GtkWidget *
 xfce_gtk_button_new_mixed (const gchar *stock_id,
@@ -750,7 +750,7 @@ xfce_gtk_button_new_mixed (const gchar *stock_id,
  *
  * See also: xfce_gtk_frame_box_new_with_content().
  *
- * Return value: (transfer full): the newly created #GtkFrame widget.
+ * Return value: (transfer floating): the newly created #GtkFrame widget.
  **/
 GtkWidget *
 xfce_gtk_frame_box_new (const gchar  *label,
@@ -804,7 +804,7 @@ G_GNUC_END_IGNORE_DEPRECATIONS
  * Creates a widget with xfce_gtk_frame_box_new() and adds the
  * @content #GtkWidget to the frame.
  *
- * Return value: (transfer full): the newly created #GtkFrame widget.
+ * Return value: (transfer floating): the newly created #GtkFrame widget.
  **/
 GtkWidget *
 xfce_gtk_frame_box_new_with_content (const gchar *label,
