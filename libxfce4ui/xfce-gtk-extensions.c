@@ -627,7 +627,7 @@ xfce_gtk_translate_action_entries (XfceGtkActionEntry *action_entries,
  * The Tab key is used to navigate the interface by GTK+ so we need to handle shortcuts with the Tab accelerator manually.
  * Tab sometimes becomes ISO_Left_Tab (e.g. in Ctrl+Shift+Tab) so check both here.
  *
- * Return value: a boolean that is TRUE if the event was handled, otherwise it is FALSE
+ * Return value: a boolean that is GDK_EVENT_STOP (TRUE) if the event was handled, otherwise it is GDK_EVENT_PROPAGATE (FALSE)
 **/
 gboolean
 xfce_gtk_handle_tab_accels (GdkEventKey        *key_event,
@@ -638,17 +638,19 @@ xfce_gtk_handle_tab_accels (GdkEventKey        *key_event,
 {
   const guint modifiers = key_event->state & gtk_accelerator_get_default_mod_mask ();
 
+  g_return_val_if_fail (GTK_IS_ACCEL_GROUP (accel_group), GDK_EVENT_PROPAGATE);
+
   if (G_UNLIKELY (key_event->keyval == GDK_KEY_Tab || key_event->keyval == GDK_KEY_ISO_Left_Tab) && key_event->type == GDK_KEY_PRESS)
     {
       GtkAccelGroupEntry  *group_entries;
-      guint                group_entries_count;
+      guint                group_entries_count = 0;
 
       group_entries = gtk_accel_group_query (accel_group, key_event->keyval, modifiers, &group_entries_count);
       if (group_entries_count > 1)
         {
-          g_error ("Found multiple shortcuts that include the Tab key and the same modifiers.");
+          g_warning ("Error: Found multiple shortcuts that include the Tab key and the same modifiers. Using first match");
         }
-      else if (group_entries_count == 1)
+      if (group_entries_count > 0)
         {
           const gchar *path = g_quark_to_string (group_entries[0].accel_path_quark);
           return xfce_gtk_execute_tab_accel (path, data, entries, entry_count);
