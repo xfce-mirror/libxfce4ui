@@ -78,7 +78,7 @@ xfce_gdk_monitor_get_number (GdkMonitor *monitor)
  * currently contains the pointer. If no active screen was found, the
  * default #GdkScreen is returned.
  *
- * Return value: (transfer full): the currently active #GdkScreen.
+ * Return value: (transfer none): the currently active #GdkScreen.
  **/
 GdkScreen *
 xfce_gdk_screen_get_active (gint *monitor_return)
