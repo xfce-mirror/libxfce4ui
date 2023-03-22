@@ -808,6 +808,9 @@ xfce_message_dialog_new_valist (GtkWindow   *parent,
  * </programlisting>
  * </example>
  *
+ * The caller is responsible for destroying the dialog with gtk_widget_destroy()
+ * when it is no longer required.
+ *
  * Return value: (transfer none): A new #GtkMessageDialog.
  **/
 GtkWidget *
