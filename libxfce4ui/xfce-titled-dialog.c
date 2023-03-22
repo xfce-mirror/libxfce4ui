@@ -457,10 +457,10 @@ xfce_titled_dialog_new (void)
 
 /**
  * xfce_titled_dialog_new_with_buttons:
- * @title             : (allow-none): title of the dialog, or %NULL.
- * @parent            : (allow-none): transient parent window of the dialog, or %NULL.
+ * @title             : (nullable): title of the dialog, or %NULL.
+ * @parent            : (nullable): transient parent window of the dialog, or %NULL.
  * @flags             : from #GtkDialogFlags.
- * @first_button_text : (allow-none): stock ID or text to go in first, or %NULL.
+ * @first_button_text : (nullable): stock ID or text to go in first, or %NULL.
  * @...               : response ID for the first button, then additional buttons, ending with %NULL.
  *
  * See the documentation of gtk_dialog_new_with_buttons() for details about the
@@ -523,11 +523,11 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 
 /**
  * xfce_titled_dialog_new_with_mixed_buttons:
- * @title                  :  (allow-none):title of the dialog, or %NULL.
- * @parent                 : (allow-none): transient parent window of the dialog, or %NULL.
+ * @title                  : (nullable): title of the dialog, or %NULL.
+ * @parent                 : (nullable): transient parent window of the dialog, or %NULL.
  * @flags                  : from #GtkDialogFlags.
  * @first_button_icon_name : icon name to go in first, or "" for no icon.
- * @first_button_text      : (allow-none): text to go in first, or %NULL.
+ * @first_button_text      : (nullable): text to go in first, or %NULL.
  * @...                    : response ID for the first button, then additional buttons, ending with %NULL.
  *
  * Creates an #XfceTitledDialog using xfce_gtk_button_new_mixed. This allows
@@ -788,7 +788,7 @@ xfce_titled_dialog_get_subtitle (XfceTitledDialog *titled_dialog)
 /**
  * xfce_titled_dialog_set_subtitle:
  * @titled_dialog : a #XfceTitledDialog.
- * @subtitle      : the new subtitle for the @titled_dialog, or %NULL.
+ * @subtitle: (nullable): the new subtitle for the @titled_dialog, or %NULL.
  *
  * Sets the subtitle displayed by @titled_dialog to @subtitle; if
  * @subtitle is %NULL no subtitle will be displayed by the @titled_dialog.
