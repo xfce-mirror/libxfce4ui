@@ -1,20 +1,19 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Xfce Bot <transifex@xfce.org>, 2023
-# 
-#, fuzzy
+# Andi Chandler <andi@gowling.com>, 2017,2023
+# Jackson Doak <noskcaj@ubuntu.com>, 2013
+# Robert Readman <robert_readman@hotmail.com>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: libxfce4ui\n"
+"Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-20 12:56+0100\n"
-"PO-Revision-Date: 2023-02-20 11:56+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>, 2023\n"
-"Language-Team: English (United Kingdom) (https://www.transifex.com/xfce/teams/16840/en_GB/)\n"
+"POT-Creation-Date: 2022-11-28 14:58+0100\n"
+"PO-Revision-Date: 2013-07-02 20:33+0000\n"
+"Last-Translator: Andi Chandler <andi@gowling.com>, 2017,2023\n"
+"Language-Team: English (United Kingdom) (http://app.transifex.com/xfce/libxfce4ui/language/en_GB/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -38,9 +37,7 @@ msgstr "Do you want to read the manual online?"
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
-msgstr ""
-"You will be redirected to the documentation website where the help pages are"
-" maintained and translated."
+msgstr "You will be redirected to the documentation website where the help pages are maintained and translated."
 
 #. Create cancel button
 #: ../libxfce4ui/xfce-dialogs.c:275 ../libxfce4ui/xfce-dialogs.c:533
@@ -76,20 +73,20 @@ msgstr "Cancel"
 
 #: ../libxfce4ui/xfce-dialogs.c:518
 msgid "Close window with multiple tabs?"
-msgstr ""
+msgstr "Close window with multiple tabs?"
 
 #: ../libxfce4ui/xfce-dialogs.c:520
 msgid ""
 "This window has multiple tabs open. Closing this window will also close all "
 "its tabs."
-msgstr ""
+msgstr "This window has multiple tabs open. Closing this window will also close all its tabs."
 
 #: ../libxfce4ui/xfce-dialogs.c:523
 #, c-format
 msgid ""
 "This window has %d tabs open. Closing this window will also close all its "
 "tabs."
-msgstr ""
+msgstr "This window has %d tabs open. Closing this window will also close all its tabs."
 
 #: ../libxfce4ui/xfce-dialogs.c:529
 msgid "Warning"
@@ -143,31 +140,27 @@ msgstr "Session manager did not return a valid client id"
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
 "\"%s\"."
-msgstr ""
-"Working directory \"%s\" does not exist. It won't be used when spawning "
-"\"%s\"."
+msgstr "Working directory \"%s\" does not exist. It won't be used when spawning \"%s\"."
 
 #. retrieve the error and warning messages
-#: ../libxfce4ui/xfce-filename-input.c:232
-msgid "Filename is too long"
-msgstr ""
-
 #: ../libxfce4ui/xfce-filename-input.c:233
-msgid "Directory separator illegal in file name"
-msgstr ""
+msgid "Filename is too long"
+msgstr "Filename is too long"
 
 #: ../libxfce4ui/xfce-filename-input.c:234
+msgid "Directory separator illegal in file name"
+msgstr "Directory separator illegal in file name"
+
+#: ../libxfce4ui/xfce-filename-input.c:235
 msgid "Filenames should not start or end with a space"
-msgstr ""
+msgstr "Filenames should not start or end with a space"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:53
 #, c-format
 msgid ""
 "This shortcut is already being used for the action '%s'. Which action do you"
 " want to use?"
-msgstr ""
-"This shortcut is already being used for the action '%s'. Which action do you"
-" want to use?"
+msgstr "This shortcut is already being used for the action '%s'. Which action do you want to use?"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:54
 #: ../libxfce4kbd-private/xfce-shortcuts.c:57
@@ -191,18 +184,14 @@ msgstr "Keep '%s'"
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr ""
-"This shortcut is already being used for the command '%s'. Which action do "
-"you want to use?"
+msgstr "This shortcut is already being used for the command '%s'. Which action do you want to use?"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:62
 #, c-format
 msgid ""
 "This shortcut is already being used by the action '%s'. Which action do you "
 "want to use?"
-msgstr ""
-"This shortcut is already being used by the action '%s'. Which action do you "
-"want to use?"
+msgstr "This shortcut is already being used by the action '%s'. Which action do you want to use?"
 
 #. This shortcut already exists in the provider, we don't want it twice
 #. Warn the user
@@ -227,19 +216,19 @@ msgstr "This shortcut is already being used for something else."
 #: ../libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:94
 #: ../libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:131
 msgid "Shortcuts Editor"
-msgstr ""
+msgstr "Shortcuts Editor"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:380
 msgid "The current shortcut. Click to edit..."
-msgstr ""
+msgstr "The current shortcut. Click to edit..."
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:391
 msgid "Clear the shortcut"
-msgstr ""
+msgstr "Clear the shortcut"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:401
 msgid "Restore the default shortcut"
-msgstr ""
+msgstr "Restore the default shortcut"
 
 #. skip leading slash
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:473
@@ -285,13 +274,13 @@ msgstr "Clear"
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:273
 #, c-format
 msgid "Press keyboard keys to trigger the %s '%s'."
-msgstr ""
+msgstr "Press keyboard keys to trigger the %s '%s'."
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:295
 msgid "Please press a key"
-msgstr ""
+msgstr "Please press a key"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:350
+#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:349
 msgid "Could not grab the keyboard."
 msgstr "Could not grab the keyboard."
 
@@ -401,19 +390,19 @@ msgstr "Toggle fullscreen"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:63
 msgid "Move window to lower monitor"
-msgstr ""
+msgstr "Move window to lower monitor"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:64
 msgid "Move window to left monitor"
-msgstr ""
+msgstr "Move window to left monitor"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:65
 msgid "Move window to right monitor"
-msgstr ""
+msgstr "Move window to right monitor"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:66
 msgid "Move window to upper monitor"
-msgstr ""
+msgstr "Move window to upper monitor"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:67
 msgid "Move window to upper workspace"
@@ -629,7 +618,7 @@ msgstr "Version information"
 
 #: ../xfce4-about/main.c:128
 msgid "GPUs"
-msgstr ""
+msgstr "GPUs"
 
 #: ../xfce4-about/main.c:146
 msgid "Window Manager"
@@ -645,7 +634,7 @@ msgstr "Panel"
 
 #: ../xfce4-about/main.c:152
 msgid "Provides a home for window buttons, launchers, app menu and more."
-msgstr ""
+msgstr "Provides a home for window buttons, launchers, app menu and more."
 
 #: ../xfce4-about/main.c:156
 msgid "Desktop Manager"
@@ -653,7 +642,7 @@ msgstr "Desktop Manager"
 
 #: ../xfce4-about/main.c:157
 msgid "Sets desktop backgrounds, handles icons and more."
-msgstr ""
+msgstr "Sets desktop backgrounds, handles icons and more."
 
 #: ../xfce4-about/main.c:161
 msgid "File Manager"
@@ -661,15 +650,15 @@ msgstr "File Manager"
 
 #: ../xfce4-about/main.c:162
 msgid "Manages your files in a modern, easy-to-use and fast way."
-msgstr ""
+msgstr "Manages your files in a modern, easy-to-use and fast way."
 
 #: ../xfce4-about/main.c:166
 msgid "Volume Manager"
-msgstr ""
+msgstr "Volume Manager"
 
 #: ../xfce4-about/main.c:167
 msgid "Manages removable drives and media for Thunar."
-msgstr ""
+msgstr "Manages removable drives and media for Thunar."
 
 #: ../xfce4-about/main.c:171
 msgid "Session Manager"
@@ -678,7 +667,7 @@ msgstr "Session Manager"
 #: ../xfce4-about/main.c:172
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
-msgstr ""
+msgstr "Saves and restores your session, handles startup, autostart and shutdown."
 
 #: ../xfce4-about/main.c:176
 msgid "Settings Manager"
@@ -686,7 +675,7 @@ msgstr "Settings Manager"
 
 #: ../xfce4-about/main.c:177
 msgid "Configures appearance, display, keyboard and mouse settings."
-msgstr ""
+msgstr "Configures appearance, display, keyboard and mouse settings."
 
 #: ../xfce4-about/main.c:181
 msgid "Application Finder"
@@ -694,7 +683,7 @@ msgstr "Application Finder"
 
 #: ../xfce4-about/main.c:182
 msgid "Quickly finds and launches applications installed on your system."
-msgstr ""
+msgstr "Quickly finds and launches applications installed on your system."
 
 #: ../xfce4-about/main.c:186
 msgid "Settings Daemon"
@@ -702,33 +691,33 @@ msgstr "Settings Daemon"
 
 #: ../xfce4-about/main.c:187
 msgid "Stores your settings in a D-Bus-based configuration system."
-msgstr ""
+msgstr "Stores your settings in a D-Bus-based configuration system."
 
 #: ../xfce4-about/main.c:191
 msgid "A Menu Library"
-msgstr ""
+msgstr "A Menu Library"
 
 #: ../xfce4-about/main.c:192
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
-msgstr ""
+msgstr "Implements a freedesktop.org compliant menu based on GLib and GIO."
 
 #: ../xfce4-about/main.c:196
 msgid "Thumbnails Service"
-msgstr ""
+msgstr "Thumbnails Service"
 
 #: ../xfce4-about/main.c:197
 msgid "Implements the thumbnail management D-Bus specification."
-msgstr ""
+msgstr "Implements the thumbnail management D-Bus specification."
 
 #: ../xfce4-about/main.c:251
 msgid "Please see <https://www.xfce.org/about/credits>"
-msgstr ""
+msgstr "Please see <https://www.xfce.org/about/credits>"
 
 #: ../xfce4-about/main.c:312
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
-msgstr ""
+msgstr "If you know of anyone missing from this list; don't hesitate and file a bug on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 
 #: ../xfce4-about/main.c:316
 msgid "Thanks to all who helped making this software available!"
@@ -738,9 +727,7 @@ msgstr "Thanks to all who helped making this software available!"
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
-msgstr ""
-"Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
-"components are copyrighted by their respective authors."
+msgstr "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different components are copyrighted by their respective authors."
 
 #: ../xfce4-about/main.c:338
 msgid ""
@@ -748,7 +735,7 @@ msgid ""
 "terms of the GNU Library General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
-msgstr ""
+msgstr "The libxfce4ui, libxfce4util and exo packages are distributed under the terms of the GNU Library General Public Licence as published by the Free Software Foundation; either version 2 of the Licence, or (at your option) any later version."
 
 #: ../xfce4-about/main.c:345
 msgid ""
@@ -757,7 +744,7 @@ msgid ""
 "of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
+msgstr "The packages thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop and xfwm4 are distributed under the terms of the GNU General Public Licence as published by the Free Software Foundation; either version 2 of the Licence, or (at your option) any later version."
 
 #: ../xfce4-about/main.c:491
 #, c-format
@@ -784,31 +771,31 @@ msgstr "Failed to load interface"
 #. { N_("Project Lead"),
 #. xfce_contributors_lead
 #. },
-#: ../xfce4-about/contributors.h:144
+#: ../xfce4-about/contributors.h:136
 msgid "Core developers"
 msgstr "Core developers"
 
-#: ../xfce4-about/contributors.h:147
+#: ../xfce4-about/contributors.h:139
 msgid "Active contributors"
 msgstr "Active contributors"
 
-#: ../xfce4-about/contributors.h:150
+#: ../xfce4-about/contributors.h:142
 msgid "Servers maintained by"
 msgstr "Servers maintained by"
 
-#: ../xfce4-about/contributors.h:153
+#: ../xfce4-about/contributors.h:145
 msgid "Translations supervision"
 msgstr "Translations supervision"
 
-#: ../xfce4-about/contributors.h:156
+#: ../xfce4-about/contributors.h:148
 msgid "Documentation supervision"
-msgstr ""
+msgstr "Documentation supervision"
 
-#: ../xfce4-about/contributors.h:159
+#: ../xfce4-about/contributors.h:151
 msgid "Translators"
 msgstr "Translators"
 
-#: ../xfce4-about/contributors.h:162
+#: ../xfce4-about/contributors.h:154
 msgid "Previous contributors"
 msgstr "Previous contributors"
 
@@ -846,39 +833,39 @@ msgstr "label"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:7
 msgid "OS Name"
-msgstr ""
+msgstr "OS Name"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:8
 msgid "OS Type"
-msgstr ""
+msgstr "OS Type"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:9
 msgid "Distributor"
-msgstr ""
+msgstr "Distributor"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:10
 msgid "Xfce Version"
-msgstr ""
+msgstr "Xfce Version"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:11
 msgid "GTK Version"
-msgstr ""
+msgstr "GTK Version"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:12
 msgid "Kernel Version"
-msgstr ""
+msgstr "Kernel Version"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:13
 msgid "CPU"
-msgstr ""
+msgstr "CPU"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:14
 msgid "Memory"
-msgstr ""
+msgstr "Memory"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:15
 msgid "GPU"
-msgstr ""
+msgstr "GPU"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:16
 msgid "System"
@@ -888,7 +875,7 @@ msgstr "System"
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
-msgstr ""
+msgstr "Xfce is a collection of programs that together provide a full-featured desktop environment.\nThe following programs are part of the Xfce core:"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:19
 msgid ""
@@ -899,7 +886,7 @@ msgid ""
 "Thank you for your interest in Xfce.\n"
 "\n"
 "\t- The Xfce Development Team"
-msgstr ""
+msgstr "Xfce is also a development platform providing several libraries that help programmers create applications that fit in well with the desktop environment.\n\nXfce components are licensed under free or open source licences; GPL or BSDL for applications and LGPL or BSDL for libraries. Look at the documentation, the source code or the Xfce website (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) for more information.\n\nThank you for your interest in Xfce.\n\n\t- The Xfce Development Team"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:26
 msgid "About"
@@ -933,16 +920,16 @@ msgstr "Unknown"
 #. translators: This is the type of architecture for the OS
 #: ../xfce4-about/system-info.c:658
 msgid "64-bit (32-bit userspace)"
-msgstr ""
+msgstr "64-bit (32-bit userspace)"
 
 #. translators: This is the type of architecture for the OS
 #: ../xfce4-about/system-info.c:661
 msgid "64-bit"
-msgstr ""
+msgstr "64-bit"
 
 #: ../xfce4-about/system-info.c:661
 msgid "32-bit"
-msgstr ""
+msgstr "32-bit"
 
 #. translators: This is the name of the OS, followed by the build ID, for
 #. * example:
@@ -951,16 +938,14 @@ msgstr ""
 #: ../xfce4-about/system-info.c:729
 #, c-format
 msgid "%s; Build ID: %s"
-msgstr ""
+msgstr "%s; Build ID: %s"
 
 #: ../tests/test-ui.c:111
 #, c-format
 msgid ""
 "A file named \"%s\" already exists in this directory, the file hasn't been "
 "added."
-msgstr ""
-"A file named \"%s\" already exists in this directory, the file hasn't been "
-"added."
+msgstr "A file named \"%s\" already exists in this directory, the file hasn't been added."
 
 #: ../tests/test-ui.c:122
 msgid "Failed to migrate the old panel configuration"
