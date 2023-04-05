@@ -25,7 +25,7 @@ libxfce4kbd-private/xfce-shortcuts-xfwm4.c
 # Support for GtkBuilder
 #
 glade/libxfce4ui-glade.c
-glade/libxfce4ui-2.xml.in
+glade/libxfce4ui-2.xml
 
 #
 # Xfce4-about
