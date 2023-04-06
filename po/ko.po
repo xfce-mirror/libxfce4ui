@@ -1,20 +1,18 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Xfce Bot <transifex@xfce.org>, 2023
-# 
-#, fuzzy
+# 1763f4a4329a2376c933c5e919a36cbc_341ca53 <1f851310383599d03339229d772e1290_119292>, 2017
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2013-2017,2019-2022
 msgid ""
 msgstr ""
-"Project-Id-Version: libxfce4ui\n"
+"Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-20 12:56+0100\n"
-"PO-Revision-Date: 2023-02-20 11:56+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>, 2023\n"
-"Language-Team: Korean (https://www.transifex.com/xfce/teams/16840/ko/)\n"
+"POT-Creation-Date: 2023-04-06 00:45+0200\n"
+"PO-Revision-Date: 2013-07-02 20:33+0000\n"
+"Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>, 2013-2017,2019-2022\n"
+"Language-Team: Korean (http://app.transifex.com/xfce/libxfce4ui/language/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -80,18 +78,14 @@ msgstr "여러 탭이 열린 창을 닫으시렵니까?"
 msgid ""
 "This window has multiple tabs open. Closing this window will also close all "
 "its tabs."
-msgstr ""
-"이 창에 여러 탭이 열려있습니다. 이 창을 닫으면\n"
-"모든 탭이 닫힙니다."
+msgstr "이 창에 여러 탭이 열려있습니다. 이 창을 닫으면\n모든 탭이 닫힙니다."
 
 #: ../libxfce4ui/xfce-dialogs.c:523
 #, c-format
 msgid ""
 "This window has %d tabs open. Closing this window will also close all its "
 "tabs."
-msgstr ""
-"이 창에 탭 %d개가 열려있습니다. 이 창을 닫으면\n"
-"모든 탭이 닫힙니다."
+msgstr "이 창에 탭 %d개가 열려있습니다. 이 창을 닫으면\n모든 탭이 닫힙니다."
 
 #: ../libxfce4ui/xfce-dialogs.c:529
 msgid "Warning"
@@ -160,38 +154,38 @@ msgstr "파일 이름의 디렉터리 구분 문자가 잘못되었습니다"
 msgid "Filenames should not start or end with a space"
 msgstr "파일 이름은 공백으로 시작하거나 끝나면 안됩니다"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:46
 #, c-format
 msgid ""
 "This shortcut is already being used for the action '%s'. Which action do you"
 " want to use?"
 msgstr "이 바로 가기는 이미 '%s' 동작에 대해 사용하고 있습니다. 어떤 동작을 사용하시렵니까?"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
-#: ../libxfce4kbd-private/xfce-shortcuts.c:57
-#: ../libxfce4kbd-private/xfce-shortcuts.c:60
-#: ../libxfce4kbd-private/xfce-shortcuts.c:63
+#: ../libxfce4kbd-private/xfce-shortcuts.c:47
+#: ../libxfce4kbd-private/xfce-shortcuts.c:50
+#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid "Use '%s'"
 msgstr "'%s'을(를) 사용합니다"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
-#: ../libxfce4kbd-private/xfce-shortcuts.c:57
-#: ../libxfce4kbd-private/xfce-shortcuts.c:60
-#: ../libxfce4kbd-private/xfce-shortcuts.c:63
+#: ../libxfce4kbd-private/xfce-shortcuts.c:47
+#: ../libxfce4kbd-private/xfce-shortcuts.c:50
+#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid "Keep '%s'"
 msgstr "'%s'을(를) 유지합니다"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:56
-#: ../libxfce4kbd-private/xfce-shortcuts.c:59
+#: ../libxfce4kbd-private/xfce-shortcuts.c:49
+#: ../libxfce4kbd-private/xfce-shortcuts.c:52
 #, c-format
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
 msgstr "이 바로 가기는 이미 명령 '%s'에서 사용하고 있습니다. 어떤 동작을 사용하시렵니까?"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:62
+#: ../libxfce4kbd-private/xfce-shortcuts.c:55
 #, c-format
 msgid ""
 "This shortcut is already being used by the action '%s'. Which action do you "
@@ -200,21 +194,21 @@ msgstr "이 바로 가기는 이미 '%s' 동작에서 사용하고 있습니다.
 
 #. This shortcut already exists in the provider, we don't want it twice
 #. Warn the user
-#: ../libxfce4kbd-private/xfce-shortcuts.c:113
+#: ../libxfce4kbd-private/xfce-shortcuts.c:106
 msgid "Please use another key combination."
 msgstr "다른 키 조합을 사용하십시오."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:114
+#: ../libxfce4kbd-private/xfce-shortcuts.c:107
 #, c-format
 msgid "%s already triggers this action."
 msgstr "이미 이 동작에 대해 %s 키 조합을 사용합니다."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:119
+#: ../libxfce4kbd-private/xfce-shortcuts.c:112
 #, c-format
 msgid "Conflicting actions for %s"
 msgstr "%s을(를) 위한 동작이 충돌합니다"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:181
+#: ../libxfce4kbd-private/xfce-shortcuts.c:174
 msgid "This shortcut is already being used for something else."
 msgstr "이 바로 가기는 이미 다른 용도로 사용하고 있습니다."
 
@@ -605,18 +599,6 @@ msgstr "마지막 작업 공간 삭제"
 msgid "Delete active workspace"
 msgstr "활성 작업 공간 삭제"
 
-#: ../glade/libxfce4ui-2.xml.in.h:1
-msgid "Titled Dialog"
-msgstr "제목이 붙은 대화상자"
-
-#: ../glade/libxfce4ui-2.xml.in.h:2
-msgid "Subtitle"
-msgstr "부제"
-
-#: ../glade/libxfce4ui-2.xml.in.h:3
-msgid "Xfce 4 Widgets"
-msgstr "Xfce 4 위젯"
-
 #: ../xfce4-about/main.c:58
 msgid "Version information"
 msgstr "버전 정보"
@@ -722,9 +704,7 @@ msgstr "다음을 참고하십시오:"
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
-msgstr ""
-"이 목록의 빠진 내용을 아시는 분은 망설이지 마시고 "
-"<https://gitlab.xfce.org/xfce/libxfce4ui/-/issues>에 버그를 알려주십시오."
+msgstr "이 목록의 빠진 내용을 아시는 분은 망설이지 마시고 <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues>에 버그를 알려주십시오."
 
 #: ../xfce4-about/main.c:316
 msgid "Thanks to all who helped making this software available!"
@@ -734,9 +714,7 @@ msgstr "이 소프트웨어를 사용할 수 있게 도와준 모든 분께 감�
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
-msgstr ""
-"Xfce 4는 Oliver Foundan(fourdan@xfce.org)의 지적 소유물입니다. 다른 구성요소는 제각각의 저작권자가 "
-"저작권을 소유하고 있습니다."
+msgstr "Xfce 4는 Oliver Foundan(fourdan@xfce.org)의 지적 소유물입니다. 다른 구성요소는 제각각의 저작권자가 저작권을 소유하고 있습니다."
 
 #: ../xfce4-about/main.c:338
 msgid ""
@@ -744,9 +722,7 @@ msgid ""
 "terms of the GNU Library General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
-msgstr ""
-"libxfce4ui, libxfce4util, exo 꾸러미는 자유 소프트웨어 재단에서 발표한 GNU 라이브러리 일반 공중 사용 허가서 "
-"버전 2 (또는 취향에 따라) 이상의 조항에 따라 배포합니다."
+msgstr "libxfce4ui, libxfce4util, exo 꾸러미는 자유 소프트웨어 재단에서 발표한 GNU 라이브러리 일반 공중 사용 허가서 버전 2 (또는 취향에 따라) 이상의 조항에 따라 배포합니다."
 
 #: ../xfce4-about/main.c:345
 msgid ""
@@ -755,10 +731,7 @@ msgid ""
 "of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
-"투나, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, "
-"xfdesktop xfwm4 는 자유 소프트웨어 재단에서 발표한 GNU 일반 공중 사용 허가서 버전 2 (또는 취향에 따라) 이상의 "
-"라이선스 조항에 따라 배포합니다."
+msgstr "투나, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop xfwm4 는 자유 소프트웨어 재단에서 발표한 GNU 일반 공중 사용 허가서 버전 2 (또는 취향에 따라) 이상의 라이선스 조항에 따라 배포합니다."
 
 #: ../xfce4-about/main.c:491
 #, c-format
@@ -812,14 +785,6 @@ msgstr "번역자"
 #: ../xfce4-about/contributors.h:162
 msgid "Previous contributors"
 msgstr "이전 공헌자"
-
-#: ../xfce4-about/xfce4-about.desktop.in.h:1
-msgid "About Xfce"
-msgstr "Xfce 정보"
-
-#: ../xfce4-about/xfce4-about.desktop.in.h:2
-msgid "Information about the Xfce Desktop Environment"
-msgstr "Xfce 데스크톱 환경 정보"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:1
 msgid "License"
@@ -889,9 +854,7 @@ msgstr "시스템"
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
-msgstr ""
-"Xfce는 완전한 기능을 갖춘 데스크톱 환경을 함께 제공하는 프로그램 모음입니다.\n"
-"다음 프로그램은 Xfce 코어의 일부입니다."
+msgstr "Xfce는 완전한 기능을 갖춘 데스크톱 환경을 함께 제공하는 프로그램 모음입니다.\n다음 프로그램은 Xfce 코어의 일부입니다."
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:19
 msgid ""
@@ -902,14 +865,7 @@ msgid ""
 "Thank you for your interest in Xfce.\n"
 "\n"
 "\t- The Xfce Development Team"
-msgstr ""
-"Xfce는 데스크톱 환경과 더불어 프로그래머의 프로그램 제작을 돕는 여러 라이브러리를 제공하는 개발 플랫폼이기도 합니다.\n"
-"\n"
-"Xfce 구성 요소는 자유/오픈소스 라이선스에 따라 사용을 허가합니다. 프로그램에 대해 GPL 또는 BSDL, 라이브러리에 대해 LGPL 또는 BSDL을 적용합니다. 더 많은 내용은 문서, 소스 코드, Xfce 웹사이트(<a href=\"https://www.xfce.org\">https://www.xfce.org</a>)를 참고하십시오.\n"
-"\n"
-"Xfce에 관심을 주셔서 감사합니다.\n"
-"\n"
-"\t- Xfce 개발 팀"
+msgstr "Xfce는 데스크톱 환경과 더불어 프로그래머의 프로그램 제작을 돕는 여러 라이브러리를 제공하는 개발 플랫폼이기도 합니다.\n\nXfce 구성 요소는 자유/오픈소스 라이선스에 따라 사용을 허가합니다. 프로그램에 대해 GPL 또는 BSDL, 라이브러리에 대해 LGPL 또는 BSDL을 적용합니다. 더 많은 내용은 문서, 소스 코드, Xfce 웹사이트(<a href=\"https://www.xfce.org\">https://www.xfce.org</a>)를 참고하십시오.\n\nXfce에 관심을 주셔서 감사합니다.\n\n\t- Xfce 개발 팀"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:26
 msgid "About"
