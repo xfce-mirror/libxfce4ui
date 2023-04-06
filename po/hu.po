@@ -1,20 +1,23 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Xfce Bot <transifex@xfce.org>, 2023
-# 
-#, fuzzy
+# Balázs Meskó <meskobalazs@mailbox.org>, 2018
+# Gabor Kelemen <kelemeng at gnome dot hu>, 2009,2011-2012
+# Gábor P., 2017,2019-2020
+# gyeben <gyonkibendeguz@gmail.com>, 2016
+# Robert Huszar, 2022
+# Sándor Zelenák <nem11nator at gmail dot com>, 2011
+# SZERVÁC  Libre art  Attila  Libre art, 2022
 msgid ""
 msgstr ""
-"Project-Id-Version: libxfce4ui\n"
+"Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-20 12:56+0100\n"
-"PO-Revision-Date: 2023-02-20 11:56+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>, 2023\n"
-"Language-Team: Hungarian (https://www.transifex.com/xfce/teams/16840/hu/)\n"
+"POT-Creation-Date: 2023-04-06 00:45+0200\n"
+"PO-Revision-Date: 2013-07-02 20:33+0000\n"
+"Last-Translator: SZERVÁC  Libre art  Attila  Libre art, 2022\n"
+"Language-Team: Hungarian (http://app.transifex.com/xfce/libxfce4ui/language/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -38,9 +41,7 @@ msgstr "Szeretné elolvasni a kézikönyvet online?"
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
-msgstr ""
-"Átirányításra kerül a dokumentációs weboldalra, ahol a súgóoldalak "
-"karbantartása és fordítása történik."
+msgstr "Átirányításra kerül a dokumentációs weboldalra, ahol a súgóoldalak karbantartása és fordítása történik."
 
 #. Create cancel button
 #: ../libxfce4ui/xfce-dialogs.c:275 ../libxfce4ui/xfce-dialogs.c:533
@@ -82,18 +83,14 @@ msgstr "Több lapot tartalmazó ablak bezárása?"
 msgid ""
 "This window has multiple tabs open. Closing this window will also close all "
 "its tabs."
-msgstr ""
-"Ez az ablak több nyitott lapot tartalmaz. Az ablak bezárásával a nyitott "
-"lapok is bezárásra kerülnek."
+msgstr "Ez az ablak több nyitott lapot tartalmaz. Az ablak bezárásával a nyitott lapok is bezárásra kerülnek."
 
 #: ../libxfce4ui/xfce-dialogs.c:523
 #, c-format
 msgid ""
 "This window has %d tabs open. Closing this window will also close all its "
 "tabs."
-msgstr ""
-"Ez az ablak  %d nyitott lapot tartalmaz. Az ablak bezárásával a nyitott "
-"lapok is bezárásra kerülnek."
+msgstr "Ez az ablak  %d nyitott lapot tartalmaz. Az ablak bezárásával a nyitott lapok is bezárásra kerülnek."
 
 #: ../libxfce4ui/xfce-dialogs.c:529
 msgid "Warning"
@@ -147,9 +144,7 @@ msgstr "A munkamenet-kezelő nem adott vissza érvényes kliensazonosítót"
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
 "\"%s\"."
-msgstr ""
-"A munkakönyvtár („%s”) nem létezik. Nem kerül felhasználásra „%s” "
-"indításakor."
+msgstr "A munkakönyvtár („%s”) nem létezik. Nem kerül felhasználásra „%s” indításakor."
 
 #. retrieve the error and warning messages
 #: ../libxfce4ui/xfce-filename-input.c:232
@@ -164,67 +159,61 @@ msgstr "Mappaelválasztó nem lehet fájlnévben"
 msgid "Filenames should not start or end with a space"
 msgstr "A fájlnevek szélén nem lehet szóköz"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:46
 #, c-format
 msgid ""
 "This shortcut is already being used for the action '%s'. Which action do you"
 " want to use?"
-msgstr ""
-"Ezt a gyorsbillentyűt már használja egy másik parancs („%s”). Melyik "
-"műveletet akarja használni?"
+msgstr "Ezt a gyorsbillentyűt már használja egy másik parancs („%s”). Melyik műveletet akarja használni?"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
-#: ../libxfce4kbd-private/xfce-shortcuts.c:57
-#: ../libxfce4kbd-private/xfce-shortcuts.c:60
-#: ../libxfce4kbd-private/xfce-shortcuts.c:63
+#: ../libxfce4kbd-private/xfce-shortcuts.c:47
+#: ../libxfce4kbd-private/xfce-shortcuts.c:50
+#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid "Use '%s'"
 msgstr "„%s” használata"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
-#: ../libxfce4kbd-private/xfce-shortcuts.c:57
-#: ../libxfce4kbd-private/xfce-shortcuts.c:60
-#: ../libxfce4kbd-private/xfce-shortcuts.c:63
+#: ../libxfce4kbd-private/xfce-shortcuts.c:47
+#: ../libxfce4kbd-private/xfce-shortcuts.c:50
+#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid "Keep '%s'"
 msgstr "„%s” megtartása"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:56
-#: ../libxfce4kbd-private/xfce-shortcuts.c:59
+#: ../libxfce4kbd-private/xfce-shortcuts.c:49
+#: ../libxfce4kbd-private/xfce-shortcuts.c:52
 #, c-format
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr ""
-"Ezt a gyorsbillentyűt már használja egy másik parancs („%s”). Melyik "
-"műveletet akarja használni?"
+msgstr "Ezt a gyorsbillentyűt már használja egy másik parancs („%s”). Melyik műveletet akarja használni?"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:62
+#: ../libxfce4kbd-private/xfce-shortcuts.c:55
 #, c-format
 msgid ""
 "This shortcut is already being used by the action '%s'. Which action do you "
 "want to use?"
-msgstr ""
-"Ezt a gyorsbillentyűt már használja egy másik parancs („%s”). Melyik "
-"műveletet akarja használni?"
+msgstr "Ezt a gyorsbillentyűt már használja egy másik parancs („%s”). Melyik műveletet akarja használni?"
 
 #. This shortcut already exists in the provider, we don't want it twice
 #. Warn the user
-#: ../libxfce4kbd-private/xfce-shortcuts.c:113
+#: ../libxfce4kbd-private/xfce-shortcuts.c:106
 msgid "Please use another key combination."
 msgstr "Kérem használjon más billentyűkombinációt!"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:114
+#: ../libxfce4kbd-private/xfce-shortcuts.c:107
 #, c-format
 msgid "%s already triggers this action."
 msgstr "%s már előidézi ezt a műveletet."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:119
+#: ../libxfce4kbd-private/xfce-shortcuts.c:112
 #, c-format
 msgid "Conflicting actions for %s"
 msgstr "Ütköző műveletek ehhez: %s"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:181
+#: ../libxfce4kbd-private/xfce-shortcuts.c:174
 msgid "This shortcut is already being used for something else."
 msgstr "Ez a gyorsbillentyű már használatban van valami másra."
 
@@ -615,18 +604,6 @@ msgstr "Utolsó munkaterület törlése"
 msgid "Delete active workspace"
 msgstr "Aktív munkaterület törlése"
 
-#: ../glade/libxfce4ui-2.xml.in.h:1
-msgid "Titled Dialog"
-msgstr "Címzett ablak"
-
-#: ../glade/libxfce4ui-2.xml.in.h:2
-msgid "Subtitle"
-msgstr "Felirat"
-
-#: ../glade/libxfce4ui-2.xml.in.h:3
-msgid "Xfce 4 Widgets"
-msgstr "Xfce 4 felületi elemek"
-
 #: ../xfce4-about/main.c:58
 msgid "Version information"
 msgstr "Verzióinformációk"
@@ -682,9 +659,7 @@ msgstr "Munkamenet-kezelő"
 #: ../xfce4-about/main.c:172
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
-msgstr ""
-"Menti és visszaállítja a munkafolyamatodat, kezeli indulását, az automatikus"
-" indításokat és a leállítást."
+msgstr "Menti és visszaállítja a munkafolyamatodat, kezeli indulását, az automatikus indításokat és a leállítást."
 
 #: ../xfce4-about/main.c:176
 msgid "Settings Manager"
@@ -716,8 +691,7 @@ msgstr "Egy Menü könyvtár"
 
 #: ../xfce4-about/main.c:192
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
-msgstr ""
-"Egy freedesktop.org-kompatibilis menü-implementáció GLib és GIO-alapokon."
+msgstr "Egy freedesktop.org-kompatibilis menü-implementáció GLib és GIO-alapokon."
 
 #: ../xfce4-about/main.c:196
 msgid "Thumbnails Service"
@@ -735,22 +709,17 @@ msgstr "Lásd itt: <https://www.xfce.org/about/credits>"
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
-msgstr ""
-"Ha tudsz valaki, aki hiányzik erről a listáról; ne várj, hanem jelezd itt: "
-"<https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
+msgstr "Ha tudsz valaki, aki hiányzik erről a listáról; ne várj, hanem jelezd itt: <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 
 #: ../xfce4-about/main.c:316
 msgid "Thanks to all who helped making this software available!"
-msgstr ""
-"Köszönet mindazoknak, akik segítségével ez az alkalmazás elérhetővé vált."
+msgstr "Köszönet mindazoknak, akik segítségével ez az alkalmazás elérhetővé vált."
 
 #: ../xfce4-about/main.c:333
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
-msgstr ""
-"Az Xfce szerzői joga Olivier Fourdant (fourdan@xfce.org) illeti. A további "
-"összetevők szerzői joga azok szerzőit illeti."
+msgstr "Az Xfce szerzői joga Olivier Fourdant (fourdan@xfce.org) illeti. A további összetevők szerzői joga azok szerzőit illeti."
 
 #: ../xfce4-about/main.c:338
 msgid ""
@@ -758,10 +727,7 @@ msgid ""
 "terms of the GNU Library General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
-msgstr ""
-"A libxfce4ui, libxfce4util és exo csomagok a Free Software Foundation által "
-"kiadott GNU Library General Public License második (vagy bármely későbbi) "
-"változatában foglaltak alapján kerülnek terjesztésre."
+msgstr "A libxfce4ui, libxfce4util és exo csomagok a Free Software Foundation által kiadott GNU Library General Public License második (vagy bármely későbbi) változatában foglaltak alapján kerülnek terjesztésre."
 
 #: ../xfce4-about/main.c:345
 msgid ""
@@ -770,11 +736,7 @@ msgid ""
 "of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
-"A thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, "
-"xfconf, xfdesktop és xfwm4 csomagok a Free Software Foundation által kiadott"
-" GNU General Public License második (vagy bármely későbbi) változatában "
-"foglaltak alapján kerülnek terjesztésre."
+msgstr "A thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop és xfwm4 csomagok a Free Software Foundation által kiadott GNU General Public License második (vagy bármely későbbi) változatában foglaltak alapján kerülnek terjesztésre."
 
 #: ../xfce4-about/main.c:491
 #, c-format
@@ -828,14 +790,6 @@ msgstr "Fordítók"
 #: ../xfce4-about/contributors.h:162
 msgid "Previous contributors"
 msgstr "Előző munkatársak"
-
-#: ../xfce4-about/xfce4-about.desktop.in.h:1
-msgid "About Xfce"
-msgstr "Az Xfce névjegye"
-
-#: ../xfce4-about/xfce4-about.desktop.in.h:2
-msgid "Information about the Xfce Desktop Environment"
-msgstr "Információk az Xfce asztali környezetről"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:1
 msgid "License"
@@ -905,9 +859,7 @@ msgstr "Rendszer"
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
-msgstr ""
-"Az Xfce egy programgyűjtemény, mely együtt egy teljes-képességű asztali környezet biztosít.\n"
-"A következő programok részei az Xfce magjának:"
+msgstr "Az Xfce egy programgyűjtemény, mely együtt egy teljes-képességű asztali környezet biztosít.\nA következő programok részei az Xfce magjának:"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:19
 msgid ""
@@ -918,14 +870,7 @@ msgid ""
 "Thank you for your interest in Xfce.\n"
 "\n"
 "\t- The Xfce Development Team"
-msgstr ""
-"Az Xfce egy fejlesztő platform is, mely a programozók számára a munkakörnyezethez illő alkalmazások létrehozására nyújt különböző függvénykönyvtárakat..\n"
-"\n"
-"Az Xfce összetevők szabad vagy nyílt forrású licencűek; GPL vagy BSDL az alkalmazásokhoz, LGPL vagy BSDL a függvénykönyvtárakhoz. Lásd a dokumentációt, a forráskódot vagy az Xfce honlapot (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) további információkért.\n"
-"\n"
-"Thank you for your interest in Xfce.\n"
-"\n"
-"\t- Az Xfce csapat"
+msgstr "Az Xfce egy fejlesztő platform is, mely a programozók számára a munkakörnyezethez illő alkalmazások létrehozására nyújt különböző függvénykönyvtárakat..\n\nAz Xfce összetevők szabad vagy nyílt forrású licencűek; GPL vagy BSDL az alkalmazásokhoz, LGPL vagy BSDL a függvénykönyvtárakhoz. Lásd a dokumentációt, a forráskódot vagy az Xfce honlapot (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) további információkért.\n\nThank you for your interest in Xfce.\n\n\t- Az Xfce csapat"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:26
 msgid "About"
@@ -984,8 +929,7 @@ msgstr "%s; Összeállítás azonosítója: %s"
 msgid ""
 "A file named \"%s\" already exists in this directory, the file hasn't been "
 "added."
-msgstr ""
-"A(z) „%s” fájl már létezik a könyvtárban, a fájl nem került hozzáadásra."
+msgstr "A(z) „%s” fájl már létezik a könyvtárban, a fájl nem került hozzáadásra."
 
 #: ../tests/test-ui.c:122
 msgid "Failed to migrate the old panel configuration"
