@@ -1,20 +1,18 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Xfce Bot <transifex@xfce.org>, 2023
-# 
-#, fuzzy
+# Nobuhiro Iwamatsu <iwamatsu@nigauri.org>, 2008,2016-2017,2019-2020
+# UTUMI Hirosi <utuhiro78@yahoo.co.jp>, 2020-2022
 msgid ""
 msgstr ""
-"Project-Id-Version: libxfce4ui\n"
+"Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-20 12:56+0100\n"
-"PO-Revision-Date: 2023-02-20 11:56+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>, 2023\n"
-"Language-Team: Japanese (https://www.transifex.com/xfce/teams/16840/ja/)\n"
+"POT-Creation-Date: 2023-04-06 00:45+0200\n"
+"PO-Revision-Date: 2013-07-02 20:33+0000\n"
+"Last-Translator: UTUMI Hirosi <utuhiro78@yahoo.co.jp>, 2020-2022\n"
+"Language-Team: Japanese (http://app.transifex.com/xfce/libxfce4ui/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -156,38 +154,38 @@ msgstr "ファイル名のディレクトリ区切り文字が無効です"
 msgid "Filenames should not start or end with a space"
 msgstr "ファイル名の先頭または末尾にスペースを使用しないでください"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:46
 #, c-format
 msgid ""
 "This shortcut is already being used for the action '%s'. Which action do you"
 " want to use?"
 msgstr "このショートカットはすでにアクション '%s' で使用されています。どちらで使いますか?"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
-#: ../libxfce4kbd-private/xfce-shortcuts.c:57
-#: ../libxfce4kbd-private/xfce-shortcuts.c:60
-#: ../libxfce4kbd-private/xfce-shortcuts.c:63
+#: ../libxfce4kbd-private/xfce-shortcuts.c:47
+#: ../libxfce4kbd-private/xfce-shortcuts.c:50
+#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid "Use '%s'"
 msgstr "'%s' で使う"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
-#: ../libxfce4kbd-private/xfce-shortcuts.c:57
-#: ../libxfce4kbd-private/xfce-shortcuts.c:60
-#: ../libxfce4kbd-private/xfce-shortcuts.c:63
+#: ../libxfce4kbd-private/xfce-shortcuts.c:47
+#: ../libxfce4kbd-private/xfce-shortcuts.c:50
+#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid "Keep '%s'"
 msgstr "'%s' で使う"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:56
-#: ../libxfce4kbd-private/xfce-shortcuts.c:59
+#: ../libxfce4kbd-private/xfce-shortcuts.c:49
+#: ../libxfce4kbd-private/xfce-shortcuts.c:52
 #, c-format
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
 msgstr "このショートカットはすでにコマンド '%s' で使用されています。どちらで使いますか?"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:62
+#: ../libxfce4kbd-private/xfce-shortcuts.c:55
 #, c-format
 msgid ""
 "This shortcut is already being used by the action '%s'. Which action do you "
@@ -196,21 +194,21 @@ msgstr "このショートカットはすでにアクション '%s' で使用さ
 
 #. This shortcut already exists in the provider, we don't want it twice
 #. Warn the user
-#: ../libxfce4kbd-private/xfce-shortcuts.c:113
+#: ../libxfce4kbd-private/xfce-shortcuts.c:106
 msgid "Please use another key combination."
 msgstr "他のキーの組み合わせを使用してください。"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:114
+#: ../libxfce4kbd-private/xfce-shortcuts.c:107
 #, c-format
 msgid "%s already triggers this action."
 msgstr "%s はすでにこのアクションで使用されています。"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:119
+#: ../libxfce4kbd-private/xfce-shortcuts.c:112
 #, c-format
 msgid "Conflicting actions for %s"
 msgstr "%s のアクションの衝突"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:181
+#: ../libxfce4kbd-private/xfce-shortcuts.c:174
 msgid "This shortcut is already being used for something else."
 msgstr "このショートカットはすでに他で使用されています。"
 
@@ -601,18 +599,6 @@ msgstr "最後のワークスペースを削除"
 msgid "Delete active workspace"
 msgstr "現在のワークスペースを削除"
 
-#: ../glade/libxfce4ui-2.xml.in.h:1
-msgid "Titled Dialog"
-msgstr "タイトル付きダイアログ"
-
-#: ../glade/libxfce4ui-2.xml.in.h:2
-msgid "Subtitle"
-msgstr "副題"
-
-#: ../glade/libxfce4ui-2.xml.in.h:3
-msgid "Xfce 4 Widgets"
-msgstr "Xfce 4 ウィジェット"
-
 #: ../xfce4-about/main.c:58
 msgid "Version information"
 msgstr "バージョン情報"
@@ -718,9 +704,7 @@ msgstr "<https://www.xfce.org/about/credits> をご覧ください"
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
-msgstr ""
-"このリストに記載ミスがある場合は、<https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> "
-"までバグとしてお知らせください。"
+msgstr "このリストに記載ミスがある場合は、<https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> までバグとしてお知らせください。"
 
 #: ../xfce4-about/main.c:316
 msgid "Thanks to all who helped making this software available!"
@@ -730,9 +714,7 @@ msgstr "このソフトウェアを利用できるよう協力して下さった
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
-msgstr ""
-"Xfce の著作権は Olivier Fourdan (fourdan@xfce.org) "
-"が保有しています。各コンポーネントの著作権はそれぞれの製作者が保有しています。"
+msgstr "Xfce の著作権は Olivier Fourdan (fourdan@xfce.org) が保有しています。各コンポーネントの著作権はそれぞれの製作者が保有しています。"
 
 #: ../xfce4-about/main.c:338
 msgid ""
@@ -740,9 +722,7 @@ msgid ""
 "terms of the GNU Library General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
-msgstr ""
-"libxfce4ui、libxfce4util、および exo の各パッケージは、フリーソフトウェア財団によって発行された GNU "
-"ライブラリ一般公衆使用許諾契約書 (バージョン2か、希望によってはそれ以降のバージョンのうちどれか) の定める条件下で配布されています。"
+msgstr "libxfce4ui、libxfce4util、および exo の各パッケージは、フリーソフトウェア財団によって発行された GNU ライブラリ一般公衆使用許諾契約書 (バージョン2か、希望によってはそれ以降のバージョンのうちどれか) の定める条件下で配布されています。"
 
 #: ../xfce4-about/main.c:345
 msgid ""
@@ -751,10 +731,7 @@ msgid ""
 "of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
-"thunar、xfce4-appfinder、xfce4-panel、xfce4-session、xfce4-settings、xfconf、xfdesktop"
-" および xfwm4 の各パッケージは、フリーソフトウェア財団によって発行された GNU ライブラリ一般公衆使用許諾契約書 "
-"(バージョン2か、希望によってはそれ以降のバージョンのうちどれか) の定める条件下で配布されています。"
+msgstr "thunar、xfce4-appfinder、xfce4-panel、xfce4-session、xfce4-settings、xfconf、xfdesktop および xfwm4 の各パッケージは、フリーソフトウェア財団によって発行された GNU ライブラリ一般公衆使用許諾契約書 (バージョン2か、希望によってはそれ以降のバージョンのうちどれか) の定める条件下で配布されています。"
 
 #: ../xfce4-about/main.c:491
 #, c-format
@@ -808,14 +785,6 @@ msgstr "翻訳者"
 #: ../xfce4-about/contributors.h:162
 msgid "Previous contributors"
 msgstr "以前の協力者"
-
-#: ../xfce4-about/xfce4-about.desktop.in.h:1
-msgid "About Xfce"
-msgstr "Xfce について"
-
-#: ../xfce4-about/xfce4-about.desktop.in.h:2
-msgid "Information about the Xfce Desktop Environment"
-msgstr "Xfce デスクトップ環境に関する情報です"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:1
 msgid "License"
@@ -885,9 +854,7 @@ msgstr "システム"
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
-msgstr ""
-"Xfceは、すべての機能を備えたデスクトップ環境を提供するプログラムのコレクションです。\n"
-"以下のプログラムはXfceコアの一部です:"
+msgstr "Xfceは、すべての機能を備えたデスクトップ環境を提供するプログラムのコレクションです。\n以下のプログラムはXfceコアの一部です:"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:19
 msgid ""
@@ -898,14 +865,7 @@ msgid ""
 "Thank you for your interest in Xfce.\n"
 "\n"
 "\t- The Xfce Development Team"
-msgstr ""
-"Xfceは、プログラマーがデスクトップ環境にうまく適合するアプリケーションを作成するのに役立ついくつかのライブラリーを提供する開発プラットフォームでもあります。\n"
-"\n"
-"Xfceコンポーネントは、フリーまたはオープンソースのライセンスに基づいてライセンスされます。アプリケーションの場合はGPLまたはBSDL、ライブラリの場合はLGPLまたはBSDLです。詳細についてはドキュメント、ソースコード、またはXfce Webサイト (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) をご覧ください。\n"
-"\n"
-"Xfceに関心をお寄せいただきありがとうございます。\n"
-"\n"
-"\t- Xfce開発チーム"
+msgstr "Xfceは、プログラマーがデスクトップ環境にうまく適合するアプリケーションを作成するのに役立ついくつかのライブラリーを提供する開発プラットフォームでもあります。\n\nXfceコンポーネントは、フリーまたはオープンソースのライセンスに基づいてライセンスされます。アプリケーションの場合はGPLまたはBSDL、ライブラリの場合はLGPLまたはBSDLです。詳細についてはドキュメント、ソースコード、またはXfce Webサイト (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) をご覧ください。\n\nXfceに関心をお寄せいただきありがとうございます。\n\n\t- Xfce開発チーム"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:26
 msgid "About"
