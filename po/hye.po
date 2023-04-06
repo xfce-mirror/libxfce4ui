@@ -1,20 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Xfce Bot <transifex@xfce.org>, 2023
-# 
-#, fuzzy
+# Arman Harutyunyan <arman.harut468@gmail.com>, 2020
+# E-Hayq LLC <www.ehayq.am>, 2018
+# Hayk Andreasyan <hayk.andreasyan@realschool.am>, 2019
+# Real School <localization@ehayq.am>, 2019
+# Վահրամ Չալաբեան <vahram.chalabyan@realschool.am>, 2020
 msgid ""
 msgstr ""
-"Project-Id-Version: libxfce4ui\n"
+"Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-20 12:56+0100\n"
-"PO-Revision-Date: 2023-02-20 11:56+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>, 2023\n"
-"Language-Team: Eastern Armenian (https://www.transifex.com/xfce/teams/16840/hye/)\n"
+"POT-Creation-Date: 2023-04-06 00:45+0200\n"
+"PO-Revision-Date: 2013-07-02 20:33+0000\n"
+"Last-Translator: Arman Harutyunyan <arman.harut468@gmail.com>, 2020\n"
+"Language-Team: Eastern Armenian (http://app.transifex.com/xfce/libxfce4ui/language/hye/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -38,9 +39,7 @@ msgstr "Ընթերցե՞լ ձեռնարկը առցանց։"
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
-msgstr ""
-"Կը բացուի նկարագրման կայքը, որտեղ աջակցման նիւթերը թարգմանուում եւ պահուում "
-"են։"
+msgstr "Կը բացուի նկարագրման կայքը, որտեղ աջակցման նիւթերը թարգմանուում եւ պահուում են։"
 
 #. Create cancel button
 #: ../libxfce4ui/xfce-dialogs.c:275 ../libxfce4ui/xfce-dialogs.c:533
@@ -82,18 +81,14 @@ msgstr "Փակե՞լ պատուհանի բոլոր ներդիրները"
 msgid ""
 "This window has multiple tabs open. Closing this window will also close all "
 "its tabs."
-msgstr ""
-"Այս պատուհանը ունի բացուած բազմակի ներդիրներ։ Փակելով այս պատուհանը դուք կը "
-"փակեք նաեւ բոլոր ներդիրները։"
+msgstr "Այս պատուհանը ունի բացուած բազմակի ներդիրներ։ Փակելով այս պատուհանը դուք կը փակեք նաեւ բոլոր ներդիրները։"
 
 #: ../libxfce4ui/xfce-dialogs.c:523
 #, c-format
 msgid ""
 "This window has %d tabs open. Closing this window will also close all its "
 "tabs."
-msgstr ""
-"Այս պատուհանը ունի %d բացուած ներդիրներ։ Փակելով այս պատուհանը դուք կը փակեք"
-" նաեւ բոլոր ներդիրները։"
+msgstr "Այս պատուհանը ունի %d բացուած ներդիրներ։ Փակելով այս պատուհանը դուք կը փակեք նաեւ բոլոր ներդիրները։"
 
 #: ../libxfce4ui/xfce-dialogs.c:529
 msgid "Warning"
@@ -147,8 +142,7 @@ msgstr "Նիստի կառավարիչը չի վերադարձրել սպասառ
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
 "\"%s\"."
-msgstr ""
-"«%s» նշարանը գոյութիւն չունի։ Այն չի աւգտագործուի «%s»֊ի միացման ժամանակ։"
+msgstr "«%s» նշարանը գոյութիւն չունի։ Այն չի աւգտագործուի «%s»֊ի միացման ժամանակ։"
 
 #. retrieve the error and warning messages
 #: ../libxfce4ui/xfce-filename-input.c:232
@@ -163,67 +157,61 @@ msgstr "Նշարանի բաժանիչը անաւրինական է նիշքի ա�
 msgid "Filenames should not start or end with a space"
 msgstr "Նշանուները չեն կարող սկսուել կամ վերջանալ բացատով։"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:46
 #, c-format
 msgid ""
 "This shortcut is already being used for the action '%s'. Which action do you"
 " want to use?"
-msgstr ""
-"Այս դիւրանցումն արդէն գործածուում է «%s» գործողութեան համար։ Ո՞ր "
-"գործողութիւնը գործածել։"
+msgstr "Այս դիւրանցումն արդէն գործածուում է «%s» գործողութեան համար։ Ո՞ր գործողութիւնը գործածել։"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
-#: ../libxfce4kbd-private/xfce-shortcuts.c:57
-#: ../libxfce4kbd-private/xfce-shortcuts.c:60
-#: ../libxfce4kbd-private/xfce-shortcuts.c:63
+#: ../libxfce4kbd-private/xfce-shortcuts.c:47
+#: ../libxfce4kbd-private/xfce-shortcuts.c:50
+#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid "Use '%s'"
 msgstr "Գործածել «%s»֊ը"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
-#: ../libxfce4kbd-private/xfce-shortcuts.c:57
-#: ../libxfce4kbd-private/xfce-shortcuts.c:60
-#: ../libxfce4kbd-private/xfce-shortcuts.c:63
+#: ../libxfce4kbd-private/xfce-shortcuts.c:47
+#: ../libxfce4kbd-private/xfce-shortcuts.c:50
+#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid "Keep '%s'"
 msgstr "Թողնել «%s»֊ը"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:56
-#: ../libxfce4kbd-private/xfce-shortcuts.c:59
+#: ../libxfce4kbd-private/xfce-shortcuts.c:49
+#: ../libxfce4kbd-private/xfce-shortcuts.c:52
 #, c-format
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr ""
-"Այս դիւրանցումն արդէն գործածուում է «%s» հրամանի համար։ Ո՞ր գործողութիւնը "
-"գործածել։"
+msgstr "Այս դիւրանցումն արդէն գործածուում է «%s» հրամանի համար։ Ո՞ր գործողութիւնը գործածել։"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:62
+#: ../libxfce4kbd-private/xfce-shortcuts.c:55
 #, c-format
 msgid ""
 "This shortcut is already being used by the action '%s'. Which action do you "
 "want to use?"
-msgstr ""
-"Այս դիւրանցումն արդէն գործածուում է «%s» գործողութեան կողմից։ Ո՞ր "
-"գործողութիւնն աւգտագործել։"
+msgstr "Այս դիւրանցումն արդէն գործածուում է «%s» գործողութեան կողմից։ Ո՞ր գործողութիւնն աւգտագործել։"
 
 #. This shortcut already exists in the provider, we don't want it twice
 #. Warn the user
-#: ../libxfce4kbd-private/xfce-shortcuts.c:113
+#: ../libxfce4kbd-private/xfce-shortcuts.c:106
 msgid "Please use another key combination."
 msgstr "Օգտագործել ստեղնների այլ զուգակցութիւն։"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:114
+#: ../libxfce4kbd-private/xfce-shortcuts.c:107
 #, c-format
 msgid "%s already triggers this action."
 msgstr "%s֊ն արդէն աւգտագործում է այս գործողութիւնը։"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:119
+#: ../libxfce4kbd-private/xfce-shortcuts.c:112
 #, c-format
 msgid "Conflicting actions for %s"
 msgstr "Բախուող գործողութիւններ %s֊ի համար"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:181
+#: ../libxfce4kbd-private/xfce-shortcuts.c:174
 msgid "This shortcut is already being used for something else."
 msgstr "Այս դիւրանցումն արդէն գործածուում է այլ բանի համար։"
 
@@ -614,18 +602,6 @@ msgstr "Ջնջել վերջին աշխատատարածքը"
 msgid "Delete active workspace"
 msgstr "Ջնջել գործուն աշխատատարածքը"
 
-#: ../glade/libxfce4ui-2.xml.in.h:1
-msgid "Titled Dialog"
-msgstr "Անուանուած երկխաւսութիւն"
-
-#: ../glade/libxfce4ui-2.xml.in.h:2
-msgid "Subtitle"
-msgstr "Ենթանուն"
-
-#: ../glade/libxfce4ui-2.xml.in.h:3
-msgid "Xfce 4 Widgets"
-msgstr "Xfce 4֊ի հարմարանքներ "
-
 #: ../xfce4-about/main.c:58
 msgid "Version information"
 msgstr "Տարբերակի վերաբերեալ տեղեկոյթ"
@@ -735,17 +711,13 @@ msgstr ""
 
 #: ../xfce4-about/main.c:316
 msgid "Thanks to all who helped making this software available!"
-msgstr ""
-"Շնորհակալութիւն բոլոր նրանց, ովքեր աւգնեցին այս միջավայրը դարձնել հասանելի:"
+msgstr "Շնորհակալութիւն բոլոր նրանց, ովքեր աւգնեցին այս միջավայրը դարձնել հասանելի:"
 
 #: ../xfce4-about/main.c:333
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
-msgstr ""
-"Xfce4-ի հեղինակային իրաւունքը պատկանում է Ոլիւեր Ֆաունդանին "
-"(fourdan@xfce.org)։ Տարբեր բաղադրիչների հեղինակային իրաւունքները "
-"պաշտպանուում են դրանք ստեղծող հեղինակների կողմից։"
+msgstr "Xfce4-ի հեղինակային իրաւունքը պատկանում է Ոլիւեր Ֆաունդանին (fourdan@xfce.org)։ Տարբեր բաղադրիչների հեղինակային իրաւունքները պաշտպանուում են դրանք ստեղծող հեղինակների կողմից։"
 
 #: ../xfce4-about/main.c:338
 msgid ""
@@ -753,10 +725,7 @@ msgid ""
 "terms of the GNU Library General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
-msgstr ""
-"libxfce4ui, libxfcegui4, libxfce4util, thunar-vfs եւ exo փաթեթները մշակուում"
-" են ըստ Free Software Foundation֊ի թողարկած, GNU գրադարանների հանրային "
-"արտաւնագրի երկրորդ կամ (կամընտրական) աւելի նոր տարբերակի կաննոների համաձայն։"
+msgstr "libxfce4ui, libxfcegui4, libxfce4util, thunar-vfs եւ exo փաթեթները մշակուում են ըստ Free Software Foundation֊ի թողարկած, GNU գրադարանների հանրային արտաւնագրի երկրորդ կամ (կամընտրական) աւելի նոր տարբերակի կաննոների համաձայն։"
 
 #: ../xfce4-about/main.c:345
 msgid ""
@@ -765,10 +734,7 @@ msgid ""
 "of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
-" Thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, "
-"xfconf, xfdesktop եւ xfwm4 փաթեթները մշակուած են ըստ GNU հանրային արտաւնագրի"
-" երկրորդ կամ (կամընտրական) աւելի նոր տարբերակի կանոնների համաձայն։"
+msgstr " Thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop եւ xfwm4 փաթեթները մշակուած են ըստ GNU հանրային արտաւնագրի երկրորդ կամ (կամընտրական) աւելի նոր տարբերակի կանոնների համաձայն։"
 
 #: ../xfce4-about/main.c:491
 #, c-format
@@ -822,14 +788,6 @@ msgstr "Թարգմանիչներ"
 #: ../xfce4-about/contributors.h:162
 msgid "Previous contributors"
 msgstr "Նախկին աջակիցներ"
-
-#: ../xfce4-about/xfce4-about.desktop.in.h:1
-msgid "About Xfce"
-msgstr "Xfce֊ի մասին"
-
-#: ../xfce4-about/xfce4-about.desktop.in.h:2
-msgid "Information about the Xfce Desktop Environment"
-msgstr "Տեղեկոյթ Xfce աշխատասեղանի միջավայրի մասին"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:1
 msgid "License"
