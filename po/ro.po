@@ -1,20 +1,20 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Xfce Bot <transifex@xfce.org>, 2023
-# 
-#, fuzzy
+# Alexe Moldovan, 2017
+# Marius Ghita, 2022
+# Mișu Moldovan <dumol@xfce.org>, 2015
+# Yupy <yupy_17y@yahoo.com>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: libxfce4ui\n"
+"Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-20 12:56+0100\n"
-"PO-Revision-Date: 2023-02-20 11:56+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>, 2023\n"
-"Language-Team: Romanian (https://www.transifex.com/xfce/teams/16840/ro/)\n"
+"POT-Creation-Date: 2023-04-06 00:45+0200\n"
+"PO-Revision-Date: 2013-07-02 20:33+0000\n"
+"Last-Translator: Marius Ghita, 2022\n"
+"Language-Team: Romanian (http://app.transifex.com/xfce/libxfce4ui/language/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -23,8 +23,7 @@ msgstr ""
 
 #: ../libxfce4ui/xfce-dialogs.c:110
 msgid "Failed to open web browser for online documentation"
-msgstr ""
-"Nu s-a putut deschide navigatorul web pentru accesarea documentației online"
+msgstr "Nu s-a putut deschide navigatorul web pentru accesarea documentației online"
 
 #: ../libxfce4ui/xfce-dialogs.c:265
 #, c-format
@@ -39,9 +38,7 @@ msgstr "Doriți să citiți manualul online?"
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
-msgstr ""
-"Veți fi redirectat către site-ul cu documentație, unde paginile de ajutor "
-"sunt întreținute și traduse."
+msgstr "Veți fi redirectat către site-ul cu documentație, unde paginile de ajutor sunt întreținute și traduse."
 
 #. Create cancel button
 #: ../libxfce4ui/xfce-dialogs.c:275 ../libxfce4ui/xfce-dialogs.c:533
@@ -83,18 +80,14 @@ msgstr "Închideți fereastra cu file multiple?"
 msgid ""
 "This window has multiple tabs open. Closing this window will also close all "
 "its tabs."
-msgstr ""
-"În această fereastră sunt multiple file deschise. Închiderea acestei "
-"ferestre va  închide de asemenea toate filele. "
+msgstr "În această fereastră sunt multiple file deschise. Închiderea acestei ferestre va  închide de asemenea toate filele. "
 
 #: ../libxfce4ui/xfce-dialogs.c:523
 #, c-format
 msgid ""
 "This window has %d tabs open. Closing this window will also close all its "
 "tabs."
-msgstr ""
-"Această fereastră are %d file deschise. Închiderea aceste ferestre va "
-"închide de asemenea toate filele."
+msgstr "Această fereastră are %d file deschise. Închiderea aceste ferestre va închide de asemenea toate filele."
 
 #: ../libxfce4ui/xfce-dialogs.c:529
 msgid "Warning"
@@ -148,8 +141,7 @@ msgstr "Managerul de sesiune nu a returnat un ID valid de client"
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
 "\"%s\"."
-msgstr ""
-"Directorul curent „%s” nu mai există. Nu va fi utilizat la crearea „%s”."
+msgstr "Directorul curent „%s” nu mai există. Nu va fi utilizat la crearea „%s”."
 
 #. retrieve the error and warning messages
 #: ../libxfce4ui/xfce-filename-input.c:232
@@ -164,67 +156,61 @@ msgstr "Separatorul de dosare e ilegal in numele fișierului"
 msgid "Filenames should not start or end with a space"
 msgstr "Numele fișierelor nu ar trebuii să înceapă cu un spațiu"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:46
 #, c-format
 msgid ""
 "This shortcut is already being used for the action '%s'. Which action do you"
 " want to use?"
-msgstr ""
-"Această combinație de taste este deja folosită pentru acțiunea „%s”. Ce "
-"acțiune doriți să îi fie asociată?"
+msgstr "Această combinație de taste este deja folosită pentru acțiunea „%s”. Ce acțiune doriți să îi fie asociată?"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
-#: ../libxfce4kbd-private/xfce-shortcuts.c:57
-#: ../libxfce4kbd-private/xfce-shortcuts.c:60
-#: ../libxfce4kbd-private/xfce-shortcuts.c:63
+#: ../libxfce4kbd-private/xfce-shortcuts.c:47
+#: ../libxfce4kbd-private/xfce-shortcuts.c:50
+#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid "Use '%s'"
 msgstr "Utilizează „%s”"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
-#: ../libxfce4kbd-private/xfce-shortcuts.c:57
-#: ../libxfce4kbd-private/xfce-shortcuts.c:60
-#: ../libxfce4kbd-private/xfce-shortcuts.c:63
+#: ../libxfce4kbd-private/xfce-shortcuts.c:47
+#: ../libxfce4kbd-private/xfce-shortcuts.c:50
+#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid "Keep '%s'"
 msgstr "Păstrează „%s”"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:56
-#: ../libxfce4kbd-private/xfce-shortcuts.c:59
+#: ../libxfce4kbd-private/xfce-shortcuts.c:49
+#: ../libxfce4kbd-private/xfce-shortcuts.c:52
 #, c-format
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr ""
-"Această combinație de taste este deja folosită pentru comanda „%s”. Ce "
-"acțiune doriți să îi fie asociată?"
+msgstr "Această combinație de taste este deja folosită pentru comanda „%s”. Ce acțiune doriți să îi fie asociată?"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:62
+#: ../libxfce4kbd-private/xfce-shortcuts.c:55
 #, c-format
 msgid ""
 "This shortcut is already being used by the action '%s'. Which action do you "
 "want to use?"
-msgstr ""
-"Această combinație de taste este deja folosită pentru acțiunea „%s”. Ce "
-"acțiune doriți să îi fie asociată?"
+msgstr "Această combinație de taste este deja folosită pentru acțiunea „%s”. Ce acțiune doriți să îi fie asociată?"
 
 #. This shortcut already exists in the provider, we don't want it twice
 #. Warn the user
-#: ../libxfce4kbd-private/xfce-shortcuts.c:113
+#: ../libxfce4kbd-private/xfce-shortcuts.c:106
 msgid "Please use another key combination."
 msgstr "Încercați o altă combinație de taste."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:114
+#: ../libxfce4kbd-private/xfce-shortcuts.c:107
 #, c-format
 msgid "%s already triggers this action."
 msgstr "Combinația %s este deja asociată acestei acțiuni."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:119
+#: ../libxfce4kbd-private/xfce-shortcuts.c:112
 #, c-format
 msgid "Conflicting actions for %s"
 msgstr "Acțiuni diferite pentru „%s”"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:181
+#: ../libxfce4kbd-private/xfce-shortcuts.c:174
 msgid "This shortcut is already being used for something else."
 msgstr "Această combinație de taste este deja folosită pentru altceva."
 
@@ -615,18 +601,6 @@ msgstr "Șterge ultimul spațiu de lucru"
 msgid "Delete active workspace"
 msgstr "Șterge spațiul de lucru activ"
 
-#: ../glade/libxfce4ui-2.xml.in.h:1
-msgid "Titled Dialog"
-msgstr "Fereastră cu titlu"
-
-#: ../glade/libxfce4ui-2.xml.in.h:2
-msgid "Subtitle"
-msgstr "Subtitlu"
-
-#: ../glade/libxfce4ui-2.xml.in.h:3
-msgid "Xfce 4 Widgets"
-msgstr "Widget-uri Xfce 4"
-
 #: ../xfce4-about/main.c:58
 msgid "Version information"
 msgstr "Detalii despre versiune"
@@ -742,10 +716,7 @@ msgstr "Mulțumim tuturor celor ce au facilitat crearea acestui software!"
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
-msgstr ""
-"Drepturile de autor pentru Xfce 4 îi aparțin lui Olivier Fourdan "
-"(fourdan@xfce.org). Drepturile de autor pentru diferitele componente aparțin"
-" autorilor lor."
+msgstr "Drepturile de autor pentru Xfce 4 îi aparțin lui Olivier Fourdan (fourdan@xfce.org). Drepturile de autor pentru diferitele componente aparțin autorilor lor."
 
 #: ../xfce4-about/main.c:338
 msgid ""
@@ -816,14 +787,6 @@ msgstr "Traducători"
 #: ../xfce4-about/contributors.h:162
 msgid "Previous contributors"
 msgstr "Contribuitori inactivi"
-
-#: ../xfce4-about/xfce4-about.desktop.in.h:1
-msgid "About Xfce"
-msgstr "Despre Xfce"
-
-#: ../xfce4-about/xfce4-about.desktop.in.h:2
-msgid "Information about the Xfce Desktop Environment"
-msgstr "Detalii despre mediul desktop Xfce"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:1
 msgid "License"
@@ -963,9 +926,7 @@ msgstr ""
 msgid ""
 "A file named \"%s\" already exists in this directory, the file hasn't been "
 "added."
-msgstr ""
-"Un fișier numit \"1 %s\" există deja în acest director, fișierul nu a fost "
-"adăugat."
+msgstr "Un fișier numit \"1 %s\" există deja în acest director, fișierul nu a fost adăugat."
 
 #: ../tests/test-ui.c:122
 msgid "Failed to migrate the old panel configuration"
