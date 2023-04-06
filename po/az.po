@@ -1,20 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Xfce Bot <transifex@xfce.org>, 2023
-# 
-#, fuzzy
+# Əmrə Türkoğlu Tutsaq <mdyos@inbox.ru>, 2022
 msgid ""
 msgstr ""
-"Project-Id-Version: libxfce4ui\n"
+"Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-20 12:56+0100\n"
-"PO-Revision-Date: 2023-02-20 11:56+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>, 2023\n"
-"Language-Team: Azerbaijani (https://www.transifex.com/xfce/teams/16840/az/)\n"
+"POT-Creation-Date: 2023-04-06 00:45+0200\n"
+"PO-Revision-Date: 2013-07-02 20:33+0000\n"
+"Last-Translator: Əmrə Türkoğlu Tutsaq <mdyos@inbox.ru>, 2022\n"
+"Language-Team: Azerbaijani (http://app.transifex.com/xfce/libxfce4ui/language/az/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -38,9 +35,7 @@ msgstr "Qulabuzu çevrim içi oxumaq istəyirsinizmi?"
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
-msgstr ""
-"Yardım yarpaqlarının dəstəklənən, çevirilən bəlgələndirmə saytına "
-"yönləndiriləcəksiniz."
+msgstr "Yardım yarpaqlarının dəstəklənən, çevirilən bəlgələndirmə saytına yönləndiriləcəksiniz."
 
 #. Create cancel button
 #: ../libxfce4ui/xfce-dialogs.c:275 ../libxfce4ui/xfce-dialogs.c:533
@@ -82,18 +77,14 @@ msgstr "Çox səkməli pəncərə bağlansın?"
 msgid ""
 "This window has multiple tabs open. Closing this window will also close all "
 "its tabs."
-msgstr ""
-"Bu pəncərədə açıq səkmə çoxdur. Onu bağladıqda, onun bütün səkmələri də "
-"bağlanacaq."
+msgstr "Bu pəncərədə açıq səkmə çoxdur. Onu bağladıqda, onun bütün səkmələri də bağlanacaq."
 
 #: ../libxfce4ui/xfce-dialogs.c:523
 #, c-format
 msgid ""
 "This window has %d tabs open. Closing this window will also close all its "
 "tabs."
-msgstr ""
-"Bu pəncərədə %d açıq səkmə var. Onu bağladıqda, onun bütün səkmələri də "
-"bağlanacaq."
+msgstr "Bu pəncərədə %d açıq səkmə var. Onu bağladıqda, onun bütün səkmələri də bağlanacaq."
 
 #: ../libxfce4ui/xfce-dialogs.c:529
 msgid "Warning"
@@ -162,67 +153,61 @@ msgstr "Düzüm adındakı dizin ayırıcısı yolverilməzdir"
 msgid "Filenames should not start or end with a space"
 msgstr "Düzüm adları aralıqla başlamalı ya da bitməli deyil"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:46
 #, c-format
 msgid ""
 "This shortcut is already being used for the action '%s'. Which action do you"
 " want to use?"
-msgstr ""
-"Bu qısayol artıq '%s' eyləmi üçün də işlənməkdədir. Hansı eyləmi işlətmək "
-"istəyirsiniz?"
+msgstr "Bu qısayol artıq '%s' eyləmi üçün də işlənməkdədir. Hansı eyləmi işlətmək istəyirsiniz?"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
-#: ../libxfce4kbd-private/xfce-shortcuts.c:57
-#: ../libxfce4kbd-private/xfce-shortcuts.c:60
-#: ../libxfce4kbd-private/xfce-shortcuts.c:63
+#: ../libxfce4kbd-private/xfce-shortcuts.c:47
+#: ../libxfce4kbd-private/xfce-shortcuts.c:50
+#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid "Use '%s'"
 msgstr "'%s' işlət"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
-#: ../libxfce4kbd-private/xfce-shortcuts.c:57
-#: ../libxfce4kbd-private/xfce-shortcuts.c:60
-#: ../libxfce4kbd-private/xfce-shortcuts.c:63
+#: ../libxfce4kbd-private/xfce-shortcuts.c:47
+#: ../libxfce4kbd-private/xfce-shortcuts.c:50
+#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid "Keep '%s'"
 msgstr "'%s' tut"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:56
-#: ../libxfce4kbd-private/xfce-shortcuts.c:59
+#: ../libxfce4kbd-private/xfce-shortcuts.c:49
+#: ../libxfce4kbd-private/xfce-shortcuts.c:52
 #, c-format
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr ""
-"Bu qısayol artıq '%s' göstərişi üçün də işlənilməkdədir. Hansı eyləmi seçmək"
-" istəyirsiniz?"
+msgstr "Bu qısayol artıq '%s' göstərişi üçün də işlənilməkdədir. Hansı eyləmi seçmək istəyirsiniz?"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:62
+#: ../libxfce4kbd-private/xfce-shortcuts.c:55
 #, c-format
 msgid ""
 "This shortcut is already being used by the action '%s'. Which action do you "
 "want to use?"
-msgstr ""
-"Bu qısayolu '%s' eyləmi də artıq işlətməkdədir. Hansı eyləmi seçmək "
-"istəyirsiniz?"
+msgstr "Bu qısayolu '%s' eyləmi də artıq işlətməkdədir. Hansı eyləmi seçmək istəyirsiniz?"
 
 #. This shortcut already exists in the provider, we don't want it twice
 #. Warn the user
-#: ../libxfce4kbd-private/xfce-shortcuts.c:113
+#: ../libxfce4kbd-private/xfce-shortcuts.c:106
 msgid "Please use another key combination."
 msgstr "Başqa düymə birləşimi işlədin."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:114
+#: ../libxfce4kbd-private/xfce-shortcuts.c:107
 #, c-format
 msgid "%s already triggers this action."
 msgstr "%s artıq bu eyləmi çağırır."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:119
+#: ../libxfce4kbd-private/xfce-shortcuts.c:112
 #, c-format
 msgid "Conflicting actions for %s"
 msgstr "%s üçün çəlişən eyləmlər."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:181
+#: ../libxfce4kbd-private/xfce-shortcuts.c:174
 msgid "This shortcut is already being used for something else."
 msgstr "Bu qısayol başqa bir nəsnə üçün də işlənməkdədir."
 
@@ -613,18 +598,6 @@ msgstr "Son iş alanını sil"
 msgid "Delete active workspace"
 msgstr "Etgin iş alanını sil"
 
-#: ../glade/libxfce4ui-2.xml.in.h:1
-msgid "Titled Dialog"
-msgstr "Başlıqlı Danışıq"
-
-#: ../glade/libxfce4ui-2.xml.in.h:2
-msgid "Subtitle"
-msgstr "Alt başlıq"
-
-#: ../glade/libxfce4ui-2.xml.in.h:3
-msgid "Xfce 4 Widgets"
-msgstr "Xfce 4 Gərəcləri"
-
 #: ../xfce4-about/main.c:58
 msgid "Version information"
 msgstr "Sürüm bilgisi"
@@ -647,9 +620,7 @@ msgstr "Panel"
 
 #: ../xfce4-about/main.c:152
 msgid "Provides a home for window buttons, launchers, app menu and more."
-msgstr ""
-"Pəncərə düymələri, başladanlar, uyğulama seçməsi və daha çoxu üçün ev "
-"sağlayır."
+msgstr "Pəncərə düymələri, başladanlar, uyğulama seçməsi və daha çoxu üçün ev sağlayır."
 
 #: ../xfce4-about/main.c:156
 msgid "Desktop Manager"
@@ -682,8 +653,7 @@ msgstr "Oturum Yönəldəni"
 #: ../xfce4-about/main.c:172
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
-msgstr ""
-"Oturumunuzu qoruyur, qaytarır, açılış, özaçılış, söndürmə işlərini ələ alır."
+msgstr "Oturumunuzu qoruyur, qaytarır, açılış, özaçılış, söndürmə işlərini ələ alır."
 
 #: ../xfce4-about/main.c:176
 msgid "Settings Manager"
@@ -733,9 +703,7 @@ msgstr "Buna baxın: <https://www.xfce.org/about/credits>"
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
-msgstr ""
-"Bu sıralanışda əksik birini görürsünüzsə, ilişməyin, böcəyi (yanlışı) "
-"<https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> üzərindən bildirin."
+msgstr "Bu sıralanışda əksik birini görürsünüzsə, ilişməyin, böcəyi (yanlışı) <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> üzərindən bildirin."
 
 #: ../xfce4-about/main.c:316
 msgid "Thanks to all who helped making this software available!"
@@ -745,9 +713,7 @@ msgstr "Bu incəgeyimi əlçatan edən hamı sağolsun!"
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
-msgstr ""
-"Xfce 4 Olivier Fourdan'ın (fourdan@xfce.org) köçürüm özgüsüdür. Seçkin "
-"biləşənlər, onların ilgili yazarlarının köçürüm özgüləridir."
+msgstr "Xfce 4 Olivier Fourdan'ın (fourdan@xfce.org) köçürüm özgüsüdür. Seçkin biləşənlər, onların ilgili yazarlarının köçürüm özgüləridir."
 
 #: ../xfce4-about/main.c:338
 msgid ""
@@ -755,11 +721,7 @@ msgid ""
 "terms of the GNU Library General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
-msgstr ""
-"Libxfce 4ui, libxfceutil, exo bağlamaları Özgür Yazılım Quruluşunun "
-"yayımlanışı kimi GNU Bitiklik Toplam Kamu Yolverişi qoşulları altında "
-"yayılmaqdadır; istər Yolverişin 2., istərsə (seçiminizə uyğun) daha sonrakı "
-"sürümü olsun."
+msgstr "Libxfce 4ui, libxfceutil, exo bağlamaları Özgür Yazılım Quruluşunun yayımlanışı kimi GNU Bitiklik Toplam Kamu Yolverişi qoşulları altında yayılmaqdadır; istər Yolverişin 2., istərsə (seçiminizə uyğun) daha sonrakı sürümü olsun."
 
 #: ../xfce4-about/main.c:345
 msgid ""
@@ -768,11 +730,7 @@ msgid ""
 "of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
-"thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf,"
-" xfdesktop, xfwm4 bağlamaları Özgür Yazılım Quruluşunun yayımlanışı kimi GNU"
-" Bitiklik Toplam Kamu Yolverişi qoşulları altında yayılmaqdadır; istər "
-"Yolverişin 2., istərsə (seçiminizə uyğun) daha sonrakı sürümü olsun."
+msgstr "thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop, xfwm4 bağlamaları Özgür Yazılım Quruluşunun yayımlanışı kimi GNU Bitiklik Toplam Kamu Yolverişi qoşulları altında yayılmaqdadır; istər Yolverişin 2., istərsə (seçiminizə uyğun) daha sonrakı sürümü olsun."
 
 #: ../xfce4-about/main.c:491
 #, c-format
@@ -826,14 +784,6 @@ msgstr "Çevirmənlər"
 #: ../xfce4-about/contributors.h:162
 msgid "Previous contributors"
 msgstr "Öncəki qatqıçılar"
-
-#: ../xfce4-about/xfce4-about.desktop.in.h:1
-msgid "About Xfce"
-msgstr "Xfce ilə bağlı"
-
-#: ../xfce4-about/xfce4-about.desktop.in.h:2
-msgid "Information about the Xfce Desktop Environment"
-msgstr "Xfce İş qoyağı Ortamı ilə bağlı bilgi"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:1
 msgid "License"
@@ -903,9 +853,7 @@ msgstr "Sistem"
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
-msgstr ""
-"Xfce, birlikdə bütün-özəllikli iş qoyağı ortamı sağlayan proqram toplusudur.\n"
-"Sıradakı proqramlar Xfce özəyinin bölükləridir:"
+msgstr "Xfce, birlikdə bütün-özəllikli iş qoyağı ortamı sağlayan proqram toplusudur.\nSıradakı proqramlar Xfce özəyinin bölükləridir:"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:19
 msgid ""
@@ -916,14 +864,7 @@ msgid ""
 "Thank you for your interest in Xfce.\n"
 "\n"
 "\t- The Xfce Development Team"
-msgstr ""
-"Xfce, eləcə də, yazılımçıların iş qoyağı ortamına yaxşı oturan uyğulamalar yaratmasına yardımçı olan seçkin bitik evləri sağlayan gəliştirmə platformudur.\n"
-"\n"
-"Xfce biləşənləri, özgür ya da açıq qaynaq yolverişləri altında yolverişlənir; Uyğulamalar üçün GPL ya da BSDL, bitik evləri üçün LGPL ya da BSDL. Daha çox bilgi üçün bəlgələndirmə, qaynaq koduna ya ad Xfce tor saytına (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) baxın.\n"
-"\n"
-"Xfce ilə ilgiləndiyiniz üçün çox sağolun.\n"
-"\n"
-"\t- Xfce Gəliştirmə Tağımı"
+msgstr "Xfce, eləcə də, yazılımçıların iş qoyağı ortamına yaxşı oturan uyğulamalar yaratmasına yardımçı olan seçkin bitik evləri sağlayan gəliştirmə platformudur.\n\nXfce biləşənləri, özgür ya da açıq qaynaq yolverişləri altında yolverişlənir; Uyğulamalar üçün GPL ya da BSDL, bitik evləri üçün LGPL ya da BSDL. Daha çox bilgi üçün bəlgələndirmə, qaynaq koduna ya ad Xfce tor saytına (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) baxın.\n\nXfce ilə ilgiləndiyiniz üçün çox sağolun.\n\n\t- Xfce Gəliştirmə Tağımı"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:26
 msgid "About"
