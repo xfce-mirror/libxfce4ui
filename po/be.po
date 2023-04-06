@@ -1,20 +1,18 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Xfce Bot <transifex@xfce.org>, 2023
-# 
-#, fuzzy
+# Źmicier Turok <nashtlumach@gmail.com>, 2019
+# Źmicier Turok <nashtlumach@gmail.com>, 2018-2019
 msgid ""
 msgstr ""
-"Project-Id-Version: libxfce4ui\n"
+"Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-20 12:56+0100\n"
-"PO-Revision-Date: 2023-02-20 11:56+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>, 2023\n"
-"Language-Team: Belarusian (https://www.transifex.com/xfce/teams/16840/be/)\n"
+"POT-Creation-Date: 2023-04-06 00:45+0200\n"
+"PO-Revision-Date: 2013-07-02 20:33+0000\n"
+"Last-Translator: Źmicier Turok <nashtlumach@gmail.com>, 2019\n"
+"Language-Team: Belarusian (http://app.transifex.com/xfce/libxfce4ui/language/be/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -38,9 +36,7 @@ msgstr "Хочаце пачытаць дапаможнік у сеціве?"
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
-msgstr ""
-"Вас накіруюць на сайт дакументацыі, дзе старонкі дапаможніка перакладаюцца і"
-" падтрымліваюцца суполкай."
+msgstr "Вас накіруюць на сайт дакументацыі, дзе старонкі дапаможніка перакладаюцца і падтрымліваюцца суполкай."
 
 #. Create cancel button
 #: ../libxfce4ui/xfce-dialogs.c:275 ../libxfce4ui/xfce-dialogs.c:533
@@ -82,18 +78,14 @@ msgstr "Закрыць акно з некалькімі ўкладкамі?"
 msgid ""
 "This window has multiple tabs open. Closing this window will also close all "
 "its tabs."
-msgstr ""
-"У гэтым акне адкрыта некалькі ўкладак. Калі яго закрыць, то закрыюцца і ўсе "
-"ўкладкі."
+msgstr "У гэтым акне адкрыта некалькі ўкладак. Калі яго закрыць, то закрыюцца і ўсе ўкладкі."
 
 #: ../libxfce4ui/xfce-dialogs.c:523
 #, c-format
 msgid ""
 "This window has %d tabs open. Closing this window will also close all its "
 "tabs."
-msgstr ""
-"У акна %d адкрытыя ўкладкі. Калі закрыць акно, \n"
-"закрыюцца і ўкладкі."
+msgstr "У акна %d адкрытыя ўкладкі. Калі закрыць акно, \nзакрыюцца і ўкладкі."
 
 #: ../libxfce4ui/xfce-dialogs.c:529
 msgid "Warning"
@@ -162,66 +154,61 @@ msgstr "Падзяляльнік каталогаў непрыдатны ў на
 msgid "Filenames should not start or end with a space"
 msgstr "Назвы файлаў не могуць пачынацца ці заканчвацца прагалам"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:46
 #, c-format
 msgid ""
 "This shortcut is already being used for the action '%s'. Which action do you"
 " want to use?"
-msgstr ""
-"Спалучэнне ўжо выкарыстоўваецца для дзеяння \"%s\". Якое дзеянне "
-"выкарыстоўваць?"
+msgstr "Спалучэнне ўжо выкарыстоўваецца для дзеяння \"%s\". Якое дзеянне выкарыстоўваць?"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
-#: ../libxfce4kbd-private/xfce-shortcuts.c:57
-#: ../libxfce4kbd-private/xfce-shortcuts.c:60
-#: ../libxfce4kbd-private/xfce-shortcuts.c:63
+#: ../libxfce4kbd-private/xfce-shortcuts.c:47
+#: ../libxfce4kbd-private/xfce-shortcuts.c:50
+#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid "Use '%s'"
 msgstr "Выкарыстоўваць \"%s\""
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
-#: ../libxfce4kbd-private/xfce-shortcuts.c:57
-#: ../libxfce4kbd-private/xfce-shortcuts.c:60
-#: ../libxfce4kbd-private/xfce-shortcuts.c:63
+#: ../libxfce4kbd-private/xfce-shortcuts.c:47
+#: ../libxfce4kbd-private/xfce-shortcuts.c:50
+#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid "Keep '%s'"
 msgstr "Пакінуць \"%s\""
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:56
-#: ../libxfce4kbd-private/xfce-shortcuts.c:59
+#: ../libxfce4kbd-private/xfce-shortcuts.c:49
+#: ../libxfce4kbd-private/xfce-shortcuts.c:52
 #, c-format
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr ""
-"Спалучэнне ўжо выкарыстоўваецца для загада \"%s\". Які загад выкарыстоўваць?"
+msgstr "Спалучэнне ўжо выкарыстоўваецца для загада \"%s\". Які загад выкарыстоўваць?"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:62
+#: ../libxfce4kbd-private/xfce-shortcuts.c:55
 #, c-format
 msgid ""
 "This shortcut is already being used by the action '%s'. Which action do you "
 "want to use?"
-msgstr ""
-"Спалучэнне ўжо выкарыстоўваецца для дзеяння \"%s\". Якое дзеянне "
-"выкарыстоўваць?"
+msgstr "Спалучэнне ўжо выкарыстоўваецца для дзеяння \"%s\". Якое дзеянне выкарыстоўваць?"
 
 #. This shortcut already exists in the provider, we don't want it twice
 #. Warn the user
-#: ../libxfce4kbd-private/xfce-shortcuts.c:113
+#: ../libxfce4kbd-private/xfce-shortcuts.c:106
 msgid "Please use another key combination."
 msgstr "Калі ласка, выкарыстайце іншае спалучэнне клавіш."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:114
+#: ../libxfce4kbd-private/xfce-shortcuts.c:107
 #, c-format
 msgid "%s already triggers this action."
 msgstr "%s ужо выкарыстоўваецца для гэтага дзеяння"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:119
+#: ../libxfce4kbd-private/xfce-shortcuts.c:112
 #, c-format
 msgid "Conflicting actions for %s"
 msgstr "Канфлікт дзеянняў для %s"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:181
+#: ../libxfce4kbd-private/xfce-shortcuts.c:174
 msgid "This shortcut is already being used for something else."
 msgstr "Спалучэнне ўжо выкарыстоўваецца."
 
@@ -612,18 +599,6 @@ msgstr "Выдаліць апошнюю працоўную прастору"
 msgid "Delete active workspace"
 msgstr "Выдаліць бягучую працоўную прастору"
 
-#: ../glade/libxfce4ui-2.xml.in.h:1
-msgid "Titled Dialog"
-msgstr "Дыялог з загалоўкам"
-
-#: ../glade/libxfce4ui-2.xml.in.h:2
-msgid "Subtitle"
-msgstr "Падзагаловак"
-
-#: ../glade/libxfce4ui-2.xml.in.h:3
-msgid "Xfce 4 Widgets"
-msgstr "Віджэты Xfce 4"
-
 #: ../xfce4-about/main.c:58
 msgid "Version information"
 msgstr "Інфармацыя пра версію"
@@ -729,9 +704,7 @@ msgstr "Глядзіце <https://www.xfce.org/about/credits>"
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
-msgstr ""
-"Калі вы ведаеце таго, каго няма ў спісе, паведаміце на "
-"<https://gitlab.xfce.org/xfce/libxfce4ui/-/issues>."
+msgstr "Калі вы ведаеце таго, каго няма ў спісе, паведаміце на <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues>."
 
 #: ../xfce4-about/main.c:316
 msgid "Thanks to all who helped making this software available!"
@@ -741,9 +714,7 @@ msgstr "Дзякуй усім, хто дапамог стварыць гэтае
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
-msgstr ""
-"Аўтарскія правы на Xfce 4 належаць Olivier Fourdan (fourdan@xfce.org). "
-"Аўтарскія правы на кампаненты належаць іх распрацоўшчыкам."
+msgstr "Аўтарскія правы на Xfce 4 належаць Olivier Fourdan (fourdan@xfce.org). Аўтарскія правы на кампаненты належаць іх распрацоўшчыкам."
 
 #: ../xfce4-about/main.c:338
 msgid ""
@@ -751,10 +722,7 @@ msgid ""
 "terms of the GNU Library General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
-msgstr ""
-"libxfce4ui, libxfcegui4, libxfce4util, thunar-vfs і exo распаўсюджваюцца на "
-"ўмовах GNU Library General Public License апублікаванай Free Software "
-"Foundation версіі 2 альбо пазнейшай."
+msgstr "libxfce4ui, libxfcegui4, libxfce4util, thunar-vfs і exo распаўсюджваюцца на ўмовах GNU Library General Public License апублікаванай Free Software Foundation версіі 2 альбо пазнейшай."
 
 #: ../xfce4-about/main.c:345
 msgid ""
@@ -763,11 +731,7 @@ msgid ""
 "of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
-"thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfce-"
-"utils, xfconf, xfdesktop і xfwm4 распаўсюджваюцца на ўмовах GNU Library "
-"General Public License апублікаванай Free Software Foundation версіі 2 альбо"
-" пазнейшай."
+msgstr "thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfce-utils, xfconf, xfdesktop і xfwm4 распаўсюджваюцца на ўмовах GNU Library General Public License апублікаванай Free Software Foundation версіі 2 альбо пазнейшай."
 
 #: ../xfce4-about/main.c:491
 #, c-format
@@ -821,14 +785,6 @@ msgstr "Перакладчыкі"
 #: ../xfce4-about/contributors.h:162
 msgid "Previous contributors"
 msgstr "Папярэднія распрацоўшчыкі"
-
-#: ../xfce4-about/xfce4-about.desktop.in.h:1
-msgid "About Xfce"
-msgstr "Пра Xfce"
-
-#: ../xfce4-about/xfce4-about.desktop.in.h:2
-msgid "Information about the Xfce Desktop Environment"
-msgstr "Звесткі пра працоўнае асяроддзе Xfce"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:1
 msgid "License"
@@ -898,9 +854,7 @@ msgstr "Сістэма"
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
-msgstr ""
-"Xfce - набор праграм, што разам складаюць паўнавартаснае працоўнае "
-"асяроддзе. У ядро Xfce уваходзяць наступныя праграмы:"
+msgstr "Xfce - набор праграм, што разам складаюць паўнавартаснае працоўнае асяроддзе. У ядро Xfce уваходзяць наступныя праграмы:"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:19
 msgid ""
@@ -911,14 +865,7 @@ msgid ""
 "Thank you for your interest in Xfce.\n"
 "\n"
 "\t- The Xfce Development Team"
-msgstr ""
-"Xfce - гэта таксама платформа для распрацоўкі, якая падае некалькі бібліятэк, якія дапамагаюць праграмістам ствараць праграмы, якія добра пасуюць працоўнаму асяроддзю.\n"
-"\n"
-" Кампаненты Xfce ліцэнзуюцца бясплатнымі альбо свабоднымі ліцэнзіямі; GPL або BSDL для праграм і LGPL або BSDL для бібліятэк. Паглядзіце дадатковую інфармацыю ў дакументацыі, зыходным кодзе альбо на сайце Xfce (<a href=\"https://www.xfce.org\"> https://www.xfce.org </a>).\n"
-"\n"
-" Дзякуем за цікавасць да Xfce.\n"
-"\n"
-" - Каманда распрацоўшчыкаў Xfce"
+msgstr "Xfce - гэта таксама платформа для распрацоўкі, якая падае некалькі бібліятэк, якія дапамагаюць праграмістам ствараць праграмы, якія добра пасуюць працоўнаму асяроддзю.\n\n Кампаненты Xfce ліцэнзуюцца бясплатнымі альбо свабоднымі ліцэнзіямі; GPL або BSDL для праграм і LGPL або BSDL для бібліятэк. Паглядзіце дадатковую інфармацыю ў дакументацыі, зыходным кодзе альбо на сайце Xfce (<a href=\"https://www.xfce.org\"> https://www.xfce.org </a>).\n\n Дзякуем за цікавасць да Xfce.\n\n - Каманда распрацоўшчыкаў Xfce"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:26
 msgid "About"
