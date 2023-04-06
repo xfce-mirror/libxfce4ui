@@ -1,20 +1,18 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Xfce Bot <transifex@xfce.org>, 2023
-# 
-#, fuzzy
+# Geraint Rowlands <ansbaradigeidfran@gmail.com>, 2018
+# Ian Low, 2022
 msgid ""
 msgstr ""
-"Project-Id-Version: libxfce4ui\n"
+"Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-20 12:56+0100\n"
-"PO-Revision-Date: 2023-02-20 11:56+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>, 2023\n"
-"Language-Team: Welsh (https://www.transifex.com/xfce/teams/16840/cy/)\n"
+"POT-Creation-Date: 2023-04-06 00:45+0200\n"
+"PO-Revision-Date: 2013-07-02 20:33+0000\n"
+"Last-Translator: Ian Low, 2022\n"
+"Language-Team: Welsh (http://app.transifex.com/xfce/libxfce4ui/language/cy/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -38,9 +36,7 @@ msgstr "Ydych eisiau darllen y llawlyfr ar-lein?"
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
-msgstr ""
-"Cewch eich dargyfeirio at y wefan dogfenyddiaeth ble mae'r tudalennau "
-"cymorth yn cael eu cynnal a'u cyfieithu."
+msgstr "Cewch eich dargyfeirio at y wefan dogfenyddiaeth ble mae'r tudalennau cymorth yn cael eu cynnal a'u cyfieithu."
 
 #. Create cancel button
 #: ../libxfce4ui/xfce-dialogs.c:275 ../libxfce4ui/xfce-dialogs.c:533
@@ -82,18 +78,14 @@ msgstr "Ai cau ffenestr gyda tabiau lluosog?"
 msgid ""
 "This window has multiple tabs open. Closing this window will also close all "
 "its tabs."
-msgstr ""
-"Mae gyda'r ffenestr yma tabiau lluosog. Bydd yn cau y ffenestr hwn hefyd yn "
-"cau ei dabiau i gyd."
+msgstr "Mae gyda'r ffenestr yma tabiau lluosog. Bydd yn cau y ffenestr hwn hefyd yn cau ei dabiau i gyd."
 
 #: ../libxfce4ui/xfce-dialogs.c:523
 #, c-format
 msgid ""
 "This window has %d tabs open. Closing this window will also close all its "
 "tabs."
-msgstr ""
-"Mae gyda'r ffenestr yma %d tab lluosog. Bydd yn cau y ffenestr hwn hefyd yn "
-"cau ei dabiau i gyd."
+msgstr "Mae gyda'r ffenestr yma %d tab lluosog. Bydd yn cau y ffenestr hwn hefyd yn cau ei dabiau i gyd."
 
 #: ../libxfce4ui/xfce-dialogs.c:529
 msgid "Warning"
@@ -162,67 +154,61 @@ msgstr "Gwahanwr Cyfeiriadur anghyfreithlon yn enw ffeil"
 msgid "Filenames should not start or end with a space"
 msgstr "Ni ddylent ffeilenwau dechreu neu orffen gyda gwagle."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:46
 #, c-format
 msgid ""
 "This shortcut is already being used for the action '%s'. Which action do you"
 " want to use?"
-msgstr ""
-"Mae'r byrlwybr yma mewn defnydd ar gyfer y weithred '%s'. Pa weithred ydych "
-"am ei ddefnyddio?"
+msgstr "Mae'r byrlwybr yma mewn defnydd ar gyfer y weithred '%s'. Pa weithred ydych am ei ddefnyddio?"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
-#: ../libxfce4kbd-private/xfce-shortcuts.c:57
-#: ../libxfce4kbd-private/xfce-shortcuts.c:60
-#: ../libxfce4kbd-private/xfce-shortcuts.c:63
+#: ../libxfce4kbd-private/xfce-shortcuts.c:47
+#: ../libxfce4kbd-private/xfce-shortcuts.c:50
+#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid "Use '%s'"
 msgstr "Defnyddio '%s'"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
-#: ../libxfce4kbd-private/xfce-shortcuts.c:57
-#: ../libxfce4kbd-private/xfce-shortcuts.c:60
-#: ../libxfce4kbd-private/xfce-shortcuts.c:63
+#: ../libxfce4kbd-private/xfce-shortcuts.c:47
+#: ../libxfce4kbd-private/xfce-shortcuts.c:50
+#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid "Keep '%s'"
 msgstr "Cadw '%s'"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:56
-#: ../libxfce4kbd-private/xfce-shortcuts.c:59
+#: ../libxfce4kbd-private/xfce-shortcuts.c:49
+#: ../libxfce4kbd-private/xfce-shortcuts.c:52
 #, c-format
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr ""
-"Mae'r byrlwybr yma mewn defnydd ar gyfer y gorchymyn '%s'. Pa weithred ydych"
-" am ei ddefnyddio?"
+msgstr "Mae'r byrlwybr yma mewn defnydd ar gyfer y gorchymyn '%s'. Pa weithred ydych am ei ddefnyddio?"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:62
+#: ../libxfce4kbd-private/xfce-shortcuts.c:55
 #, c-format
 msgid ""
 "This shortcut is already being used by the action '%s'. Which action do you "
 "want to use?"
-msgstr ""
-"Mae'r byrlwybr yma yn cael ei ddefnyddio gan y weithred '%s'. Pa weithred "
-"ydych am ei ddefnyddio?"
+msgstr "Mae'r byrlwybr yma yn cael ei ddefnyddio gan y weithred '%s'. Pa weithred ydych am ei ddefnyddio?"
 
 #. This shortcut already exists in the provider, we don't want it twice
 #. Warn the user
-#: ../libxfce4kbd-private/xfce-shortcuts.c:113
+#: ../libxfce4kbd-private/xfce-shortcuts.c:106
 msgid "Please use another key combination."
 msgstr "Defnyddiwch gyfuniad arall o allweddi."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:114
+#: ../libxfce4kbd-private/xfce-shortcuts.c:107
 #, c-format
 msgid "%s already triggers this action."
 msgstr "Mae %syn sbarduno'r weithred yma'n barod."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:119
+#: ../libxfce4kbd-private/xfce-shortcuts.c:112
 #, c-format
 msgid "Conflicting actions for %s"
 msgstr "Gweithredau'n gwrthdaro ar gyfer %s"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:181
+#: ../libxfce4kbd-private/xfce-shortcuts.c:174
 msgid "This shortcut is already being used for something else."
 msgstr "Mae'r byrlwybr yn cael ei ddefnyddio ar gyfer rhywbeth arall."
 
@@ -248,8 +234,7 @@ msgstr "Adfer y byrlwybr rhagosodedig"
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:562
 #, c-format
 msgid "This keyboard shortcut is currently used by: '%s'"
-msgstr ""
-"Mae'r byrlwybr bysellfwrdd yma yn ei ddefnyddio yn cyfredol gyda: '%s'"
+msgstr "Mae'r byrlwybr bysellfwrdd yma yn ei ddefnyddio yn cyfredol gyda: '%s'"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:476
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:565
@@ -614,18 +599,6 @@ msgstr "Dileu'r gweithle olaf"
 msgid "Delete active workspace"
 msgstr "Dileu'r gweithle bresennol"
 
-#: ../glade/libxfce4ui-2.xml.in.h:1
-msgid "Titled Dialog"
-msgstr "Deialog â Theitl"
-
-#: ../glade/libxfce4ui-2.xml.in.h:2
-msgid "Subtitle"
-msgstr "Isdeitl"
-
-#: ../glade/libxfce4ui-2.xml.in.h:3
-msgid "Xfce 4 Widgets"
-msgstr "Celfigion Xfce 4"
-
 #: ../xfce4-about/main.c:58
 msgid "Version information"
 msgstr "Gwybodaeth fersiwn"
@@ -681,9 +654,7 @@ msgstr "Rheolwr Sesiwn"
 #: ../xfce4-about/main.c:172
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
-msgstr ""
-"Achub ac adfer eich cyfeistedd, triniaethu uwchgychwyn, hunangychwyn a "
-"llawrgau."
+msgstr "Achub ac adfer eich cyfeistedd, triniaethu uwchgychwyn, hunangychwyn a llawrgau."
 
 #: ../xfce4-about/main.c:176
 msgid "Settings Manager"
@@ -699,8 +670,7 @@ msgstr "Chwiliwr Rhaglenni"
 
 #: ../xfce4-about/main.c:182
 msgid "Quickly finds and launches applications installed on your system."
-msgstr ""
-"Canfod a lansio yn gyflym cymhwysiadau mewnsefydlwyd ar eich cyfundrefn."
+msgstr "Canfod a lansio yn gyflym cymhwysiadau mewnsefydlwyd ar eich cyfundrefn."
 
 #: ../xfce4-about/main.c:186
 msgid "Settings Daemon"
@@ -716,8 +686,7 @@ msgstr "Llyfgell Dewislen"
 
 #: ../xfce4-about/main.c:192
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
-msgstr ""
-"Mewndrefnu dewislen freedesktop.org ufuddhiedig seiliedig ar GLib a GIO."
+msgstr "Mewndrefnu dewislen freedesktop.org ufuddhiedig seiliedig ar GLib a GIO."
 
 #: ../xfce4-about/main.c:196
 msgid "Thumbnails Service"
@@ -735,9 +704,7 @@ msgstr "Atolwg gweler <https://www.xfce.org/about/credits>"
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
-msgstr ""
-"Os y gwyddoch am rhywun sydd ar goll o'r rhestr yma, peidiwch ag oedi: "
-"rhestrwch nam ar <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues>."
+msgstr "Os y gwyddoch am rhywun sydd ar goll o'r rhestr yma, peidiwch ag oedi: rhestrwch nam ar <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues>."
 
 #: ../xfce4-about/main.c:316
 msgid "Thanks to all who helped making this software available!"
@@ -747,9 +714,7 @@ msgstr "Diolch i bawb sydd wedi helpu darparu'r meddalwedd yma!"
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
-msgstr ""
-"Mae Xfce 4 yn hawlfraint Olivier Fourdan (fourdan@xfce.org). Mae'r gwahanol "
-"cydrannau'n hawlfraint eu hawduron priodol."
+msgstr "Mae Xfce 4 yn hawlfraint Olivier Fourdan (fourdan@xfce.org). Mae'r gwahanol cydrannau'n hawlfraint eu hawduron priodol."
 
 #: ../xfce4-about/main.c:338
 msgid ""
@@ -757,11 +722,7 @@ msgid ""
 "terms of the GNU Library General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
-msgstr ""
-"Dosbarthir y pecynnau libxfce4ui, libxfce4util ac exo o dan amodau'r GNU "
-"Library General Public License fel y cyhoeddir gan y Free Software "
-"Foundation; naill ai fersiwn 2 o'r Trwydded, neu (ar eich dewis chi) unrhyw "
-"fersiwn diweddarach."
+msgstr "Dosbarthir y pecynnau libxfce4ui, libxfce4util ac exo o dan amodau'r GNU Library General Public License fel y cyhoeddir gan y Free Software Foundation; naill ai fersiwn 2 o'r Trwydded, neu (ar eich dewis chi) unrhyw fersiwn diweddarach."
 
 #: ../xfce4-about/main.c:345
 msgid ""
@@ -770,11 +731,7 @@ msgid ""
 "of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
-"Dosbarthir y pecynnau thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
-"xfce4-settings, xfconf, xfdesktop ac xfwm4 o dan amodau'r GNU General Public"
-" License fel y cyfoeddir gan y Free Software Foundation; naill ai fersiwn 2 "
-"o'r Trwydded, neu (ar eich dewis chi) unrhyw fersiwn diweddarach."
+msgstr "Dosbarthir y pecynnau thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop ac xfwm4 o dan amodau'r GNU General Public License fel y cyfoeddir gan y Free Software Foundation; naill ai fersiwn 2 o'r Trwydded, neu (ar eich dewis chi) unrhyw fersiwn diweddarach."
 
 #: ../xfce4-about/main.c:491
 #, c-format
@@ -828,14 +785,6 @@ msgstr "Cyfieithwyr"
 #: ../xfce4-about/contributors.h:162
 msgid "Previous contributors"
 msgstr "Cyfranwyr cynt"
-
-#: ../xfce4-about/xfce4-about.desktop.in.h:1
-msgid "About Xfce"
-msgstr "Ynghylch Xfce"
-
-#: ../xfce4-about/xfce4-about.desktop.in.h:2
-msgid "Information about the Xfce Desktop Environment"
-msgstr "Gwybodaeth am yr Amgylchedd Penfwrdd Xfce"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:1
 msgid "License"
@@ -905,9 +854,7 @@ msgstr "System"
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
-msgstr ""
-"Mae Xfce yn gasgliad o raglenni sydd yn cyfuno i ddarparu amgylchedd penfwrdd cyflawn. \n"
-"Mae'r rhaglenni canlynol yn ffurfio rhanbarth o'r craidd Xfce:"
+msgstr "Mae Xfce yn gasgliad o raglenni sydd yn cyfuno i ddarparu amgylchedd penfwrdd cyflawn. \nMae'r rhaglenni canlynol yn ffurfio rhanbarth o'r craidd Xfce:"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:19
 msgid ""
@@ -918,14 +865,7 @@ msgid ""
 "Thank you for your interest in Xfce.\n"
 "\n"
 "\t- The Xfce Development Team"
-msgstr ""
-"Mae Xfce hefyd yn lwyfan datblygiad sydd yn darparu amryw llyfrgelleodd sydd yn cymhorthwyo rhaglennwyr i greu cymhwysiadau sydd yn ffitio i mewn yn dda gyda'r amgylchiad penfwrdd.\n"
-"\n"
-"Mae cydrannau Xfce yn eu thrwyddedwyd dan trwyddedau tarddiad agored rhydwd; GPL neu BDSL am gymhwysiadai ac LGPL neu BSDL am lyfrgelloedd. Edrychwch ar y dogfenniaeth, y côd tarddiad neu'r wefan Xfce (https://www.xfce.org) am fwy o wybodaeth.\n"
-"\n"
-"Diolch i chi an eich diddordeb yn Xfce.\n"
-"\n"
-" - Y Carfan Datblygiad Xfce"
+msgstr "Mae Xfce hefyd yn lwyfan datblygiad sydd yn darparu amryw llyfrgelleodd sydd yn cymhorthwyo rhaglennwyr i greu cymhwysiadau sydd yn ffitio i mewn yn dda gyda'r amgylchiad penfwrdd.\n\nMae cydrannau Xfce yn eu thrwyddedwyd dan trwyddedau tarddiad agored rhydwd; GPL neu BDSL am gymhwysiadai ac LGPL neu BSDL am lyfrgelloedd. Edrychwch ar y dogfenniaeth, y côd tarddiad neu'r wefan Xfce (https://www.xfce.org) am fwy o wybodaeth.\n\nDiolch i chi an eich diddordeb yn Xfce.\n\n - Y Carfan Datblygiad Xfce"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:26
 msgid "About"
@@ -984,9 +924,7 @@ msgstr "%s; Hunaniaeth Adeiladu: %s"
 msgid ""
 "A file named \"%s\" already exists in this directory, the file hasn't been "
 "added."
-msgstr ""
-"Mae ffeil o'r enw \"%s\" eisoes yn bodoli yn y ffolder yma, ni ychwanegwyd y"
-" ffeil."
+msgstr "Mae ffeil o'r enw \"%s\" eisoes yn bodoli yn y ffolder yma, ni ychwanegwyd y ffeil."
 
 #: ../tests/test-ui.c:122
 msgid "Failed to migrate the old panel configuration"
