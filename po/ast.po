@@ -1,21 +1,19 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Xfce Bot <transifex@xfce.org>, 2023
-# Nick Schermer <nick@xfce.org>, 2023
-# 
-#, fuzzy
+# enolp <enolp@softastur.org>, 2015-2016,2020
+# Ḷḷumex03, 2014
+# Ḷḷumex03, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: libxfce4ui\n"
+"Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-20 12:56+0100\n"
-"PO-Revision-Date: 2023-02-20 11:56+0000\n"
-"Last-Translator: Nick Schermer <nick@xfce.org>, 2023\n"
-"Language-Team: Asturian (https://www.transifex.com/xfce/teams/16840/ast/)\n"
+"POT-Creation-Date: 2023-04-06 00:45+0200\n"
+"PO-Revision-Date: 2013-07-02 20:33+0000\n"
+"Last-Translator: enolp <enolp@softastur.org>, 2015-2016,2020\n"
+"Language-Team: Asturian (http://app.transifex.com/xfce/libxfce4ui/language/ast/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -39,9 +37,7 @@ msgstr "¿Quies lleer el manual en llinia?"
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
-msgstr ""
-"Redireicionarásete al sitiu web de documentación u tán calteníes y tornaes "
-"les páxines d'ayuda."
+msgstr "Redireicionarásete al sitiu web de documentación u tán calteníes y tornaes les páxines d'ayuda."
 
 #. Create cancel button
 #: ../libxfce4ui/xfce-dialogs.c:275 ../libxfce4ui/xfce-dialogs.c:533
@@ -144,8 +140,7 @@ msgstr "El xestor de sesión nun devolvió una ID de veceru válida"
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
 "\"%s\"."
-msgstr ""
-"Nun esiste'l direutoriu de trabayu «%s». Nun s'usará cuando apruza \"%s\"."
+msgstr "Nun esiste'l direutoriu de trabayu «%s». Nun s'usará cuando apruza \"%s\"."
 
 #. retrieve the error and warning messages
 #: ../libxfce4ui/xfce-filename-input.c:232
@@ -160,67 +155,61 @@ msgstr ""
 msgid "Filenames should not start or end with a space"
 msgstr ""
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:46
 #, c-format
 msgid ""
 "This shortcut is already being used for the action '%s'. Which action do you"
 " want to use?"
-msgstr ""
-"Esti accesu direutu yá ta usándose pa la aición '%s\". ¿Qué aición quies "
-"usar?"
+msgstr "Esti accesu direutu yá ta usándose pa la aición '%s\". ¿Qué aición quies usar?"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
-#: ../libxfce4kbd-private/xfce-shortcuts.c:57
-#: ../libxfce4kbd-private/xfce-shortcuts.c:60
-#: ../libxfce4kbd-private/xfce-shortcuts.c:63
+#: ../libxfce4kbd-private/xfce-shortcuts.c:47
+#: ../libxfce4kbd-private/xfce-shortcuts.c:50
+#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid "Use '%s'"
 msgstr "Usar '%s'"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
-#: ../libxfce4kbd-private/xfce-shortcuts.c:57
-#: ../libxfce4kbd-private/xfce-shortcuts.c:60
-#: ../libxfce4kbd-private/xfce-shortcuts.c:63
+#: ../libxfce4kbd-private/xfce-shortcuts.c:47
+#: ../libxfce4kbd-private/xfce-shortcuts.c:50
+#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid "Keep '%s'"
 msgstr "Caltener '%s'"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:56
-#: ../libxfce4kbd-private/xfce-shortcuts.c:59
+#: ../libxfce4kbd-private/xfce-shortcuts.c:49
+#: ../libxfce4kbd-private/xfce-shortcuts.c:52
 #, c-format
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr ""
-"Esti accesu direutu yá ta usándose pal comandu '%s\". ¿Qué aición quies "
-"usar?"
+msgstr "Esti accesu direutu yá ta usándose pal comandu '%s\". ¿Qué aición quies usar?"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:62
+#: ../libxfce4kbd-private/xfce-shortcuts.c:55
 #, c-format
 msgid ""
 "This shortcut is already being used by the action '%s'. Which action do you "
 "want to use?"
-msgstr ""
-"Esti accesu direutu yá ta usándose pola aición '%s\". ¿Qué aición quies "
-"usar?"
+msgstr "Esti accesu direutu yá ta usándose pola aición '%s\". ¿Qué aición quies usar?"
 
 #. This shortcut already exists in the provider, we don't want it twice
 #. Warn the user
-#: ../libxfce4kbd-private/xfce-shortcuts.c:113
+#: ../libxfce4kbd-private/xfce-shortcuts.c:106
 msgid "Please use another key combination."
 msgstr "Usa otra combinación de tecles, por favor."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:114
+#: ../libxfce4kbd-private/xfce-shortcuts.c:107
 #, c-format
 msgid "%s already triggers this action."
 msgstr "%s yá dispara esta aición."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:119
+#: ../libxfce4kbd-private/xfce-shortcuts.c:112
 #, c-format
 msgid "Conflicting actions for %s"
 msgstr "Aiciones en conflictu pa %s"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:181
+#: ../libxfce4kbd-private/xfce-shortcuts.c:174
 msgid "This shortcut is already being used for something else."
 msgstr "Esti atayu yá s'usa pa daqué más."
 
@@ -611,18 +600,6 @@ msgstr "Desaniciar la cabera estaya de trabayu"
 msgid "Delete active workspace"
 msgstr "Desaniciar la estaya de trabayu activa"
 
-#: ../glade/libxfce4ui-2.xml.in.h:1
-msgid "Titled Dialog"
-msgstr "Diálogu tituláu"
-
-#: ../glade/libxfce4ui-2.xml.in.h:2
-msgid "Subtitle"
-msgstr "Sotítulu"
-
-#: ../glade/libxfce4ui-2.xml.in.h:3
-msgid "Xfce 4 Widgets"
-msgstr "Widgets Xfce 4"
-
 #: ../xfce4-about/main.c:58
 msgid "Version information"
 msgstr "Información de la versión"
@@ -738,9 +715,7 @@ msgstr "¡Gracies a tolos qu'ayudaron a facer esti software disponible!"
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
-msgstr ""
-"Xfce 4 tien copyright d'Oliver Fourdan (fourdan@xfce.org). Los distintos "
-"componentes tienen copyright de los sos respeutivos autores."
+msgstr "Xfce 4 tien copyright d'Oliver Fourdan (fourdan@xfce.org). Los distintos componentes tienen copyright de los sos respeutivos autores."
 
 #: ../xfce4-about/main.c:338
 msgid ""
@@ -812,14 +787,6 @@ msgstr "Traductores"
 msgid "Previous contributors"
 msgstr "Collaboradores anteriores"
 
-#: ../xfce4-about/xfce4-about.desktop.in.h:1
-msgid "About Xfce"
-msgstr "Tocante a XFCE"
-
-#: ../xfce4-about/xfce4-about.desktop.in.h:2
-msgid "Information about the Xfce Desktop Environment"
-msgstr "Información tocante al entornu d'escritoriu Xfce"
-
 #: ../xfce4-about/xfce4-about-dialog.glade.h:1
 msgid "License"
 msgstr "Llicencia"
@@ -842,7 +809,7 @@ msgstr "Preséu"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:6
 msgid "label"
-msgstr "etiqueta"
+msgstr ""
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:7
 msgid "OS Name"
