@@ -1,20 +1,19 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Xfce Bot <transifex@xfce.org>, 2023
-# 
-#, fuzzy
+# Sveinn í Felli <sv1@fellsnet.is>, 2010,2013-2015,2017,2019
+# Sveinn í Felli <sveinki@nett.is>, 2010-2013
+# Sveinn í Felli <sv1@fellsnet.is>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: libxfce4ui\n"
+"Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-20 12:56+0100\n"
-"PO-Revision-Date: 2023-02-20 11:56+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>, 2023\n"
-"Language-Team: Icelandic (https://www.transifex.com/xfce/teams/16840/is/)\n"
+"POT-Creation-Date: 2023-04-06 00:45+0200\n"
+"PO-Revision-Date: 2013-07-02 20:33+0000\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>, 2010,2013-2015,2017,2019\n"
+"Language-Team: Icelandic (http://app.transifex.com/xfce/libxfce4ui/language/is/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -38,9 +37,7 @@ msgstr "Viltu lesa handbókina á netinu?"
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
-msgstr ""
-"Þér verður beint á skjölunarvefinn þar sem hjálparsíðum er viðhaldið og þær "
-"þýddar."
+msgstr "Þér verður beint á skjölunarvefinn þar sem hjálparsíðum er viðhaldið og þær þýddar."
 
 #. Create cancel button
 #: ../libxfce4ui/xfce-dialogs.c:275 ../libxfce4ui/xfce-dialogs.c:533
@@ -158,67 +155,61 @@ msgstr ""
 msgid "Filenames should not start or end with a space"
 msgstr ""
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:46
 #, c-format
 msgid ""
 "This shortcut is already being used for the action '%s'. Which action do you"
 " want to use?"
-msgstr ""
-"Þessi flýtileið er þegar í notkun fyrir '%s' aðgerðina. Hvaða aðgerð viltu "
-"nota?"
+msgstr "Þessi flýtileið er þegar í notkun fyrir '%s' aðgerðina. Hvaða aðgerð viltu nota?"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
-#: ../libxfce4kbd-private/xfce-shortcuts.c:57
-#: ../libxfce4kbd-private/xfce-shortcuts.c:60
-#: ../libxfce4kbd-private/xfce-shortcuts.c:63
+#: ../libxfce4kbd-private/xfce-shortcuts.c:47
+#: ../libxfce4kbd-private/xfce-shortcuts.c:50
+#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid "Use '%s'"
 msgstr "Nota '%s'"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
-#: ../libxfce4kbd-private/xfce-shortcuts.c:57
-#: ../libxfce4kbd-private/xfce-shortcuts.c:60
-#: ../libxfce4kbd-private/xfce-shortcuts.c:63
+#: ../libxfce4kbd-private/xfce-shortcuts.c:47
+#: ../libxfce4kbd-private/xfce-shortcuts.c:50
+#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid "Keep '%s'"
 msgstr "Halda '%s'"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:56
-#: ../libxfce4kbd-private/xfce-shortcuts.c:59
+#: ../libxfce4kbd-private/xfce-shortcuts.c:49
+#: ../libxfce4kbd-private/xfce-shortcuts.c:52
 #, c-format
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr ""
-"Þessi flýtileið er þegar í notkun fyrir '%s' skipunina. Hvaða aðgerð viltu "
-"nota?"
+msgstr "Þessi flýtileið er þegar í notkun fyrir '%s' skipunina. Hvaða aðgerð viltu nota?"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:62
+#: ../libxfce4kbd-private/xfce-shortcuts.c:55
 #, c-format
 msgid ""
 "This shortcut is already being used by the action '%s'. Which action do you "
 "want to use?"
-msgstr ""
-"Þessi flýtileið er þegar í notkun af '%s' aðgerðinni. Hvaða aðgerð viltu "
-"nota?"
+msgstr "Þessi flýtileið er þegar í notkun af '%s' aðgerðinni. Hvaða aðgerð viltu nota?"
 
 #. This shortcut already exists in the provider, we don't want it twice
 #. Warn the user
-#: ../libxfce4kbd-private/xfce-shortcuts.c:113
+#: ../libxfce4kbd-private/xfce-shortcuts.c:106
 msgid "Please use another key combination."
 msgstr "Notaðu einhverja aðra lyklasamsetningu."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:114
+#: ../libxfce4kbd-private/xfce-shortcuts.c:107
 #, c-format
 msgid "%s already triggers this action."
 msgstr "%s gangsetur nú þegar þessa aðgerð."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:119
+#: ../libxfce4kbd-private/xfce-shortcuts.c:112
 #, c-format
 msgid "Conflicting actions for %s"
 msgstr "Árekstrar milli aðgerða fyrir %s"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:181
+#: ../libxfce4kbd-private/xfce-shortcuts.c:174
 msgid "This shortcut is already being used for something else."
 msgstr "Þessi flýtileið er nú þegar í notkun fyrir eitthvað annað."
 
@@ -609,18 +600,6 @@ msgstr "Eyða síðasta vinnusvæði"
 msgid "Delete active workspace"
 msgstr "Eyða virku vinnusvæði"
 
-#: ../glade/libxfce4ui-2.xml.in.h:1
-msgid "Titled Dialog"
-msgstr "Viðmótsgluggi með titli"
-
-#: ../glade/libxfce4ui-2.xml.in.h:2
-msgid "Subtitle"
-msgstr "Undirtexti"
-
-#: ../glade/libxfce4ui-2.xml.in.h:3
-msgid "Xfce 4 Widgets"
-msgstr "XFCE 4 græjur"
-
 #: ../xfce4-about/main.c:58
 msgid "Version information"
 msgstr "Útgáfuupplýsingar"
@@ -730,16 +709,13 @@ msgstr ""
 
 #: ../xfce4-about/main.c:316
 msgid "Thanks to all who helped making this software available!"
-msgstr ""
-"Þakkir til allra sem hjálpuðu með að gera þennan hugbúnað aðgengilegan!"
+msgstr "Þakkir til allra sem hjálpuðu með að gera þennan hugbúnað aðgengilegan!"
 
 #: ../xfce4-about/main.c:333
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
-msgstr ""
-"Höfundarrétt að Xfce 4 á Olivier Fourdan (fourdan@xfce.org). Aðrir hlutar "
-"eru með höfundarrétt viðkomandi höfundar."
+msgstr "Höfundarrétt að Xfce 4 á Olivier Fourdan (fourdan@xfce.org). Aðrir hlutar eru með höfundarrétt viðkomandi höfundar."
 
 #: ../xfce4-about/main.c:338
 msgid ""
@@ -747,11 +723,7 @@ msgid ""
 "terms of the GNU Library General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
-msgstr ""
-"libxfceui, libxfce4util og exo pökkunum er dreift samkvæmt skilmálum í "
-"almenna GNU GPL notkunarleyfisins eins og það er gefið út af Frjálsu "
-"hugbúnaðarstofnuninni; annaðhvort útgáfu 2 af GPL-leyfinu, eða (ef þér "
-"sýnist svo) einhverja nýrri útgáfu leyfisins."
+msgstr "libxfceui, libxfce4util og exo pökkunum er dreift samkvæmt skilmálum í almenna GNU GPL notkunarleyfisins eins og það er gefið út af Frjálsu hugbúnaðarstofnuninni; annaðhvort útgáfu 2 af GPL-leyfinu, eða (ef þér sýnist svo) einhverja nýrri útgáfu leyfisins."
 
 #: ../xfce4-about/main.c:345
 msgid ""
@@ -760,12 +732,7 @@ msgid ""
 "of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
-"Hugbúnaðarpökkunum thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
-"xfce4-settings, xfconf, xfdesktop og xfwm4 er dreift samkvæmt skilmálum í "
-"almenna GNU GPL notkunarleyfisins eins og það er gefið út af Frjálsu "
-"hugbúnaðarstofnuninni; annaðhvort útgáfu 2 af GPL-leyfinu, eða (ef þér "
-"sýnist svo) einhverja nýrri útgáfu leyfisins."
+msgstr "Hugbúnaðarpökkunum thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop og xfwm4 er dreift samkvæmt skilmálum í almenna GNU GPL notkunarleyfisins eins og það er gefið út af Frjálsu hugbúnaðarstofnuninni; annaðhvort útgáfu 2 af GPL-leyfinu, eða (ef þér sýnist svo) einhverja nýrri útgáfu leyfisins."
 
 #: ../xfce4-about/main.c:491
 #, c-format
@@ -819,14 +786,6 @@ msgstr "Þýðendur"
 #: ../xfce4-about/contributors.h:162
 msgid "Previous contributors"
 msgstr "Eldri framlög"
-
-#: ../xfce4-about/xfce4-about.desktop.in.h:1
-msgid "About Xfce"
-msgstr "Um Xfce"
-
-#: ../xfce4-about/xfce4-about.desktop.in.h:2
-msgid "Information about the Xfce Desktop Environment"
-msgstr "Upplýsingar um Xfce skjáborðsumhverfið"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:1
 msgid "License"
@@ -966,9 +925,7 @@ msgstr ""
 msgid ""
 "A file named \"%s\" already exists in this directory, the file hasn't been "
 "added."
-msgstr ""
-"Skrá með heitinu \"%s\" er þegar til í þessari möppu, skránni var því ekki "
-"bætt við."
+msgstr "Skrá með heitinu \"%s\" er þegar til í þessari möppu, skránni var því ekki bætt við."
 
 #: ../tests/test-ui.c:122
 msgid "Failed to migrate the old panel configuration"
