@@ -1,20 +1,18 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Xfce Bot <transifex@xfce.org>, 2023
-# 
-#, fuzzy
+# Cheng-Chia Tseng <pswo10680@gmail.com>, 2010
+# Ivan <personal@live.hk>, 2020
 msgid ""
 msgstr ""
-"Project-Id-Version: libxfce4ui\n"
+"Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-20 12:56+0100\n"
-"PO-Revision-Date: 2023-02-20 11:56+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>, 2023\n"
-"Language-Team: Chinese (Hong Kong) (https://www.transifex.com/xfce/teams/16840/zh_HK/)\n"
+"POT-Creation-Date: 2023-04-06 00:45+0200\n"
+"PO-Revision-Date: 2013-07-02 20:33+0000\n"
+"Last-Translator: Ivan <personal@live.hk>, 2020\n"
+"Language-Team: Chinese (Hong Kong) (http://app.transifex.com/xfce/libxfce4ui/language/zh_HK/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -156,38 +154,38 @@ msgstr "非法目錄分隔符在文件名"
 msgid "Filenames should not start or end with a space"
 msgstr "文件名不應以空格開頭或結尾"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:46
 #, c-format
 msgid ""
 "This shortcut is already being used for the action '%s'. Which action do you"
 " want to use?"
 msgstr "「%s」動作用了此捷徑鍵。想要使用何動作？"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
-#: ../libxfce4kbd-private/xfce-shortcuts.c:57
-#: ../libxfce4kbd-private/xfce-shortcuts.c:60
-#: ../libxfce4kbd-private/xfce-shortcuts.c:63
+#: ../libxfce4kbd-private/xfce-shortcuts.c:47
+#: ../libxfce4kbd-private/xfce-shortcuts.c:50
+#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid "Use '%s'"
 msgstr "使用「%s」"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
-#: ../libxfce4kbd-private/xfce-shortcuts.c:57
-#: ../libxfce4kbd-private/xfce-shortcuts.c:60
-#: ../libxfce4kbd-private/xfce-shortcuts.c:63
+#: ../libxfce4kbd-private/xfce-shortcuts.c:47
+#: ../libxfce4kbd-private/xfce-shortcuts.c:50
+#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid "Keep '%s'"
 msgstr "保留「%s」"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:56
-#: ../libxfce4kbd-private/xfce-shortcuts.c:59
+#: ../libxfce4kbd-private/xfce-shortcuts.c:49
+#: ../libxfce4kbd-private/xfce-shortcuts.c:52
 #, c-format
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
 msgstr "「%s」指令已經用了此捷徑。想要使用何動作？"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:62
+#: ../libxfce4kbd-private/xfce-shortcuts.c:55
 #, c-format
 msgid ""
 "This shortcut is already being used by the action '%s'. Which action do you "
@@ -196,21 +194,21 @@ msgstr "此捷徑鍵正給動作「%s」使用。您想要使用何動作？"
 
 #. This shortcut already exists in the provider, we don't want it twice
 #. Warn the user
-#: ../libxfce4kbd-private/xfce-shortcuts.c:113
+#: ../libxfce4kbd-private/xfce-shortcuts.c:106
 msgid "Please use another key combination."
 msgstr "請使用另一個按鍵組合。"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:114
+#: ../libxfce4kbd-private/xfce-shortcuts.c:107
 #, c-format
 msgid "%s already triggers this action."
 msgstr "%s 已會觸發此動作。"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:119
+#: ../libxfce4kbd-private/xfce-shortcuts.c:112
 #, c-format
 msgid "Conflicting actions for %s"
 msgstr "%s 的動作發生衝突"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:181
+#: ../libxfce4kbd-private/xfce-shortcuts.c:174
 msgid "This shortcut is already being used for something else."
 msgstr "此捷徑正被其它動作使用。"
 
@@ -601,18 +599,6 @@ msgstr "刪除最後一個工作區"
 msgid "Delete active workspace"
 msgstr "刪除活動中的工作區"
 
-#: ../glade/libxfce4ui-2.xml.in.h:1
-msgid "Titled Dialog"
-msgstr "有標題的對話窗"
-
-#: ../glade/libxfce4ui-2.xml.in.h:2
-msgid "Subtitle"
-msgstr "子標題"
-
-#: ../glade/libxfce4ui-2.xml.in.h:3
-msgid "Xfce 4 Widgets"
-msgstr "Xfce 4 器件"
-
 #: ../xfce4-about/main.c:58
 msgid "Version information"
 msgstr "版本資訊"
@@ -736,8 +722,7 @@ msgid ""
 "terms of the GNU Library General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
-msgstr ""
-"libxfce4ui，libxfce4util和exo軟件包根據自由軟件基金會發布的GNU庫通用公共許可證的條款分發；許可的版本2，或（由您選擇）任何更高的版本。"
+msgstr "libxfce4ui，libxfce4util和exo軟件包根據自由軟件基金會發布的GNU庫通用公共許可證的條款分發；許可的版本2，或（由您選擇）任何更高的版本。"
 
 #: ../xfce4-about/main.c:345
 msgid ""
@@ -746,9 +731,7 @@ msgid ""
 "of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
-"thunar，xfce4-appfinder，xfce4-panel，xfce4-session，xfce4-settings，xfconf，xfdesktop和xfwm4軟件包是根據自由軟件基金會發布的GNU通用公共許可證的條款分發的；"
-" 許可的版本2，或（由您選擇）任何更高的版本。"
+msgstr "thunar，xfce4-appfinder，xfce4-panel，xfce4-session，xfce4-settings，xfconf，xfdesktop和xfwm4軟件包是根據自由軟件基金會發布的GNU通用公共許可證的條款分發的； 許可的版本2，或（由您選擇）任何更高的版本。"
 
 #: ../xfce4-about/main.c:491
 #, c-format
@@ -802,14 +785,6 @@ msgstr "翻譯者"
 #: ../xfce4-about/contributors.h:162
 msgid "Previous contributors"
 msgstr "之前的貢獻者"
-
-#: ../xfce4-about/xfce4-about.desktop.in.h:1
-msgid "About Xfce"
-msgstr "關於 Xfce"
-
-#: ../xfce4-about/xfce4-about.desktop.in.h:2
-msgid "Information about the Xfce Desktop Environment"
-msgstr "有關 Xfce 桌面環境的資訊"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:1
 msgid "License"
