@@ -1,20 +1,23 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Xfce Bot <transifex@xfce.org>, 2023
-# 
-#, fuzzy
+# Dominik Wojnar <dominik.wojnar@gmail.com>, 2017
+# Marek Adamski, 2021-2022
+# Marek Adamski, 2020
+# Marek Adamski, 2019-2021
+# Piotr Sokół <psokol.l10n@gmail.com>, 2011-2013
+# Piotr Sokół <psokol.l10n@gmail.com>, 2017
+# Piotr Strębski <strebski@gmail.com>, 2015-2016
 msgid ""
 msgstr ""
-"Project-Id-Version: libxfce4ui\n"
+"Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-20 12:56+0100\n"
-"PO-Revision-Date: 2023-02-20 11:56+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>, 2023\n"
-"Language-Team: Polish (https://www.transifex.com/xfce/teams/16840/pl/)\n"
+"POT-Creation-Date: 2023-04-06 00:45+0200\n"
+"PO-Revision-Date: 2013-07-02 20:33+0000\n"
+"Last-Translator: Marek Adamski, 2021-2022\n"
+"Language-Team: Polish (http://app.transifex.com/xfce/libxfce4ui/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -23,9 +26,7 @@ msgstr ""
 
 #: ../libxfce4ui/xfce-dialogs.c:110
 msgid "Failed to open web browser for online documentation"
-msgstr ""
-"Nie udało się uruchomić przeglądarki internetowej, w celu wyświetlenia "
-"dokumentacji sieciowej"
+msgstr "Nie udało się uruchomić przeglądarki internetowej, w celu wyświetlenia dokumentacji sieciowej"
 
 #: ../libxfce4ui/xfce-dialogs.c:265
 #, c-format
@@ -40,9 +41,7 @@ msgstr "Wyświetlić podręcznik sieciowy?"
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
-msgstr ""
-"Przeglądarka otworzy stronę dokumentacji, na której tworzone są podręczniki "
-"użytkownika i gdzie następuje ich tłumaczenie."
+msgstr "Przeglądarka otworzy stronę dokumentacji, na której tworzone są podręczniki użytkownika i gdzie następuje ich tłumaczenie."
 
 #. Create cancel button
 #: ../libxfce4ui/xfce-dialogs.c:275 ../libxfce4ui/xfce-dialogs.c:533
@@ -84,18 +83,14 @@ msgstr "Zamknąć okno z wieloma kartami?"
 msgid ""
 "This window has multiple tabs open. Closing this window will also close all "
 "its tabs."
-msgstr ""
-"W tym oknie otwarto wiele kart. Zamknięcie tego okna zamknie również "
-"wszystkie jego karty."
+msgstr "W tym oknie otwarto wiele kart. Zamknięcie tego okna zamknie również wszystkie jego karty."
 
 #: ../libxfce4ui/xfce-dialogs.c:523
 #, c-format
 msgid ""
 "This window has %d tabs open. Closing this window will also close all its "
 "tabs."
-msgstr ""
-"W tym oknie otwarto %d kart(y). Zamknięcie tego okna zamknie również "
-"wszystkie jego karty."
+msgstr "W tym oknie otwarto %d kart(y). Zamknięcie tego okna zamknie również wszystkie jego karty."
 
 #: ../libxfce4ui/xfce-dialogs.c:529
 msgid "Warning"
@@ -149,9 +144,7 @@ msgstr "Menadżer sesji nie zwrócił poprawnego identyfikatora klienta"
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
 "\"%s\"."
-msgstr ""
-"Katalog roboczy „%s” nie istnieje. Nie zostanie on użyty podczas wywoływania"
-" „%s”."
+msgstr "Katalog roboczy „%s” nie istnieje. Nie zostanie on użyty podczas wywoływania „%s”."
 
 #. retrieve the error and warning messages
 #: ../libxfce4ui/xfce-filename-input.c:232
@@ -166,38 +159,38 @@ msgstr "Separator katalogu niedozwolony w nazwie pliku"
 msgid "Filenames should not start or end with a space"
 msgstr "Nazwy plików nie powinny zaczynać się ani kończyć spacją"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:46
 #, c-format
 msgid ""
 "This shortcut is already being used for the action '%s'. Which action do you"
 " want to use?"
 msgstr "Ten skrót jest już przypisany do czynności „%s”. Co zrobić?"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
-#: ../libxfce4kbd-private/xfce-shortcuts.c:57
-#: ../libxfce4kbd-private/xfce-shortcuts.c:60
-#: ../libxfce4kbd-private/xfce-shortcuts.c:63
+#: ../libxfce4kbd-private/xfce-shortcuts.c:47
+#: ../libxfce4kbd-private/xfce-shortcuts.c:50
+#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid "Use '%s'"
 msgstr "Użyj „%s”"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
-#: ../libxfce4kbd-private/xfce-shortcuts.c:57
-#: ../libxfce4kbd-private/xfce-shortcuts.c:60
-#: ../libxfce4kbd-private/xfce-shortcuts.c:63
+#: ../libxfce4kbd-private/xfce-shortcuts.c:47
+#: ../libxfce4kbd-private/xfce-shortcuts.c:50
+#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid "Keep '%s'"
 msgstr "Zachowaj „%s”"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:56
-#: ../libxfce4kbd-private/xfce-shortcuts.c:59
+#: ../libxfce4kbd-private/xfce-shortcuts.c:49
+#: ../libxfce4kbd-private/xfce-shortcuts.c:52
 #, c-format
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
 msgstr "Ten skrót jest już przypisany do polecenia „%s”. Co zrobić?"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:62
+#: ../libxfce4kbd-private/xfce-shortcuts.c:55
 #, c-format
 msgid ""
 "This shortcut is already being used by the action '%s'. Which action do you "
@@ -206,21 +199,21 @@ msgstr "Ten skrót jest już przypisany do czynności „%s”. Co zrobić?"
 
 #. This shortcut already exists in the provider, we don't want it twice
 #. Warn the user
-#: ../libxfce4kbd-private/xfce-shortcuts.c:113
+#: ../libxfce4kbd-private/xfce-shortcuts.c:106
 msgid "Please use another key combination."
 msgstr "Proszę wprowadzić inną kombinację klawiszy."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:114
+#: ../libxfce4kbd-private/xfce-shortcuts.c:107
 #, c-format
 msgid "%s already triggers this action."
 msgstr "Wykonanie tej czynności zostało już przypisane do skrótu %s."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:119
+#: ../libxfce4kbd-private/xfce-shortcuts.c:112
 #, c-format
 msgid "Conflicting actions for %s"
 msgstr "Konflikt działania skrótu klawiszowego %s"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:181
+#: ../libxfce4kbd-private/xfce-shortcuts.c:174
 msgid "This shortcut is already being used for something else."
 msgstr "Ten skrót klawiszowy jest już używany."
 
@@ -611,18 +604,6 @@ msgstr "Usunięcie ostatniego obszaru roboczego"
 msgid "Delete active workspace"
 msgstr "Usunięcie bieżącego obszaru roboczego"
 
-#: ../glade/libxfce4ui-2.xml.in.h:1
-msgid "Titled Dialog"
-msgstr "Treść tytułowa"
-
-#: ../glade/libxfce4ui-2.xml.in.h:2
-msgid "Subtitle"
-msgstr "Podtytuł"
-
-#: ../glade/libxfce4ui-2.xml.in.h:3
-msgid "Xfce 4 Widgets"
-msgstr "Widżety Xfce 4"
-
 #: ../xfce4-about/main.c:58
 msgid "Version information"
 msgstr "Wypisuje informacje o wersji i kończy"
@@ -645,9 +626,7 @@ msgstr "Panel"
 
 #: ../xfce4-about/main.c:152
 msgid "Provides a home for window buttons, launchers, app menu and more."
-msgstr ""
-"Zapewnia miejsce na przyciski okien, aktywatory, menu aplikacji i wiele "
-"innych."
+msgstr "Zapewnia miejsce na przyciski okien, aktywatory, menu aplikacji i wiele innych."
 
 #: ../xfce4-about/main.c:156
 msgid "Desktop Manager"
@@ -680,9 +659,7 @@ msgstr "Menedżer sesji"
 #: ../xfce4-about/main.c:172
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
-msgstr ""
-"Zapisuje i przywraca sesję, obsługuje uruchamianie, automatyczny start i "
-"zamykanie."
+msgstr "Zapisuje i przywraca sesję, obsługuje uruchamianie, automatyczny start i zamykanie."
 
 #: ../xfce4-about/main.c:176
 msgid "Settings Manager"
@@ -732,24 +709,17 @@ msgstr "Odwiedź <https://www.xfce.org/about/credits>"
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
-msgstr ""
-"Jeśli znasz kogoś, kogo brakuje na tej liście, nie wahaj się i zgłoś błąd na"
-" <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
+msgstr "Jeśli znasz kogoś, kogo brakuje na tej liście, nie wahaj się i zgłoś błąd na <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 
 #: ../xfce4-about/main.c:316
 msgid "Thanks to all who helped making this software available!"
-msgstr ""
-"Dziękujemy wszystkim, którzy przyczynili się do stworzenia niniejszego "
-"oprogramowania."
+msgstr "Dziękujemy wszystkim, którzy przyczynili się do stworzenia niniejszego oprogramowania."
 
 #: ../xfce4-about/main.c:333
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
-msgstr ""
-"Właścicielem praw autorskich Xfce4 jest Olivier Fourdan (fourdan@xfce.org). "
-"Właścicielami praw autorskich poszczególnych komponentów środowiska są ich "
-"twórcy."
+msgstr "Właścicielem praw autorskich Xfce4 jest Olivier Fourdan (fourdan@xfce.org). Właścicielami praw autorskich poszczególnych komponentów środowiska są ich twórcy."
 
 #: ../xfce4-about/main.c:338
 msgid ""
@@ -757,11 +727,7 @@ msgid ""
 "terms of the GNU Library General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
-msgstr ""
-"Pakiety libxfce4ui, libxfce4util i exo są rozprowadzane na warunkach "
-"Powszechnej Licencji Publicznej GNU Library, wydanej przez Free Software "
-"Foundation - według wersji 2. tej licencji lub którejś z późniejszych "
-"wersji."
+msgstr "Pakiety libxfce4ui, libxfce4util i exo są rozprowadzane na warunkach Powszechnej Licencji Publicznej GNU Library, wydanej przez Free Software Foundation - według wersji 2. tej licencji lub którejś z późniejszych wersji."
 
 #: ../xfce4-about/main.c:345
 msgid ""
@@ -770,11 +736,7 @@ msgid ""
 "of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
-"Pakiety thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings,"
-" xfconf, xfdesktop i xfwm4 są rozprowadzane na warunkach Powszechnej "
-"Licencji Publicznej GNU, wydanej przez Free Software Foundation - według "
-"wersji 2. tej licencji lub którejś z późniejszych wersji."
+msgstr "Pakiety thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop i xfwm4 są rozprowadzane na warunkach Powszechnej Licencji Publicznej GNU, wydanej przez Free Software Foundation - według wersji 2. tej licencji lub którejś z późniejszych wersji."
 
 #: ../xfce4-about/main.c:491
 #, c-format
@@ -828,14 +790,6 @@ msgstr "Tłumacze"
 #: ../xfce4-about/contributors.h:162
 msgid "Previous contributors"
 msgstr "Byli współpracownicy"
-
-#: ../xfce4-about/xfce4-about.desktop.in.h:1
-msgid "About Xfce"
-msgstr "O środowisku Xfce"
-
-#: ../xfce4-about/xfce4-about.desktop.in.h:2
-msgid "Information about the Xfce Desktop Environment"
-msgstr "Wyświetla informacje o środowisku graficznym Xfce"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:1
 msgid "License"
@@ -905,9 +859,7 @@ msgstr "System"
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
-msgstr ""
-"Xfce jest zestawem programów, które razem zapewniają w pełni funkcjonalne środowisko graficzne.\n"
-"Do podstawowych programów środowiska Xfce należą:"
+msgstr "Xfce jest zestawem programów, które razem zapewniają w pełni funkcjonalne środowisko graficzne.\nDo podstawowych programów środowiska Xfce należą:"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:19
 msgid ""
@@ -918,14 +870,7 @@ msgid ""
 "Thank you for your interest in Xfce.\n"
 "\n"
 "\t- The Xfce Development Team"
-msgstr ""
-"Xfce to także platforma programistyczna udostępniająca kilka bibliotek, które pomagają programistom tworzyć aplikacje pasujące do środowiska graficznego.\n"
-"\n"
-"Komponenty Xfce są licencjonowane na podstawie wolnych lub otwartych licencji; GPL lub BSDL dla aplikacji oraz LGPL lub BSDL dla bibliotek. Zajrzyj do dokumentacji, kodu źródłowego lub na stronę internetową Xfce (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>), aby uzyskać więcej informacji.\n"
-"\n"
-"Dziękujemy za zainteresowanie Xfce.\n"
-"\n"
-"\t- Zespół twórców Xfce"
+msgstr "Xfce to także platforma programistyczna udostępniająca kilka bibliotek, które pomagają programistom tworzyć aplikacje pasujące do środowiska graficznego.\n\nKomponenty Xfce są licencjonowane na podstawie wolnych lub otwartych licencji; GPL lub BSDL dla aplikacji oraz LGPL lub BSDL dla bibliotek. Zajrzyj do dokumentacji, kodu źródłowego lub na stronę internetową Xfce (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>), aby uzyskać więcej informacji.\n\nDziękujemy za zainteresowanie Xfce.\n\n\t- Zespół twórców Xfce"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:26
 msgid "About"
