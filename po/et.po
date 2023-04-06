@@ -1,20 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Xfce Bot <transifex@xfce.org>, 2023
-# 
-#, fuzzy
+# Priit Jõerüüt <transifex@joeruut.com>, 2020-2022
 msgid ""
 msgstr ""
-"Project-Id-Version: libxfce4ui\n"
+"Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-20 12:56+0100\n"
-"PO-Revision-Date: 2023-02-20 11:56+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>, 2023\n"
-"Language-Team: Estonian (https://www.transifex.com/xfce/teams/16840/et/)\n"
+"POT-Creation-Date: 2023-04-06 00:45+0200\n"
+"PO-Revision-Date: 2013-07-02 20:33+0000\n"
+"Last-Translator: Priit Jõerüüt <transifex@joeruut.com>, 2020-2022\n"
+"Language-Team: Estonian (http://app.transifex.com/xfce/libxfce4ui/language/et/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -23,8 +20,7 @@ msgstr ""
 
 #: ../libxfce4ui/xfce-dialogs.c:110
 msgid "Failed to open web browser for online documentation"
-msgstr ""
-"Veebibrauseri avamine veebis asuvate juhendite lugemiseks ei õnnestunud"
+msgstr "Veebibrauseri avamine veebis asuvate juhendite lugemiseks ei õnnestunud"
 
 #: ../libxfce4ui/xfce-dialogs.c:265
 #, c-format
@@ -39,9 +35,7 @@ msgstr "Kas sa soovid lugeda juhendit veebis?"
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
-msgstr ""
-"Sind suunatakse edasi meie dokumentatsiooni veebisaiti, kus juhendeid ja "
-"abiteavet hallatakse ja tõlgitakse. Enamus materjale on inglise keeles."
+msgstr "Sind suunatakse edasi meie dokumentatsiooni veebisaiti, kus juhendeid ja abiteavet hallatakse ja tõlgitakse. Enamus materjale on inglise keeles."
 
 #. Create cancel button
 #: ../libxfce4ui/xfce-dialogs.c:275 ../libxfce4ui/xfce-dialogs.c:533
@@ -83,17 +77,14 @@ msgstr "Kas sulgen mitme kaardiga akna?"
 msgid ""
 "This window has multiple tabs open. Closing this window will also close all "
 "its tabs."
-msgstr ""
-"Selles aknas on avatud mitu kaarti. Akna sulgemine sulgeb ka kõik kaardid."
+msgstr "Selles aknas on avatud mitu kaarti. Akna sulgemine sulgeb ka kõik kaardid."
 
 #: ../libxfce4ui/xfce-dialogs.c:523
 #, c-format
 msgid ""
 "This window has %d tabs open. Closing this window will also close all its "
 "tabs."
-msgstr ""
-"Selles aknas on avatud %d kaart(i). Akna sulgemine sulgeb ka kõik selle "
-"kaardid."
+msgstr "Selles aknas on avatud %d kaart(i). Akna sulgemine sulgeb ka kõik selle kaardid."
 
 #: ../libxfce4ui/xfce-dialogs.c:529
 msgid "Warning"
@@ -162,67 +153,61 @@ msgstr "Kaustade eraldaja ei tohi sisalduda faili nimes"
 msgid "Filenames should not start or end with a space"
 msgstr "Faili nimi ei tohi alata ega lõppeda tühikuga"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:46
 #, c-format
 msgid ""
 "This shortcut is already being used for the action '%s'. Which action do you"
 " want to use?"
-msgstr ""
-"Seda kiirklahvi juba kasutatakse '%s' tegevuse jaoks. Mis tegevuse jaoks sa "
-"soovid seda kasutada?"
+msgstr "Seda kiirklahvi juba kasutatakse '%s' tegevuse jaoks. Mis tegevuse jaoks sa soovid seda kasutada?"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
-#: ../libxfce4kbd-private/xfce-shortcuts.c:57
-#: ../libxfce4kbd-private/xfce-shortcuts.c:60
-#: ../libxfce4kbd-private/xfce-shortcuts.c:63
+#: ../libxfce4kbd-private/xfce-shortcuts.c:47
+#: ../libxfce4kbd-private/xfce-shortcuts.c:50
+#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid "Use '%s'"
 msgstr "Kasuta '%s'"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
-#: ../libxfce4kbd-private/xfce-shortcuts.c:57
-#: ../libxfce4kbd-private/xfce-shortcuts.c:60
-#: ../libxfce4kbd-private/xfce-shortcuts.c:63
+#: ../libxfce4kbd-private/xfce-shortcuts.c:47
+#: ../libxfce4kbd-private/xfce-shortcuts.c:50
+#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid "Keep '%s'"
 msgstr "Hoia '%s'"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:56
-#: ../libxfce4kbd-private/xfce-shortcuts.c:59
+#: ../libxfce4kbd-private/xfce-shortcuts.c:49
+#: ../libxfce4kbd-private/xfce-shortcuts.c:52
 #, c-format
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr ""
-"Seda kiirklahvi juba kasutatakse '%s' käsu jaoks. Mis tegevuse jaoks sa "
-"soovid seda kasutada?"
+msgstr "Seda kiirklahvi juba kasutatakse '%s' käsu jaoks. Mis tegevuse jaoks sa soovid seda kasutada?"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:62
+#: ../libxfce4kbd-private/xfce-shortcuts.c:55
 #, c-format
 msgid ""
 "This shortcut is already being used by the action '%s'. Which action do you "
 "want to use?"
-msgstr ""
-"Seda kiirklahvi juba kasutatakse '%s' tegevuse poolt. Mis tegevuse jaoks sa "
-"soovid seda kasutada?"
+msgstr "Seda kiirklahvi juba kasutatakse '%s' tegevuse poolt. Mis tegevuse jaoks sa soovid seda kasutada?"
 
 #. This shortcut already exists in the provider, we don't want it twice
 #. Warn the user
-#: ../libxfce4kbd-private/xfce-shortcuts.c:113
+#: ../libxfce4kbd-private/xfce-shortcuts.c:106
 msgid "Please use another key combination."
 msgstr "Palun kasuta teistsugust klahvikombiatsiooni."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:114
+#: ../libxfce4kbd-private/xfce-shortcuts.c:107
 #, c-format
 msgid "%s already triggers this action."
 msgstr "%s juba käivitab selle tegevuse."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:119
+#: ../libxfce4kbd-private/xfce-shortcuts.c:112
 #, c-format
 msgid "Conflicting actions for %s"
 msgstr "Vastuolulised tegevused %s jaoks"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:181
+#: ../libxfce4kbd-private/xfce-shortcuts.c:174
 msgid "This shortcut is already being used for something else."
 msgstr "Seda kiirklahvi juba kasutatakse millegi muu jaoks."
 
@@ -613,18 +598,6 @@ msgstr "Kustuta viimane tööruum"
 msgid "Delete active workspace"
 msgstr "Kustuta aktiivne tööruum"
 
-#: ../glade/libxfce4ui-2.xml.in.h:1
-msgid "Titled Dialog"
-msgstr "Pealkirjaga dialoogiaken"
-
-#: ../glade/libxfce4ui-2.xml.in.h:2
-msgid "Subtitle"
-msgstr "Subtiiter"
-
-#: ../glade/libxfce4ui-2.xml.in.h:3
-msgid "Xfce 4 Widgets"
-msgstr "Xfce 4 vidinad"
-
 #: ../xfce4-about/main.c:58
 msgid "Version information"
 msgstr "Versiooniteave"
@@ -647,9 +620,7 @@ msgstr "Riba"
 
 #: ../xfce4-about/main.c:152
 msgid "Provides a home for window buttons, launchers, app menu and more."
-msgstr ""
-"Pakub kodu aknanuppudele, käivitajatele, rakenduste menüüle ning paljule "
-"muulegi."
+msgstr "Pakub kodu aknanuppudele, käivitajatele, rakenduste menüüle ning paljule muulegi."
 
 #: ../xfce4-about/main.c:156
 msgid "Desktop Manager"
@@ -682,9 +653,7 @@ msgstr "Sessioonihaldur"
 #: ../xfce4-about/main.c:172
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
-msgstr ""
-"Salvestab ja taastab sinu sessioone, haldab süsteemi käivitamist ja "
-"sulgemist."
+msgstr "Salvestab ja taastab sinu sessioone, haldab süsteemi käivitamist ja sulgemist."
 
 #: ../xfce4-about/main.c:176
 msgid "Settings Manager"
@@ -716,9 +685,7 @@ msgstr "Teek menüü jaoks"
 
 #: ../xfce4-about/main.c:192
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
-msgstr ""
-"Võimaldab kasutada Freedesktop.org spetsifikatsioonidele vastavat ning GLib "
-"ja GIO teekidel põhinevat menüülahendust."
+msgstr "Võimaldab kasutada Freedesktop.org spetsifikatsioonidele vastavat ning GLib ja GIO teekidel põhinevat menüülahendust."
 
 #: ../xfce4-about/main.c:196
 msgid "Thumbnails Service"
@@ -726,9 +693,7 @@ msgstr "Teenus pisipiltide loomiseks"
 
 #: ../xfce4-about/main.c:197
 msgid "Implements the thumbnail management D-Bus specification."
-msgstr ""
-"Võimaldab kasutada pisipiltide haldusloogikat, mis põhineb D-Bus'i "
-"spetsifikatsioonile."
+msgstr "Võimaldab kasutada pisipiltide haldusloogikat, mis põhineb D-Bus'i spetsifikatsioonile."
 
 #: ../xfce4-about/main.c:251
 msgid "Please see <https://www.xfce.org/about/credits>"
@@ -738,24 +703,17 @@ msgstr "Lisateavet leiad <https://www.xfce.org/about/credits>"
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
-msgstr ""
-"Kui sa tead kedagi, kes on siit loendist puudu, siis ära kõhkle esitamast "
-"veateadet meie arendussaidis "
-"<https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
+msgstr "Kui sa tead kedagi, kes on siit loendist puudu, siis ära kõhkle esitamast veateadet meie arendussaidis <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 
 #: ../xfce4-about/main.c:316
 msgid "Thanks to all who helped making this software available!"
-msgstr ""
-"Suur tänu kõigile, kes on selle tarkvara loonud ning meile kasutatavaks "
-"teinud!"
+msgstr "Suur tänu kõigile, kes on selle tarkvara loonud ning meile kasutatavaks teinud!"
 
 #: ../xfce4-about/main.c:333
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
-msgstr ""
-"Xfce 4 autoriõigused kuuluvad Olivier Fourdan'ile (fourdan@xfce.org). "
-"Erinevate komponentide autoriõigused kuuluvad nende vastavatele autoritele."
+msgstr "Xfce 4 autoriõigused kuuluvad Olivier Fourdan'ile (fourdan@xfce.org). Erinevate komponentide autoriõigused kuuluvad nende vastavatele autoritele."
 
 #: ../xfce4-about/main.c:338
 msgid ""
@@ -763,10 +721,7 @@ msgid ""
 "terms of the GNU Library General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
-msgstr ""
-"Libxfce4ui, libxfce4util ja exo teegid on avaldatud Vaba Tarkvara Fondi GNU "
-"Vähem Üldise Avaliku Litsentsi alusel (Free Software Foundation GNU LGPL). "
-"Litsentsi versiooniks võib olla 2 või sinu soovil ka mõni hilisem versioon."
+msgstr "Libxfce4ui, libxfce4util ja exo teegid on avaldatud Vaba Tarkvara Fondi GNU Vähem Üldise Avaliku Litsentsi alusel (Free Software Foundation GNU LGPL). Litsentsi versiooniks võib olla 2 või sinu soovil ka mõni hilisem versioon."
 
 #: ../xfce4-about/main.c:345
 msgid ""
@@ -775,12 +730,7 @@ msgid ""
 "of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
-"Rakendused thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
-"xfce4-settings, xfconf, xfdesktop ja xfwm4 on levitatud Vaba Tarkvara Fondi "
-"poolt avaldatud GNU Üldise Avaliku Litsentsi alusel (Free Software "
-"Foundation GNU GPL). Litsentsi versiooniks võib olla 2 või sinu soovil ka "
-"mõni hilisem versioon."
+msgstr "Rakendused thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop ja xfwm4 on levitatud Vaba Tarkvara Fondi poolt avaldatud GNU Üldise Avaliku Litsentsi alusel (Free Software Foundation GNU GPL). Litsentsi versiooniks võib olla 2 või sinu soovil ka mõni hilisem versioon."
 
 #: ../xfce4-about/main.c:491
 #, c-format
@@ -834,14 +784,6 @@ msgstr "Tõlkijad"
 #: ../xfce4-about/contributors.h:162
 msgid "Previous contributors"
 msgstr "Varasemad kaastöötajad"
-
-#: ../xfce4-about/xfce4-about.desktop.in.h:1
-msgid "About Xfce"
-msgstr "Teave Xfce'i kohta"
-
-#: ../xfce4-about/xfce4-about.desktop.in.h:2
-msgid "Information about the Xfce Desktop Environment"
-msgstr "Teave Xfce töölauakeskkonna kohta"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:1
 msgid "License"
@@ -911,9 +853,7 @@ msgstr "Süsteem"
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
-msgstr ""
-"Xfce on tarkvarakogum, mis üheskoos tagab tervikliku töölauakeskkonna.\n"
-"Xfce tuumikrakendused on:"
+msgstr "Xfce on tarkvarakogum, mis üheskoos tagab tervikliku töölauakeskkonna.\nXfce tuumikrakendused on:"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:19
 msgid ""
@@ -924,14 +864,7 @@ msgid ""
 "Thank you for your interest in Xfce.\n"
 "\n"
 "\t- The Xfce Development Team"
-msgstr ""
-"Lisaks on Xfce ka arenduskeskkond, mille pakutavad mitmed teegid aitavad programmeerijatel luua rakendusi, mis sobivad kogu töölauakeskkonnaga.\n"
-"\n"
-"Xfce komponendid on litsenseeritud vaba tarkvara litsentside alusel - rakenduste jaoks GPL või BSDL ning teekide jaoks LGPL või BSDL. Lisateavet leiad dokumentatsioonist, lähtekoodist või Xfce veebisaidist (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>).\n"
-"\n"
-"Täname, et sind huvitab Xfce.\n"
-"\n"
-"\t- Xfce arendusmeeskond"
+msgstr "Lisaks on Xfce ka arenduskeskkond, mille pakutavad mitmed teegid aitavad programmeerijatel luua rakendusi, mis sobivad kogu töölauakeskkonnaga.\n\nXfce komponendid on litsenseeritud vaba tarkvara litsentside alusel - rakenduste jaoks GPL või BSDL ning teekide jaoks LGPL või BSDL. Lisateavet leiad dokumentatsioonist, lähtekoodist või Xfce veebisaidist (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>).\n\nTäname, et sind huvitab Xfce.\n\n\t- Xfce arendusmeeskond"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:26
 msgid "About"
