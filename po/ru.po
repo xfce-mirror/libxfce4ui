@@ -1,21 +1,30 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Xfce Bot <transifex@xfce.org>, 2023
-# Andrei Stepanov, 2023
-# 
-#, fuzzy
+# Aleksandr P, 2015
+# Aleksandr P, 2010
+# Andrei Stepanov, 2022
+# Artem Zolochevskiy <artem.zolochevskiy@gmail.com>, 2011
+# AlexanderFilev, 2021
+# Denis Koryavov <dkoryavov@yandex.ru>, 2010
+# Igor <f2404@yandex.ru>, 2016-2017,2019-2020
+# Igor Vornovskii, 2022
+# ivmazurenko <ivmazurenko@yandex.ru>, 2021
+# ndvio, 2022
+# Sergey Alyoshin <alyoshin.s@gmail.com>, 2014-2015,2021
+# Simple88, 2016
+# AlexanderFilev, 2020
+# Артём Котлубай <artemkotlubai@yandex.ru>, 2023
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-17 10:39+0100\n"
-"PO-Revision-Date: 2023-02-20 11:56+0000\n"
-"Last-Translator: Andrei Stepanov, 2023\n"
-"Language-Team: Russian (https://www.transifex.com/xfce/teams/16840/ru/)\n"
+"POT-Creation-Date: 2023-04-06 00:45+0200\n"
+"PO-Revision-Date: 2013-07-02 20:33+0000\n"
+"Last-Translator: Артём Котлубай <artemkotlubai@yandex.ru>, 2023\n"
+"Language-Team: Russian (http://app.transifex.com/xfce/libxfce4ui/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -39,9 +48,7 @@ msgstr "Вы хотите прочитать руководство в сети?
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
-msgstr ""
-"Вы будете перенаправлены на сайт с документацией, где страницы помощи "
-"переводятся и поддерживаются сообществом."
+msgstr "Вы будете перенаправлены на сайт с документацией, где страницы помощи переводятся и поддерживаются сообществом."
 
 #. Create cancel button
 #: ../libxfce4ui/xfce-dialogs.c:275 ../libxfce4ui/xfce-dialogs.c:533
@@ -83,17 +90,14 @@ msgstr "Закрыть окно с несколькими вкладками?"
 msgid ""
 "This window has multiple tabs open. Closing this window will also close all "
 "its tabs."
-msgstr ""
-"Это окно содержит несколько вкладок. Закрытие окна также закроет все его "
-"вкладки."
+msgstr "Это окно содержит несколько вкладок. Закрытие окна также закроет все его вкладки."
 
 #: ../libxfce4ui/xfce-dialogs.c:523
 #, c-format
 msgid ""
 "This window has %d tabs open. Closing this window will also close all its "
 "tabs."
-msgstr ""
-"Это окно содержит %d вкладок. Закрытие окна также закроет все его вкладки."
+msgstr "Это окно содержит %d вкладок. Закрытие окна также закроет все его вкладки."
 
 #: ../libxfce4ui/xfce-dialogs.c:529
 msgid "Warning"
@@ -113,11 +117,11 @@ msgstr "_Больше не спрашивать"
 
 #: ../libxfce4ui/xfce-sm-client.c:1427
 msgid "Session management client ID"
-msgstr "ИД клиента менеджера сеансов"
+msgstr "ID клиента менеджера сеансов"
 
 #: ../libxfce4ui/xfce-sm-client.c:1427
 msgid "ID"
-msgstr "ИД"
+msgstr "ID"
 
 #: ../libxfce4ui/xfce-sm-client.c:1428
 msgid "Disable session management"
@@ -147,9 +151,7 @@ msgstr "Менеджер сеансов не предоставил допуст
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
 "\"%s\"."
-msgstr ""
-"Рабочий каталог «%s» не существует. Он не будет использоваться для вызова "
-"«%s»."
+msgstr "Рабочий каталог «%s» не существует. Он не будет использоваться для вызова «%s»."
 
 #. retrieve the error and warning messages
 #: ../libxfce4ui/xfce-filename-input.c:232
@@ -169,9 +171,7 @@ msgstr "Имена файлов не должны начинаться или з
 msgid ""
 "This shortcut is already being used for the action '%s'. Which action do you"
 " want to use?"
-msgstr ""
-"Эта комбинация клавиш уже назначена действию «%s». Какое действие требуется "
-"использовать?"
+msgstr "Эта комбинация клавиш уже назначена действию «%s». Какое действие требуется использовать?"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:47
 #: ../libxfce4kbd-private/xfce-shortcuts.c:50
@@ -195,18 +195,14 @@ msgstr "Оставить «%s»"
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr ""
-"Эта комбинация клавиш уже назначена команде «%s». Какое действие требуется "
-"использовать?"
+msgstr "Эта комбинация клавиш уже назначена команде «%s». Какое действие требуется использовать?"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:55
 #, c-format
 msgid ""
 "This shortcut is already being used by the action '%s'. Which action do you "
 "want to use?"
-msgstr ""
-"Эта комбинация клавиш уже назначена действию «%s». Какое действие требуется "
-"использовать?"
+msgstr "Эта комбинация клавиш уже назначена действию «%s». Какое действие требуется использовать?"
 
 #. This shortcut already exists in the provider, we don't want it twice
 #. Warn the user
@@ -289,8 +285,7 @@ msgstr "Очистить"
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:273
 #, c-format
 msgid "Press keyboard keys to trigger the %s '%s'."
-msgstr ""
-"Нажмите комбинацию клавиш, которую вы хотите использовать для %s «%s»."
+msgstr "Нажмите комбинацию клавиш, которую вы хотите использовать для %s «%s»."
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:295
 msgid "Please press a key"
@@ -616,18 +611,6 @@ msgstr "Удалить последнее рабочее место"
 msgid "Delete active workspace"
 msgstr "Удалить текущее рабочее место"
 
-#: ../glade/libxfce4ui-2.xml.in.h:1
-msgid "Titled Dialog"
-msgstr "Озаглавленный диалог"
-
-#: ../glade/libxfce4ui-2.xml.in.h:2
-msgid "Subtitle"
-msgstr "Подзаголовок"
-
-#: ../glade/libxfce4ui-2.xml.in.h:3
-msgid "Xfce 4 Widgets"
-msgstr "Элементы интерфейса Xfce 4"
-
 #: ../xfce4-about/main.c:58
 msgid "Version information"
 msgstr "Информация о версии"
@@ -650,8 +633,7 @@ msgstr "Панель"
 
 #: ../xfce4-about/main.c:152
 msgid "Provides a home for window buttons, launchers, app menu and more."
-msgstr ""
-"Предоставляет место для кнопок окна, значков запуска, меню приложений и т.д."
+msgstr "Предоставляет место для кнопок окна, значков запуска, меню приложений и т.д."
 
 #: ../xfce4-about/main.c:156
 msgid "Desktop Manager"
@@ -667,9 +649,7 @@ msgstr "Файловый менеджер"
 
 #: ../xfce4-about/main.c:162
 msgid "Manages your files in a modern, easy-to-use and fast way."
-msgstr ""
-"Управляет вашими файлами современным, простым в использовании и быстрым "
-"способом."
+msgstr "Управляет вашими файлами современным, простым в использовании и быстрым способом."
 
 #: ../xfce4-about/main.c:166
 msgid "Volume Manager"
@@ -686,9 +666,7 @@ msgstr "Менеджер сеансов"
 #: ../xfce4-about/main.c:172
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
-msgstr ""
-"Сохраняет и восстанавливает ваш сеанс, занимается начальным запуском, "
-"автозапуском и завершением работы."
+msgstr "Сохраняет и восстанавливает ваш сеанс, занимается начальным запуском, автозапуском и завершением работы."
 
 #: ../xfce4-about/main.c:176
 msgid "Settings Manager"
@@ -712,8 +690,7 @@ msgstr "Служба настроек"
 
 #: ../xfce4-about/main.c:187
 msgid "Stores your settings in a D-Bus-based configuration system."
-msgstr ""
-"Хранит ваши настройки в основанной на D-Bus системе хранения настроек."
+msgstr "Хранит ваши настройки в основанной на D-Bus системе хранения настроек."
 
 #: ../xfce4-about/main.c:191
 msgid "A Menu Library"
@@ -721,8 +698,7 @@ msgstr "Библиотека меню"
 
 #: ../xfce4-about/main.c:192
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
-msgstr ""
-"Реализует совместимое с freedesktop.org меню, основанное на GLib и GIO."
+msgstr "Реализует совместимое с freedesktop.org меню, основанное на GLib и GIO."
 
 #: ../xfce4-about/main.c:196
 msgid "Thumbnails Service"
@@ -740,9 +716,7 @@ msgstr "См. <https://www.xfce.org/about/credits>"
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
-msgstr ""
-"Если вы знаете кого-то, кто должен быть включён в этот список, пожалуйста, "
-"сообщите нам на <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues>."
+msgstr "Если вы знаете кого-то, кто должен быть включён в этот список, пожалуйста, сообщите нам на <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues>."
 
 #: ../xfce4-about/main.c:316
 msgid "Thanks to all who helped making this software available!"
@@ -752,9 +726,7 @@ msgstr "Спасибо всем, кто помогал создавать это
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
-msgstr ""
-"Авторские права на Xfce 4 принадлежат Olivier Fourdan (fourdan@xfce.org). "
-"Авторские права на прочие компоненты принадлежат их авторам."
+msgstr "Авторские права на Xfce 4 принадлежат Olivier Fourdan (fourdan@xfce.org). Авторские права на прочие компоненты принадлежат их авторам."
 
 #: ../xfce4-about/main.c:338
 msgid ""
@@ -762,9 +734,7 @@ msgid ""
 "terms of the GNU Library General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
-msgstr ""
-"Программное обеспечение libxfce4ui, libxfce4util и exo распространяется под "
-"условиями GNU Library General Public License версии 2 или более поздней."
+msgstr "Программное обеспечение libxfce4ui, libxfce4util и exo распространяется под условиями GNU Library General Public License версии 2 или более поздней."
 
 #: ../xfce4-about/main.c:345
 msgid ""
@@ -773,10 +743,7 @@ msgid ""
 "of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
-"Программное обеспечение thunar, xfce4-appfinder, xfce4-panel, xfce4-session,"
-" xfce4-settings, xfconf, xfdesktop и xfwm4 распространяется под условиями "
-"Основной общественной лицензии GNU 2-ой версии или более поздней."
+msgstr "Программное обеспечение thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop и xfwm4 распространяется под условиями Основной общественной лицензии GNU 2-ой версии или более поздней."
 
 #: ../xfce4-about/main.c:491
 #, c-format
@@ -830,14 +797,6 @@ msgstr "Переводчики"
 #: ../xfce4-about/contributors.h:162
 msgid "Previous contributors"
 msgstr "Предыдущие авторы"
-
-#: ../xfce4-about/xfce4-about.desktop.in.h:1
-msgid "About Xfce"
-msgstr "Об Xfce"
-
-#: ../xfce4-about/xfce4-about.desktop.in.h:2
-msgid "Information about the Xfce Desktop Environment"
-msgstr "Сведения об окружении Xfce"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:1
 msgid "License"
@@ -907,9 +866,7 @@ msgstr "Система"
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
-msgstr ""
-"Xfce — это набор программ, которые обеспечивают полнофункциональное окружение рабочего стола.\n"
-"Следующие программы являются основной частью Xfce:"
+msgstr "Xfce — это набор программ, которые обеспечивают полнофункциональное окружение рабочего стола.\nСледующие программы являются основной частью Xfce:"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:19
 msgid ""
@@ -920,14 +877,7 @@ msgid ""
 "Thank you for your interest in Xfce.\n"
 "\n"
 "\t- The Xfce Development Team"
-msgstr ""
-"Xfce — это также и платформа разработки, предоставляющая несколько библиотек, помогающих программистам создавать приложения, которые хорошо вписываются в окружение рабочего стола.\n"
-"\n"
-"Компоненты Xfce распространяются по условиям свободных лицензий или лицензий открытого кода: GPL или BSDL для приложений и LGPL или BSDL для библиотек. Подробности можно найти в документации, в исходном коде и на веб-сайте Xfce (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>).\n"
-"\n"
-"Спасибо за интерес к Xfce.\n"
-"\n"
-"\t— Команда разработчиков Xfce"
+msgstr "Xfce — это также и платформа разработки, предоставляющая несколько библиотек, помогающих программистам создавать приложения, которые хорошо вписываются в окружение рабочего стола.\n\nКомпоненты Xfce распространяются по условиям свободных лицензий или лицензий открытого кода: GPL или BSDL для приложений и LGPL или BSDL для библиотек. Подробности можно найти в документации, в исходном коде и на веб-сайте Xfce (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>).\n\nСпасибо за интерес к Xfce.\n\n\t— Команда разработчиков Xfce"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:26
 msgid "About"
