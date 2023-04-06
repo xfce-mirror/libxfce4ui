@@ -1,20 +1,18 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Xfce Bot <transifex@xfce.org>, 2023
-# 
-#, fuzzy
+# abuyop <abuyop@gmail.com>, 2015-2017,2019-2020
+# Puretech <terjemah.puretech@gmail.com>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: libxfce4ui\n"
+"Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-20 12:56+0100\n"
-"PO-Revision-Date: 2023-02-20 11:56+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>, 2023\n"
-"Language-Team: Malay (https://www.transifex.com/xfce/teams/16840/ms/)\n"
+"POT-Creation-Date: 2023-04-06 00:45+0200\n"
+"PO-Revision-Date: 2013-07-02 20:33+0000\n"
+"Last-Translator: abuyop <abuyop@gmail.com>, 2015-2017,2019-2020\n"
+"Language-Team: Malay (http://app.transifex.com/xfce/libxfce4ui/language/ms/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -38,9 +36,7 @@ msgstr "Anda mahu membaca panduan dalam talian?"
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
-msgstr ""
-"Anda akan dihalakan ke laman web dokumentasi dimana laman bantuan "
-"diselenggara dan diterjemahkan."
+msgstr "Anda akan dihalakan ke laman web dokumentasi dimana laman bantuan diselenggara dan diterjemahkan."
 
 #. Create cancel button
 #: ../libxfce4ui/xfce-dialogs.c:275 ../libxfce4ui/xfce-dialogs.c:533
@@ -82,18 +78,14 @@ msgstr "Tutup tetingkap dengan tab berbilang?"
 msgid ""
 "This window has multiple tabs open. Closing this window will also close all "
 "its tabs."
-msgstr ""
-"Tetingkap ini mempunyai tab berbilang terbuka. Penutupan tetingkap ini juga "
-"akan menutup semua tab di dalamnya."
+msgstr "Tetingkap ini mempunyai tab berbilang terbuka. Penutupan tetingkap ini juga akan menutup semua tab di dalamnya."
 
 #: ../libxfce4ui/xfce-dialogs.c:523
 #, c-format
 msgid ""
 "This window has %d tabs open. Closing this window will also close all its "
 "tabs."
-msgstr ""
-"Tetingkap ini masih mempunyai %d tab terbuka. Penutupan tetingkap ini juga "
-"akan menutup semua tab-tab di dalamnya."
+msgstr "Tetingkap ini masih mempunyai %d tab terbuka. Penutupan tetingkap ini juga akan menutup semua tab-tab di dalamnya."
 
 #: ../libxfce4ui/xfce-dialogs.c:529
 msgid "Warning"
@@ -147,9 +139,7 @@ msgstr "Pengurus sesi tidak mengembalikan id klien yang sah"
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
 "\"%s\"."
-msgstr ""
-"Direktori kerja \"%s\" tidak wujud. Ia tidak akan digunakan apabila menjana "
-"\"%s\"."
+msgstr "Direktori kerja \"%s\" tidak wujud. Ia tidak akan digunakan apabila menjana \"%s\"."
 
 #. retrieve the error and warning messages
 #: ../libxfce4ui/xfce-filename-input.c:232
@@ -164,67 +154,61 @@ msgstr ""
 msgid "Filenames should not start or end with a space"
 msgstr ""
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:46
 #, c-format
 msgid ""
 "This shortcut is already being used for the action '%s'. Which action do you"
 " want to use?"
-msgstr ""
-"Pintasan ini telah digunakan untuk tindakan '%s'. Tindakan mana anda mahu "
-"gunakan?"
+msgstr "Pintasan ini telah digunakan untuk tindakan '%s'. Tindakan mana anda mahu gunakan?"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
-#: ../libxfce4kbd-private/xfce-shortcuts.c:57
-#: ../libxfce4kbd-private/xfce-shortcuts.c:60
-#: ../libxfce4kbd-private/xfce-shortcuts.c:63
+#: ../libxfce4kbd-private/xfce-shortcuts.c:47
+#: ../libxfce4kbd-private/xfce-shortcuts.c:50
+#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid "Use '%s'"
 msgstr "Gunakan '%s'"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
-#: ../libxfce4kbd-private/xfce-shortcuts.c:57
-#: ../libxfce4kbd-private/xfce-shortcuts.c:60
-#: ../libxfce4kbd-private/xfce-shortcuts.c:63
+#: ../libxfce4kbd-private/xfce-shortcuts.c:47
+#: ../libxfce4kbd-private/xfce-shortcuts.c:50
+#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid "Keep '%s'"
 msgstr "Simpan '%s'"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:56
-#: ../libxfce4kbd-private/xfce-shortcuts.c:59
+#: ../libxfce4kbd-private/xfce-shortcuts.c:49
+#: ../libxfce4kbd-private/xfce-shortcuts.c:52
 #, c-format
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr ""
-"Pintasan ini telah digunakan untuk arahan '%s'. Tindakan mana anda mahu "
-"gunakan?"
+msgstr "Pintasan ini telah digunakan untuk arahan '%s'. Tindakan mana anda mahu gunakan?"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:62
+#: ../libxfce4kbd-private/xfce-shortcuts.c:55
 #, c-format
 msgid ""
 "This shortcut is already being used by the action '%s'. Which action do you "
 "want to use?"
-msgstr ""
-"Pintasan ini telah digunakan untuk tindakan '%s'. Tindakan mana anda mahu "
-"gunakan?"
+msgstr "Pintasan ini telah digunakan untuk tindakan '%s'. Tindakan mana anda mahu gunakan?"
 
 #. This shortcut already exists in the provider, we don't want it twice
 #. Warn the user
-#: ../libxfce4kbd-private/xfce-shortcuts.c:113
+#: ../libxfce4kbd-private/xfce-shortcuts.c:106
 msgid "Please use another key combination."
 msgstr "Sila gunakan kombinasi kekunci yang lain."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:114
+#: ../libxfce4kbd-private/xfce-shortcuts.c:107
 #, c-format
 msgid "%s already triggers this action."
 msgstr "%s telah pun mencetuskan tindakan ini."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:119
+#: ../libxfce4kbd-private/xfce-shortcuts.c:112
 #, c-format
 msgid "Conflicting actions for %s"
 msgstr "Konflik tindakan untuk %s"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:181
+#: ../libxfce4kbd-private/xfce-shortcuts.c:174
 msgid "This shortcut is already being used for something else."
 msgstr "Pintasan ini telah digunakan untuk perkara lain."
 
@@ -615,18 +599,6 @@ msgstr "Padam ruangkerja terakhir"
 msgid "Delete active workspace"
 msgstr "Padam ruangkerja aktif"
 
-#: ../glade/libxfce4ui-2.xml.in.h:1
-msgid "Titled Dialog"
-msgstr "Tajuk Dialog"
-
-#: ../glade/libxfce4ui-2.xml.in.h:2
-msgid "Subtitle"
-msgstr "Sarikata"
-
-#: ../glade/libxfce4ui-2.xml.in.h:3
-msgid "Xfce 4 Widgets"
-msgstr "Widget Xfce 4"
-
 #: ../xfce4-about/main.c:58
 msgid "Version information"
 msgstr "Maklumat versi"
@@ -742,9 +714,7 @@ msgstr "Terima kasih kepada semua yang membantu menjayakan perisian ini!"
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
-msgstr ""
-"Xfce 4 adlah hakcipta Oliver Fourdan (fourdan@xfce.org). Komponen lain "
-"adalah hakcipta penulis yang berkenaan."
+msgstr "Xfce 4 adlah hakcipta Oliver Fourdan (fourdan@xfce.org). Komponen lain adalah hakcipta penulis yang berkenaan."
 
 #: ../xfce4-about/main.c:338
 msgid ""
@@ -752,11 +722,7 @@ msgid ""
 "terms of the GNU Library General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
-msgstr ""
-"Pakej libxfce4ui, libxfcegui4 dan exo diedarkan di bawah syarat-syarat GNU "
-"General Public License seperti yang diterbitkan oleh Free Software "
-"Foundation; sama ada Lesen versi 2, atau (atas pilihan anda) mana-mana versi"
-" selepas ini."
+msgstr "Pakej libxfce4ui, libxfcegui4 dan exo diedarkan di bawah syarat-syarat GNU General Public License seperti yang diterbitkan oleh Free Software Foundation; sama ada Lesen versi 2, atau (atas pilihan anda) mana-mana versi selepas ini."
 
 #: ../xfce4-about/main.c:345
 msgid ""
@@ -765,11 +731,7 @@ msgid ""
 "of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
-"Pakej thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, "
-"xfconf, xfdesktop dan xfwm4 diedarkan di bawah syarat-syarat GNU General "
-"Public License seperti yang diterbitkan oleh Free Software Foundation; sama "
-"ada Lesen versi 2, atau (atas pilihan anda) mana-mana versi selepas ini."
+msgstr "Pakej thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop dan xfwm4 diedarkan di bawah syarat-syarat GNU General Public License seperti yang diterbitkan oleh Free Software Foundation; sama ada Lesen versi 2, atau (atas pilihan anda) mana-mana versi selepas ini."
 
 #: ../xfce4-about/main.c:491
 #, c-format
@@ -823,14 +785,6 @@ msgstr "Penterjemah"
 #: ../xfce4-about/contributors.h:162
 msgid "Previous contributors"
 msgstr "Penyumbang sebelum ini"
-
-#: ../xfce4-about/xfce4-about.desktop.in.h:1
-msgid "About Xfce"
-msgstr "Perihal Xfce"
-
-#: ../xfce4-about/xfce4-about.desktop.in.h:2
-msgid "Information about the Xfce Desktop Environment"
-msgstr "Maklumat tentang Persekitaran Desktop Xfce"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:1
 msgid "License"
@@ -970,9 +924,7 @@ msgstr "%s; ID Binaan: %s"
 msgid ""
 "A file named \"%s\" already exists in this directory, the file hasn't been "
 "added."
-msgstr ""
-"Satu fail bernama \"%s\" sudah wujud dalam direktori ini, fail belum lagi "
-"ditambahkan."
+msgstr "Satu fail bernama \"%s\" sudah wujud dalam direktori ini, fail belum lagi ditambahkan."
 
 #: ../tests/test-ui.c:122
 msgid "Failed to migrate the old panel configuration"
