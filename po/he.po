@@ -1,20 +1,25 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Xfce Bot <transifex@xfce.org>, 2023
-# 
-#, fuzzy
+# Elishai Eliyahu <elishai@mailfence.com>, 2016-2017,2019-2020
+# Elishai Eliyahu <elishai@mailfence.com>, 2020,2022
+# gk <genghiskhan@gmx.ca>, 2014
+# gk <genghiskhan@gmx.ca>, 2014-2016
+# Hezy Amiel <open@hezyamiel.com>, 2010
+# 63f334ffc0709ba0fc2361b80bf3c0f0_00ffd1e <ab96c93ca0ac55ba7fa06385427e60dd_878890>, 2021
+# 63f334ffc0709ba0fc2361b80bf3c0f0_00ffd1e <ab96c93ca0ac55ba7fa06385427e60dd_878890>, 2021
+# 63f334ffc0709ba0fc2361b80bf3c0f0_00ffd1e <ab96c93ca0ac55ba7fa06385427e60dd_878890>, 2020
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: libxfce4ui\n"
+"Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-20 12:56+0100\n"
-"PO-Revision-Date: 2023-02-20 11:56+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>, 2023\n"
-"Language-Team: Hebrew (https://www.transifex.com/xfce/teams/16840/he/)\n"
+"POT-Creation-Date: 2023-04-06 00:45+0200\n"
+"PO-Revision-Date: 2013-07-02 20:33+0000\n"
+"Last-Translator: Elishai Eliyahu <elishai@mailfence.com>, 2020,2022\n"
+"Language-Team: Hebrew (http://app.transifex.com/xfce/libxfce4ui/language/he/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -38,8 +43,7 @@ msgstr "האם ברצונך לקרוא את המדריך אונליין?"
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
-msgstr ""
-"המערכת תפנה אותך אל אתר רשת תיעוד היכן שעמודי עזרה הינם מתוחזקים ומתורגמים."
+msgstr "המערכת תפנה אותך אל אתר רשת תיעוד היכן שעמודי עזרה הינם מתוחזקים ומתורגמים."
 
 #. Create cancel button
 #: ../libxfce4ui/xfce-dialogs.c:275 ../libxfce4ui/xfce-dialogs.c:533
@@ -81,16 +85,14 @@ msgstr "לסגור חלון עם לשוניות?"
 msgid ""
 "This window has multiple tabs open. Closing this window will also close all "
 "its tabs."
-msgstr ""
-"לחלון זה מספר לשוניות פתוחות. סגירת חלון זה תסגור גם את כל הלשוניות שלו."
+msgstr "לחלון זה מספר לשוניות פתוחות. סגירת חלון זה תסגור גם את כל הלשוניות שלו."
 
 #: ../libxfce4ui/xfce-dialogs.c:523
 #, c-format
 msgid ""
 "This window has %d tabs open. Closing this window will also close all its "
 "tabs."
-msgstr ""
-"לחלון זה %d לשוניות פתוחות. סגירת חלון זה תסגור גם את כל הלשוניות שלו."
+msgstr "לחלון זה %d לשוניות פתוחות. סגירת חלון זה תסגור גם את כל הלשוניות שלו."
 
 #: ../libxfce4ui/xfce-dialogs.c:529
 msgid "Warning"
@@ -159,64 +161,61 @@ msgstr "מפריד ספריה לא חוקי בשם קובץ"
 msgid "Filenames should not start or end with a space"
 msgstr "שמות קבצים לא אמורים להתחיל או להסתיים עם רווח"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:46
 #, c-format
 msgid ""
 "This shortcut is already being used for the action '%s'. Which action do you"
 " want to use?"
-msgstr ""
-"קיצור דרך זה כבר מצוי בשימוש עבור הפעולה '%s'. באיזו פעולה ברצונך להשתמש?"
+msgstr "קיצור דרך זה כבר מצוי בשימוש עבור הפעולה '%s'. באיזו פעולה ברצונך להשתמש?"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
-#: ../libxfce4kbd-private/xfce-shortcuts.c:57
-#: ../libxfce4kbd-private/xfce-shortcuts.c:60
-#: ../libxfce4kbd-private/xfce-shortcuts.c:63
+#: ../libxfce4kbd-private/xfce-shortcuts.c:47
+#: ../libxfce4kbd-private/xfce-shortcuts.c:50
+#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid "Use '%s'"
 msgstr "השתמש ב- '%s'"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
-#: ../libxfce4kbd-private/xfce-shortcuts.c:57
-#: ../libxfce4kbd-private/xfce-shortcuts.c:60
-#: ../libxfce4kbd-private/xfce-shortcuts.c:63
+#: ../libxfce4kbd-private/xfce-shortcuts.c:47
+#: ../libxfce4kbd-private/xfce-shortcuts.c:50
+#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid "Keep '%s'"
 msgstr "שמור על '%s'"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:56
-#: ../libxfce4kbd-private/xfce-shortcuts.c:59
+#: ../libxfce4kbd-private/xfce-shortcuts.c:49
+#: ../libxfce4kbd-private/xfce-shortcuts.c:52
 #, c-format
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr ""
-"קיצור דרך זה כבר מצוי בשימוש עבור הפקודה '%s'. באיזו פעולה ברצונך להשתמש?"
+msgstr "קיצור דרך זה כבר מצוי בשימוש עבור הפקודה '%s'. באיזו פעולה ברצונך להשתמש?"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:62
+#: ../libxfce4kbd-private/xfce-shortcuts.c:55
 #, c-format
 msgid ""
 "This shortcut is already being used by the action '%s'. Which action do you "
 "want to use?"
-msgstr ""
-"קיצור דרך זה כבר מצוי בשימוש על ידי הפעולה '%s'. באיזו פעולה ברצונך להשתמש?"
+msgstr "קיצור דרך זה כבר מצוי בשימוש על ידי הפעולה '%s'. באיזו פעולה ברצונך להשתמש?"
 
 #. This shortcut already exists in the provider, we don't want it twice
 #. Warn the user
-#: ../libxfce4kbd-private/xfce-shortcuts.c:113
+#: ../libxfce4kbd-private/xfce-shortcuts.c:106
 msgid "Please use another key combination."
 msgstr "אנא השתמש בשילוב מקשים אחר."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:114
+#: ../libxfce4kbd-private/xfce-shortcuts.c:107
 #, c-format
 msgid "%s already triggers this action."
 msgstr "‏%s כבר מעוררת את פעולה זו."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:119
+#: ../libxfce4kbd-private/xfce-shortcuts.c:112
 #, c-format
 msgid "Conflicting actions for %s"
 msgstr "פעולות סותרות עבור %s"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:181
+#: ../libxfce4kbd-private/xfce-shortcuts.c:174
 msgid "This shortcut is already being used for something else."
 msgstr "קיצור דרך זה כבר מצוי בשימוש עבור משהו אחר."
 
@@ -607,18 +606,6 @@ msgstr "מחק משטח עבודה אחרון"
 msgid "Delete active workspace"
 msgstr "מחק משטח עבודה פעיל"
 
-#: ../glade/libxfce4ui-2.xml.in.h:1
-msgid "Titled Dialog"
-msgstr "דו שיח בעל כותרת"
-
-#: ../glade/libxfce4ui-2.xml.in.h:2
-msgid "Subtitle"
-msgstr "כותרת משנה"
-
-#: ../glade/libxfce4ui-2.xml.in.h:3
-msgid "Xfce 4 Widgets"
-msgstr "יישומונים Xfce 4"
-
 #: ../xfce4-about/main.c:58
 msgid "Version information"
 msgstr "מידע גרסה"
@@ -724,9 +711,7 @@ msgstr "אנא ראה <https://www.xfce.org/about/credits>"
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
-msgstr ""
-"אם אתה מכיר מישהו שחסר ברשימה זו, אל תהסס לפתוח באג "
-"ב-<https://gitlab.xfce.org/xfce/libxfce4ui/-/issues>."
+msgstr "אם אתה מכיר מישהו שחסר ברשימה זו, אל תהסס לפתוח באג ב-<https://gitlab.xfce.org/xfce/libxfce4ui/-/issues>."
 
 #: ../xfce4-about/main.c:316
 msgid "Thanks to all who helped making this software available!"
@@ -736,9 +721,7 @@ msgstr "תודה לכל מי אשר סייע להפוך את תכנה זו לז�
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
-msgstr ""
-"‏Xfce 4 הינו מוגן בזכויות יוצרים לטובת Olivier Fourdan ‏(fourdan@xfce.org). "
-"הרכיבים השונים מוגנים בזכויות יוצרים לטובת המחברים שלהם בהתאמה."
+msgstr "‏Xfce 4 הינו מוגן בזכויות יוצרים לטובת Olivier Fourdan ‏(fourdan@xfce.org). הרכיבים השונים מוגנים בזכויות יוצרים לטובת המחברים שלהם בהתאמה."
 
 #: ../xfce4-about/main.c:338
 msgid ""
@@ -746,10 +729,7 @@ msgid ""
 "terms of the GNU Library General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
-msgstr ""
-"החבילות libxfce4ui, libxfce4util וגם exo מופצות תחת התנאים של ספריית GNU "
-"רישיון ציבורי כללי כפי שפורסם על ידי קרן תוכנה חופשית: מהדורה 2 של הרישיון, "
-"או (לבחירתך) כל מהדורה מאוחרת יותר."
+msgstr "החבילות libxfce4ui, libxfce4util וגם exo מופצות תחת התנאים של ספריית GNU רישיון ציבורי כללי כפי שפורסם על ידי קרן תוכנה חופשית: מהדורה 2 של הרישיון, או (לבחירתך) כל מהדורה מאוחרת יותר."
 
 #: ../xfce4-about/main.c:345
 msgid ""
@@ -758,11 +738,7 @@ msgid ""
 "of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
-"החבילות thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings,"
-" xfconf, xfdesktop וגם xfwm4 מופצות תחת התנאים של GNU רישיון ציבורי כללי כפי"
-" שפורסם על ידי קרן תוכנה חופשית: מהדורה 2 של הרישיון, או (לבחירתך) כל מהדורה"
-" מאוחרת יותר."
+msgstr "החבילות thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop וגם xfwm4 מופצות תחת התנאים של GNU רישיון ציבורי כללי כפי שפורסם על ידי קרן תוכנה חופשית: מהדורה 2 של הרישיון, או (לבחירתך) כל מהדורה מאוחרת יותר."
 
 #: ../xfce4-about/main.c:491
 #, c-format
@@ -816,14 +792,6 @@ msgstr "‎מתרגמים"
 #: ../xfce4-about/contributors.h:162
 msgid "Previous contributors"
 msgstr "‎תורמים קודמים"
-
-#: ../xfce4-about/xfce4-about.desktop.in.h:1
-msgid "About Xfce"
-msgstr "אודות Xfce"
-
-#: ../xfce4-about/xfce4-about.desktop.in.h:2
-msgid "Information about the Xfce Desktop Environment"
-msgstr "מידע אודות סביבת שולחן עבודה Xfce"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:1
 msgid "License"
@@ -893,9 +861,7 @@ msgstr "מערכת"
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
-msgstr ""
-"Xfce הוא אוסף של תוכנות שביחד מספקות סביבת שולחן עבודה מלאה בתכונות.\n"
-"התוכנות הבאות הן חלק מליבת Xfce:"
+msgstr "Xfce הוא אוסף של תוכנות שביחד מספקות סביבת שולחן עבודה מלאה בתכונות.\nהתוכנות הבאות הן חלק מליבת Xfce:"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:19
 msgid ""
@@ -906,14 +872,7 @@ msgid ""
 "Thank you for your interest in Xfce.\n"
 "\n"
 "\t- The Xfce Development Team"
-msgstr ""
-"Xfce היא בנוסף פלטפורמת פיתוח המספקת מספר ספריות העוזרות למתכנתים ליצור ישומים שמשתלבים היטב עם סביבת שולחן עבודה.\n"
-"\n"
-"רכיבי Xfce מורשים תחת רשיונות חופשיים או פתוחים, GPL או BSDL לישומים ו-LGPL או BSDL לספריות. הסתכל בתיעוד, קוד המקור או באתר Xfce (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) למידע נוסף.\n"
-"\n"
-"תודה על התעניינותך ב-Xfce.\n"
-"\n"
-"\t-צוות פיתוח Xfce"
+msgstr "Xfce היא בנוסף פלטפורמת פיתוח המספקת מספר ספריות העוזרות למתכנתים ליצור ישומים שמשתלבים היטב עם סביבת שולחן עבודה.\n\nרכיבי Xfce מורשים תחת רשיונות חופשיים או פתוחים, GPL או BSDL לישומים ו-LGPL או BSDL לספריות. הסתכל בתיעוד, קוד המקור או באתר Xfce (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) למידע נוסף.\n\nתודה על התעניינותך ב-Xfce.\n\n\t-צוות פיתוח Xfce"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:26
 msgid "About"
