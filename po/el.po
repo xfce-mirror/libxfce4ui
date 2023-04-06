@@ -1,20 +1,26 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Xfce Bot <transifex@xfce.org>, 2023
-# 
-#, fuzzy
+# Ápo. <apostolos.papadimitriu@gmail.com>, 2016-2017
+# Ápo. <apostolos.papadimitriu@gmail.com>, 2016
+# Ápo. <apostolos.papadimitriu@gmail.com>, 2017
+# ebal <ebalaskas@ebalaskas.gr>, 2009
+# Efstathios Iosifidis <iefstathios@gmail.com>, 2014-2015
+# Efstathios Iosifidis <iosifidis@opensuse.org>, 2012
+# ebal <ebalaskas@ebalaskas.gr>, 2009
+# Ioannis LM, 2022
+# Ioannis LM, 2022-2023
+# Πέτρος Σαμαράς <psamaras1@gmail.com>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: libxfce4ui\n"
+"Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-20 12:56+0100\n"
-"PO-Revision-Date: 2023-02-20 11:56+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>, 2023\n"
-"Language-Team: Greek (https://www.transifex.com/xfce/teams/16840/el/)\n"
+"POT-Creation-Date: 2023-04-06 00:45+0200\n"
+"PO-Revision-Date: 2013-07-02 20:33+0000\n"
+"Last-Translator: Πέτρος Σαμαράς <psamaras1@gmail.com>, 2017\n"
+"Language-Team: Greek (http://app.transifex.com/xfce/libxfce4ui/language/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -23,9 +29,7 @@ msgstr ""
 
 #: ../libxfce4ui/xfce-dialogs.c:110
 msgid "Failed to open web browser for online documentation"
-msgstr ""
-"Απέτυχε το άνοιγμα του περιηγητή για τη προβολή της τεκμηρίωσης στο "
-"διαδίκτυο"
+msgstr "Απέτυχε το άνοιγμα του περιηγητή για τη προβολή της τεκμηρίωσης στο διαδίκτυο"
 
 #: ../libxfce4ui/xfce-dialogs.c:265
 #, c-format
@@ -40,9 +44,7 @@ msgstr "Θέλετε να διαβάσετε το εγχειρίδιο στο δ
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
-msgstr ""
-"Θα μετακινηθείτε στην ιστοσελίδα τεκμηρίωσης όπου οι σελίδες βοήθειας "
-"συντηρούνται και μεταφράζονται."
+msgstr "Θα μετακινηθείτε στην ιστοσελίδα τεκμηρίωσης όπου οι σελίδες βοήθειας συντηρούνται και μεταφράζονται."
 
 #. Create cancel button
 #: ../libxfce4ui/xfce-dialogs.c:275 ../libxfce4ui/xfce-dialogs.c:533
@@ -84,18 +86,14 @@ msgstr "Να κλείσει το παράθυρο με τις πολλές κα�
 msgid ""
 "This window has multiple tabs open. Closing this window will also close all "
 "its tabs."
-msgstr ""
-"Το παράθυρο έχει πολλές ανοιχτές καρτέλες. Το κλείσιμο του παραθύρου θα "
-"κλείσει και όλες τις καρτέλες."
+msgstr "Το παράθυρο έχει πολλές ανοιχτές καρτέλες. Το κλείσιμο του παραθύρου θα κλείσει και όλες τις καρτέλες."
 
 #: ../libxfce4ui/xfce-dialogs.c:523
 #, c-format
 msgid ""
 "This window has %d tabs open. Closing this window will also close all its "
 "tabs."
-msgstr ""
-"Το παράθυρο έχει %d ανοιχτές καρτέλες. Το κλείσιμο του παραθύρου θα κλείσει "
-"και όλες τις καρτέλες."
+msgstr "Το παράθυρο έχει %d ανοιχτές καρτέλες. Το κλείσιμο του παραθύρου θα κλείσει και όλες τις καρτέλες."
 
 #: ../libxfce4ui/xfce-dialogs.c:529
 msgid "Warning"
@@ -149,9 +147,7 @@ msgstr "Ο διαχειριστής συνεδρίας επέστρεψε μη �
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
 "\"%s\"."
-msgstr ""
-"Ο κατάλογος εργασίας \"%s\" δεν υπάρχει. Δε θα χρησιμοποιηθεί κατά τη "
-"δημιουργία του \"%s\"."
+msgstr "Ο κατάλογος εργασίας \"%s\" δεν υπάρχει. Δε θα χρησιμοποιηθεί κατά τη δημιουργία του \"%s\"."
 
 #. retrieve the error and warning messages
 #: ../libxfce4ui/xfce-filename-input.c:232
@@ -164,71 +160,63 @@ msgstr "Μη έγκυρος χαρακτήρας στο όνομα του αρχ
 
 #: ../libxfce4ui/xfce-filename-input.c:234
 msgid "Filenames should not start or end with a space"
-msgstr ""
-"Τα ονόματα των αρχείων δεν πρέπει να αρχίζουν ή να τελειώνουν με κενό "
-"χαρακτήρα"
+msgstr "Τα ονόματα των αρχείων δεν πρέπει να αρχίζουν ή να τελειώνουν με κενό χαρακτήρα"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:46
 #, c-format
 msgid ""
 "This shortcut is already being used for the action '%s'. Which action do you"
 " want to use?"
-msgstr ""
-"Αυτή η συντόμευση χρησιμοποιείται ήδη για την ενέργεια '%s'. Ποια ενέργεια "
-"θέλετε να χρησιμοποιήσετε;"
+msgstr "Αυτή η συντόμευση χρησιμοποιείται ήδη για την ενέργεια '%s'. Ποια ενέργεια θέλετε να χρησιμοποιήσετε;"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
-#: ../libxfce4kbd-private/xfce-shortcuts.c:57
-#: ../libxfce4kbd-private/xfce-shortcuts.c:60
-#: ../libxfce4kbd-private/xfce-shortcuts.c:63
+#: ../libxfce4kbd-private/xfce-shortcuts.c:47
+#: ../libxfce4kbd-private/xfce-shortcuts.c:50
+#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid "Use '%s'"
 msgstr "Χρήση του '%s'"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
-#: ../libxfce4kbd-private/xfce-shortcuts.c:57
-#: ../libxfce4kbd-private/xfce-shortcuts.c:60
-#: ../libxfce4kbd-private/xfce-shortcuts.c:63
+#: ../libxfce4kbd-private/xfce-shortcuts.c:47
+#: ../libxfce4kbd-private/xfce-shortcuts.c:50
+#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid "Keep '%s'"
 msgstr "Διατήρηση του '%s'"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:56
-#: ../libxfce4kbd-private/xfce-shortcuts.c:59
+#: ../libxfce4kbd-private/xfce-shortcuts.c:49
+#: ../libxfce4kbd-private/xfce-shortcuts.c:52
 #, c-format
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr ""
-"Αυτή η συντόμευση χρησιμοποιείται ήδη για την εντολή '%s'. Ποια ενέργεια "
-"θέλετε να χρησιμοποιήσετε;"
+msgstr "Αυτή η συντόμευση χρησιμοποιείται ήδη για την εντολή '%s'. Ποια ενέργεια θέλετε να χρησιμοποιήσετε;"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:62
+#: ../libxfce4kbd-private/xfce-shortcuts.c:55
 #, c-format
 msgid ""
 "This shortcut is already being used by the action '%s'. Which action do you "
 "want to use?"
-msgstr ""
-"Αυτή η συντόμευση χρησιμοποιείται ήδη για την ενέργεια '%s'. Ποια ενέργεια "
-"θέλετε να χρησιμοποιήσετε;"
+msgstr "Αυτή η συντόμευση χρησιμοποιείται ήδη για την ενέργεια '%s'. Ποια ενέργεια θέλετε να χρησιμοποιήσετε;"
 
 #. This shortcut already exists in the provider, we don't want it twice
 #. Warn the user
-#: ../libxfce4kbd-private/xfce-shortcuts.c:113
+#: ../libxfce4kbd-private/xfce-shortcuts.c:106
 msgid "Please use another key combination."
 msgstr "Παρακαλώ χρησιμοποιήστε άλλο συνδυασμό πλήκτρων."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:114
+#: ../libxfce4kbd-private/xfce-shortcuts.c:107
 #, c-format
 msgid "%s already triggers this action."
 msgstr "Το %s ενεργοποιεί ήδη αυτήν την ενέργεια."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:119
+#: ../libxfce4kbd-private/xfce-shortcuts.c:112
 #, c-format
 msgid "Conflicting actions for %s"
 msgstr "Συγκρουόμενες ενέργειες για το %s"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:181
+#: ../libxfce4kbd-private/xfce-shortcuts.c:174
 msgid "This shortcut is already being used for something else."
 msgstr "Αυτή η συντόμευση χρησιμοποιείται ήδη για κάτι άλλο."
 
@@ -619,18 +607,6 @@ msgstr "Διαγραφή του τελευταίου χώρου εργασίας
 msgid "Delete active workspace"
 msgstr "Διαγραφή ενεργού χώρου εργασίας"
 
-#: ../glade/libxfce4ui-2.xml.in.h:1
-msgid "Titled Dialog"
-msgstr "Παράθυρο με τίτλο"
-
-#: ../glade/libxfce4ui-2.xml.in.h:2
-msgid "Subtitle"
-msgstr "Υπότιτλος"
-
-#: ../glade/libxfce4ui-2.xml.in.h:3
-msgid "Xfce 4 Widgets"
-msgstr "Γραφικά στοιχεία Xfce 4"
-
 #: ../xfce4-about/main.c:58
 msgid "Version information"
 msgstr "Πληροφορίες έκδοσης"
@@ -653,9 +629,7 @@ msgstr "Ταμπλό"
 
 #: ../xfce4-about/main.c:152
 msgid "Provides a home for window buttons, launchers, app menu and more."
-msgstr ""
-"Παρέχει χώρο για κουμπιά παραθύρων, εκκινητές, μενού εφαρμογών και πολλά "
-"άλλα."
+msgstr "Παρέχει χώρο για κουμπιά παραθύρων, εκκινητές, μενού εφαρμογών και πολλά άλλα."
 
 #: ../xfce4-about/main.c:156
 msgid "Desktop Manager"
@@ -663,8 +637,7 @@ msgstr "Διαχειριστής επιφάνειας εργασίας"
 
 #: ../xfce4-about/main.c:157
 msgid "Sets desktop backgrounds, handles icons and more."
-msgstr ""
-"Ρυθμίζει το φόντο, τα εικονίδια και πολλά άλλα στις επιφάνειες εργασίας."
+msgstr "Ρυθμίζει το φόντο, τα εικονίδια και πολλά άλλα στις επιφάνειες εργασίας."
 
 #: ../xfce4-about/main.c:161
 msgid "File Manager"
@@ -672,9 +645,7 @@ msgstr "Διαχειριστής αρχείων"
 
 #: ../xfce4-about/main.c:162
 msgid "Manages your files in a modern, easy-to-use and fast way."
-msgstr ""
-"Διαχειρίζεται τα αρχεία σας με ένα μοντέρνο, γρήγορο και εύκολο στη χρήση "
-"τρόπο."
+msgstr "Διαχειρίζεται τα αρχεία σας με ένα μοντέρνο, γρήγορο και εύκολο στη χρήση τρόπο."
 
 #: ../xfce4-about/main.c:166
 msgid "Volume Manager"
@@ -691,9 +662,7 @@ msgstr "Διαχειριστής συνεδρίας"
 #: ../xfce4-about/main.c:172
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
-msgstr ""
-"Αποθηκεύει και επαναφέρει τη συνεδρία σας, χειρίζεται την εκκίνηση, την "
-"αυτόματη εκκίνηση και τον τερματισμό."
+msgstr "Αποθηκεύει και επαναφέρει τη συνεδρία σας, χειρίζεται την εκκίνηση, την αυτόματη εκκίνηση και τον τερματισμό."
 
 #: ../xfce4-about/main.c:176
 msgid "Settings Manager"
@@ -701,8 +670,7 @@ msgstr "Διαχειριστής ρυθμίσεων"
 
 #: ../xfce4-about/main.c:177
 msgid "Configures appearance, display, keyboard and mouse settings."
-msgstr ""
-"Διαμορφώνει τις ρυθμίσεις εμφάνισης, οθόνης, πληκτρολογίου και ποντικιού."
+msgstr "Διαμορφώνει τις ρυθμίσεις εμφάνισης, οθόνης, πληκτρολογίου και ποντικιού."
 
 #: ../xfce4-about/main.c:181
 msgid "Application Finder"
@@ -710,9 +678,7 @@ msgstr "Εύρεση εφαρμογών"
 
 #: ../xfce4-about/main.c:182
 msgid "Quickly finds and launches applications installed on your system."
-msgstr ""
-"Βρίσκει και εκκινεί γρήγορα τις εφαρμογές που είναι εγκατεστημένες στο "
-"σύστημά σας."
+msgstr "Βρίσκει και εκκινεί γρήγορα τις εφαρμογές που είναι εγκατεστημένες στο σύστημά σας."
 
 #: ../xfce4-about/main.c:186
 msgid "Settings Daemon"
@@ -720,8 +686,7 @@ msgstr "Υπηρεσία ρυθμίσεων"
 
 #: ../xfce4-about/main.c:187
 msgid "Stores your settings in a D-Bus-based configuration system."
-msgstr ""
-"Αποθηκεύει τις ρυθμίσεις σας σε ένα σύστημα διαμόρφωσης με βάση το D-Bus."
+msgstr "Αποθηκεύει τις ρυθμίσεις σας σε ένα σύστημα διαμόρφωσης με βάση το D-Bus."
 
 #: ../xfce4-about/main.c:191
 msgid "A Menu Library"
@@ -729,9 +694,7 @@ msgstr "Βιβλιοθήκη μενού"
 
 #: ../xfce4-about/main.c:192
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
-msgstr ""
-"Υλοποιεί ένα μενού συμβατό με το freedesktop.org βασισμένο στο GLib και το "
-"GIO."
+msgstr "Υλοποιεί ένα μενού συμβατό με το freedesktop.org βασισμένο στο GLib και το GIO."
 
 #: ../xfce4-about/main.c:196
 msgid "Thumbnails Service"
@@ -749,23 +712,17 @@ msgstr "Παρακαλώ δείτε <https://www.xfce.org/about/credits>"
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
-msgstr ""
-"Αν γνωρίζετε να λείπει κάτι από αυτή τη λίστα, μη διστάσετε να το αναφέρετε "
-"στο <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues>."
+msgstr "Αν γνωρίζετε να λείπει κάτι από αυτή τη λίστα, μη διστάσετε να το αναφέρετε στο <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues>."
 
 #: ../xfce4-about/main.c:316
 msgid "Thanks to all who helped making this software available!"
-msgstr ""
-"Ευχαριστούμε όλους όσους βοήθησαν ώστε να είναι διαθέσιμο αυτό το λογισμικό!"
+msgstr "Ευχαριστούμε όλους όσους βοήθησαν ώστε να είναι διαθέσιμο αυτό το λογισμικό!"
 
 #: ../xfce4-about/main.c:333
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
-msgstr ""
-"Η πνευματική ιδιοκτησία του Xfce 4 ανήκει στον Olivier Fourdan "
-"(fourdan@xfce.org). Τα διάφορα συστατικά είναι πνευματική ιδιοκτησία των "
-"αντίστοιχων συγγραφέων τους."
+msgstr "Η πνευματική ιδιοκτησία του Xfce 4 ανήκει στον Olivier Fourdan (fourdan@xfce.org). Τα διάφορα συστατικά είναι πνευματική ιδιοκτησία των αντίστοιχων συγγραφέων τους."
 
 #: ../xfce4-about/main.c:338
 msgid ""
@@ -773,11 +730,7 @@ msgid ""
 "terms of the GNU Library General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
-msgstr ""
-"Τα πακέτα, libxfce4ui, libxfce4util και exo διανέμονται υπό τους όρους της "
-"Γενικής Άδειας Δημόσιας Χρήσης GNU όπως αυτή έχει δημοσιευτεί από Free "
-"Software Foundation, είτε την έκδοση 2 της άδειας, είτε (κατ' επιλογήν) σε "
-"οποιαδήποτε μεταγενέστερη έκδοση."
+msgstr "Τα πακέτα, libxfce4ui, libxfce4util και exo διανέμονται υπό τους όρους της Γενικής Άδειας Δημόσιας Χρήσης GNU όπως αυτή έχει δημοσιευτεί από Free Software Foundation, είτε την έκδοση 2 της άδειας, είτε (κατ' επιλογήν) σε οποιαδήποτε μεταγενέστερη έκδοση."
 
 #: ../xfce4-about/main.c:345
 msgid ""
@@ -786,12 +739,7 @@ msgid ""
 "of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
-"Τα πακέτα, thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
-"xfce4-settings, xfconf, xfdesktop και xfwm4 διανέμονται υπό τους όρους της "
-"Γενικής Άδειας Δημόσιας Χρήσης GNU όπως αυτή έχει δημοσιευτεί από Free "
-"Software Foundation, είτε την έκδοση 2 της άδειας, είτε (κατ' επιλογήν) σε "
-"οποιαδήποτε μεταγενέστερη έκδοση."
+msgstr "Τα πακέτα, thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop και xfwm4 διανέμονται υπό τους όρους της Γενικής Άδειας Δημόσιας Χρήσης GNU όπως αυτή έχει δημοσιευτεί από Free Software Foundation, είτε την έκδοση 2 της άδειας, είτε (κατ' επιλογήν) σε οποιαδήποτε μεταγενέστερη έκδοση."
 
 #: ../xfce4-about/main.c:491
 #, c-format
@@ -845,14 +793,6 @@ msgstr "Μεταφραστές"
 #: ../xfce4-about/contributors.h:162
 msgid "Previous contributors"
 msgstr "Προηγούμενοι συντελεστές"
-
-#: ../xfce4-about/xfce4-about.desktop.in.h:1
-msgid "About Xfce"
-msgstr "Περί του Xfce"
-
-#: ../xfce4-about/xfce4-about.desktop.in.h:2
-msgid "Information about the Xfce Desktop Environment"
-msgstr "Πληροφορίες σχετικά με το περιβάλλον εργασίας Xfce"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:1
 msgid "License"
@@ -922,9 +862,7 @@ msgstr "Σύστημα"
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
-msgstr ""
-"Το Xfce είναι μια συλλογή προγραμμάτων που προσφέρουν μαζί ένα πλήρες λειτουργικό περιβάλλον εργασίας. \n"
-"Τα παρακάτω προγράμματα είναι μέρος του πυρήνα Xfce:"
+msgstr "Το Xfce είναι μια συλλογή προγραμμάτων που προσφέρουν μαζί ένα πλήρες λειτουργικό περιβάλλον εργασίας. \nΤα παρακάτω προγράμματα είναι μέρος του πυρήνα Xfce:"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:19
 msgid ""
@@ -935,14 +873,7 @@ msgid ""
 "Thank you for your interest in Xfce.\n"
 "\n"
 "\t- The Xfce Development Team"
-msgstr ""
-"Το Xfce είναι επίσης και μια πλατφόρμα ανάπτυξης παρέχοντας διάφορες βιβλιοθήκες που βοηθούν τους προγραμματιστές να δημιουργήσουν εφαρμογές που ταιριάζουν καλά με το περιβάλλον της επιφάνειας εργασίας.\n"
-"\n"
-"Τα συστατικά του Xfce αδειοδοτούνται με άδειες χρήσης ελεύθερου ή ανοικτού κώδικα: GPL ή BSDL για τις εφαρμογές και LGPL ή BSDL για τις βιβλιοθήκες. Δείτε την τεκμηρίωση, τον πηγαίο κώδικα ή τον ιστότοπο του Xfce για περισσότερες πληροφορίες (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>).\n"
-"\n"
-"Σας ευχαριστούμε για το ενδιαφέρον σας για το Xfce.\n"
-"\n"
-"\t- Η ομάδα ανάπτυξης του Xfce"
+msgstr "Το Xfce είναι επίσης και μια πλατφόρμα ανάπτυξης παρέχοντας διάφορες βιβλιοθήκες που βοηθούν τους προγραμματιστές να δημιουργήσουν εφαρμογές που ταιριάζουν καλά με το περιβάλλον της επιφάνειας εργασίας.\n\nΤα συστατικά του Xfce αδειοδοτούνται με άδειες χρήσης ελεύθερου ή ανοικτού κώδικα: GPL ή BSDL για τις εφαρμογές και LGPL ή BSDL για τις βιβλιοθήκες. Δείτε την τεκμηρίωση, τον πηγαίο κώδικα ή τον ιστότοπο του Xfce για περισσότερες πληροφορίες (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>).\n\nΣας ευχαριστούμε για το ενδιαφέρον σας για το Xfce.\n\n\t- Η ομάδα ανάπτυξης του Xfce"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:26
 msgid "About"
@@ -1001,9 +932,7 @@ msgstr "%s; ID κατασκευής: %s"
 msgid ""
 "A file named \"%s\" already exists in this directory, the file hasn't been "
 "added."
-msgstr ""
-"Ένα αρχείο με όνομα \"%s\" υπάρχει ήδη σε αυτόν τον κατάλογο. Το αρχείο δεν "
-"προστέθηκε."
+msgstr "Ένα αρχείο με όνομα \"%s\" υπάρχει ήδη σε αυτόν τον κατάλογο. Το αρχείο δεν προστέθηκε."
 
 #: ../tests/test-ui.c:122
 msgid "Failed to migrate the old panel configuration"
