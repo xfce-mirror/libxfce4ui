@@ -1,21 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Carles Muñoz Gorriz <carlesmu@internautas.org>, 2023
-# Xfce Bot <transifex@xfce.org>, 2023
-# 
-#, fuzzy
+# Carles Muñoz Gorriz <carlesmu@internautas.org>, 2013
+# Carles Muñoz Gorriz <carlesmu@internautas.org>, 2013
+# Davidmp <medipas@gmail.com>, 2015
+# Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2017-2020
+# Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: libxfce4ui\n"
+"Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-20 12:56+0100\n"
-"PO-Revision-Date: 2023-02-20 11:56+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>, 2023\n"
-"Language-Team: Catalan (https://www.transifex.com/xfce/teams/16840/ca/)\n"
+"POT-Creation-Date: 2023-04-06 00:45+0200\n"
+"PO-Revision-Date: 2013-07-02 20:33+0000\n"
+"Last-Translator: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2017-2020\n"
+"Language-Team: Catalan (http://app.transifex.com/xfce/libxfce4ui/language/ca/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -39,9 +39,7 @@ msgstr "Voleu llegir el manual en línia?"
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
-msgstr ""
-"Sereu redirigit al lloc web de la documentació on es mantenen i tradueixen "
-"les pàgines d'ajuda."
+msgstr "Sereu redirigit al lloc web de la documentació on es mantenen i tradueixen les pàgines d'ajuda."
 
 #. Create cancel button
 #: ../libxfce4ui/xfce-dialogs.c:275 ../libxfce4ui/xfce-dialogs.c:533
@@ -83,18 +81,14 @@ msgstr "Tancar una finestra amb diverses pestanyes?"
 msgid ""
 "This window has multiple tabs open. Closing this window will also close all "
 "its tabs."
-msgstr ""
-"Aquesta finestra té diverses pestanyes obertes. Si es tanca aquesta "
-"finestra, també es tancaran totes les seves pestanyes."
+msgstr "Aquesta finestra té diverses pestanyes obertes. Si es tanca aquesta finestra, també es tancaran totes les seves pestanyes."
 
 #: ../libxfce4ui/xfce-dialogs.c:523
 #, c-format
 msgid ""
 "This window has %d tabs open. Closing this window will also close all its "
 "tabs."
-msgstr ""
-"Aquesta finestra té %d pestanyes obertes. Si es tanca aquesta finestra, "
-"també es tancaran totes les seves pestanyes."
+msgstr "Aquesta finestra té %d pestanyes obertes. Si es tanca aquesta finestra, també es tancaran totes les seves pestanyes."
 
 #: ../libxfce4ui/xfce-dialogs.c:529
 msgid "Warning"
@@ -148,8 +142,7 @@ msgstr "El gestor de sessions no ha retornat un id. vàlid de client"
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
 "\"%s\"."
-msgstr ""
-"El directori de treball «%s» no existeix. No s'utilitzarà per generar «%s»."
+msgstr "El directori de treball «%s» no existeix. No s'utilitzarà per generar «%s»."
 
 #. retrieve the error and warning messages
 #: ../libxfce4ui/xfce-filename-input.c:232
@@ -164,67 +157,61 @@ msgstr "Separador de directoris no permès al nom del fitxer"
 msgid "Filenames should not start or end with a space"
 msgstr "Els noms dels fitxers no han de començar ni acabar amb un espai"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:46
 #, c-format
 msgid ""
 "This shortcut is already being used for the action '%s'. Which action do you"
 " want to use?"
-msgstr ""
-"Aquesta drecera ja s'està utilitzant per a l'acció «%s». Quina acció voleu "
-"utilitzar?"
+msgstr "Aquesta drecera ja s'està utilitzant per a l'acció «%s». Quina acció voleu utilitzar?"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
-#: ../libxfce4kbd-private/xfce-shortcuts.c:57
-#: ../libxfce4kbd-private/xfce-shortcuts.c:60
-#: ../libxfce4kbd-private/xfce-shortcuts.c:63
+#: ../libxfce4kbd-private/xfce-shortcuts.c:47
+#: ../libxfce4kbd-private/xfce-shortcuts.c:50
+#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid "Use '%s'"
 msgstr "Utilitza «%s»"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
-#: ../libxfce4kbd-private/xfce-shortcuts.c:57
-#: ../libxfce4kbd-private/xfce-shortcuts.c:60
-#: ../libxfce4kbd-private/xfce-shortcuts.c:63
+#: ../libxfce4kbd-private/xfce-shortcuts.c:47
+#: ../libxfce4kbd-private/xfce-shortcuts.c:50
+#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: ../libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid "Keep '%s'"
 msgstr "Mantén «%s»"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:56
-#: ../libxfce4kbd-private/xfce-shortcuts.c:59
+#: ../libxfce4kbd-private/xfce-shortcuts.c:49
+#: ../libxfce4kbd-private/xfce-shortcuts.c:52
 #, c-format
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr ""
-"Aquesta drecera ja s'està utilitzant per a l'ordre «%s». Quina acció voleu "
-"utilitzar?"
+msgstr "Aquesta drecera ja s'està utilitzant per a l'ordre «%s». Quina acció voleu utilitzar?"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:62
+#: ../libxfce4kbd-private/xfce-shortcuts.c:55
 #, c-format
 msgid ""
 "This shortcut is already being used by the action '%s'. Which action do you "
 "want to use?"
-msgstr ""
-"Aquesta drecera ja s'està utilitzant per a l'acció «%s». Quina acció voleu "
-"utilitzar?"
+msgstr "Aquesta drecera ja s'està utilitzant per a l'acció «%s». Quina acció voleu utilitzar?"
 
 #. This shortcut already exists in the provider, we don't want it twice
 #. Warn the user
-#: ../libxfce4kbd-private/xfce-shortcuts.c:113
+#: ../libxfce4kbd-private/xfce-shortcuts.c:106
 msgid "Please use another key combination."
 msgstr "Si us plau, utilitzeu una altra combinació de tecles."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:114
+#: ../libxfce4kbd-private/xfce-shortcuts.c:107
 #, c-format
 msgid "%s already triggers this action."
 msgstr "«%s» ja llança aquesta acció."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:119
+#: ../libxfce4kbd-private/xfce-shortcuts.c:112
 #, c-format
 msgid "Conflicting actions for %s"
 msgstr "Conflicte d'accions per %s"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:181
+#: ../libxfce4kbd-private/xfce-shortcuts.c:174
 msgid "This shortcut is already being used for something else."
 msgstr "Aquesta drecera ja s'està utilitzant per a alguna altra cosa."
 
@@ -615,18 +602,6 @@ msgstr "Suprimeix l'últim espai de treball"
 msgid "Delete active workspace"
 msgstr "Suprimeix l'espai de treball actiu"
 
-#: ../glade/libxfce4ui-2.xml.in.h:1
-msgid "Titled Dialog"
-msgstr "Diàleg amb títol"
-
-#: ../glade/libxfce4ui-2.xml.in.h:2
-msgid "Subtitle"
-msgstr "Subtítol"
-
-#: ../glade/libxfce4ui-2.xml.in.h:3
-msgid "Xfce 4 Widgets"
-msgstr "Estris de Xfce 4"
-
 #: ../xfce4-about/main.c:58
 msgid "Version information"
 msgstr "Informació de la versió"
@@ -649,9 +624,7 @@ msgstr "Tauler"
 
 #: ../xfce4-about/main.c:152
 msgid "Provides a home for window buttons, launchers, app menu and more."
-msgstr ""
-"Proporciona una llar per als botons de finestres, llançadors, menú "
-"d'aplicacions i més."
+msgstr "Proporciona una llar per als botons de finestres, llançadors, menú d'aplicacions i més."
 
 #: ../xfce4-about/main.c:156
 msgid "Desktop Manager"
@@ -684,8 +657,7 @@ msgstr "Gestor de sessions"
 #: ../xfce4-about/main.c:172
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
-msgstr ""
-"Desa i restaura la sessió, gestiona l’inici, l’inici automàtic i l’aturada."
+msgstr "Desa i restaura la sessió, gestiona l’inici, l’inici automàtic i l’aturada."
 
 #: ../xfce4-about/main.c:176
 msgid "Settings Manager"
@@ -693,8 +665,7 @@ msgstr "Gestor d'ajusts"
 
 #: ../xfce4-about/main.c:177
 msgid "Configures appearance, display, keyboard and mouse settings."
-msgstr ""
-"Configura els ajusts de l'aparença, la pantalla, el teclat i el ratolí."
+msgstr "Configura els ajusts de l'aparença, la pantalla, el teclat i el ratolí."
 
 #: ../xfce4-about/main.c:181
 msgid "Application Finder"
@@ -702,8 +673,7 @@ msgstr "Cercador d'aplicacions"
 
 #: ../xfce4-about/main.c:182
 msgid "Quickly finds and launches applications installed on your system."
-msgstr ""
-"Troba i llança ràpidament les aplicacions instal·lades al vostre sistema."
+msgstr "Troba i llança ràpidament les aplicacions instal·lades al vostre sistema."
 
 #: ../xfce4-about/main.c:186
 msgid "Settings Daemon"
@@ -711,8 +681,7 @@ msgstr "Dimoni d'ajusts"
 
 #: ../xfce4-about/main.c:187
 msgid "Stores your settings in a D-Bus-based configuration system."
-msgstr ""
-"Emmagatzema els vostres ajusts en un sistema de configuració basat en D-Bus."
+msgstr "Emmagatzema els vostres ajusts en un sistema de configuració basat en D-Bus."
 
 #: ../xfce4-about/main.c:191
 msgid "A Menu Library"
@@ -720,8 +689,7 @@ msgstr "Una biblioteca de menús"
 
 #: ../xfce4-about/main.c:192
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
-msgstr ""
-"Implementa un menú compatible amb freedesktop.org basat en GLib i GIO."
+msgstr "Implementa un menú compatible amb freedesktop.org basat en GLib i GIO."
 
 #: ../xfce4-about/main.c:196
 msgid "Thumbnails Service"
@@ -739,22 +707,17 @@ msgstr "Consulteu <https://www.xfce.org/about/credits>"
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
-msgstr ""
-"Si sabeu d'algú que hagi d'estar en aquesta llista; no dubteu en informar "
-"d'aquest error a <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
+msgstr "Si sabeu d'algú que hagi d'estar en aquesta llista; no dubteu en informar d'aquest error a <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 
 #: ../xfce4-about/main.c:316
 msgid "Thanks to all who helped making this software available!"
-msgstr ""
-"Gràcies a tots aquells que heu ajudat a fer aquest programari una realitat."
+msgstr "Gràcies a tots aquells que heu ajudat a fer aquest programari una realitat."
 
 #: ../xfce4-about/main.c:333
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
-msgstr ""
-"Xfce 4 té drets d'autor d'Olivier Fourdan (fourdan@xfce.org). Els diferents "
-"components tenen els drets d'autor dels seus respectius autors."
+msgstr "Xfce 4 té drets d'autor d'Olivier Fourdan (fourdan@xfce.org). Els diferents components tenen els drets d'autor dels seus respectius autors."
 
 #: ../xfce4-about/main.c:338
 msgid ""
@@ -762,11 +725,7 @@ msgid ""
 "terms of the GNU Library General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
-msgstr ""
-"Els paquets libxfce4ui, libxfce4util i exo es distribueixen sota els termes "
-"de la llicència GNU Library General Public License, tal com l'ha publicada "
-"la Free Software Foundation; ja sigui la versió 2 de la llicència o, segons "
-"el vostre criteri, qualsevol versió posterior."
+msgstr "Els paquets libxfce4ui, libxfce4util i exo es distribueixen sota els termes de la llicència GNU Library General Public License, tal com l'ha publicada la Free Software Foundation; ja sigui la versió 2 de la llicència o, segons el vostre criteri, qualsevol versió posterior."
 
 #: ../xfce4-about/main.c:345
 msgid ""
@@ -775,12 +734,7 @@ msgid ""
 "of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
-"Els paquets thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
-"xfce4-settings, xfconf, xfdesktop i xfwm4 es distribueixen sota els termes "
-"de la llicència GNU General Public License, tal com l'ha publicada la Free "
-"Software Foundation; ja sigui la versió 2 de la llicència o, segons el "
-"vostre criteri, qualsevol versió posterior."
+msgstr "Els paquets thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop i xfwm4 es distribueixen sota els termes de la llicència GNU General Public License, tal com l'ha publicada la Free Software Foundation; ja sigui la versió 2 de la llicència o, segons el vostre criteri, qualsevol versió posterior."
 
 #: ../xfce4-about/main.c:491
 #, c-format
@@ -834,14 +788,6 @@ msgstr "Traductors"
 #: ../xfce4-about/contributors.h:162
 msgid "Previous contributors"
 msgstr "Contribuïdors anteriors"
-
-#: ../xfce4-about/xfce4-about.desktop.in.h:1
-msgid "About Xfce"
-msgstr "Quant a Xfce"
-
-#: ../xfce4-about/xfce4-about.desktop.in.h:2
-msgid "Information about the Xfce Desktop Environment"
-msgstr "Informació quant a l'entorn d'escriptori Xfce"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:1
 msgid "License"
@@ -911,9 +857,7 @@ msgstr "Sistema"
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
-msgstr ""
-"Xfce és una col·lecció de programes que en conjunt ofereixen un entorn d'escriptori ple de funcionalitats.\n"
-"Els següents programes formen part del nucli de Xfce:"
+msgstr "Xfce és una col·lecció de programes que en conjunt ofereixen un entorn d'escriptori ple de funcionalitats.\nEls següents programes formen part del nucli de Xfce:"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:19
 msgid ""
@@ -924,14 +868,7 @@ msgid ""
 "Thank you for your interest in Xfce.\n"
 "\n"
 "\t- The Xfce Development Team"
-msgstr ""
-"Xfce també és una plataforma de desenvolupament que proporciona diverses biblioteques que ajuden els programadors a crear aplicacions que s’adaptin bé a l’entorn d’escriptori.\n"
-"\n"
-"Els components de Xfce estan llicenciats sota llicències lliures o de codi obert; GPL o BSDL per a les aplicacions i LGPL o BSDL per a les biblioteques. Per més informació consulteu la documentació, el codi font o el lloc web de Xfce (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>).\n"
-"\n"
-"Gràcies pel vostre interès per Xfce.\n"
-"\n"
-"\t- L'equip de desenvolupament de Xfce"
+msgstr "Xfce també és una plataforma de desenvolupament que proporciona diverses biblioteques que ajuden els programadors a crear aplicacions que s’adaptin bé a l’entorn d’escriptori.\n\nEls components de Xfce estan llicenciats sota llicències lliures o de codi obert; GPL o BSDL per a les aplicacions i LGPL o BSDL per a les biblioteques. Per més informació consulteu la documentació, el codi font o el lloc web de Xfce (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>).\n\nGràcies pel vostre interès per Xfce.\n\n\t- L'equip de desenvolupament de Xfce"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:26
 msgid "About"
@@ -990,9 +927,7 @@ msgstr "%s; Id. construcció: %s"
 msgid ""
 "A file named \"%s\" already exists in this directory, the file hasn't been "
 "added."
-msgstr ""
-"En aquest directori ja existeix un fitxer amb el nom «%s», no s'ha afegit el"
-" fitxer."
+msgstr "En aquest directori ja existeix un fitxer amb el nom «%s», no s'ha afegit el fitxer."
 
 #: ../tests/test-ui.c:122
 msgid "Failed to migrate the old panel configuration"
