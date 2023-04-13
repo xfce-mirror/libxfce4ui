@@ -797,7 +797,7 @@ msgstr "Относно Xfce"
 
 #: xfce4-about/xfce4-about.desktop.in:12
 msgid "Information about the Xfce Desktop Environment"
-msgstr "Сведения за работната среда Xfce"
+msgstr "Информация за Xfce Desktop Environment"
 
 #: xfce4-about/xfce4-about-dialog.glade:116
 msgid "License"
