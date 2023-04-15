@@ -5,7 +5,7 @@
 # Translators:
 # Allan Nordhøy <epost@anotheragency.no>, 2014-2015
 # Allan Nordhøy <epost@anotheragency.no>, 2015-2016
-# heskjestad <cato@heskjestad.xyz>, 2021-2022
+# heskjestad <cato@heskjestad.xyz>, 2021-2023
 # Harald H. <haarektrans@gmail.com>, 2014
 # heskjestad <cato@heskjestad.xyz>, 2019-2021
 # Terje Uriansrud <terje@uriansrud.net>, 2010
@@ -15,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2023-04-06 12:45+0200\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: heskjestad <cato@heskjestad.xyz>, 2021-2022\n"
+"Last-Translator: heskjestad <cato@heskjestad.xyz>, 2021-2023\n"
 "Language-Team: Norwegian Bokmål (http://app.transifex.com/xfce/libxfce4ui/language/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -790,7 +790,7 @@ msgstr "Tidligere bidragsytere"
 
 #: xfce4-about/xfce4-about.desktop.in:6
 msgid "org.xfce.about"
-msgstr ""
+msgstr "org.xfce.about"
 
 #: xfce4-about/xfce4-about.desktop.in:11
 msgid "About Xfce"
