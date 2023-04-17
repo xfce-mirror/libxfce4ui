@@ -1,3 +1,42 @@
+4.19.0 (2023-04-17)
+======
+- Remove unused 'xfce_gtk_menu_append_seperator' (#49)
+- Switch to XDT_VERSION_INIT
+- Switch from intltool to gettext
+- Add comment about the need for gtk_widget_destroy()
+- Fix memory management in Vala generated code
+- Add annotation "(nullable)" where appropriate
+- Replace deprecated annotation: "(allow-none)"
+- Harden xfce_gtk_handle_tab_accels (thunar#1067)
+- screensaver: Avoid Xfconf warning
+- shortcuts-grabber: Ignore keyboard layout change
+- shortcuts: Fix Xfconf memory management
+- screensaver: Fix Xfconf memory management
+- Update copyright year
+- Add XfceScreensaver
+- docs: Fix broken links
+- shortcut-dialog: Use parent window for the grab if possible (Fixes 
+#52)
+- Fix memory leak
+- Fix memory leaks
+- XfceFileNameInput - wrap error message (Issue #60)
+- xfce4-about: Removed excess square brackets
+- Revert "XfceShortcutsGrabber: Detect auto-repeat key press"
+- build: Let xdt-depends.m4 macros set GLib macros
+- build: Remove GDK_VERSION_MIN_REQUIRED/MAX_ALLOWED
+- Translation Updates:
+  Albanian, Amharic, Arabic, Armenian, Armenian (Armenia), Asturian,
+  Azerbaijani, Basque, Belarusian, Bengali, Bulgarian, Catalan, Chinese
+  (China), Chinese (Hong Kong), Chinese (Taiwan), Croatian, Czech,
+  Danish, Dutch, Eastern Armenian, English (Australia), English (United
+  Kingdom), Estonian, Finnish, French, Galician, Georgian, German,
+  Greek, Hebrew, Hungarian, Icelandic, Indonesian, Interlingue,
+  Italian, Japanese, Kazakh, Korean, Lithuanian, Malay, Norwegian
+  Bokmål, Norwegian Nynorsk, Occitan (post 1500), Persian (Iran),
+  Polish, Portuguese, Portuguese (Brazil), Romanian, Russian, Serbian,
+  Slovak, Slovenian, Spanish, Swedish, Telugu, Thai, Turkish,
+  Ukrainian, Uyghur, Welsh
+
 4.18.0 (2022-12-15)
 ======
 - Update About credits
