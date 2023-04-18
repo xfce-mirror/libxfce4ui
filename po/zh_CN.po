@@ -795,7 +795,7 @@ msgstr "先前的贡献者"
 
 #: xfce4-about/xfce4-about.desktop.in:6
 msgid "org.xfce.about"
-msgstr ""
+msgstr "org.xfce.about"
 
 #: xfce4-about/xfce4-about.desktop.in:11
 msgid "About Xfce"
