@@ -44,9 +44,6 @@ gladecatalog_DATA = \
 	libxfce4ui-2.xml
 endif
 
-CLEANFILES = \
-	libxfce4ui-2.xml
-
 EXTRA_DIST = \
 	libxfce4ui-2.xml
 
