@@ -170,7 +170,7 @@ msgid ""
 "This shortcut is already being used for the action '%s'. Which action do you"
 " want to use?"
 msgstr ""
-"Questa scorciatoia è già assegnata al comando '%s'. Quale azione utilizzare?"
+"Questa scorciatoia è già assegnata all'azione '%s'. Quale azione utilizzare?"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:47
 #: libxfce4kbd-private/xfce-shortcuts.c:50
