@@ -430,6 +430,8 @@ xfce_gtk_toggle_tool_button_new_from_action_entry (const XfceGtkActionEntry *act
  * Convenience method do add separators, used to prevent code duplication
  *
  * Since: 4.16
+ *
+ * Deprecated: 4.19.1: Use xfce_gtk_menu_append_separator() instead.
  **/
 void
 xfce_gtk_menu_append_seperator (GtkMenuShell *menu)
