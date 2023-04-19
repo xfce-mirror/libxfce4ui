@@ -49,6 +49,7 @@ xfce_gtk_get_action_entry_by_id
 xfce_gtk_translate_action_entries
 xfce_gtk_handle_tab_accels
 xfce_gtk_execute_tab_accel
+xfce_gtk_menu_append_seperator
 xfce_gtk_menu_append_separator
 xfce_gtk_button_new_mixed
 xfce_gtk_frame_box_new
