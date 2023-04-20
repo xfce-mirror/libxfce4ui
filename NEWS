@@ -1,3 +1,11 @@
+4.19.1 (2023-04-20)
+======
+- Add deprecation warning and hide append_seperator() in the doc
+- Revert "Remove unused 'xfce_gtk_menu_append_seperator' (#49)"
+- build: Do not clean tracked file libxfce4ui-2.xml
+- Translation Updates:
+  Chinese (China), Italian
+
 4.19.0 (2023-04-17)
 ======
 - Remove unused 'xfce_gtk_menu_append_seperator' (#49)
