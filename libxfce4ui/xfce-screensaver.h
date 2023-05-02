@@ -18,6 +18,10 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
+#if !defined (_LIBXFCE4UI_INSIDE_LIBXFCE4UI_H) && !defined (LIBXFCE4UI_COMPILATION)
+#error "Only <libxfce4ui/libxfce4ui.h> can be included directly, this file is not part of the public API."
+#endif
+
 /* do not change this in __XFCE_SCREENSAVER_H__ or so: it allows xfce4-session and
  * xfce4-power-manager <= 4.18.0 to build with libxfce4ui >= 4.18.2 by avoiding
  * conflicting types */
