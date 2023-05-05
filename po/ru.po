@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2023-04-06 12:45+0200\n"
+"POT-Creation-Date: 2023-05-05 10:48+0200\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: Andrei Stepanov, 2022-2023\n"
 "Language-Team: Russian (http://app.transifex.com/xfce/libxfce4ui/language/ru/)\n"
@@ -795,10 +795,6 @@ msgstr "Переводчики"
 #: xfce4-about/contributors.h:162
 msgid "Previous contributors"
 msgstr "Предыдущие авторы"
-
-#: xfce4-about/xfce4-about.desktop.in:6
-msgid "org.xfce.about"
-msgstr "org.xfce.about"
 
 #: xfce4-about/xfce4-about.desktop.in:11
 msgid "About Xfce"
