@@ -177,9 +177,9 @@ xfce_screensaver_init (XfceScreensaver *saver)
 {
   GError *error = NULL;
 
-  if (! xfconf_init (&error))
+  if (!xfconf_init (&error))
     {
-      g_critical ("xfconf_init failed: %s\n", error->message);
+      g_critical ("Xfconf initialization failed: %s", error->message);
       g_clear_error (&error);
     }
   else
@@ -333,7 +333,7 @@ xfce_screensaver_finalize (GObject *object)
 /**
  * xfce_screensaver_new:
  *
- * Creates a new #XfceScreensaver object or increases the refrence count
+ * Creates a new #XfceScreensaver object or increases the reference count
  * of the current object.
  *
  * Returns: (transfer full): An #XfceScreensaver object, to be released with
@@ -410,7 +410,7 @@ xfce_reset_screen_saver (gpointer user_data)
 /**
  * xfce_screensaver_inhibit:
  * @saver: the #XfceScreensaver object
- * @inhibit: wether to inhibit the screensaver from activating.
+ * @inhibit: whether to inhibit the screensaver from activating
  *
  * Calling this function with @inhibit as %TRUE will prevent the user's
  * screensaver from activating. This is useful when the user is watching
