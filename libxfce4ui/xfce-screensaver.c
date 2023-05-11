@@ -320,12 +320,14 @@ xfce_screensaver_finalize (GObject *object)
 
   if (saver->lock_command)
     {
-      g_free (saver->heartbeat_command);
-      saver->heartbeat_command = NULL;
+      g_free (saver->lock_command);
+      saver->lock_command = NULL;
     }
 
   if (saver->xfconf_initialized)
     xfconf_shutdown ();
+
+  G_OBJECT_CLASS (xfce_screensaver_parent_class)->finalize (object);
 }
 
 
