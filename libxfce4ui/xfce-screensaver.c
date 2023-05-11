@@ -64,7 +64,6 @@ typedef enum
   SCREENSAVER_TYPE_FREEDESKTOP,
   SCREENSAVER_TYPE_CINNAMON,
   SCREENSAVER_TYPE_MATE,
-  SCREENSAVER_TYPE_GNOME,
   SCREENSAVER_TYPE_XFCE,
   SCREENSAVER_TYPE_OTHER,
   N_SCREENSAVER_TYPE
@@ -205,14 +204,6 @@ xfce_screensaver_init (XfceScreensaver *saver)
     {
       DBG ("using mate screensaver daemon");
       saver->screensaver_type = SCREENSAVER_TYPE_MATE;
-    }
-  else if (xfce_screen_saver_proxy_setup (saver,
-                                          "org.gnome.ScreenSaver",
-                                          "/org/gnome/ScreenSaver",
-                                          "org.gnome.ScreenSaver"))
-    {
-      DBG ("using gnome screensaver daemon");
-      saver->screensaver_type = SCREENSAVER_TYPE_GNOME;
     }
   else
     {
@@ -435,15 +426,12 @@ void
 xfce_screensaver_inhibit (XfceScreensaver *saver,
                           gboolean inhibit)
 {
-  /* SCREENSAVER_TYPE_FREEDESKTOP, SCREENSAVER_TYPE_MATE,
-   * SCREENSAVER_TYPE_GNOME and SCREENSAVER_TYPE_XFCE
-   * don't need a periodic timer because they have an actual
-   * inhibit/uninhibit setup */
+  /* SCREENSAVER_TYPE_FREEDESKTOP, SCREENSAVER_TYPE_MATE and SCREENSAVER_TYPE_XFCE
+   * don't need a periodic timer because they have an actual inhibit/uninhibit setup */
   switch (saver->screensaver_type)
     {
     case SCREENSAVER_TYPE_FREEDESKTOP:
     case SCREENSAVER_TYPE_MATE:
-    case SCREENSAVER_TYPE_GNOME:
     case SCREENSAVER_TYPE_XFCE:
       if (inhibit)
         {
@@ -526,7 +514,6 @@ xfce_screensaver_lock (XfceScreensaver *saver)
     {
     case SCREENSAVER_TYPE_FREEDESKTOP:
     case SCREENSAVER_TYPE_MATE:
-    case SCREENSAVER_TYPE_GNOME:
     case SCREENSAVER_TYPE_XFCE:
       response = g_dbus_proxy_call_sync (saver->proxy,
                                          "Lock",
