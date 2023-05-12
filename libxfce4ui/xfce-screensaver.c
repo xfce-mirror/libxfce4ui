@@ -528,7 +528,6 @@ xfce_screensaver_lock (XfceScreensaver *saver)
 {
   GVariant *response;
   GError *error = NULL;
-  gboolean ret = FALSE;
   gint status;
 
   /* prioritize user command if another screensaver is not already running */
@@ -607,18 +606,19 @@ xfce_screensaver_lock (XfceScreensaver *saver)
         }
     }
 
-  /* fallback: no user command or dbus interface set up */
-  if (!ret)
-    ret = g_spawn_command_line_sync ("xflock4", NULL, NULL, &status, NULL)
-          && g_spawn_check_exit_status (status, NULL);
+  /* fallback: no user command or dbus interface set up, this list (in addition to the
+   * above dbus screensavers) should be kept in sync with xflock4 */
+  if (g_spawn_command_line_sync ("xdg-screensaver lock", NULL, NULL, &status, NULL)
+      && g_spawn_check_exit_status (status, NULL))
+    return TRUE;
 
-  if (!ret)
-    ret = g_spawn_command_line_sync ("xdg-screensaver lock", NULL, NULL, &status, NULL)
-          && g_spawn_check_exit_status (status, NULL);
+  if (g_spawn_command_line_sync ("xscreensaver-command -lock", NULL, NULL, &status, NULL)
+      && g_spawn_check_exit_status (status, NULL))
+    return TRUE;
 
-  if (!ret)
-    ret = g_spawn_command_line_sync ("xscreensaver-command -lock", NULL, NULL, &status, NULL)
-          && g_spawn_check_exit_status (status, NULL);
+  if (g_spawn_command_line_sync ("light-locker-command --lock", NULL, NULL, &status, NULL)
+      && g_spawn_check_exit_status (status, NULL))
+    return TRUE;
 
-  return ret;
+  return FALSE;
 }
