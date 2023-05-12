@@ -113,23 +113,20 @@ xfce_screensaver_class_init (XfceScreensaverClass *klass)
                           | G_PARAM_STATIC_NICK \
                           | G_PARAM_STATIC_BLURB)
 
-  /* heartbeat command - to inhibit the screensaver from activating,
-   * i.e. xscreensaver-command -deactivate */
   g_object_class_install_property (object_class, PROP_HEARTBEAT_COMMAND,
                                    g_param_spec_string (HEARTBEAT_COMMAND,
                                                         HEARTBEAT_COMMAND,
                                                         "Inhibit the screensaver from activating, "
-                                                        "i.e. xscreensaver-command -deactivate",
-                                                        "xscreensaver-command -deactivate",
+                                                        "e.g. xscreensaver-command --deactivate",
+                                                        NULL,
                                                         XFCE_PARAM_FLAGS));
 
-  /* lock command - to lock the desktop, i.e. xscreensaver-command -lock */
   g_object_class_install_property (object_class, PROP_LOCK_COMMAND,
                                    g_param_spec_string (LOCK_COMMAND,
                                                         LOCK_COMMAND,
-                                                        "Lock the desktop, i.e. "
-                                                        "xscreensaver-command -lock",
-                                                        "xscreensaver-command -lock",
+                                                        "Lock the desktop, e.g. "
+                                                        "xscreensaver-command --lock",
+                                                        NULL,
                                                         XFCE_PARAM_FLAGS));
 #undef XFCE_PARAM_FLAGS
 }
@@ -259,18 +256,25 @@ xfce_screensaver_set_property (GObject *object,
                                GParamSpec *pspec)
 {
   XfceScreensaver *saver = XFCE_SCREENSAVER (object);
+  const gchar *str_value;
 
   switch (property_id)
     {
     case PROP_HEARTBEAT_COMMAND:
       g_free (saver->heartbeat_command);
-      saver->heartbeat_command = g_value_dup_string (value);
+      saver->heartbeat_command = NULL;
+      str_value = g_value_get_string (value);
+      if (!xfce_str_is_empty (str_value))
+        saver->heartbeat_command = g_strdup (str_value);
       DBG ("saver->heartbeat_command %s", saver->heartbeat_command);
       break;
 
     case PROP_LOCK_COMMAND:
       g_free (saver->lock_command);
-      saver->lock_command = g_value_dup_string (value);
+      saver->lock_command = NULL;
+      str_value = g_value_get_string (value);
+      if (!xfce_str_is_empty (str_value))
+        saver->lock_command = g_strdup (str_value);
       DBG ("saver->lock_command %s", saver->lock_command);
       break;
 
