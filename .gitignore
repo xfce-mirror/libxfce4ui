@@ -6,7 +6,6 @@ compile
 config.*
 configure
 configure~
-configure.ac
 depcomp
 gtk-doc.m4
 gtk-doc.make
