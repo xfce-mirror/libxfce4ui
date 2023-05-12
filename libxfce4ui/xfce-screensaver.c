@@ -258,18 +258,25 @@ xfce_screensaver_set_property (GObject *object,
                                GParamSpec *pspec)
 {
   XfceScreensaver *saver = XFCE_SCREENSAVER (object);
+  const gchar *str_value;
 
   switch (property_id)
     {
     case PROP_HEARTBEAT_COMMAND:
       g_free (saver->heartbeat_command);
-      saver->heartbeat_command = g_value_dup_string (value);
+      saver->heartbeat_command = NULL;
+      str_value = g_value_get_string (value);
+      if (!xfce_str_is_empty (str_value))
+        saver->heartbeat_command = g_strdup (str_value);
       DBG ("saver->heartbeat_command %s", saver->heartbeat_command);
       break;
 
     case PROP_LOCK_COMMAND:
       g_free (saver->lock_command);
-      saver->lock_command = g_value_dup_string (value);
+      saver->lock_command = NULL;
+      str_value = g_value_get_string (value);
+      if (!xfce_str_is_empty (str_value))
+        saver->lock_command = g_strdup (str_value);
       DBG ("saver->lock_command %s", saver->lock_command);
       break;
 
