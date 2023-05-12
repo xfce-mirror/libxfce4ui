@@ -533,6 +533,15 @@ xfce_screensaver_lock (XfceScreensaver *saver)
   gboolean ret = FALSE;
   gint status;
 
+  /* prioritize user command and don't try anything else it that fails: if changed,
+   * this behavior should be kept in sync with xflock4 */
+  if (saver->lock_command != NULL)
+    {
+      DBG ("running lock command: %s", saver->lock_command);
+      return g_spawn_command_line_sync (saver->lock_command, NULL, NULL, &status, NULL)
+             && g_spawn_check_exit_status (status, NULL);
+    }
+
   /* try dbus screensavers */
   for (guint i = 0; i < SCREENSAVER_TYPE_OTHER; i++)
     {
@@ -603,14 +612,7 @@ xfce_screensaver_lock (XfceScreensaver *saver)
         }
     }
 
-  /* fallback: no dbus interface set up */
-  if (saver->lock_command != NULL)
-    {
-      DBG ("running lock command: %s", saver->lock_command);
-      ret = g_spawn_command_line_sync (saver->lock_command, NULL, NULL, &status, NULL)
-            && g_spawn_check_exit_status (status, NULL);
-    }
-
+  /* fallback: no user command or dbus interface set up */
   if (!ret)
     ret = g_spawn_command_line_sync ("xflock4", NULL, NULL, &status, NULL)
           && g_spawn_check_exit_status (status, NULL);
