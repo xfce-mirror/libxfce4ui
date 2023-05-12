@@ -59,15 +59,14 @@ static void      xfce_screensaver_finalize        (GObject         *object);
 
 
 
+/* in order of priority, used to browse the screensaver array below */
 typedef enum
 {
-  SCREENSAVER_TYPE_NONE,
-  SCREENSAVER_TYPE_FREEDESKTOP,
+  SCREENSAVER_TYPE_XFCE,
   SCREENSAVER_TYPE_CINNAMON,
   SCREENSAVER_TYPE_MATE,
-  SCREENSAVER_TYPE_XFCE,
-  SCREENSAVER_TYPE_OTHER,
-  N_SCREENSAVER_TYPE
+  SCREENSAVER_TYPE_FREEDESKTOP,
+  SCREENSAVER_TYPE_OTHER
 } ScreensaverType;
 
 enum
@@ -81,7 +80,7 @@ struct _XfceScreensaver
 {
   GObject parent;
 
-  GDBusProxy *proxy;
+  GDBusProxy *proxies[SCREENSAVER_TYPE_OTHER];
   guint screensaver_id;
   guint cookie;
   ScreensaverType screensaver_type;
@@ -89,6 +88,22 @@ struct _XfceScreensaver
   gboolean xfconf_initialized;
   gchar *heartbeat_command;
   gchar *lock_command;
+};
+
+typedef struct
+{
+  const gchar *name;
+  const gchar *path;
+  const gchar *iface;
+  gboolean running;
+} DbusScreensaver;
+
+static DbusScreensaver dbus_screensavers[] =
+{
+  { "org.xfce.ScreenSaver", "/org/xfce/ScreenSaver", "org.xfce.ScreenSaver", FALSE },
+  { "org.cinnamon.ScreenSaver", "/org/cinnamon/ScreenSaver", "org.cinnamon.ScreenSaver", FALSE },
+  { "org.mate.ScreenSaver", "/org/mate/ScreenSaver", "org.mate.ScreenSaver", FALSE },
+  { "org.freedesktop.ScreenSaver", "/org/freedesktop/ScreenSaver", "org.freedesktop.ScreenSaver", FALSE },
 };
 
 
@@ -136,39 +151,61 @@ xfce_screensaver_class_init (XfceScreensaverClass *klass)
 
 
 
-static gboolean
-xfce_screen_saver_proxy_setup (XfceScreensaver *saver,
-                               const gchar *name,
-                               const gchar *object_path,
-                               const gchar *interface)
+static void
+name_owner_changed (GDBusProxy *proxy,
+                    GParamSpec *pspec,
+                    XfceScreensaver *saver)
 {
-  GDBusProxy *proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SESSION,
-                                                     G_DBUS_PROXY_FLAGS_NONE,
-                                                     NULL,
-                                                     name,
-                                                     object_path,
-                                                     interface,
-                                                     NULL,
-                                                     NULL);
-  if (proxy != NULL)
+  /* update current proxy status */
+  for (guint i = 0; i < SCREENSAVER_TYPE_OTHER; i++)
     {
-      /* is there anyone actually providing a service? */
-      gchar *owner = g_dbus_proxy_get_name_owner (proxy);
-      if (owner != NULL)
+      if (saver->proxies[i] == proxy)
         {
-          DBG ("proxy owner: %s", owner);
-          saver->proxy = proxy;
-          g_free (owner);
-          return TRUE;
-        }
-      else
-        {
-          /* not using this proxy, nobody's home */
-          g_object_unref (proxy);
+          gchar *owner = g_dbus_proxy_get_name_owner (proxy);
+          if (owner == NULL)
+            {
+              dbus_screensavers[i].running = FALSE;
+              if (saver->screensaver_type == i)
+                {
+                  saver->screensaver_type = SCREENSAVER_TYPE_OTHER;
+                  saver->cookie = 0;
+                  if (saver->screensaver_id != 0)
+                    {
+                      g_source_remove (saver->screensaver_id);
+                      saver->screensaver_id = 0;
+                    }
+                }
+            }
+          else
+            {
+              dbus_screensavers[i].running = TRUE;
+              g_free (owner);
+            }
+          break;
         }
     }
 
-  return FALSE;
+  /* update used screensaver */
+  for (guint i = 0; i < SCREENSAVER_TYPE_OTHER; i++)
+    {
+      if (dbus_screensavers[i].running && i != saver->screensaver_type)
+        {
+          if (i < saver->screensaver_type)
+            {
+              gboolean inhibited = saver->cookie != 0 || saver->screensaver_id != 0;
+              if (inhibited)
+                xfce_screensaver_inhibit (saver, FALSE);
+              saver->screensaver_type = i;
+              if (inhibited)
+                xfce_screensaver_inhibit (saver, TRUE);
+            }
+          else
+            {
+              g_warning ("%s running but unused: using %s instead",
+                         dbus_screensavers[i].name, dbus_screensavers[saver->screensaver_type].name);
+            }
+        }
+    }
 }
 
 
@@ -176,43 +213,30 @@ xfce_screen_saver_proxy_setup (XfceScreensaver *saver,
 static void
 xfce_screensaver_init (XfceScreensaver *saver)
 {
-  if (xfce_screen_saver_proxy_setup (saver,
-                                     "org.xfce.ScreenSaver",
-                                     "/org/xfce/ScreenSaver",
-                                     "org.xfce.ScreenSaver"))
+  GError *error = NULL;
+
+  saver->screensaver_type = SCREENSAVER_TYPE_OTHER;
+
+  for (guint i = 0; i < SCREENSAVER_TYPE_OTHER; i++)
     {
-      DBG ("using Xfce screensaver daemon");
-      saver->screensaver_type = SCREENSAVER_TYPE_XFCE;
-    }
-  /* Try to use the freedesktop dbus API */
-  else if (xfce_screen_saver_proxy_setup (saver,
-                                          "org.freedesktop.ScreenSaver",
-                                          "/org/freedesktop/ScreenSaver",
-                                          "org.freedesktop.ScreenSaver"))
-    {
-      DBG ("using freedesktop compliant screensaver daemon");
-      saver->screensaver_type = SCREENSAVER_TYPE_FREEDESKTOP;
-    }
-  else if (xfce_screen_saver_proxy_setup (saver,
-                                          "org.cinnamon.ScreenSaver",
-                                          "/org/cinnamon/ScreenSaver",
-                                          "org.cinnamon.ScreenSaver"))
-    {
-      DBG ("using cinnamon screensaver daemon");
-      saver->screensaver_type = SCREENSAVER_TYPE_CINNAMON;
-    }
-  else if (xfce_screen_saver_proxy_setup (saver,
-                                          "org.mate.ScreenSaver",
-                                          "/org/mate/ScreenSaver",
-                                          "org.mate.ScreenSaver"))
-    {
-      DBG ("using mate screensaver daemon");
-      saver->screensaver_type = SCREENSAVER_TYPE_MATE;
-    }
-  else
-    {
-      DBG ("using command line screensaver interface");
-      saver->screensaver_type = SCREENSAVER_TYPE_OTHER;
+      saver->proxies[i] = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SESSION,
+                                                         G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START_AT_CONSTRUCTION,
+                                                         NULL,
+                                                         dbus_screensavers[i].name,
+                                                         dbus_screensavers[i].path,
+                                                         dbus_screensavers[i].iface,
+                                                         NULL,
+                                                         &error);
+      if (error != NULL)
+        {
+          g_warning ("Failed to get a proxy for %s: %s", dbus_screensavers[i].name, error->message);
+          g_clear_error (&error);
+        }
+      else
+        {
+          name_owner_changed (saver->proxies[i], NULL, saver);
+          g_signal_connect (saver->proxies[i], "notify::g-name-owner", G_CALLBACK (name_owner_changed), saver);
+        }
     }
 }
 
@@ -323,11 +347,8 @@ xfce_screensaver_finalize (GObject *object)
       saver->screensaver_id = 0;
     }
 
-  if (saver->proxy)
-    {
-      g_object_unref (saver->proxy);
-      saver->proxy = NULL;
-    }
+  for (guint i = 0; i < SCREENSAVER_TYPE_OTHER; i++)
+    g_clear_object (&saver->proxies[i]);
 
   if (saver->heartbeat_command)
     {
@@ -388,9 +409,9 @@ xfce_reset_screen_saver (gpointer user_data)
   TRACE ("entering\n");
 
   /* If we found an interface during the setup, use it */
-  if (saver->proxy)
+  if (saver->screensaver_type != SCREENSAVER_TYPE_OTHER)
     {
-      GVariant *response = g_dbus_proxy_call_sync (saver->proxy,
+      GVariant *response = g_dbus_proxy_call_sync (saver->proxies[saver->screensaver_type],
                                                    "SimulateUserActivity",
                                                    NULL,
                                                    G_DBUS_CALL_FLAGS_NONE,
@@ -434,12 +455,12 @@ xfce_screensaver_inhibit (XfceScreensaver *saver,
    * don't need a periodic timer because they have an actual inhibit/uninhibit setup */
   switch (saver->screensaver_type)
     {
-    case SCREENSAVER_TYPE_FREEDESKTOP:
-    case SCREENSAVER_TYPE_MATE:
     case SCREENSAVER_TYPE_XFCE:
+    case SCREENSAVER_TYPE_MATE:
+    case SCREENSAVER_TYPE_FREEDESKTOP:
       if (inhibit)
         {
-          GVariant *response = g_dbus_proxy_call_sync (saver->proxy,
+          GVariant *response = g_dbus_proxy_call_sync (saver->proxies[saver->screensaver_type],
                                                        "Inhibit",
                                                        g_variant_new ("(ss)",
                                                                       PACKAGE_NAME,
@@ -455,7 +476,7 @@ xfce_screensaver_inhibit (XfceScreensaver *saver,
         }
       else
       {
-        GVariant *response = g_dbus_proxy_call_sync (saver->proxy,
+        GVariant *response = g_dbus_proxy_call_sync (saver->proxies[saver->screensaver_type],
                                                      "UnInhibit",
                                                      g_variant_new ("(u)",
                                                                     saver->cookie),
@@ -468,8 +489,8 @@ xfce_screensaver_inhibit (XfceScreensaver *saver,
       }
       break;
 
-    case SCREENSAVER_TYPE_OTHER:
     case SCREENSAVER_TYPE_CINNAMON:
+    case SCREENSAVER_TYPE_OTHER:
       /* remove any existing keepalive */
       if (saver->screensaver_id != 0)
         {
@@ -488,7 +509,7 @@ xfce_screensaver_inhibit (XfceScreensaver *saver,
       break;
 
     default:
-      g_warning ("Not able to inhibit or uninhibit screensaver");
+      g_warn_if_reached ();
       break;
     }
 }
@@ -515,72 +536,77 @@ xfce_screensaver_lock (XfceScreensaver *saver)
   gboolean ret = FALSE;
   gint status;
 
-  switch (saver->screensaver_type)
+  /* try dbus screensavers */
+  for (guint i = 0; i < SCREENSAVER_TYPE_OTHER; i++)
     {
-    case SCREENSAVER_TYPE_XFCE:
-      response = g_dbus_proxy_call_sync (saver->proxy,
-                                         "Lock",
-                                         g_variant_new ("()"),
-                                         G_DBUS_CALL_FLAGS_NONE,
-                                         -1,
-                                         NULL,
-                                         NULL);
-      if (response != NULL)
+      if ((saver->screensaver_type == SCREENSAVER_TYPE_OTHER && saver->proxies[i] != NULL)
+          || saver->screensaver_type == i)
         {
-          g_variant_unref (response);
-          return TRUE;
+          switch (i)
+            {
+            case SCREENSAVER_TYPE_XFCE:
+              response = g_dbus_proxy_call_sync (saver->proxies[i],
+                                                 "Lock",
+                                                 NULL,
+                                                 G_DBUS_CALL_FLAGS_NONE,
+                                                 -1,
+                                                 NULL,
+                                                 &error);
+              break;
+
+            case SCREENSAVER_TYPE_CINNAMON:
+              response = g_dbus_proxy_call_sync (saver->proxies[i],
+                                                 "Lock",
+                                                 g_variant_new ("(s)", PACKAGE_NAME),
+                                                 G_DBUS_CALL_FLAGS_NONE,
+                                                 -1,
+                                                 NULL,
+                                                 &error);
+              break;
+
+            case SCREENSAVER_TYPE_MATE:
+            case SCREENSAVER_TYPE_FREEDESKTOP:
+              response = g_dbus_proxy_call_sync (saver->proxies[i],
+                                                 "Lock",
+                                                 NULL,
+                                                 G_DBUS_CALL_FLAGS_NONE,
+                                                 NO_REPLY_TIMEOUT,
+                                                 NULL,
+                                                 &error);
+
+              /* mate-screensaver does not send a reply in case of success, and for screensavers
+               * using org.freedesktop.ScreenSaver we're not sure, so if no other error is received
+               * after a reasonnable timeout, consider it a success */
+              if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_TIMED_OUT))
+                {
+                  response = g_variant_ref_sink (g_variant_new ("()"));
+                  g_clear_error (&error);
+                }
+              break;
+
+            default:
+              g_warn_if_reached ();
+              continue;
+            }
+
+          if (response != NULL)
+            {
+              g_variant_unref (response);
+              return TRUE;
+            }
+          else
+            {
+              /* if it's running and can lock it should succeed, don't try anything else */
+              gboolean running = !g_error_matches (error, G_DBUS_ERROR, G_DBUS_ERROR_NAME_HAS_NO_OWNER);
+              gboolean can_lock = !g_error_matches (error, G_DBUS_ERROR, G_DBUS_ERROR_UNKNOWN_METHOD);
+              g_clear_error (&error);
+              if (running && can_lock)
+                return FALSE;
+            }
         }
-      break;
-
-    case SCREENSAVER_TYPE_CINNAMON:
-      response = g_dbus_proxy_call_sync (saver->proxy,
-                                         "Lock",
-                                         g_variant_new ("(s)", PACKAGE_NAME),
-                                         G_DBUS_CALL_FLAGS_NONE,
-                                         -1,
-                                         NULL,
-                                         NULL);
-      if (response != NULL)
-        {
-          g_variant_unref (response);
-          return TRUE;
-        }
-      break;
-
-    case SCREENSAVER_TYPE_MATE:
-    case SCREENSAVER_TYPE_FREEDESKTOP:
-      response = g_dbus_proxy_call_sync (saver->proxy,
-                                         "Lock",
-                                         NULL,
-                                         G_DBUS_CALL_FLAGS_NONE,
-                                         NO_REPLY_TIMEOUT,
-                                         NULL,
-                                         &error);
-
-      /* mate-screensaver does not send a reply in case of success, and for screensavers
-       * using org.freedesktop.ScreenSaver we're not sure, so if no other error is received
-       * after a reasonnable timeout, consider it a success */
-      if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_TIMED_OUT))
-        response = g_variant_ref_sink (g_variant_new ("()"));
-      g_clear_error (&error);
-
-      if (response != NULL)
-        {
-          g_variant_unref (response);
-          return TRUE;
-        }
-      break;
-
-    case SCREENSAVER_TYPE_OTHER:
-      /* Will be handled after the switch statement. */
-      break;
-
-    default:
-      g_warning ("Unknown screensaver type set when calling xfce_screensaver_lock");
-      break;
     }
 
-  /* Fallback: either no dbus interface set up or it didn't Lock(). */
+  /* fallback: no dbus interface set up */
   if (saver->lock_command != NULL)
     {
       DBG ("running lock command: %s", saver->lock_command);
