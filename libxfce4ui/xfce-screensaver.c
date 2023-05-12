@@ -509,13 +509,13 @@ gboolean
 xfce_screensaver_lock (XfceScreensaver *saver)
 {
   GVariant *response;
+  GError *error = NULL;
   gboolean ret = FALSE;
   gint status;
 
   switch (saver->screensaver_type)
     {
     case SCREENSAVER_TYPE_FREEDESKTOP:
-    case SCREENSAVER_TYPE_MATE:
     case SCREENSAVER_TYPE_XFCE:
       response = g_dbus_proxy_call_sync (saver->proxy,
                                          "Lock",
@@ -539,6 +539,28 @@ xfce_screensaver_lock (XfceScreensaver *saver)
                                          -1,
                                          NULL,
                                          NULL);
+      if (response != NULL)
+        {
+          g_variant_unref (response);
+          return TRUE;
+        }
+      break;
+
+    case SCREENSAVER_TYPE_MATE:
+      response = g_dbus_proxy_call_sync (saver->proxy,
+                                         "Lock",
+                                         NULL,
+                                         G_DBUS_CALL_FLAGS_NONE,
+                                         2000,
+                                         NULL,
+                                         &error);
+
+      /* workaround: mate-screensaver does not send a response in case of success when it
+       * should, so if no other error is received after two seconds, consider it a success */
+      if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_TIMED_OUT))
+        response = g_variant_ref_sink (g_variant_new ("()"));
+      g_clear_error (&error);
+
       if (response != NULL)
         {
           g_variant_unref (response);
