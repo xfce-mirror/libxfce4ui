@@ -44,6 +44,7 @@
 #define XFPM_PROPERTIES_PREFIX  "/xfce4-power-manager/"
 #define XFSM_CHANNEL            "xfce4-session"
 #define XFSM_PROPERTIES_PREFIX  "/general/"
+#define NO_REPLY_TIMEOUT        2000
 
 static void      xfce_screensaver_get_property    (GObject         *object,
                                                    guint            property_id,
@@ -393,7 +394,7 @@ xfce_reset_screen_saver (gpointer user_data)
                                                    "SimulateUserActivity",
                                                    NULL,
                                                    G_DBUS_CALL_FLAGS_NONE,
-                                                   -1,
+                                                   NO_REPLY_TIMEOUT,
                                                    NULL,
                                                    NULL);
       if (response != NULL)
@@ -510,13 +511,12 @@ gboolean
 xfce_screensaver_lock (XfceScreensaver *saver)
 {
   GVariant *response;
+  GError *error = NULL;
   gboolean ret = FALSE;
   gint status;
 
   switch (saver->screensaver_type)
     {
-    case SCREENSAVER_TYPE_FREEDESKTOP:
-    case SCREENSAVER_TYPE_MATE:
     case SCREENSAVER_TYPE_XFCE:
       response = g_dbus_proxy_call_sync (saver->proxy,
                                          "Lock",
@@ -540,6 +540,30 @@ xfce_screensaver_lock (XfceScreensaver *saver)
                                          -1,
                                          NULL,
                                          NULL);
+      if (response != NULL)
+        {
+          g_variant_unref (response);
+          return TRUE;
+        }
+      break;
+
+    case SCREENSAVER_TYPE_MATE:
+    case SCREENSAVER_TYPE_FREEDESKTOP:
+      response = g_dbus_proxy_call_sync (saver->proxy,
+                                         "Lock",
+                                         NULL,
+                                         G_DBUS_CALL_FLAGS_NONE,
+                                         NO_REPLY_TIMEOUT,
+                                         NULL,
+                                         &error);
+
+      /* mate-screensaver does not send a reply in case of success, and for screensavers
+       * using org.freedesktop.ScreenSaver we're not sure, so if no other error is received
+       * after a reasonnable timeout, consider it a success */
+      if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_TIMED_OUT))
+        response = g_variant_ref_sink (g_variant_new ("()"));
+      g_clear_error (&error);
+
       if (response != NULL)
         {
           g_variant_unref (response);
