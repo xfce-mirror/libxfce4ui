@@ -44,8 +44,8 @@
 #define XFPM_PROPERTIES_PREFIX  "/xfce4-power-manager/"
 #define XFSM_CHANNEL            "xfce4-session"
 #define XFSM_PROPERTIES_PREFIX  "/general/"
+#define NO_REPLY_TIMEOUT        2000
 
-static void      xfce_screensaver_finalize        (GObject         *object);
 static void      xfce_screensaver_get_property    (GObject         *object,
                                                    guint            property_id,
                                                    GValue          *value,
@@ -54,19 +54,19 @@ static void      xfce_screensaver_set_property    (GObject         *object,
                                                    guint            property_id,
                                                    const GValue    *value,
                                                    GParamSpec      *pspec);
+static void      xfce_screensaver_constructed     (GObject         *object);
+static void      xfce_screensaver_finalize        (GObject         *object);
 
 
 
+/* in order of priority, used to browse the screensaver array below */
 typedef enum
 {
-  SCREENSAVER_TYPE_NONE,
-  SCREENSAVER_TYPE_FREEDESKTOP,
+  SCREENSAVER_TYPE_XFCE,
   SCREENSAVER_TYPE_CINNAMON,
   SCREENSAVER_TYPE_MATE,
-  SCREENSAVER_TYPE_GNOME,
-  SCREENSAVER_TYPE_XFCE,
-  SCREENSAVER_TYPE_OTHER,
-  N_SCREENSAVER_TYPE
+  SCREENSAVER_TYPE_FREEDESKTOP,
+  SCREENSAVER_TYPE_OTHER
 } ScreensaverType;
 
 enum
@@ -80,15 +80,30 @@ struct _XfceScreensaver
 {
   GObject parent;
 
+  GDBusProxy *proxies[SCREENSAVER_TYPE_OTHER];
+  guint screensaver_id;
   guint cookie;
+  ScreensaverType screensaver_type;
+
+  gboolean xfconf_initialized;
   gchar *heartbeat_command;
   gchar *lock_command;
-  GDBusProxy *proxy;
-  guint screensaver_id;
-  ScreensaverType screensaver_type;
-  gboolean xfconf_initialized;
-  XfconfChannel *xfpm_channel;
-  XfconfChannel *xfsm_channel;
+};
+
+typedef struct
+{
+  const gchar *name;
+  const gchar *path;
+  const gchar *iface;
+  gboolean running;
+} DbusScreensaver;
+
+static DbusScreensaver dbus_screensavers[] =
+{
+  { "org.xfce.ScreenSaver", "/org/xfce/ScreenSaver", "org.xfce.ScreenSaver", FALSE },
+  { "org.cinnamon.ScreenSaver", "/org/cinnamon/ScreenSaver", "org.cinnamon.ScreenSaver", FALSE },
+  { "org.mate.ScreenSaver", "/org/mate/ScreenSaver", "org.mate.ScreenSaver", FALSE },
+  { "org.freedesktop.ScreenSaver", "/org/freedesktop/ScreenSaver", "org.freedesktop.ScreenSaver", FALSE },
 };
 
 
@@ -102,9 +117,10 @@ xfce_screensaver_class_init (XfceScreensaverClass *klass)
 {
   GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
-  object_class->finalize = xfce_screensaver_finalize;
-  object_class->set_property = xfce_screensaver_set_property;
   object_class->get_property = xfce_screensaver_get_property;
+  object_class->set_property = xfce_screensaver_set_property;
+  object_class->constructed = xfce_screensaver_constructed;
+  object_class->finalize = xfce_screensaver_finalize;
 
 #define XFCE_PARAM_FLAGS (G_PARAM_READWRITE \
                           | G_PARAM_CONSTRUCT \
@@ -112,62 +128,81 @@ xfce_screensaver_class_init (XfceScreensaverClass *klass)
                           | G_PARAM_STATIC_NICK \
                           | G_PARAM_STATIC_BLURB)
 
-  /* heartbeat command - to inhibit the screensaver from activating,
-   * i.e. xscreensaver-command -deactivate */
   g_object_class_install_property (object_class, PROP_HEARTBEAT_COMMAND,
                                    g_param_spec_string (HEARTBEAT_COMMAND,
                                                         HEARTBEAT_COMMAND,
                                                         "Inhibit the screensaver from activating, "
-                                                        "i.e. xscreensaver-command -deactivate",
-                                                        "xscreensaver-command -deactivate",
+                                                        "e.g. xscreensaver-command --deactivate",
+                                                        NULL,
                                                         XFCE_PARAM_FLAGS));
 
-  /* lock command - to lock the desktop, i.e. xscreensaver-command -lock */
   g_object_class_install_property (object_class, PROP_LOCK_COMMAND,
                                    g_param_spec_string (LOCK_COMMAND,
                                                         LOCK_COMMAND,
-                                                        "Lock the desktop, i.e. "
-                                                        "xscreensaver-command -lock",
-                                                        "xscreensaver-command -lock",
+                                                        "Lock the desktop, e.g. "
+                                                        "xscreensaver-command --lock",
+                                                        NULL,
                                                         XFCE_PARAM_FLAGS));
 #undef XFCE_PARAM_FLAGS
 }
 
 
 
-static gboolean
-xfce_screen_saver_proxy_setup (XfceScreensaver *saver,
-                               const gchar *name,
-                               const gchar *object_path,
-                               const gchar *interface)
+static void
+name_owner_changed (GDBusProxy *proxy,
+                    GParamSpec *pspec,
+                    XfceScreensaver *saver)
 {
-  GDBusProxy *proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SESSION,
-                                                     G_DBUS_PROXY_FLAGS_NONE,
-                                                     NULL,
-                                                     name,
-                                                     object_path,
-                                                     interface,
-                                                     NULL,
-                                                     NULL);
-  if (proxy != NULL)
+  /* update current proxy status */
+  for (guint i = 0; i < SCREENSAVER_TYPE_OTHER; i++)
     {
-      /* is there anyone actually providing a service? */
-      gchar *owner = g_dbus_proxy_get_name_owner (proxy);
-      if (owner != NULL)
+      if (saver->proxies[i] == proxy)
         {
-          DBG ("proxy owner: %s", owner);
-          saver->proxy = proxy;
-          g_free (owner);
-          return TRUE;
-        }
-      else
-        {
-          /* not using this proxy, nobody's home */
-          g_object_unref (proxy);
+          gchar *owner = g_dbus_proxy_get_name_owner (proxy);
+          if (owner == NULL)
+            {
+              dbus_screensavers[i].running = FALSE;
+              if (saver->screensaver_type == i)
+                {
+                  saver->screensaver_type = SCREENSAVER_TYPE_OTHER;
+                  saver->cookie = 0;
+                  if (saver->screensaver_id != 0)
+                    {
+                      g_source_remove (saver->screensaver_id);
+                      saver->screensaver_id = 0;
+                    }
+                }
+            }
+          else
+            {
+              dbus_screensavers[i].running = TRUE;
+              g_free (owner);
+            }
+          break;
         }
     }
 
-  return FALSE;
+  /* update used screensaver */
+  for (guint i = 0; i < SCREENSAVER_TYPE_OTHER; i++)
+    {
+      if (dbus_screensavers[i].running && i != saver->screensaver_type)
+        {
+          if (i < saver->screensaver_type)
+            {
+              gboolean inhibited = saver->cookie != 0 || saver->screensaver_id != 0;
+              if (inhibited)
+                xfce_screensaver_inhibit (saver, FALSE);
+              saver->screensaver_type = i;
+              if (inhibited)
+                xfce_screensaver_inhibit (saver, TRUE);
+            }
+          else
+            {
+              g_warning ("%s running but unused: using %s instead",
+                         dbus_screensavers[i].name, dbus_screensavers[saver->screensaver_type].name);
+            }
+        }
+    }
 }
 
 
@@ -177,63 +212,28 @@ xfce_screensaver_init (XfceScreensaver *saver)
 {
   GError *error = NULL;
 
-  if (! xfconf_init (&error))
-    {
-      g_critical ("xfconf_init failed: %s\n", error->message);
-      g_clear_error (&error);
-    }
-  else
-    {
-      saver->xfconf_initialized = TRUE;
-      saver->xfpm_channel = xfconf_channel_get (XFPM_CHANNEL);
-      saver->xfsm_channel = xfconf_channel_get (XFSM_CHANNEL);
-    }
+  saver->screensaver_type = SCREENSAVER_TYPE_OTHER;
 
-  if (xfce_screen_saver_proxy_setup (saver,
-                                     "org.xfce.ScreenSaver",
-                                     "/org/xfce/ScreenSaver",
-                                     "org.xfce.ScreenSaver"))
+  for (guint i = 0; i < SCREENSAVER_TYPE_OTHER; i++)
     {
-      DBG ("using Xfce screensaver daemon");
-      saver->screensaver_type = SCREENSAVER_TYPE_XFCE;
-    }
-  /* Try to use the freedesktop dbus API */
-  else if (xfce_screen_saver_proxy_setup (saver,
-                                          "org.freedesktop.ScreenSaver",
-                                          "/org/freedesktop/ScreenSaver",
-                                          "org.freedesktop.ScreenSaver"))
-    {
-      DBG ("using freedesktop compliant screensaver daemon");
-      saver->screensaver_type = SCREENSAVER_TYPE_FREEDESKTOP;
-    }
-  else if (xfce_screen_saver_proxy_setup (saver,
-                                          "org.cinnamon.ScreenSaver",
-                                          "/org/cinnamon/ScreenSaver",
-                                          "org.cinnamon.ScreenSaver"))
-    {
-      DBG ("using cinnamon screensaver daemon");
-      saver->screensaver_type = SCREENSAVER_TYPE_CINNAMON;
-    }
-  else if (xfce_screen_saver_proxy_setup (saver,
-                                          "org.mate.ScreenSaver",
-                                          "/org/mate/ScreenSaver",
-                                          "org.mate.ScreenSaver"))
-    {
-      DBG ("using mate screensaver daemon");
-      saver->screensaver_type = SCREENSAVER_TYPE_MATE;
-    }
-  else if (xfce_screen_saver_proxy_setup (saver,
-                                          "org.gnome.ScreenSaver",
-                                          "/org/gnome/ScreenSaver",
-                                          "org.gnome.ScreenSaver"))
-    {
-      DBG ("using gnome screensaver daemon");
-      saver->screensaver_type = SCREENSAVER_TYPE_GNOME;
-    }
-  else
-    {
-      DBG ("using command line screensaver interface");
-      saver->screensaver_type = SCREENSAVER_TYPE_OTHER;
+      saver->proxies[i] = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SESSION,
+                                                         G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START_AT_CONSTRUCTION,
+                                                         NULL,
+                                                         dbus_screensavers[i].name,
+                                                         dbus_screensavers[i].path,
+                                                         dbus_screensavers[i].iface,
+                                                         NULL,
+                                                         &error);
+      if (error != NULL)
+        {
+          g_warning ("Failed to get a proxy for %s: %s", dbus_screensavers[i].name, error->message);
+          g_clear_error (&error);
+        }
+      else
+        {
+          name_owner_changed (saver->proxies[i], NULL, saver);
+          g_signal_connect (saver->proxies[i], "notify::g-name-owner", G_CALLBACK (name_owner_changed), saver);
+        }
     }
 }
 
@@ -272,18 +272,25 @@ xfce_screensaver_set_property (GObject *object,
                                GParamSpec *pspec)
 {
   XfceScreensaver *saver = XFCE_SCREENSAVER (object);
+  const gchar *str_value;
 
   switch (property_id)
     {
     case PROP_HEARTBEAT_COMMAND:
       g_free (saver->heartbeat_command);
-      saver->heartbeat_command = g_value_dup_string (value);
+      saver->heartbeat_command = NULL;
+      str_value = g_value_get_string (value);
+      if (!xfce_str_is_empty (str_value))
+        saver->heartbeat_command = g_strdup (str_value);
       DBG ("saver->heartbeat_command %s", saver->heartbeat_command);
       break;
 
     case PROP_LOCK_COMMAND:
       g_free (saver->lock_command);
-      saver->lock_command = g_value_dup_string (value);
+      saver->lock_command = NULL;
+      str_value = g_value_get_string (value);
+      if (!xfce_str_is_empty (str_value))
+        saver->lock_command = g_strdup (str_value);
       DBG ("saver->lock_command %s", saver->lock_command);
       break;
 
@@ -291,6 +298,37 @@ xfce_screensaver_set_property (GObject *object,
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, property_id, pspec);
       break;
     }
+}
+
+
+
+static void
+xfce_screensaver_constructed (GObject *object)
+{
+  XfceScreensaver *saver = XFCE_SCREENSAVER (object);
+  GError *error = NULL;
+
+  if (!xfconf_init (&error))
+    {
+      g_critical ("Xfconf initialization failed: %s", error->message);
+      g_clear_error (&error);
+    }
+  else
+    {
+      saver->xfconf_initialized = TRUE;
+      xfconf_g_property_bind (xfconf_channel_get (XFPM_CHANNEL),
+                              XFPM_PROPERTIES_PREFIX HEARTBEAT_COMMAND,
+                              G_TYPE_STRING,
+                              G_OBJECT (saver),
+                              HEARTBEAT_COMMAND);
+      xfconf_g_property_bind (xfconf_channel_get (XFSM_CHANNEL),
+                              XFSM_PROPERTIES_PREFIX "LockCommand",
+                              G_TYPE_STRING,
+                              G_OBJECT (saver),
+                              LOCK_COMMAND);
+    }
+
+  G_OBJECT_CLASS (xfce_screensaver_parent_class)->constructed (object);
 }
 
 
@@ -306,11 +344,8 @@ xfce_screensaver_finalize (GObject *object)
       saver->screensaver_id = 0;
     }
 
-  if (saver->proxy)
-    {
-      g_object_unref (saver->proxy);
-      saver->proxy = NULL;
-    }
+  for (guint i = 0; i < SCREENSAVER_TYPE_OTHER; i++)
+    g_clear_object (&saver->proxies[i]);
 
   if (saver->heartbeat_command)
     {
@@ -320,12 +355,14 @@ xfce_screensaver_finalize (GObject *object)
 
   if (saver->lock_command)
     {
-      g_free (saver->heartbeat_command);
-      saver->heartbeat_command = NULL;
+      g_free (saver->lock_command);
+      saver->lock_command = NULL;
     }
 
   if (saver->xfconf_initialized)
     xfconf_shutdown ();
+
+  G_OBJECT_CLASS (xfce_screensaver_parent_class)->finalize (object);
 }
 
 
@@ -333,7 +370,7 @@ xfce_screensaver_finalize (GObject *object)
 /**
  * xfce_screensaver_new:
  *
- * Creates a new #XfceScreensaver object or increases the refrence count
+ * Creates a new #XfceScreensaver object or increases the reference count
  * of the current object.
  *
  * Returns: (transfer full): An #XfceScreensaver object, to be released with
@@ -354,20 +391,6 @@ xfce_screensaver_new (void)
     {
       saver = g_object_new (XFCE_TYPE_SCREENSAVER, NULL);
       g_object_add_weak_pointer (G_OBJECT (saver), (gpointer *) &saver);
-
-      if (XFCE_SCREENSAVER (saver)->xfconf_initialized)
-        {
-          xfconf_g_property_bind (XFCE_SCREENSAVER (saver)->xfpm_channel,
-                                  XFPM_PROPERTIES_PREFIX HEARTBEAT_COMMAND,
-                                  G_TYPE_STRING,
-                                  G_OBJECT (saver),
-                                  HEARTBEAT_COMMAND);
-          xfconf_g_property_bind (XFCE_SCREENSAVER (saver)->xfsm_channel,
-                                  XFSM_PROPERTIES_PREFIX "LockCommand",
-                                  G_TYPE_STRING,
-                                  G_OBJECT (saver),
-                                  LOCK_COMMAND);
-        }
     }
 
   return XFCE_SCREENSAVER (saver);
@@ -383,13 +406,13 @@ xfce_reset_screen_saver (gpointer user_data)
   TRACE ("entering\n");
 
   /* If we found an interface during the setup, use it */
-  if (saver->proxy)
+  if (saver->screensaver_type != SCREENSAVER_TYPE_OTHER)
     {
-      GVariant *response = g_dbus_proxy_call_sync (saver->proxy,
+      GVariant *response = g_dbus_proxy_call_sync (saver->proxies[saver->screensaver_type],
                                                    "SimulateUserActivity",
                                                    NULL,
                                                    G_DBUS_CALL_FLAGS_NONE,
-                                                   -1,
+                                                   NO_REPLY_TIMEOUT,
                                                    NULL,
                                                    NULL);
       if (response != NULL)
@@ -410,7 +433,7 @@ xfce_reset_screen_saver (gpointer user_data)
 /**
  * xfce_screensaver_inhibit:
  * @saver: the #XfceScreensaver object
- * @inhibit: wether to inhibit the screensaver from activating.
+ * @inhibit: whether to inhibit the screensaver from activating
  *
  * Calling this function with @inhibit as %TRUE will prevent the user's
  * screensaver from activating. This is useful when the user is watching
@@ -425,19 +448,16 @@ void
 xfce_screensaver_inhibit (XfceScreensaver *saver,
                           gboolean inhibit)
 {
-  /* SCREENSAVER_TYPE_FREEDESKTOP, SCREENSAVER_TYPE_MATE,
-   * SCREENSAVER_TYPE_GNOME and SCREENSAVER_TYPE_XFCE
-   * don't need a periodic timer because they have an actual
-   * inhibit/uninhibit setup */
+  /* SCREENSAVER_TYPE_FREEDESKTOP, SCREENSAVER_TYPE_MATE and SCREENSAVER_TYPE_XFCE
+   * don't need a periodic timer because they have an actual inhibit/uninhibit setup */
   switch (saver->screensaver_type)
     {
-    case SCREENSAVER_TYPE_FREEDESKTOP:
-    case SCREENSAVER_TYPE_MATE:
-    case SCREENSAVER_TYPE_GNOME:
     case SCREENSAVER_TYPE_XFCE:
+    case SCREENSAVER_TYPE_MATE:
+    case SCREENSAVER_TYPE_FREEDESKTOP:
       if (inhibit)
         {
-          GVariant *response = g_dbus_proxy_call_sync (saver->proxy,
+          GVariant *response = g_dbus_proxy_call_sync (saver->proxies[saver->screensaver_type],
                                                        "Inhibit",
                                                        g_variant_new ("(ss)",
                                                                       PACKAGE_NAME,
@@ -453,7 +473,7 @@ xfce_screensaver_inhibit (XfceScreensaver *saver,
         }
       else
       {
-        GVariant *response = g_dbus_proxy_call_sync (saver->proxy,
+        GVariant *response = g_dbus_proxy_call_sync (saver->proxies[saver->screensaver_type],
                                                      "UnInhibit",
                                                      g_variant_new ("(u)",
                                                                     saver->cookie),
@@ -466,8 +486,8 @@ xfce_screensaver_inhibit (XfceScreensaver *saver,
       }
       break;
 
-    case SCREENSAVER_TYPE_OTHER:
     case SCREENSAVER_TYPE_CINNAMON:
+    case SCREENSAVER_TYPE_OTHER:
       /* remove any existing keepalive */
       if (saver->screensaver_id != 0)
         {
@@ -486,7 +506,7 @@ xfce_screensaver_inhibit (XfceScreensaver *saver,
       break;
 
     default:
-      g_warning ("Not able to inhibit or uninhibit screensaver");
+      g_warn_if_reached ();
       break;
     }
 }
@@ -509,72 +529,100 @@ gboolean
 xfce_screensaver_lock (XfceScreensaver *saver)
 {
   GVariant *response;
-  gboolean ret = FALSE;
+  GError *error = NULL;
   gint status;
 
-  switch (saver->screensaver_type)
-    {
-    case SCREENSAVER_TYPE_FREEDESKTOP:
-    case SCREENSAVER_TYPE_MATE:
-    case SCREENSAVER_TYPE_GNOME:
-    case SCREENSAVER_TYPE_XFCE:
-      response = g_dbus_proxy_call_sync (saver->proxy,
-                                         "Lock",
-                                         g_variant_new ("()"),
-                                         G_DBUS_CALL_FLAGS_NONE,
-                                         -1,
-                                         NULL,
-                                         NULL);
-      if (response != NULL)
-        {
-          g_variant_unref (response);
-          return TRUE;
-        }
-      break;
-
-    case SCREENSAVER_TYPE_CINNAMON:
-      response = g_dbus_proxy_call_sync (saver->proxy,
-                                         "Lock",
-                                         g_variant_new ("(s)", PACKAGE_NAME),
-                                         G_DBUS_CALL_FLAGS_NONE,
-                                         -1,
-                                         NULL,
-                                         NULL);
-      if (response != NULL)
-        {
-          g_variant_unref (response);
-          return TRUE;
-        }
-      break;
-
-    case SCREENSAVER_TYPE_OTHER:
-      /* Will be handled after the switch statement. */
-      break;
-
-    default:
-      g_warning ("Unknown screensaver type set when calling xfce_screensaver_lock");
-      break;
-    }
-
-  /* Fallback: either no dbus interface set up or it didn't Lock(). */
+  /* prioritize user command and don't try anything else it that fails: if changed,
+   * this behavior should be kept in sync with xflock4 */
   if (saver->lock_command != NULL)
     {
       DBG ("running lock command: %s", saver->lock_command);
-      ret = g_spawn_command_line_sync (saver->lock_command, NULL, NULL, &status, NULL)
-            && g_spawn_check_exit_status (status, NULL);
+      return g_spawn_command_line_sync (saver->lock_command, NULL, NULL, &status, NULL)
+             && g_spawn_check_exit_status (status, NULL);
     }
 
-  if (!ret)
-    ret = g_spawn_command_line_sync ("xflock4", NULL, NULL, &status, NULL)
-          && g_spawn_check_exit_status (status, NULL);
+  /* try dbus screensavers */
+  for (guint i = 0; i < SCREENSAVER_TYPE_OTHER; i++)
+    {
+      if ((saver->screensaver_type == SCREENSAVER_TYPE_OTHER && saver->proxies[i] != NULL)
+          || saver->screensaver_type == i)
+        {
+          switch (i)
+            {
+            case SCREENSAVER_TYPE_XFCE:
+              response = g_dbus_proxy_call_sync (saver->proxies[i],
+                                                 "Lock",
+                                                 NULL,
+                                                 G_DBUS_CALL_FLAGS_NONE,
+                                                 -1,
+                                                 NULL,
+                                                 &error);
+              break;
 
-  if (!ret)
-    ret = g_spawn_command_line_sync ("xdg-screensaver lock", NULL, NULL, &status, NULL)
-          && g_spawn_check_exit_status (status, NULL);
+            case SCREENSAVER_TYPE_CINNAMON:
+              response = g_dbus_proxy_call_sync (saver->proxies[i],
+                                                 "Lock",
+                                                 g_variant_new ("(s)", PACKAGE_NAME),
+                                                 G_DBUS_CALL_FLAGS_NONE,
+                                                 -1,
+                                                 NULL,
+                                                 &error);
+              break;
 
-  if (!ret)
-    ret = g_spawn_command_line_sync ("xscreensaver-command -lock", NULL, NULL, &status, NULL)
-          && g_spawn_check_exit_status (status, NULL);
+            case SCREENSAVER_TYPE_MATE:
+            case SCREENSAVER_TYPE_FREEDESKTOP:
+              response = g_dbus_proxy_call_sync (saver->proxies[i],
+                                                 "Lock",
+                                                 NULL,
+                                                 G_DBUS_CALL_FLAGS_NONE,
+                                                 NO_REPLY_TIMEOUT,
+                                                 NULL,
+                                                 &error);
 
-  return ret;
+              /* mate-screensaver does not send a reply in case of success, and for screensavers
+               * using org.freedesktop.ScreenSaver we're not sure, so if no other error is received
+               * after a reasonnable timeout, consider it a success */
+              if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_TIMED_OUT))
+                {
+                  response = g_variant_ref_sink (g_variant_new ("()"));
+                  g_clear_error (&error);
+                }
+              break;
+
+            default:
+              g_warn_if_reached ();
+              continue;
+            }
+
+          if (response != NULL)
+            {
+              g_variant_unref (response);
+              return TRUE;
+            }
+          else
+            {
+              /* if it's running and can lock it should succeed, don't try anything else */
+              gboolean running = !g_error_matches (error, G_DBUS_ERROR, G_DBUS_ERROR_NAME_HAS_NO_OWNER);
+              gboolean can_lock = !g_error_matches (error, G_DBUS_ERROR, G_DBUS_ERROR_UNKNOWN_METHOD);
+              g_clear_error (&error);
+              if (running && can_lock)
+                return FALSE;
+            }
+        }
+    }
+
+  /* no user command or dbus interface set up: this list should be kept in sync with xflock4 */
+  if (g_spawn_command_line_sync ("xdg-screensaver lock", NULL, NULL, &status, NULL)
+      && g_spawn_check_exit_status (status, NULL))
+    return TRUE;
+
+  if (g_spawn_command_line_sync ("xscreensaver-command --lock", NULL, NULL, &status, NULL)
+      && g_spawn_check_exit_status (status, NULL))
+    return TRUE;
+
+  if (g_spawn_command_line_sync ("light-locker-command --lock", NULL, NULL, &status, NULL)
+      && g_spawn_check_exit_status (status, NULL))
+    return TRUE;
+
+  return FALSE;
 }
