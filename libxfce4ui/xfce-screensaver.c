@@ -38,13 +38,7 @@
 
 
 
-#define HEARTBEAT_COMMAND       "heartbeat-command"
-#define LOCK_COMMAND            "lock-command"
-#define XFPM_CHANNEL            "xfce4-power-manager"
-#define XFPM_PROPERTIES_PREFIX  "/xfce4-power-manager/"
-#define XFSM_CHANNEL            "xfce4-session"
-#define XFSM_PROPERTIES_PREFIX  "/general/"
-#define NO_REPLY_TIMEOUT        2000
+#define NO_REPLY_TIMEOUT 2000
 
 static void      xfce_screensaver_get_property    (GObject         *object,
                                                    guint            property_id,
@@ -73,7 +67,8 @@ enum
 {
   PROP_0 = 0,
   PROP_HEARTBEAT_COMMAND,
-  PROP_LOCK_COMMAND
+  PROP_LOCK_COMMAND,
+  PROP_LOCK_ON_SLEEP,
 };
 
 struct _XfceScreensaver
@@ -88,6 +83,7 @@ struct _XfceScreensaver
   gboolean xfconf_initialized;
   gchar *heartbeat_command;
   gchar *lock_command;
+  gboolean lock_on_sleep;
 };
 
 typedef struct
@@ -129,20 +125,27 @@ xfce_screensaver_class_init (XfceScreensaverClass *klass)
                           | G_PARAM_STATIC_BLURB)
 
   g_object_class_install_property (object_class, PROP_HEARTBEAT_COMMAND,
-                                   g_param_spec_string (HEARTBEAT_COMMAND,
-                                                        HEARTBEAT_COMMAND,
+                                   g_param_spec_string ("heartbeat-command",
+                                                        "heartbeat-command",
                                                         "Inhibit the screensaver from activating, "
                                                         "e.g. xscreensaver-command --deactivate",
                                                         NULL,
                                                         XFCE_PARAM_FLAGS));
 
   g_object_class_install_property (object_class, PROP_LOCK_COMMAND,
-                                   g_param_spec_string (LOCK_COMMAND,
-                                                        LOCK_COMMAND,
+                                   g_param_spec_string ("lock-command",
+                                                        "lock-command",
                                                         "Lock the desktop, e.g. "
                                                         "xscreensaver-command --lock",
                                                         NULL,
                                                         XFCE_PARAM_FLAGS));
+
+  g_object_class_install_property (object_class, PROP_LOCK_ON_SLEEP,
+                                   g_param_spec_boolean ("lock-on-sleep",
+                                                         "lock-on-sleep",
+                                                         "Whether to lock before suspend/hibernate",
+                                                         FALSE,
+                                                         XFCE_PARAM_FLAGS));
 #undef XFCE_PARAM_FLAGS
 }
 
@@ -257,6 +260,10 @@ xfce_screensaver_get_property (GObject *object,
       g_value_set_string (value, saver->lock_command);
       break;
 
+    case PROP_LOCK_ON_SLEEP:
+      g_value_set_boolean (value, saver->lock_on_sleep);
+      break;
+
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, property_id, pspec);
       break;
@@ -294,6 +301,10 @@ xfce_screensaver_set_property (GObject *object,
       DBG ("saver->lock_command %s", saver->lock_command);
       break;
 
+    case PROP_LOCK_ON_SLEEP:
+      saver->lock_on_sleep = g_value_get_boolean (value);
+      break;
+
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, property_id, pspec);
       break;
@@ -308,24 +319,44 @@ xfce_screensaver_constructed (GObject *object)
   XfceScreensaver *saver = XFCE_SCREENSAVER (object);
   GError *error = NULL;
 
-  if (!xfconf_init (&error))
+  saver->xfconf_initialized = xfconf_init (&error);
+  if (!saver->xfconf_initialized)
     {
       g_critical ("Xfconf initialization failed: %s", error->message);
       g_clear_error (&error);
     }
   else
     {
-      saver->xfconf_initialized = TRUE;
-      xfconf_g_property_bind (xfconf_channel_get (XFPM_CHANNEL),
-                              XFPM_PROPERTIES_PREFIX HEARTBEAT_COMMAND,
+      XfconfChannel *power_channel = xfconf_channel_get ("xfce4-power-manager");
+      XfconfChannel *session_channel = xfconf_channel_get ("xfce4-session");
+      XfconfChannel *saver_channel = xfconf_channel_get ("xfce4-screensaver");
+      xfconf_g_property_bind (power_channel,
+                              "/xfce4-power-manager/heartbeat-command",
                               G_TYPE_STRING,
                               G_OBJECT (saver),
-                              HEARTBEAT_COMMAND);
-      xfconf_g_property_bind (xfconf_channel_get (XFSM_CHANNEL),
-                              XFSM_PROPERTIES_PREFIX "LockCommand",
+                              "heartbeat-command");
+      xfconf_g_property_bind (session_channel,
+                              "/general/LockCommand",
                               G_TYPE_STRING,
                               G_OBJECT (saver),
-                              LOCK_COMMAND);
+                              "lock-command");
+
+      /* keep components having a "lock-on-sleep" setting in sync */
+      xfconf_g_property_bind (power_channel,
+                              "/xfce4-power-manager/lock-screen-suspend-hibernate",
+                              G_TYPE_BOOLEAN,
+                              G_OBJECT (saver),
+                              "lock-on-sleep");
+      xfconf_g_property_bind (session_channel,
+                              "/shutdown/LockScreen",
+                              G_TYPE_BOOLEAN,
+                              G_OBJECT (saver),
+                              "lock-on-sleep");
+      xfconf_g_property_bind (saver_channel,
+                              "/lock/sleep-activation",
+                              G_TYPE_BOOLEAN,
+                              G_OBJECT (saver),
+                              "lock-on-sleep");
     }
 
   G_OBJECT_CLASS (xfce_screensaver_parent_class)->constructed (object);
