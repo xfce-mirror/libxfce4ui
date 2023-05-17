@@ -43,7 +43,11 @@ XfceScreensaver    *xfce_screensaver_new           (void);
 void                xfce_screensaver_inhibit       (XfceScreensaver     *saver,
                                                     gboolean             inhibit);
 
-gboolean            xfce_screensaver_lock          (XfceScreensaver     *saver);
+gboolean            xfce_screensaver_lock          (XfceScreensaver     *saver)
+G_GNUC_DEPRECATED_FOR (xfce_screensaver_lock2());
+
+gboolean            xfce_screensaver_lock2         (XfceScreensaver     *saver,
+                                                    GError             **error);
 
 G_END_DECLS
 

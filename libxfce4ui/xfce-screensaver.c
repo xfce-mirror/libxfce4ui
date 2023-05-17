@@ -479,6 +479,8 @@ void
 xfce_screensaver_inhibit (XfceScreensaver *saver,
                           gboolean inhibit)
 {
+  g_return_if_fail (XFCE_IS_SCREENSAVER (saver));
+
   /* SCREENSAVER_TYPE_FREEDESKTOP, SCREENSAVER_TYPE_MATE and SCREENSAVER_TYPE_XFCE
    * don't need a periodic timer because they have an actual inhibit/uninhibit setup */
   switch (saver->screensaver_type)
@@ -548,20 +550,44 @@ xfce_screensaver_inhibit (XfceScreensaver *saver,
  * xfce_screensaver_lock:
  * @saver: the #XfceScreensaver object
  *
- * Attempts to lock the screen, either with one of the screensaver
- * D-Bus proxies, the Xfconf lock command, or one of the
- * fallback scripts such as xdg-screensaver.
+ * See xfce_screensaver_lock2().
  *
  * Returns: %TRUE if the lock attempt returns success, %FALSE otherwise.
  *
  * Since: 4.18.2
+ *
+ * Deprecated: 4.18.4: Use xfce_screensaver_lock2() instead.
  **/
 gboolean
 xfce_screensaver_lock (XfceScreensaver *saver)
 {
+  return xfce_screensaver_lock2 (saver, NULL);
+}
+
+
+
+/**
+ * xfce_screensaver_lock2:
+ * @saver: the #XfceScreensaver object
+ * @error: (out) (nullable): location to store error on failure or %NULL
+ *
+ * Attempts to lock the screen, either with the Xfconf lock command, one of the
+ * screensaver D-Bus proxies, or one of the fallback scripts such as xdg-screensaver.
+ *
+ * Returns: %TRUE if the lock attempt returns success, %FALSE otherwise and @error is set.
+ *
+ * Since: 4.18.4
+ **/
+gboolean
+xfce_screensaver_lock2 (XfceScreensaver *saver,
+                        GError **error)
+{
   GVariant *response;
-  GError *error = NULL;
+  GError *local_error = NULL;
   gint status;
+
+  g_return_val_if_fail (XFCE_IS_SCREENSAVER (saver), FALSE);
+  g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
 
   /* prioritize user command and don't try anything else it that fails */
   if (saver->lock_command != NULL)
@@ -575,14 +601,15 @@ xfce_screensaver_lock (XfceScreensaver *saver)
       if (g_getenv ("XFCE_SCREENSAVER_LOCK") != NULL)
         {
           g_warning ("Recursive call of %s", saver->lock_command);
+          g_set_error (error, G_SPAWN_EXIT_ERROR, G_SPAWN_ERROR_FORK, "Recursive call of %s", saver->lock_command);
           return FALSE;
         }
 
-      if (g_shell_parse_argv (saver->lock_command, NULL, &argv, NULL))
+      if (g_shell_parse_argv (saver->lock_command, NULL, &argv, error))
         {
           gchar **env = g_environ_setenv (g_get_environ (), "XFCE_SCREENSAVER_LOCK", "", TRUE);
-          gboolean ret = g_spawn_sync (NULL, argv, env, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, NULL, &status, NULL)
-                         && g_spawn_check_exit_status (status, NULL);
+          gboolean ret = g_spawn_sync (NULL, argv, env, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, NULL, &status, error)
+                         && g_spawn_check_exit_status (status, error);
           g_strfreev (env);
           g_strfreev (argv);
           return ret;
@@ -606,7 +633,7 @@ xfce_screensaver_lock (XfceScreensaver *saver)
                                                  G_DBUS_CALL_FLAGS_NONE,
                                                  -1,
                                                  NULL,
-                                                 &error);
+                                                 &local_error);
               break;
 
             case SCREENSAVER_TYPE_CINNAMON:
@@ -616,7 +643,7 @@ xfce_screensaver_lock (XfceScreensaver *saver)
                                                  G_DBUS_CALL_FLAGS_NONE,
                                                  -1,
                                                  NULL,
-                                                 &error);
+                                                 &local_error);
               break;
 
             case SCREENSAVER_TYPE_MATE:
@@ -627,15 +654,15 @@ xfce_screensaver_lock (XfceScreensaver *saver)
                                                  G_DBUS_CALL_FLAGS_NONE,
                                                  NO_REPLY_TIMEOUT,
                                                  NULL,
-                                                 &error);
+                                                 &local_error);
 
               /* mate-screensaver does not send a reply in case of success, and for screensavers
                * using org.freedesktop.ScreenSaver we're not sure, so if no other error is received
                * after a reasonnable timeout, consider it a success */
-              if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_TIMED_OUT))
+              if (g_error_matches (local_error, G_IO_ERROR, G_IO_ERROR_TIMED_OUT))
                 {
                   response = g_variant_ref_sink (g_variant_new ("()"));
-                  g_clear_error (&error);
+                  g_clear_error (&local_error);
                 }
               break;
 
@@ -652,26 +679,29 @@ xfce_screensaver_lock (XfceScreensaver *saver)
           else
             {
               /* if it's running and can lock it should succeed, don't try anything else */
-              gboolean running = !g_error_matches (error, G_DBUS_ERROR, G_DBUS_ERROR_NAME_HAS_NO_OWNER);
-              gboolean can_lock = !g_error_matches (error, G_DBUS_ERROR, G_DBUS_ERROR_UNKNOWN_METHOD);
-              g_clear_error (&error);
+              gboolean running = !g_error_matches (local_error, G_DBUS_ERROR, G_DBUS_ERROR_NAME_HAS_NO_OWNER);
+              gboolean can_lock = !g_error_matches (local_error, G_DBUS_ERROR, G_DBUS_ERROR_UNKNOWN_METHOD);
               if (running && can_lock)
-                return FALSE;
+                {
+                  g_propagate_error (error, local_error);
+                  return FALSE;
+                }
+              g_clear_error (&local_error);
             }
         }
     }
 
   /* no user command or dbus interface set up */
-  if (g_spawn_command_line_sync ("xdg-screensaver lock", NULL, NULL, &status, NULL)
-      && g_spawn_check_exit_status (status, NULL))
+  if (g_spawn_command_line_sync ("xdg-screensaver lock", NULL, NULL, &status, error)
+      && g_spawn_check_exit_status (status, error))
     return TRUE;
 
-  if (g_spawn_command_line_sync ("xscreensaver-command --lock", NULL, NULL, &status, NULL)
-      && g_spawn_check_exit_status (status, NULL))
+  if (g_spawn_command_line_sync ("xscreensaver-command --lock", NULL, NULL, &status, error)
+      && g_spawn_check_exit_status (status, error))
     return TRUE;
 
-  if (g_spawn_command_line_sync ("light-locker-command --lock", NULL, NULL, &status, NULL)
-      && g_spawn_check_exit_status (status, NULL))
+  if (g_spawn_command_line_sync ("light-locker-command --lock", NULL, NULL, &status, error)
+      && g_spawn_check_exit_status (status, error))
     return TRUE;
 
   return FALSE;
