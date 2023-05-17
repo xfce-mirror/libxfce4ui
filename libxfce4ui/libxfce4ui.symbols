@@ -172,6 +172,7 @@ xfce_screensaver_get_type
 xfce_screensaver_new
 xfce_screensaver_inhibit
 xfce_screensaver_lock
+xfce_screensaver_lock2
 #endif
 #endif
 
