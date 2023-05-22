@@ -1,3 +1,19 @@
+4.18.4 (2023-05-22)
+======
+- screensaver: Prevent recursive calling of lock command
+- screensaver: Add lock-on-sleep property
+- screensaver: Update fallback list
+- screensaver: Prioritize user lock command
+- screensaver: Rewrite D-Bus proxies management
+- screensaver: Use reasonable timeout for methods that may not reply
+- screensaver: Remove support for gnome-screensaver (Fixes #62)
+- screensaver: Do not take into account empty commands
+- screensaver: Simplify Xfconf management
+- screensaver: Fix memory leak
+- screensaver: Fix typos
+- screensaver: Run lock command synchronously (Fixes #70)
+- screensaver: Add missing include guard
+
 4.18.3 (2023-03-28)
 ======
 - Add comment about the need for gtk_widget_destroy()
