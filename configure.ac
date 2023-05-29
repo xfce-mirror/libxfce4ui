@@ -5,7 +5,7 @@ dnl
 dnl ***************************
 dnl *** Version information ***
 dnl ***************************
-XDT_VERSION_INIT([4.19.2])
+XDT_VERSION_INIT([4.19.2], [git])
 
 m4_define([libxfce4ui_verinfo], [0:0:0])
 m4_define([libxfce4ui_version_api], [2])
