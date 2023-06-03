@@ -189,7 +189,7 @@ msgstr "Διατήρηση του '%s'"
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr "Αυτή η συντόμευση χρησιμοποιείται ήδη για την εντολή '%s'. Ποια εντολή θέλετε να χρησιμοποιήσετε;"
+msgstr "Αυτή η συντόμευση χρησιμοποιείται ήδη για την εντολή '%s'. Ποια ενέργεια θέλετε να χρησιμοποιήσετε;"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:55
 #, c-format
