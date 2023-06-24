@@ -737,3 +737,27 @@ get_os_name (void)
 
   return result;
 }
+
+
+
+char *
+get_distributor_logo (void)
+{
+  GHashTable *os_info;
+  gchar *distributor_logo;
+
+  os_info = get_os_info ();
+
+  /* If we're not on Linux we return NULL */
+  if (!os_info)
+    return NULL;
+
+  distributor_logo = g_strdup (g_hash_table_lookup (os_info, "LOGO"));
+  g_clear_pointer (&os_info, g_hash_table_destroy);
+
+  if (xfce_str_is_empty (distributor_logo)
+		  || !gtk_icon_theme_has_icon (gtk_icon_theme_get_default (), distributor_logo))
+    return NULL;
+
+  return distributor_logo;
+}
