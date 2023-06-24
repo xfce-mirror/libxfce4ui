@@ -51,4 +51,4 @@ char *get_system_info (guint infotype);
 char *get_cpu_info (const glibtop_sysinfo *info);
 char *get_gpu_info (guint *num_gpus);
 char *get_os_name (void);
-char *get_renderer (void);
+char *get_os_logo (void);
