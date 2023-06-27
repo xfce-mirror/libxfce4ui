@@ -753,10 +753,10 @@ get_os_logo (void)
     return NULL;
 
   os_logo = g_strdup (g_hash_table_lookup (os_info, "LOGO"));
-  g_clear_pointer (&os_info, g_hash_table_destroy);
 
   if (xfce_str_is_empty (os_logo))
     os_logo = g_strconcat (g_hash_table_lookup (os_info, "ID"), "-logo", NULL);
 
+  g_clear_pointer (&os_info, g_hash_table_destroy);
   return os_logo;
 }
