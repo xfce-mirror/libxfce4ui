@@ -741,10 +741,10 @@ get_os_name (void)
 
 
 char *
-get_distributor_logo (void)
+get_os_logo (void)
 {
   GHashTable *os_info;
-  gchar *distributor_logo;
+  gchar *os_logo;
 
   os_info = get_os_info ();
 
@@ -752,12 +752,11 @@ get_distributor_logo (void)
   if (!os_info)
     return NULL;
 
-  distributor_logo = g_strdup (g_hash_table_lookup (os_info, "LOGO"));
+  os_logo = g_strdup (g_hash_table_lookup (os_info, "LOGO"));
   g_clear_pointer (&os_info, g_hash_table_destroy);
 
-  if (xfce_str_is_empty (distributor_logo)
-		  || !gtk_icon_theme_has_icon (gtk_icon_theme_get_default (), distributor_logo))
-    return NULL;
+  if (xfce_str_is_empty (os_logo))
+    os_logo = g_strconcat (g_hash_table_lookup (os_info, "ID"), "-logo", NULL);
 
-  return distributor_logo;
+  return os_logo;
 }
