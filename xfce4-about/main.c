@@ -90,7 +90,7 @@ xfce_about_system (GtkBuilder *builder)
 
       else
         {
-          const gchar *pixmap_path = g_strconcat ("/usr/share/pixmaps/", os_logo, NULL);
+          const gchar *pixmap_path = g_strconcat ("/usr/share/pixmaps/", os_logo, ".png", NULL);
 	  gtk_image_set_from_file (GTK_IMAGE (image), pixmap_path);
         }
     }
