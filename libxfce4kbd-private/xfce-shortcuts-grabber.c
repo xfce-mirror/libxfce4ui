@@ -766,6 +766,30 @@ struct EventKeyFindContext
 
 
 
+static struct EventKeyFindContext *event_key_find_context_new (guint           keyval,
+                                                        GdkModifierType modifiers)
+{
+  struct EventKeyFindContext *context;
+  gchar                      *raw_shortcut_name;
+
+  context = g_malloc (sizeof (struct EventKeyFindContext));
+  context->result = NULL;
+
+  /* Use the keyval and modifiers values of gtk_accelerator_parse. We
+   * will compare them with values we also get from this function and as
+   * it has its own logic, it's easier and safer to do so.
+   * See bug #8744 for a "live" example. */
+  raw_shortcut_name = gtk_accelerator_name (keyval, modifiers);
+  gtk_accelerator_parse (raw_shortcut_name, &context->keyval, &context->modifiers);
+
+  TRACE ("Looking for %s", raw_shortcut_name);
+  g_free (raw_shortcut_name);
+
+  return context;
+}
+
+
+
 static gboolean
 find_event_key (const gchar                *shortcut,
                 XfceKey                    *key,
@@ -790,19 +814,68 @@ find_event_key (const gchar                *shortcut,
 
 
 
+static gboolean
+is_modifier_key (const struct EventKeyFindContext *context)
+{
+  if (context->modifiers == 0)
+    {
+      switch (context->keyval)
+        {
+          case GDK_KEY_Control_L:
+          case GDK_KEY_Control_R:
+          case GDK_KEY_Alt_L:
+          case GDK_KEY_Alt_R:
+          case GDK_KEY_Super_L:
+          case GDK_KEY_Super_R:
+            return TRUE;
+        }
+    }
+
+  return FALSE;
+}
+
+
+
+static void
+xfce_shortcuts_grabber_translate_keyboard_state (XfceShortcutsGrabber *grabber,
+                                                 XEvent               *xevent,
+                                                 guint                *keyval,
+                                                 guint                *mod_mask,
+                                                 GdkModifierType      *modifiers,
+                                                 GdkModifierType      *consumed)
+{
+  GdkKeymap  *keymap;
+  GdkDisplay *display;
+
+  /* Get the keyboard state */
+  display = gdk_display_get_default ();
+  gdk_x11_display_error_trap_push (display);
+  keymap = gdk_keymap_get_for_display (display);
+  *mod_mask = gtk_accelerator_get_default_mod_mask ();
+  *modifiers = xevent->xkey.state;
+
+  gdk_keymap_translate_keyboard_state (keymap, xevent->xkey.keycode,
+                                       *modifiers,
+                                       grabber->priv->xkbStateGroup,
+                                       keyval, NULL, NULL, consumed);
+
+  gdk_display_flush (display);
+  gdk_x11_display_error_trap_pop_ignored (display);
+}
+
+
+
 static GdkFilterReturn
 xfce_shortcuts_grabber_event_filter (GdkXEvent *gdk_xevent,
                                      GdkEvent  *event,
                                      gpointer   data)
 {
+  static gboolean             single_modifier = FALSE;
   XfceShortcutsGrabber       *const grabber = data;
-  struct EventKeyFindContext  context;
-  GdkKeymap                  *keymap;
+  struct EventKeyFindContext *context = NULL;
   GdkModifierType             consumed, modifiers;
-  GdkDisplay                 *display;
   XEvent                     *xevent;
   guint                       keyval, mod_mask;
-  gchar                      *raw_shortcut_name;
   gint                        timestamp;
 
   g_return_val_if_fail (XFCE_IS_SHORTCUTS_GRABBER (grabber), GDK_FILTER_CONTINUE);
@@ -822,81 +895,90 @@ xfce_shortcuts_grabber_event_filter (GdkXEvent *gdk_xevent,
               xfce_shortcuts_grabber_regrab_all (grabber);
             }
         }
+
+      return GDK_FILTER_CONTINUE;
     }
 #endif
 
-  if (xevent->type != KeyPress)
-    return GDK_FILTER_CONTINUE;
-
-  context.result = NULL;
-  timestamp = xevent->xkey.time;
-
-  /* Get the keyboard state */
-  display = gdk_display_get_default ();
-  gdk_x11_display_error_trap_push (display);
-  keymap = gdk_keymap_get_for_display (display);
-  mod_mask = gtk_accelerator_get_default_mod_mask ();
-  modifiers = xevent->xkey.state;
-
-  gdk_keymap_translate_keyboard_state (keymap, xevent->xkey.keycode,
-                                       modifiers,
-                                       grabber->priv->xkbStateGroup,
-                                       &keyval, NULL, NULL, &consumed);
-
-  /* We want Alt + Print to be Alt + Print not SysReq. See bug #7897 */
-  if (keyval == GDK_KEY_Sys_Req && (modifiers & GDK_MOD1_MASK) != 0)
+  if (xevent->type == KeyPress)
     {
-      consumed = 0;
-      keyval = GDK_KEY_Print;
+      timestamp = xevent->xkey.time;
+      xfce_shortcuts_grabber_translate_keyboard_state (grabber, xevent, &keyval, &mod_mask, &modifiers, &consumed);
+
+      /* We want Alt + Print to be Alt + Print not SysReq. See bug #7897 */
+      if (keyval == GDK_KEY_Sys_Req && (modifiers & GDK_MOD1_MASK) != 0)
+        {
+          consumed = 0;
+          keyval = GDK_KEY_Print;
+        }
+
+      /* If Shift was used when translating the keyboard state, we remove it
+       * from the consumed bit because gtk_accelerator_{name,parse} fail to
+       * handle this correctly. This allows us to have shortcuts with Shift
+       * as a modifier key (see bug #8744). */
+      if ((modifiers & GDK_SHIFT_MASK) && (consumed & GDK_SHIFT_MASK))
+        consumed &= ~GDK_SHIFT_MASK;
+
+      /*
+       * !!! FIX ME !!!
+       * Turn MOD4 into SUPER key press events. Although it is not clear if
+       * this is a proper solution, it fixes bug #10373 which some people
+       * experience without breaking functionality for other users.
+       */
+      if (modifiers & GDK_MOD4_MASK)
+        {
+          modifiers &= ~GDK_MOD4_MASK;
+          modifiers |= GDK_SUPER_MASK;
+          consumed &= ~GDK_MOD4_MASK;
+          consumed &= ~GDK_SUPER_MASK;
+        }
+
+      modifiers &= ~consumed;
+      modifiers &= mod_mask;
+
+      context = event_key_find_context_new (keyval, modifiers);
+      g_hash_table_find (grabber->priv->keys,
+                         (GHRFunc) (void (*)(void)) find_event_key,
+                         context);
+
+      if (G_LIKELY (context->result != NULL))
+        {
+          /* We had a positive match */
+          if (is_modifier_key (context))
+            single_modifier = TRUE;
+
+          else
+            {
+              single_modifier = FALSE;
+              g_signal_emit_by_name (grabber, "shortcut-activated",
+                                     context->result, timestamp);
+            }
+        }
+
+      g_free (context);
     }
-
-  /* Get the modifiers */
-
-  /* If Shift was used when translating the keyboard state, we remove it
-   * from the consumed bit because gtk_accelerator_{name,parse} fail to
-   * handle this correctly. This allows us to have shortcuts with Shift
-   * as a modifier key (see bug #8744). */
-  if ((modifiers & GDK_SHIFT_MASK) && (consumed & GDK_SHIFT_MASK))
-    consumed &= ~GDK_SHIFT_MASK;
-
-  /*
-   * !!! FIX ME !!!
-   * Turn MOD4 into SUPER key press events. Although it is not clear if
-   * this is a proper solution, it fixes bug #10373 which some people
-   * experience without breaking functionality for other users.
-   */
-  if (modifiers & GDK_MOD4_MASK)
+  else if (single_modifier == TRUE && xevent->type == KeyRelease)
     {
-      modifiers &= ~GDK_MOD4_MASK;
-      modifiers |= GDK_SUPER_MASK;
-      consumed &= ~GDK_MOD4_MASK;
-      consumed &= ~GDK_SUPER_MASK;
+      timestamp = xevent->xkey.time;
+      xfce_shortcuts_grabber_translate_keyboard_state (grabber, xevent, &keyval, &mod_mask, &modifiers, &consumed);
+
+      modifiers &= ~consumed;
+      modifiers &= mod_mask;
+
+      context = event_key_find_context_new (keyval, modifiers);
+      g_hash_table_find (grabber->priv->keys,
+                         (GHRFunc) (void (*)(void)) find_event_key,
+                         context);
+
+      if (G_LIKELY (context->result != NULL))
+        {
+          single_modifier = FALSE;
+          g_signal_emit_by_name (grabber, "shortcut-activated",
+                                 context->result, timestamp);
+        }
+
+      g_free (context);
     }
-
-  modifiers &= ~consumed;
-  modifiers &= mod_mask;
-
-  /* Use the keyval and modifiers values of gtk_accelerator_parse. We
-   * will compare them with values we also get from this function and as
-   * it has its own logic, it's easier and safer to do so.
-   * See bug #8744 for a "live" example. */
-  raw_shortcut_name = gtk_accelerator_name (keyval, modifiers);
-  gtk_accelerator_parse (raw_shortcut_name, &context.keyval, &context.modifiers);
-
-  TRACE ("Looking for %s", raw_shortcut_name);
-  g_free (raw_shortcut_name);
-
-  g_hash_table_find (grabber->priv->keys,
-                     (GHRFunc) (void (*)(void)) find_event_key,
-                     &context);
-
-  if (G_LIKELY (context.result != NULL))
-    /* We had a positive match */
-    g_signal_emit_by_name (grabber, "shortcut-activated",
-                           context.result, timestamp);
-
-  gdk_display_flush (display);
-  gdk_x11_display_error_trap_pop_ignored (display);
 
   return GDK_FILTER_CONTINUE;
 }
