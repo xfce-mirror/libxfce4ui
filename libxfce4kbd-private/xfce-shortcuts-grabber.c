@@ -790,6 +790,27 @@ find_event_key (const gchar                *shortcut,
 
 
 
+static gboolean
+is_modifier_key (struct EventKeyFindContext context)
+{
+  if (context.modifiers == 0)
+    {
+      switch (context.keyval)
+        {
+          case GDK_KEY_Control_L:
+          case GDK_KEY_Control_R:
+          case GDK_KEY_Alt_L:
+          case GDK_KEY_Alt_R:
+          case GDK_KEY_Super_L:
+          case GDK_KEY_Super_R:
+            return TRUE;
+        }
+    }
+
+  return FALSE;
+}
+
+
 static GdkFilterReturn
 xfce_shortcuts_grabber_event_filter (GdkXEvent *gdk_xevent,
                                      GdkEvent  *event,
@@ -804,6 +825,7 @@ xfce_shortcuts_grabber_event_filter (GdkXEvent *gdk_xevent,
   guint                       keyval, mod_mask;
   gchar                      *raw_shortcut_name;
   gint                        timestamp;
+  static gboolean             single_modifier_down = FALSE;
 
   g_return_val_if_fail (XFCE_IS_SHORTCUTS_GRABBER (grabber), GDK_FILTER_CONTINUE);
 
@@ -825,7 +847,7 @@ xfce_shortcuts_grabber_event_filter (GdkXEvent *gdk_xevent,
     }
 #endif
 
-  if (xevent->type != KeyPress)
+  if (xevent->type != KeyPress && xevent->type != KeyRelease)
     return GDK_FILTER_CONTINUE;
 
   context.result = NULL;
@@ -865,7 +887,7 @@ xfce_shortcuts_grabber_event_filter (GdkXEvent *gdk_xevent,
    * this is a proper solution, it fixes bug #10373 which some people
    * experience without breaking functionality for other users.
    */
-  if (modifiers & GDK_MOD4_MASK)
+  if (!single_modifier_down && modifiers & GDK_MOD4_MASK)
     {
       modifiers &= ~GDK_MOD4_MASK;
       modifiers |= GDK_SUPER_MASK;
@@ -891,9 +913,27 @@ xfce_shortcuts_grabber_event_filter (GdkXEvent *gdk_xevent,
                      &context);
 
   if (G_LIKELY (context.result != NULL))
-    /* We had a positive match */
-    g_signal_emit_by_name (grabber, "shortcut-activated",
-                           context.result, timestamp);
+    {
+      /* We had a positive match */
+      if (xevent->type == KeyPress)
+        {
+          if (is_modifier_key (context))
+            single_modifier_down = TRUE;
+          else
+            {
+              single_modifier_down = FALSE;
+              g_signal_emit_by_name (grabber, "shortcut-activated",
+                                     context.result, timestamp);
+            }
+        }
+      else if (single_modifier_down)
+        {
+          single_modifier_down = FALSE;
+          g_signal_emit_by_name (grabber, "shortcut-activated",
+                                 context.result, timestamp);
+
+        }
+    }
 
   gdk_display_flush (display);
   gdk_x11_display_error_trap_pop_ignored (display);
