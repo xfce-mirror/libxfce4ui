@@ -826,6 +826,10 @@ xfce_shortcuts_grabber_event_filter (GdkXEvent *gdk_xevent,
   guint                       keyval, mod_mask;
   gchar                      *raw_shortcut_name;
   gint                        timestamp;
+
+  /* we only activate single modifier keys on release event to allow combinations
+   * such as Super to open a menu and Super+T to open a terminal: see
+   * https://gitlab.xfce.org/xfce/libxfce4ui/-/issues/1 */
   static gboolean             single_modifier_down = FALSE;
 
   g_return_val_if_fail (XFCE_IS_SHORTCUTS_GRABBER (grabber), GDK_FILTER_CONTINUE);
