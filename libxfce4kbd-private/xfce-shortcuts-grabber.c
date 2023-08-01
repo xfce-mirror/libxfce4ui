@@ -790,6 +790,28 @@ find_event_key (const gchar                *shortcut,
 
 
 
+static gboolean
+is_modifier_key (struct EventKeyFindContext context)
+{
+  if (context.modifiers == 0)
+    {
+      switch (context.keyval)
+        {
+          case GDK_KEY_Control_L:
+          case GDK_KEY_Control_R:
+          case GDK_KEY_Alt_L:
+          case GDK_KEY_Alt_R:
+          case GDK_KEY_Super_L:
+          case GDK_KEY_Super_R:
+            return TRUE;
+        }
+    }
+
+  return FALSE;
+}
+
+
+
 static GdkFilterReturn
 xfce_shortcuts_grabber_event_filter (GdkXEvent *gdk_xevent,
                                      GdkEvent  *event,
@@ -804,6 +826,11 @@ xfce_shortcuts_grabber_event_filter (GdkXEvent *gdk_xevent,
   guint                       keyval, mod_mask;
   gchar                      *raw_shortcut_name;
   gint                        timestamp;
+
+  /* we only activate single modifier keys on release event to allow combinations
+   * such as Super to open a menu and Super+T to open a terminal: see
+   * https://gitlab.xfce.org/xfce/libxfce4ui/-/issues/1 */
+  static gboolean             single_modifier_down = FALSE;
 
   g_return_val_if_fail (XFCE_IS_SHORTCUTS_GRABBER (grabber), GDK_FILTER_CONTINUE);
 
@@ -825,7 +852,7 @@ xfce_shortcuts_grabber_event_filter (GdkXEvent *gdk_xevent,
     }
 #endif
 
-  if (xevent->type != KeyPress)
+  if (xevent->type != KeyPress && !(xevent->type == KeyRelease && single_modifier_down))
     return GDK_FILTER_CONTINUE;
 
   context.result = NULL;
@@ -837,6 +864,10 @@ xfce_shortcuts_grabber_event_filter (GdkXEvent *gdk_xevent,
   keymap = gdk_keymap_get_for_display (display);
   mod_mask = gtk_accelerator_get_default_mod_mask ();
   modifiers = xevent->xkey.state;
+
+  /* Remove modifier added to single modifier key on release event */
+  if (xevent->type == KeyRelease && single_modifier_down)
+    modifiers = 0;
 
   gdk_keymap_translate_keyboard_state (keymap, xevent->xkey.keycode,
                                        modifiers,
@@ -890,10 +921,21 @@ xfce_shortcuts_grabber_event_filter (GdkXEvent *gdk_xevent,
                      (GHRFunc) (void (*)(void)) find_event_key,
                      &context);
 
+  single_modifier_down = FALSE;
   if (G_LIKELY (context.result != NULL))
-    /* We had a positive match */
-    g_signal_emit_by_name (grabber, "shortcut-activated",
-                           context.result, timestamp);
+    {
+      /* We had a positive match */
+      if (xevent->type == KeyPress && is_modifier_key (context))
+        {
+          /* will be activated on release event */
+          single_modifier_down = TRUE;
+        }
+      else
+        {
+          g_signal_emit_by_name (grabber, "shortcut-activated",
+                                 context.result, timestamp);
+        }
+    }
 
   gdk_display_flush (display);
   gdk_x11_display_error_trap_pop_ignored (display);
