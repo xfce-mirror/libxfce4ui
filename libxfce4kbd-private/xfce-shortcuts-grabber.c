@@ -811,6 +811,7 @@ is_modifier_key (struct EventKeyFindContext context)
 }
 
 
+
 static GdkFilterReturn
 xfce_shortcuts_grabber_event_filter (GdkXEvent *gdk_xevent,
                                      GdkEvent  *event,
@@ -847,7 +848,7 @@ xfce_shortcuts_grabber_event_filter (GdkXEvent *gdk_xevent,
     }
 #endif
 
-  if (xevent->type != KeyPress && (xevent->type != KeyRelease && single_modifier_down))
+  if (xevent->type != KeyPress && !(xevent->type == KeyRelease && single_modifier_down))
     return GDK_FILTER_CONTINUE;
 
   context.result = NULL;
@@ -859,6 +860,10 @@ xfce_shortcuts_grabber_event_filter (GdkXEvent *gdk_xevent,
   keymap = gdk_keymap_get_for_display (display);
   mod_mask = gtk_accelerator_get_default_mod_mask ();
   modifiers = xevent->xkey.state;
+
+  /* Remove modifier added to single modifier key on release event */
+  if (xevent->type == KeyRelease && single_modifier_down)
+    modifiers = 0;
 
   gdk_keymap_translate_keyboard_state (keymap, xevent->xkey.keycode,
                                        modifiers,
@@ -887,7 +892,7 @@ xfce_shortcuts_grabber_event_filter (GdkXEvent *gdk_xevent,
    * this is a proper solution, it fixes bug #10373 which some people
    * experience without breaking functionality for other users.
    */
-  if (!single_modifier_down && modifiers & GDK_MOD4_MASK)
+  if (modifiers & GDK_MOD4_MASK)
     {
       modifiers &= ~GDK_MOD4_MASK;
       modifiers |= GDK_SUPER_MASK;
@@ -912,26 +917,19 @@ xfce_shortcuts_grabber_event_filter (GdkXEvent *gdk_xevent,
                      (GHRFunc) (void (*)(void)) find_event_key,
                      &context);
 
+  single_modifier_down = FALSE;
   if (G_LIKELY (context.result != NULL))
     {
       /* We had a positive match */
-      if (xevent->type == KeyPress)
+      if (xevent->type == KeyPress && is_modifier_key (context))
         {
-          if (is_modifier_key (context))
-            single_modifier_down = TRUE;
-          else
-            {
-              single_modifier_down = FALSE;
-              g_signal_emit_by_name (grabber, "shortcut-activated",
-                                     context.result, timestamp);
-            }
+          /* Will be activated on release event */
+          single_modifier_down = TRUE;
         }
-      else if (single_modifier_down)
+      else
         {
-          single_modifier_down = FALSE;
           g_signal_emit_by_name (grabber, "shortcut-activated",
                                  context.result, timestamp);
-
         }
     }
 
