@@ -737,3 +737,26 @@ get_os_name (void)
 
   return result;
 }
+
+
+
+char *
+get_os_logo (void)
+{
+  GHashTable *os_info;
+  gchar *os_logo;
+
+  os_info = get_os_info ();
+
+  /* If we're not on Linux we return NULL */
+  if (!os_info)
+    return NULL;
+
+  os_logo = g_strdup (g_hash_table_lookup (os_info, "LOGO"));
+
+  if (xfce_str_is_empty (os_logo))
+    os_logo = g_strconcat (g_hash_table_lookup (os_info, "ID"), "-logo", NULL);
+
+  g_clear_pointer (&os_info, g_hash_table_destroy);
+  return os_logo;
+}
