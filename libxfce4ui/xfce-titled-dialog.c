@@ -168,6 +168,7 @@ xfce_titled_dialog_init (XfceTitledDialog *titled_dialog)
 
   if (titled_dialog->priv->use_header)
     {
+      gchar *decoration_layout;
       g_object_set (G_OBJECT (titled_dialog), "use-header-bar", TRUE, NULL);
 
       /* Get the headerbar of the dialog */
@@ -177,10 +178,21 @@ xfce_titled_dialog_init (XfceTitledDialog *titled_dialog)
       /* Don't reserve vertical space for subtitles */
       gtk_header_bar_set_has_subtitle (GTK_HEADER_BAR (titled_dialog->priv->headerbar), FALSE);
 
+      /* Display window buttons*/
+      gtk_header_bar_set_show_close_button (GTK_HEADER_BAR (titled_dialog->priv->headerbar), TRUE);
+      g_object_get (settings, "gtk-decoration-layout", &decoration_layout, NULL);
+
+      /* Ignore "icon" in decoration layout (see #92) */
+      if (g_strrstr (decoration_layout, "icon") != NULL)
+        {
+          gchar *new_layout = xfce_str_replace (decoration_layout, "icon", "");
+          gtk_header_bar_set_decoration_layout (GTK_HEADER_BAR (titled_dialog->priv->headerbar), new_layout);
+          g_free (new_layout);
+        }
+
       /* Pack the window icon into the headerbar */
       titled_dialog->priv->icon = gtk_image_new ();
       gtk_header_bar_pack_start (GTK_HEADER_BAR (titled_dialog->priv->headerbar), titled_dialog->priv->icon);
-      gtk_header_bar_set_show_close_button (GTK_HEADER_BAR (titled_dialog->priv->headerbar), TRUE);
       gtk_widget_show (titled_dialog->priv->icon);
       titled_dialog->priv->pixbuf = NULL;
 
