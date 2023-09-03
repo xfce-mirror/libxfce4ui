@@ -350,11 +350,12 @@ xfce_shortcuts_grabber_ungrab_all (XfceShortcutsGrabber *grabber)
 
 
 static gboolean
-get_entries_for_keyval (GdkKeymap     *keymap,
-                        gint           group,
-                        guint          keyval,
-                        GdkKeymapKey **keys,
-                        guint         *n_keys)
+get_entries_for_keyval (GdkKeymap        *keymap,
+                        gint              group,
+                        guint             keyval,
+                        GdkModifierType   modifiers,
+                        GdkKeymapKey    **keys,
+                        guint            *n_keys)
 {
   GdkKeymapKey *keys1;
   gint n_keys1;
@@ -401,6 +402,23 @@ get_entries_for_keyval (GdkKeymap     *keymap,
             i++;
           else
             keys1[i] = keys1[--n_keys1];
+      }
+  }
+
+  /* Filter keys by level */
+  {
+    gint i;
+
+    /* Remove keys that do not match the level for the given modifiers */
+    for (i = 0; i < n_keys1;)
+      {
+        if ((keys1[i].level > 0 && modifiers == 0)
+            || (keys1[i].level == 0 && (modifiers & (GDK_SHIFT_MASK | GDK_MOD5_MASK))))
+          {
+            keys1[i] = keys1[--n_keys1];
+          }
+        else
+          i++;
       }
   }
 
@@ -483,7 +501,7 @@ xfce_shortcuts_grabber_regrab_all (XfceShortcutsGrabber *grabber)
 
     if (!map_virtual_modifiers (keymap, key->modifiers, &non_virtual_modifiers))
       continue;
-    if (!get_entries_for_keyval (keymap, group, key->keyval, &keys, &n_keys))
+    if (!get_entries_for_keyval (keymap, group, key->keyval, key->modifiers, &keys, &n_keys))
       continue;
 
     already_grabbed = TRUE;
@@ -624,7 +642,7 @@ xfce_shortcuts_grabber_grab (XfceShortcutsGrabber *grabber, XfceKey *key)
 
   if (!map_virtual_modifiers (keymap, key->modifiers, &non_virtual_modifiers))
     return;
-  if (!get_entries_for_keyval (keymap, group, key->keyval, &keys, &n_keys))
+  if (!get_entries_for_keyval (keymap, group, key->keyval, key->modifiers, &keys, &n_keys))
     return;
 
 #ifdef DEBUG_TRACE
