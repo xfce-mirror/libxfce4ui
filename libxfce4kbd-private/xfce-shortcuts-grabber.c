@@ -405,18 +405,22 @@ get_entries_for_keyval (GdkKeymap        *keymap,
 
   /* Filter keys by level */
   {
-    gint i;
+    guint keyval_trans;
+    GdkModifierType modifiers_levelled;
 
     /* Remove keys that do not match the level for the given modifiers */
-    for (i = 0; i < n_keys;)
+    for (gint i = 0; i < n_keys;)
       {
-        if ((keys[i].level > 0 && modifiers == 0)
-            || (keys[i].level == 0 && (modifiers & (GDK_SHIFT_MASK | GDK_MOD5_MASK))))
-          {
-            keys[i] = keys[--n_keys];
-          }
-        else
+        modifiers_levelled = modifiers;
+        if (keys[i].level == 0)
+          modifiers_levelled &= ~(GDK_SHIFT_MASK | GDK_MOD5_MASK);
+
+        gdk_keymap_translate_keyboard_state (keymap, keys[i].keycode, modifiers_levelled,
+                                             keys[i].group, &keyval_trans, NULL, NULL, NULL);
+        if (keyval == keyval_trans)
           i++;
+        else
+          keys[i] = keys[--n_keys];
       }
   }
 
