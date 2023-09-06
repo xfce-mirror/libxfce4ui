@@ -354,82 +354,84 @@ get_entries_for_keyval (GdkKeymap        *keymap,
                         gint              group,
                         guint             keyval,
                         GdkModifierType   modifiers,
-                        GdkKeymapKey    **keys,
-                        guint            *n_keys)
+                        GdkKeymapKey    **keys_out,
+                        guint            *n_keys_out)
 {
-  GdkKeymapKey *keys1;
-  gint n_keys1;
+  GdkKeymapKey *keys;
+  gint n_keys;
 
-  *keys = NULL;
-  *n_keys = 0;
+  *keys_out = NULL;
+  *n_keys_out = 0;
 
    /* Get all keys generating keyval */
-  if (!gdk_keymap_get_entries_for_keyval (keymap, keyval, &keys1, &n_keys1))
+  if (!gdk_keymap_get_entries_for_keyval (keymap, keyval, &keys, &n_keys))
     {
       TRACE ("Got no keys for keyval");
       return FALSE;
     }
 
-  if (G_UNLIKELY (n_keys1 <= 0))
+  if (G_UNLIKELY (n_keys <= 0))
     {
-      g_free (keys1);
+      g_free (keys);
       return FALSE;
     }
 
   /* Filter keys by group */
   {
-    gboolean group0_only;
-    gint i, n_matches;
+    gboolean group0_only = TRUE;
 
     /* For keys such as F12:
      *   keys1[i].group is always 0 (even if n_keys1 >= 2)
      *   and thus n_matches will be zero if group != 0 */
-
-    group0_only = TRUE;
-    n_matches = 0;
-    for (i = 0; i < n_keys1; i++)
+    for (gint i = 0; i < n_keys; i++)
       {
-        group0_only &= (keys1[i].group == 0) ? TRUE : FALSE;
-        if (keys1[i].group == group)
-          n_matches++;
+        if (keys[i].group != 0)
+          {
+            group0_only = FALSE;
+            break;
+          }
       }
 
-    if (!group0_only || n_matches != 0)
+    if (!group0_only)
       {
         /* Remove keys that do not match the group*/
-        for (i = 0; i < n_keys1;)
-          if (keys1[i].group == group)
+        for (gint i = 0; i < n_keys;)
+          if (keys[i].group == group)
             i++;
           else
-            keys1[i] = keys1[--n_keys1];
+            keys[i] = keys[--n_keys];
       }
   }
 
   /* Filter keys by level */
   {
-    gint i;
+    guint keyval_trans;
+    GdkModifierType modifiers_levelled;
 
     /* Remove keys that do not match the level for the given modifiers */
-    for (i = 0; i < n_keys1;)
+    for (gint i = 0; i < n_keys;)
       {
-        if ((keys1[i].level > 0 && modifiers == 0)
-            || (keys1[i].level == 0 && (modifiers & (GDK_SHIFT_MASK | GDK_MOD5_MASK))))
-          {
-            keys1[i] = keys1[--n_keys1];
-          }
-        else
+        modifiers_levelled = modifiers;
+        if (keys[i].level == 0)
+          modifiers_levelled &= ~(GDK_SHIFT_MASK | GDK_MOD5_MASK);
+
+        gdk_keymap_translate_keyboard_state (keymap, keys[i].keycode, modifiers_levelled,
+                                             keys[i].group, &keyval_trans, NULL, NULL, NULL);
+        if (keyval == keyval_trans)
           i++;
+        else
+          keys[i] = keys[--n_keys];
       }
   }
 
-  if (G_UNLIKELY (n_keys1 == 0))
+  if (G_UNLIKELY (n_keys == 0))
     {
-      g_free (keys1);
+      g_free (keys);
       return FALSE;
     }
 
-  *keys = keys1;
-  *n_keys = n_keys1;
+  *keys_out = keys;
+  *n_keys_out = n_keys;
   return TRUE;
 }
 
