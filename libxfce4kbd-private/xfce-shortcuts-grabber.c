@@ -378,26 +378,24 @@ get_entries_for_keyval (GdkKeymap        *keymap,
 
   /* Filter keys by group */
   {
-    gboolean group0_only;
-    gint i, n_matches;
+    gboolean group0_only = TRUE;
 
     /* For keys such as F12:
      *   keys1[i].group is always 0 (even if n_keys1 >= 2)
      *   and thus n_matches will be zero if group != 0 */
-
-    group0_only = TRUE;
-    n_matches = 0;
-    for (i = 0; i < n_keys; i++)
+    for (gint i = 0; i < n_keys; i++)
       {
-        group0_only &= (keys[i].group == 0) ? TRUE : FALSE;
-        if (keys[i].group == group)
-          n_matches++;
+        if (keys[i].group != 0)
+          {
+            group0_only = FALSE;
+            break;
+          }
       }
 
-    if (!group0_only || n_matches != 0)
+    if (!group0_only)
       {
         /* Remove keys that do not match the group*/
-        for (i = 0; i < n_keys;)
+        for (gint i = 0; i < n_keys;)
           if (keys[i].group == group)
             i++;
           else
