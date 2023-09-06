@@ -354,25 +354,25 @@ get_entries_for_keyval (GdkKeymap        *keymap,
                         gint              group,
                         guint             keyval,
                         GdkModifierType   modifiers,
-                        GdkKeymapKey    **keys,
-                        guint            *n_keys)
+                        GdkKeymapKey    **keys_out,
+                        guint            *n_keys_out)
 {
-  GdkKeymapKey *keys1;
-  gint n_keys1;
+  GdkKeymapKey *keys;
+  gint n_keys;
 
-  *keys = NULL;
-  *n_keys = 0;
+  *keys_out = NULL;
+  *n_keys_out = 0;
 
    /* Get all keys generating keyval */
-  if (!gdk_keymap_get_entries_for_keyval (keymap, keyval, &keys1, &n_keys1))
+  if (!gdk_keymap_get_entries_for_keyval (keymap, keyval, &keys, &n_keys))
     {
       TRACE ("Got no keys for keyval");
       return FALSE;
     }
 
-  if (G_UNLIKELY (n_keys1 <= 0))
+  if (G_UNLIKELY (n_keys <= 0))
     {
-      g_free (keys1);
+      g_free (keys);
       return FALSE;
     }
 
@@ -387,21 +387,21 @@ get_entries_for_keyval (GdkKeymap        *keymap,
 
     group0_only = TRUE;
     n_matches = 0;
-    for (i = 0; i < n_keys1; i++)
+    for (i = 0; i < n_keys; i++)
       {
-        group0_only &= (keys1[i].group == 0) ? TRUE : FALSE;
-        if (keys1[i].group == group)
+        group0_only &= (keys[i].group == 0) ? TRUE : FALSE;
+        if (keys[i].group == group)
           n_matches++;
       }
 
     if (!group0_only || n_matches != 0)
       {
         /* Remove keys that do not match the group*/
-        for (i = 0; i < n_keys1;)
-          if (keys1[i].group == group)
+        for (i = 0; i < n_keys;)
+          if (keys[i].group == group)
             i++;
           else
-            keys1[i] = keys1[--n_keys1];
+            keys[i] = keys[--n_keys];
       }
   }
 
@@ -410,26 +410,26 @@ get_entries_for_keyval (GdkKeymap        *keymap,
     gint i;
 
     /* Remove keys that do not match the level for the given modifiers */
-    for (i = 0; i < n_keys1;)
+    for (i = 0; i < n_keys;)
       {
-        if ((keys1[i].level > 0 && modifiers == 0)
-            || (keys1[i].level == 0 && (modifiers & (GDK_SHIFT_MASK | GDK_MOD5_MASK))))
+        if ((keys[i].level > 0 && modifiers == 0)
+            || (keys[i].level == 0 && (modifiers & (GDK_SHIFT_MASK | GDK_MOD5_MASK))))
           {
-            keys1[i] = keys1[--n_keys1];
+            keys[i] = keys[--n_keys];
           }
         else
           i++;
       }
   }
 
-  if (G_UNLIKELY (n_keys1 == 0))
+  if (G_UNLIKELY (n_keys == 0))
     {
-      g_free (keys1);
+      g_free (keys);
       return FALSE;
     }
 
-  *keys = keys1;
-  *n_keys = n_keys1;
+  *keys_out = keys;
+  *n_keys_out = n_keys;
   return TRUE;
 }
 
