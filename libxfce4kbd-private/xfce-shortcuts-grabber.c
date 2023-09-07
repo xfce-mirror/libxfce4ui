@@ -562,25 +562,17 @@ xfce_shortcuts_grabber_regrab_all (XfceShortcutsGrabber *grabber)
       {
         /* Undo current X11 grabs of the key */
         if (key->n_keys != 0)
-          xfce_shortcuts_grabber_ungrab (grabber, key);
+          {
+            xfce_shortcuts_grabber_ungrab (grabber, key);
+            g_free (key->keys);
+          }
 
         /* Set key->keys to the keycodes that need to be grabbed in phase 2 */
-        if (G_UNLIKELY (key->keys))
-        {
-          g_free (key->keys);
-          key->keys = NULL;
-        }
+        key->keys = keys;
         key->n_keys = n_keys;
-        if (n_keys != 0)
-          key->keys = keys;
-        else
-          g_free (keys);
         key->non_virtual_modifiers = non_virtual_modifiers;
         key->numlock_modifier = numlock_modifier;
-
-        /* Remember to grab the key in phase 2 */
-        if (n_keys != 0)
-          regrab[n_regrab++] = key;
+        regrab[n_regrab++] = key;
       }
   }
 
@@ -629,12 +621,8 @@ xfce_shortcuts_grabber_grab (XfceShortcutsGrabber *grabber, XfceKey *key)
 
   /* Set key->keys to the list of keys that been succesfully grabbed */
   g_free (key->keys);
-  key->keys = NULL;
+  key->keys = keys;
   key->n_keys = n_keys;
-  if (n_keys != 0)
-    key->keys = keys;
-  else
-    g_free (keys);
   key->non_virtual_modifiers = non_virtual_modifiers;
   key->numlock_modifier = numlock_modifier;
 }
