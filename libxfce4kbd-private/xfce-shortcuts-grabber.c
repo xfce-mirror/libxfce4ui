@@ -63,7 +63,6 @@ typedef struct _XfceKey XfceKey;
 
 
 
-static void            xfce_shortcuts_grabber_constructed      (GObject                   *object);
 static void            xfce_shortcuts_grabber_finalize         (GObject                   *object);
 static void            xfce_shortcuts_grabber_keys_changed     (GdkKeymap                 *keymap,
                                                                 XfceShortcutsGrabber      *grabber);
@@ -126,7 +125,6 @@ xfce_shortcuts_grabber_class_init (XfceShortcutsGrabberClass *klass)
   GObjectClass *gobject_class;
 
   gobject_class = G_OBJECT_CLASS (klass);
-  gobject_class->constructed = xfce_shortcuts_grabber_constructed;
   gobject_class->finalize = xfce_shortcuts_grabber_finalize;
 
   g_signal_new ("shortcut-activated",
@@ -185,8 +183,8 @@ xgrab_hash (gconstpointer data)
 static void
 xfce_shortcuts_grabber_init (XfceShortcutsGrabber *grabber)
 {
-  GdkDisplay      *display;
-  GdkKeymap       *keymap;
+  Display *xdisplay = gdk_x11_get_default_xdisplay ();
+  GdkKeymap *keymap = gdk_keymap_get_for_display (gdk_display_get_default ());
 
   grabber->priv = xfce_shortcuts_grabber_get_instance_private (grabber);
   grabber->priv->keys = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, free_key);
@@ -197,25 +195,8 @@ xfce_shortcuts_grabber_init (XfceShortcutsGrabber *grabber)
    * mapped because the modmap is not updated. The following function
    * updates it.
    */
-  display = gdk_display_get_default ();
-  keymap = gdk_keymap_get_for_display (display);
-  (void) gdk_keymap_have_bidi_layouts (keymap);
-}
+  gdk_keymap_have_bidi_layouts (keymap);
 
-
-
-static void
-xfce_shortcuts_grabber_constructed (GObject *object)
-{
-  GdkDisplay *display;
-  Display    *xdisplay;
-  GdkKeymap  *keymap;
-
-  XfceShortcutsGrabber *grabber = XFCE_SHORTCUTS_GRABBER (object);
-
-  display = gdk_display_get_default ();
-  xdisplay = GDK_DISPLAY_XDISPLAY (display);
-  keymap = gdk_keymap_get_for_display (display);
   g_signal_connect (keymap, "keys-changed", G_CALLBACK (xfce_shortcuts_grabber_keys_changed),
                     grabber);
 
