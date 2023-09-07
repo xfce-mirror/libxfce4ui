@@ -88,7 +88,9 @@ struct _XfceShortcutsGrabberPrivate
    * The reference count tracks the number of shortcuts that grab the XfceXGrab. */
   GHashTable *grabbed_keycodes;
 
+#if TRACK_LAYOUT_CHANGE
   gint xkbEventType, xkbStateGroup;
+#endif
 };
 
 struct _XfceKey
@@ -217,12 +219,10 @@ xfce_shortcuts_grabber_constructed (GObject *object)
   g_signal_connect (keymap, "keys-changed", G_CALLBACK (xfce_shortcuts_grabber_keys_changed),
                     grabber);
 
+#if TRACK_LAYOUT_CHANGE
   if (G_UNLIKELY (!XkbQueryExtension (xdisplay, 0, &grabber->priv->xkbEventType, 0, 0, 0)))
     grabber->priv->xkbEventType = -1;
-#if TRACK_LAYOUT_CHANGE
   grabber->priv->xkbStateGroup = -1;
-#else
-  grabber->priv->xkbStateGroup = 0;
 #endif
 
   /* Flush events before adding the event filter */
@@ -475,7 +475,10 @@ xfce_shortcuts_grabber_regrab_all (XfceShortcutsGrabber *grabber)
   guint           n_regrab = 0;
   XfceKey       **regrab; /* list of keys to re-grab */
   guint           i;
-  gint            group;
+  gint            group = 0;
+#if TRACK_LAYOUT_CHANGE
+  group = MAX (0, grabber->priv->xkbStateGroup);
+#endif
 
   g_return_if_fail (XFCE_IS_SHORTCUTS_GRABBER (grabber));
 
@@ -484,9 +487,6 @@ xfce_shortcuts_grabber_regrab_all (XfceShortcutsGrabber *grabber)
   keymap = gdk_keymap_get_for_display (display);
   numlock_modifier = XkbKeysymToModifiers (xdisplay, GDK_KEY_Num_Lock);
   grabbed_keycodes = grabber->priv->grabbed_keycodes;
-  group = grabber->priv->xkbStateGroup;
-  if (G_UNLIKELY (group == -1))
-    group = 0;
 
   regrab = g_new (XfceKey *, g_hash_table_size (grabber->priv->keys));
 
@@ -631,16 +631,16 @@ xfce_shortcuts_grabber_grab (XfceShortcutsGrabber *grabber, XfceKey *key)
   GdkKeymapKey    *keys;
   GdkModifierType  non_virtual_modifiers;
   guint            i, n_keys;
-  gint             group;
+  gint             group = 0;
+#if TRACK_LAYOUT_CHANGE
+  group = MAX (0, grabber->priv->xkbStateGroup);
+#endif
 
   display = gdk_display_get_default ();
   xdisplay = GDK_DISPLAY_XDISPLAY (display);
   keymap = gdk_keymap_get_for_display (display);
   numlock_modifier = XkbKeysymToModifiers (xdisplay, GDK_KEY_Num_Lock);
   grabbed_keycodes = grabber->priv->grabbed_keycodes;
-  group = grabber->priv->xkbStateGroup;
-  if (G_UNLIKELY (group == -1))
-    group = 0;
 
   if (!map_virtual_modifiers (keymap, key->modifiers, &non_virtual_modifiers))
     return;
@@ -846,6 +846,7 @@ xfce_shortcuts_grabber_event_filter (GdkXEvent *gdk_xevent,
   guint                       keyval, mod_mask;
   gchar                      *raw_shortcut_name;
   gint                        timestamp;
+  gint                        group = 0;
 
   /* We only activate single modifier keys on release event to allow combinations
    * such as Super to open a menu and Super+T to open a terminal: see
@@ -870,6 +871,7 @@ xfce_shortcuts_grabber_event_filter (GdkXEvent *gdk_xevent,
             }
         }
     }
+  group = grabber->priv->xkbStateGroup;
 #endif
 
   if (xevent->type != KeyPress && !(xevent->type == KeyRelease && single_modifier_down))
@@ -891,7 +893,7 @@ xfce_shortcuts_grabber_event_filter (GdkXEvent *gdk_xevent,
 
   gdk_keymap_translate_keyboard_state (keymap, xevent->xkey.keycode,
                                        modifiers,
-                                       grabber->priv->xkbStateGroup,
+                                       group,
                                        &keyval, NULL, NULL, &consumed);
 
   /* We want Alt + Print to be Alt + Print not SysReq. See bug #7897 */
