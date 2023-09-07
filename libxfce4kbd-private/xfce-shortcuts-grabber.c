@@ -503,7 +503,7 @@ xfce_shortcuts_grabber_regrab_all (XfceShortcutsGrabber *grabber)
   g_hash_table_iter_init (&iter, grabber->priv->keys);
   while (g_hash_table_iter_next (&iter, NULL, &hash_value))
   {
-    XfceKey         *const key = hash_value;
+    XfceKey         *key = hash_value;
     GdkKeymapKey    *keys;
     GdkModifierType  non_virtual_modifiers;
     guint            n_keys;
@@ -560,7 +560,7 @@ xfce_shortcuts_grabber_regrab_all (XfceShortcutsGrabber *grabber)
   /* Phase 2: Grab all keys that have been stored in the 'regrab' list */
   for (guint i = 0; i < n_regrab; i++)
   {
-    XfceKey *const key = regrab[i];
+    XfceKey *key = regrab[i];
 
     _xfce_shortcuts_grabber_grab (grabber, key, key->non_virtual_modifiers,
                                   numlock_modifier, key->keys, &key->n_keys);
@@ -728,7 +728,7 @@ xfce_shortcuts_grabber_event_filter (GdkXEvent *gdk_xevent,
                                      GdkEvent  *event,
                                      gpointer   data)
 {
-  XfceShortcutsGrabber       *const grabber = data;
+  XfceShortcutsGrabber       *grabber = data;
   struct EventKeyFindContext  context;
   GdkModifierType             consumed, modifiers;
   GdkDisplay                 *display;
