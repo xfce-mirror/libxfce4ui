@@ -421,21 +421,22 @@ get_entries_for_keyval (GdkKeymap        *keymap,
 static gboolean
 map_virtual_modifiers (GdkKeymap       *keymap,
                        GdkModifierType  virtual_modifiers,
-                       GdkModifierType *non_virtual_modifiers)
+                       GdkModifierType *non_virtual_modifiers_out)
 {
+  GdkModifierType non_virtual_modifiers = virtual_modifiers;
+
   /* Map virtual modifiers to non-virtual modifiers */
-  GdkModifierType non_virtual = virtual_modifiers;
-  if (!gdk_keymap_map_virtual_modifiers (keymap, &non_virtual))
+  if (!gdk_keymap_map_virtual_modifiers (keymap, &non_virtual_modifiers))
     return FALSE;
 
-  if (non_virtual == virtual_modifiers &&
-      (GDK_SUPER_MASK | GDK_HYPER_MASK | GDK_META_MASK) & non_virtual)
+  if (non_virtual_modifiers == virtual_modifiers &&
+      (GDK_SUPER_MASK | GDK_HYPER_MASK | GDK_META_MASK) & non_virtual_modifiers)
     {
       TRACE ("Failed to map virtual modifiers");
       return FALSE;
     }
 
-  *non_virtual_modifiers = non_virtual;
+  *non_virtual_modifiers_out = non_virtual_modifiers;
   return TRUE;
 }
 
