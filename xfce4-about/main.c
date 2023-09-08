@@ -68,6 +68,7 @@ xfce_about_system (GtkBuilder *builder)
   GObject *vendor_info;
   glibtop_mem mem;
   const glibtop_sysinfo *info;
+  g_autofree char *os_logo = NULL;
   g_autofree char *device_text = NULL;
   g_autofree char *cpu_text = NULL;
   g_autofree char *gpu_text = NULL;
@@ -77,6 +78,36 @@ xfce_about_system (GtkBuilder *builder)
   g_autofree char *os_name_text = NULL;
   g_autofree char *os_type_text = NULL;
   guint num_gpus = 0;
+
+  os_logo = get_os_logo ();
+  if (os_logo)
+    {
+      GObject *image = gtk_builder_get_object (builder, "os-logo");
+
+      if (gtk_icon_theme_has_icon (gtk_icon_theme_get_default (), os_logo))
+        gtk_image_set_from_icon_name (GTK_IMAGE (image), os_logo,
+                                    gtk_image_get_pixel_size (GTK_IMAGE (image)));
+
+      else
+        {
+          const gchar *extensions[] = {"svg", "png"};
+          g_autofree gchar *pixmap_path = g_strconcat ("/usr/share/pixmaps/", os_logo, ".", NULL);
+
+          for (guint i = 0; i < G_N_ELEMENTS (extensions); i++)
+            {
+              g_autofree gchar *path = g_strconcat (pixmap_path, extensions[i], NULL);
+              if (g_file_test (path, G_FILE_TEST_EXISTS))
+                {
+                  gtk_image_set_from_file (GTK_IMAGE (image), path);
+                  break;
+                }
+
+              g_free (path);
+            }
+
+          g_free (pixmap_path);
+        }
+    }
 
   label = gtk_builder_get_object (builder, "device");
   device_text = get_system_info (DEVICE_NAME);
