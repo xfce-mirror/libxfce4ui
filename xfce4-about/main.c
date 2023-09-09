@@ -87,7 +87,6 @@ xfce_about_system (GtkBuilder *builder)
       if (gtk_icon_theme_has_icon (gtk_icon_theme_get_default (), os_logo))
         gtk_image_set_from_icon_name (GTK_IMAGE (image), os_logo,
                                       gtk_image_get_pixel_size (GTK_IMAGE (image)));
-
       else
         {
           const gchar *extensions[] = {"svg", "png"};
