@@ -101,11 +101,7 @@ xfce_about_system (GtkBuilder *builder)
                   gtk_image_set_from_file (GTK_IMAGE (image), path);
                   break;
                 }
-
-              g_free (path);
             }
-
-          g_free (pixmap_path);
         }
     }
 
