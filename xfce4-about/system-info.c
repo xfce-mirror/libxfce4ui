@@ -753,7 +753,6 @@ get_os_logo (void)
     return NULL;
 
   os_logo = g_strdup (g_hash_table_lookup (os_info, "LOGO"));
-
   if (xfce_str_is_empty (os_logo))
     {
       g_free (os_logo);
