@@ -11,14 +11,14 @@
 # olegb <olegb@omgwtf.dk>, 2008
 # olegb <olegb@omgwtf.dk>, 2008
 # Per Kongstad <p_kongstad@op.pl>, 2009
-# scootergrisen, 2016-2022
+# scootergrisen, 2016-2023
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2023-04-06 12:45+0200\n"
+"POT-Creation-Date: 2023-05-30 00:45+0200\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: scootergrisen, 2016-2022\n"
+"Last-Translator: scootergrisen, 2016-2023\n"
 "Language-Team: Danish (http://app.transifex.com/xfce/libxfce4ui/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -224,7 +224,7 @@ msgstr "Genvejsredigering"
 
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:380
 msgid "The current shortcut. Click to edit..."
-msgstr ""
+msgstr "Nuværende genvej. Klik for at redigere ..."
 
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:391
 msgid "Clear the shortcut"
@@ -394,19 +394,19 @@ msgstr "Fuldskærm til/fra"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:63
 msgid "Move window to lower monitor"
-msgstr ""
+msgstr "Flyt vindue til skærm nedenfor"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:64
 msgid "Move window to left monitor"
-msgstr ""
+msgstr "Flyt vindue til venstre skærm"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:65
 msgid "Move window to right monitor"
-msgstr ""
+msgstr "Flyt vindue til højre skærm"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:66
 msgid "Move window to upper monitor"
-msgstr ""
+msgstr "Flyt vindue til skærm ovenfor"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:67
 msgid "Move window to upper workspace"
@@ -791,10 +791,6 @@ msgstr "Oversættere"
 msgid "Previous contributors"
 msgstr "Tidligere bidragydere"
 
-#: xfce4-about/xfce4-about.desktop.in:6
-msgid "org.xfce.about"
-msgstr ""
-
 #: xfce4-about/xfce4-about.desktop.in:11
 msgid "About Xfce"
 msgstr "Om Xfce"
@@ -854,11 +850,11 @@ msgstr "Xfce-version"
 
 #: xfce4-about/xfce4-about-dialog.glade:564
 msgid "GTK Version"
-msgstr ""
+msgstr "GTK-version"
 
 #: xfce4-about/xfce4-about-dialog.glade:589
 msgid "Kernel Version"
-msgstr ""
+msgstr "Kernelversion"
 
 #: xfce4-about/xfce4-about-dialog.glade:615
 msgid "CPU"
