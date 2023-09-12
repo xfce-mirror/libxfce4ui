@@ -5,6 +5,7 @@
 # 
 # Translators:
 # Xfce Bot <transifex@xfce.org>, 2023
+# scootergrisen, 2023
 # 
 #, fuzzy
 msgid ""
@@ -13,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-30 00:46+0200\n"
 "PO-Revision-Date: 2023-02-20 11:56+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>, 2023\n"
+"Last-Translator: scootergrisen, 2023\n"
 "Language-Team: Danish (https://app.transifex.com/xfce/teams/16840/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -234,7 +235,7 @@ msgstr "Genvejsredigering"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:380
 msgid "The current shortcut. Click to edit..."
-msgstr ""
+msgstr "Nuværende genvej. Klik for at redigere ..."
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:391
 msgid "Clear the shortcut"
@@ -404,19 +405,19 @@ msgstr "Fuldskærm til/fra"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:63
 msgid "Move window to lower monitor"
-msgstr ""
+msgstr "Flyt vindue til skærm nedenfor"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:64
 msgid "Move window to left monitor"
-msgstr ""
+msgstr "Flyt vindue til venstre skærm"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:65
 msgid "Move window to right monitor"
-msgstr ""
+msgstr "Flyt vindue til højre skærm"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:66
 msgid "Move window to upper monitor"
-msgstr ""
+msgstr "Flyt vindue til skærm ovenfor"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:67
 msgid "Move window to upper workspace"
@@ -878,11 +879,11 @@ msgstr "Xfce-version"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:11
 msgid "GTK Version"
-msgstr ""
+msgstr "GTK-version"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:12
 msgid "Kernel Version"
-msgstr ""
+msgstr "Kernelversion"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:13
 msgid "CPU"
