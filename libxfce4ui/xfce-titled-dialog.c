@@ -61,6 +61,7 @@ enum
 static GObject *xfce_titled_dialog_constructor    (GType                   type,
                                                    guint                   n_construct_params,
                                                    GObjectConstructParam  *construct_params);
+static void     xfce_titled_dialog_constructed    (GObject                *object);
 static void     xfce_titled_dialog_finalize       (GObject                *object);
 static void     xfce_titled_dialog_get_property   (GObject                *object,
                                                    guint                   prop_id,
@@ -110,6 +111,7 @@ xfce_titled_dialog_class_init (XfceTitledDialogClass *klass)
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->constructor = xfce_titled_dialog_constructor;
+  gobject_class->constructed = xfce_titled_dialog_constructed;
   gobject_class->get_property = xfce_titled_dialog_get_property;
   gobject_class->set_property = xfce_titled_dialog_set_property;
   gobject_class->finalize = xfce_titled_dialog_finalize;
@@ -218,6 +220,61 @@ xfce_titled_dialog_init (XfceTitledDialog *titled_dialog)
 
       gtk_box_pack_start (GTK_BOX (vbox), content_area, TRUE, TRUE, 0);
       g_object_unref (G_OBJECT(content_area));
+    }
+}
+
+
+
+static void
+xfce_titled_dialog_constructed (GObject *object)
+{
+  GtkWidget   *action_area = NULL;
+  GList       *children = NULL;
+
+  /* remove and save all button from action area */
+  if (XFCE_TITLED_DIALOG (object)->priv->use_header)
+    {
+      GList *l;
+
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+      action_area = gtk_dialog_get_action_area (GTK_DIALOG (object));
+G_GNUC_END_IGNORE_DEPRECATIONS
+      children = gtk_container_get_children (GTK_CONTAINER (action_area));
+
+      for (l = children; l != NULL; l = l->next)
+        {
+          GtkWidget *child = l->data;
+
+          g_object_ref (G_OBJECT (child));
+          gtk_container_remove (GTK_CONTAINER (action_area), GTK_WIDGET(child));
+        }
+    }
+
+  G_OBJECT_CLASS (xfce_titled_dialog_parent_class)->constructed (object);
+
+  /* putting back button to action area */
+  if (XFCE_TITLED_DIALOG (object)->priv->use_header)
+    {
+      GList *l;
+
+      for (l = children; l != NULL; l = l->next)
+        {
+          GtkWidget *child = l->data;
+          ResponseData *rd;
+          gint response_id;
+
+          rd = g_object_get_data (G_OBJECT (child), "gtk-dialog-response-data");
+          response_id = rd ? rd->response_id : GTK_RESPONSE_NONE;
+
+          gtk_container_add (GTK_CONTAINER (action_area), child);
+          g_object_unref (G_OBJECT (child));
+
+          /* always add help buttons as secondary */
+          if (response_id == GTK_RESPONSE_HELP)
+            gtk_button_box_set_child_secondary (GTK_BUTTON_BOX (action_area), child, TRUE);
+        }
+
+        g_list_free (children);
     }
 }
 
@@ -615,7 +672,7 @@ G_GNUC_END_IGNORE_DEPRECATIONS
  * xfce_titled_dialog_create_action_area:
  * @titled_dialog : a #XfceTitledDialog.
  *
- * This function creates a custom action area (of type #GtkButtonBox) and has to
+ * This function get GtkDialog action area (of type #GtkButtonBox) and has to
  * be used in combination with #xfce_titled_dialog_add_action_widget.
  *
  * When using the XfceTitledDialogClass directly to create dialogs this function is
@@ -628,20 +685,11 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 void
 xfce_titled_dialog_create_action_area (XfceTitledDialog *titled_dialog)
 {
-  GtkWidget *dialog_vbox;
-
   g_return_if_fail (XFCE_IS_TITLED_DIALOG (titled_dialog));
 
-  /* Create new buttonbox to act as custom action area for the dialog */
-  titled_dialog->priv->action_area = gtk_button_box_new (GTK_ORIENTATION_HORIZONTAL);
-  gtk_button_box_set_layout (GTK_BUTTON_BOX (titled_dialog->priv->action_area), GTK_BUTTONBOX_END);
-  gtk_box_set_spacing (GTK_BOX (titled_dialog->priv->action_area), 6);
-
-  /* Pack the buttonbox in the dialog's main vbox */
-  dialog_vbox = gtk_bin_get_child (GTK_BIN (titled_dialog));
-  gtk_box_pack_end (GTK_BOX (dialog_vbox), titled_dialog->priv->action_area, FALSE, TRUE, 0);
-  gtk_box_reorder_child (GTK_BOX (dialog_vbox), titled_dialog->priv->action_area, 0);
-  gtk_widget_show (titled_dialog->priv->action_area);
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+  titled_dialog->priv->action_area = gtk_dialog_get_action_area (GTK_DIALOG (titled_dialog));
+G_GNUC_END_IGNORE_DEPRECATIONS
 }
 
 
