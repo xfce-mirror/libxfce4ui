@@ -795,7 +795,10 @@ G_GNUC_END_IGNORE_DEPRECATIONS
       ResponseData *rd = get_response_data (widget, FALSE);
 
       if (rd && rd->response_id == response_id)
-        gtk_window_set_default (GTK_WINDOW (titled_dialog), widget);
+        {
+          gtk_widget_set_can_default (widget, TRUE);
+          gtk_window_set_default (GTK_WINDOW (titled_dialog), widget);
+        }
 
       tmp_list = tmp_list->next;
     }
