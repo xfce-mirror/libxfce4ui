@@ -228,53 +228,44 @@ xfce_titled_dialog_init (XfceTitledDialog *titled_dialog)
 static void
 xfce_titled_dialog_constructed (GObject *object)
 {
-  GtkWidget   *action_area = NULL;
-  GList       *children = NULL;
+  XfceTitledDialog *titled_dialog = XFCE_TITLED_DIALOG (object);
+  GtkWidget *action_area = NULL;
+  GList *children = NULL;
 
   /* remove and save all button from action area */
-  if (XFCE_TITLED_DIALOG (object)->priv->use_header)
+  if (titled_dialog->priv->use_header)
     {
-      GList *l;
-
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
       action_area = gtk_dialog_get_action_area (GTK_DIALOG (object));
 G_GNUC_END_IGNORE_DEPRECATIONS
       children = gtk_container_get_children (GTK_CONTAINER (action_area));
 
-      for (l = children; l != NULL; l = l->next)
+      for (GList *l = children; l != NULL; l = l->next)
         {
-          GtkWidget *child = l->data;
-
-          g_object_ref (G_OBJECT (child));
-          gtk_container_remove (GTK_CONTAINER (action_area), GTK_WIDGET(child));
+          g_object_ref (l->data);
+          gtk_container_remove (GTK_CONTAINER (action_area), l->data);
         }
     }
 
   G_OBJECT_CLASS (xfce_titled_dialog_parent_class)->constructed (object);
 
   /* putting back button to action area */
-  if (XFCE_TITLED_DIALOG (object)->priv->use_header)
+  if (titled_dialog->priv->use_header)
     {
-      GList *l;
-
-      for (l = children; l != NULL; l = l->next)
+      for (GList *l = children; l != NULL; l = l->next)
         {
-          GtkWidget *child = l->data;
-          ResponseData *rd;
-          gint response_id;
+          ResponseData *rd = g_object_get_data (l->data, "gtk-dialog-response-data");
+          gint response_id = rd != NULL ? rd->response_id : GTK_RESPONSE_NONE;
 
-          rd = g_object_get_data (G_OBJECT (child), "gtk-dialog-response-data");
-          response_id = rd ? rd->response_id : GTK_RESPONSE_NONE;
-
-          gtk_container_add (GTK_CONTAINER (action_area), child);
-          g_object_unref (G_OBJECT (child));
+          gtk_container_add (GTK_CONTAINER (action_area), l->data);
+          g_object_unref (l->data);
 
           /* always add help buttons as secondary */
           if (response_id == GTK_RESPONSE_HELP)
-            gtk_button_box_set_child_secondary (GTK_BUTTON_BOX (action_area), child, TRUE);
+            gtk_button_box_set_child_secondary (GTK_BUTTON_BOX (action_area), l->data, TRUE);
         }
 
-        g_list_free (children);
+      g_list_free (children);
     }
 }
 
