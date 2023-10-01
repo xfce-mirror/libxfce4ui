@@ -249,9 +249,17 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 
   G_OBJECT_CLASS (xfce_titled_dialog_parent_class)->constructed (object);
 
-  /* putting back buttons to action area */
   if (titled_dialog->priv->use_header)
     {
+      /* undo some unwanted GTK actions in constructed() */
+      GtkWidget *action_box = gtk_widget_get_parent (action_area);
+      gtk_widget_set_no_show_all (action_box, FALSE);
+      gtk_widget_show (action_box);
+      g_signal_handlers_disconnect_matched (action_area, G_SIGNAL_MATCH_ID | G_SIGNAL_MATCH_DATA,
+                                            g_signal_lookup ("add", GTK_TYPE_CONTAINER),
+                                            0, NULL, NULL, titled_dialog);
+
+      /* putting back buttons to action area */
       for (GList *l = children; l != NULL; l = l->next)
         {
           ResponseData *rd = g_object_get_data (l->data, "gtk-dialog-response-data");
