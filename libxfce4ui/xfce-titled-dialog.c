@@ -168,6 +168,10 @@ xfce_titled_dialog_init (XfceTitledDialog *titled_dialog)
   settings = gtk_settings_get_default ();
   g_object_get (settings, "gtk-dialogs-use-header", &titled_dialog->priv->use_header, NULL);
 
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+  titled_dialog->priv->action_area = gtk_dialog_get_action_area (GTK_DIALOG (titled_dialog));
+G_GNUC_END_IGNORE_DEPRECATIONS
+
   if (titled_dialog->priv->use_header)
     {
       g_object_set (G_OBJECT (titled_dialog), "use-header-bar", TRUE, NULL);
@@ -229,21 +233,17 @@ static void
 xfce_titled_dialog_constructed (GObject *object)
 {
   XfceTitledDialog *titled_dialog = XFCE_TITLED_DIALOG (object);
-  GtkWidget *action_area = NULL;
   GList *children = NULL;
 
   /* remove and save all buttons from action area */
   if (titled_dialog->priv->use_header)
     {
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-      action_area = gtk_dialog_get_action_area (GTK_DIALOG (object));
-G_GNUC_END_IGNORE_DEPRECATIONS
-      children = gtk_container_get_children (GTK_CONTAINER (action_area));
+      children = gtk_container_get_children (GTK_CONTAINER (titled_dialog->priv->action_area));
 
       for (GList *l = children; l != NULL; l = l->next)
         {
           g_object_ref (l->data);
-          gtk_container_remove (GTK_CONTAINER (action_area), l->data);
+          gtk_container_remove (GTK_CONTAINER (titled_dialog->priv->action_area), l->data);
         }
     }
 
@@ -252,10 +252,11 @@ G_GNUC_END_IGNORE_DEPRECATIONS
   if (titled_dialog->priv->use_header)
     {
       /* undo some unwanted GTK actions in constructed() */
-      GtkWidget *action_box = gtk_widget_get_parent (action_area);
+      GtkWidget *action_box = gtk_widget_get_parent (titled_dialog->priv->action_area);
       gtk_widget_set_no_show_all (action_box, FALSE);
       gtk_widget_show (action_box);
-      g_signal_handlers_disconnect_matched (action_area, G_SIGNAL_MATCH_ID | G_SIGNAL_MATCH_DATA,
+      g_signal_handlers_disconnect_matched (titled_dialog->priv->action_area,
+                                            G_SIGNAL_MATCH_ID | G_SIGNAL_MATCH_DATA,
                                             g_signal_lookup ("add", GTK_TYPE_CONTAINER),
                                             0, NULL, NULL, titled_dialog);
 
@@ -265,12 +266,12 @@ G_GNUC_END_IGNORE_DEPRECATIONS
           ResponseData *rd = g_object_get_data (l->data, "gtk-dialog-response-data");
           gint response_id = rd != NULL ? rd->response_id : GTK_RESPONSE_NONE;
 
-          gtk_container_add (GTK_CONTAINER (action_area), l->data);
+          gtk_container_add (GTK_CONTAINER (titled_dialog->priv->action_area), l->data);
           g_object_unref (l->data);
 
           /* always add help button as secondary */
           if (response_id == GTK_RESPONSE_HELP)
-            gtk_button_box_set_child_secondary (GTK_BUTTON_BOX (action_area), l->data, TRUE);
+            gtk_button_box_set_child_secondary (GTK_BUTTON_BOX (titled_dialog->priv->action_area), l->data, TRUE);
         }
 
       g_list_free (children);
@@ -474,28 +475,6 @@ add_response_data (GtkDialog *dialog,
 
 
 
-/* Repack all the buttons that would normally end up in the headerbar to the action area */
-static void
-xfce_titled_dialog_repack_dialog (GtkWidget *action_area,
-                                  GtkWidget *headerbar,
-                                  GtkWidget *button,
-                                  gint       response_id)
-{
-  g_return_if_fail (GTK_IS_WIDGET (action_area));
-  g_return_if_fail (GTK_IS_WIDGET (headerbar));
-  g_return_if_fail (GTK_IS_WIDGET (button));
-
-  g_object_ref (G_OBJECT (button));
-  gtk_container_remove (GTK_CONTAINER (headerbar), button);
-  gtk_container_add (GTK_CONTAINER (action_area), button);
-  g_object_unref (G_OBJECT (button));
-  /* always add help buttons as secondary */
-  if (response_id == GTK_RESPONSE_HELP)
-    gtk_button_box_set_child_secondary (GTK_BUTTON_BOX (action_area), button, TRUE);
-}
-
-
-
 /**
  * xfce_titled_dialog_new:
  *
@@ -536,8 +515,6 @@ xfce_titled_dialog_new_with_buttons (const gchar    *title,
   const gchar *button_text;
   GtkWidget   *dialog;
   GtkWidget   *button;
-  GtkWidget   *headerbar;
-  GtkWidget   *action_area;
   va_list      args;
   gint         response_id;
 
@@ -552,11 +529,6 @@ xfce_titled_dialog_new_with_buttons (const gchar    *title,
   if (G_LIKELY (parent != NULL))
     gtk_window_set_transient_for (GTK_WINDOW (dialog), parent);
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-  action_area = gtk_dialog_get_action_area (GTK_DIALOG (dialog));
-G_GNUC_END_IGNORE_DEPRECATIONS
-  headerbar = gtk_dialog_get_header_bar (GTK_DIALOG (dialog));
-
   /* add all additional buttons */
   va_start (args, first_button_text);
   for (button_text = first_button_text; button_text != NULL; )
@@ -565,9 +537,7 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
       button = gtk_button_new_from_stock (button_text);
 G_GNUC_END_IGNORE_DEPRECATIONS
-      gtk_dialog_add_action_widget (GTK_DIALOG (dialog), button, response_id);
-      if (XFCE_TITLED_DIALOG (dialog)->priv->use_header)
-        xfce_titled_dialog_repack_dialog (action_area, headerbar, button, response_id);
+      xfce_titled_dialog_add_action_widget (XFCE_TITLED_DIALOG (dialog), button, response_id);
       button_text = va_arg (args, const gchar *);
     }
   va_end (args);
@@ -605,8 +575,6 @@ xfce_titled_dialog_new_with_mixed_buttons (const gchar    *title,
   const gchar *icon_name;
   const gchar *button_text;
   GtkWidget   *dialog;
-  GtkWidget   *headerbar;
-  GtkWidget   *action_area;
   va_list      args;
   gint         response_id;
 
@@ -620,11 +588,6 @@ xfce_titled_dialog_new_with_mixed_buttons (const gchar    *title,
   /* set the transient parent (if any) */
   if (G_LIKELY (parent != NULL))
     gtk_window_set_transient_for (GTK_WINDOW (dialog), parent);
-
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-  action_area = gtk_dialog_get_action_area (GTK_DIALOG (dialog));
-G_GNUC_END_IGNORE_DEPRECATIONS
-  headerbar = gtk_dialog_get_header_bar (GTK_DIALOG (dialog));
 
   /* add all additional buttons */
   icon_name = first_button_icon_name;
@@ -642,9 +605,7 @@ G_GNUC_END_IGNORE_DEPRECATIONS
       button = xfce_gtk_button_new_mixed (icon_name, button_text);
       gtk_widget_set_can_default (button, TRUE);
 
-      gtk_dialog_add_action_widget (GTK_DIALOG (dialog), button, response_id);
-      if (XFCE_TITLED_DIALOG (dialog)->priv->use_header)
-        xfce_titled_dialog_repack_dialog (action_area, headerbar, button, response_id);
+      xfce_titled_dialog_add_action_widget (XFCE_TITLED_DIALOG (dialog), button, response_id);
       gtk_widget_show (button);
 
       /* this is to pickup for the next button.
@@ -657,10 +618,6 @@ G_GNUC_END_IGNORE_DEPRECATIONS
         }
     }
   va_end (args);
-
-  /* since we just removed all buttons from the headerbar we have to show the close button again explicitly */
-  if (XFCE_TITLED_DIALOG (dialog)->priv->use_header)
-    gtk_header_bar_set_show_close_button (GTK_HEADER_BAR (headerbar), TRUE);
 
   return dialog;
 }
@@ -684,11 +641,6 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 void
 xfce_titled_dialog_create_action_area (XfceTitledDialog *titled_dialog)
 {
-  g_return_if_fail (XFCE_IS_TITLED_DIALOG (titled_dialog));
-
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-  titled_dialog->priv->action_area = gtk_dialog_get_action_area (GTK_DIALOG (titled_dialog));
-G_GNUC_END_IGNORE_DEPRECATIONS
 }
 
 
@@ -785,17 +737,12 @@ void
 xfce_titled_dialog_set_default_response (XfceTitledDialog *titled_dialog,
                                          gint              response_id)
 {
-  GtkWidget *action_area;
   GList     *children;
   GList     *tmp_list;
 
   g_return_if_fail (XFCE_IS_TITLED_DIALOG (titled_dialog));
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-  action_area = gtk_dialog_get_action_area (GTK_DIALOG (titled_dialog));
-G_GNUC_END_IGNORE_DEPRECATIONS
-
-  children = gtk_container_get_children (GTK_CONTAINER (action_area));
+  children = gtk_container_get_children (GTK_CONTAINER (titled_dialog->priv->action_area));
   tmp_list = children;
   while (tmp_list != NULL)
     {
