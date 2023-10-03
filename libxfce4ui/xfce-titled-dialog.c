@@ -628,15 +628,11 @@ xfce_titled_dialog_new_with_mixed_buttons (const gchar    *title,
  * xfce_titled_dialog_create_action_area:
  * @titled_dialog : a #XfceTitledDialog.
  *
- * This function get GtkDialog action area (of type #GtkButtonBox) and has to
- * be used in combination with #xfce_titled_dialog_add_action_widget.
- *
- * When using the XfceTitledDialogClass directly to create dialogs this function is
- * useful to keep action widgets out of the #GtkHeaderBar in which they would
- * normally end up by calling #gtk_dialog_add_action_widget.
+ * This function is a no-op since 4.19.3.
  *
  * Since: 4.16
  *
+ * Deprecated: 4.19.3
  **/
 void
 xfce_titled_dialog_create_action_area (XfceTitledDialog *titled_dialog)

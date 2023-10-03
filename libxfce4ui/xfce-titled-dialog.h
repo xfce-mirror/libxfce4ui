@@ -82,7 +82,7 @@ GtkWidget            *xfce_titled_dialog_new_with_mixed_buttons (const gchar    
                                                                  const gchar    *first_button_text,
                                                                  ...) G_GNUC_MALLOC;
 
-void                  xfce_titled_dialog_create_action_area   (XfceTitledDialog *titled_dialog);
+void                  xfce_titled_dialog_create_action_area   (XfceTitledDialog *titled_dialog) G_GNUC_DEPRECATED;
 GtkWidget            *xfce_titled_dialog_add_button           (XfceTitledDialog *titled_dialog,
                                                                const gchar      *button_text,
                                                                gint              response_id);
