@@ -537,7 +537,7 @@ xfce_titled_dialog_new_with_buttons (const gchar    *title,
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
       button = gtk_button_new_from_stock (button_text);
 G_GNUC_END_IGNORE_DEPRECATIONS
-      xfce_titled_dialog_add_action_widget(XFCE_TITLED_DIALOG (dialog), button, response_id);
+      xfce_titled_dialog_add_action_widget (XFCE_TITLED_DIALOG (dialog), button, response_id);
       button_text = va_arg (args, const gchar *);
     }
   va_end (args);
@@ -605,7 +605,7 @@ xfce_titled_dialog_new_with_mixed_buttons (const gchar    *title,
       button = xfce_gtk_button_new_mixed (icon_name, button_text);
       gtk_widget_set_can_default (button, TRUE);
 
-      xfce_titled_dialog_add_action_widget(XFCE_TITLED_DIALOG (dialog), button, response_id);
+      xfce_titled_dialog_add_action_widget (XFCE_TITLED_DIALOG (dialog), button, response_id);
       gtk_widget_show (button);
 
       /* this is to pickup for the next button.
@@ -641,7 +641,6 @@ xfce_titled_dialog_new_with_mixed_buttons (const gchar    *title,
 void
 xfce_titled_dialog_create_action_area (XfceTitledDialog *titled_dialog)
 {
-  g_return_if_fail (XFCE_IS_TITLED_DIALOG (titled_dialog));
 }
 
 
