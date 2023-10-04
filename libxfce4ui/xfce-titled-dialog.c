@@ -37,6 +37,7 @@
 #endif
 
 #include <gdk/gdkkeysyms.h>
+#include <gdk/gdkx.h>
 
 #include <libxfce4util/libxfce4util.h>
 
@@ -183,19 +184,22 @@ G_GNUC_END_IGNORE_DEPRECATIONS
       /* Don't reserve vertical space for subtitles */
       gtk_header_bar_set_has_subtitle (GTK_HEADER_BAR (titled_dialog->priv->headerbar), FALSE);
 
-      /* Pack the window icon into the headerbar */
-      titled_dialog->priv->icon = gtk_image_new ();
-      gtk_header_bar_pack_start (GTK_HEADER_BAR (titled_dialog->priv->headerbar), titled_dialog->priv->icon);
-      gtk_header_bar_set_show_close_button (GTK_HEADER_BAR (titled_dialog->priv->headerbar), TRUE);
-      gtk_widget_show (titled_dialog->priv->icon);
-      titled_dialog->priv->pixbuf = NULL;
-
       /* Adjust window buttons and window placement */
       g_signal_connect (G_OBJECT (titled_dialog), "notify::window", G_CALLBACK (xfce_titled_dialog_update_window), NULL);
 
-      /* Make sure to update the icon whenever one of the relevant window properties changes */
-      g_signal_connect (G_OBJECT (titled_dialog), "notify::icon", G_CALLBACK (xfce_titled_dialog_update_icon), NULL);
-      g_signal_connect (G_OBJECT (titled_dialog), "notify::icon-name", G_CALLBACK (xfce_titled_dialog_update_icon), NULL);
+      if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+        {
+          /* Pack the window icon into the headerbar */
+          titled_dialog->priv->icon = gtk_image_new ();
+          gtk_header_bar_pack_start (GTK_HEADER_BAR (titled_dialog->priv->headerbar), titled_dialog->priv->icon);
+          gtk_header_bar_set_show_close_button (GTK_HEADER_BAR (titled_dialog->priv->headerbar), TRUE);
+          gtk_widget_show (titled_dialog->priv->icon);
+          titled_dialog->priv->pixbuf = NULL;
+
+          /* Make sure to update the icon whenever one of the relevant window properties changes */
+          g_signal_connect (G_OBJECT (titled_dialog), "notify::icon", G_CALLBACK (xfce_titled_dialog_update_icon), NULL);
+          g_signal_connect (G_OBJECT (titled_dialog), "notify::icon-name", G_CALLBACK (xfce_titled_dialog_update_icon), NULL);
+        }
     }
   else
     {
