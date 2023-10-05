@@ -647,8 +647,7 @@ xfce_titled_dialog_create_action_area (XfceTitledDialog *titled_dialog)
  * @button_text   : text of button.
  * @response_id   : response ID for @child.
  *
- * This function is a replacement for #gtk_dialog_add_button and assumes that
- * you have called #xfce_titled_dialog_create_action_area before.
+ * This function is a replacement for #gtk_dialog_add_button.
  *
  * Buttons with #GTK_RESPONSE_HELP will be added to the secondary group of children
  * (see #gtk_button_box_set_child_secondary for reference).
@@ -685,8 +684,7 @@ xfce_titled_dialog_add_button (XfceTitledDialog *titled_dialog,
  * @child         : an activatable widget.
  * @response_id   : response ID for @child.
  *
- * This function is a replacement for #gtk_dialog_add_action_widget and assumes that
- * you have called #xfce_titled_dialog_create_action_area before.
+ * This function is a replacement for #gtk_dialog_add_action_widget.
  *
  * Children with #GTK_RESPONSE_HELP will be added to the secondary group of children
  * (see #gtk_button_box_set_child_secondary for reference).

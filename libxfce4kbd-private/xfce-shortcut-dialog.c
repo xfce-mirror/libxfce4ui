@@ -241,8 +241,6 @@ xfce_shortcut_dialog_create_contents (XfceShortcutDialog *dialog,
   gtk_window_set_title (GTK_WINDOW (dialog), title);
   gtk_window_set_icon_name (GTK_WINDOW (dialog), icon_name);
 
-  xfce_titled_dialog_create_action_area (XFCE_TITLED_DIALOG (dialog));
-
   /* Create clear button for xfwm4 */
   if (g_utf8_collate (provider, "xfwm4") == 0)
     {
