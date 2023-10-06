@@ -73,18 +73,18 @@ static void     xfce_titled_dialog_set_property   (GObject                *objec
                                                    GParamSpec             *pspec);
 static void     xfce_titled_dialog_close          (GtkDialog              *dialog);
 static void     xfce_titled_dialog_update_window  (XfceTitledDialog       *titled_dialog);
-static void     xfce_titled_dialog_update_icon    (XfceTitledDialog       *titled_dialog);
+static void     xfce_titled_dialog_update_layout  (GObject                *settings,
+                                                   GParamSpec             *pspec,
+                                                   XfceTitledDialog       *titled_dialog);
 
 
 
 struct _XfceTitledDialogPrivate
 {
   GtkWidget *headerbar;
-  GtkWidget *icon;
   GtkWidget *action_area;
   GtkWidget *subtitle_label;
   GtkWidget *subtitle_separator;
-  GdkPixbuf *pixbuf;
   gchar     *subtitle;
   gboolean   use_header;
 };
@@ -183,19 +183,15 @@ G_GNUC_END_IGNORE_DEPRECATIONS
       /* Don't reserve vertical space for subtitles */
       gtk_header_bar_set_has_subtitle (GTK_HEADER_BAR (titled_dialog->priv->headerbar), FALSE);
 
-      /* Pack the window icon into the headerbar */
-      titled_dialog->priv->icon = gtk_image_new ();
-      gtk_header_bar_pack_start (GTK_HEADER_BAR (titled_dialog->priv->headerbar), titled_dialog->priv->icon);
-      gtk_header_bar_set_show_close_button (GTK_HEADER_BAR (titled_dialog->priv->headerbar), TRUE);
-      gtk_widget_show (titled_dialog->priv->icon);
-      titled_dialog->priv->pixbuf = NULL;
-
       /* Adjust window buttons and window placement */
+      gtk_header_bar_set_show_close_button (GTK_HEADER_BAR (titled_dialog->priv->headerbar), TRUE);
       g_signal_connect (G_OBJECT (titled_dialog), "notify::window", G_CALLBACK (xfce_titled_dialog_update_window), NULL);
 
-      /* Make sure to update the icon whenever one of the relevant window properties changes */
-      g_signal_connect (G_OBJECT (titled_dialog), "notify::icon", G_CALLBACK (xfce_titled_dialog_update_icon), NULL);
-      g_signal_connect (G_OBJECT (titled_dialog), "notify::icon-name", G_CALLBACK (xfce_titled_dialog_update_icon), NULL);
+      /* Update icon when layout changes */
+      xfce_titled_dialog_update_layout (G_OBJECT (settings), NULL, titled_dialog);
+      g_signal_connect_object (settings, "notify::gtk-decoration-layout",
+                               G_CALLBACK (xfce_titled_dialog_update_layout), titled_dialog, 0);
+
     }
   else
     {
@@ -288,13 +284,6 @@ xfce_titled_dialog_finalize (GObject *object)
   /* release the subtitle */
   g_free (titled_dialog->priv->subtitle);
 
-  /* release the pixbuf */
-  if (titled_dialog->priv->pixbuf)
-    {
-      g_object_unref (titled_dialog->priv->pixbuf);
-      titled_dialog->priv->pixbuf = NULL;
-    }
-
   (*G_OBJECT_CLASS (xfce_titled_dialog_parent_class)->finalize) (object);
 }
 
@@ -380,25 +369,27 @@ xfce_titled_dialog_update_window (XfceTitledDialog *titled_dialog)
 
 
 static void
-xfce_titled_dialog_update_icon (XfceTitledDialog *titled_dialog)
+xfce_titled_dialog_update_layout (GObject *settings,
+                                  GParamSpec *pspec,
+                                  XfceTitledDialog *titled_dialog)
 {
-  const gchar *icon_name;
+  gchar *layout;
 
-  icon_name = gtk_window_get_icon_name (GTK_WINDOW (titled_dialog));
+  g_object_get (settings, "gtk-decoration-layout", &layout, NULL);
 
-  if (icon_name)
+  /* add icon on the far left of the header bar if not already present */
+  if (g_strstr_len (layout, -1, "icon") == NULL)
     {
-      gtk_image_set_from_icon_name (GTK_IMAGE (titled_dialog->priv->icon), icon_name, GTK_ICON_SIZE_LARGE_TOOLBAR);
-      gtk_image_set_pixel_size (GTK_IMAGE (titled_dialog->priv->icon), 24);
+      const gchar *separator = (g_strstr_len (layout, -1, ":") == NULL) ? ":" : ",";
+      gchar *layout_with_icon = g_strconcat ("icon", separator, layout, NULL);
+      g_free (layout);
+      layout = layout_with_icon;
     }
-  else
-    {
-      if (titled_dialog->priv->pixbuf)
-          g_object_unref (titled_dialog->priv->pixbuf);
-      titled_dialog->priv->pixbuf = gtk_window_get_icon (GTK_WINDOW (titled_dialog));
-      gtk_image_set_from_pixbuf (GTK_IMAGE (titled_dialog->priv->icon), titled_dialog->priv->pixbuf);
-    }
+
+  gtk_header_bar_set_decoration_layout (GTK_HEADER_BAR (titled_dialog->priv->headerbar), layout);
+  g_free (layout);
 }
+
 
 
 /* Borrowed from gtkdialog.c */
