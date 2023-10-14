@@ -1,3 +1,30 @@
+4.19.3 (2023-10-14)
+======
+- titled-dialog: Ensure a single icon on the left when CSD is used (#92)
+- wayland: Reduce verbosity
+- Remove remaining uses of xfce_titled_dialog_create_action_area()
+- titled-dialog : Deprecate xfce_titled_dialog_create_action_area()
+- titled-dialog: Ensure action area is shown when using CSD
+- titled-dialog: Ensure action widget can default
+- Fix xfce_titled_dialog action area margin
+- shortcuts-grabber: Implement refcounted grabs as a set
+- shortcuts-grabber: Formatting
+- shortcuts-grabber: Remove dead code, useless casts and declarations
+- shortcuts-grabber: Variable renaming
+- shortcuts-grabber: Clarify keys management in _grab*() funcs
+- shortcuts-grabber: Avoid duplicate code in _grab*() funcs
+- shortcuts-grabber: Remove constructed()
+- shortcuts-grabber: Isolate layout-related code more clearly
+- Display distribution logo in xfce4-about (Fixes #54)
+- shortcuts-grabber: Fix filtering by level
+- shortcuts-grabber: Simplify filtering by group
+- shortcuts-grabber: Variable renaming
+- shortcuts-grabber: Filter grabbing by key level
+- Detect keyboard shortcuts with only single modifier keys on key 
+release
+- Translation Updates:
+  Danish, Greek, Portuguese (Brazil)
+
 4.19.2 (2023-05-29)
 ======
 - screensaver: Prevent recursive calling of lock command
