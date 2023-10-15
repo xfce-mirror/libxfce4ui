@@ -267,7 +267,7 @@ xfce_dialog_show_help_with_version (GtkWindow   *parent,
     primary = g_strdup (_("Do you want to read the manual online?"));
 
   dialog = xfce_message_dialog_new (parent,
-                                    NULL,
+                                    _("Read the manual"),
                                     "dialog-question",
                                     primary,
                                     _("You will be redirected to the documentation website "
