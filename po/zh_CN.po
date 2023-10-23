@@ -12,15 +12,15 @@
 # Cally Mal <zhouxiaobo.500@gmail.com>, 2017
 # Zhou Yuheng <wojiushixxx@126.com>, 2022
 # 浩翔 赵 <1637979429@qq.com>, 2023
-# 玉堂白鹤 <yjwork@qq.com>, 2015,2017,2019-2022
+# 玉堂白鹤 <yjwork@qq.com>, 2015,2017,2019-2023
 # Mingcong Bai <jeffbai@aosc.xyz>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2023-05-05 10:48+0200\n"
+"POT-Creation-Date: 2023-10-19 12:45+0200\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: 浩翔 赵 <1637979429@qq.com>, 2023\n"
+"Last-Translator: 玉堂白鹤 <yjwork@qq.com>, 2015,2017,2019-2023\n"
 "Language-Team: Chinese (China) (http://app.transifex.com/xfce/libxfce4ui/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -41,6 +41,10 @@ msgstr "您要在线阅读 %s 手册吗？"
 msgid "Do you want to read the manual online?"
 msgstr "您要在线阅读手册吗？"
 
+#: libxfce4ui/xfce-dialogs.c:270
+msgid "Read the manual"
+msgstr "阅读手册"
+
 #: libxfce4ui/xfce-dialogs.c:273
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
@@ -49,7 +53,7 @@ msgstr "您将被重定向至维护和翻译帮助文档的网站。"
 
 #. Create cancel button
 #: libxfce4ui/xfce-dialogs.c:275 libxfce4ui/xfce-dialogs.c:533
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:256
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:254
 msgid "_Cancel"
 msgstr "取消 (_C)"
 
@@ -273,20 +277,20 @@ msgstr "命令"
 msgid "Shortcut"
 msgstr "快捷键"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:250
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:248
 msgid "Clear"
 msgstr "清除"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:273
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:271
 #, c-format
 msgid "Press keyboard keys to trigger the %s '%s'."
 msgstr "按键触发 %s '%s'."
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:295
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:293
 msgid "Please press a key"
 msgstr "请按下一个键"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:350
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:348
 msgid "Could not grab the keyboard."
 msgstr "未能捕获键盘输入。"
 
@@ -610,120 +614,120 @@ msgstr "删除当前工作区"
 msgid "Version information"
 msgstr "版本信息"
 
-#: xfce4-about/main.c:128
+#: xfce4-about/main.c:154
 msgid "GPUs"
 msgstr "GPUs"
 
-#: xfce4-about/main.c:146
+#: xfce4-about/main.c:172
 msgid "Window Manager"
 msgstr "窗口管理器"
 
-#: xfce4-about/main.c:147
+#: xfce4-about/main.c:173
 msgid "Handles the placement of windows on the screen."
 msgstr "处理窗口在屏幕上的位置摆放"
 
-#: xfce4-about/main.c:151
+#: xfce4-about/main.c:177
 msgid "Panel"
 msgstr "面板"
 
-#: xfce4-about/main.c:152
+#: xfce4-about/main.c:178
 msgid "Provides a home for window buttons, launchers, app menu and more."
 msgstr "为窗口按钮，启动器，应用程序菜单等提供了一个家。"
 
-#: xfce4-about/main.c:156
+#: xfce4-about/main.c:182
 msgid "Desktop Manager"
 msgstr "桌面管理器"
 
-#: xfce4-about/main.c:157
+#: xfce4-about/main.c:183
 msgid "Sets desktop backgrounds, handles icons and more."
 msgstr "设置桌面背景，处理图标等。"
 
-#: xfce4-about/main.c:161
+#: xfce4-about/main.c:187
 msgid "File Manager"
 msgstr "文件管理器"
 
-#: xfce4-about/main.c:162
+#: xfce4-about/main.c:188
 msgid "Manages your files in a modern, easy-to-use and fast way."
 msgstr "以现代，易用和快速的方式管理文件。"
 
-#: xfce4-about/main.c:166
+#: xfce4-about/main.c:192
 msgid "Volume Manager"
 msgstr "卷管理器"
 
-#: xfce4-about/main.c:167
+#: xfce4-about/main.c:193
 msgid "Manages removable drives and media for Thunar."
 msgstr "Thunar 可移动驱动器和介质管理"
 
-#: xfce4-about/main.c:171
+#: xfce4-about/main.c:197
 msgid "Session Manager"
 msgstr "会话管理器"
 
-#: xfce4-about/main.c:172
+#: xfce4-about/main.c:198
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
 msgstr "保存和恢复会话，处理启动、自动启动和关闭。"
 
-#: xfce4-about/main.c:176
+#: xfce4-about/main.c:202
 msgid "Settings Manager"
 msgstr "设置管理器"
 
-#: xfce4-about/main.c:177
+#: xfce4-about/main.c:203
 msgid "Configures appearance, display, keyboard and mouse settings."
 msgstr "配置外观、显示、键盘和鼠标设置。"
 
-#: xfce4-about/main.c:181
+#: xfce4-about/main.c:207
 msgid "Application Finder"
 msgstr "应用程序查找器"
 
-#: xfce4-about/main.c:182
+#: xfce4-about/main.c:208
 msgid "Quickly finds and launches applications installed on your system."
 msgstr "快速查找和启动在您系统上安装的应用程序"
 
-#: xfce4-about/main.c:186
+#: xfce4-about/main.c:212
 msgid "Settings Daemon"
 msgstr "设置守护进程"
 
-#: xfce4-about/main.c:187
+#: xfce4-about/main.c:213
 msgid "Stores your settings in a D-Bus-based configuration system."
 msgstr "将您的设置存储在基于 D-Bus 的配置系统中。"
 
-#: xfce4-about/main.c:191
+#: xfce4-about/main.c:217
 msgid "A Menu Library"
 msgstr "菜单库"
 
-#: xfce4-about/main.c:192
+#: xfce4-about/main.c:218
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
 msgstr "实现基于 GLib 和 GIO 的 freedesktop.org 兼容菜单。"
 
-#: xfce4-about/main.c:196
+#: xfce4-about/main.c:222
 msgid "Thumbnails Service"
 msgstr "缩略图服务"
 
-#: xfce4-about/main.c:197
+#: xfce4-about/main.c:223
 msgid "Implements the thumbnail management D-Bus specification."
 msgstr "实现缩略图管理 D-Bus 规范。"
 
-#: xfce4-about/main.c:251
+#: xfce4-about/main.c:277
 msgid "Please see <https://www.xfce.org/about/credits>"
 msgstr "请参阅 <https://www.xfce.org/about/credits>"
 
-#: xfce4-about/main.c:312
+#: xfce4-about/main.c:338
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 msgstr "如果您知道此列表遗漏了某个人，请毫不犹豫地在 <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> 上提交缺陷。"
 
-#: xfce4-about/main.c:316
+#: xfce4-about/main.c:342
 msgid "Thanks to all who helped making this software available!"
 msgstr "感谢所有成就该软件的人们！"
 
-#: xfce4-about/main.c:333
+#: xfce4-about/main.c:359
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
 msgstr "Xfce 4 版权归 Olivier Fourdan(fourdan@xfce.org)所有。不同组件的版权归它们各自的作者所有。"
 
-#: xfce4-about/main.c:338
+#: xfce4-about/main.c:364
 msgid ""
 "The libxfce4ui, libxfce4util and exo packages are distributed under the "
 "terms of the GNU Library General Public License as published by the Free "
@@ -731,7 +735,7 @@ msgid ""
 "any later version."
 msgstr "libxfce4ui、libxfce4util 和 exo 软件包以自由软件基金会发布的 GNU 宽通用公共许可协议第 2 版或按（您可以选择的）更高版本发布。"
 
-#: xfce4-about/main.c:345
+#: xfce4-about/main.c:371
 msgid ""
 "The packages thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
 "xfce4-settings, xfconf, xfdesktop and xfwm4 are distributed under the terms "
@@ -740,25 +744,25 @@ msgid ""
 "version."
 msgstr "thunar、xfce4-appfinder、xfce4-panel、xfce4-session、xfce4-settings、xfconf、xfdesktop 和 xfwm4 软件包以自由软件基金会发布的 GNU 通用公共许可协议的第 2 版或按（您可以选择的）更高版本发布。"
 
-#: xfce4-about/main.c:491
+#: xfce4-about/main.c:517
 #, c-format
 msgid "Type '%s --help' for usage information."
 msgstr "输入 '%s --help' 获取用法。"
 
-#: xfce4-about/main.c:497
+#: xfce4-about/main.c:523
 msgid "Unable to initialize GTK+."
 msgstr "未能初始化 GTK+。"
 
-#: xfce4-about/main.c:506
+#: xfce4-about/main.c:532
 msgid "The Xfce development team. All rights reserved."
 msgstr "Xfce 开发团队。保留所有权利。"
 
-#: xfce4-about/main.c:507
+#: xfce4-about/main.c:533
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "请向 <%s> 报告缺陷。"
 
-#: xfce4-about/main.c:517
+#: xfce4-about/main.c:543
 msgid "Failed to load interface"
 msgstr "无法载入界面"
 
