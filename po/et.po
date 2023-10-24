@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2023-05-05 10:48+0200\n"
+"POT-Creation-Date: 2023-10-19 12:45+0200\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: Priit Jõerüüt <transifex@joeruut.com>, 2020-2023\n"
 "Language-Team: Estonian (http://app.transifex.com/xfce/libxfce4ui/language/et/)\n"
@@ -31,6 +31,10 @@ msgstr "Kas sa soovid lugeda %s juhendit veebis?"
 msgid "Do you want to read the manual online?"
 msgstr "Kas sa soovid lugeda juhendit veebis?"
 
+#: libxfce4ui/xfce-dialogs.c:270
+msgid "Read the manual"
+msgstr "Tutvu juhendiga"
+
 #: libxfce4ui/xfce-dialogs.c:273
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
@@ -39,7 +43,7 @@ msgstr "Sind suunatakse edasi meie dokumentatsiooni veebisaiti, kus juhendeid ja
 
 #. Create cancel button
 #: libxfce4ui/xfce-dialogs.c:275 libxfce4ui/xfce-dialogs.c:533
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:256
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:254
 msgid "_Cancel"
 msgstr "_Loobu"
 
@@ -263,20 +267,20 @@ msgstr "käsk"
 msgid "Shortcut"
 msgstr "Kiirklahv"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:250
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:248
 msgid "Clear"
 msgstr "Puhasta"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:273
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:271
 #, c-format
 msgid "Press keyboard keys to trigger the %s '%s'."
 msgstr "%s '%s' käivitamiseks vajuta klahve klaviatuuril."
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:295
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:293
 msgid "Please press a key"
 msgstr "Vajuta üht klahvi"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:350
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:348
 msgid "Could not grab the keyboard."
 msgstr "Ei õnnestunud klahvivajutust fikseerida."
 
@@ -600,120 +604,120 @@ msgstr "Kustuta aktiivne tööruum"
 msgid "Version information"
 msgstr "Versiooniteave"
 
-#: xfce4-about/main.c:128
+#: xfce4-about/main.c:154
 msgid "GPUs"
 msgstr "Graafikaprotsessorid"
 
-#: xfce4-about/main.c:146
+#: xfce4-about/main.c:172
 msgid "Window Manager"
 msgstr "Aknahaldur"
 
-#: xfce4-about/main.c:147
+#: xfce4-about/main.c:173
 msgid "Handles the placement of windows on the screen."
 msgstr "Haldab akende paigutust ekraanil."
 
-#: xfce4-about/main.c:151
+#: xfce4-about/main.c:177
 msgid "Panel"
 msgstr "Riba"
 
-#: xfce4-about/main.c:152
+#: xfce4-about/main.c:178
 msgid "Provides a home for window buttons, launchers, app menu and more."
 msgstr "Pakub kodu aknanuppudele, käivitajatele, rakenduste menüüle ning paljule muulegi."
 
-#: xfce4-about/main.c:156
+#: xfce4-about/main.c:182
 msgid "Desktop Manager"
 msgstr "Töölaua haldur"
 
-#: xfce4-about/main.c:157
+#: xfce4-about/main.c:183
 msgid "Sets desktop backgrounds, handles icons and more."
 msgstr "Seadistab töölaua tausta, haldab ikoone ja teeb palju muudki."
 
-#: xfce4-about/main.c:161
+#: xfce4-about/main.c:187
 msgid "File Manager"
 msgstr "Failihaldur"
 
-#: xfce4-about/main.c:162
+#: xfce4-about/main.c:188
 msgid "Manages your files in a modern, easy-to-use and fast way."
 msgstr "Haldab sinu faile tänapäevasel, lihtsaltkasutataval ning kiirel moel."
 
-#: xfce4-about/main.c:166
+#: xfce4-about/main.c:192
 msgid "Volume Manager"
 msgstr "Andmekandjate haldur"
 
-#: xfce4-about/main.c:167
+#: xfce4-about/main.c:193
 msgid "Manages removable drives and media for Thunar."
 msgstr "Haldab eemaldatavaid andmekandjaid ja meediat Thunari jaoks."
 
-#: xfce4-about/main.c:171
+#: xfce4-about/main.c:197
 msgid "Session Manager"
 msgstr "Sessioonihaldur"
 
-#: xfce4-about/main.c:172
+#: xfce4-about/main.c:198
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
 msgstr "Salvestab ja taastab sinu sessioone, haldab süsteemi käivitamist ja sulgemist."
 
-#: xfce4-about/main.c:176
+#: xfce4-about/main.c:202
 msgid "Settings Manager"
 msgstr "Seadistuste haldur"
 
-#: xfce4-about/main.c:177
+#: xfce4-about/main.c:203
 msgid "Configures appearance, display, keyboard and mouse settings."
 msgstr "Seadistab välimust, monitori, klaviatuuri ning hiirt."
 
-#: xfce4-about/main.c:181
+#: xfce4-about/main.c:207
 msgid "Application Finder"
 msgstr "Rakenduste leidja"
 
-#: xfce4-about/main.c:182
+#: xfce4-about/main.c:208
 msgid "Quickly finds and launches applications installed on your system."
 msgstr "Kiiresti leiab ja käivitab süsteemi paigaldatud rakendusi."
 
-#: xfce4-about/main.c:186
+#: xfce4-about/main.c:212
 msgid "Settings Daemon"
 msgstr "Seadete taustaprotsess"
 
-#: xfce4-about/main.c:187
+#: xfce4-about/main.c:213
 msgid "Stores your settings in a D-Bus-based configuration system."
 msgstr "Salvestab sinu seadistused D-Bus'il põhinevasse seadistuste süsteemi."
 
-#: xfce4-about/main.c:191
+#: xfce4-about/main.c:217
 msgid "A Menu Library"
 msgstr "Teek menüü jaoks"
 
-#: xfce4-about/main.c:192
+#: xfce4-about/main.c:218
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
 msgstr "Võimaldab kasutada Freedesktop.org spetsifikatsioonidele vastavat ning GLib ja GIO teekidel põhinevat menüülahendust."
 
-#: xfce4-about/main.c:196
+#: xfce4-about/main.c:222
 msgid "Thumbnails Service"
 msgstr "Teenus pisipiltide loomiseks"
 
-#: xfce4-about/main.c:197
+#: xfce4-about/main.c:223
 msgid "Implements the thumbnail management D-Bus specification."
 msgstr "Võimaldab kasutada pisipiltide haldusloogikat, mis põhineb D-Bus'i spetsifikatsioonile."
 
-#: xfce4-about/main.c:251
+#: xfce4-about/main.c:277
 msgid "Please see <https://www.xfce.org/about/credits>"
 msgstr "Lisateavet leiad <https://www.xfce.org/about/credits>"
 
-#: xfce4-about/main.c:312
+#: xfce4-about/main.c:338
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 msgstr "Kui sa tead kedagi, kes on siit loendist puudu, siis ära kõhkle esitamast veateadet meie arendussaidis <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 
-#: xfce4-about/main.c:316
+#: xfce4-about/main.c:342
 msgid "Thanks to all who helped making this software available!"
 msgstr "Suur tänu kõigile, kes on selle tarkvara loonud ning meile kasutatavaks teinud!"
 
-#: xfce4-about/main.c:333
+#: xfce4-about/main.c:359
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
 msgstr "Xfce 4 autoriõigused kuuluvad Olivier Fourdan'ile (fourdan@xfce.org). Erinevate komponentide autoriõigused kuuluvad nende vastavatele autoritele."
 
-#: xfce4-about/main.c:338
+#: xfce4-about/main.c:364
 msgid ""
 "The libxfce4ui, libxfce4util and exo packages are distributed under the "
 "terms of the GNU Library General Public License as published by the Free "
@@ -721,7 +725,7 @@ msgid ""
 "any later version."
 msgstr "Libxfce4ui, libxfce4util ja exo teegid on avaldatud Vaba Tarkvara Fondi GNU Vähem Üldise Avaliku Litsentsi alusel (Free Software Foundation GNU LGPL). Litsentsi versiooniks võib olla 2 või sinu soovil ka mõni hilisem versioon."
 
-#: xfce4-about/main.c:345
+#: xfce4-about/main.c:371
 msgid ""
 "The packages thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
 "xfce4-settings, xfconf, xfdesktop and xfwm4 are distributed under the terms "
@@ -730,25 +734,25 @@ msgid ""
 "version."
 msgstr "Rakendused thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop ja xfwm4 on levitatud Vaba Tarkvara Fondi poolt avaldatud GNU Üldise Avaliku Litsentsi alusel (Free Software Foundation GNU GPL). Litsentsi versiooniks võib olla 2 või sinu soovil ka mõni hilisem versioon."
 
-#: xfce4-about/main.c:491
+#: xfce4-about/main.c:517
 #, c-format
 msgid "Type '%s --help' for usage information."
 msgstr "Trüki „%s --help” kasutusjuhise saamiseks."
 
-#: xfce4-about/main.c:497
+#: xfce4-about/main.c:523
 msgid "Unable to initialize GTK+."
 msgstr "GTK+ initsialiseerimine ei õnnestunud."
 
-#: xfce4-about/main.c:506
+#: xfce4-about/main.c:532
 msgid "The Xfce development team. All rights reserved."
 msgstr "Xfce arendusmeeskond. Kõik õigused kaitstud."
 
-#: xfce4-about/main.c:507
+#: xfce4-about/main.c:533
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "Palun teata vigadest aadressil <%s>."
 
-#: xfce4-about/main.c:517
+#: xfce4-about/main.c:543
 msgid "Failed to load interface"
 msgstr "Liidese laadimine ebaõnnestus"
 
