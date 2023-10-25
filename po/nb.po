@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2023-05-05 10:48+0200\n"
+"POT-Creation-Date: 2023-10-19 12:45+0200\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: heskjestad <cato@heskjestad.xyz>, 2021-2023\n"
 "Language-Team: Norwegian Bokmål (http://app.transifex.com/xfce/libxfce4ui/language/nb/)\n"
@@ -36,6 +36,10 @@ msgstr "Ønsker du å lese bruksanvisningen %s på nettet?"
 msgid "Do you want to read the manual online?"
 msgstr "Ønsker du å lese bruksanvisningen på nettet?"
 
+#: libxfce4ui/xfce-dialogs.c:270
+msgid "Read the manual"
+msgstr "Les bruksanvisningen"
+
 #: libxfce4ui/xfce-dialogs.c:273
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
@@ -44,7 +48,7 @@ msgstr "Du vil bli videresendt til dokumentasjonsnettstedet der hjelpesidene bli
 
 #. Create cancel button
 #: libxfce4ui/xfce-dialogs.c:275 libxfce4ui/xfce-dialogs.c:533
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:256
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:254
 msgid "_Cancel"
 msgstr "_Avbryt"
 
@@ -268,20 +272,20 @@ msgstr "kommando"
 msgid "Shortcut"
 msgstr "Snarvei"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:250
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:248
 msgid "Clear"
 msgstr "Tøm"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:273
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:271
 #, c-format
 msgid "Press keyboard keys to trigger the %s '%s'."
 msgstr "Trykk tastaturtastene for å utløse %s «%s»."
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:295
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:293
 msgid "Please press a key"
 msgstr "Trykk en tast"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:350
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:348
 msgid "Could not grab the keyboard."
 msgstr "Klarte ikke å ta tak i tastaturet."
 
@@ -605,120 +609,120 @@ msgstr "Slett gjeldende arbeidsområde"
 msgid "Version information"
 msgstr "Versjonsinformasjon"
 
-#: xfce4-about/main.c:128
+#: xfce4-about/main.c:154
 msgid "GPUs"
 msgstr "GPU-er"
 
-#: xfce4-about/main.c:146
+#: xfce4-about/main.c:172
 msgid "Window Manager"
 msgstr "Vindusbehandler"
 
-#: xfce4-about/main.c:147
+#: xfce4-about/main.c:173
 msgid "Handles the placement of windows on the screen."
 msgstr "Behandle plassering av vinduer på skjermen."
 
-#: xfce4-about/main.c:151
+#: xfce4-about/main.c:177
 msgid "Panel"
 msgstr "Panel"
 
-#: xfce4-about/main.c:152
+#: xfce4-about/main.c:178
 msgid "Provides a home for window buttons, launchers, app menu and more."
 msgstr "Gir et hjem til vindusknapper, startere, programmeny og mer."
 
-#: xfce4-about/main.c:156
+#: xfce4-about/main.c:182
 msgid "Desktop Manager"
 msgstr "Skrivebordsbehandler"
 
-#: xfce4-about/main.c:157
+#: xfce4-about/main.c:183
 msgid "Sets desktop backgrounds, handles icons and more."
 msgstr "Velger skrivebordsbakgrunn, håndterer ikoner med mer."
 
-#: xfce4-about/main.c:161
+#: xfce4-about/main.c:187
 msgid "File Manager"
 msgstr "Filbehandler"
 
-#: xfce4-about/main.c:162
+#: xfce4-about/main.c:188
 msgid "Manages your files in a modern, easy-to-use and fast way."
 msgstr "Behandler filer raskt og enkelt på en moderne måte."
 
-#: xfce4-about/main.c:166
+#: xfce4-about/main.c:192
 msgid "Volume Manager"
 msgstr "Behandle flyttbare media"
 
-#: xfce4-about/main.c:167
+#: xfce4-about/main.c:193
 msgid "Manages removable drives and media for Thunar."
 msgstr "Behandler flyttbare enheter og media for Thunar."
 
-#: xfce4-about/main.c:171
+#: xfce4-about/main.c:197
 msgid "Session Manager"
 msgstr "Øktbehandler"
 
-#: xfce4-about/main.c:172
+#: xfce4-about/main.c:198
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
 msgstr "Lagrer og gjenoppretter økter, håndterer oppstart, autostart og avslutning."
 
-#: xfce4-about/main.c:176
+#: xfce4-about/main.c:202
 msgid "Settings Manager"
 msgstr "Innstillingsbehandler"
 
-#: xfce4-about/main.c:177
+#: xfce4-about/main.c:203
 msgid "Configures appearance, display, keyboard and mouse settings."
 msgstr "Stiller inn utseende, skjerm, tastatur og mus."
 
-#: xfce4-about/main.c:181
+#: xfce4-about/main.c:207
 msgid "Application Finder"
 msgstr "Programsøk"
 
-#: xfce4-about/main.c:182
+#: xfce4-about/main.c:208
 msgid "Quickly finds and launches applications installed on your system."
 msgstr "Leter raskt opp installerte programmer på maskinen. "
 
-#: xfce4-about/main.c:186
+#: xfce4-about/main.c:212
 msgid "Settings Daemon"
 msgstr "Innstillinger for bakgrunnsprosesser"
 
-#: xfce4-about/main.c:187
+#: xfce4-about/main.c:213
 msgid "Stores your settings in a D-Bus-based configuration system."
 msgstr "Lagrer innstillinger i et D-Bus-basert oppsettssystem."
 
-#: xfce4-about/main.c:191
+#: xfce4-about/main.c:217
 msgid "A Menu Library"
 msgstr "Et menybibliotek"
 
-#: xfce4-about/main.c:192
+#: xfce4-about/main.c:218
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
 msgstr "Implementerer en freedesktop.org-kompatibel meny basert på GLib og GIO."
 
-#: xfce4-about/main.c:196
+#: xfce4-about/main.c:222
 msgid "Thumbnails Service"
 msgstr "Tjeneste for miniatyrbilder"
 
-#: xfce4-about/main.c:197
+#: xfce4-about/main.c:223
 msgid "Implements the thumbnail management D-Bus specification."
 msgstr "Implementerer D-Bus-spesifikasjonen for miniatyrbildehåndtering."
 
-#: xfce4-about/main.c:251
+#: xfce4-about/main.c:277
 msgid "Please see <https://www.xfce.org/about/credits>"
 msgstr "Se <https://www.xfce.org/about/credits>"
 
-#: xfce4-about/main.c:312
+#: xfce4-about/main.c:338
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 msgstr "Hvis du ser at det mangler noen fra denne listen så ikke nøl, lag en feilrapport på <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues>. "
 
-#: xfce4-about/main.c:316
+#: xfce4-about/main.c:342
 msgid "Thanks to all who helped making this software available!"
 msgstr "Takk til alle som har hjulpet til med å gjøre denne programvaren mulig!"
 
-#: xfce4-about/main.c:333
+#: xfce4-about/main.c:359
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
 msgstr "Olivier Fourdan (fourdan@xfce.org) har opphavsretten til Xfce 4. De respektive opphavspersonene har opphavsrett til de forskjellige komponentene."
 
-#: xfce4-about/main.c:338
+#: xfce4-about/main.c:364
 msgid ""
 "The libxfce4ui, libxfce4util and exo packages are distributed under the "
 "terms of the GNU Library General Public License as published by the Free "
@@ -726,7 +730,7 @@ msgid ""
 "any later version."
 msgstr "Pakkene libxfce4ui, libxfce4util og exo distribueres under betingelsene til GNU Library General Public License som publisert av Free Software Foundation; enten lisensens versjon 2, eller (ditt valg) enhver senere versjon. "
 
-#: xfce4-about/main.c:345
+#: xfce4-about/main.c:371
 msgid ""
 "The packages thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
 "xfce4-settings, xfconf, xfdesktop and xfwm4 are distributed under the terms "
@@ -735,25 +739,25 @@ msgid ""
 "version."
 msgstr "Pakkene thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop og xfwm4 distribueres under betingelsene til GNU General Public License som publisert av Free Software Foundation; enten lisensens versjon 2, eller (ditt valg) enhver senere versjon."
 
-#: xfce4-about/main.c:491
+#: xfce4-about/main.c:517
 #, c-format
 msgid "Type '%s --help' for usage information."
 msgstr "Skriv '%s --help' for bruksinformasjon."
 
-#: xfce4-about/main.c:497
+#: xfce4-about/main.c:523
 msgid "Unable to initialize GTK+."
 msgstr "Klarte ikke klargjøre GTK+."
 
-#: xfce4-about/main.c:506
+#: xfce4-about/main.c:532
 msgid "The Xfce development team. All rights reserved."
 msgstr "Xfce utviklingslaget. Alle rettigheter reservert."
 
-#: xfce4-about/main.c:507
+#: xfce4-about/main.c:533
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "Rapporter feil til <%s>"
 
-#: xfce4-about/main.c:517
+#: xfce4-about/main.c:543
 msgid "Failed to load interface"
 msgstr "Klarte ikke laste inn grensesnitt"
 
