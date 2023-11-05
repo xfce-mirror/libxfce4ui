@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2023-05-30 00:45+0200\n"
+"POT-Creation-Date: 2023-10-19 12:45+0200\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: Ioannis LM, 2022-2023\n"
 "Language-Team: Greek (http://app.transifex.com/xfce/libxfce4ui/language/el/)\n"
@@ -40,6 +40,10 @@ msgstr "Θέλετε να διαβάσετε το εγχειρίδιο %s στο
 msgid "Do you want to read the manual online?"
 msgstr "Θέλετε να διαβάσετε το εγχειρίδιο στο διαδίκτυο;"
 
+#: libxfce4ui/xfce-dialogs.c:270
+msgid "Read the manual"
+msgstr "Ανάγνωση"
+
 #: libxfce4ui/xfce-dialogs.c:273
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
@@ -48,7 +52,7 @@ msgstr "Θα μετακινηθείτε στην ιστοσελίδα τεκμη
 
 #. Create cancel button
 #: libxfce4ui/xfce-dialogs.c:275 libxfce4ui/xfce-dialogs.c:533
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:256
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:254
 msgid "_Cancel"
 msgstr "Άκ_υρο"
 
@@ -128,7 +132,7 @@ msgstr "Επιλογές του διαχειριστή συνεδρίας"
 
 #: libxfce4ui/xfce-sm-client.c:1439
 msgid "Show session management options"
-msgstr "Εμφάνιση των επιλογών του διαχειριστή συνεδρίας"
+msgstr "Εμφάνιση επιλογών του διαχειριστή συνεδρίας"
 
 #: libxfce4ui/xfce-sm-client.c:1609
 #, c-format
@@ -272,20 +276,20 @@ msgstr "εντολή"
 msgid "Shortcut"
 msgstr "Συντόμευση"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:250
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:248
 msgid "Clear"
 msgstr "Καθαρισμός"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:273
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:271
 #, c-format
 msgid "Press keyboard keys to trigger the %s '%s'."
 msgstr "Πατήστε πλήκτρα στο πληκτρολόγιο για να ενεργοποιήσετε την %s '%s'."
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:295
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:293
 msgid "Please press a key"
 msgstr "Παρακαλώ πατήστε ένα πλήκτρο"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:350
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:348
 msgid "Could not grab the keyboard."
 msgstr "Δεν είναι δυνατή η δέσμευση του πληκτρολογίου."
 
@@ -609,120 +613,120 @@ msgstr "Διαγραφή ενεργού χώρου εργασίας"
 msgid "Version information"
 msgstr "Πληροφορίες έκδοσης"
 
-#: xfce4-about/main.c:128
+#: xfce4-about/main.c:154
 msgid "GPUs"
 msgstr "GPUs"
 
-#: xfce4-about/main.c:146
+#: xfce4-about/main.c:172
 msgid "Window Manager"
 msgstr "Διαχειριστής παραθύρων"
 
-#: xfce4-about/main.c:147
+#: xfce4-about/main.c:173
 msgid "Handles the placement of windows on the screen."
 msgstr "Χειρίζεται την τοποθέτηση παραθύρων στην οθόνη."
 
-#: xfce4-about/main.c:151
+#: xfce4-about/main.c:177
 msgid "Panel"
 msgstr "Ταμπλό"
 
-#: xfce4-about/main.c:152
+#: xfce4-about/main.c:178
 msgid "Provides a home for window buttons, launchers, app menu and more."
 msgstr "Παρέχει χώρο για κουμπιά παραθύρων, εκκινητές, μενού εφαρμογών και πολλά άλλα."
 
-#: xfce4-about/main.c:156
+#: xfce4-about/main.c:182
 msgid "Desktop Manager"
 msgstr "Διαχειριστής επιφάνειας εργασίας"
 
-#: xfce4-about/main.c:157
+#: xfce4-about/main.c:183
 msgid "Sets desktop backgrounds, handles icons and more."
 msgstr "Ρυθμίζει το φόντο, τα εικονίδια και πολλά άλλα στις επιφάνειες εργασίας."
 
-#: xfce4-about/main.c:161
+#: xfce4-about/main.c:187
 msgid "File Manager"
 msgstr "Διαχειριστής αρχείων"
 
-#: xfce4-about/main.c:162
+#: xfce4-about/main.c:188
 msgid "Manages your files in a modern, easy-to-use and fast way."
 msgstr "Διαχειρίζεται τα αρχεία σας με ένα μοντέρνο, γρήγορο και εύκολο στη χρήση τρόπο."
 
-#: xfce4-about/main.c:166
+#: xfce4-about/main.c:192
 msgid "Volume Manager"
 msgstr "Διαχειριστής δίσκων"
 
-#: xfce4-about/main.c:167
+#: xfce4-about/main.c:193
 msgid "Manages removable drives and media for Thunar."
 msgstr "Διαχειρίζεται αφαιρούμενους οδηγούς και μέσα για το Thunar."
 
-#: xfce4-about/main.c:171
+#: xfce4-about/main.c:197
 msgid "Session Manager"
 msgstr "Διαχειριστής συνεδρίας"
 
-#: xfce4-about/main.c:172
+#: xfce4-about/main.c:198
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
 msgstr "Αποθηκεύει και επαναφέρει τη συνεδρία σας, χειρίζεται την εκκίνηση, την αυτόματη εκκίνηση και τον τερματισμό."
 
-#: xfce4-about/main.c:176
+#: xfce4-about/main.c:202
 msgid "Settings Manager"
 msgstr "Διαχειριστής ρυθμίσεων"
 
-#: xfce4-about/main.c:177
+#: xfce4-about/main.c:203
 msgid "Configures appearance, display, keyboard and mouse settings."
 msgstr "Διαμορφώνει τις ρυθμίσεις εμφάνισης, οθόνης, πληκτρολογίου και ποντικιού."
 
-#: xfce4-about/main.c:181
+#: xfce4-about/main.c:207
 msgid "Application Finder"
 msgstr "Εύρεση εφαρμογών"
 
-#: xfce4-about/main.c:182
+#: xfce4-about/main.c:208
 msgid "Quickly finds and launches applications installed on your system."
 msgstr "Βρίσκει και εκκινεί γρήγορα τις εφαρμογές που είναι εγκατεστημένες στο σύστημά σας."
 
-#: xfce4-about/main.c:186
+#: xfce4-about/main.c:212
 msgid "Settings Daemon"
 msgstr "Υπηρεσία ρυθμίσεων"
 
-#: xfce4-about/main.c:187
+#: xfce4-about/main.c:213
 msgid "Stores your settings in a D-Bus-based configuration system."
 msgstr "Αποθηκεύει τις ρυθμίσεις σας σε ένα σύστημα διαμόρφωσης με βάση το D-Bus."
 
-#: xfce4-about/main.c:191
+#: xfce4-about/main.c:217
 msgid "A Menu Library"
 msgstr "Βιβλιοθήκη μενού"
 
-#: xfce4-about/main.c:192
+#: xfce4-about/main.c:218
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
 msgstr "Υλοποιεί ένα μενού συμβατό με το freedesktop.org βασισμένο στο GLib και το GIO."
 
-#: xfce4-about/main.c:196
+#: xfce4-about/main.c:222
 msgid "Thumbnails Service"
 msgstr "Υπηρεσία μικρογραφιών"
 
-#: xfce4-about/main.c:197
+#: xfce4-about/main.c:223
 msgid "Implements the thumbnail management D-Bus specification."
 msgstr "Υλοποιεί την προδιαγραφή D-Bus για τη διαχείριση των μικρογραφιών."
 
-#: xfce4-about/main.c:251
+#: xfce4-about/main.c:277
 msgid "Please see <https://www.xfce.org/about/credits>"
 msgstr "Παρακαλώ δείτε <https://www.xfce.org/about/credits>"
 
-#: xfce4-about/main.c:312
+#: xfce4-about/main.c:338
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 msgstr "Αν γνωρίζετε να λείπει κάτι από αυτή τη λίστα, μη διστάσετε να το αναφέρετε στο <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues>."
 
-#: xfce4-about/main.c:316
+#: xfce4-about/main.c:342
 msgid "Thanks to all who helped making this software available!"
 msgstr "Ευχαριστούμε όλους όσους βοήθησαν ώστε να είναι διαθέσιμο αυτό το λογισμικό!"
 
-#: xfce4-about/main.c:333
+#: xfce4-about/main.c:359
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
 msgstr "Η πνευματική ιδιοκτησία του Xfce 4 ανήκει στον Olivier Fourdan (fourdan@xfce.org). Τα διάφορα συστατικά είναι πνευματική ιδιοκτησία των αντίστοιχων συγγραφέων τους."
 
-#: xfce4-about/main.c:338
+#: xfce4-about/main.c:364
 msgid ""
 "The libxfce4ui, libxfce4util and exo packages are distributed under the "
 "terms of the GNU Library General Public License as published by the Free "
@@ -730,7 +734,7 @@ msgid ""
 "any later version."
 msgstr "Τα πακέτα, libxfce4ui, libxfce4util και exo διανέμονται υπό τους όρους της Γενικής Άδειας Δημόσιας Χρήσης GNU όπως αυτή έχει δημοσιευτεί από Free Software Foundation, είτε την έκδοση 2 της άδειας, είτε (κατ' επιλογήν) σε οποιαδήποτε μεταγενέστερη έκδοση."
 
-#: xfce4-about/main.c:345
+#: xfce4-about/main.c:371
 msgid ""
 "The packages thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
 "xfce4-settings, xfconf, xfdesktop and xfwm4 are distributed under the terms "
@@ -739,25 +743,25 @@ msgid ""
 "version."
 msgstr "Τα πακέτα, thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop και xfwm4 διανέμονται υπό τους όρους της Γενικής Άδειας Δημόσιας Χρήσης GNU όπως αυτή έχει δημοσιευτεί από Free Software Foundation, είτε την έκδοση 2 της άδειας, είτε (κατ' επιλογήν) σε οποιαδήποτε μεταγενέστερη έκδοση."
 
-#: xfce4-about/main.c:491
+#: xfce4-about/main.c:517
 #, c-format
 msgid "Type '%s --help' for usage information."
 msgstr "Για πληροφορίες χρήσης πληκτρολογήστε '%s --help'."
 
-#: xfce4-about/main.c:497
+#: xfce4-about/main.c:523
 msgid "Unable to initialize GTK+."
 msgstr "Αδύνατη η προετοιμασία GTK+."
 
-#: xfce4-about/main.c:506
+#: xfce4-about/main.c:532
 msgid "The Xfce development team. All rights reserved."
 msgstr "Η ομάδα ανάπτυξης Xfce. Με την επιφύλαξη παντός νόμιμου δικαιώματος."
 
-#: xfce4-about/main.c:507
+#: xfce4-about/main.c:533
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "Παρακαλώ αναφέρετε σφάλματα στο <%s>."
 
-#: xfce4-about/main.c:517
+#: xfce4-about/main.c:543
 msgid "Failed to load interface"
 msgstr "Απέτυχε η φόρτωση της διεπαφής"
 
