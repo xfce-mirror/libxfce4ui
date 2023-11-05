@@ -132,7 +132,7 @@ msgstr "Επιλογές του διαχειριστή συνεδρίας"
 
 #: ../libxfce4ui/xfce-sm-client.c:1439
 msgid "Show session management options"
-msgstr "Εμφάνιση των επιλογών του διαχειριστή συνεδρίας"
+msgstr "Εμφάνιση επιλογών του διαχειριστή συνεδρίας"
 
 #: ../libxfce4ui/xfce-sm-client.c:1609
 #, c-format
