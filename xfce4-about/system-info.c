@@ -33,7 +33,6 @@
 #ifdef HAVE_EPOXY
 #include <epoxy/gl.h>
 #include <epoxy/glx.h>
-#include <X11/Xlib.h>
 #endif
 
 #ifdef HAVE_GUDEV
@@ -393,53 +392,27 @@ get_gpu_info (guint *num_gpus)
   GList *gpus = NULL;
   gchar *result = NULL;
 #ifdef HAVE_EPOXY
-  Display *dpy;
+  GdkGLContext *gl_context;
+  GError *error = NULL;
 #endif
 
   if (num_gpus)
     *num_gpus = 0;
 
 #ifdef HAVE_EPOXY
-  dpy = XOpenDisplay (NULL);
-  if (dpy)
-  {
-    XVisualInfo *visual_info;
-
-    int attrib[] = {
-      GLX_RGBA,
-      GLX_RED_SIZE, 1,
-      GLX_GREEN_SIZE, 1,
-      GLX_BLUE_SIZE, 1,
-      None
-    };
-
-    visual_info = glXChooseVisual (dpy, DefaultScreen (dpy), attrib);
-    if (visual_info)
+  gl_context = gdk_window_create_gl_context (gdk_get_default_root_window (), &error);
+  if (gl_context == NULL)
     {
-      const int screen = DefaultScreen (dpy);
-      const Window root_win = RootWindow (dpy, screen);
-      XSetWindowAttributes win_attr = {};
-      Window win;
-      GLXContext ctx;
-
-      win_attr.colormap = XCreateColormap (dpy, root_win, visual_info->visual, AllocNone);
-      win = XCreateWindow (dpy, root_win,
-                           0, 0, /* x, y */
-                           1, 1, /* width, height */
-                           0, visual_info->depth, InputOutput,
-                           visual_info->visual, CWColormap, &win_attr);
-
-      ctx = glXCreateContext (dpy, visual_info, NULL, True);
-      XFree (visual_info);
-      visual_info = NULL;
-
-      if (ctx)
-      {
-	if (glXMakeCurrent (dpy, win, ctx))
+      g_warning ("Failed to create OpenGL drawing context: %s", error->message);
+      g_error_free (error);
+    }
+  else
         {
+          GdkDisplay *display = gdk_gl_context_get_display (gl_context);
           GPUInfo *gpu = g_new0 (GPUInfo, 1);
           gchar *renderer, *cleanedup_renderer;
 
+          gdk_gl_context_make_current (gl_context);
           gpu->is_default = TRUE;
 
           renderer = g_strdup ((const gchar*) glGetString (GL_RENDERER));
@@ -477,7 +450,9 @@ get_gpu_info (guint *num_gpus)
           }
           g_free (renderer);
 
-          if (epoxy_has_glx_extension (dpy, 0, "GLX_MESA_query_renderer"))
+          if (GDK_IS_X11_DISPLAY (display))
+          {
+          if (epoxy_has_glx_extension (gdk_x11_display_get_xdisplay (display), 0, "GLX_MESA_query_renderer"))
           {
             unsigned mem_mib = 0, vendor = 0, device = 0;
             if (glXQueryCurrentRendererIntegerMESA (GLX_RENDERER_VIDEO_MEMORY_MESA, &mem_mib) && mem_mib > 0)
@@ -486,6 +461,7 @@ get_gpu_info (guint *num_gpus)
             if (glXQueryCurrentRendererIntegerMESA (GLX_RENDERER_VENDOR_ID_MESA, &vendor) &&
                 glXQueryCurrentRendererIntegerMESA (GLX_RENDERER_DEVICE_ID_MESA, &device))
               gpu->pci_id = g_strdup_printf ("%04x:%04x", vendor, device);
+          }
           }
 
           if (gpu->memory_size_mib == 0 && epoxy_has_gl_extension ("GL_NVX_gpu_memory_info"))
@@ -496,19 +472,9 @@ get_gpu_info (guint *num_gpus)
                 gpu->memory_size_mib = mem_kib >> 10;
           }
 
-          /* Deallocate ctx immediately when calling glXDestroyContext() */
-          glXMakeCurrent (dpy, None, NULL);
-
           gpus = append_gpu_info (gpus, gpu);
+          g_object_unref (gl_context);
         }
-        glXDestroyContext (dpy, ctx);
-      }
-
-      XDestroyWindow (dpy, win);
-    }
-
-    XCloseDisplay (dpy);
-  }
 #endif
 
 #ifdef HAVE_GUDEV
