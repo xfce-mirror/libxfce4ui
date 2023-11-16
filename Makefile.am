@@ -31,7 +31,7 @@ EXTRA_DIST = \
 	m4/introspection.m4 \
 	m4/vapigen.m4
 
-DISTCHECK_CONFIGURE_FLAGS = \
+AM_DISTCHECK_CONFIGURE_FLAGS = \
 	--enable-gtk-doc \
 	--disable-gladeui2 \
 	--enable-introspection \
