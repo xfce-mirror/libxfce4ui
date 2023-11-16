@@ -128,7 +128,6 @@ dnl ****************************************************************
 XDT_CHECK_OPTIONAL_PACKAGE([GLIBTOP],
                            [libgtop-2.0], [2.24.0], [glibtop],
                            [GLIBTOP support])
-AM_CONDITIONAL([ENABLE_GLIBTOP], [test "x$GLIBTOP_FOUND" = "xyes"])
 
 dnl **************************************************************
 dnl *** Check time.h and sys/time.h for libgtop ***
