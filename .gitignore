@@ -63,6 +63,7 @@ docs/reference/libxfce4ui.hierarchy
 docs/reference/libxfce4ui.interfaces
 docs/reference/libxfce4ui.prerequisites
 docs/reference/libxfce4ui.signals
+docs/reference/libxfce4ui.types
 docs/reference/*.bak
 docs/reference/xml/
 docs/reference/version.xml

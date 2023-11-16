@@ -14,7 +14,7 @@ AM_CPPFLAGS = \
 	$(PLATFORM_CPPFLAGS)
 
 libxfce4ui_enum_headers = \
-	xfce-sm-client.h
+	libxfce4ui-enums.h
 
 libxfce4ui_headers = \
 	libxfce4ui.h \
@@ -47,15 +47,48 @@ libxfce4ui_sources = \
 	xfce-dialogs.c \
 	xfce-gdk-extensions.c \
 	xfce-gtk-extensions.c \
-	xfce-sm-client.c \
 	xfce-screensaver.c \
 	xfce-spawn.c \
 	xfce-filename-input.c \
 	xfce-titled-dialog.c
 
-##
-## GTK+ 3 support library
-##
+libxfce4ui_2_la_CFLAGS = \
+	$(GDK_CFLAGS) \
+	$(GTK3_CFLAGS) \
+	$(XFCONF_CFLAGS) \
+	$(LIBXFCE4UTIL_CFLAGS) \
+	$(PLATFORM_CFLAGS)
+
+libxfce4ui_2_la_LDFLAGS = \
+	-version-info $(LIBXFCE4UI_VERINFO) \
+	-export-symbols-regex "^[^_].*" \
+	-no-undefined \
+	$(PLATFORM_LDFLAGS)
+
+libxfce4ui_2_la_LIBADD = \
+	$(GDK_LIBS) \
+	$(GTK3_LIBS) \
+	$(XFCONF_LIBS) \
+	$(LIBXFCE4UTIL_LIBS)
+
+if ENABLE_X11
+libxfce4ui_headers += \
+	xfce-sm-client.h
+
+libxfce4ui_sources += \
+	xfce-sm-client.c \
+	xfce-sm-client.h
+
+libxfce4ui_2_la_CFLAGS += \
+	$(LIBSM_CFLAGS) \
+	$(LIBX11_CFLAGS) \
+	$(LIBSTARTUP_NOTIFICATION_CFLAGS)
+
+libxfce4ui_2_la_LIBADD += \
+	$(LIBSM_LIBS) \
+	$(LIBX11_LIBS) \
+	$(LIBSTARTUP_NOTIFICATION_LIBS)
+endif
 
 libxfce4ui2_includedir = \
 	$(includedir)/xfce4/libxfce4ui-2/libxfce4ui
@@ -68,33 +101,6 @@ lib_LTLIBRARIES += \
 
 libxfce4ui_2_la_SOURCES = \
 	$(libxfce4ui_sources)
-
-libxfce4ui_2_la_CFLAGS = \
-	$(LIBSM_CFLAGS) \
-	$(GDK_CFLAGS) \
-	$(GTK3_CFLAGS) \
-	$(LIBX11_CFLAGS) \
-	$(XFCONF_CFLAGS) \
-	$(LIBSTARTUP_NOTIFICATION_CFLAGS) \
-	$(LIBXFCE4UTIL_CFLAGS) \
-	$(PLATFORM_CFLAGS)
-
-libxfce4ui_2_la_LDFLAGS = \
-	-version-info $(LIBXFCE4UI_VERINFO) \
-	-export-symbols-regex "^[^_].*" \
-	-no-undefined \
-	$(LIBSM_LDFLAGS) \
-	$(LIBX11_LDFLAGS) \
-	$(PLATFORM_LDFLAGS)
-
-libxfce4ui_2_la_LIBADD = \
-	$(LIBSM_LIBS) \
-	$(GDK_LIBS) \
-	$(GTK3_LIBS) \
-	$(LIBX11_LIBS) \
-	$(XFCONF_LIBS) \
-	$(LIBSTARTUP_NOTIFICATION_LIBS) \
-	$(LIBXFCE4UTIL_LIBS)
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA += \
