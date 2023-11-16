@@ -13,6 +13,21 @@ m4_define([libxfce4ui_version_api], [2])
 m4_define([libxfce4kbd_private_verinfo], [0:0:0])
 m4_define([libxfce4kbd_private_version_api], [3])
 
+m4_define([glib_min_version], [2.66.0])
+m4_define([gtk_min_version], [3.24.0])
+m4_define([libxfce4util_min_version], [4.17.2])
+m4_define([xfconf_min_version], [4.12.0])
+
+m4_define([libx11_min_version], [1.6.7])
+m4_define([libsm_min_version], [1.2.3])
+
+m4_define([libstartup_notif_min_version], [0.4])
+
+m4_define([libgtop_min_version], [2.24.0])
+m4_define([epoxy_min_version], [1.2])
+m4_define([gudev_min_version], [232])
+m4_define([gladeui2_min_version], [3.5.0])
+
 dnl # DO NOT MODIFY ANYTHING BELOW THIS LINE, UNLESS YOU KNOW WHAT
 dnl # YOU ARE DOING.
 
@@ -108,27 +123,50 @@ AC_SUBST([GETTEXT_PACKAGE])
 AM_GNU_GETTEXT([external])
 AM_GNU_GETTEXT_VERSION([0.19.8])
 
-dnl *******************************************
-dnl *** Check for X Window System installed ***
-dnl *******************************************
-XDT_CHECK_LIBX11_REQUIRE()
-XDT_CHECK_LIBSM()
-
 dnl ***********************************
 dnl *** Check for required packages ***
 dnl ***********************************
-XDT_CHECK_PACKAGE([GLIB], [glib-2.0], [2.66.0])
-XDT_CHECK_PACKAGE([GTK3], [gtk+-3.0], [3.24.0])
-XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [4.17.2])
-XDT_CHECK_PACKAGE([XFCONF], [libxfconf-0], [4.12.0])
+XDT_CHECK_PACKAGE([GLIB], [glib-2.0], [glib_min_version])
+XDT_CHECK_PACKAGE([GTK3], [gtk+-3.0], [gtk_min_version])
+XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [libxfce4util_min_version])
+XDT_CHECK_PACKAGE([XFCONF], [libxfconf-0], [xfconf_min_version])
+
+dnl ***********************************
+dnl *** Check for optional packages ***
+dnl ***********************************
+XDT_CHECK_OPTIONAL_FEATURE([X11],
+                           [x11],
+                           [
+                             XDT_FEATURE_DEPENDENCY([GDK_X11], [gdk-x11-3.0], [gtk_min_version])
+                             XDT_FEATURE_DEPENDENCY([LIBX11], [x11], [libx11_min_version])
+                             XDT_FEATURE_DEPENDENCY([LIBSM], [sm], [libsm_min_version])
+                           ],
+                           [the X11 windowing system])
+XDT_CHECK_OPTIONAL_FEATURE([WAYLAND],
+                           [wayland],
+                           [
+                             XDT_FEATURE_DEPENDENCY([GDK_WAYLAND], [gdk-wayland-3.0], [gtk_min_version])
+                           ],
+                           [the Wayland windowing system])
+if test x"$ENABLE_X11" != x"yes" -a x"$ENABLE_WAYLAND" != x"yes"; then
+  AC_MSG_ERROR([Either both X11 and Wayland support was disabled, or required dependencies are missing. One of the two must be enabled.])
+fi
+
+if test x"$ENABLE_X11" != x"yes"; then
+  dnl Do not check for optional X11 packages if X11 is disabled
+  enable_startup_notification=no
+fi
+XDT_CHECK_OPTIONAL_PACKAGE([LIBSTARTUP_NOTIFICATION],
+                           [libstartup-notification-1.0],
+                           [libstartup_notif_min_version], [startup-notification],
+                           [startup notification library])
 
 dnl ****************************************************************
 dnl *** Optional support for system information based on glibtop ***
 dnl ****************************************************************
 XDT_CHECK_OPTIONAL_PACKAGE([GLIBTOP],
-                           [libgtop-2.0], [2.24.0], [glibtop],
+                           [libgtop-2.0], [libgtop_min_version], [glibtop],
                            [GLIBTOP support])
-AM_CONDITIONAL([ENABLE_GLIBTOP], [test "x$GLIBTOP_FOUND" = "xyes"])
 
 dnl **************************************************************
 dnl *** Check time.h and sys/time.h for libgtop ***
@@ -144,7 +182,7 @@ EPOXY_FOUND="no"
 if test x"$GLIBTOP_FOUND" = x"yes"; then
   XDT_CHECK_OPTIONAL_PACKAGE([EPOXY],
                              [epoxy],
-                             [1.2], [epoxy],
+                             [epoxy_min_version], [epoxy],
                              [library for handling OpenGL function pointer management], [yes])
 else
   AM_CONDITIONAL([HAVE_EPOXY], [false])
@@ -155,7 +193,7 @@ dnl *** Optional support for GUdev ***
 dnl **********************************
 GUDEV_FOUND="no"
 if test x"$GLIBTOP_FOUND" = x"yes"; then
-  XDT_CHECK_OPTIONAL_PACKAGE([GUDEV], [gudev-1.0], [232], [gudev],
+  XDT_CHECK_OPTIONAL_PACKAGE([GUDEV], [gudev-1.0], [gudev_min_version], [gudev],
                              [GObject bindings for libudev], [yes])
 else
   AM_CONDITIONAL([HAVE_GUDEV], [false])
@@ -170,14 +208,6 @@ dnl *************************
 dnl *** Check for vapigen ***
 dnl *************************
 VAPIGEN_CHECK()
-
-dnl *************************************************
-dnl *** Optional support for startup notification ***
-dnl *************************************************
-XDT_CHECK_OPTIONAL_PACKAGE([LIBSTARTUP_NOTIFICATION],
-                           [libstartup-notification-1.0],
-                           [0.4], [startup-notification],
-                           [startup notification library])
 
 dnl **************************************************
 dnl *** Check whether to build the keyboard libary ***
@@ -218,7 +248,7 @@ dnl *** Optional support for the Glade Interface Designer ***
 dnl *********************************************************
 
 XDT_CHECK_OPTIONAL_PACKAGE([GLADEUI2], [gladeui-2.0],
-                           [3.5.0], [gladeui2], [glade interface designer])
+                           [gladeui2_min_version], [gladeui2], [glade interface designer])
 
 AC_ARG_WITH([gladeui2-catalogdir],
             [AS_HELP_STRING([--with-gladeui2-catalogdir=PATH],
@@ -382,16 +412,11 @@ echo "* Keyboard library support:  yes"
 else
 echo "* Keyboard library support:  no"
 fi
-if test x"$LIBSTARTUP_NOTIFICATION_FOUND" = x"yes"; then
-echo "* Startup notification:      yes"
-else
-echo "* Startup notification:      no"
+echo "* X11 Support:               ${ENABLE_X11:-no}"
+if test x"$ENABLE_X11" = x"yes"; then
+echo "  * Startup notif support:   ${LIBSTARTUP_NOTIFICATION_FOUND:-no}"
 fi
-if test x"$LIBSM_LIBS" = x""; then
-echo "* X11 session management:    no"
-else
-echo "* X11 session management:    yes"
-fi
+echo "* Wayland Support:           ${ENABLE_WAYLAND:-no}"
 echo "* Debug support:             $enable_debug"
 echo "* Build tests:               $enable_tests"
 echo "* GNU Visibility:            $have_gnuc_visibility"

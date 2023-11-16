@@ -17,7 +17,7 @@ xfce4_about_SOURCES = \
 	contributors.h \
 	main.c
 
-if ENABLE_GLIBTOP
+if HAVE_GLIBTOP
 
 xfce4_about_SOURCES += \
 	system-info.c \
@@ -31,7 +31,6 @@ xfce4_about_CFLAGS = \
 	$(GLIBTOP_CFLAGS) \
 	$(EPOXY_CFLAGS) \
 	$(GUDEV_CFLAGS) \
-	$(LIBX11_CFLAGS) \
 	$(PLATFORM_CFLAGS)
 
 xfce4_about_LDADD = \
@@ -40,8 +39,6 @@ xfce4_about_LDADD = \
 	$(GLIBTOP_LIBS) \
 	$(EPOXY_LIBS) \
 	$(GUDEV_LIBS) \
-	$(LIBX11_LIBS) \
-	$(LIBX11_LDFLAGS) \
 	$(GTK3_LIBS)
 
 xfce4_about_DEPENDENCIES = \
