@@ -35,9 +35,11 @@
 #include <string.h>
 #endif
 
+#ifdef ENABLE_X11
 #include <X11/Xlib.h>
 #include <X11/Xatom.h>
 #include <gdk/gdkx.h>
+#endif
 
 #include <gtk/gtk.h>
 #include <pango/pango.h>
@@ -1127,6 +1129,7 @@ gboolean
 xfce_has_gtk_frame_extents (GdkWindow *window,
                             GtkBorder *extents)
 {
+#ifdef ENABLE_X11
   /* Code adapted from gnome-flashback:
    * Copyright (C) 2015-2017 Alberts Muktupāvels
    * https://gitlab.gnome.org/GNOME/gnome-flashback/-/commit/f884127
@@ -1144,6 +1147,9 @@ xfce_has_gtk_frame_extents (GdkWindow *window,
   gint result;
 
   display = gdk_display_get_default ();
+  if (!GDK_IS_X11_DISPLAY (display))
+    return FALSE;
+
   xdisplay = gdk_x11_display_get_xdisplay (display);
   xwindow = gdk_x11_window_get_xid (window);
   gtk_frame_extents = XInternAtom (xdisplay, "_GTK_FRAME_EXTENTS", False);
@@ -1170,6 +1176,9 @@ xfce_has_gtk_frame_extents (GdkWindow *window,
 
   XFree (data);
   return TRUE;
+#endif
+
+  return FALSE;
 }
 
 
