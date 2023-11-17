@@ -93,7 +93,7 @@ xfce_dialog_show_help_uri (GdkScreen *screen,
     {
       cmd = g_strdup_printf ("%s --launch WebBrowser '%s'", path, uri->str);
 
-      result = xfce_spawn_command_line_on_screen (screen, cmd, FALSE, TRUE, &error);
+      result = xfce_spawn_command_line (screen, cmd, FALSE, TRUE, TRUE, &error);
 
       g_free (path);
       g_free (cmd);
