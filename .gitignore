@@ -13,6 +13,7 @@ install-sh
 intltool-*.in
 libtool
 libxfce4kbd-private/libxfce4kbd-private-3.pc
+libxfce4ui/libxfce4ui.symbols
 libxfce4ui/libxfce4ui-2.pc
 libxfce4ui/libxfce4ui-config.h
 libxfce4ui/libxfce4ui-dialog-ui.ui~
