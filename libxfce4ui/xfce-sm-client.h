@@ -27,6 +27,8 @@
 
 #include <glib-object.h>
 
+#include "libxfce4ui-enums.h"
+
 #define XFCE_TYPE_SM_CLIENT             (xfce_sm_client_get_type())
 #define XFCE_SM_CLIENT(obj)             (G_TYPE_CHECK_INSTANCE_CAST((obj), XFCE_TYPE_SM_CLIENT, XfceSMClient))
 #define XFCE_IS_SM_CLIENT(obj)          (G_TYPE_CHECK_INSTANCE_TYPE((obj), XFCE_TYPE_SM_CLIENT))
@@ -42,43 +44,7 @@
  **/
 #define XFCE_SM_CLIENT_ERROR xfce_sm_client_error_quark()
 
-/**
- * XfceSmCLientErrorEnum:
- * @XFCE_SM_CLIENT_ERROR_FAILED: Failed to connect to the session manager.
- * @XFCE_SM_CLIENT_ERROR_INVALID_CLIENT: Session does not have a valid client id.
- *
- * Error codes returned by XfceSmCLient functions.
- **/
-typedef enum {
-  XFCE_SM_CLIENT_ERROR_FAILED,
-  XFCE_SM_CLIENT_ERROR_INVALID_CLIENT
-} XfceSmCLientErrorEnum;
-
 G_BEGIN_DECLS
-
-typedef enum
-{
-    XFCE_SM_CLIENT_RESTART_NORMAL = 0,
-    XFCE_SM_CLIENT_RESTART_IMMEDIATELY,
-} XfceSMClientRestartStyle;
-
-typedef enum /*< skip >*/
-{
-    XFCE_SM_CLIENT_PRIORITY_HIGHEST = 0,
-    XFCE_SM_CLIENT_PRIORITY_WM = 15,
-    XFCE_SM_CLIENT_PRIORITY_CORE = 25,
-    XFCE_SM_CLIENT_PRIORITY_DESKTOP = 35,
-    XFCE_SM_CLIENT_PRIORITY_DEFAULT = 50,
-    XFCE_SM_CLIENT_PRIORITY_LOWEST = 255,
-} XfceSMClientPriority;
-
-typedef enum
-{
-    XFCE_SM_CLIENT_SHUTDOWN_HINT_ASK = 0,
-    XFCE_SM_CLIENT_SHUTDOWN_HINT_LOGOUT,
-    XFCE_SM_CLIENT_SHUTDOWN_HINT_HALT,
-    XFCE_SM_CLIENT_SHUTDOWN_HINT_REBOOT,
-} XfceSMClientShutdownHint;
 
 typedef struct _XfceSMClient  XfceSMClient;
 

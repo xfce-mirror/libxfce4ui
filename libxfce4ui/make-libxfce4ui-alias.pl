@@ -84,6 +84,12 @@ while (<>)
         next;
       }
 
+    if ($_ =~ /^\#ifdef\s+(ENABLE_X11|ENABLE_WAYLAND)/)
+      {
+        print $_;
+        next;
+      }
+
     if ($_ =~ /^\#ifn?def\s+G/)
       {
         print $_;
