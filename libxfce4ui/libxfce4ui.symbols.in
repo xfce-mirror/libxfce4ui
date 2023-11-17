@@ -137,6 +137,7 @@ xfce_filename_input_desensitise_widget
 #endif
 #endif
 
+@#ifdef ENABLE_X11@
 /* xfce-sm-client functions */
 #if IN_HEADER(__XFCE_SM_CLIENT_H__)
 #if IN_SOURCE(__XFCE_SM_CLIENT_C__)
@@ -164,6 +165,7 @@ xfce_sm_client_set_current_directory
 xfce_sm_client_get_current_directory
 #endif
 #endif
+@#endif@
 
 /* xfce-screensaver functions */
 #if IN_HEADER(__XFCE_SCREENSAVER_H__)

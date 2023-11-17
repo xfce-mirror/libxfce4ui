@@ -151,6 +151,24 @@ typelib_DATA = $(INTROSPECTION_GIRS:.gir=.typelib)
 CLEANFILES += $(gir_DATA) $(typelib_DATA)
 endif
 
+if ENABLE_X11
+libxfce4ui.symbols: libxfce4ui.symbols.in
+	$(AM_V_GEN) $(SED) '/@#ifdef ENABLE_X11@\|@#endif@/d' < $< > $@
+else
+libxfce4ui.symbols: libxfce4ui.symbols.in
+	$(AM_V_GEN) $(SED) '/@#ifdef ENABLE_X11@/,/@#endif@/d' < $< > $@
+endif
+
+libxfce4ui-alias.h: make-libxfce4ui-alias.pl libxfce4ui.symbols
+	$(AM_V_GEN) $(PERL) $(srcdir)/make-libxfce4ui-alias.pl < $(builddir)/libxfce4ui.symbols > libxfce4ui-alias.h
+
+libxfce4ui-aliasdef.c: make-libxfce4ui-alias.pl libxfce4ui.symbols
+	$(AM_V_GEN) $(PERL) $(srcdir)/make-libxfce4ui-alias.pl -def < $(builddir)/libxfce4ui.symbols > libxfce4ui-aliasdef.c
+
+DISTCLEANFILES = \
+	libxfce4ui.symbols \
+	libxfce4ui-aliasdef.c \
+	libxfce4ui-alias.h
 
 ##
 ## Rules to auto-generate built sources
@@ -166,18 +184,12 @@ CLEANFILES += \
 	actual-abi \
 	expected-abi
 
-DISTCLEANFILES = \
+DISTCLEANFILES += \
 	stamp-libxfce4ui-marshal.h \
 	$(libxfce4ui_built_sources)
 
 BUILT_SOURCES = \
 	$(libxfce4ui_built_sources)
-
-libxfce4ui-alias.h: make-libxfce4ui-alias.pl libxfce4ui.symbols
-	$(AM_V_GEN) $(PERL) $(srcdir)/make-libxfce4ui-alias.pl < $(srcdir)/libxfce4ui.symbols > libxfce4ui-alias.h
-
-libxfce4ui-aliasdef.c: make-libxfce4ui-alias.pl libxfce4ui.symbols
-	$(AM_V_GEN) $(PERL) $(srcdir)/make-libxfce4ui-alias.pl -def < $(srcdir)/libxfce4ui.symbols > libxfce4ui-aliasdef.c
 
 libxfce4ui-marshal.h: stamp-libxfce4ui-marshal.h
 	@true
@@ -231,9 +243,7 @@ EXTRA_DIST = \
 	abicheck.sh \
 	libxfce4ui.gresource.xml \
 	$(LIBXFCE4UI_RESOURCE_FILES) \
-	libxfce4ui.symbols \
-	libxfce4ui-alias.h \
-	libxfce4ui-aliasdef.c \
+	libxfce4ui.symbols.in \
 	libxfce4ui-marshal.list \
 	make-libxfce4ui-alias.pl \
 	libxfce4ui-2.deps
