@@ -147,6 +147,23 @@ typelib_DATA = $(INTROSPECTION_GIRS:.gir=.typelib)
 CLEANFILES += $(gir_DATA) $(typelib_DATA)
 endif
 
+if ENABLE_X11
+sed_script = s/@-DENABLE_X11@/-DENABLE_X11/;
+else
+sed_script = s/@-DENABLE_X11@//;
+endif
+if ENABLE_WAYLAND
+sed_script += s/@-DENABLE_WAYLAND@/-DENABLE_WAYLAND/
+else
+sed_script += s/@-DENABLE_WAYLAND@//
+endif
+
+abicheck.sh: abicheck.sh.in
+	$(AM_V_GEN) $(SED) "$(sed_script)" < $< > $@; \
+	chmod a+x $@
+
+DISTCLEANFILES = \
+	abicheck.sh
 
 ##
 ## Rules to auto-generate built sources
@@ -162,7 +179,7 @@ CLEANFILES += \
 	actual-abi \
 	expected-abi
 
-DISTCLEANFILES = \
+DISTCLEANFILES += \
 	stamp-libxfce4ui-marshal.h \
 	$(libxfce4ui_built_sources)
 
@@ -224,7 +241,7 @@ endif
 dist-hook: all
 
 EXTRA_DIST = \
-	abicheck.sh \
+	abicheck.sh.in \
 	libxfce4ui.gresource.xml \
 	$(LIBXFCE4UI_RESOURCE_FILES) \
 	libxfce4ui.symbols \

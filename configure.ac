@@ -80,6 +80,7 @@ AM_PROG_CC_C_O()
 AC_PROG_INSTALL()
 AC_CHECK_PROGS([PERL], [perl5 perl])
 AC_PATH_PROG([GLIB_COMPILE_RESOURCES],[glib-compile-resources])
+AC_PROG_SED
 
 dnl **************************
 dnl *** Initialize libtool ***
