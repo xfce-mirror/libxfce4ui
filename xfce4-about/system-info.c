@@ -33,7 +33,6 @@
 #ifdef HAVE_EPOXY
 #include <epoxy/gl.h>
 #include <epoxy/glx.h>
-#include <X11/Xlib.h>
 #endif
 
 #ifdef HAVE_GUDEV
@@ -393,122 +392,89 @@ get_gpu_info (guint *num_gpus)
   GList *gpus = NULL;
   gchar *result = NULL;
 #ifdef HAVE_EPOXY
-  Display *dpy;
+  GdkGLContext *gl_context;
+  GError *error = NULL;
 #endif
 
   if (num_gpus)
     *num_gpus = 0;
 
 #ifdef HAVE_EPOXY
-  dpy = XOpenDisplay (NULL);
-  if (dpy)
-  {
-    XVisualInfo *visual_info;
-
-    int attrib[] = {
-      GLX_RGBA,
-      GLX_RED_SIZE, 1,
-      GLX_GREEN_SIZE, 1,
-      GLX_BLUE_SIZE, 1,
-      None
-    };
-
-    visual_info = glXChooseVisual (dpy, DefaultScreen (dpy), attrib);
-    if (visual_info)
+  gl_context = gdk_window_create_gl_context (gdk_get_default_root_window (), &error);
+  if (gl_context == NULL)
     {
-      const int screen = DefaultScreen (dpy);
-      const Window root_win = RootWindow (dpy, screen);
-      XSetWindowAttributes win_attr = {};
-      Window win;
-      GLXContext ctx;
+      g_warning ("Failed to create OpenGL drawing context: %s", error->message);
+      g_error_free (error);
+    }
+  else
+    {
+      GdkDisplay *display = gdk_gl_context_get_display (gl_context);
+      GPUInfo *gpu = g_new0 (GPUInfo, 1);
+      gchar *renderer, *cleanedup_renderer;
 
-      win_attr.colormap = XCreateColormap (dpy, root_win, visual_info->visual, AllocNone);
-      win = XCreateWindow (dpy, root_win,
-                           0, 0, /* x, y */
-                           1, 1, /* width, height */
-                           0, visual_info->depth, InputOutput,
-                           visual_info->visual, CWColormap, &win_attr);
+      gdk_gl_context_make_current (gl_context);
+      gpu->is_default = TRUE;
 
-      ctx = glXCreateContext (dpy, visual_info, NULL, True);
-      XFree (visual_info);
-      visual_info = NULL;
-
-      if (ctx)
-      {
-	if (glXMakeCurrent (dpy, win, ctx))
+      renderer = g_strdup ((const gchar*) glGetString (GL_RENDERER));
+      if (renderer && (cleanedup_renderer = info_cleanup (renderer)) != NULL)
         {
-          GPUInfo *gpu = g_new0 (GPUInfo, 1);
-          gchar *renderer, *cleanedup_renderer;
+          gsize length;
+          gchar *renderer_lc;
+          gboolean strip = TRUE;
 
-          gpu->is_default = TRUE;
+          g_free (renderer);
+          renderer = cleanedup_renderer;
+          length = strlen (renderer);
 
-          renderer = g_strdup ((const gchar*) glGetString (GL_RENDERER));
-          if (renderer && (cleanedup_renderer = info_cleanup (renderer)) != NULL)
-          {
-            gsize length;
-            gchar *renderer_lc;
-            gboolean strip = TRUE;
+          /* Return full renderer string in the following cases: */
+          renderer_lc = g_ascii_strdown (renderer, length);
+          strip = strip && !g_str_has_prefix (renderer_lc, "llvmpipe");
+          strip = strip && !g_str_has_prefix (renderer_lc, "softpipe");
+          strip = strip && !g_str_has_prefix (renderer_lc, "swr");
+          strip = strip && !g_str_has_prefix (renderer_lc, "zink");
+          g_free (renderer_lc);
+          renderer_lc = NULL;
 
-            g_free (renderer);
-            renderer = cleanedup_renderer;
-            length = strlen (renderer);
-
-            /* Return full renderer string in the following cases: */
-            renderer_lc = g_ascii_strdown (renderer, length);
-            strip = strip && !g_str_has_prefix (renderer_lc, "llvmpipe");
-            strip = strip && !g_str_has_prefix (renderer_lc, "softpipe");
-            strip = strip && !g_str_has_prefix (renderer_lc, "swr");
-            strip = strip && !g_str_has_prefix (renderer_lc, "zink");
-            g_free (renderer_lc);
-            renderer_lc = NULL;
-
-            if (strip)
+          if (strip)
             {
               /* End the renderer string before the first parenthesis */
               const gchar *bracket = strchr (renderer, '(');
               if (bracket > renderer)
-              {
-                length = (gsize) (bracket-renderer);
-                for(; length > 0 && g_ascii_isspace (renderer[length-1]); length--);
-              }
+                {
+                  length = (gsize) (bracket-renderer);
+                  for(; length > 0 && g_ascii_isspace (renderer[length-1]); length--);
+                }
             }
 
-            gpu->name = g_strndup (renderer, length);
-          }
-          g_free (renderer);
+          gpu->name = g_strndup (renderer, length);
+        }
+      g_free (renderer);
 
-          if (epoxy_has_glx_extension (dpy, 0, "GLX_MESA_query_renderer"))
-          {
-            unsigned mem_mib = 0, vendor = 0, device = 0;
-            if (glXQueryCurrentRendererIntegerMESA (GLX_RENDERER_VIDEO_MEMORY_MESA, &mem_mib) && mem_mib > 0)
+      if (GDK_IS_X11_DISPLAY (display))
+        {
+          if (epoxy_has_glx_extension (gdk_x11_display_get_xdisplay (display), 0, "GLX_MESA_query_renderer"))
+            {
+              unsigned mem_mib = 0, vendor = 0, device = 0;
+              if (glXQueryCurrentRendererIntegerMESA (GLX_RENDERER_VIDEO_MEMORY_MESA, &mem_mib) && mem_mib > 0)
                 gpu->memory_size_mib = mem_mib;
 
-            if (glXQueryCurrentRendererIntegerMESA (GLX_RENDERER_VENDOR_ID_MESA, &vendor) &&
-                glXQueryCurrentRendererIntegerMESA (GLX_RENDERER_DEVICE_ID_MESA, &device))
-              gpu->pci_id = g_strdup_printf ("%04x:%04x", vendor, device);
-          }
-
-          if (gpu->memory_size_mib == 0 && epoxy_has_gl_extension ("GL_NVX_gpu_memory_info"))
-          {
-            GLint mem_kib = 0;
-            glGetIntegerv (GL_GPU_MEMORY_INFO_DEDICATED_VIDMEM_NVX, &mem_kib);
-            if (mem_kib > 0)
-                gpu->memory_size_mib = mem_kib >> 10;
-          }
-
-          /* Deallocate ctx immediately when calling glXDestroyContext() */
-          glXMakeCurrent (dpy, None, NULL);
-
-          gpus = append_gpu_info (gpus, gpu);
+              if (glXQueryCurrentRendererIntegerMESA (GLX_RENDERER_VENDOR_ID_MESA, &vendor) &&
+                  glXQueryCurrentRendererIntegerMESA (GLX_RENDERER_DEVICE_ID_MESA, &device))
+                gpu->pci_id = g_strdup_printf ("%04x:%04x", vendor, device);
+            }
         }
-        glXDestroyContext (dpy, ctx);
-      }
 
-      XDestroyWindow (dpy, win);
+      if (gpu->memory_size_mib == 0 && epoxy_has_gl_extension ("GL_NVX_gpu_memory_info"))
+        {
+          GLint mem_kib = 0;
+          glGetIntegerv (GL_GPU_MEMORY_INFO_DEDICATED_VIDMEM_NVX, &mem_kib);
+          if (mem_kib > 0)
+            gpu->memory_size_mib = mem_kib >> 10;
+        }
+
+      gpus = append_gpu_info (gpus, gpu);
+      g_object_unref (gl_context);
     }
-
-    XCloseDisplay (dpy);
-  }
 #endif
 
 #ifdef HAVE_GUDEV

@@ -6,7 +6,7 @@ DOC_MODULE=libxfce4ui
 DOC_MAIN_SGML_FILE=$(DOC_MODULE)-docs.xml
 
 # Extra options to supply to gtkdoc-scan
-SCAN_OPTIONS= --deprecated-guards="XFCE_DISABLE_DEPRECATED"
+SCAN_OPTIONS= --deprecated-guards="XFCE_DISABLE_DEPRECATED" --rebuild-types
 
 # The directory containing the source code. Relative to $(srcdir)
 DOC_SOURCE_DIR=$(top_srcdir)/libxfce4ui
@@ -22,9 +22,10 @@ HFILE_GLOB=
 CFILE_GLOB=
 
 # Header files to ignore when scanning
+if !ENABLE_X11
+IGNORE_HFILES=xfce-sm-client.h
+endif
 
-
-IGNORE_HFILES=
 # Extra files to add when scanning (relative to $srcdir)
 EXTRA_HFILES=
 
