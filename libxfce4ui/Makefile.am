@@ -30,6 +30,7 @@ libxfce4ui_headers = \
 	$(libxfce4ui_enum_headers)
 
 libxfce4ui_built_sources = \
+	libxfce4ui.h \
 	libxfce4ui-alias.h \
 	libxfce4ui-aliasdef.c \
 	libxfce4ui-enum-types.c \
@@ -148,22 +149,30 @@ CLEANFILES += $(gir_DATA) $(typelib_DATA)
 endif
 
 if ENABLE_X11
-sed_script = s/@-DENABLE_X11@/-DENABLE_X11/;
+abicheck_sed_script = s/@-DENABLE_X11@/-DENABLE_X11/;
+libxfce4ui_sed_script = /@BEGIN_X11_HEADERS@\|@END_X11_HEADERS@/d;
 else
-sed_script = s/@-DENABLE_X11@//;
+abicheck_sed_script = s/@-DENABLE_X11@//;
+libxfce4ui_sed_script = /@BEGIN_X11_HEADERS@/,/@END_X11_HEADERS@/d;
 endif
 if ENABLE_WAYLAND
-sed_script += s/@-DENABLE_WAYLAND@/-DENABLE_WAYLAND/
+abicheck_sed_script += s/@-DENABLE_WAYLAND@/-DENABLE_WAYLAND/
+libxfce4ui_sed_script += /@BEGIN_WAYLAND_HEADERS@\|@END_WAYLAND_HEADERS@/d
 else
-sed_script += s/@-DENABLE_WAYLAND@//
+abicheck_sed_script += s/@-DENABLE_WAYLAND@//
+libxfce4ui_sed_script += /@BEGIN_WAYLAND_HEADERS@/,/@END_WAYLAND_HEADERS@/d
 endif
 
 abicheck.sh: abicheck.sh.in
-	$(AM_V_GEN) $(SED) "$(sed_script)" < $< > $@; \
+	$(AM_V_GEN) $(SED) "$(abicheck_sed_script)" < $< > $@; \
 	chmod a+x $@
 
+libxfce4ui.h: libxfce4ui.h.in
+	$(AM_V_GEN) $(SED) "$(libxfce4ui_sed_script)" < $< > $@
+
 DISTCLEANFILES = \
-	abicheck.sh
+	abicheck.sh \
+	libxfce4ui.h
 
 ##
 ## Rules to auto-generate built sources
@@ -242,6 +251,7 @@ dist-hook: all
 
 EXTRA_DIST = \
 	abicheck.sh.in \
+	libxfce4ui.h.in \
 	libxfce4ui.gresource.xml \
 	$(LIBXFCE4UI_RESOURCE_FILES) \
 	libxfce4ui.symbols \
