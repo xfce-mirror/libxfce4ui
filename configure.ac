@@ -140,7 +140,6 @@ XDT_CHECK_OPTIONAL_FEATURE([X11],
                            [
                              XDT_FEATURE_DEPENDENCY([GDK_X11], [gdk-x11-3.0], [gtk_min_version])
                              XDT_FEATURE_DEPENDENCY([LIBX11], [x11], [libx11_min_version])
-                             XDT_FEATURE_DEPENDENCY([LIBSM], [sm], [libsm_min_version])
                            ],
                            [the X11 windowing system])
 XDT_CHECK_OPTIONAL_FEATURE([WAYLAND],
@@ -155,8 +154,10 @@ fi
 
 if test x"$ENABLE_X11" != x"yes"; then
   dnl Do not check for optional X11 packages if X11 is disabled
+  enable_libsm=no
   enable_startup_notification=no
 fi
+XDT_CHECK_OPTIONAL_PACKAGE([LIBSM], [sm], [libsm_min_version], [libsm], [session management library])
 XDT_CHECK_OPTIONAL_PACKAGE([LIBSTARTUP_NOTIFICATION],
                            [libstartup-notification-1.0],
                            [libstartup_notif_min_version], [startup-notification],
@@ -415,6 +416,7 @@ echo "* Keyboard library support:  no"
 fi
 echo "* X11 Support:               ${ENABLE_X11:-no}"
 if test x"$ENABLE_X11" = x"yes"; then
+echo "  * Libsm support:           ${LIBSM_FOUND:-no}"
 echo "  * Startup notif support:   ${LIBSTARTUP_NOTIFICATION_FOUND:-no}"
 fi
 echo "* Wayland Support:           ${ENABLE_WAYLAND:-no}"
