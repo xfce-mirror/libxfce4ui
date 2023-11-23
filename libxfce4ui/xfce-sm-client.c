@@ -1454,9 +1454,11 @@ xfce_sm_client_get_option_group(gint  argc,
  * required property values for you.
  *
  * If you have already created an #XfceSMClient instance using
- * this function, this will return the same instance.
+ * this function, this will return the same instance, i.e. you should
+ * *only* unref the first instance.
  *
- * Returns: (transfer full): A new or existing #XfceSMClient
+ * Returns: A new #XfceSMClient instance -transfer full- on the first call only,
+ * other calls to this function are transfer none
  **/
 XfceSMClient *
 xfce_sm_client_get(void)
