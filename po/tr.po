@@ -12,16 +12,16 @@
 # Gökmen Görgen <gkmngrgn@gmail.com>, 2008
 # Natavan Mirzayeva <mirzayevanatavan@gmail.com>, 2015
 # Necdet Yücel <necdetyucel@gmail.com>, 2016-2017
-# Sabri Ünal <libreajans@gmail.com>, 2022
+# Sabri Ünal <libreajans@gmail.com>, 2022-2023
 # Serdar Sağlam <teknomobil@msn.com>, 2019-2020
 # Volkan Gezer <volkangezer@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2023-05-05 10:48+0200\n"
+"POT-Creation-Date: 2023-10-19 12:45+0200\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>, 2020,2022\n"
+"Last-Translator: Sabri Ünal <libreajans@gmail.com>, 2022-2023\n"
 "Language-Team: Turkish (http://app.transifex.com/xfce/libxfce4ui/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,6 +42,10 @@ msgstr "%s kılavuzunu çevrim içi okumak ister misiniz?"
 msgid "Do you want to read the manual online?"
 msgstr "Kılavuzu çevrim içi okumak ister misiniz?"
 
+#: libxfce4ui/xfce-dialogs.c:270
+msgid "Read the manual"
+msgstr ""
+
 #: libxfce4ui/xfce-dialogs.c:273
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
@@ -50,9 +54,9 @@ msgstr "Yardım sayfalarının güncellendiği ve çevrildiği belgelendirme say
 
 #. Create cancel button
 #: libxfce4ui/xfce-dialogs.c:275 libxfce4ui/xfce-dialogs.c:533
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:256
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:254
 msgid "_Cancel"
-msgstr "_İptal"
+msgstr "İ_ptal"
 
 #: libxfce4ui/xfce-dialogs.c:277
 msgid "_Read Online"
@@ -274,20 +278,20 @@ msgstr "komut"
 msgid "Shortcut"
 msgstr "Kısayol"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:250
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:248
 msgid "Clear"
 msgstr "Temizle"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:273
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:271
 #, c-format
 msgid "Press keyboard keys to trigger the %s '%s'."
 msgstr "%s '%s' tetiklemek için klavye tuşlarına basın."
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:295
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:293
 msgid "Please press a key"
 msgstr "Lütfen bir tuşa basın"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:350
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:348
 msgid "Could not grab the keyboard."
 msgstr "Klavye yakalanamadı."
 
@@ -611,120 +615,120 @@ msgstr "Etkin çalışma alanını sil"
 msgid "Version information"
 msgstr "Sürüm bilgisi"
 
-#: xfce4-about/main.c:128
+#: xfce4-about/main.c:154
 msgid "GPUs"
 msgstr "GPU'lar"
 
-#: xfce4-about/main.c:146
+#: xfce4-about/main.c:172
 msgid "Window Manager"
 msgstr "Pencere Yöneticisi"
 
-#: xfce4-about/main.c:147
+#: xfce4-about/main.c:173
 msgid "Handles the placement of windows on the screen."
 msgstr "Pencerelerin ekran üzerinde yerleştirilmesiyle ilgilenir."
 
-#: xfce4-about/main.c:151
+#: xfce4-about/main.c:177
 msgid "Panel"
 msgstr "Panel"
 
-#: xfce4-about/main.c:152
+#: xfce4-about/main.c:178
 msgid "Provides a home for window buttons, launchers, app menu and more."
 msgstr "Pencere düğmeleri, başlatıcılar, uygulama menüsü ve daha fazlası için bir yuva sağlar."
 
-#: xfce4-about/main.c:156
+#: xfce4-about/main.c:182
 msgid "Desktop Manager"
 msgstr "Masaüstü Yöneticisi"
 
-#: xfce4-about/main.c:157
+#: xfce4-about/main.c:183
 msgid "Sets desktop backgrounds, handles icons and more."
 msgstr "Masaüstü arka planlarını, simgeleri ve daha çoğunu ayarlar."
 
-#: xfce4-about/main.c:161
+#: xfce4-about/main.c:187
 msgid "File Manager"
 msgstr "Dosya Yöneticisi"
 
-#: xfce4-about/main.c:162
+#: xfce4-about/main.c:188
 msgid "Manages your files in a modern, easy-to-use and fast way."
 msgstr "Dosyalarınızı çağdaş, kullanımı kolay ve hızlıca yönetir."
 
-#: xfce4-about/main.c:166
+#: xfce4-about/main.c:192
 msgid "Volume Manager"
 msgstr "Birim Yönetici"
 
-#: xfce4-about/main.c:167
+#: xfce4-about/main.c:193
 msgid "Manages removable drives and media for Thunar."
 msgstr "Thunar için çıkarılabilir sürücüleri ve ortamları yönetir."
 
-#: xfce4-about/main.c:171
+#: xfce4-about/main.c:197
 msgid "Session Manager"
 msgstr "Oturum Yöneticisi"
 
-#: xfce4-about/main.c:172
+#: xfce4-about/main.c:198
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
 msgstr "Oturumunuzu kaydeder ve geri yükler, başlatma, kendiliğinden başlatma ve kapatma işlemlerini gerçekleştirir."
 
-#: xfce4-about/main.c:176
+#: xfce4-about/main.c:202
 msgid "Settings Manager"
 msgstr "Ayarlar Yöneticisi"
 
-#: xfce4-about/main.c:177
+#: xfce4-about/main.c:203
 msgid "Configures appearance, display, keyboard and mouse settings."
 msgstr "Görünüm, ekran, klavye ve fare ayarlarını yapılandırır."
 
-#: xfce4-about/main.c:181
+#: xfce4-about/main.c:207
 msgid "Application Finder"
 msgstr "Uygulama Bulucu"
 
-#: xfce4-about/main.c:182
+#: xfce4-about/main.c:208
 msgid "Quickly finds and launches applications installed on your system."
 msgstr "Sisteminizde kurulu uygulamaları hızla bulur ve başlatır."
 
-#: xfce4-about/main.c:186
+#: xfce4-about/main.c:212
 msgid "Settings Daemon"
 msgstr "Ayar Yardımcısı"
 
-#: xfce4-about/main.c:187
+#: xfce4-about/main.c:213
 msgid "Stores your settings in a D-Bus-based configuration system."
 msgstr "Ayarlarınızı D-Bus tabanlı yapılandırma sisteminde saklar."
 
-#: xfce4-about/main.c:191
+#: xfce4-about/main.c:217
 msgid "A Menu Library"
 msgstr "Menü Kitaplığı"
 
-#: xfce4-about/main.c:192
+#: xfce4-about/main.c:218
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
 msgstr "GLib ve GIO tabanlı freedesktop.org uyumlu menü uygular."
 
-#: xfce4-about/main.c:196
+#: xfce4-about/main.c:222
 msgid "Thumbnails Service"
 msgstr "Küçük Resim Servisi"
 
-#: xfce4-about/main.c:197
+#: xfce4-about/main.c:223
 msgid "Implements the thumbnail management D-Bus specification."
 msgstr "Küçük resim yönetimi D-Bus belirtimini uygular."
 
-#: xfce4-about/main.c:251
+#: xfce4-about/main.c:277
 msgid "Please see <https://www.xfce.org/about/credits>"
 msgstr "Lütfen şuna bakın: <https://www.xfce.org/about/credits>"
 
-#: xfce4-about/main.c:312
+#: xfce4-about/main.c:338
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 msgstr "Bu listede eksik birileri olduğunu düşünüyorsanız; tereddüt etmeyin ve <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> adresine hata bildirimi gönderin."
 
-#: xfce4-about/main.c:316
+#: xfce4-about/main.c:342
 msgid "Thanks to all who helped making this software available!"
 msgstr "Bu yazılıma yardım eden ve emeği geçen herkese teşekkürler!"
 
-#: xfce4-about/main.c:333
+#: xfce4-about/main.c:359
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
 msgstr "Xfce 4'ün kopyalama hakları Olivier Fourdan'a (fourdan@xfce.org) aittir. Farklı bileşenlerin kopyalama hakları ilgili yazarlara aittir."
 
-#: xfce4-about/main.c:338
+#: xfce4-about/main.c:364
 msgid ""
 "The libxfce4ui, libxfce4util and exo packages are distributed under the "
 "terms of the GNU Library General Public License as published by the Free "
@@ -732,7 +736,7 @@ msgid ""
 "any later version."
 msgstr "Libxfce4ui, libxfce4util ve exo paketleri, Özgür Yazılım Vakfınca yayımlanan GNU Kısıtlı Genel Kamu Lisansı koşullarında dağıtılmaktadır; Lisansın 2. sürümü veya (isteğe bağlı olarak) daha sonraki bir sürüm."
 
-#: xfce4-about/main.c:345
+#: xfce4-about/main.c:371
 msgid ""
 "The packages thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
 "xfce4-settings, xfconf, xfdesktop and xfwm4 are distributed under the terms "
@@ -741,25 +745,25 @@ msgid ""
 "version."
 msgstr "Thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop ve xfwm4 paketleri, Özgür Yazılım Vakfınca yayımlanan GNU Genel Kamu Lisansı koşullarında dağıtılmaktadır; Lisansın 2. sürümü veya (isteğe bağlı olarak) daha sonraki bir sürüm."
 
-#: xfce4-about/main.c:491
+#: xfce4-about/main.c:517
 #, c-format
 msgid "Type '%s --help' for usage information."
 msgstr "Kullanım bilgisi için '%s --help' yazın."
 
-#: xfce4-about/main.c:497
+#: xfce4-about/main.c:523
 msgid "Unable to initialize GTK+."
 msgstr "GTK+ başlatılamıyor."
 
-#: xfce4-about/main.c:506
+#: xfce4-about/main.c:532
 msgid "The Xfce development team. All rights reserved."
 msgstr "Xfce geliştirme takımı. Tüm hakları saklıdır."
 
-#: xfce4-about/main.c:507
+#: xfce4-about/main.c:533
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "Lütfen hataları <%s> adresine bildirin."
 
-#: xfce4-about/main.c:517
+#: xfce4-about/main.c:543
 msgid "Failed to load interface"
 msgstr "Arayüzün yüklenmesi başarısız oldu"
 
