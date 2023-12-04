@@ -140,6 +140,7 @@ struct _XfceSMClient
 
 #ifdef HAVE_LIBSM
     SmcConn session_connection;
+    IceConn ice_connection;
 #endif
 
     XfceSMClientState state;
@@ -798,7 +799,8 @@ xsmp_process_ice_messages(GIOChannel *channel,
                           GIOCondition condition,
                           gpointer client_data)
 {
-    IceConn connection = (IceConn)client_data;
+    XfceSMClient *sm_client = client_data;
+    IceConn connection = sm_client->ice_connection;
     IceProcessMessagesStatus status;
 
     status = IceProcessMessages(connection, NULL, NULL);
@@ -806,7 +808,11 @@ xsmp_process_ice_messages(GIOChannel *channel,
         g_warning("Disconnected from session manager.");
         /* We were disconnected */
         IceSetShutdownNegotiation(connection, False);
-        IceCloseConnection(connection);
+        if(sm_client->session_connection) {
+            xfce_sm_client_disconnect(sm_client);
+        } else {
+            IceCloseConnection(connection);
+        }
     }
 
     return TRUE;
@@ -820,6 +826,7 @@ xsmp_new_ice_connection(IceConn connection,
                         Bool opening,
                         IcePointer *watch_data)
 {
+    XfceSMClient *sm_client = client_data;
     guint input_id;
 
     if(opening) {
@@ -828,6 +835,7 @@ xsmp_new_ice_connection(IceConn connection,
          */
         GIOChannel *channel;
 
+        sm_client->ice_connection = connection;
         fcntl(IceConnectionNumber(connection), F_SETFD,
               fcntl(IceConnectionNumber(connection), F_GETFD) | FD_CLOEXEC);
 
@@ -835,7 +843,7 @@ xsmp_new_ice_connection(IceConn connection,
 
         input_id = g_io_add_watch(channel,
                                   G_IO_IN | G_IO_HUP | G_IO_ERR | G_IO_PRI,
-                                  xsmp_process_ice_messages, connection);
+                                  xsmp_process_ice_messages, sm_client);
 
         g_io_channel_unref(channel);
 
@@ -857,7 +865,7 @@ xsmp_ice_io_error_handler(IceConn connection)
 }
 
 static void
-xsmp_ice_init(void)
+xsmp_ice_init(XfceSMClient *sm_client)
 {
     static gsize inited = 0;
 
@@ -870,7 +878,7 @@ xsmp_ice_init(void)
         if(xsmp_ice_installed_handler == default_handler)
             xsmp_ice_installed_handler = NULL;
 
-        IceAddConnectionWatch(xsmp_new_ice_connection, NULL);
+        IceAddConnectionWatch(xsmp_new_ice_connection, sm_client);
 
         g_once_init_leave(&inited, 1);
     }
@@ -1578,7 +1586,7 @@ xfce_sm_client_connect(XfceSMClient *sm_client,
         return TRUE;
 
 #ifdef HAVE_LIBSM
-    xsmp_ice_init();
+    xsmp_ice_init(sm_client);
 
     mask = SmcSaveYourselfProcMask | SmcDieProcMask | SmcSaveCompleteProcMask
            | SmcShutdownCancelledProcMask;
