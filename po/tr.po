@@ -10,6 +10,7 @@
 # Emin Tufan Çetin <etcetin@gmail.com>, 2020,2022
 # Emin Tufan Çetin <etcetin@gmail.com>, 2020
 # Gökmen Görgen <gkmngrgn@gmail.com>, 2008
+# Mustafa Tınmaz, 2023
 # Natavan Mirzayeva <mirzayevanatavan@gmail.com>, 2015
 # Necdet Yücel <necdetyucel@gmail.com>, 2016-2017
 # Sabri Ünal <libreajans@gmail.com>, 2022-2023
@@ -21,7 +22,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2023-10-19 12:45+0200\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Sabri Ünal <libreajans@gmail.com>, 2022-2023\n"
+"Last-Translator: Mustafa Tınmaz, 2023\n"
 "Language-Team: Turkish (http://app.transifex.com/xfce/libxfce4ui/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -44,7 +45,7 @@ msgstr "Kılavuzu çevrim içi okumak ister misiniz?"
 
 #: libxfce4ui/xfce-dialogs.c:270
 msgid "Read the manual"
-msgstr ""
+msgstr "Kullanım kılavuzunu okuyun"
 
 #: libxfce4ui/xfce-dialogs.c:273
 msgid ""
