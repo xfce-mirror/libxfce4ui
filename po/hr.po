@@ -6,14 +6,14 @@
 # Edin Veskovic <edin.lockedin@gmail.com>, 2019-2020
 # Edin Veskovic <edin.lockedin@gmail.com>, 2015,2017
 # Edin Veskovic <edin.lockedin@gmail.com>, 2014
-# Ivica  Kolić <ikoli@yahoo.com>, 2013-2016,2019-2021
+# Ivica  Kolić <ikoli@yahoo.com>, 2013-2016,2019-2021,2023
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2023-04-06 12:45+0200\n"
+"POT-Creation-Date: 2023-10-19 12:45+0200\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Ivica  Kolić <ikoli@yahoo.com>, 2013-2016,2019-2021\n"
+"Last-Translator: Ivica  Kolić <ikoli@yahoo.com>, 2013-2016,2019-2021,2023\n"
 "Language-Team: Croatian (http://app.transifex.com/xfce/libxfce4ui/language/hr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,6 +34,10 @@ msgstr "Želite li čitati %s priručnik na mreži?"
 msgid "Do you want to read the manual online?"
 msgstr "Želite li čitati priručnik na mreži?"
 
+#: libxfce4ui/xfce-dialogs.c:270
+msgid "Read the manual"
+msgstr "Pročitaj priručnik"
+
 #: libxfce4ui/xfce-dialogs.c:273
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
@@ -42,7 +46,7 @@ msgstr "Biti ćete preusmjereni na web stranicu dokumentacije gdje se stranice p
 
 #. Create cancel button
 #: libxfce4ui/xfce-dialogs.c:275 libxfce4ui/xfce-dialogs.c:533
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:256
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:254
 msgid "_Cancel"
 msgstr "_Otkaži"
 
@@ -266,20 +270,20 @@ msgstr "naredba"
 msgid "Shortcut"
 msgstr "Prečac"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:250
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:248
 msgid "Clear"
 msgstr "Očisti"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:273
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:271
 #, c-format
 msgid "Press keyboard keys to trigger the %s '%s'."
 msgstr ""
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:295
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:293
 msgid "Please press a key"
 msgstr "Molim pritisnite tipku"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:350
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:348
 msgid "Could not grab the keyboard."
 msgstr "Ne mogu se spojiti na tipkovnicu."
 
@@ -603,120 +607,120 @@ msgstr "Obriši aktivni radni prostor"
 msgid "Version information"
 msgstr "Informacija o verziji"
 
-#: xfce4-about/main.c:128
+#: xfce4-about/main.c:154
 msgid "GPUs"
 msgstr ""
 
-#: xfce4-about/main.c:146
+#: xfce4-about/main.c:172
 msgid "Window Manager"
 msgstr "Upravitelj prozora"
 
-#: xfce4-about/main.c:147
+#: xfce4-about/main.c:173
 msgid "Handles the placement of windows on the screen."
 msgstr "Upravlja postavljanjem prozora na zaslonu."
 
-#: xfce4-about/main.c:151
+#: xfce4-about/main.c:177
 msgid "Panel"
 msgstr "Ploča"
 
-#: xfce4-about/main.c:152
+#: xfce4-about/main.c:178
 msgid "Provides a home for window buttons, launchers, app menu and more."
 msgstr ""
 
-#: xfce4-about/main.c:156
+#: xfce4-about/main.c:182
 msgid "Desktop Manager"
 msgstr "Upravitelj radne površine"
 
-#: xfce4-about/main.c:157
+#: xfce4-about/main.c:183
 msgid "Sets desktop backgrounds, handles icons and more."
 msgstr ""
 
-#: xfce4-about/main.c:161
+#: xfce4-about/main.c:187
 msgid "File Manager"
 msgstr "Upravitelj datotekama"
 
-#: xfce4-about/main.c:162
+#: xfce4-about/main.c:188
 msgid "Manages your files in a modern, easy-to-use and fast way."
 msgstr "Upravlja vašim datotekama na moderan, lagan i brz način."
 
-#: xfce4-about/main.c:166
+#: xfce4-about/main.c:192
 msgid "Volume Manager"
 msgstr ""
 
-#: xfce4-about/main.c:167
+#: xfce4-about/main.c:193
 msgid "Manages removable drives and media for Thunar."
 msgstr ""
 
-#: xfce4-about/main.c:171
+#: xfce4-about/main.c:197
 msgid "Session Manager"
 msgstr "Upravitelj sesijom"
 
-#: xfce4-about/main.c:172
+#: xfce4-about/main.c:198
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
 msgstr ""
 
-#: xfce4-about/main.c:176
+#: xfce4-about/main.c:202
 msgid "Settings Manager"
 msgstr "Upravitelj postavki"
 
-#: xfce4-about/main.c:177
+#: xfce4-about/main.c:203
 msgid "Configures appearance, display, keyboard and mouse settings."
 msgstr "Konfigurira izgled, prikaz, postavke tipkovnice i miša."
 
-#: xfce4-about/main.c:181
+#: xfce4-about/main.c:207
 msgid "Application Finder"
 msgstr "Nalaznik programa"
 
-#: xfce4-about/main.c:182
+#: xfce4-about/main.c:208
 msgid "Quickly finds and launches applications installed on your system."
 msgstr ""
 
-#: xfce4-about/main.c:186
+#: xfce4-about/main.c:212
 msgid "Settings Daemon"
 msgstr "Nadzornik postavka"
 
-#: xfce4-about/main.c:187
+#: xfce4-about/main.c:213
 msgid "Stores your settings in a D-Bus-based configuration system."
 msgstr ""
 
-#: xfce4-about/main.c:191
+#: xfce4-about/main.c:217
 msgid "A Menu Library"
 msgstr ""
 
-#: xfce4-about/main.c:192
+#: xfce4-about/main.c:218
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
 msgstr ""
 
-#: xfce4-about/main.c:196
+#: xfce4-about/main.c:222
 msgid "Thumbnails Service"
 msgstr ""
 
-#: xfce4-about/main.c:197
+#: xfce4-about/main.c:223
 msgid "Implements the thumbnail management D-Bus specification."
 msgstr ""
 
-#: xfce4-about/main.c:251
+#: xfce4-about/main.c:277
 msgid "Please see <https://www.xfce.org/about/credits>"
 msgstr "Molim pogledajte  <https://www.xfce.org/about/credits>"
 
-#: xfce4-about/main.c:312
+#: xfce4-about/main.c:338
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 msgstr "Ako znate tko nedostaje sa ovoga popisa, ne oklijevajte i prijavite bug na <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 
-#: xfce4-about/main.c:316
+#: xfce4-about/main.c:342
 msgid "Thanks to all who helped making this software available!"
 msgstr "Hvala svima koji su pomogli učiniti ovaj software dostupnim!"
 
-#: xfce4-about/main.c:333
+#: xfce4-about/main.c:359
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
 msgstr "Nositelj autorskog prava za Xfce 4 je Olivier Fourdan (fourdan@xfce.org). Različite komponente su pod autorskim pravima dotičnih autora."
 
-#: xfce4-about/main.c:338
+#: xfce4-about/main.c:364
 msgid ""
 "The libxfce4ui, libxfce4util and exo packages are distributed under the "
 "terms of the GNU Library General Public License as published by the Free "
@@ -724,7 +728,7 @@ msgid ""
 "any later version."
 msgstr "Libxfce4ui, libxfce4util i exo paketi distribuiraju se pod uvjetima GNU Library General Public licence objavljene od strane Free Software Foundation; verzija 2 licence ili (po vašem izboru) neka od kasnijih verzija."
 
-#: xfce4-about/main.c:345
+#: xfce4-about/main.c:371
 msgid ""
 "The packages thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
 "xfce4-settings, xfconf, xfdesktop and xfwm4 are distributed under the terms "
@@ -733,25 +737,25 @@ msgid ""
 "version."
 msgstr "Thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop i xfwm4 paketi distribuiraju se pod uvjetima GNU Library General Public licence objavljene od strane Free Software Foundation; verzija 2 licence ili (po vašem izboru) neka od kasnijih verzija."
 
-#: xfce4-about/main.c:491
+#: xfce4-about/main.c:517
 #, c-format
 msgid "Type '%s --help' for usage information."
 msgstr "Upiši '%s --help za informaciju o uporabi."
 
-#: xfce4-about/main.c:497
+#: xfce4-about/main.c:523
 msgid "Unable to initialize GTK+."
 msgstr "Nije moguće pokrenuti GTK +."
 
-#: xfce4-about/main.c:506
+#: xfce4-about/main.c:532
 msgid "The Xfce development team. All rights reserved."
 msgstr "Xfce razvojni tim. Sva prava pridržana."
 
-#: xfce4-about/main.c:507
+#: xfce4-about/main.c:533
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "Molimo prijavite bugove na <%s>."
 
-#: xfce4-about/main.c:517
+#: xfce4-about/main.c:543
 msgid "Failed to load interface"
 msgstr "Nije uspjelo učitavanje sučelja"
 
@@ -776,7 +780,7 @@ msgstr "Nadzor prijevoda"
 
 #: xfce4-about/contributors.h:156
 msgid "Documentation supervision"
-msgstr ""
+msgstr "Nadzor dokumentacije"
 
 #: xfce4-about/contributors.h:159
 msgid "Translators"
@@ -785,10 +789,6 @@ msgstr "Prevoditelji"
 #: xfce4-about/contributors.h:162
 msgid "Previous contributors"
 msgstr "Prethodni doprinositelji"
-
-#: xfce4-about/xfce4-about.desktop.in:6
-msgid "org.xfce.about"
-msgstr ""
 
 #: xfce4-about/xfce4-about.desktop.in:11
 msgid "About Xfce"
@@ -849,11 +849,11 @@ msgstr "Xfce verzija"
 
 #: xfce4-about/xfce4-about-dialog.glade:564
 msgid "GTK Version"
-msgstr ""
+msgstr "GTK inačica"
 
 #: xfce4-about/xfce4-about-dialog.glade:589
 msgid "Kernel Version"
-msgstr ""
+msgstr "Kernel inačica"
 
 #: xfce4-about/xfce4-about-dialog.glade:615
 msgid "CPU"
