@@ -112,7 +112,7 @@ dnl ***************************************
 AC_CHECK_HEADERS([crt_externs.h errno.h fcntl.h limits.h locale.h math.h \
                   memory.h signal.h stdarg.h stdlib.h string.h unistd.h])
 AC_CHECK_DECLS([environ])
-AC_CHECK_FUNCS([_NSGetEnviron bind_textdomain_codeset])
+AC_CHECK_FUNCS([_NSGetEnviron])
 
 dnl ******************************
 dnl *** Check for i18n support ***
@@ -120,9 +120,11 @@ dnl ******************************
 GETTEXT_PACKAGE="$PACKAGE"
 AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE], ["$GETTEXT_PACKAGE"], [Name of default gettext domain])
 AC_SUBST([GETTEXT_PACKAGE])
-
 AM_GNU_GETTEXT([external])
 AM_GNU_GETTEXT_VERSION([0.19.8])
+AC_SEARCH_LIBS([bind_textdomain_codeset], [intl],
+  [AC_DEFINE([HAVE_BIND_TEXTDOMAIN_CODESET], [1], [Define to 1 if you have the 'bind_textdomain_codeset' function.])],
+  [])
 
 dnl ***********************************
 dnl *** Check for required packages ***
