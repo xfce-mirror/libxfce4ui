@@ -1,3 +1,28 @@
+4.19.4 (2024-02-05)
+======
+- Update copyright year
+- Update `.gitignore`
+- Add new CI builds to build without X11 and Wayland
+- build: Search for bind_textdomain_codeset in libintl too
+- sm-client: Reset SmcConnection when IceConnection is closed on error
+- docs: Improve xfce_sm_client_get()
+- build: Make libsm optional again
+- build: Do not use ENABLE_X11/WAYLAND in installed headers
+- build: Adapt ABI check so it passes with --disable-x11
+- build: Use AM_DISTCHECK_CONFIGURE_FLAGS
+- build: Properly distinguish X11/Wayland code paths
+- cleanup: Remove useless X11-specific includes, formatting
+- xfce4-about: Use GdkGLContext for system tab
+- Replace deprecated xfce_spawn_command_line_on_screen()
+- Add title to read manual dialog
+- Translation Updates:
+  Albanian, Bulgarian, Catalan, Chinese (China), Chinese (Taiwan),
+  Croatian, Danish, Dutch, English (United Kingdom), Estonian, French,
+  German, Greek, Interlingue, Italian, Japanese, Korean, Lithuanian,
+  Norwegian Bokmål, Occitan (post 1500), Polish, Portuguese,
+  Portuguese (Brazil), Russian, Serbian, Slovenian, Spanish, Swedish,
+  Turkish, Ukrainian
+
 4.19.3 (2023-10-14)
 ======
 - titled-dialog: Ensure a single icon on the left when CSD is used (#92)
