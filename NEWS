@@ -1,3 +1,28 @@
+4.18.5 (2024-02-05)
+======
+- Update copyright year
+- build: Search for bind_textdomain_codeset in libintl too
+- sm-client: Reset SmcConnection when IceConnection is closed on error
+- docs: Improve xfce_sm_client_get()
+- shortcuts-grabber: Fix filtering by level
+- shortcuts-grabber: Simplify filtering by group
+- shortcuts-grabber: Variable renaming
+- shortcuts-grabber: Filter grabbing by key level
+- Detect keyboard shortcuts with only single modifier keys on key 
+release
+- Translation Updates:
+  Albanian, Amharic, Arabic, Armenian, Armenian (Armenia), Asturian,
+  Azerbaijani, Basque, Belarusian, Bengali, Bulgarian, Catalan, Chinese
+  (China), Chinese (Hong Kong), Chinese (Taiwan), Croatian, Czech,
+  Danish, Dutch, Eastern Armenian, English (Australia), English (United
+  Kingdom), Estonian, Finnish, French, Galician, Georgian, German,
+  Greek, Hebrew, Hungarian, Icelandic, Indonesian, Interlingue,
+  Italian, Japanese, Kazakh, Korean, Lithuanian, Malay, Norwegian
+  Bokmål, Norwegian Nynorsk, Occitan (post 1500), Persian (Iran),
+  Polish, Portuguese, Portuguese (Brazil), Romanian, Russian, Serbian,
+  Slovak, Slovenian, Spanish, Swedish, Telugu, Thai, Turkish,
+  Ukrainian, Uyghur, Welsh
+
 4.18.4 (2023-05-22)
 ======
 - screensaver: Prevent recursive calling of lock command
