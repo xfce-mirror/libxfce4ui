@@ -1,5 +1,5 @@
 dnl
-dnl Copyright (c) 2007-2023 The Xfce development team
+dnl Copyright (c) 2007-2024 The Xfce development team
 dnl
 
 dnl ***************************
@@ -34,7 +34,7 @@ dnl # YOU ARE DOING.
 dnl ***************************
 dnl *** Initialize autoconf ***
 dnl ***************************
-AC_COPYRIGHT([Copyright (c) 2007-2023 The Xfce development team])
+AC_COPYRIGHT([Copyright (c) 2007-2024 The Xfce development team])
 AC_INIT([libxfce4ui], [xdt_version], [https://gitlab.xfce.org/xfce/libxfce4ui/-/issues], [libxfce4ui])
 AC_PREREQ([2.69])
 AC_CONFIG_MACRO_DIRS([m4])
