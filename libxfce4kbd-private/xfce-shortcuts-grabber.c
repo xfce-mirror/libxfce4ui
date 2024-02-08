@@ -319,7 +319,6 @@ static gboolean
 get_entries_for_keyval (GdkKeymap        *keymap,
                         gint              group,
                         guint             keyval,
-                        GdkModifierType   modifiers,
                         GdkKeymapKey    **keys_out,
                         guint            *n_keys_out)
 {
@@ -366,27 +365,6 @@ get_entries_for_keyval (GdkKeymap        *keymap,
             i++;
           else
             keys[i] = keys[--n_keys];
-      }
-  }
-
-  /* Filter keys by level */
-  {
-    guint keyval_trans;
-    GdkModifierType modifiers_levelled;
-
-    /* Remove keys that do not match the level for the given modifiers */
-    for (gint i = 0; i < n_keys;)
-      {
-        modifiers_levelled = modifiers;
-        if (keys[i].level == 0)
-          modifiers_levelled &= ~(GDK_SHIFT_MASK | GDK_MOD5_MASK);
-
-        gdk_keymap_translate_keyboard_state (keymap, keys[i].keycode, modifiers_levelled,
-                                             keys[i].group, &keyval_trans, NULL, NULL, NULL);
-        if (keyval == keyval_trans)
-          i++;
-        else
-          keys[i] = keys[--n_keys];
       }
   }
 
@@ -516,7 +494,7 @@ xfce_shortcuts_grabber_regrab_all (XfceShortcutsGrabber *grabber)
 
     if (!map_virtual_modifiers (keymap, key->modifiers, &non_virtual_modifiers))
       continue;
-    if (!get_entries_for_keyval (keymap, group, key->keyval, key->modifiers, &keys, &n_keys))
+    if (!get_entries_for_keyval (keymap, group, key->keyval, &keys, &n_keys))
       continue;
 
     already_grabbed = TRUE;
@@ -588,7 +566,7 @@ xfce_shortcuts_grabber_grab (XfceShortcutsGrabber *grabber,
 
   if (!map_virtual_modifiers (keymap, key->modifiers, &non_virtual_modifiers))
     return;
-  if (!get_entries_for_keyval (keymap, group, key->keyval, key->modifiers, &keys, &n_keys))
+  if (!get_entries_for_keyval (keymap, group, key->keyval, &keys, &n_keys))
     return;
 
   _xfce_shortcuts_grabber_grab (grabber, key, non_virtual_modifiers, numlock_modifier, &keys, &n_keys);
