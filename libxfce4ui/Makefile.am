@@ -168,7 +168,7 @@ abicheck.sh: abicheck.sh.in
 	$(AM_V_GEN) $(SED) "$(abicheck_sed_script)" < $< > $@; \
 	chmod a+x $@
 
-libxfce4ui.h: libxfce4ui.h.in
+libxfce4ui.h: libxfce4ui.h.in $(top_builddir)/config.h
 	$(AM_V_GEN) $(SED) "$(libxfce4ui_sed_script)" < $< > $@
 
 DISTCLEANFILES = \
