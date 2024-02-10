@@ -17,7 +17,6 @@ libxfce4ui_enum_headers = \
 	libxfce4ui-enums.h
 
 libxfce4ui_headers = \
-	libxfce4ui.h \
 	libxfce4ui-config.h \
 	libxfce4ui-enum-types.h \
 	xfce-dialogs.h \
@@ -30,7 +29,6 @@ libxfce4ui_headers = \
 	$(libxfce4ui_enum_headers)
 
 libxfce4ui_built_sources = \
-	libxfce4ui.h \
 	libxfce4ui-alias.h \
 	libxfce4ui-aliasdef.c \
 	libxfce4ui-enum-types.c \
@@ -96,6 +94,9 @@ libxfce4ui2_includedir = \
 
 libxfce4ui2_include_HEADERS = \
 	$(libxfce4ui_headers)
+
+nodist_libxfce4ui2_include_HEADERS = \
+	libxfce4ui.h
 
 lib_LTLIBRARIES += \
 	libxfce4ui-2.la
@@ -174,6 +175,9 @@ DISTCLEANFILES = \
 	abicheck.sh \
 	libxfce4ui.h
 
+BUILT_SOURCES = \
+	libxfce4ui.h
+
 ##
 ## Rules to auto-generate built sources
 ##
@@ -192,7 +196,7 @@ DISTCLEANFILES += \
 	stamp-libxfce4ui-marshal.h \
 	$(libxfce4ui_built_sources)
 
-BUILT_SOURCES = \
+BUILT_SOURCES += \
 	$(libxfce4ui_built_sources)
 
 libxfce4ui-alias.h: make-libxfce4ui-alias.pl libxfce4ui.symbols
