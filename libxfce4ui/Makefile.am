@@ -72,9 +72,12 @@ libxfce4ui_2_la_LIBADD = \
 
 if ENABLE_X11
 libxfce4ui_headers += \
+	xfce-clipboard-manager.h \
 	xfce-sm-client.h
 
 libxfce4ui_sources += \
+	xfce-clipboard-manager.c \
+	xfce-clipboard-manager.h \
 	xfce-sm-client.c \
 	xfce-sm-client.h
 

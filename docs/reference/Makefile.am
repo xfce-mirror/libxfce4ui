@@ -24,7 +24,9 @@ CFILE_GLOB=
 # Header files to ignore when scanning
 IGNORE_HFILES=libxfce4ui-alias.h
 if !ENABLE_X11
-IGNORE_HFILES+=xfce-sm-client.h
+IGNORE_HFILES += \
+	xfce-clipboard-manager.h \
+	xfce-sm-client.h
 endif
 
 # Extra files to add when scanning (relative to $srcdir)
