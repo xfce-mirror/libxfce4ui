@@ -137,6 +137,16 @@ xfce_filename_input_desensitise_widget
 #endif
 #endif
 
+/* xfce-clipboard-manager functions */
+#if IN_HEADER(__XFCE_CLIPBOARD_MANAGER_H__)
+#if IN_SOURCE(__XFCE_CLIPBOARD_MANAGER_C__)
+#ifdef ENABLE_X11
+xfce_clipboard_manager_get_type
+xfce_clipboard_manager_new
+#endif
+#endif
+#endif
+
 /* xfce-sm-client functions */
 #if IN_HEADER(__XFCE_SM_CLIENT_H__)
 #if IN_SOURCE(__XFCE_SM_CLIENT_C__)
