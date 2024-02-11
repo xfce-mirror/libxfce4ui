@@ -108,6 +108,15 @@ xfce_titled_dialog_get_type
 </SECTION>
 
 <SECTION>
+<FILE>xfce-clipboard-manager</FILE>
+XfceClipboardManager
+xfce_clipboard_manager_new
+<SUBSECTION Standard>
+XFCE_TYPE_CLIPBOARD_MANAGER
+xfce_clipboard_manager_get_type
+</SECTION>
+
+<SECTION>
 <FILE>xfce-sm-client</FILE>
 XfceSMClient
 XfceSMClientPriority
