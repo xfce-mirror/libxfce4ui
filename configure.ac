@@ -19,6 +19,7 @@ m4_define([libxfce4util_min_version], [4.17.2])
 m4_define([xfconf_min_version], [4.12.0])
 
 m4_define([libx11_min_version], [1.6.7])
+m4_define([libice_min_version], [1.0.10])
 m4_define([libsm_min_version], [1.2.3])
 
 m4_define([libstartup_notif_min_version], [0.4])
@@ -159,7 +160,13 @@ if test x"$ENABLE_X11" != x"yes"; then
   enable_libsm=no
   enable_startup_notification=no
 fi
-XDT_CHECK_OPTIONAL_PACKAGE([LIBSM], [sm], [libsm_min_version], [libsm], [session management library])
+XDT_CHECK_OPTIONAL_FEATURE([LIBSM],
+                           [libsm],
+                           [
+                             XDT_FEATURE_DEPENDENCY([LIBICE], [ice], [libice_min_version])
+                             XDT_FEATURE_DEPENDENCY([LIBSM], [sm], [libsm_min_version])
+                           ],
+                           [session management library])
 XDT_CHECK_OPTIONAL_PACKAGE([LIBSTARTUP_NOTIFICATION],
                            [libstartup-notification-1.0],
                            [libstartup_notif_min_version], [startup-notification],
