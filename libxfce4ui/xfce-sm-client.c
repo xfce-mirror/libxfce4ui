@@ -51,7 +51,7 @@
 #include <unistd.h>
 #endif
 
-#ifdef HAVE_LIBSM
+#ifdef ENABLE_LIBSM
 #include <X11/ICE/ICElib.h>
 #include <X11/SM/SMlib.h>
 #endif
@@ -138,7 +138,7 @@ struct _XfceSMClient
 {
     GObject parent;
 
-#ifdef HAVE_LIBSM
+#ifdef ENABLE_LIBSM
     SmcConn session_connection;
     IceConn ice_connection;
 #endif
@@ -230,7 +230,7 @@ static void xfce_sm_client_finalize(GObject *obj);
 static void xfce_sm_client_set_client_id(XfceSMClient *sm_client,
                                          const gchar *client_id);
 static void xfce_sm_client_parse_argv(XfceSMClient *sm_client);
-#ifdef HAVE_LIBSM
+#ifdef ENABLE_LIBSM
 static void xfce_sm_client_set_property_from_command(XfceSMClient *sm_client,
                                                      const char *property_name,
                                                      gchar **command,
@@ -588,7 +588,7 @@ xfce_sm_client_finalize(GObject *obj)
     startup_options.client_id = NULL;
     startup_options.sm_disable = FALSE;
 
-#ifdef HAVE_LIBSM
+#ifdef ENABLE_LIBSM
     if(sm_client->session_connection)
         xfce_sm_client_disconnect(sm_client);
 #endif
@@ -657,7 +657,7 @@ xfce_sm_client_set_clone_command(XfceSMClient *sm_client,
     g_return_if_fail(XFCE_IS_SM_CLIENT(sm_client));
     sm_client->clone_command = copy_command(sm_client->clone_command,
                                             clone_command);
-#ifdef HAVE_LIBSM
+#ifdef ENABLE_LIBSM
     xfce_sm_client_set_property_from_command(sm_client, SmCloneCommand,
                                              sm_client->clone_command,
                                              SM_ARG_REMOVE);
@@ -740,7 +740,7 @@ G_GNUC_END_IGNORE_DEPRECATIONS
     sm_client->argv = NULL;
 }
 
-#ifdef HAVE_LIBSM
+#ifdef ENABLE_LIBSM
 
 static void
 xfce_sm_client_set_state(XfceSMClient *sm_client,
@@ -1567,7 +1567,7 @@ gboolean
 xfce_sm_client_connect(XfceSMClient *sm_client,
                        GError **error)
 {
-#ifdef HAVE_LIBSM
+#ifdef ENABLE_LIBSM
     char buf[256] = "";
     unsigned long mask;
     SmcCallbacks callbacks;
@@ -1585,7 +1585,7 @@ xfce_sm_client_connect(XfceSMClient *sm_client,
     if(startup_options.sm_disable)
         return TRUE;
 
-#ifdef HAVE_LIBSM
+#ifdef ENABLE_LIBSM
     xsmp_ice_init(sm_client);
 
     mask = SmcSaveYourselfProcMask | SmcDieProcMask | SmcSaveCompleteProcMask
@@ -1736,7 +1736,7 @@ xfce_sm_client_disconnect(XfceSMClient *sm_client)
     if(startup_options.sm_disable)
         return;
 
-#ifdef HAVE_LIBSM
+#ifdef ENABLE_LIBSM
     if(G_UNLIKELY(!sm_client->session_connection)) {
         g_warning("%s() called with no session connection", G_STRFUNC);
         return;
@@ -1766,7 +1766,7 @@ gboolean
 xfce_sm_client_is_connected(XfceSMClient *sm_client)
 {
     g_return_val_if_fail(XFCE_IS_SM_CLIENT(sm_client), FALSE);
-#ifdef HAVE_LIBSM
+#ifdef ENABLE_LIBSM
     return !!sm_client->session_connection;
 #else
     return FALSE;
@@ -1892,7 +1892,7 @@ xfce_sm_client_set_desktop_file(XfceSMClient *sm_client,
         }
     }
 
-#ifdef HAVE_LIBSM
+#ifdef ENABLE_LIBSM
     if(sm_client->session_connection) {
         SmProp prop, *props[1];
         SmPropValue propval;
@@ -1907,7 +1907,7 @@ xfce_sm_client_set_desktop_file(XfceSMClient *sm_client,
 
         SmcSetProperties(sm_client->session_connection, 1, props);
     }
-#endif /* HAVE_LIBSM */
+#endif /* ENABLE_LIBSM */
 
 out:
     if(rcfile)
@@ -1941,7 +1941,7 @@ xfce_sm_client_request_shutdown(XfceSMClient *sm_client,
 
     /* TODO: support xfce4-session's DBus interface */
 
-#ifdef HAVE_LIBSM
+#ifdef ENABLE_LIBSM
     if(G_LIKELY(sm_client->session_connection)) {
         SmcRequestSaveYourself(sm_client->session_connection, SmSaveBoth,
                                True, SmInteractStyleAny, False, True);
@@ -1967,7 +1967,7 @@ xfce_sm_client_set_restart_style(XfceSMClient *sm_client,
 
     sm_client->restart_style = restart_style;
 
-#ifdef HAVE_LIBSM
+#ifdef ENABLE_LIBSM
     if(sm_client->session_connection) {
         SmProp prop, *props[1];
         SmPropValue propval;
@@ -1985,7 +1985,7 @@ xfce_sm_client_set_restart_style(XfceSMClient *sm_client,
 
         SmcSetProperties(sm_client->session_connection, 1, props);
     }
-#endif /* HAVE_LIBSM */
+#endif /* ENABLE_LIBSM */
 
     g_object_notify(G_OBJECT(sm_client), "restart-style");
 }
@@ -2010,7 +2010,7 @@ xfce_sm_client_set_priority(XfceSMClient *sm_client,
 
     sm_client->priority = priority;
 
-#ifdef HAVE_LIBSM
+#ifdef ENABLE_LIBSM
     if(sm_client->session_connection) {
         SmProp prop, *props[1];
         SmPropValue propval;
@@ -2025,7 +2025,7 @@ xfce_sm_client_set_priority(XfceSMClient *sm_client,
 
         SmcSetProperties(sm_client->session_connection, 1, props);
     }
-#endif /* HAVE_LIBSM */
+#endif /* ENABLE_LIBSM */
 
     g_object_notify(G_OBJECT(sm_client), "priority");
 }
@@ -2052,7 +2052,7 @@ xfce_sm_client_set_current_directory(XfceSMClient *sm_client,
     g_free(sm_client->current_directory);
     sm_client->current_directory = g_strdup(current_directory);
 
-#ifdef HAVE_LIBSM
+#ifdef ENABLE_LIBSM
     if(sm_client->session_connection) {
         SmProp prop, *props[1];
         SmPropValue propval;
@@ -2067,7 +2067,7 @@ xfce_sm_client_set_current_directory(XfceSMClient *sm_client,
 
         SmcSetProperties(sm_client->session_connection, 1, props);
     }
-#endif /* HAVE_LIBSM */
+#endif /* ENABLE_LIBSM */
 
     g_object_notify(G_OBJECT(sm_client), "current-directory");
 }
@@ -2107,7 +2107,7 @@ xfce_sm_client_set_restart_command(XfceSMClient *sm_client,
     g_return_if_fail(XFCE_IS_SM_CLIENT(sm_client));
     sm_client->restart_command = copy_command(sm_client->restart_command,
                                               restart_command);
-#ifdef HAVE_LIBSM
+#ifdef ENABLE_LIBSM
     xfce_sm_client_set_property_from_command(sm_client, SmRestartCommand,
                                              sm_client->restart_command,
                                              SM_ARG_APPEND);
@@ -2231,7 +2231,7 @@ xfce_sm_client_get_state_file(XfceSMClient *sm_client)
 
     g_free(resource);
 
-#ifdef HAVE_LIBSM
+#ifdef ENABLE_LIBSM
     if(G_LIKELY(sm_client->state_file) && sm_client->session_connection)
     {
         gchar *discard_command[4];
