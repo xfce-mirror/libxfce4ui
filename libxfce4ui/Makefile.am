@@ -79,11 +79,13 @@ libxfce4ui_sources += \
 	xfce-sm-client.h
 
 libxfce4ui_2_la_CFLAGS += \
+	$(LIBICE_CFLAGS) \
 	$(LIBSM_CFLAGS) \
 	$(LIBX11_CFLAGS) \
 	$(LIBSTARTUP_NOTIFICATION_CFLAGS)
 
 libxfce4ui_2_la_LIBADD += \
+	$(LIBICE_LIBS) \
 	$(LIBSM_LIBS) \
 	$(LIBX11_LIBS) \
 	$(LIBSTARTUP_NOTIFICATION_LIBS)
