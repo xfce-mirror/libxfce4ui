@@ -1,3 +1,13 @@
+4.19.5 (2024-02-29)
+======
+- build: Fix linking to libICE when --enable-libsm is used
+- Add XfceClipboardManager
+- build: Fix regenerating libxfce4ui.h after configure options change
+- build: Do not distribute libxfce4ui.h
+- shortcuts-grabber: Remove filtering by level
+- Translation Updates:
+  Italian
+
 4.19.4 (2024-02-05)
 ======
 - Update copyright year
