@@ -4,17 +4,21 @@
 # 
 # Translators:
 # Balázs Meskó <meskobalazs@mailbox.org>, 2018
+# Balázs Meskó <meskobalazs@mailbox.org>, 2018
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2009,2011-2012
 # Gábor P., 2017,2019-2020
 # gyeben <gyonkibendeguz@gmail.com>, 2016
+# gyeben <gyonkibendeguz@gmail.com>, 2016
+# Robert Huszar, 2022
 # Robert Huszar, 2022
 # Sándor Zelenák <nem11nator at gmail dot com>, 2011
+# SZERVÁC  Libre art  Attila  Libre art, 2022
 # SZERVÁC  Libre art  Attila  Libre art, 2022
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2023-04-06 12:45+0200\n"
+"POT-Creation-Date: 2023-10-19 12:45+0200\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: SZERVÁC  Libre art  Attila  Libre art, 2022\n"
 "Language-Team: Hungarian (http://app.transifex.com/xfce/libxfce4ui/language/hu/)\n"
@@ -31,11 +35,15 @@ msgstr "A webböngésző megnyitása nem sikerült az online dokumentációhoz"
 #: libxfce4ui/xfce-dialogs.c:265
 #, c-format
 msgid "Do you want to read the %s manual online?"
-msgstr "Szeretné elolvasni a(z) %s kézikönyvét online?"
+msgstr "Elolvassa a(z) %s kézikönyvét online?"
 
 #: libxfce4ui/xfce-dialogs.c:267
 msgid "Do you want to read the manual online?"
-msgstr "Szeretné elolvasni a kézikönyvet online?"
+msgstr "Elolvassa a kézikönyvet online?"
+
+#: libxfce4ui/xfce-dialogs.c:270
+msgid "Read the manual"
+msgstr "A kézikönyv elolvasása"
 
 #: libxfce4ui/xfce-dialogs.c:273
 msgid ""
@@ -45,7 +53,7 @@ msgstr "Átirányításra kerül a dokumentációs weboldalra, ahol a súgóolda
 
 #. Create cancel button
 #: libxfce4ui/xfce-dialogs.c:275 libxfce4ui/xfce-dialogs.c:533
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:256
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:254
 msgid "_Cancel"
 msgstr "Mé_gse"
 
@@ -76,7 +84,7 @@ msgstr "Mégse"
 
 #: libxfce4ui/xfce-dialogs.c:518
 msgid "Close window with multiple tabs?"
-msgstr "Több lapot tartalmazó ablak bezárása?"
+msgstr "Bezárja a több lapot tartalmazó ablakot?"
 
 #: libxfce4ui/xfce-dialogs.c:520
 msgid ""
@@ -89,7 +97,7 @@ msgstr "Ez az ablak több nyitott lapot tartalmaz. Az ablak bezárásával a nyi
 msgid ""
 "This window has %d tabs open. Closing this window will also close all its "
 "tabs."
-msgstr "Ez az ablak  %d nyitott lapot tartalmaz. Az ablak bezárásával a nyitott lapok is bezárásra kerülnek."
+msgstr "Ez az ablak %d nyitott lapot tartalmaz. Az ablak bezárásával a nyitott lapok is bezárásra kerülnek."
 
 #: libxfce4ui/xfce-dialogs.c:529
 msgid "Warning"
@@ -109,7 +117,7 @@ msgstr "_Ne kérdezze újra"
 
 #: libxfce4ui/xfce-sm-client.c:1427
 msgid "Session management client ID"
-msgstr "Munkamenet-kezelés kliens ID"
+msgstr "Munkamenet-kezelés kliensazonosítója"
 
 #: libxfce4ui/xfce-sm-client.c:1427
 msgid "ID"
@@ -121,7 +129,7 @@ msgstr "Munkamenet-kezelés letiltása"
 
 #: libxfce4ui/xfce-sm-client.c:1438
 msgid "Session management options"
-msgstr "Munkamenet-kezelés beállítások"
+msgstr "Munkamenet-kezelés beállításai"
 
 #: libxfce4ui/xfce-sm-client.c:1439
 msgid "Show session management options"
@@ -130,7 +138,7 @@ msgstr "Munkamenet-kezelés beállításainak megjelenítése"
 #: libxfce4ui/xfce-sm-client.c:1609
 #, c-format
 msgid "Failed to connect to the session manager: %s"
-msgstr "A munkamenet-kezelőhöz való csatlakozás meghiúsult: %s"
+msgstr "A munkamenet-kezelőhöz való csatlakozás sikertelen: %s"
 
 #: libxfce4ui/xfce-sm-client.c:1615
 msgid "Session manager did not return a valid client id"
@@ -142,7 +150,7 @@ msgstr "A munkamenet-kezelő nem adott vissza érvényes kliensazonosítót"
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
 "\"%s\"."
-msgstr "A munkakönyvtár („%s”) nem létezik. Nem kerül felhasználásra „%s” indításakor."
+msgstr "A(z) „%s” munkakönyvtár nem létezik. Nem lesz használva a(z) „%s” indításához."
 
 #. retrieve the error and warning messages
 #: libxfce4ui/xfce-filename-input.c:232
@@ -155,14 +163,14 @@ msgstr "Mappaelválasztó nem lehet fájlnévben"
 
 #: libxfce4ui/xfce-filename-input.c:234
 msgid "Filenames should not start or end with a space"
-msgstr "A fájlnevek szélén nem lehet szóköz"
+msgstr "A fájlnevek elején és végén nem lehet szóköz"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:46
 #, c-format
 msgid ""
 "This shortcut is already being used for the action '%s'. Which action do you"
 " want to use?"
-msgstr "Ezt a gyorsbillentyűt már használja egy másik parancs („%s”). Melyik műveletet akarja használni?"
+msgstr "Ezt a gyorsbillentyűt már használja egy másik parancs: „%s”. Melyik műveletet használja?"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:47
 #: libxfce4kbd-private/xfce-shortcuts.c:50
@@ -186,25 +194,25 @@ msgstr "„%s” megtartása"
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr "Ezt a gyorsbillentyűt már használja egy másik parancs („%s”). Melyik műveletet akarja használni?"
+msgstr "Ezt a gyorsbillentyűt már használja egy másik parancs: „%s”. Melyik műveletet használja?"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:55
 #, c-format
 msgid ""
 "This shortcut is already being used by the action '%s'. Which action do you "
 "want to use?"
-msgstr "Ezt a gyorsbillentyűt már használja egy másik parancs („%s”). Melyik műveletet akarja használni?"
+msgstr "Ezt a gyorsbillentyűt már használja egy másik parancs: „%s”. Melyik műveletet használja?"
 
 #. This shortcut already exists in the provider, we don't want it twice
 #. Warn the user
 #: libxfce4kbd-private/xfce-shortcuts.c:106
 msgid "Please use another key combination."
-msgstr "Kérem használjon más billentyűkombinációt!"
+msgstr "Használjon más billentyűkombinációt."
 
 #: libxfce4kbd-private/xfce-shortcuts.c:107
 #, c-format
 msgid "%s already triggers this action."
-msgstr "%s már előidézi ezt a műveletet."
+msgstr "A(z) %s már kiváltja ezt a műveletet."
 
 #: libxfce4kbd-private/xfce-shortcuts.c:112
 #, c-format
@@ -218,11 +226,11 @@ msgstr "Ez a gyorsbillentyű már használatban van valami másra."
 #: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:94
 #: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:131
 msgid "Shortcuts Editor"
-msgstr "Gyorsbillentyű szerkesztő"
+msgstr "Gyorsbillentyű-szerkesztő"
 
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:380
 msgid "The current shortcut. Click to edit..."
-msgstr "A jelenlegi gyorsbillentyű. Kattints a szerkesztéshez..."
+msgstr "A jelenlegi gyorsbillentyű. Kattintson a szerkesztéshez…"
 
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:391
 msgid "Clear the shortcut"
@@ -230,7 +238,7 @@ msgstr "Gyorsbillentyű törlése"
 
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:401
 msgid "Restore the default shortcut"
-msgstr "Az alapértelmezett gyorsbillentyű visszaállítása"
+msgstr "Az alapértelmezett gyorsbillentyű helyreállítása"
 
 #. skip leading slash
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:473
@@ -246,43 +254,43 @@ msgstr "A gyorsbillentyű már használatban van"
 
 #: libxfce4kbd-private/xfce-shortcut-dialog.c:217
 msgid "Window Manager Action Shortcut"
-msgstr "Ablakkezelő-művelet gyorsbillentyű"
+msgstr "Ablakkezelő-műveleti gyorsbillentyű"
 
 #. TRANSLATORS: this string will be used to create an explanation for
 #. * the user in a following string
 #: libxfce4kbd-private/xfce-shortcut-dialog.c:220
 #: libxfce4kbd-private/xfce-shortcut-dialog.c:236
 msgid "action"
-msgstr "műveletet"
+msgstr "művelet"
 
 #: libxfce4kbd-private/xfce-shortcut-dialog.c:225
 msgid "Command Shortcut"
-msgstr "Parancs gyorsbillentyű"
+msgstr "Parancs gyorsbillentyűje"
 
 #. TRANSLATORS: this string will be used to create an explanation for
 #. * the user in a following string
 #: libxfce4kbd-private/xfce-shortcut-dialog.c:228
 msgid "command"
-msgstr "parancsot"
+msgstr "parancs"
 
 #: libxfce4kbd-private/xfce-shortcut-dialog.c:233
 msgid "Shortcut"
 msgstr "Gyorsbillentyű"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:250
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:248
 msgid "Clear"
-msgstr "Töröl"
+msgstr "Törlés"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:273
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:271
 #, c-format
 msgid "Press keyboard keys to trigger the %s '%s'."
-msgstr ""
+msgstr "Nyomja meg ezeket a billentyűket a %s kiváltásához: „%s”."
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:295
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:293
 msgid "Please press a key"
-msgstr "Kérlek, üss le egy billentyűt"
+msgstr "Nyomjon meg egy billentyűt"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:350
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:348
 msgid "Could not grab the keyboard."
 msgstr "A billentyűzet használata sikertelen."
 
@@ -316,7 +324,7 @@ msgstr "Ablakok közti lépkedés (fordítva)"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:44
 msgid "Switch window for same application"
-msgstr "Ugyanazon alkalmazás ablakára váltás "
+msgstr "Ugyanazon alkalmazás ablakai közti váltás"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:45
 msgid "Switch application"
@@ -368,7 +376,7 @@ msgstr "Ablak háttérbe küldése"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:57
 msgid "Raise or lower window"
-msgstr "Ablak előtérbe vagy háttérbe"
+msgstr "Ablak előtérbe vagy háttérbe hozása"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:58
 msgid "Fill window"
@@ -384,27 +392,27 @@ msgstr "Ablak kitöltése függőlegesen"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:61
 msgid "Toggle above"
-msgstr "Más ablakok elé átváltása"
+msgstr "Más ablakok elé be/ki"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:62
 msgid "Toggle fullscreen"
-msgstr "Teljes képernyő átváltása"
+msgstr "Teljes képernyő be/ki"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:63
 msgid "Move window to lower monitor"
-msgstr "Ablak mozgatása az alsó monitorra"
+msgstr "Ablak áthelyezése az alsó monitorra"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:64
 msgid "Move window to left monitor"
-msgstr "Ablak mozgatása a bal monitorra"
+msgstr "Ablak áthelyezése a bal monitorra"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:65
 msgid "Move window to right monitor"
-msgstr "Ablak mozgatása a jobb monitorra"
+msgstr "Ablak áthelyezése a jobb monitorra"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:66
 msgid "Move window to upper monitor"
-msgstr "Ablak mozgatása a felső monitorra"
+msgstr "Ablak áthelyezése a felső monitorra"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:67
 msgid "Move window to upper workspace"
@@ -606,120 +614,120 @@ msgstr "Aktív munkaterület törlése"
 msgid "Version information"
 msgstr "Verzióinformációk"
 
-#: xfce4-about/main.c:128
+#: xfce4-about/main.c:154
 msgid "GPUs"
 msgstr "GPU-k"
 
-#: xfce4-about/main.c:146
+#: xfce4-about/main.c:172
 msgid "Window Manager"
 msgstr "Ablakkezelő"
 
-#: xfce4-about/main.c:147
+#: xfce4-about/main.c:173
 msgid "Handles the placement of windows on the screen."
 msgstr "Az ablakok elhelyezésének kezelése a képernyőn."
 
-#: xfce4-about/main.c:151
+#: xfce4-about/main.c:177
 msgid "Panel"
 msgstr "Panel"
 
-#: xfce4-about/main.c:152
+#: xfce4-about/main.c:178
 msgid "Provides a home for window buttons, launchers, app menu and more."
-msgstr ""
+msgstr "Helyet biztosít az ablakgomboknak, indítóknak, alkalmazásmenünek és másoknak."
 
-#: xfce4-about/main.c:156
+#: xfce4-about/main.c:182
 msgid "Desktop Manager"
 msgstr "Asztalkezelő"
 
-#: xfce4-about/main.c:157
+#: xfce4-about/main.c:183
 msgid "Sets desktop backgrounds, handles icons and more."
 msgstr "Beállítja az asztal hátterét, kezeli az ikonokat és hasonlókat."
 
-#: xfce4-about/main.c:161
+#: xfce4-about/main.c:187
 msgid "File Manager"
 msgstr "Fájlkezelő"
 
-#: xfce4-about/main.c:162
+#: xfce4-about/main.c:188
 msgid "Manages your files in a modern, easy-to-use and fast way."
-msgstr "Kezeli a fájljaidat modern, könnyen használható módon és gyorsan."
+msgstr "Modern, könnyen használható módon és gyorsan kezeli a fájljait."
 
-#: xfce4-about/main.c:166
+#: xfce4-about/main.c:192
 msgid "Volume Manager"
 msgstr "Kötetkezelő"
 
-#: xfce4-about/main.c:167
+#: xfce4-about/main.c:193
 msgid "Manages removable drives and media for Thunar."
 msgstr "Az eltávolítható meghajtókat és médiát kezeli a Thunar számára."
 
-#: xfce4-about/main.c:171
+#: xfce4-about/main.c:197
 msgid "Session Manager"
 msgstr "Munkamenet-kezelő"
 
-#: xfce4-about/main.c:172
+#: xfce4-about/main.c:198
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
-msgstr "Menti és visszaállítja a munkafolyamatodat, kezeli indulását, az automatikus indításokat és a leállítást."
+msgstr "Menti és visszaállítja a munkafolyamatát, kezeli az indulást, az automatikus indításokat és a leállítást."
 
-#: xfce4-about/main.c:176
+#: xfce4-about/main.c:202
 msgid "Settings Manager"
 msgstr "Beállításkezelő"
 
-#: xfce4-about/main.c:177
+#: xfce4-about/main.c:203
 msgid "Configures appearance, display, keyboard and mouse settings."
-msgstr "Kezeli a megjelenés, kijelző, billentyűzet és egér beállításait."
+msgstr "Kezeli a megjelenés, a kijelző, a billentyűzet és az egér beállításait."
 
-#: xfce4-about/main.c:181
+#: xfce4-about/main.c:207
 msgid "Application Finder"
 msgstr "Alkalmazáskereső"
 
-#: xfce4-about/main.c:182
+#: xfce4-about/main.c:208
 msgid "Quickly finds and launches applications installed on your system."
-msgstr "Gyorsan megtalálja, elindítja a rendszerre telepített alkalmazásokat."
+msgstr "Gyorsan megtalálja és elindítja a rendszerre telepített alkalmazásokat."
 
-#: xfce4-about/main.c:186
+#: xfce4-about/main.c:212
 msgid "Settings Daemon"
 msgstr "Beállításkezelő"
 
-#: xfce4-about/main.c:187
+#: xfce4-about/main.c:213
 msgid "Stores your settings in a D-Bus-based configuration system."
-msgstr "Eltárolja a beállításaidat egy D-Bus-alapú beállító rendszeren."
+msgstr "Tárolja a beállításait egy D-Bus-alapú beállítórendszerben."
 
-#: xfce4-about/main.c:191
+#: xfce4-about/main.c:217
 msgid "A Menu Library"
-msgstr "Egy Menü könyvtár"
+msgstr "Egy menükönyvtár"
 
-#: xfce4-about/main.c:192
+#: xfce4-about/main.c:218
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
-msgstr "Egy freedesktop.org-kompatibilis menü-implementáció GLib és GIO-alapokon."
+msgstr "Egy freedesktop.org-kompatibilis menüt valósít meg, GLib és GIO-alapokon."
 
-#: xfce4-about/main.c:196
+#: xfce4-about/main.c:222
 msgid "Thumbnails Service"
-msgstr "Bélyegkép szolgáltatás"
+msgstr "Bélyegképkészítő szolgáltatás"
 
-#: xfce4-about/main.c:197
+#: xfce4-about/main.c:223
 msgid "Implements the thumbnail management D-Bus specification."
-msgstr "Megvalósítja a bélyegkép szolgáltatás D-Bus specifikációját."
+msgstr "Megvalósítja a bélyegképkezelő szolgáltatás D-Bus specifikációját."
 
-#: xfce4-about/main.c:251
+#: xfce4-about/main.c:277
 msgid "Please see <https://www.xfce.org/about/credits>"
 msgstr "Lásd itt: <https://www.xfce.org/about/credits>"
 
-#: xfce4-about/main.c:312
+#: xfce4-about/main.c:338
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
-msgstr "Ha tudsz valaki, aki hiányzik erről a listáról; ne várj, hanem jelezd itt: <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
+msgstr "Ha ismer valakit, aki hiányzik erről a listáról; akkor nyugodtan jelezze itt: <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 
-#: xfce4-about/main.c:316
+#: xfce4-about/main.c:342
 msgid "Thanks to all who helped making this software available!"
 msgstr "Köszönet mindazoknak, akik segítségével ez az alkalmazás elérhetővé vált."
 
-#: xfce4-about/main.c:333
+#: xfce4-about/main.c:359
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
 msgstr "Az Xfce szerzői joga Olivier Fourdant (fourdan@xfce.org) illeti. A további összetevők szerzői joga azok szerzőit illeti."
 
-#: xfce4-about/main.c:338
+#: xfce4-about/main.c:364
 msgid ""
 "The libxfce4ui, libxfce4util and exo packages are distributed under the "
 "terms of the GNU Library General Public License as published by the Free "
@@ -727,7 +735,7 @@ msgid ""
 "any later version."
 msgstr "A libxfce4ui, libxfce4util és exo csomagok a Free Software Foundation által kiadott GNU Library General Public License második (vagy bármely későbbi) változatában foglaltak alapján kerülnek terjesztésre."
 
-#: xfce4-about/main.c:345
+#: xfce4-about/main.c:371
 msgid ""
 "The packages thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
 "xfce4-settings, xfconf, xfdesktop and xfwm4 are distributed under the terms "
@@ -736,25 +744,25 @@ msgid ""
 "version."
 msgstr "A thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop és xfwm4 csomagok a Free Software Foundation által kiadott GNU General Public License második (vagy bármely későbbi) változatában foglaltak alapján kerülnek terjesztésre."
 
-#: xfce4-about/main.c:491
+#: xfce4-about/main.c:517
 #, c-format
 msgid "Type '%s --help' for usage information."
 msgstr "Segítségért adja ki a „%s --help” parancsot."
 
-#: xfce4-about/main.c:497
+#: xfce4-about/main.c:523
 msgid "Unable to initialize GTK+."
 msgstr "A GTK+ előkészítése sikertelen."
 
-#: xfce4-about/main.c:506
+#: xfce4-about/main.c:532
 msgid "The Xfce development team. All rights reserved."
 msgstr "Az Xfce fejlesztői csapata. Minden jog fenntartva."
 
-#: xfce4-about/main.c:507
+#: xfce4-about/main.c:533
 #, c-format
 msgid "Please report bugs to <%s>."
-msgstr "A programhibák itt jelenthetők be: %s"
+msgstr "A programhibák itt jelenthetők be: <%s>."
 
-#: xfce4-about/main.c:517
+#: xfce4-about/main.c:543
 msgid "Failed to load interface"
 msgstr "A felület betöltése sikertelen"
 
@@ -775,11 +783,11 @@ msgstr "A kiszolgálóinkat karbantartják:"
 
 #: xfce4-about/contributors.h:153
 msgid "Translations supervision"
-msgstr "Fordítások felügyelet"
+msgstr "Fordítások felügyelete"
 
 #: xfce4-about/contributors.h:156
 msgid "Documentation supervision"
-msgstr "Dokumentáció felügyelet"
+msgstr "Dokumentáció felügyelete"
 
 #: xfce4-about/contributors.h:159
 msgid "Translators"
@@ -787,11 +795,7 @@ msgstr "Fordítók"
 
 #: xfce4-about/contributors.h:162
 msgid "Previous contributors"
-msgstr "Előző munkatársak"
-
-#: xfce4-about/xfce4-about.desktop.in:6
-msgid "org.xfce.about"
-msgstr ""
+msgstr "Korábbi közreműködők"
 
 #: xfce4-about/xfce4-about.desktop.in:11
 msgid "About Xfce"
@@ -848,7 +852,7 @@ msgstr "Forgalmazó"
 
 #: xfce4-about/xfce4-about-dialog.glade:538
 msgid "Xfce Version"
-msgstr "Xfce változat"
+msgstr "Xfce verzió"
 
 #: xfce4-about/xfce4-about-dialog.glade:564
 msgid "GTK Version"
@@ -878,7 +882,7 @@ msgstr "Rendszer"
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
-msgstr "Az Xfce egy programgyűjtemény, mely együtt egy teljes-képességű asztali környezet biztosít.\nA következő programok részei az Xfce magjának:"
+msgstr "Az Xfce egy programgyűjtemény, mely egyben egy teljeskörű asztali környezet biztosít.\nA következő programok részei az Xfce magjának:"
 
 #: xfce4-about/xfce4-about-dialog.glade:779
 msgid ""
@@ -889,7 +893,7 @@ msgid ""
 "Thank you for your interest in Xfce.\n"
 "\n"
 "\t- The Xfce Development Team"
-msgstr "Az Xfce egy fejlesztő platform is, mely a programozók számára a munkakörnyezethez illő alkalmazások létrehozására nyújt különböző függvénykönyvtárakat..\n\nAz Xfce összetevők szabad vagy nyílt forrású licencűek; GPL vagy BSDL az alkalmazásokhoz, LGPL vagy BSDL a függvénykönyvtárakhoz. Lásd a dokumentációt, a forráskódot vagy az Xfce honlapot (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) további információkért.\n\nThank you for your interest in Xfce.\n\n\t- Az Xfce csapat"
+msgstr "Az Xfce egy fejlesztő platform is, mely a programozók számára az asztali környezetbe illő alkalmazások létrehozására különböző programkönyvtárakat nyújt.\n\nAz Xfce összetevői szabad vagy nyílt forrású licencűek; GPL vagy BSDL az alkalmazások, LGPL vagy BSDL a programkönyvtárak esetén. További információkért lásd a dokumentációt, a forráskódot vagy az Xfce honlapját (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>).\n\nKöszönjük az érdeklődését az Xfce iránt.\n\n\t- Az Xfce csapata"
 
 #: xfce4-about/xfce4-about-dialog.glade:809
 msgid "About"
@@ -923,16 +927,16 @@ msgstr "Ismeretlen"
 #. translators: This is the type of architecture for the OS
 #: xfce4-about/system-info.c:658
 msgid "64-bit (32-bit userspace)"
-msgstr ""
+msgstr "64 bites (32 bites felhasználói oldal)"
 
 #. translators: This is the type of architecture for the OS
 #: xfce4-about/system-info.c:661
 msgid "64-bit"
-msgstr "64-bit"
+msgstr "64 bites"
 
 #: xfce4-about/system-info.c:661
 msgid "32-bit"
-msgstr "32-bit"
+msgstr "32 bites"
 
 #. translators: This is the name of the OS, followed by the build ID, for
 #. * example:
@@ -952,7 +956,7 @@ msgstr "A(z) „%s” fájl már létezik a könyvtárban, a fájl nem került h
 
 #: tests/test-ui.c:122
 msgid "Failed to migrate the old panel configuration"
-msgstr "A panel régi beállításainak átköltöztetése meghiúsult"
+msgstr "A panel régi beállításainak átköltöztetése sikertelen"
 
 #: tests/test-ui.c:172 tests/test-ui.c:197
 msgid "Customize settings stored by Xfconf"
