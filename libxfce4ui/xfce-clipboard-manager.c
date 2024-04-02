@@ -41,7 +41,7 @@
 #include <X11/Xlib.h>
 #include <X11/Xatom.h>
 
-#include <gdk/gdk.h>
+#include <gtk/gtk.h>
 #include <gdk/gdkx.h>
 
 #include "xfce-clipboard-manager.h"
@@ -57,6 +57,9 @@ struct _XfceClipboardManager
 
   GSList  *contents;
   GSList  *conversions;
+  GdkPixbuf *image;
+  GBytes  *bytes;
+  gboolean is_image_available;
 
   Window   requestor;
   Atom     property;
@@ -182,6 +185,14 @@ xfce_clipboard_manager_finalize (GObject *object)
     {
       g_slist_free_full (manager->contents, (GDestroyNotify) target_data_unref);
       manager->contents = NULL;
+    }
+
+  if (manager->image != NULL)
+    {
+      g_object_unref (manager->image);
+      g_bytes_unref (manager->bytes);
+      manager->image = NULL;
+      manager->bytes = NULL;
     }
 
   if (manager->start_idle_id !=0)
@@ -787,6 +798,9 @@ clipboard_manager_process_event (XfceClipboardManager *manager,
   Atom   *targets = NULL;
   GSList *tmp;
 
+  if (manager->is_image_available)
+    return False;
+
   switch (xev->xany.type)
     {
       case DestroyNotify:
@@ -1135,6 +1149,42 @@ clipboard_manager_start (XfceClipboardManager *manager,
   return TRUE;
 }
 
+static void
+owner_change (GtkClipboard *clipboard,
+              GdkEvent *event,
+              XfceClipboardManager *manager)
+{
+  manager->is_image_available = gtk_clipboard_wait_is_image_available (clipboard);
+  if (manager->is_image_available)
+    {
+      GdkPixbuf *image = gtk_clipboard_wait_for_image (clipboard);
+      if (image != NULL)
+        {
+          GBytes *bytes = gdk_pixbuf_read_pixel_bytes (image);
+          if (manager->image == NULL || !g_bytes_equal (bytes, manager->bytes))
+            {
+              if (manager->image != NULL)
+                {
+                  g_object_unref (manager->image);
+                  g_bytes_unref (manager->bytes);
+                }
+              manager->image = g_object_ref (image);
+              manager->bytes = g_bytes_ref (bytes);
+              gtk_clipboard_set_image (clipboard, image);
+            }
+          g_object_unref (image);
+          g_bytes_unref (bytes);
+        }
+    }
+  else if (manager->image != NULL)
+    {
+      g_object_unref (manager->image);
+      g_bytes_unref (manager->bytes);
+      manager->image = NULL;
+      manager->bytes = NULL;
+    }
+}
+
 /**
  * xfce_clipboard_manager_new: (constructor)
  * @replace: whether or not to replace an existing clipboard manager
@@ -1153,6 +1203,8 @@ xfce_clipboard_manager_new (gboolean replace)
       g_object_unref (manager);
       return NULL;
     }
+
+  g_signal_connect (gtk_clipboard_get (GDK_SELECTION_CLIPBOARD), "owner-change", G_CALLBACK (owner_change), manager);
 
   return manager;
 }
