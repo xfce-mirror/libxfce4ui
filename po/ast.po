@@ -3,16 +3,16 @@
 # This file is distributed under the same license as the libxfce4ui.master package.
 # 
 # Translators:
-# enolp <enolp@softastur.org>, 2015-2016,2020
+# enolp <enolp@softastur.org>, 2015-2016,2020,2024
 # Ḷḷumex03, 2014
 # Ḷḷumex03, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2023-04-06 12:45+0200\n"
+"POT-Creation-Date: 2023-10-19 12:45+0200\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: enolp <enolp@softastur.org>, 2015-2016,2020\n"
+"Last-Translator: enolp <enolp@softastur.org>, 2015-2016,2020,2024\n"
 "Language-Team: Asturian (http://app.transifex.com/xfce/libxfce4ui/language/ast/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,11 +27,15 @@ msgstr "Fallu al abrir el restolador pa la documentación en llinia"
 #: libxfce4ui/xfce-dialogs.c:265
 #, c-format
 msgid "Do you want to read the %s manual online?"
-msgstr "¿Quies lleer el manual en llinia de %s?"
+msgstr "¿Quies lleer el manual en llinia de «%s»?"
 
 #: libxfce4ui/xfce-dialogs.c:267
 msgid "Do you want to read the manual online?"
 msgstr "¿Quies lleer el manual en llinia?"
+
+#: libxfce4ui/xfce-dialogs.c:270
+msgid "Read the manual"
+msgstr ""
 
 #: libxfce4ui/xfce-dialogs.c:273
 msgid ""
@@ -41,7 +45,7 @@ msgstr "Redireicionarásete al sitiu web de documentación u tán calteníes y t
 
 #. Create cancel button
 #: libxfce4ui/xfce-dialogs.c:275 libxfce4ui/xfce-dialogs.c:533
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:256
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:254
 msgid "_Cancel"
 msgstr "_Encaboxar"
 
@@ -93,15 +97,15 @@ msgstr "Atención"
 
 #: libxfce4ui/xfce-dialogs.c:534
 msgid "Close T_ab"
-msgstr ""
+msgstr "Z_arrar la llingüeta"
 
 #: libxfce4ui/xfce-dialogs.c:535
 msgid "Close _Window"
-msgstr ""
+msgstr "Zarrar la _ventana"
 
 #: libxfce4ui/xfce-dialogs.c:540
 msgid "Do _not ask me again"
-msgstr "_Nun entrugame más"
+msgstr "Nu_n volver entrugar"
 
 #: libxfce4ui/xfce-sm-client.c:1427
 msgid "Session management client ID"
@@ -143,7 +147,7 @@ msgstr "Nun esiste'l direutoriu de trabayu «%s». Nun s'usará cuando apruza \"
 #. retrieve the error and warning messages
 #: libxfce4ui/xfce-filename-input.c:232
 msgid "Filename is too long"
-msgstr ""
+msgstr "El nome del ficheru ye mui llongu"
 
 #: libxfce4ui/xfce-filename-input.c:233
 msgid "Directory separator illegal in file name"
@@ -195,7 +199,7 @@ msgstr "Esti accesu direutu yá ta usándose pola aición '%s\". ¿Qué aición 
 #. Warn the user
 #: libxfce4kbd-private/xfce-shortcuts.c:106
 msgid "Please use another key combination."
-msgstr "Usa otra combinación de tecles, por favor."
+msgstr "Usa otra combinación de tecles."
 
 #: libxfce4kbd-private/xfce-shortcuts.c:107
 #, c-format
@@ -214,11 +218,11 @@ msgstr "Esti atayu yá s'usa pa daqué más."
 #: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:94
 #: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:131
 msgid "Shortcuts Editor"
-msgstr ""
+msgstr "Editor d'atayos"
 
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:380
 msgid "The current shortcut. Click to edit..."
-msgstr ""
+msgstr "L'atayu actual. Calca pa editalu…"
 
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:391
 msgid "Clear the shortcut"
@@ -265,20 +269,20 @@ msgstr "comandu"
 msgid "Shortcut"
 msgstr "Atayu"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:250
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:248
 msgid "Clear"
 msgstr "Llimpiar"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:273
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:271
 #, c-format
 msgid "Press keyboard keys to trigger the %s '%s'."
 msgstr ""
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:295
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:293
 msgid "Please press a key"
-msgstr ""
+msgstr "Primi una tecla"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:350
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:348
 msgid "Could not grab the keyboard."
 msgstr "Nun pudo coyese'l tecláu."
 
@@ -296,15 +300,15 @@ msgstr "Abaxo"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:39
 msgid "Left"
-msgstr "Izquierda"
+msgstr "Esquierda"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:40
 msgid "Right"
-msgstr "Drecha"
+msgstr "Derecha"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:42
 msgid "Cycle windows"
-msgstr "Esbillar ventanes cíclicamente"
+msgstr "Percorrer les ventanes"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:43
 msgid "Cycle windows (Reverse)"
@@ -602,120 +606,120 @@ msgstr "Desaniciar la estaya de trabayu activa"
 msgid "Version information"
 msgstr "Información de la versión"
 
-#: xfce4-about/main.c:128
+#: xfce4-about/main.c:154
 msgid "GPUs"
-msgstr ""
+msgstr "GPUs"
 
-#: xfce4-about/main.c:146
+#: xfce4-about/main.c:172
 msgid "Window Manager"
 msgstr "Xestor de ventanes"
 
-#: xfce4-about/main.c:147
+#: xfce4-about/main.c:173
 msgid "Handles the placement of windows on the screen."
 msgstr "Remana l'asitiamientu de ventanes na pantalla."
 
-#: xfce4-about/main.c:151
+#: xfce4-about/main.c:177
 msgid "Panel"
 msgstr "Panel"
 
-#: xfce4-about/main.c:152
+#: xfce4-about/main.c:178
 msgid "Provides a home for window buttons, launchers, app menu and more."
 msgstr ""
 
-#: xfce4-about/main.c:156
+#: xfce4-about/main.c:182
 msgid "Desktop Manager"
 msgstr "Xestor d'escritoriu"
 
-#: xfce4-about/main.c:157
+#: xfce4-about/main.c:183
 msgid "Sets desktop backgrounds, handles icons and more."
 msgstr ""
 
-#: xfce4-about/main.c:161
+#: xfce4-about/main.c:187
 msgid "File Manager"
 msgstr "Xestor de ficheros"
 
-#: xfce4-about/main.c:162
+#: xfce4-about/main.c:188
 msgid "Manages your files in a modern, easy-to-use and fast way."
 msgstr ""
 
-#: xfce4-about/main.c:166
+#: xfce4-about/main.c:192
 msgid "Volume Manager"
-msgstr ""
+msgstr "Xestor de volúmenes"
 
-#: xfce4-about/main.c:167
+#: xfce4-about/main.c:193
 msgid "Manages removable drives and media for Thunar."
 msgstr ""
 
-#: xfce4-about/main.c:171
+#: xfce4-about/main.c:197
 msgid "Session Manager"
 msgstr "Xestor de sesión"
 
-#: xfce4-about/main.c:172
+#: xfce4-about/main.c:198
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
 msgstr ""
 
-#: xfce4-about/main.c:176
+#: xfce4-about/main.c:202
 msgid "Settings Manager"
 msgstr "Xestor d'axustes"
 
-#: xfce4-about/main.c:177
+#: xfce4-about/main.c:203
 msgid "Configures appearance, display, keyboard and mouse settings."
 msgstr ""
 
-#: xfce4-about/main.c:181
+#: xfce4-about/main.c:207
 msgid "Application Finder"
 msgstr "Guetador d'aplicaciones"
 
-#: xfce4-about/main.c:182
+#: xfce4-about/main.c:208
 msgid "Quickly finds and launches applications installed on your system."
 msgstr ""
 
-#: xfce4-about/main.c:186
+#: xfce4-about/main.c:212
 msgid "Settings Daemon"
 msgstr "Degorriu d'axustes"
 
-#: xfce4-about/main.c:187
+#: xfce4-about/main.c:213
 msgid "Stores your settings in a D-Bus-based configuration system."
 msgstr ""
 
-#: xfce4-about/main.c:191
+#: xfce4-about/main.c:217
 msgid "A Menu Library"
 msgstr ""
 
-#: xfce4-about/main.c:192
+#: xfce4-about/main.c:218
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
 msgstr ""
 
-#: xfce4-about/main.c:196
+#: xfce4-about/main.c:222
 msgid "Thumbnails Service"
-msgstr ""
+msgstr "Serviciu de miniatures"
 
-#: xfce4-about/main.c:197
+#: xfce4-about/main.c:223
 msgid "Implements the thumbnail management D-Bus specification."
 msgstr ""
 
-#: xfce4-about/main.c:251
+#: xfce4-about/main.c:277
 msgid "Please see <https://www.xfce.org/about/credits>"
 msgstr ""
 
-#: xfce4-about/main.c:312
+#: xfce4-about/main.c:338
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 msgstr ""
 
-#: xfce4-about/main.c:316
+#: xfce4-about/main.c:342
 msgid "Thanks to all who helped making this software available!"
-msgstr "¡Gracies a tolos qu'ayudaron a facer esti software disponible!"
+msgstr "¡Gracies a toles persones qu'ayudaron a facer esti software disponible!"
 
-#: xfce4-about/main.c:333
+#: xfce4-about/main.c:359
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
 msgstr "Xfce 4 tien copyright d'Oliver Fourdan (fourdan@xfce.org). Los distintos componentes tienen copyright de los sos respeutivos autores."
 
-#: xfce4-about/main.c:338
+#: xfce4-about/main.c:364
 msgid ""
 "The libxfce4ui, libxfce4util and exo packages are distributed under the "
 "terms of the GNU Library General Public License as published by the Free "
@@ -723,7 +727,7 @@ msgid ""
 "any later version."
 msgstr ""
 
-#: xfce4-about/main.c:345
+#: xfce4-about/main.c:371
 msgid ""
 "The packages thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
 "xfce4-settings, xfconf, xfdesktop and xfwm4 are distributed under the terms "
@@ -732,25 +736,25 @@ msgid ""
 "version."
 msgstr ""
 
-#: xfce4-about/main.c:491
+#: xfce4-about/main.c:517
 #, c-format
 msgid "Type '%s --help' for usage information."
 msgstr "Escribi '%s --help' pa la información d'usu."
 
-#: xfce4-about/main.c:497
+#: xfce4-about/main.c:523
 msgid "Unable to initialize GTK+."
 msgstr "Imposible aniciar GTK+."
 
-#: xfce4-about/main.c:506
+#: xfce4-about/main.c:532
 msgid "The Xfce development team. All rights reserved."
-msgstr "L'equipu de desendolcu de XFCE. Tolos drechos reservaos."
+msgstr "L'equipu de desendolcu de XFCE. Tolos derechos acutaos."
 
-#: xfce4-about/main.c:507
+#: xfce4-about/main.c:533
 #, c-format
 msgid "Please report bugs to <%s>."
-msgstr "Informa de fallos a <%s>."
+msgstr "Informa de fallos en <%s>."
 
-#: xfce4-about/main.c:517
+#: xfce4-about/main.c:543
 msgid "Failed to load interface"
 msgstr "Fallu al cargar la interfaz"
 
@@ -775,7 +779,7 @@ msgstr "Supervisión de les traducciones"
 
 #: xfce4-about/contributors.h:156
 msgid "Documentation supervision"
-msgstr ""
+msgstr "Supervisión de la documentación"
 
 #: xfce4-about/contributors.h:159
 msgid "Translators"
@@ -784,10 +788,6 @@ msgstr "Traductores"
 #: xfce4-about/contributors.h:162
 msgid "Previous contributors"
 msgstr "Collaboradores anteriores"
-
-#: xfce4-about/xfce4-about.desktop.in:6
-msgid "org.xfce.about"
-msgstr ""
 
 #: xfce4-about/xfce4-about.desktop.in:11
 msgid "About Xfce"
@@ -828,7 +828,7 @@ msgstr "Preséu"
 #: xfce4-about/xfce4-about-dialog.glade:653
 #: xfce4-about/xfce4-about-dialog.glade:678
 msgid "label"
-msgstr ""
+msgstr "etiqueta"
 
 #: xfce4-about/xfce4-about-dialog.glade:462
 msgid "OS Name"
@@ -836,7 +836,7 @@ msgstr "Nome del SO"
 
 #: xfce4-about/xfce4-about-dialog.glade:487
 msgid "OS Type"
-msgstr "Triba del SO"
+msgstr "Tipu de SO"
 
 #: xfce4-about/xfce4-about-dialog.glade:512
 msgid "Distributor"
@@ -848,11 +848,11 @@ msgstr "Versión de XFCE"
 
 #: xfce4-about/xfce4-about-dialog.glade:564
 msgid "GTK Version"
-msgstr ""
+msgstr "Versión de GTK"
 
 #: xfce4-about/xfce4-about-dialog.glade:589
 msgid "Kernel Version"
-msgstr ""
+msgstr "Versión del kernel"
 
 #: xfce4-about/xfce4-about-dialog.glade:615
 msgid "CPU"
@@ -864,7 +864,7 @@ msgstr "Memoria"
 
 #: xfce4-about/xfce4-about-dialog.glade:666
 msgid "GPU"
-msgstr ""
+msgstr "GPU"
 
 #: xfce4-about/xfce4-about-dialog.glade:699
 msgid "System"
@@ -924,11 +924,11 @@ msgstr ""
 #. translators: This is the type of architecture for the OS
 #: xfce4-about/system-info.c:661
 msgid "64-bit"
-msgstr ""
+msgstr "64 bits"
 
 #: xfce4-about/system-info.c:661
 msgid "32-bit"
-msgstr ""
+msgstr "32 bits"
 
 #. translators: This is the name of the OS, followed by the build ID, for
 #. * example:
@@ -944,7 +944,7 @@ msgstr ""
 msgid ""
 "A file named \"%s\" already exists in this directory, the file hasn't been "
 "added."
-msgstr "Yá esiste un ficheru nomáu «%s» nesti direutoriu, amestóse'l ficheru."
+msgstr "Nun s'amestó'l ficheru «%s» porque yá hai otru col mesmu nome."
 
 #: tests/test-ui.c:122
 msgid "Failed to migrate the old panel configuration"
