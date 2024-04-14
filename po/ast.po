@@ -6,6 +6,7 @@
 # Translators:
 # Nick Schermer <nick@xfce.org>, 2023
 # Xfce Bot <transifex@xfce.org>, 2023
+# enolp <enolp@softastur.org>, 2024
 # 
 #, fuzzy
 msgid ""
@@ -14,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-30 00:46+0200\n"
 "PO-Revision-Date: 2023-02-20 11:56+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>, 2023\n"
+"Last-Translator: enolp <enolp@softastur.org>, 2024\n"
 "Language-Team: Asturian (https://app.transifex.com/xfce/teams/16840/ast/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -98,11 +99,11 @@ msgstr "Atención"
 
 #: ../libxfce4ui/xfce-dialogs.c:534
 msgid "Close T_ab"
-msgstr ""
+msgstr "Z_arrar la llingüeta"
 
 #: ../libxfce4ui/xfce-dialogs.c:535
 msgid "Close _Window"
-msgstr ""
+msgstr "Zarrar la _ventana"
 
 #: ../libxfce4ui/xfce-dialogs.c:540
 msgid "Do _not ask me again"
@@ -150,7 +151,7 @@ msgstr ""
 #. retrieve the error and warning messages
 #: ../libxfce4ui/xfce-filename-input.c:232
 msgid "Filename is too long"
-msgstr ""
+msgstr "El nome del ficheru ye mui llongu"
 
 #: ../libxfce4ui/xfce-filename-input.c:233
 msgid "Directory separator illegal in file name"
@@ -227,11 +228,11 @@ msgstr "Esti atayu yá s'usa pa daqué más."
 #: ../libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:94
 #: ../libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:131
 msgid "Shortcuts Editor"
-msgstr ""
+msgstr "Editor d'atayos"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:380
 msgid "The current shortcut. Click to edit..."
-msgstr ""
+msgstr "L'atayu actual. Calca pa editalu…"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:391
 msgid "Clear the shortcut"
@@ -289,7 +290,7 @@ msgstr ""
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:295
 msgid "Please press a key"
-msgstr ""
+msgstr "Primi una tecla"
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:350
 msgid "Could not grab the keyboard."
@@ -629,7 +630,7 @@ msgstr "Información de la versión"
 
 #: ../xfce4-about/main.c:128
 msgid "GPUs"
-msgstr ""
+msgstr "GPUs"
 
 #: ../xfce4-about/main.c:146
 msgid "Window Manager"
@@ -665,7 +666,7 @@ msgstr ""
 
 #: ../xfce4-about/main.c:166
 msgid "Volume Manager"
-msgstr ""
+msgstr "Xestor de volúmenes"
 
 #: ../xfce4-about/main.c:167
 msgid "Manages removable drives and media for Thunar."
@@ -714,7 +715,7 @@ msgstr ""
 
 #: ../xfce4-about/main.c:196
 msgid "Thumbnails Service"
-msgstr ""
+msgstr "Serviciu de miniatures"
 
 #: ../xfce4-about/main.c:197
 msgid "Implements the thumbnail management D-Bus specification."
@@ -802,7 +803,7 @@ msgstr "Supervisión de les traducciones"
 
 #: ../xfce4-about/contributors.h:156
 msgid "Documentation supervision"
-msgstr ""
+msgstr "Supervisión de la documentación"
 
 #: ../xfce4-about/contributors.h:159
 msgid "Translators"
@@ -862,11 +863,11 @@ msgstr "Versión de XFCE"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:11
 msgid "GTK Version"
-msgstr ""
+msgstr "Versión de GTK"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:12
 msgid "Kernel Version"
-msgstr ""
+msgstr "Versión del kernel"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:13
 msgid "CPU"
@@ -878,7 +879,7 @@ msgstr "Memoria"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:15
 msgid "GPU"
-msgstr ""
+msgstr "GPU"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:16
 msgid "System"
@@ -938,11 +939,11 @@ msgstr ""
 #. translators: This is the type of architecture for the OS
 #: ../xfce4-about/system-info.c:661
 msgid "64-bit"
-msgstr ""
+msgstr "64 bits"
 
 #: ../xfce4-about/system-info.c:661
 msgid "32-bit"
-msgstr ""
+msgstr "32 bits"
 
 #. translators: This is the name of the OS, followed by the build ID, for
 #. * example:
