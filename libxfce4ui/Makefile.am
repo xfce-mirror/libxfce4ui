@@ -156,14 +156,14 @@ endif
 
 if ENABLE_X11
 abicheck_sed_script = s/@-DENABLE_X11@/-DENABLE_X11/;
-libxfce4ui_sed_script = /@BEGIN_X11_HEADERS@\|@END_X11_HEADERS@/d;
+libxfce4ui_sed_script = /@BEGIN_X11_HEADERS@/d; /@END_X11_HEADERS@/d;
 else
 abicheck_sed_script = s/@-DENABLE_X11@//;
 libxfce4ui_sed_script = /@BEGIN_X11_HEADERS@/,/@END_X11_HEADERS@/d;
 endif
 if ENABLE_WAYLAND
 abicheck_sed_script += s/@-DENABLE_WAYLAND@/-DENABLE_WAYLAND/
-libxfce4ui_sed_script += /@BEGIN_WAYLAND_HEADERS@\|@END_WAYLAND_HEADERS@/d
+libxfce4ui_sed_script += /@BEGIN_WAYLAND_HEADERS@/d; /@END_WAYLAND_HEADERS@/d
 else
 abicheck_sed_script += s/@-DENABLE_WAYLAND@//
 libxfce4ui_sed_script += /@BEGIN_WAYLAND_HEADERS@/,/@END_WAYLAND_HEADERS@/d
