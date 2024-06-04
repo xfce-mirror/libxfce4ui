@@ -1049,7 +1049,7 @@ timestamp_predicate (Display  *xdisplay,
                      XEvent   *xevent,
                      XPointer  arg)
 {
-  XfceTimestamp *ts = (XfceTimestamp *) arg;
+  XfceTimestamp *ts = (XfceTimestamp *) (gpointer) arg;
 
   return xevent->type == PropertyNotify
          && xevent->xproperty.window == ts->window
