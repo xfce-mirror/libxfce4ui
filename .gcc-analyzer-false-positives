@@ -1,0 +1,4 @@
+# it doesn't seem to identify the first variadic argument correctly, so it follows
+# the wrong branch when testing e.g. 'strcmp (text, XFCE_BUTTON_TYPE_MIXED) == 0'
+xfce-dialogs.c:[0-9]+:[0-9]+: warning: 'va_arg' expected 'const gchar \*' \{aka 'const char \*'\} but received 'int' for variadic argument 1 of 'args' \[CWE-686\] \[-Wanalyzer-va-arg-type-mismatch\]
+xfce-dialogs.c:[0-9]+:[0-9]+: warning: 'va_arg' expected 'gint' \{aka 'int'\} but received 'void \*' for variadic argument 1 of 'args' \[CWE-686\] \[-Wanalyzer-va-arg-type-mismatch\]

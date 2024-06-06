@@ -756,7 +756,7 @@ convert_clipboard (XfceClipboardManager *manager,
 
   g_slist_foreach (conversions, (GFunc) convert_clipboard_target, manager);
 
-  if (conversions->next == NULL
+  if (conversions != NULL && conversions->next == NULL
       && ((IncrConversion *) conversions->data)->property == None)
     {
       finish_selection_request (manager, xev, False);
