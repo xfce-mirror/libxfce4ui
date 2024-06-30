@@ -416,7 +416,7 @@ xfce_gtk_toggle_tool_button_new_from_action_entry (const XfceGtkActionEntry *act
   gtk_widget_set_tooltip_text (GTK_WIDGET (tool_item), action_entry->menu_item_tooltip_text);
   gtk_toolbar_insert (toolbar_to_append_item, GTK_TOOL_ITEM (tool_item), -1);
 
-  /* 'gtk_check_menu_item_set_active' has to be done before 'g_signal_connect_swapped', to don't trigger the callback */
+  /* 'gtk_toggle_tool_button_set_active' has to be done before 'g_signal_connect_swapped' to not trigger the callback */
   gtk_toggle_tool_button_set_active (GTK_TOGGLE_TOOL_BUTTON (tool_item), active);
   g_signal_connect_swapped (G_OBJECT (tool_item), "toggled", action_entry->callback, callback_param);
 
