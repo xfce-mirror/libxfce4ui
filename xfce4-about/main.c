@@ -25,6 +25,12 @@
 #endif
 
 #include <gtk/gtk.h>
+#ifdef ENABLE_X11
+#include <gdk/gdkx.h>
+#endif
+#ifdef ENABLE_WAYLAND
+#include <gdk/gdkwayland.h>
+#endif
 #include <libxfce4util/libxfce4util.h>
 #include <libxfce4ui/libxfce4ui.h>
 
@@ -77,6 +83,7 @@ xfce_about_system (GtkBuilder *builder)
   g_autofree char *memory_text = NULL;
   g_autofree char *os_name_text = NULL;
   g_autofree char *os_type_text = NULL;
+  gchar *windowing_system_text = NULL;
   guint num_gpus = 0;
 
   os_logo = get_os_logo ();
@@ -136,6 +143,17 @@ xfce_about_system (GtkBuilder *builder)
   label = gtk_builder_get_object (builder, "kernel-version");
   kernel_text = get_system_info (KERNEL);
   gtk_label_set_text (GTK_LABEL (label), kernel_text ? kernel_text : "");
+
+  label = gtk_builder_get_object (builder, "windowing-system");
+#ifdef ENABLE_X11
+  if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+    windowing_system_text = "X11";
+#endif
+#ifdef ENABLE_WAYLAND
+  if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
+    windowing_system_text = "Wayland";
+#endif
+  gtk_label_set_text (GTK_LABEL (label), windowing_system_text ? windowing_system_text : "");
 
   label = gtk_builder_get_object (builder, "cpu");
   info = glibtop_get_sysinfo ();
