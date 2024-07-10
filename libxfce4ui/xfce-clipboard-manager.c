@@ -1154,7 +1154,20 @@ owner_change (GtkClipboard *clipboard,
               GdkEvent *event,
               XfceClipboardManager *manager)
 {
-  manager->is_image_available = gtk_clipboard_wait_is_image_available (clipboard);
+  GdkAtom *targets;
+  gint n_targets;
+
+  manager->is_image_available = FALSE;
+  if (gtk_clipboard_wait_for_targets (clipboard, &targets, &n_targets))
+    {
+      /* we replace the contents of the clipboard to take ownership of the image below,
+       * so we must not do this if there are other formats available */
+      manager->is_image_available = gtk_targets_include_image (targets, n_targets, FALSE)
+                                    && !gtk_targets_include_text (targets, n_targets)
+                                    && !gtk_targets_include_uri (targets, n_targets);
+      g_free (targets);
+    }
+
   if (manager->is_image_available)
     {
       GdkPixbuf *image = gtk_clipboard_wait_for_image (clipboard);
