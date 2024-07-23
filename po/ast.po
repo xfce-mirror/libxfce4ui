@@ -79,13 +79,15 @@ msgstr "Encaboxar"
 
 #: ../libxfce4ui/xfce-dialogs.c:518
 msgid "Close window with multiple tabs?"
-msgstr ""
+msgstr "¿Pesllar ventana y les sos múltiples llingüetes?"
 
 #: ../libxfce4ui/xfce-dialogs.c:520
 msgid ""
 "This window has multiple tabs open. Closing this window will also close all "
 "its tabs."
 msgstr ""
+"Esta ventana tien varies llingüetes abiertes. Pesllala tamién va zarrar "
+"toles sos llingüetes."
 
 #: ../libxfce4ui/xfce-dialogs.c:523
 #, c-format
@@ -93,6 +95,8 @@ msgid ""
 "This window has %d tabs open. Closing this window will also close all its "
 "tabs."
 msgstr ""
+"Esta ventana tien %d llingüetes abiertes. Pesllala tamién va zarrar toles "
+"sos llingüetes."
 
 #: ../libxfce4ui/xfce-dialogs.c:529
 msgid "Warning"
@@ -156,11 +160,11 @@ msgstr "El nome del ficheru ye mui llongu"
 
 #: ../libxfce4ui/xfce-filename-input.c:233
 msgid "Directory separator illegal in file name"
-msgstr ""
+msgstr "Separtador de direutoriu non válidu nel nome del ficheru"
 
 #: ../libxfce4ui/xfce-filename-input.c:234
 msgid "Filenames should not start or end with a space"
-msgstr ""
+msgstr "El nome del ficheru nun pué entamar nin finar con un espaciu"
 
 #: ../libxfce4kbd-private/xfce-shortcuts.c:53
 #, c-format
@@ -237,11 +241,11 @@ msgstr "L'atayu actual. Calca pa editalu…"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:391
 msgid "Clear the shortcut"
-msgstr ""
+msgstr "Llimpiar atayu"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:401
 msgid "Restore the default shortcut"
-msgstr ""
+msgstr "Restaurar atayu predetermináu"
 
 #. skip leading slash
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:473
@@ -287,7 +291,7 @@ msgstr "Llimpiar"
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:273
 #, c-format
 msgid "Press keyboard keys to trigger the %s '%s'."
-msgstr ""
+msgstr "Calcar tecles nel tecláu pa llanzar %s '%s'."
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:295
 msgid "Please press a key"
@@ -403,19 +407,19 @@ msgstr "Pantalla completa"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:63
 msgid "Move window to lower monitor"
-msgstr ""
+msgstr "Mover ventana a la pantalla d'embaxu."
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:64
 msgid "Move window to left monitor"
-msgstr ""
+msgstr "Mover ventana a la pantalla esquierda."
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:65
 msgid "Move window to right monitor"
-msgstr ""
+msgstr "Mover ventana a la pantalla drecha."
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:66
 msgid "Move window to upper monitor"
-msgstr ""
+msgstr "Mover ventana a la pantalla d'enriba."
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:67
 msgid "Move window to upper workspace"
@@ -507,19 +511,19 @@ msgstr "Mosaicu de ventanes a la drecha"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:89
 msgid "Tile window to the top-left"
-msgstr ""
+msgstr "Mosaicu de ventanes a la pantalla d'enriba a la siniestra."
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:90
 msgid "Tile window to the top-right"
-msgstr ""
+msgstr "Mosaicu de ventanes a la pantalla d'enriba a la diestra."
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:91
 msgid "Tile window to the bottom-left"
-msgstr ""
+msgstr "Mosaicu de ventanes a la pantalla d'enriba a la siniestra."
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:92
 msgid "Tile window to the bottom-right"
-msgstr ""
+msgstr "Mosaicu de ventanes a la pantalla d'enriba a la diestra."
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:93
 msgid "Show desktop"
@@ -648,6 +652,8 @@ msgstr "Panel"
 #: ../xfce4-about/main.c:152
 msgid "Provides a home for window buttons, launchers, app menu and more."
 msgstr ""
+"Propociona espaciu p'asitiar botones de ventana, llanzadores, menús de apps "
+"ya otros."
 
 #: ../xfce4-about/main.c:156
 msgid "Desktop Manager"
@@ -655,7 +661,7 @@ msgstr "Xestor d'escritoriu"
 
 #: ../xfce4-about/main.c:157
 msgid "Sets desktop backgrounds, handles icons and more."
-msgstr ""
+msgstr "Afita fondos d'escritoriu, manexa iconos ya otros."
 
 #: ../xfce4-about/main.c:161
 msgid "File Manager"
@@ -663,7 +669,7 @@ msgstr "Xestor de ficheros"
 
 #: ../xfce4-about/main.c:162
 msgid "Manages your files in a modern, easy-to-use and fast way."
-msgstr ""
+msgstr "Xestiona los tos ficheros d'un mou cenciellu ya rápidu."
 
 #: ../xfce4-about/main.c:166
 msgid "Volume Manager"
@@ -671,7 +677,7 @@ msgstr "Xestor de volúmenes"
 
 #: ../xfce4-about/main.c:167
 msgid "Manages removable drives and media for Thunar."
-msgstr ""
+msgstr "Xestiona discos estrayibles ya medios pa Thunar."
 
 #: ../xfce4-about/main.c:171
 msgid "Session Manager"
@@ -681,6 +687,7 @@ msgstr "Xestor de sesión"
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
 msgstr ""
+"Guarda ya restaura la to sesión, manexa l'aniciu, l'autoprendíu ya l'apagáu."
 
 #: ../xfce4-about/main.c:176
 msgid "Settings Manager"
@@ -688,7 +695,7 @@ msgstr "Xestor d'axustes"
 
 #: ../xfce4-about/main.c:177
 msgid "Configures appearance, display, keyboard and mouse settings."
-msgstr ""
+msgstr "Configura l'estilu, la pantalla, el tecláu ya los axustes del mur."
 
 #: ../xfce4-about/main.c:181
 msgid "Application Finder"
@@ -696,7 +703,7 @@ msgstr "Guetador d'aplicaciones"
 
 #: ../xfce4-about/main.c:182
 msgid "Quickly finds and launches applications installed on your system."
-msgstr ""
+msgstr "Atopa ya llanza programes istalaes nel to sistema."
 
 #: ../xfce4-about/main.c:186
 msgid "Settings Daemon"
@@ -704,15 +711,15 @@ msgstr "Degorriu d'axustes"
 
 #: ../xfce4-about/main.c:187
 msgid "Stores your settings in a D-Bus-based configuration system."
-msgstr ""
+msgstr "Guarda los tos axustes n'un sistema de configuración D-Bus."
 
 #: ../xfce4-about/main.c:191
 msgid "A Menu Library"
-msgstr ""
+msgstr "Llibrería de menú"
 
 #: ../xfce4-about/main.c:192
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
-msgstr ""
+msgstr "Un menú avíu freedesktop.org, basáu en GLib ya GIO."
 
 #: ../xfce4-about/main.c:196
 msgid "Thumbnails Service"
@@ -720,17 +727,19 @@ msgstr "Serviciu de miniatures"
 
 #: ../xfce4-about/main.c:197
 msgid "Implements the thumbnail management D-Bus specification."
-msgstr ""
+msgstr "Afita el manexu de miniatures con especificación D-Bus."
 
 #: ../xfce4-about/main.c:251
 msgid "Please see <https://www.xfce.org/about/credits>"
-msgstr ""
+msgstr "Lleer <https://www.xfce.org/about/credits>, por favor."
 
 #: ../xfce4-about/main.c:312
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 msgstr ""
+"Si sabes de daquién que habría de tar n'esta llista, unvía'l to reporte a "
+"<https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 
 #: ../xfce4-about/main.c:316
 msgid "Thanks to all who helped making this software available!"
@@ -751,6 +760,10 @@ msgid ""
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
 msgstr ""
+"Los paquetes libxfce4ui, libxfce4util y exo distribuyense polos términos de "
+"la Llicencia pal públicu xeneral GNU, sigún lo espublizáu pola Free Software"
+" Foundation; bien seya la versión 2 de la llicencia o cualesquier versión "
+"postrera."
 
 #: ../xfce4-about/main.c:345
 msgid ""
@@ -760,6 +773,11 @@ msgid ""
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
 msgstr ""
+"Los paquetes thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
+"xfce4-settings, xfconf, xfdesktop y xfwm4 distribuyense polos términos de la"
+" Llicencia pal públicu xeneral GNU, sigún lo espublizáu pola Free Software "
+"Foundation; bien seya la versión 2 de la llicencia o cualesquier versión "
+"postrera."
 
 #: ../xfce4-about/main.c:491
 #, c-format
@@ -891,6 +909,8 @@ msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
 msgstr ""
+"Xfce ye una colleición de programes que, toos xuntos, proporcionen un entornu d'escritoriu completu.\n"
+"Los programes postreros formen parte del noyu Xfce:"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:19
 msgid ""
@@ -902,6 +922,13 @@ msgid ""
 "\n"
 "\t- The Xfce Development Team"
 msgstr ""
+"Xfce tamién ye una plataforma de desencolcu qu'ufierta munches llibreries qu'aiden a los desencolcadores a facer programes qu'afiten bien nel entornu d'escritoriu.\n"
+"\n"
+"Los componentes de Xfce tienen llicencia llibre o Open-Source; GPL or BSDL pa les aplicaciones ya LGPL o BSDL pa les llibreríes. Echai una güeyada a la documentación, el códigu fonte o la páxina web de Xfce (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) pa deprender más.\n"
+"\n"
+"Gracies por el to interés en Xfce.\n"
+"\n"
+"\t- L'equipu de desencolcu de Xfce"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:26
 msgid "About"
@@ -935,7 +962,7 @@ msgstr "Desconocíu"
 #. translators: This is the type of architecture for the OS
 #: ../xfce4-about/system-info.c:658
 msgid "64-bit (32-bit userspace)"
-msgstr ""
+msgstr "64-bit (32-bit userspace)"
 
 #. translators: This is the type of architecture for the OS
 #: ../xfce4-about/system-info.c:661
@@ -953,7 +980,7 @@ msgstr "32 bits"
 #: ../xfce4-about/system-info.c:729
 #, c-format
 msgid "%s; Build ID: %s"
-msgstr ""
+msgstr "%s; Build ID: %s"
 
 #: ../tests/test-ui.c:111
 #, c-format
