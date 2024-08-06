@@ -73,9 +73,6 @@ static void     xfce_titled_dialog_set_property   (GObject                *objec
                                                    GParamSpec             *pspec);
 static void     xfce_titled_dialog_close          (GtkDialog              *dialog);
 static void     xfce_titled_dialog_update_window  (XfceTitledDialog       *titled_dialog);
-static void     xfce_titled_dialog_update_layout  (GObject                *settings,
-                                                   GParamSpec             *pspec,
-                                                   XfceTitledDialog       *titled_dialog);
 
 
 
@@ -186,11 +183,6 @@ G_GNUC_END_IGNORE_DEPRECATIONS
       /* Adjust window buttons and window placement */
       gtk_header_bar_set_show_close_button (GTK_HEADER_BAR (titled_dialog->priv->headerbar), TRUE);
       g_signal_connect (G_OBJECT (titled_dialog), "notify::window", G_CALLBACK (xfce_titled_dialog_update_window), NULL);
-
-      /* Add icon to the layout if needed */
-      xfce_titled_dialog_update_layout (G_OBJECT (settings), NULL, titled_dialog);
-      g_signal_connect_object (settings, "notify::gtk-decoration-layout",
-                               G_CALLBACK (xfce_titled_dialog_update_layout), titled_dialog, 0);
     }
   else
     {
@@ -363,30 +355,6 @@ xfce_titled_dialog_update_window (XfceTitledDialog *titled_dialog)
 
   /* center window on the active screen */
   xfce_gtk_window_center_on_active_screen (GTK_WINDOW (titled_dialog));
-}
-
-
-
-static void
-xfce_titled_dialog_update_layout (GObject *settings,
-                                  GParamSpec *pspec,
-                                  XfceTitledDialog *titled_dialog)
-{
-  gchar *layout;
-
-  g_object_get (settings, "gtk-decoration-layout", &layout, NULL);
-
-  /* add icon on the far left of the header bar if not already present */
-  if (g_strstr_len (layout, -1, "icon") == NULL)
-    {
-      const gchar *separator = (g_strstr_len (layout, -1, ":") == NULL) ? ":" : ",";
-      gchar *layout_with_icon = g_strconcat ("icon", separator, layout, NULL);
-      g_free (layout);
-      layout = layout_with_icon;
-    }
-
-  gtk_header_bar_set_decoration_layout (GTK_HEADER_BAR (titled_dialog->priv->headerbar), layout);
-  g_free (layout);
 }
 
 
