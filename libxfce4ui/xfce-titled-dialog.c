@@ -73,11 +73,6 @@ static void     xfce_titled_dialog_set_property   (GObject                *objec
                                                    GParamSpec             *pspec);
 static void     xfce_titled_dialog_close          (GtkDialog              *dialog);
 static void     xfce_titled_dialog_update_window  (XfceTitledDialog       *titled_dialog);
-static void     xfce_titled_dialog_update_layout  (GObject                *settings,
-                                                   GParamSpec             *pspec,
-                                                   XfceTitledDialog       *titled_dialog);
-
-
 
 struct _XfceTitledDialogPrivate
 {
@@ -186,11 +181,6 @@ G_GNUC_END_IGNORE_DEPRECATIONS
       /* Adjust window buttons and window placement */
       gtk_header_bar_set_show_close_button (GTK_HEADER_BAR (titled_dialog->priv->headerbar), TRUE);
       g_signal_connect (G_OBJECT (titled_dialog), "notify::window", G_CALLBACK (xfce_titled_dialog_update_window), NULL);
-
-      /* Add icon to the layout if needed */
-      xfce_titled_dialog_update_layout (G_OBJECT (settings), NULL, titled_dialog);
-      g_signal_connect_object (settings, "notify::gtk-decoration-layout",
-                               G_CALLBACK (xfce_titled_dialog_update_layout), titled_dialog, 0);
     }
   else
     {
