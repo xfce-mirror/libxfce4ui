@@ -26,23 +26,27 @@
 G_BEGIN_DECLS
 
 typedef struct _XfceShortcutsGrabberPrivate XfceShortcutsGrabberPrivate;
-typedef struct _XfceShortcutsGrabberClass   XfceShortcutsGrabberClass;
-typedef struct _XfceShortcutsGrabber        XfceShortcutsGrabber;
+typedef struct _XfceShortcutsGrabberClass XfceShortcutsGrabberClass;
+typedef struct _XfceShortcutsGrabber XfceShortcutsGrabber;
 
-#define XFCE_TYPE_SHORTCUTS_GRABBER            (xfce_shortcuts_grabber_get_type ())
-#define XFCE_SHORTCUTS_GRABBER(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), XFCE_TYPE_SHORTCUTS_GRABBER, XfceShortcutsGrabber))
-#define XFCE_SHORTCUTS_GRABBER_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), XFCE_TYPE_SHORTCUTS_GRABBER, XfceShortcutsGrabberClass))
-#define XFCE_IS_SHORTCUTS_GRABBER(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), XFCE_TYPE_SHORTCUTS_GRABBER))
+#define XFCE_TYPE_SHORTCUTS_GRABBER (xfce_shortcuts_grabber_get_type ())
+#define XFCE_SHORTCUTS_GRABBER(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), XFCE_TYPE_SHORTCUTS_GRABBER, XfceShortcutsGrabber))
+#define XFCE_SHORTCUTS_GRABBER_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), XFCE_TYPE_SHORTCUTS_GRABBER, XfceShortcutsGrabberClass))
+#define XFCE_IS_SHORTCUTS_GRABBER(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), XFCE_TYPE_SHORTCUTS_GRABBER))
 #define XFCE_IS_SHORTCUTS_GRABBER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), XFCE_TYPE_SHORTCUTS_GRABBER)
-#define XFCE_SHORTCUTS_GRABBER_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), XFCE_TYPE_SHORTCUTS_GRABBER, XfceShortcutsGrabberClass))
+#define XFCE_SHORTCUTS_GRABBER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), XFCE_TYPE_SHORTCUTS_GRABBER, XfceShortcutsGrabberClass))
 
-GType                 xfce_shortcuts_grabber_get_type      (void) G_GNUC_CONST;
+GType
+xfce_shortcuts_grabber_get_type (void) G_GNUC_CONST;
 
-XfceShortcutsGrabber *xfce_shortcuts_grabber_new           (void) G_GNUC_MALLOC;
-void                  xfce_shortcuts_grabber_add           (XfceShortcutsGrabber *grabber,
-                                                            const gchar          *shortcut);
-void                  xfce_shortcuts_grabber_remove        (XfceShortcutsGrabber *grabber,
-                                                            const gchar          *shortcut);
+XfceShortcutsGrabber *
+xfce_shortcuts_grabber_new (void) G_GNUC_MALLOC;
+void
+xfce_shortcuts_grabber_add (XfceShortcutsGrabber *grabber,
+                            const gchar *shortcut);
+void
+xfce_shortcuts_grabber_remove (XfceShortcutsGrabber *grabber,
+                               const gchar *shortcut);
 
 
 

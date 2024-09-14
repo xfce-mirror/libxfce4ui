@@ -17,7 +17,7 @@
  * MA 02110-1301 USA
  */
 
-#if !defined (LIBXFCE4UI_COMPILATION)
+#if !defined(LIBXFCE4UI_COMPILATION)
 #error "Only <libxfce4ui/libxfce4ui.h> can be included directly, this file is not part of the public API."
 #endif
 
@@ -29,15 +29,23 @@
 G_BEGIN_DECLS
 
 #ifndef NDEBUG
-#define _libxfce4ui_assert(expr)                 g_assert (expr)
-#define _libxfce4ui_assert_not_reached()         g_assert_not_reached ()
-#define _libxfce4ui_return_if_fail(expr)         g_return_if_fail (expr)
-#define _libxfce4ui_return_val_if_fail(expr,val) g_return_val_if_fail (expr,val)
+#define _libxfce4ui_assert(expr) g_assert (expr)
+#define _libxfce4ui_assert_not_reached() g_assert_not_reached ()
+#define _libxfce4ui_return_if_fail(expr) g_return_if_fail (expr)
+#define _libxfce4ui_return_val_if_fail(expr, val) g_return_val_if_fail (expr, val)
 #else
-#define _libxfce4ui_assert(expr)                 G_STMT_START{ (void)0; }G_STMT_END
-#define _libxfce4ui_assert_not_reached()         G_STMT_START{ (void)0; }G_STMT_END
-#define _libxfce4ui_return_if_fail(expr)         G_STMT_START{ (void)0; }G_STMT_END
-#define _libxfce4ui_return_val_if_fail(expr,val) G_STMT_START{ (void)0; }G_STMT_END
+#define _libxfce4ui_assert(expr) \
+  G_STMT_START { (void) 0; } \
+  G_STMT_END
+#define _libxfce4ui_assert_not_reached() \
+  G_STMT_START { (void) 0; } \
+  G_STMT_END
+#define _libxfce4ui_return_if_fail(expr) \
+  G_STMT_START { (void) 0; } \
+  G_STMT_END
+#define _libxfce4ui_return_val_if_fail(expr, val) \
+  G_STMT_START { (void) 0; } \
+  G_STMT_END
 #endif
 
 G_END_DECLS

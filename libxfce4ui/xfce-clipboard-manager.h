@@ -17,6 +17,10 @@
  * MA 02110-1301 USA
  */
 
+#if !defined(_LIBXFCE4UI_INSIDE_LIBXFCE4UI_H) && !defined(LIBXFCE4UI_COMPILATION)
+#error "Only <libxfce4ui/libxfce4ui.h> can be included directly, this file is not part of the public API."
+#endif
+
 #ifndef __XFCE_CLIPBOARD_MANAGER_H__
 #define __XFCE_CLIPBOARD_MANAGER_H__
 
@@ -27,7 +31,8 @@ G_BEGIN_DECLS
 #define XFCE_TYPE_CLIPBOARD_MANAGER (xfce_clipboard_manager_get_type ())
 G_DECLARE_FINAL_TYPE (XfceClipboardManager, xfce_clipboard_manager, XFCE, CLIPBOARD_MANAGER, GObject)
 
-XfceClipboardManager *xfce_clipboard_manager_new (gboolean replace);
+XfceClipboardManager *
+xfce_clipboard_manager_new (gboolean replace);
 
 G_END_DECLS
 

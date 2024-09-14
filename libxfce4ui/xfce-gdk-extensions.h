@@ -17,7 +17,7 @@
  * MA 02110-1301 USA
  */
 
-#if !defined (_LIBXFCE4UI_INSIDE_LIBXFCE4UI_H) && !defined (LIBXFCE4UI_COMPILATION)
+#if !defined(_LIBXFCE4UI_INSIDE_LIBXFCE4UI_H) && !defined(LIBXFCE4UI_COMPILATION)
 #error "Only <libxfce4ui/libxfce4ui.h> can be included directly, this file is not part of the public API."
 #endif
 
@@ -29,14 +29,17 @@
 
 G_BEGIN_DECLS
 
-GdkScreen    *xfce_gdk_screen_get_active   (gint *monitor_return);
+GdkScreen *
+xfce_gdk_screen_get_active (gint *monitor_return);
 
-GdkRectangle *xfce_gdk_screen_get_geometry (void);
+GdkRectangle *
+xfce_gdk_screen_get_geometry (void);
 
-gboolean      xfce_gdk_device_grab         (GdkSeat            *seat,
-                                            GdkWindow          *window,
-                                            GdkSeatCapabilities capabilities,
-                                            GdkCursor          *cursor);
+gboolean
+xfce_gdk_device_grab (GdkSeat *seat,
+                      GdkWindow *window,
+                      GdkSeatCapabilities capabilities,
+                      GdkCursor *cursor);
 
 G_END_DECLS
 

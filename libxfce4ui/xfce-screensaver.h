@@ -18,7 +18,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-#if !defined (_LIBXFCE4UI_INSIDE_LIBXFCE4UI_H) && !defined (LIBXFCE4UI_COMPILATION)
+#if !defined(_LIBXFCE4UI_INSIDE_LIBXFCE4UI_H) && !defined(LIBXFCE4UI_COMPILATION)
 #error "Only <libxfce4ui/libxfce4ui.h> can be included directly, this file is not part of the public API."
 #endif
 
@@ -38,12 +38,15 @@ G_DECLARE_FINAL_TYPE (XfceScreensaver, xfce_screensaver, XFCE, SCREENSAVER, GObj
 /* for compatibility with xfce4-session and xfce4-power-manager <= 4.18.0 as above */
 typedef XfceScreensaver XfceScreenSaver;
 
-XfceScreensaver    *xfce_screensaver_new           (void);
+XfceScreensaver *
+xfce_screensaver_new (void);
 
-void                xfce_screensaver_inhibit       (XfceScreensaver     *saver,
-                                                    gboolean             inhibit);
+void
+xfce_screensaver_inhibit (XfceScreensaver *saver,
+                          gboolean inhibit);
 
-gboolean            xfce_screensaver_lock          (XfceScreensaver     *saver);
+gboolean
+xfce_screensaver_lock (XfceScreensaver *saver);
 
 G_END_DECLS
 

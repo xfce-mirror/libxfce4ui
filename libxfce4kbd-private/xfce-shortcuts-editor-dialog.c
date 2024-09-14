@@ -19,19 +19,17 @@
  */
 
 #ifdef HAVE_CONFIG_H
-#include <config.h>
+#include "config.h"
 #endif
 
 #include <gdk/gdkkeysyms.h>
-#include <gtk/gtk.h>
-
-#include <libxfce4util/libxfce4util.h>
 #include <libxfce4ui/libxfce4ui.h>
+#include <libxfce4util/libxfce4util.h>
 
-#include <libxfce4kbd-private/xfce-shortcuts.h>
-#include <libxfce4kbd-private/xfce-shortcut-dialog.h>
-#include <libxfce4kbd-private/xfce-shortcuts-editor.h>
-#include <libxfce4kbd-private/xfce-shortcuts-editor-dialog.h>
+#include "xfce-shortcut-dialog.h"
+#include "xfce-shortcuts-editor-dialog.h"
+#include "xfce-shortcuts-editor.h"
+#include "xfce-shortcuts.h"
 
 
 
@@ -42,7 +40,7 @@ struct _XfceShortcutsEditorDialogClass
 
 struct _XfceShortcutsEditorDialog
 {
-  XfceTitledDialog    __parent__;
+  XfceTitledDialog __parent__;
 };
 
 
@@ -80,11 +78,11 @@ xfce_shortcuts_editor_dialog_init (XfceShortcutsEditorDialog *dialog)
  *
  * Since: 4.17.2
  **/
-GtkWidget*
+GtkWidget *
 xfce_shortcuts_editor_dialog_new (int argument_count, ...)
 {
   XfceShortcutsEditorDialog *dialog;
-  va_list                    argument_list;
+  va_list argument_list;
 
   va_start (argument_list, argument_count);
 
@@ -114,13 +112,13 @@ xfce_shortcuts_editor_dialog_new (int argument_count, ...)
  *
  * Since: 4.17.5
  **/
-GtkWidget*
+GtkWidget *
 xfce_shortcuts_editor_dialog_new_with_parent (GtkWindow *parent,
-                                              int        argument_count,
-                                              ...        )
+                                              int argument_count,
+                                              ...)
 {
   XfceShortcutsEditorDialog *dialog;
-  va_list                    argument_list;
+  va_list argument_list;
 
   va_start (argument_list, argument_count);
 

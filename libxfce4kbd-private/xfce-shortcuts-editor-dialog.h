@@ -22,28 +22,30 @@
 #define __XFCE_SHORTCUTS_EDITOR_DIALOG_H__
 
 #include <gtk/gtk.h>
-#include <libxfce4ui/libxfce4ui.h>
 
 G_BEGIN_DECLS
 
 typedef struct _XfceShortcutsEditorDialogClass XfceShortcutsEditorDialogClass;
-typedef struct _XfceShortcutsEditorDialog      XfceShortcutsEditorDialog;
+typedef struct _XfceShortcutsEditorDialog XfceShortcutsEditorDialog;
 
-#define XFCE_TYPE_SHORTCUTS_EDITOR_DIALOG            (xfce_shortcuts_editor_dialog_get_type ())
-#define XFCE_SHORTCUTS_EDITOR_DIALOG(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), XFCE_TYPE_SHORTCUTS_EDITOR_DIALOG, XfceShortcutsEditorDialog))
-#define XFCE_SHORTCUTS_EDITOR_DIALOG_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), XFCE_TYPE_SHORTCUTS_EDITOR_DIALOG, XfceShortcutsEditorDialogClass))
-#define XFCE_IS_SHORTCUTS_EDITOR_DIALOG(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), XFCE_TYPE_SHORTCUTS_EDITOR_DIALOG))
+#define XFCE_TYPE_SHORTCUTS_EDITOR_DIALOG (xfce_shortcuts_editor_dialog_get_type ())
+#define XFCE_SHORTCUTS_EDITOR_DIALOG(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), XFCE_TYPE_SHORTCUTS_EDITOR_DIALOG, XfceShortcutsEditorDialog))
+#define XFCE_SHORTCUTS_EDITOR_DIALOG_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), XFCE_TYPE_SHORTCUTS_EDITOR_DIALOG, XfceShortcutsEditorDialogClass))
+#define XFCE_IS_SHORTCUTS_EDITOR_DIALOG(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), XFCE_TYPE_SHORTCUTS_EDITOR_DIALOG))
 #define XFCE_IS_SHORTCUTS_EDITOR_DIALOG_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), XFCE_TYPE_SHORTCUTS_EDITOR_DIALOG))
-#define XFCE_SHORTCUTS_EDITOR_DIALOG_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), XFCE_TYPE_SHORTCUTS_EDITOR_DIALOG, XfceShortcutsEditorDialogClass))
+#define XFCE_SHORTCUTS_EDITOR_DIALOG_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), XFCE_TYPE_SHORTCUTS_EDITOR_DIALOG, XfceShortcutsEditorDialogClass))
 
-GType        xfce_shortcuts_editor_dialog_get_type        (void) G_GNUC_CONST;
+GType
+xfce_shortcuts_editor_dialog_get_type (void) G_GNUC_CONST;
 
-GtkWidget   *xfce_shortcuts_editor_dialog_new             (int argument_count,
-                                                           ...) G_GNUC_MALLOC;
+GtkWidget *
+xfce_shortcuts_editor_dialog_new (int argument_count,
+                                  ...) G_GNUC_MALLOC;
 
-GtkWidget   *xfce_shortcuts_editor_dialog_new_with_parent (GtkWindow *parent,
-                                                           int        argument_count,
-                                                           ...        ) G_GNUC_MALLOC;
+GtkWidget *
+xfce_shortcuts_editor_dialog_new_with_parent (GtkWindow *parent,
+                                              int argument_count,
+                                              ...) G_GNUC_MALLOC;
 
 G_END_DECLS
 

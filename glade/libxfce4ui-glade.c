@@ -18,7 +18,7 @@
  */
 
 #ifdef HAVE_CONFIG_H
-#include <config.h>
+#include "config.h"
 #endif
 
 #ifdef HAVE_STRING_H
@@ -30,29 +30,33 @@
 typedef struct gpointer GtkCombo;
 #endif
 
-#include <gtk/gtk.h>
 #include <gladeui/glade.h>
-#include <libxfce4ui/libxfce4ui.h>
+#include <gtk/gtk.h>
 
-
-
-void       glade_xfce_titled_dialog_post_create        (GladeWidgetAdaptor *adaptor,
-                                                        GObject            *object,
-                                                        GladeCreateReason   reason);
-GtkWidget *glade_xfce_titled_dialog_get_internal_child (GladeWidgetAdaptor *adaptor,
-                                                        GtkDialog          *dialog,
-                                                        const gchar        *name);
-GList     *glade_xfce_titled_dialog_get_children       (GladeWidgetAdaptor *adaptor,
-                                                        GtkDialog          *dialog);
+#include "libxfce4ui/libxfce4ui.h"
 
 
 
 void
 glade_xfce_titled_dialog_post_create (GladeWidgetAdaptor *adaptor,
-                                      GObject            *object,
-                                      GladeCreateReason   reason)
+                                      GObject *object,
+                                      GladeCreateReason reason);
+GtkWidget *
+glade_xfce_titled_dialog_get_internal_child (GladeWidgetAdaptor *adaptor,
+                                             GtkDialog *dialog,
+                                             const gchar *name);
+GList *
+glade_xfce_titled_dialog_get_children (GladeWidgetAdaptor *adaptor,
+                                       GtkDialog *dialog);
+
+
+
+void
+glade_xfce_titled_dialog_post_create (GladeWidgetAdaptor *adaptor,
+                                      GObject *object,
+                                      GladeCreateReason reason)
 {
-  GtkDialog   *dialog = GTK_DIALOG (object);
+  GtkDialog *dialog = GTK_DIALOG (object);
   GladeWidget *widget, *vbox, *action_area;
 
   g_return_if_fail (XFCE_IS_TITLED_DIALOG (dialog));
@@ -65,17 +69,17 @@ glade_xfce_titled_dialog_post_create (GladeWidgetAdaptor *adaptor,
     {
       /* create the dialog vbox */
       vbox = glade_widget_adaptor_create_internal (widget,
-          G_OBJECT (gtk_dialog_get_content_area (dialog)),
-          "vbox", "dialog", FALSE, reason);
+                                                   G_OBJECT (gtk_dialog_get_content_area (dialog)),
+                                                   "vbox", "dialog", FALSE, reason);
       glade_widget_remove_property (vbox, "border-width");
 
       /* create the action area */
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+      G_GNUC_BEGIN_IGNORE_DEPRECATIONS
       /* TODO: Move exo_gtk_dialog_get_action_area to libxfce4ui */
       action_area = glade_widget_adaptor_create_internal (vbox,
-          G_OBJECT (gtk_dialog_get_action_area (dialog)),
-          "action_area", "dialog", FALSE, reason);
-G_GNUC_END_IGNORE_DEPRECATIONS
+                                                          G_OBJECT (gtk_dialog_get_action_area (dialog)),
+                                                          "action_area", "dialog", FALSE, reason);
+      G_GNUC_END_IGNORE_DEPRECATIONS
       glade_widget_remove_property (action_area, "border-width");
       glade_widget_remove_property (action_area, "spacing");
 
@@ -95,8 +99,8 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 
 GtkWidget *
 glade_xfce_titled_dialog_get_internal_child (GladeWidgetAdaptor *adaptor,
-                                             GtkDialog          *dialog,
-                                             const gchar        *name)
+                                             GtkDialog *dialog,
+                                             const gchar *name)
 {
   GtkWidget *child = NULL;
 
@@ -106,10 +110,10 @@ glade_xfce_titled_dialog_get_internal_child (GladeWidgetAdaptor *adaptor,
     child = gtk_dialog_get_content_area (dialog);
   else if (strcmp ("action_area", name) == 0)
     {
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+      G_GNUC_BEGIN_IGNORE_DEPRECATIONS
       /* TODO: Move exo_gtk_dialog_get_action_area to libxfce4ui */
       child = gtk_dialog_get_action_area (dialog);
-G_GNUC_END_IGNORE_DEPRECATIONS
+      G_GNUC_END_IGNORE_DEPRECATIONS
     }
 
   return child;
@@ -119,7 +123,7 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 
 GList *
 glade_xfce_titled_dialog_get_children (GladeWidgetAdaptor *adaptor,
-                                       GtkDialog          *dialog)
+                                       GtkDialog *dialog)
 {
   g_return_val_if_fail (XFCE_IS_TITLED_DIALOG (dialog), NULL);
 

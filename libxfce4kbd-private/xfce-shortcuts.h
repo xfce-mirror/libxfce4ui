@@ -25,13 +25,14 @@
 
 G_BEGIN_DECLS
 
-gboolean xfce_shortcut_conflict_dialog (GtkWindow   *parent,
-                                        const gchar *owner,
-                                        const gchar *other,
-                                        const gchar *shortcut,
-                                        const gchar *owner_action,
-                                        const gchar *other_action,
-                                        gboolean     ignore_same_provider);
+gboolean
+xfce_shortcut_conflict_dialog (GtkWindow *parent,
+                               const gchar *owner,
+                               const gchar *other,
+                               const gchar *shortcut,
+                               const gchar *owner_action,
+                               const gchar *other_action,
+                               gboolean ignore_same_provider);
 
 G_END_DECLS
 

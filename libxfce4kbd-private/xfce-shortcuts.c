@@ -19,14 +19,14 @@
  */
 
 #ifdef HAVE_CONFIG_H
-#include <config.h>
+#include "config.h"
 #endif
 
-#include <libxfce4util/libxfce4util.h>
 #include <libxfce4ui/libxfce4ui.h>
+#include <libxfce4util/libxfce4util.h>
 
-#include <libxfce4kbd-private/xfce-shortcuts.h>
-#include <libxfce4kbd-private/xfce-shortcuts-xfwm4.h>
+#include "xfce-shortcuts-xfwm4.h"
+#include "xfce-shortcuts.h"
 
 
 
@@ -43,43 +43,43 @@ typedef struct
 
 static XfceShortcutConflictMessage conflict_messages[] = {
   { "xfwm4", "xfwm4",
-    N_("This shortcut is already being used for the action '%s'. Which action do you want to use?"),
-    N_("Use '%s'"), N_("Keep '%s'") },
+    N_ ("This shortcut is already being used for the action '%s'. Which action do you want to use?"),
+    N_ ("Use '%s'"), N_ ("Keep '%s'") },
   { "xfwm4", "commands",
-    N_("This shortcut is already being used for the command '%s'. Which action do you want to use?"),
-    N_("Use '%s'"), N_("Keep '%s'") },
-  { "commands","commands",
-    N_("This shortcut is already being used for the command '%s'. Which action do you want to use?"),
-    N_("Use '%s'"), N_("Keep '%s'") },
+    N_ ("This shortcut is already being used for the command '%s'. Which action do you want to use?"),
+    N_ ("Use '%s'"), N_ ("Keep '%s'") },
+  { "commands", "commands",
+    N_ ("This shortcut is already being used for the command '%s'. Which action do you want to use?"),
+    N_ ("Use '%s'"), N_ ("Keep '%s'") },
   { "commands", "xfwm4",
-    N_("This shortcut is already being used by the action '%s'. Which action do you want to use?"),
-    N_("Use '%s'"), N_("Keep '%s'") },
+    N_ ("This shortcut is already being used by the action '%s'. Which action do you want to use?"),
+    N_ ("Use '%s'"), N_ ("Keep '%s'") },
   { 0, 0, NULL, NULL, NULL },
 };
 
 
 
 gint
-xfce_shortcut_conflict_dialog (GtkWindow   *parent,
+xfce_shortcut_conflict_dialog (GtkWindow *parent,
                                const gchar *owner,
                                const gchar *other,
                                const gchar *shortcut,
                                const gchar *owner_action,
                                const gchar *other_action,
-                               gboolean     ignore_same_provider)
+                               gboolean ignore_same_provider)
 {
-  GdkModifierType  modifiers;
-  gboolean         handled;
-  gchar           *other_action_name;
-  gchar           *other_button_text;
-  gchar           *owner_action_name;
-  gchar           *owner_button_text;
-  gchar           *secondary_text;
-  gchar           *shortcut_label;
-  gchar           *title;
-  guint            keyval;
-  gint             response;
-  gint             i;
+  GdkModifierType modifiers;
+  gboolean handled;
+  gchar *other_action_name;
+  gchar *other_button_text;
+  gchar *owner_action_name;
+  gchar *owner_button_text;
+  gchar *secondary_text;
+  gchar *shortcut_label;
+  gchar *title;
+  guint keyval;
+  gint response;
+  gint i;
 
   /* Default values */
   response = GTK_RESPONSE_ACCEPT;
@@ -103,8 +103,8 @@ xfce_shortcut_conflict_dialog (GtkWindow   *parent,
       /* This shortcut already exists in the provider, we don't want it twice */
 
       /* Warn the user */
-      xfce_dialog_show_warning (parent, _("Please use another key combination."),
-                                _("%s already triggers this action."), shortcut_label);
+      xfce_dialog_show_warning (
+        parent, _("Please use another key combination."), _("%s already triggers this action."), shortcut_label);
 
       return GTK_RESPONSE_REJECT;
     }
@@ -112,8 +112,8 @@ xfce_shortcut_conflict_dialog (GtkWindow   *parent,
   title = g_strdup_printf (_("Conflicting actions for %s"), shortcut_label);
 
   for (i = 0; conflict_messages[i].message != NULL; ++i)
-    if (g_utf8_collate (conflict_messages[i].owner_name, owner) == 0 &&
-        g_utf8_collate (conflict_messages[i].other_name, other) == 0)
+    if (g_utf8_collate (conflict_messages[i].owner_name, owner) == 0
+        && g_utf8_collate (conflict_messages[i].other_name, other) == 0)
       {
         if (owner_action == NULL)
           owner_action_name = NULL;
@@ -124,10 +124,9 @@ xfce_shortcut_conflict_dialog (GtkWindow   *parent,
             /* We need to get the human readable string of the action name */
             owner_action_name =
               g_strdup (xfce_shortcuts_xfwm4_get_feature_name (owner_action));
-
           }
         else
-          owner_action_name = g_strdup(owner_action);
+          owner_action_name = g_strdup (owner_action);
 
         DBG ("Owner action name: %s", owner_action_name);
 
@@ -139,7 +138,6 @@ xfce_shortcut_conflict_dialog (GtkWindow   *parent,
 
             other_action_name =
               g_strdup (xfce_shortcuts_xfwm4_get_feature_name (other_action));
-
           }
         else
           other_action_name = g_strdup (other_action);

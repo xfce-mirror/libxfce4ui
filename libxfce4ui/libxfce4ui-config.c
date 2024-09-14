@@ -28,11 +28,11 @@
  **/
 
 #ifdef HAVE_CONFIG_H
-#include <config.h>
+#include "config.h"
 #endif
 
-#include <libxfce4ui/libxfce4ui-config.h>
-#include <libxfce4ui/libxfce4ui-alias.h>
+#include "libxfce4ui-config.h"
+#include "libxfce4ui-alias.h"
 
 
 /**
@@ -111,4 +111,4 @@ libxfce4ui_check_version (guint required_major,
 
 
 #define __LIBXFCE4UI_CONFIG_C__
-#include <libxfce4ui/libxfce4ui-aliasdef.c>
+#include "libxfce4ui-aliasdef.c"

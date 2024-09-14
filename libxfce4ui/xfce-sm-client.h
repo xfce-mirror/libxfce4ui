@@ -26,15 +26,14 @@
 #endif
 
 #include <glib-object.h>
+#include <libxfce4ui/libxfce4ui-enums.h>
 
-#include "libxfce4ui-enums.h"
-
-#define XFCE_TYPE_SM_CLIENT             (xfce_sm_client_get_type())
-#define XFCE_SM_CLIENT(obj)             (G_TYPE_CHECK_INSTANCE_CAST((obj), XFCE_TYPE_SM_CLIENT, XfceSMClient))
-#define XFCE_IS_SM_CLIENT(obj)          (G_TYPE_CHECK_INSTANCE_TYPE((obj), XFCE_TYPE_SM_CLIENT))
-#define XFCE_SM_CLIENT_CLASS(klass)     (G_TYPE_CHECK_CLASS_CAST((klass), XFCE_TYPE_SM_CLIENT, XfceSMClientClass))
-#define XFCE_IS_SM_CLIENT_CLASS(klass)  (G_TYPE_CHECK_CLASS_TYPE((klass), XFCE_TYPE_SM_CLIENT))
-#define XFCE_SM_CLIENT_GET_CLASS(obj)   (G_TYPE_INSTANCE_GET_CLASS((obj), XFCE_TYPE_SM_CLIENT, XfceSMClientClass))
+#define XFCE_TYPE_SM_CLIENT (xfce_sm_client_get_type ())
+#define XFCE_SM_CLIENT(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), XFCE_TYPE_SM_CLIENT, XfceSMClient))
+#define XFCE_IS_SM_CLIENT(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), XFCE_TYPE_SM_CLIENT))
+#define XFCE_SM_CLIENT_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), XFCE_TYPE_SM_CLIENT, XfceSMClientClass))
+#define XFCE_IS_SM_CLIENT_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), XFCE_TYPE_SM_CLIENT))
+#define XFCE_SM_CLIENT_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), XFCE_TYPE_SM_CLIENT, XfceSMClientClass))
 
 /**
  * XFCE_SM_CLIENT_ERROR:
@@ -42,67 +41,88 @@
  * Error domain for XfceSmCLient. Errors in this domain will be from the #XfceSmCLientErrorEnum enumeration.
  * See #GError for more information on error domains.
  **/
-#define XFCE_SM_CLIENT_ERROR xfce_sm_client_error_quark()
+#define XFCE_SM_CLIENT_ERROR xfce_sm_client_error_quark ()
 
 G_BEGIN_DECLS
 
-typedef struct _XfceSMClient  XfceSMClient;
+typedef struct _XfceSMClient XfceSMClient;
 
-GType xfce_sm_client_get_type(void) G_GNUC_CONST;
+GType
+xfce_sm_client_get_type (void) G_GNUC_CONST;
 
-GQuark xfce_sm_client_error_quark (void);
+GQuark
+xfce_sm_client_error_quark (void);
 
-GOptionGroup *xfce_sm_client_get_option_group(gint argc,
-                                              gchar **argv);
+GOptionGroup *
+xfce_sm_client_get_option_group (gint argc,
+                                 gchar **argv);
 
-XfceSMClient *xfce_sm_client_get(void);
+XfceSMClient *
+xfce_sm_client_get (void);
 
-XfceSMClient *xfce_sm_client_get_with_argv(gint argc,
-                                           gchar **argv,
-                                           XfceSMClientRestartStyle restart_style,
-                                           guchar priority);
+XfceSMClient *
+xfce_sm_client_get_with_argv (gint argc,
+                              gchar **argv,
+                              XfceSMClientRestartStyle restart_style,
+                              guchar priority);
 
-XfceSMClient *xfce_sm_client_get_full(XfceSMClientRestartStyle restart_style,
-                                      guchar priority,
-                                      const gchar *resumed_client_id,
-                                      const gchar *current_directory,
-                                      const gchar **restart_command,
-                                      const gchar *desktop_file);
+XfceSMClient *
+xfce_sm_client_get_full (XfceSMClientRestartStyle restart_style,
+                         guchar priority,
+                         const gchar *resumed_client_id,
+                         const gchar *current_directory,
+                         const gchar **restart_command,
+                         const gchar *desktop_file);
 
-gboolean xfce_sm_client_connect(XfceSMClient *sm_client,
-                                GError **error);
-void xfce_sm_client_disconnect(XfceSMClient *sm_client);
+gboolean
+xfce_sm_client_connect (XfceSMClient *sm_client,
+                        GError **error);
+void
+xfce_sm_client_disconnect (XfceSMClient *sm_client);
 
-void xfce_sm_client_request_shutdown(XfceSMClient *sm_client,
-                                     XfceSMClientShutdownHint shutdown_hint);
+void
+xfce_sm_client_request_shutdown (XfceSMClient *sm_client,
+                                 XfceSMClientShutdownHint shutdown_hint);
 
-gboolean xfce_sm_client_is_connected(XfceSMClient *sm_client);
-gboolean xfce_sm_client_is_resumed(XfceSMClient *sm_client);
+gboolean
+xfce_sm_client_is_connected (XfceSMClient *sm_client);
+gboolean
+xfce_sm_client_is_resumed (XfceSMClient *sm_client);
 
-void xfce_sm_client_set_desktop_file(XfceSMClient *sm_client,
-                                     const gchar *desktop_file);
+void
+xfce_sm_client_set_desktop_file (XfceSMClient *sm_client,
+                                 const gchar *desktop_file);
 
-const gchar *xfce_sm_client_get_client_id(XfceSMClient *sm_client);
+const gchar *
+xfce_sm_client_get_client_id (XfceSMClient *sm_client);
 
-const gchar *xfce_sm_client_get_state_file(XfceSMClient *sm_client);
+const gchar *
+xfce_sm_client_get_state_file (XfceSMClient *sm_client);
 
-void xfce_sm_client_set_restart_style(XfceSMClient *sm_client,
-                                      XfceSMClientRestartStyle restart_style);
-XfceSMClientRestartStyle xfce_sm_client_get_restart_style(XfceSMClient *sm_client);
+void
+xfce_sm_client_set_restart_style (XfceSMClient *sm_client,
+                                  XfceSMClientRestartStyle restart_style);
+XfceSMClientRestartStyle
+xfce_sm_client_get_restart_style (XfceSMClient *sm_client);
 
-void xfce_sm_client_set_priority(XfceSMClient *sm_client,
-                                 guint8 priority);
-guint8 xfce_sm_client_get_priority(XfceSMClient *sm_client);
+void
+xfce_sm_client_set_priority (XfceSMClient *sm_client,
+                             guint8 priority);
+guint8
+xfce_sm_client_get_priority (XfceSMClient *sm_client);
 
-void xfce_sm_client_set_current_directory(XfceSMClient *sm_client,
-                                          const gchar *current_directory);
-const gchar *xfce_sm_client_get_current_directory(XfceSMClient *sm_client);
+void
+xfce_sm_client_set_current_directory (XfceSMClient *sm_client,
+                                      const gchar *current_directory);
+const gchar *
+xfce_sm_client_get_current_directory (XfceSMClient *sm_client);
 
-void xfce_sm_client_set_restart_command(XfceSMClient *sm_client,
-                                        gchar **restart_command);
-const gchar * const *
-xfce_sm_client_get_restart_command(XfceSMClient *sm_client);
+void
+xfce_sm_client_set_restart_command (XfceSMClient *sm_client,
+                                    gchar **restart_command);
+const gchar *const *
+xfce_sm_client_get_restart_command (XfceSMClient *sm_client);
 
 G_END_DECLS
 
-#endif  /* __XFCE_SM_CLIENT_H__ */
+#endif /* __XFCE_SM_CLIENT_H__ */

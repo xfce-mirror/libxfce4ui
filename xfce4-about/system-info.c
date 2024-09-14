@@ -17,17 +17,16 @@
  */
 
 #ifdef HAVE_CONFIG_H
-#include <config.h>
+#include "config.h"
 #endif
 
 #ifdef HAVE_STDLIB_H
 #include <stdlib.h>
 #endif
 
-#include <libxfce4util/libxfce4util.h>
-#include <libxfce4ui/libxfce4ui.h>
-
 #include <gdk/gdkx.h>
+#include <libxfce4ui/libxfce4ui.h>
+#include <libxfce4util/libxfce4util.h>
 #include <sys/utsname.h>
 
 #ifdef HAVE_EPOXY
@@ -46,9 +45,9 @@
 typedef struct
 {
   gboolean is_default;
-  gint memory_size_mib;  /* Unit: mebibyte (MiB), zero if unknown */
-  char *name;            /* NULL if unknown */
-  char *pci_id;          /* "VID:DID", lowercase, VID (DID) is vendor (device) ID, NULL if unknown */
+  gint memory_size_mib; /* Unit: mebibyte (MiB), zero if unknown */
+  char *name; /* NULL if unknown */
+  char *pci_id; /* "VID:DID", lowercase, VID (DID) is vendor (device) ID, NULL if unknown */
 } GPUInfo;
 
 typedef struct
@@ -79,21 +78,21 @@ prettify_info (const char *info)
 {
   g_autofree char *escaped = NULL;
   g_autofree gchar *pretty = NULL;
-  guint   i;
+  guint i;
   static const ReplaceStrings rs[] = {
-    { "Mesa DRI ", ""},
-    { "Intel[(]R[)]", "Intel<sup>\302\256</sup>"},
-    { "Core[(]TM[)]", "Core<sup>\342\204\242</sup>"},
-    { "Atom[(]TM[)]", "Atom<sup>\342\204\242</sup>"},
-    { "Gallium .* on (AMD .*)", "\\1"},
-    { "(AMD .*) [(][^)]*[)]", "\\1"},
-    { "(AMD [A-Z])(.*)", "\\1\\L\\2\\E"},
-    { "AMD", "AMD<sup>\302\256</sup>"},
-    { "GeForce ", "GeForce<sup>\302\256</sup> "},
-    { "GeForce[(]R[)]", "GeForce<sup>\302\256</sup>"},
-    { "Radeon ", "Radeon<sup>\342\204\242</sup> "},
-    { "Radeon[(]TM[)]", "Radeon<sup>\342\204\242</sup>"},
-    { "Graphics Controller", "Graphics"},
+    { "Mesa DRI ", "" },
+    { "Intel[(]R[)]", "Intel<sup>\302\256</sup>" },
+    { "Core[(]TM[)]", "Core<sup>\342\204\242</sup>" },
+    { "Atom[(]TM[)]", "Atom<sup>\342\204\242</sup>" },
+    { "Gallium .* on (AMD .*)", "\\1" },
+    { "(AMD .*) [(][^)]*[)]", "\\1" },
+    { "(AMD [A-Z])(.*)", "\\1\\L\\2\\E" },
+    { "AMD", "AMD<sup>\302\256</sup>" },
+    { "GeForce ", "GeForce<sup>\302\256</sup> " },
+    { "GeForce[(]R[)]", "GeForce<sup>\302\256</sup>" },
+    { "Radeon ", "Radeon<sup>\342\204\242</sup> " },
+    { "Radeon[(]TM[)]", "Radeon<sup>\342\204\242</sup>" },
+    { "Graphics Controller", "Graphics" },
   };
 
   if (*info == '\0')
@@ -104,8 +103,8 @@ prettify_info (const char *info)
 
   for (i = 0; i < G_N_ELEMENTS (rs); i++)
     {
-      g_autoptr(GError) error = NULL;
-      g_autoptr(GRegex) re = NULL;
+      g_autoptr (GError) error = NULL;
+      g_autoptr (GRegex) re = NULL;
       g_autofree gchar *new = NULL;
 
       re = g_regex_new (rs[i].regex, 0, 0, &error);
@@ -142,8 +141,8 @@ static char *
 remove_duplicate_whitespace (const char *old)
 {
   g_autofree gchar *new = NULL;
-  g_autoptr(GRegex) re = NULL;
-  g_autoptr(GError) error = NULL;
+  g_autoptr (GRegex) re = NULL;
+  g_autoptr (GError) error = NULL;
 
   if (old == NULL)
     return NULL;
@@ -186,21 +185,21 @@ info_cleanup (const char *input)
 char *
 get_cpu_info (const glibtop_sysinfo *info)
 {
-  g_autoptr(GHashTable) counts = NULL;
-  g_autoptr(GString) cpu = NULL;
+  g_autoptr (GHashTable) counts = NULL;
+  g_autoptr (GString) cpu = NULL;
   GHashTableIter iter;
-  gpointer       key, value;
-  guint          i;
-  int            j;
+  gpointer key, value;
+  guint i;
+  int j;
 
   counts = g_hash_table_new (g_str_hash, g_str_equal);
 
   /* count duplicates */
   for (i = 0; i != info->ncpu; ++i)
     {
-      const char * const keys[] = { "model name", "cpu", "Model Name", "Processor" };
+      const char *const keys[] = { "model name", "cpu", "Model Name", "Processor" };
       char *model;
-      int  *count;
+      int *count;
 
       model = NULL;
 
@@ -211,7 +210,7 @@ get_cpu_info (const glibtop_sysinfo *info)
         }
 
       if (model == NULL)
-          continue;
+        continue;
 
       count = g_hash_table_lookup (counts, model);
       if (count == NULL)
@@ -240,7 +239,6 @@ get_cpu_info (const glibtop_sysinfo *info)
 
 
 
-
 static void
 free_gpu_info (gpointer p)
 {
@@ -250,7 +248,7 @@ free_gpu_info (gpointer p)
   g_free (i);
 }
 
-static GList*
+static GList *
 append_gpu_info (GList *gpus, GPUInfo *gpu)
 {
   gboolean merged = FALSE;
@@ -305,7 +303,7 @@ append_gpu_info (GList *gpus, GPUInfo *gpu)
 
 #ifdef HAVE_GUDEV
 
-static GList*
+static GList *
 get_drm_cards (GList *gpus)
 {
   const gchar *const subsystems[] = { "drm", NULL };
@@ -345,10 +343,10 @@ get_drm_cards (GList *gpus)
               if (g_regex_match_simple ("^[^\\[]+\\[[^\\]]{4,}\\]$", gpu->name, 0, 0))
                 {
                   char *s;
-                  gpu->name[strlen (gpu->name) - 1] = '\0';  /* Remove trailing ] */
+                  gpu->name[strlen (gpu->name) - 1] = '\0'; /* Remove trailing ] */
                   if (G_LIKELY ((s = strrchr (gpu->name, '[')) != NULL))
                     {
-                      s = g_strdup (s+1);
+                      s = g_strdup (s + 1);
                       g_free (gpu->name);
                       gpu->name = s;
                     }
@@ -357,12 +355,12 @@ get_drm_cards (GList *gpus)
               property = g_udev_device_get_property (parent, "PCI_ID");
               if (property)
                 {
-                   gpu->pci_id = g_ascii_strdown (property, -1);
-                   g_strstrip (gpu->pci_id);
+                  gpu->pci_id = g_ascii_strdown (property, -1);
+                  g_strstrip (gpu->pci_id);
                 }
 
               gpus = append_gpu_info (gpus, gpu);
-          }
+            }
 
           g_object_unref (parent);
         }
@@ -386,7 +384,7 @@ get_drm_cards (GList *gpus)
  *
  * @num_gpus: where to store the number of detected GPUs, or %NULL.
  */
-char*
+char *
 get_gpu_info (guint *num_gpus)
 {
   GList *gpus = NULL;
@@ -415,7 +413,7 @@ get_gpu_info (guint *num_gpus)
       gdk_gl_context_make_current (gl_context);
       gpu->is_default = TRUE;
 
-      renderer = g_strdup ((const gchar*) glGetString (GL_RENDERER));
+      renderer = g_strdup ((const gchar *) glGetString (GL_RENDERER));
       if (renderer && (cleanedup_renderer = info_cleanup (renderer)) != NULL)
         {
           gsize length;
@@ -441,8 +439,9 @@ get_gpu_info (guint *num_gpus)
               const gchar *bracket = strchr (renderer, '(');
               if (bracket > renderer)
                 {
-                  length = (gsize) (bracket-renderer);
-                  for(; length > 0 && g_ascii_isspace (renderer[length-1]); length--);
+                  length = (gsize) (bracket - renderer);
+                  for (; length > 0 && g_ascii_isspace (renderer[length - 1]); length--)
+                    ;
                 }
             }
 
@@ -458,8 +457,8 @@ get_gpu_info (guint *num_gpus)
               if (glXQueryCurrentRendererIntegerMESA (GLX_RENDERER_VIDEO_MEMORY_MESA, &mem_mib) && mem_mib > 0)
                 gpu->memory_size_mib = mem_mib;
 
-              if (glXQueryCurrentRendererIntegerMESA (GLX_RENDERER_VENDOR_ID_MESA, &vendor) &&
-                  glXQueryCurrentRendererIntegerMESA (GLX_RENDERER_DEVICE_ID_MESA, &device))
+              if (glXQueryCurrentRendererIntegerMESA (GLX_RENDERER_VENDOR_ID_MESA, &vendor)
+                  && glXQueryCurrentRendererIntegerMESA (GLX_RENDERER_DEVICE_ID_MESA, &device))
                 gpu->pci_id = g_strdup_printf ("%04x:%04x", vendor, device);
             }
         }
@@ -486,7 +485,7 @@ get_gpu_info (guint *num_gpus)
       GList *gpu;
       for (gpu = gpus; gpu; gpu = gpu->next)
         {
-          GPUInfo *info = (GPUInfo*) gpu->data;
+          GPUInfo *info = (GPUInfo *) gpu->data;
           char *s;
 
           if (result)
@@ -530,7 +529,7 @@ get_gpu_info (guint *num_gpus)
  *
  * Unquotes the given string if both leading and trailing quotes are present,
  * and if the quotes are of the same type (single or double).
- * The returned string has to be freed with g_free() when no longer needed. 
+ * The returned string has to be freed with g_free() when no longer needed.
  *
  * Return value: A newly-allocated, unquoted string.
  */
@@ -553,7 +552,7 @@ unquote_string (const gchar *string)
 
 
 
-static GHashTable*
+static GHashTable *
 get_os_info (void)
 {
   GHashTable *hashtable;
@@ -563,7 +562,7 @@ get_os_info (void)
 
   if (g_file_get_contents ("/etc/os-release", &buffer, NULL, NULL))
     {
-      g_auto(GStrv) lines = NULL;
+      g_auto (GStrv) lines = NULL;
       gint i;
 
       lines = g_strsplit (buffer, "\n", -1);
@@ -607,17 +606,17 @@ get_os_type (void)
   struct utsname buffer;
 
   if (uname (&buffer) == 0)
-  {
-    const gchar *const *a64;
-    for (a64 = arch_64; *a64; a64++)
     {
-      if (strcmp (buffer.machine, *a64) == 0)
-      {
-        kernel_num_bits = 64;
-        break;
-      }
+      const gchar *const *a64;
+      for (a64 = arch_64; *a64; a64++)
+        {
+          if (strcmp (buffer.machine, *a64) == 0)
+            {
+              kernel_num_bits = 64;
+              break;
+            }
+        }
     }
-  }
 
   if (kernel_num_bits == 64 && userspace_num_bits == 32)
     /* translators: This is the type of architecture for the OS */
@@ -635,22 +634,23 @@ get_system_info (guint infotype)
   gchar *result = NULL;
   struct utsname buffer;
 
-  if (uname (&buffer) != 0) {
-    result = g_strdup (_("Unknown"));
-    return result;
-  }
+  if (uname (&buffer) != 0)
+    {
+      result = g_strdup (_("Unknown"));
+      return result;
+    }
 
   switch (infotype)
     {
-      case OS_NAME:
-        result = g_strdup_printf ("%s %s", buffer.sysname, buffer.release);
-        break;
-      case DEVICE_NAME:
-        result = g_strdup (buffer.nodename);
-        break;
-      case KERNEL:
-        result = g_strdup (buffer.release);
-        break;
+    case OS_NAME:
+      result = g_strdup_printf ("%s %s", buffer.sysname, buffer.release);
+      break;
+    case DEVICE_NAME:
+      result = g_strdup (buffer.nodename);
+      break;
+    case KERNEL:
+      result = g_strdup (buffer.release);
+      break;
     }
 
   return result;
@@ -669,10 +669,11 @@ get_os_name (void)
   os_info = get_os_info ();
 
   /* If we're not on Linux we return the OS info from uname */
-  if (!os_info) {
-    result = get_system_info (OS_NAME);
-    return result;
-  }
+  if (!os_info)
+    {
+      result = get_system_info (OS_NAME);
+      return result;
+    }
 
   name = g_hash_table_lookup (os_info, "NAME");
   version_id = g_hash_table_lookup (os_info, "VERSION_ID");

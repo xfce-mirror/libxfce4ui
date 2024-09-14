@@ -29,16 +29,16 @@
  **/
 
 #ifdef HAVE_CONFIG_H
-#include <config.h>
+#include "config.h"
 #endif
 
 #ifdef HAVE_STRING_H
 #include <string.h>
 #endif
 
-#include <libxfce4ui/xfce-gdk-extensions.h>
-#include <libxfce4ui/libxfce4ui-private.h>
-#include <libxfce4ui/libxfce4ui-alias.h>
+#include "libxfce4ui-private.h"
+#include "xfce-gdk-extensions.h"
+#include "libxfce4ui-alias.h"
 
 
 
@@ -79,10 +79,10 @@ xfce_gdk_monitor_get_number (GdkMonitor *monitor)
 GdkScreen *
 xfce_gdk_screen_get_active (gint *monitor_return)
 {
-  GdkDisplay       *display;
-  GdkMonitor       *monitor;
-  gint              rootx, rooty;
-  GdkScreen        *screen;
+  GdkDisplay *display;
+  GdkMonitor *monitor;
+  gint rootx, rooty;
+  GdkScreen *screen;
 
   GdkSeat *seat;
 
@@ -176,30 +176,31 @@ xfce_gdk_screen_get_geometry (void)
  * Since: 4.18
  **/
 gboolean
-xfce_gdk_device_grab (GdkSeat            *seat,
-                      GdkWindow          *window,
+xfce_gdk_device_grab (GdkSeat *seat,
+                      GdkWindow *window,
                       GdkSeatCapabilities capabilities,
-                      GdkCursor          *cursor)
+                      GdkCursor *cursor)
 {
   GdkGrabStatus status;
   gint attempts = 0;
 
-  while (TRUE) {
-    status = gdk_seat_grab (seat, window, capabilities, FALSE, cursor, NULL,
-                            NULL, NULL);
+  while (TRUE)
+    {
+      status = gdk_seat_grab (seat, window, capabilities, FALSE, cursor, NULL,
+                              NULL, NULL);
 
-    if (status == GDK_GRAB_SUCCESS)
-      return TRUE;
-    if (attempts++ >= 5)
-      return FALSE;
+      if (status == GDK_GRAB_SUCCESS)
+        return TRUE;
+      if (attempts++ >= 5)
+        return FALSE;
 
-    /* Wait 100ms before trying again, useful when invoked by global hotkey
-     * because xfsettings will grab the key for a moment */
-    g_usleep(100000);
-  }
+      /* Wait 100ms before trying again, useful when invoked by global hotkey
+       * because xfsettings will grab the key for a moment */
+      g_usleep (100000);
+    }
 
   return FALSE;
 }
 
 #define __XFCE_GDK_EXTENSIONS_C__
-#include <libxfce4ui/libxfce4ui-aliasdef.c>
+#include "libxfce4ui-aliasdef.c"
