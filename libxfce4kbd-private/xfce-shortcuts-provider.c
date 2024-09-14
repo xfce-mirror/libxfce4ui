@@ -46,39 +46,45 @@ typedef struct _XfceShortcutsProviderContext XfceShortcutsProviderContext;
 
 
 
-static void xfce_shortcuts_provider_constructed      (GObject                    *object);
-static void xfce_shortcuts_provider_finalize         (GObject                    *object);
-static void xfce_shortcuts_provider_get_property     (GObject                    *object,
-                                                      guint                       prop_id,
-                                                      GValue                     *value,
-                                                      GParamSpec                 *pspec);
-static void xfce_shortcuts_provider_set_property     (GObject                    *object,
-                                                      guint                       prop_id,
-                                                      const GValue               *value,
-                                                      GParamSpec                 *pspec);
-static void xfce_shortcuts_provider_register         (XfceShortcutsProvider      *provider);
-static void xfce_shortcuts_provider_property_changed (XfconfChannel              *channel,
-                                                      gchar                      *property,
-                                                      GValue                     *value,
-                                                      XfceShortcutsProvider      *provider);
+static void
+xfce_shortcuts_provider_constructed (GObject *object);
+static void
+xfce_shortcuts_provider_finalize (GObject *object);
+static void
+xfce_shortcuts_provider_get_property (GObject *object,
+                                      guint prop_id,
+                                      GValue *value,
+                                      GParamSpec *pspec);
+static void
+xfce_shortcuts_provider_set_property (GObject *object,
+                                      guint prop_id,
+                                      const GValue *value,
+                                      GParamSpec *pspec);
+static void
+xfce_shortcuts_provider_register (XfceShortcutsProvider *provider);
+static void
+xfce_shortcuts_provider_property_changed (XfconfChannel *channel,
+                                          gchar *property,
+                                          GValue *value,
+                                          XfceShortcutsProvider *provider);
 
 
 
 struct _XfceShortcutsProviderPrivate
 {
-  gboolean       xfconf_initialized;
+  gboolean xfconf_initialized;
   XfconfChannel *channel;
-  gchar         *name;
-  gchar         *default_base_property;
-  gchar         *custom_base_property;
+  gchar *name;
+  gchar *default_base_property;
+  gchar *custom_base_property;
 };
 
 struct _XfceShortcutsProviderContext
 {
   XfceShortcutsProvider *provider;
-  GList                 *list;
-  const gchar           *base_property;
-  GHashTable            *properties;
+  GList *list;
+  const gchar *base_property;
+  GHashTable *properties;
 };
 
 
@@ -105,8 +111,8 @@ xfce_shortcuts_provider_class_init (XfceShortcutsProviderClass *klass)
                                                         "name",
                                                         NULL,
                                                         G_PARAM_READWRITE
-                                                        | G_PARAM_CONSTRUCT_ONLY
-                                                        | G_PARAM_STATIC_STRINGS));
+                                                          | G_PARAM_CONSTRUCT_ONLY
+                                                          | G_PARAM_STATIC_STRINGS));
 
   g_signal_new ("shortcut-removed",
                 XFCE_TYPE_SHORTCUTS_PROVIDER,
@@ -140,7 +146,7 @@ xfce_shortcuts_provider_init (XfceShortcutsProvider *provider)
 
   provider->priv = xfce_shortcuts_provider_get_instance_private (provider);
 
-  if (! xfconf_init (&error))
+  if (!xfconf_init (&error))
     {
       g_critical ("Xfconf initialization failed: %s\n", error->message);
       g_error_free (error);
@@ -195,9 +201,9 @@ xfce_shortcuts_provider_finalize (GObject *object)
 
 
 static void
-xfce_shortcuts_provider_get_property (GObject    *object,
-                                      guint       prop_id,
-                                      GValue     *value,
+xfce_shortcuts_provider_get_property (GObject *object,
+                                      guint prop_id,
+                                      GValue *value,
                                       GParamSpec *pspec)
 {
   XfceShortcutsProvider *provider = XFCE_SHORTCUTS_PROVIDER (object);
@@ -216,10 +222,10 @@ xfce_shortcuts_provider_get_property (GObject    *object,
 
 
 static void
-xfce_shortcuts_provider_set_property (GObject      *object,
-                                      guint         prop_id,
+xfce_shortcuts_provider_set_property (GObject *object,
+                                      guint prop_id,
                                       const GValue *value,
-                                      GParamSpec   *pspec)
+                                      GParamSpec *pspec)
 {
   XfceShortcutsProvider *provider = XFCE_SHORTCUTS_PROVIDER (object);
 
@@ -241,11 +247,11 @@ xfce_shortcuts_provider_set_property (GObject      *object,
 static void
 xfce_shortcuts_provider_register (XfceShortcutsProvider *provider)
 {
-  gchar       **provider_names;
-  gchar       **names;
-  gboolean      already_registered = FALSE;
-  gint          i;
-  const gchar  *name;
+  gchar **provider_names;
+  gchar **names;
+  gboolean already_registered = FALSE;
+  gint i;
+  const gchar *name;
 
   g_return_if_fail (XFCE_IS_SHORTCUTS_PROVIDER (provider));
   g_return_if_fail (XFCONF_IS_CHANNEL (provider->priv->channel));
@@ -272,7 +278,7 @@ xfce_shortcuts_provider_register (XfceShortcutsProvider *provider)
       names[i] = NULL;
 
       xfconf_channel_set_string_list (provider->priv->channel, "/providers",
-                                      (const gchar * const *) names);
+                                      (const gchar *const *) names);
 
       g_free (names);
     }
@@ -283,13 +289,13 @@ xfce_shortcuts_provider_register (XfceShortcutsProvider *provider)
 
 
 static void
-xfce_shortcuts_provider_property_changed (XfconfChannel         *channel,
-                                          gchar                 *property,
-                                          GValue                *value,
+xfce_shortcuts_provider_property_changed (XfconfChannel *channel,
+                                          gchar *property,
+                                          GValue *value,
                                           XfceShortcutsProvider *provider)
 {
   const gchar *shortcut;
-  gchar       *override_property;
+  gchar *override_property;
 
   g_return_if_fail (XFCE_IS_SHORTCUTS_PROVIDER (provider));
 
@@ -331,10 +337,10 @@ xfce_shortcuts_provider_new (const gchar *name)
 GList *
 xfce_shortcuts_provider_get_providers (void)
 {
-  GList         *providers = NULL;
+  GList *providers = NULL;
   XfconfChannel *channel;
-  gchar        **names;
-  gint           i;
+  gchar **names;
+  gint i;
 
   channel = xfconf_channel_get ("xfce4-keyboard-shortcuts");
   names = xfconf_channel_get_string_list (channel, "/providers");
@@ -376,7 +382,7 @@ xfce_shortcuts_provider_get_name (XfceShortcutsProvider *provider)
 gboolean
 xfce_shortcuts_provider_is_custom (XfceShortcutsProvider *provider)
 {
-  gchar   *property;
+  gchar *property;
   gboolean override;
 
   g_return_val_if_fail (XFCE_IS_SHORTCUTS_PROVIDER (provider), FALSE);
@@ -406,12 +412,12 @@ xfce_shortcuts_provider_reset_to_defaults (XfceShortcutsProvider *provider)
 
 
 static gboolean
-_xfce_shortcuts_provider_clone_default (const gchar           *property,
-                                        const GValue          *value,
+_xfce_shortcuts_provider_clone_default (const gchar *property,
+                                        const GValue *value,
                                         XfceShortcutsProvider *provider)
 {
   const gchar *shortcut;
-  gchar       *custom_property;
+  gchar *custom_property;
 
   g_return_val_if_fail (XFCE_IS_SHORTCUTS_PROVIDER (provider), TRUE);
   g_return_val_if_fail (XFCONF_IS_CHANNEL (provider->priv->channel), TRUE);
@@ -436,7 +442,7 @@ void
 xfce_shortcuts_provider_clone_defaults (XfceShortcutsProvider *provider)
 {
   GHashTable *properties;
-  gchar      *property;
+  gchar *property;
 
   g_return_if_fail (XFCE_IS_SHORTCUTS_PROVIDER (provider));
   g_return_if_fail (XFCONF_IS_CHANNEL (provider->priv->channel));
@@ -448,7 +454,7 @@ xfce_shortcuts_provider_clone_defaults (XfceShortcutsProvider *provider)
     {
       /* Copy from /commands/default to /commands/custom property by property */
       g_hash_table_foreach (properties,
-                            (GHFunc) (void (*)(void)) _xfce_shortcuts_provider_clone_default,
+                            (GHFunc) (void (*) (void)) _xfce_shortcuts_provider_clone_default,
                             provider);
 
       g_hash_table_destroy (properties);
@@ -465,15 +471,15 @@ xfce_shortcuts_provider_clone_defaults (XfceShortcutsProvider *provider)
 
 
 static gboolean
-_xfce_shortcuts_provider_get_shortcut (const gchar                  *property,
-                                       const GValue                 *value,
+_xfce_shortcuts_provider_get_shortcut (const gchar *property,
+                                       const GValue *value,
                                        XfceShortcutsProviderContext *context)
 {
   XfceShortcut *sc;
-  const gchar  *shortcut;
-  const gchar  *command;
+  const gchar *shortcut;
+  const gchar *command;
   const GValue *snotify;
-  gchar        *snotify_prop;
+  gchar *snotify_prop;
 
   g_return_val_if_fail (context != NULL, TRUE);
   g_return_val_if_fail (XFCE_IS_SHORTCUTS_PROVIDER (context->provider), TRUE);
@@ -489,9 +495,9 @@ _xfce_shortcuts_provider_get_shortcut (const gchar                  *property,
   command = g_value_get_string (value);
 
   if (G_LIKELY (shortcut != NULL
-      && command != NULL
-      && g_utf8_strlen (shortcut, -1) > 0
-      && g_utf8_strlen (command, -1) > 0))
+                && command != NULL
+                && g_utf8_strlen (shortcut, -1) > 0
+                && g_utf8_strlen (command, -1) > 0))
     {
       sc = g_slice_new0 (XfceShortcut);
 
@@ -519,7 +525,7 @@ GList *
 xfce_shortcuts_provider_get_shortcuts (XfceShortcutsProvider *provider)
 {
   XfceShortcutsProviderContext context;
-  GHashTable                  *properties;
+  GHashTable *properties;
 
   g_return_val_if_fail (XFCE_IS_SHORTCUTS_PROVIDER (provider), NULL);
   g_return_val_if_fail (XFCONF_IS_CHANNEL (provider->priv->channel), NULL);
@@ -532,7 +538,7 @@ xfce_shortcuts_provider_get_shortcuts (XfceShortcutsProvider *provider)
 
   if (G_LIKELY (properties != NULL))
     g_hash_table_foreach (properties,
-                          (GHFunc) (void (*)(void)) _xfce_shortcuts_provider_get_shortcut,
+                          (GHFunc) (void (*) (void)) _xfce_shortcuts_provider_get_shortcut,
                           &context);
 
   return context.list;
@@ -542,14 +548,14 @@ xfce_shortcuts_provider_get_shortcuts (XfceShortcutsProvider *provider)
 
 XfceShortcut *
 xfce_shortcuts_provider_get_shortcut (XfceShortcutsProvider *provider,
-                                      const gchar           *shortcut)
+                                      const gchar *shortcut)
 {
   XfceShortcut *sc = NULL;
-  gchar        *base_property;
-  gchar        *property;
-  gchar        *command;
-  gchar        *property2;
-  gboolean      snotify;
+  gchar *base_property;
+  gchar *property;
+  gchar *command;
+  gchar *property2;
+  gboolean snotify;
 
   g_return_val_if_fail (XFCE_IS_SHORTCUTS_PROVIDER (provider), NULL);
   g_return_val_if_fail (XFCONF_IS_CHANNEL (provider->priv->channel), NULL);
@@ -584,11 +590,11 @@ xfce_shortcuts_provider_get_shortcut (XfceShortcutsProvider *provider,
 
 gboolean
 xfce_shortcuts_provider_has_shortcut (XfceShortcutsProvider *provider,
-                                      const gchar           *shortcut)
+                                      const gchar *shortcut)
 {
   gboolean has_property;
-  gchar   *base_property;
-  gchar   *property;
+  gchar *base_property;
+  gchar *property;
 
   g_return_val_if_fail (XFCE_IS_SHORTCUTS_PROVIDER (provider), FALSE);
   g_return_val_if_fail (XFCONF_IS_CHANNEL (provider->priv->channel), FALSE);
@@ -608,7 +614,7 @@ xfce_shortcuts_provider_has_shortcut (XfceShortcutsProvider *provider,
        * GTK+ used <Control> and this might be stored in Xfconf. We need
        * to check for this too. */
 
-      gchar       *with_control_shortcut;
+      gchar *with_control_shortcut;
 
       with_control_shortcut = xfce_str_replace (shortcut, "Primary", "Control");
 
@@ -629,9 +635,9 @@ xfce_shortcuts_provider_has_shortcut (XfceShortcutsProvider *provider,
 
 void
 xfce_shortcuts_provider_set_shortcut (XfceShortcutsProvider *provider,
-                                      const gchar           *shortcut,
-                                      const gchar           *command,
-                                      gboolean               snotify)
+                                      const gchar *shortcut,
+                                      const gchar *command,
+                                      gboolean snotify)
 {
   gchar *property;
   gchar *property2;
@@ -659,14 +665,13 @@ xfce_shortcuts_provider_set_shortcut (XfceShortcutsProvider *provider,
   xfconf_channel_set_string (provider->priv->channel, property, command);
 
   g_free (property);
-
 }
 
 
 
 void
 xfce_shortcuts_provider_reset_shortcut (XfceShortcutsProvider *provider,
-                                        const gchar           *shortcut)
+                                        const gchar *shortcut)
 {
   gchar *property;
 
@@ -687,7 +692,7 @@ xfce_shortcuts_provider_reset_shortcut (XfceShortcutsProvider *provider,
 void
 xfce_shortcuts_free (GList *shortcuts)
 {
-  g_list_foreach (shortcuts, (GFunc) (void (*)(void)) xfce_shortcut_free, NULL);
+  g_list_foreach (shortcuts, (GFunc) (void (*) (void)) xfce_shortcut_free, NULL);
   g_list_free (shortcuts);
 }
 

@@ -77,8 +77,8 @@ static void
 remove_auto_online (GtkButton *button,
                     gpointer unused)
 {
-  XfceRc   *rc;
-  gboolean  response;
+  XfceRc *rc;
+  gboolean response;
 
   response = xfce_dialog_confirm (NULL, "system-run", "Execute",
                                   "Removing this will enable the show help "
@@ -100,14 +100,14 @@ static void
 show_xfce_dialog_show_info (GtkButton *button,
                             gpointer unused)
 {
-  xfce_dialog_show_info(NULL, NULL, "%s", "xfburn_transcoder_get_description (priv->trans)");
+  xfce_dialog_show_info (NULL, NULL, "%s", "xfburn_transcoder_get_description (priv->trans)");
 }
 
 static void
 show_xfce_dialog_show_warning (GtkButton *button,
                                gpointer unused)
 {
-  xfce_dialog_show_warning(NULL, NULL, _("A file named \"%s\" already exists in this directory, the file hasn't been added."), "name");
+  xfce_dialog_show_warning (NULL, NULL, _("A file named \"%s\" already exists in this directory, the file hasn't been added."), "name");
 }
 
 static void
@@ -147,8 +147,8 @@ show_xfce_dialog_confirm_close_tabs (GtkButton *button,
 
 static void
 close_window (GtkDialog *dialog,
-              gint       response_id,
-              gpointer   user_data)
+              gint response_id,
+              gpointer user_data)
 {
   gtk_widget_destroy (GTK_WIDGET (dialog));
 }
@@ -159,13 +159,13 @@ show_xfce_titled_dialog_new_with_buttons (GtkButton *button,
 {
   GtkWidget *dialog_gtk3;
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+  G_GNUC_BEGIN_IGNORE_DEPRECATIONS
   dialog_gtk3 = xfce_titled_dialog_new_with_buttons ("Settings Editor (Gtk3)", NULL,
-                                                GTK_DIALOG_DESTROY_WITH_PARENT,
-                                                "help-browser", GTK_RESPONSE_HELP,
-                                                "window-close-symbolic", GTK_RESPONSE_OK,
-                                                NULL);
-G_GNUC_END_IGNORE_DEPRECATIONS
+                                                     GTK_DIALOG_DESTROY_WITH_PARENT,
+                                                     "help-browser", GTK_RESPONSE_HELP,
+                                                     "window-close-symbolic", GTK_RESPONSE_OK,
+                                                     NULL);
+  G_GNUC_END_IGNORE_DEPRECATIONS
 
   xfce_titled_dialog_set_subtitle (XFCE_TITLED_DIALOG (dialog_gtk3),
                                    _("Customize settings stored by Xfconf"));
@@ -201,14 +201,13 @@ show_xfce_titled_dialog_new_with_mixed_buttons (GtkButton *button,
   g_signal_connect (dialog_gtk3, "response", G_CALLBACK (close_window), NULL);
 
   gtk_widget_show_all (dialog_gtk3);
-
 }
 
 static void
 show_xfce_gdk_screen_get_active (GtkButton *button,
                                  gpointer unused)
 {
-  gint       monitor_num;
+  gint monitor_num;
   GdkScreen *screen;
 
   screen = xfce_gdk_screen_get_active (&monitor_num);
@@ -219,15 +218,15 @@ show_xfce_gdk_screen_get_active (GtkButton *button,
 
 static void
 show_xfce_filename_input_dialog (GtkButton *button,
-                                 gpointer   unused)
+                                 gpointer unused)
 {
-  GtkWidget         *dialog;
+  GtkWidget *dialog;
   XfceFilenameInput *filename_input;
 
   dialog = gtk_dialog_new_with_buttons ("Enter file name",
                                         NULL,
                                         GTK_DIALOG_MODAL
-                                        | GTK_DIALOG_DESTROY_WITH_PARENT,
+                                          | GTK_DIALOG_DESTROY_WITH_PARENT,
                                         "Cancel", GTK_RESPONSE_CANCEL,
                                         "Submit", GTK_RESPONSE_OK,
                                         NULL);
@@ -369,10 +368,10 @@ create_main_window (void)
 
 
 gint
-main (gint    argc,
+main (gint argc,
       gchar **argv)
 {
-  gint    exit_code = EXIT_SUCCESS;
+  gint exit_code = EXIT_SUCCESS;
 
   /* Initialize GTK+ */
   gtk_init (&argc, &argv);

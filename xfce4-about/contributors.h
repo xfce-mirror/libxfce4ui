@@ -23,18 +23,15 @@ typedef struct
 {
   const gchar *name;
   const gchar *email;
-}
-ContributorInfo;
+} ContributorInfo;
 
 typedef struct
 {
-  const gchar           *name;
+  const gchar *name;
   const ContributorInfo *contributors;
-}
-ContributorGroup;
+} ContributorGroup;
 
-static const ContributorInfo xfce_contributors_core[] =
-{
+static const ContributorInfo xfce_contributors_core[] = {
   { "Alexander Schwinn", "alexxcons@xfce.org" },
   { "Andre Miranda", "andreldm@xfce.org" },
   { "Brian J. Tarricone", "kelnos@xfce.org" },
@@ -44,11 +41,10 @@ static const ContributorInfo xfce_contributors_core[] =
   { "Sergios Anestis Kefalidis", "skefalidis@xfce.org" },
   { "Simon Steinbeiß", "simon@xfce.org" },
   { "Theo Linkspfeifer", "lastonestanding@tutanota.com" },
-  { NULL, NULL}
+  { NULL, NULL }
 };
 
-static const ContributorInfo xfce_contributors_active[] =
-{
+static const ContributorInfo xfce_contributors_active[] = {
   { "Akbarkhon Variskhanov", "akbarkhon.variskhanov@gmail.com" },
   { "Ali Abdallah", "ali@xfce.org" },
   { "Alistair Buxton", "a.j.buxton@gmail.com" },
@@ -64,27 +60,23 @@ static const ContributorInfo xfce_contributors_active[] =
   { NULL, NULL }
 };
 
-static const ContributorInfo xfce_contributors_server[] =
-{
+static const ContributorInfo xfce_contributors_server[] = {
   { "Romain Bouvier", "skunnyk@alteroot.org" },
   { "Mike Massonnet", "mmassonnet@gmail.com" },
   { NULL, NULL }
 };
 
-static const ContributorInfo xfce_contributors_translators_supervision[] =
-{
+static const ContributorInfo xfce_contributors_translators_supervision[] = {
   { "Vinzenz Vietzke", "vinz@vinzv.de" },
   { NULL, NULL }
 };
 
-static const ContributorInfo xfce_contributors_documentation_supervision[] =
-{
+static const ContributorInfo xfce_contributors_documentation_supervision[] = {
   { "Kevin Bowen", "kevin.bowen@gmail.com" },
   { NULL, NULL }
 };
 
-static const ContributorInfo xfce_contributors_previous[] =
-{
+static const ContributorInfo xfce_contributors_previous[] = {
   { "Andrzej Radecki", "ndrwrdck@gmail.com" },
   { "Auke Kok", "sofar@foo-projects.org" },
   { "Benedikt Meurer", "benny@xfce.org" },
@@ -136,30 +128,22 @@ static const ContributorInfo xfce_contributors_previous[] =
   { NULL, NULL }
 };
 
-static const ContributorGroup xfce_contributors[] =
-{
+static const ContributorGroup xfce_contributors[] = {
   /*{ N_("Project Lead"),
     xfce_contributors_lead
   },*/
-  { N_("Core developers"),
-    xfce_contributors_core
-  },
-  { N_("Active contributors"),
-    xfce_contributors_active
-  },
-  { N_("Servers maintained by"),
-    xfce_contributors_server
-  },
-  { N_("Translations supervision"),
-    xfce_contributors_translators_supervision
-  },
-  { N_("Documentation supervision"),
-    xfce_contributors_documentation_supervision
-  },
-  { N_("Translators"),
-    NULL
-  },
-  { N_("Previous contributors"),
-    xfce_contributors_previous
-  }
+  { N_ ("Core developers"),
+    xfce_contributors_core },
+  { N_ ("Active contributors"),
+    xfce_contributors_active },
+  { N_ ("Servers maintained by"),
+    xfce_contributors_server },
+  { N_ ("Translations supervision"),
+    xfce_contributors_translators_supervision },
+  { N_ ("Documentation supervision"),
+    xfce_contributors_documentation_supervision },
+  { N_ ("Translators"),
+    NULL },
+  { N_ ("Previous contributors"),
+    xfce_contributors_previous }
 };

@@ -41,16 +41,20 @@
 
 #define NO_REPLY_TIMEOUT 2000
 
-static void      xfce_screensaver_get_property    (GObject         *object,
-                                                   guint            property_id,
-                                                   GValue          *value,
-                                                   GParamSpec      *pspec);
-static void      xfce_screensaver_set_property    (GObject         *object,
-                                                   guint            property_id,
-                                                   const GValue    *value,
-                                                   GParamSpec      *pspec);
-static void      xfce_screensaver_constructed     (GObject         *object);
-static void      xfce_screensaver_finalize        (GObject         *object);
+static void
+xfce_screensaver_get_property (GObject *object,
+                               guint property_id,
+                               GValue *value,
+                               GParamSpec *pspec);
+static void
+xfce_screensaver_set_property (GObject *object,
+                               guint property_id,
+                               const GValue *value,
+                               GParamSpec *pspec);
+static void
+xfce_screensaver_constructed (GObject *object);
+static void
+xfce_screensaver_finalize (GObject *object);
 
 
 
@@ -95,8 +99,7 @@ typedef struct
   gboolean running;
 } DbusScreensaver;
 
-static DbusScreensaver dbus_screensavers[] =
-{
+static DbusScreensaver dbus_screensavers[] = {
   { "org.xfce.ScreenSaver", "/org/xfce/ScreenSaver", "org.xfce.ScreenSaver", FALSE },
   { "org.cinnamon.ScreenSaver", "/org/cinnamon/ScreenSaver", "org.cinnamon.ScreenSaver", FALSE },
   { "org.mate.ScreenSaver", "/org/mate/ScreenSaver", "org.mate.ScreenSaver", FALSE },
@@ -504,18 +507,18 @@ xfce_screensaver_inhibit (XfceScreensaver *saver,
             }
         }
       else
-      {
-        GVariant *response = g_dbus_proxy_call_sync (saver->proxies[saver->screensaver_type],
-                                                     "UnInhibit",
-                                                     g_variant_new ("(u)",
-                                                                    saver->cookie),
-                                                     G_DBUS_CALL_FLAGS_NONE,
-                                                     -1,
-                                                     NULL, NULL);
-        saver->cookie = 0;
-        if (response != NULL)
-          g_variant_unref (response);
-      }
+        {
+          GVariant *response = g_dbus_proxy_call_sync (saver->proxies[saver->screensaver_type],
+                                                       "UnInhibit",
+                                                       g_variant_new ("(u)",
+                                                                      saver->cookie),
+                                                       G_DBUS_CALL_FLAGS_NONE,
+                                                       -1,
+                                                       NULL, NULL);
+          saver->cookie = 0;
+          if (response != NULL)
+            g_variant_unref (response);
+        }
       break;
 
     case SCREENSAVER_TYPE_CINNAMON:

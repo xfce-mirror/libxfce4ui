@@ -68,11 +68,11 @@
  *
  **/
 static void
-xfce_gtk_menu_item_fill_base (GtkWidget    *item,
-                              const gchar  *tooltip_text,
-                              const gchar  *accel_path,
-                              GCallback     callback,
-                              GObject      *callback_param,
+xfce_gtk_menu_item_fill_base (GtkWidget *item,
+                              const gchar *tooltip_text,
+                              const gchar *accel_path,
+                              GCallback callback,
+                              GObject *callback_param,
                               GtkMenuShell *menu_to_append_item)
 {
   g_return_if_fail (GTK_IS_MENU_ITEM (item));
@@ -106,13 +106,13 @@ xfce_gtk_menu_item_fill_base (GtkWidget    *item,
  *
  * Since: 4.16
  **/
-GtkWidget*
-xfce_gtk_menu_item_new (const gchar  *label_text,
-                        const gchar  *tooltip_text,
-                        const gchar  *accel_path,
-                        GCallback     callback,
-                        GObject      *callback_param,
-                        GtkMenuShell  *menu_to_append_item)
+GtkWidget *
+xfce_gtk_menu_item_new (const gchar *label_text,
+                        const gchar *tooltip_text,
+                        const gchar *accel_path,
+                        GCallback callback,
+                        GObject *callback_param,
+                        GtkMenuShell *menu_to_append_item)
 {
   GtkWidget *item;
 
@@ -139,13 +139,13 @@ xfce_gtk_menu_item_new (const gchar  *label_text,
  *
  * Since: 4.16
  **/
-GtkWidget*
-xfce_gtk_image_menu_item_new_from_icon_name (const gchar  *label_text,
-                                             const gchar  *tooltip_text,
-                                             const gchar  *accel_path,
-                                             GCallback     callback,
-                                             GObject      *callback_param,
-                                             const gchar  *icon_name,
+GtkWidget *
+xfce_gtk_image_menu_item_new_from_icon_name (const gchar *label_text,
+                                             const gchar *tooltip_text,
+                                             const gchar *accel_path,
+                                             GCallback callback,
+                                             GObject *callback_param,
+                                             const gchar *icon_name,
                                              GtkMenuShell *menu_to_append_item)
 {
   GtkWidget *image = NULL;
@@ -174,13 +174,13 @@ xfce_gtk_image_menu_item_new_from_icon_name (const gchar  *label_text,
  *
  * Since: 4.16
  **/
-GtkWidget*
-xfce_gtk_image_menu_item_new (const gchar  *label_text,
-                              const gchar  *tooltip_text,
-                              const gchar  *accel_path,
-                              GCallback     callback,
-                              GObject      *callback_param,
-                              GtkWidget    *image,
+GtkWidget *
+xfce_gtk_image_menu_item_new (const gchar *label_text,
+                              const gchar *tooltip_text,
+                              const gchar *accel_path,
+                              GCallback callback,
+                              GObject *callback_param,
+                              GtkWidget *image,
                               GtkMenuShell *menu_to_append_item)
 {
   GtkWidget *item;
@@ -216,13 +216,13 @@ xfce_gtk_image_menu_item_new (const gchar  *label_text,
  *
  * Since: 4.16
  **/
-GtkWidget*
-xfce_gtk_check_menu_item_new (const gchar  *label_text,
-                              const gchar  *tooltip_text,
-                              const gchar  *accel_path,
-                              GCallback     callback,
-                              GObject      *callback_param,
-                              gboolean      active,
+GtkWidget *
+xfce_gtk_check_menu_item_new (const gchar *label_text,
+                              const gchar *tooltip_text,
+                              const gchar *accel_path,
+                              GCallback callback,
+                              GObject *callback_param,
+                              gboolean active,
                               GtkMenuShell *menu_to_append_item)
 {
   GtkWidget *item;
@@ -257,13 +257,13 @@ xfce_gtk_check_menu_item_new (const gchar  *label_text,
  *
  * Since: 4.16
  **/
-GtkWidget*
-xfce_gtk_radio_menu_item_new (const gchar  *label_text,
-                              const gchar  *tooltip_text,
-                              const gchar  *accel_path,
-                              GCallback     callback,
-                              GObject      *callback_param,
-                              gboolean      active,
+GtkWidget *
+xfce_gtk_radio_menu_item_new (const gchar *label_text,
+                              const gchar *tooltip_text,
+                              const gchar *accel_path,
+                              GCallback callback,
+                              GObject *callback_param,
+                              gboolean active,
                               GtkMenuShell *menu_to_append_item)
 {
   GtkWidget *item;
@@ -289,10 +289,10 @@ xfce_gtk_radio_menu_item_new (const gchar  *label_text,
  *
  * Since: 4.16
  **/
-GtkWidget*
+GtkWidget *
 xfce_gtk_menu_item_new_from_action_entry (const XfceGtkActionEntry *action_entry,
-                                          GObject                  *callback_param,
-                                          GtkMenuShell             *menu_to_append_item)
+                                          GObject *callback_param,
+                                          GtkMenuShell *menu_to_append_item)
 {
   g_return_val_if_fail (action_entry != NULL, NULL);
 
@@ -327,11 +327,11 @@ xfce_gtk_menu_item_new_from_action_entry (const XfceGtkActionEntry *action_entry
  *
  * Since: 4.16
  **/
-GtkWidget*
+GtkWidget *
 xfce_gtk_toggle_menu_item_new_from_action_entry (const XfceGtkActionEntry *action_entry,
-                                                 GObject                  *callback_param,
-                                                 gboolean                  active,
-                                                 GtkMenuShell             *menu_to_append_item)
+                                                 GObject *callback_param,
+                                                 gboolean active,
+                                                 GtkMenuShell *menu_to_append_item)
 {
   g_return_val_if_fail (action_entry != NULL, NULL);
 
@@ -365,13 +365,13 @@ xfce_gtk_toggle_menu_item_new_from_action_entry (const XfceGtkActionEntry *actio
  *
  * Since: 4.16
  **/
-GtkWidget*
+GtkWidget *
 xfce_gtk_tool_button_new_from_action_entry (const XfceGtkActionEntry *action_entry,
-                                            GObject                  *callback_param,
-                                            GtkToolbar               *toolbar_to_append_item)
+                                            GObject *callback_param,
+                                            GtkToolbar *toolbar_to_append_item)
 {
   GtkToolItem *tool_item;
-  GtkWidget   *image;
+  GtkWidget *image;
 
   g_return_val_if_fail (action_entry != NULL, NULL);
 
@@ -398,14 +398,14 @@ xfce_gtk_tool_button_new_from_action_entry (const XfceGtkActionEntry *action_ent
  *
  * Since: 4.17.6
  **/
-GtkWidget*
+GtkWidget *
 xfce_gtk_toggle_tool_button_new_from_action_entry (const XfceGtkActionEntry *action_entry,
-                                                   GObject                  *callback_param,
-                                                   gboolean                  active,
-                                                   GtkToolbar               *toolbar_to_append_item)
+                                                   GObject *callback_param,
+                                                   gboolean active,
+                                                   GtkToolbar *toolbar_to_append_item)
 {
   GtkToolButton *tool_item;
-  GtkWidget     *image;
+  GtkWidget *image;
 
   g_return_val_if_fail (action_entry != NULL, NULL);
 
@@ -480,7 +480,7 @@ xfce_gtk_menu_append_separator (GtkMenuShell *menu)
  **/
 void
 xfce_gtk_accel_map_add_entries (const XfceGtkActionEntry *action_entries,
-                                guint                     n_action_entries)
+                                guint n_action_entries)
 {
   GtkAccelKey key;
 
@@ -513,12 +513,12 @@ xfce_gtk_accel_map_add_entries (const XfceGtkActionEntry *action_entries,
  * Since: 4.16
  **/
 void
-xfce_gtk_accel_group_connect_action_entries (GtkAccelGroup            *accel_group,
+xfce_gtk_accel_group_connect_action_entries (GtkAccelGroup *accel_group,
                                              const XfceGtkActionEntry *action_entries,
-                                             guint                     n_action_entries,
-                                             gpointer                  callback_data)
+                                             guint n_action_entries,
+                                             gpointer callback_data)
 {
-  GClosure   *closure = NULL;
+  GClosure *closure = NULL;
 
   g_return_if_fail (GTK_IS_ACCEL_GROUP (accel_group));
 
@@ -533,7 +533,7 @@ xfce_gtk_accel_group_connect_action_entries (GtkAccelGroup            *accel_gro
           gtk_accel_group_connect_by_path (accel_group, action_entries[i].accel_path, closure);
         }
     }
- }
+}
 
 
 
@@ -548,9 +548,9 @@ xfce_gtk_accel_group_connect_action_entries (GtkAccelGroup            *accel_gro
  * Since: 4.16
  **/
 void
-xfce_gtk_accel_group_disconnect_action_entries (GtkAccelGroup            *accel_group,
+xfce_gtk_accel_group_disconnect_action_entries (GtkAccelGroup *accel_group,
                                                 const XfceGtkActionEntry *action_entries,
-                                                guint                     n_action_entries)
+                                                guint n_action_entries)
 {
   GtkAccelKey key;
 
@@ -566,7 +566,7 @@ xfce_gtk_accel_group_disconnect_action_entries (GtkAccelGroup            *accel_
             gtk_accel_group_disconnect_key (accel_group, key.accel_key, key.accel_mods);
         }
     }
- }
+}
 
 
 
@@ -582,15 +582,15 @@ xfce_gtk_accel_group_disconnect_action_entries (GtkAccelGroup            *accel_
  *
  * Since: 4.16
  **/
-const XfceGtkActionEntry*
+const XfceGtkActionEntry *
 xfce_gtk_get_action_entry_by_id (const XfceGtkActionEntry *action_entries,
-                                 guint                     n_action_entries,
-                                 guint                     id)
+                                 guint n_action_entries,
+                                 guint id)
 {
-  for (size_t i = 0; i <  n_action_entries; i++)
+  for (size_t i = 0; i < n_action_entries; i++)
     {
-      if( action_entries[i].id == id )
-          return &(action_entries[i]);
+      if (action_entries[i].id == id)
+        return &(action_entries[i]);
     }
   g_warning ("There is no action with the id '%i'.", id);
   return NULL;
@@ -609,12 +609,12 @@ xfce_gtk_get_action_entry_by_id (const XfceGtkActionEntry *action_entries,
  **/
 void
 xfce_gtk_translate_action_entries (XfceGtkActionEntry *action_entries,
-                                   guint               n_action_entries)
+                                   guint n_action_entries)
 {
-  for (size_t i = 0; i <  n_action_entries; i++)
+  for (size_t i = 0; i < n_action_entries; i++)
     {
-      action_entries[i].menu_item_label_text = g_strdup( g_dgettext (NULL, action_entries[i].menu_item_label_text));
-      action_entries[i].menu_item_tooltip_text = g_strdup( g_dgettext (NULL, action_entries[i].menu_item_tooltip_text));
+      action_entries[i].menu_item_label_text = g_strdup (g_dgettext (NULL, action_entries[i].menu_item_label_text));
+      action_entries[i].menu_item_tooltip_text = g_strdup (g_dgettext (NULL, action_entries[i].menu_item_tooltip_text));
     }
 }
 
@@ -632,13 +632,13 @@ xfce_gtk_translate_action_entries (XfceGtkActionEntry *action_entries,
  * Tab sometimes becomes ISO_Left_Tab (e.g. in Ctrl+Shift+Tab) so check both here.
  *
  * Return value: a boolean that is GDK_EVENT_STOP (TRUE) if the event was handled, otherwise it is GDK_EVENT_PROPAGATE (FALSE)
-**/
+ **/
 gboolean
-xfce_gtk_handle_tab_accels (GdkEventKey        *key_event,
-                            GtkAccelGroup      *accel_group,
-                            gpointer            data,
+xfce_gtk_handle_tab_accels (GdkEventKey *key_event,
+                            GtkAccelGroup *accel_group,
+                            gpointer data,
                             XfceGtkActionEntry *entries,
-                            size_t              entry_count)
+                            size_t entry_count)
 {
   const guint modifiers = key_event->state & gtk_accelerator_get_default_mod_mask ();
 
@@ -646,8 +646,8 @@ xfce_gtk_handle_tab_accels (GdkEventKey        *key_event,
 
   if (G_UNLIKELY (key_event->keyval == GDK_KEY_Tab || key_event->keyval == GDK_KEY_ISO_Left_Tab) && key_event->type == GDK_KEY_PRESS)
     {
-      GtkAccelGroupEntry  *group_entries;
-      guint                group_entries_count = 0;
+      GtkAccelGroupEntry *group_entries;
+      guint group_entries_count = 0;
 
       group_entries = gtk_accel_group_query (accel_group, key_event->keyval, modifiers, &group_entries_count);
       if (group_entries_count > 1)
@@ -677,12 +677,12 @@ xfce_gtk_handle_tab_accels (GdkEventKey        *key_event,
  * exists in @entries, then nothing happens.
  *
  * Return value: a boolean that is TRUE if the action was found, otherwise it is FALSE
-**/
+ **/
 gboolean
-xfce_gtk_execute_tab_accel (const gchar        *accel_path,
-                            gpointer            data,
+xfce_gtk_execute_tab_accel (const gchar *accel_path,
+                            gpointer data,
                             XfceGtkActionEntry *entries,
-                            size_t              entry_count)
+                            size_t entry_count)
 {
   for (size_t i = 0; i < entry_count; i++)
     {
@@ -726,7 +726,7 @@ xfce_gtk_button_new_mixed (const gchar *stock_id,
     {
       button = gtk_button_new_with_mnemonic (label);
 
-      if (stock_id != NULL && strlen(stock_id) > 0)
+      if (stock_id != NULL && strlen (stock_id) > 0)
         {
           /* create image widget */
           image = gtk_image_new_from_icon_name (stock_id, GTK_ICON_SIZE_BUTTON);
@@ -759,13 +759,13 @@ xfce_gtk_button_new_mixed (const gchar *stock_id,
  * Return value: (transfer floating): the newly created #GtkFrame widget.
  **/
 GtkWidget *
-xfce_gtk_frame_box_new (const gchar  *label,
-                        GtkWidget   **container_return)
+xfce_gtk_frame_box_new (const gchar *label,
+                        GtkWidget **container_return)
 {
   GtkWidget *frame;
   GtkWidget *frame_label;
   GtkWidget *container;
-  gchar     *markup_label;
+  gchar *markup_label;
 
   g_return_val_if_fail (container_return != NULL, NULL);
 
@@ -785,14 +785,14 @@ xfce_gtk_frame_box_new (const gchar  *label,
       gtk_widget_show (frame_label);
     }
 
-/* We're ignoring this for now because we directly return the alignment
- * and who knows if our consumers want to poke at it. */
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+  /* We're ignoring this for now because we directly return the alignment
+   * and who knows if our consumers want to poke at it. */
+  G_GNUC_BEGIN_IGNORE_DEPRECATIONS
   container = gtk_alignment_new (0.0, 0.0, 1.0, 1.0);
   gtk_alignment_set_padding (GTK_ALIGNMENT (container), PADDING, PADDING, PADDING * 3, PADDING);
   gtk_container_add (GTK_CONTAINER (frame), container);
   gtk_widget_show (container);
-G_GNUC_END_IGNORE_DEPRECATIONS
+  G_GNUC_END_IGNORE_DEPRECATIONS
 
   if (G_LIKELY (container_return != NULL))
     *container_return = container;
@@ -814,7 +814,7 @@ G_GNUC_END_IGNORE_DEPRECATIONS
  **/
 GtkWidget *
 xfce_gtk_frame_box_new_with_content (const gchar *label,
-                                     GtkWidget   *content)
+                                     GtkWidget *content)
 {
   GtkWidget *frame;
   GtkWidget *container;
@@ -911,17 +911,17 @@ xfce_gtk_menu_popup_until_mapped (GtkMenu *menu,
 
   while ((i++ < 2500) && (!gtk_widget_get_mapped (GTK_WIDGET (menu))))
     {
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-        gtk_menu_popup (GTK_MENU (menu),
-                        parent_menu_shell,
-                        parent_menu_item,
-                        func,
-                        data,
-                        button,
-                        activate_time);
-G_GNUC_END_IGNORE_DEPRECATIONS
+      G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+      gtk_menu_popup (GTK_MENU (menu),
+                      parent_menu_shell,
+                      parent_menu_item,
+                      func,
+                      data,
+                      button,
+                      activate_time);
+      G_GNUC_END_IGNORE_DEPRECATIONS
 
-        g_usleep (100);
+      g_usleep (100);
     }
 
   return gtk_widget_get_mapped (GTK_WIDGET (menu));
@@ -953,12 +953,12 @@ xfce_widget_reparent (GtkWidget *widget,
   if (!GTK_IS_CONTAINER (new_parent))
     return FALSE;
 
-  parent = gtk_widget_get_parent(widget);
+  parent = gtk_widget_get_parent (widget);
   if (parent)
     {
       g_object_ref (widget);
-      gtk_container_remove (GTK_CONTAINER(parent), widget);
-      gtk_container_add (GTK_CONTAINER(new_parent), widget);
+      gtk_container_remove (GTK_CONTAINER (parent), widget);
+      gtk_container_add (GTK_CONTAINER (new_parent), widget);
       g_object_unref (widget);
 
       return TRUE;
@@ -980,27 +980,29 @@ xfce_widget_reparent (GtkWidget *widget,
 gchar *
 xfce_icon_name_from_desktop_id (const gchar *desktop_id)
 {
-    gchar *icon_file = NULL;
-    gchar *resource;
-    XfceRc *rcfile;
+  gchar *icon_file = NULL;
+  gchar *resource;
+  XfceRc *rcfile;
 
-    resource = g_strdup_printf ("applications%c%s.desktop",
-                                G_DIR_SEPARATOR,
-                                desktop_id);
-    rcfile = xfce_rc_config_open (XFCE_RESOURCE_DATA,
-                                  resource, TRUE);
-    g_free (resource);
+  resource = g_strdup_printf ("applications%c%s.desktop",
+                              G_DIR_SEPARATOR,
+                              desktop_id);
+  rcfile = xfce_rc_config_open (XFCE_RESOURCE_DATA,
+                                resource, TRUE);
+  g_free (resource);
 
-    if (rcfile != NULL) {
-        if (xfce_rc_has_group (rcfile, "Desktop Entry")) {
-            xfce_rc_set_group (rcfile, "Desktop Entry");
-            icon_file = g_strdup (xfce_rc_read_entry (rcfile, "Icon", NULL));
+  if (rcfile != NULL)
+    {
+      if (xfce_rc_has_group (rcfile, "Desktop Entry"))
+        {
+          xfce_rc_set_group (rcfile, "Desktop Entry");
+          icon_file = g_strdup (xfce_rc_read_entry (rcfile, "Icon", NULL));
         }
 
-        xfce_rc_close (rcfile);
+      xfce_rc_close (rcfile);
     }
 
-    return icon_file;
+  return icon_file;
 }
 
 
@@ -1022,52 +1024,61 @@ xfce_icon_name_from_desktop_id (const gchar *desktop_id)
 GIcon *
 xfce_gicon_from_name (const gchar *name)
 {
-    gchar *icon_name;
-    GIcon *gicon = NULL;
-    GtkIconInfo *icon_info;
-    GFile *path = NULL;
+  gchar *icon_name;
+  GIcon *gicon = NULL;
+  GtkIconInfo *icon_info;
+  GFile *path = NULL;
 
-    /* Check if there is a desktop file of 'name' */
-    icon_name = xfce_icon_name_from_desktop_id (name);
-    if (icon_name) {
-        if (g_path_is_absolute (icon_name)) {
-            path = g_file_new_for_path (icon_name);
+  /* Check if there is a desktop file of 'name' */
+  icon_name = xfce_icon_name_from_desktop_id (name);
+  if (icon_name)
+    {
+      if (g_path_is_absolute (icon_name))
+        {
+          path = g_file_new_for_path (icon_name);
         }
-        else if (g_str_has_prefix (icon_name, "file://")) {
-            path = g_file_new_for_uri (icon_name);
+      else if (g_str_has_prefix (icon_name, "file://"))
+        {
+          path = g_file_new_for_uri (icon_name);
         }
-        else {
-            gicon = g_themed_icon_new_with_default_fallbacks (icon_name);
+      else
+        {
+          gicon = g_themed_icon_new_with_default_fallbacks (icon_name);
         }
 
-        if (path) {
-            gicon = g_file_icon_new (path);
-            g_object_unref (path);
+      if (path)
+        {
+          gicon = g_file_icon_new (path);
+          g_object_unref (path);
         }
-        g_free (icon_name);
+      g_free (icon_name);
     }
-    else {
-        gicon = g_themed_icon_new_with_default_fallbacks (name);
-    }
-
-    /* As g_themed_icon_new_with_default_fallbacks always returns 'something'
-       check if there's anything that matches in the icon theme */
-    if (gicon) {
-        icon_info = gtk_icon_theme_lookup_by_gicon (gtk_icon_theme_get_default (),
-                                                    gicon,
-                                                    GTK_ICON_SIZE_BUTTON,
-                                                    GTK_ICON_LOOKUP_FORCE_REGULAR);
-
-        if (icon_info) {
-            g_object_unref (icon_info);
-            return gicon;
-        }
-        else {
-            g_object_unref (gicon);
-        }
+  else
+    {
+      gicon = g_themed_icon_new_with_default_fallbacks (name);
     }
 
-    return NULL;
+  /* As g_themed_icon_new_with_default_fallbacks always returns 'something'
+     check if there's anything that matches in the icon theme */
+  if (gicon)
+    {
+      icon_info = gtk_icon_theme_lookup_by_gicon (gtk_icon_theme_get_default (),
+                                                  gicon,
+                                                  GTK_ICON_SIZE_BUTTON,
+                                                  GTK_ICON_LOOKUP_FORCE_REGULAR);
+
+      if (icon_info)
+        {
+          g_object_unref (icon_info);
+          return gicon;
+        }
+      else
+        {
+          g_object_unref (gicon);
+        }
+    }
+
+  return NULL;
 }
 
 
@@ -1076,7 +1087,7 @@ xfce_gicon_from_name (const gchar *name)
  * xfce_gtk_menu_item_set_accel_label:
  * @menu_item : #GtkMenuItem on which the accel label is to set
  * @accel_path: (nullable): Unique path, used to identify the accelerator, or NULL to show no accelerator
-*
+ *
  * Use the passed accel_path show the related #GtkAccelLabel with the correct accelerator on the item.
  *
  * Since: 4.16
@@ -1085,9 +1096,9 @@ void
 xfce_gtk_menu_item_set_accel_label (GtkMenuItem *menu_item,
                                     const gchar *accel_path)
 {
-  GtkAccelKey  key;
-  GList       *list, *lp;
-  gboolean     found = FALSE;
+  GtkAccelKey key;
+  GList *list, *lp;
+  gboolean found = FALSE;
 
   g_return_if_fail (GTK_IS_MENU_ITEM (menu_item));
 
@@ -1157,7 +1168,7 @@ xfce_has_gtk_frame_extents (GdkWindow *window,
   gdk_x11_display_error_trap_push (display);
   result = XGetWindowProperty (xdisplay, xwindow, gtk_frame_extents,
                                0, G_MAXLONG, False, XA_CARDINAL,
-                               &type, &format, &n_items, &bytes_after, (guchar **)&data);
+                               &type, &format, &n_items, &bytes_after, (guchar **) &data);
   gdk_x11_display_error_trap_pop_ignored (display);
 
   if (data == NULL)
@@ -1193,12 +1204,12 @@ xfce_has_gtk_frame_extents (GdkWindow *window,
  * @widget.
  **/
 void
-xfce_gtk_label_set_a11y_relation (GtkLabel  *label,
+xfce_gtk_label_set_a11y_relation (GtkLabel *label,
                                   GtkWidget *widget)
 {
   AtkRelationSet *relations;
-  AtkRelation    *relation;
-  AtkObject      *object;
+  AtkRelation *relation;
+  AtkObject *object;
 
   g_return_if_fail (GTK_IS_WIDGET (widget));
   g_return_if_fail (GTK_IS_LABEL (label));

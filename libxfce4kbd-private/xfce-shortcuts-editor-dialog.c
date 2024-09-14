@@ -40,7 +40,7 @@ struct _XfceShortcutsEditorDialogClass
 
 struct _XfceShortcutsEditorDialog
 {
-  XfceTitledDialog    __parent__;
+  XfceTitledDialog __parent__;
 };
 
 
@@ -78,11 +78,11 @@ xfce_shortcuts_editor_dialog_init (XfceShortcutsEditorDialog *dialog)
  *
  * Since: 4.17.2
  **/
-GtkWidget*
+GtkWidget *
 xfce_shortcuts_editor_dialog_new (int argument_count, ...)
 {
   XfceShortcutsEditorDialog *dialog;
-  va_list                    argument_list;
+  va_list argument_list;
 
   va_start (argument_list, argument_count);
 
@@ -112,13 +112,13 @@ xfce_shortcuts_editor_dialog_new (int argument_count, ...)
  *
  * Since: 4.17.5
  **/
-GtkWidget*
+GtkWidget *
 xfce_shortcuts_editor_dialog_new_with_parent (GtkWindow *parent,
-                                              int        argument_count,
-                                              ...        )
+                                              int argument_count,
+                                              ...)
 {
   XfceShortcutsEditorDialog *dialog;
-  va_list                    argument_list;
+  va_list argument_list;
 
   va_start (argument_list, argument_count);
 

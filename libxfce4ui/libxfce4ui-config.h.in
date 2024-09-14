@@ -17,7 +17,7 @@
  * MA 02110-1301 USA
  */
 
-#if !defined (_LIBXFCE4UI_INSIDE_LIBXFCE4UI_H) && !defined (LIBXFCE4UI_COMPILATION)
+#if !defined(_LIBXFCE4UI_INSIDE_LIBXFCE4UI_H) && !defined(LIBXFCE4UI_COMPILATION)
 #error "Only <libxfce4ui/libxfce4ui.h> can be included directly, this file may disappear or change contents."
 #endif
 
@@ -65,7 +65,7 @@ G_BEGIN_DECLS
  * function is available.
  *
  */
-#define LIBXFCE4UI_CHECK_VERSION(major,minor,micro) \
+#define LIBXFCE4UI_CHECK_VERSION(major, minor, micro) \
   (LIBXFCE4UI_MAJOR_VERSION > (major) \
    || (LIBXFCE4UI_MAJOR_VERSION == (major) \
        && LIBXFCE4UI_MINOR_VERSION > (minor)) \
@@ -77,9 +77,10 @@ extern const guint libxfce4ui_major_version;
 extern const guint libxfce4ui_minor_version;
 extern const guint libxfce4ui_micro_version;
 
-const gchar *libxfce4ui_check_version (guint required_major,
-                                       guint required_minor,
-                                       guint required_micro);
+const gchar *
+libxfce4ui_check_version (guint required_major,
+                          guint required_minor,
+                          guint required_micro);
 
 G_END_DECLS
 

@@ -17,7 +17,7 @@
  * MA 02110-1301 USA
  */
 
-#if !defined (_LIBXFCE4UI_INSIDE_LIBXFCE4UI_H) && !defined (LIBXFCE4UI_COMPILATION)
+#if !defined(_LIBXFCE4UI_INSIDE_LIBXFCE4UI_H) && !defined(LIBXFCE4UI_COMPILATION)
 #error "Only <libxfce4ui/libxfce4ui.h> can be included directly, this file is not part of the public API."
 #endif
 
@@ -28,52 +28,57 @@
 
 G_BEGIN_DECLS
 
-gboolean xfce_spawn_on_screen_with_child_watch (GdkScreen    *screen,
-                                                const gchar  *working_directory,
-                                                gchar       **argv,
-                                                gchar       **envp,
-                                                GSpawnFlags   flags,
-                                                gboolean      startup_notify,
-                                                guint32       startup_timestamp,
-                                                const gchar  *startup_icon_name,
-                                                GClosure     *child_watch_closure,
-                                                GError      **error);
+gboolean
+xfce_spawn_on_screen_with_child_watch (GdkScreen *screen,
+                                       const gchar *working_directory,
+                                       gchar **argv,
+                                       gchar **envp,
+                                       GSpawnFlags flags,
+                                       gboolean startup_notify,
+                                       guint32 startup_timestamp,
+                                       const gchar *startup_icon_name,
+                                       GClosure *child_watch_closure,
+                                       GError **error);
 
-gboolean xfce_spawn_on_screen                  (GdkScreen    *screen,
-                                                const gchar  *working_directory,
-                                                gchar       **argv,
-                                                gchar       **envp,
-                                                GSpawnFlags   flags,
-                                                gboolean      startup_notify,
-                                                guint32       startup_timestamp,
-                                                const gchar  *startup_icon_name,
-                                                GError      **error)
-G_GNUC_DEPRECATED_FOR (xfce_spawn());
+gboolean
+xfce_spawn_on_screen (GdkScreen *screen,
+                      const gchar *working_directory,
+                      gchar **argv,
+                      gchar **envp,
+                      GSpawnFlags flags,
+                      gboolean startup_notify,
+                      guint32 startup_timestamp,
+                      const gchar *startup_icon_name,
+                      GError **error)
+  G_GNUC_DEPRECATED_FOR (xfce_spawn ());
 
-gboolean xfce_spawn                            (GdkScreen    *screen,
-                                                const gchar  *working_directory,
-                                                gchar       **argv,
-                                                gchar       **envp,
-                                                GSpawnFlags   flags,
-                                                gboolean      startup_notify,
-                                                guint32       startup_timestamp,
-                                                const gchar  *startup_icon_name,
-                                                gboolean      child_process,
-                                                GError      **error);
+gboolean
+xfce_spawn (GdkScreen *screen,
+            const gchar *working_directory,
+            gchar **argv,
+            gchar **envp,
+            GSpawnFlags flags,
+            gboolean startup_notify,
+            guint32 startup_timestamp,
+            const gchar *startup_icon_name,
+            gboolean child_process,
+            GError **error);
 
-gboolean xfce_spawn_command_line_on_screen     (GdkScreen    *screen,
-                                                const gchar  *command_line,
-                                                gboolean      in_terminal,
-                                                gboolean      startup_notify,
-                                                GError      **error)
-G_GNUC_DEPRECATED_FOR (xfce_spawn_command_line());
+gboolean
+xfce_spawn_command_line_on_screen (GdkScreen *screen,
+                                   const gchar *command_line,
+                                   gboolean in_terminal,
+                                   gboolean startup_notify,
+                                   GError **error)
+  G_GNUC_DEPRECATED_FOR (xfce_spawn_command_line ());
 
-gboolean xfce_spawn_command_line               (GdkScreen    *screen,
-                                                const gchar  *command_line,
-                                                gboolean      in_terminal,
-                                                gboolean      startup_notify,
-                                                gboolean      child_process,
-                                                GError      **error);
+gboolean
+xfce_spawn_command_line (GdkScreen *screen,
+                         const gchar *command_line,
+                         gboolean in_terminal,
+                         gboolean startup_notify,
+                         gboolean child_process,
+                         GError **error);
 
 G_END_DECLS
 
