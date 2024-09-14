@@ -19,25 +19,19 @@
  */
 
 #ifdef HAVE_CONFIG_H
-#include <config.h>
+#include "config.h"
 #endif
 
-#include <glib.h>
-#include <glib-object.h>
-
-#include <X11/Xlib.h>
 #include <X11/XKBlib.h>
-
+#include <X11/Xlib.h>
 #include <gdk/gdk.h>
-#include <gdk/gdkx.h>
 #include <gdk/gdkkeysyms.h>
-
+#include <gdk/gdkx.h>
 #include <gtk/gtk.h>
-
 #include <libxfce4util/libxfce4util.h>
 
-#include <libxfce4kbd-private/xfce-shortcuts-grabber.h>
-#include <libxfce4kbd-private/xfce-shortcuts-marshal.h>
+#include "xfce-shortcuts-grabber.h"
+#include "xfce-shortcuts-marshal.h"
 
 
 

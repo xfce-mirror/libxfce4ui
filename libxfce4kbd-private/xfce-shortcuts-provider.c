@@ -19,20 +19,17 @@
  */
 
 #ifdef HAVE_CONFIG_H
-#include <config.h>
+#include "config.h"
 #endif
 
 #ifdef HAVE_STRING_H
 #include <string.h>
 #endif
 
-#include <glib.h>
-#include <glib-object.h>
-
 #include <libxfce4util/libxfce4util.h>
 #include <xfconf/xfconf.h>
 
-#include <libxfce4kbd-private/xfce-shortcuts-provider.h>
+#include "xfce-shortcuts-provider.h"
 
 
 

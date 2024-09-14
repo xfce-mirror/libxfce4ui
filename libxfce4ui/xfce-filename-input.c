@@ -29,7 +29,7 @@
  **/
 
 #ifdef HAVE_CONFIG_H
-#include <config.h>
+#include "config.h"
 #endif
 
 #ifdef HAVE_STRING_H
@@ -45,9 +45,9 @@
 #include <gtk/gtk.h>
 #include <libxfce4util/libxfce4util.h>
 
-#include <libxfce4ui/xfce-filename-input.h>
-#include <libxfce4ui/libxfce4ui-private.h>
-#include <libxfce4ui/libxfce4ui-alias.h>
+#include "libxfce4ui-private.h"
+#include "xfce-filename-input.h"
+#include "libxfce4ui-alias.h"
 
 /* Property identifiers */
 enum
@@ -535,4 +535,4 @@ xfce_filename_input_whitespace_warning_timer_destroy (gpointer data)
 }
 
 #define __XFCE_FILENAME_INPUT_C__
-#include <libxfce4ui/libxfce4ui-aliasdef.c>
+#include "libxfce4ui-aliasdef.c"

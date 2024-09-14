@@ -16,16 +16,6 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
-#ifdef HAVE_STDLIB_H
-#include <stdlib.h>
-#endif
-
-#include <gtk/gtk.h>
-
 #if G_GNUC_CHECK_VERSION (4, 6)
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wundef"

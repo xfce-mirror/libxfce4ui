@@ -31,7 +31,7 @@
  **/
 
 #ifdef HAVE_CONFIG_H
-#include <config.h>
+#include "config.h"
 #endif
 
 #ifdef HAVE_FCNTL_H
@@ -59,14 +59,13 @@
 #include <gdk/gdk.h>
 #include <gdk/gdkx.h>
 #include <gtk/gtk.h>
-
 #include <libxfce4util/libxfce4util.h>
 
-#include <libxfce4ui/libxfce4ui-private.h>
-#include <libxfce4ui/xfce-sm-client.h>
-#include <libxfce4ui/libxfce4ui-marshal.h>
-#include <libxfce4ui/libxfce4ui-enum-types.h>
-#include <libxfce4ui/libxfce4ui-alias.h>
+#include "libxfce4ui-enum-types.h"
+#include "libxfce4ui-marshal.h"
+#include "libxfce4ui-private.h"
+#include "xfce-sm-client.h"
+#include "libxfce4ui-alias.h"
 
 #define GsmPriority     "_GSM_Priority"
 #define GsmDesktopFile  "_GSM_DesktopFile"
@@ -2285,4 +2284,4 @@ xfce_sm_client_get_restart_command(XfceSMClient *sm_client)
 
 
 #define __XFCE_SM_CLIENT_C__
-#include <libxfce4ui/libxfce4ui-aliasdef.c>
+#include "libxfce4ui-aliasdef.c"

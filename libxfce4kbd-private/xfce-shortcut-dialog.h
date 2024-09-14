@@ -23,8 +23,6 @@
 
 #include <gtk/gtk.h>
 
-#include <libxfce4kbd-private/xfce-shortcuts.h>
-
 G_BEGIN_DECLS
 
 typedef struct _XfceShortcutDialogClass XfceShortcutDialogClass;

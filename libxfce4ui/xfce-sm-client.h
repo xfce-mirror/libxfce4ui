@@ -26,8 +26,7 @@
 #endif
 
 #include <glib-object.h>
-
-#include "libxfce4ui-enums.h"
+#include <libxfce4ui/libxfce4ui-enums.h>
 
 #define XFCE_TYPE_SM_CLIENT             (xfce_sm_client_get_type())
 #define XFCE_SM_CLIENT(obj)             (G_TYPE_CHECK_INSTANCE_CAST((obj), XFCE_TYPE_SM_CLIENT, XfceSMClient))

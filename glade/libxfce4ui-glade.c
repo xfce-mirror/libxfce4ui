@@ -18,7 +18,7 @@
  */
 
 #ifdef HAVE_CONFIG_H
-#include <config.h>
+#include "config.h"
 #endif
 
 #ifdef HAVE_STRING_H
@@ -30,9 +30,10 @@
 typedef struct gpointer GtkCombo;
 #endif
 
-#include <gtk/gtk.h>
 #include <gladeui/glade.h>
-#include <libxfce4ui/libxfce4ui.h>
+#include <gtk/gtk.h>
+
+#include "libxfce4ui/libxfce4ui.h"
 
 
 

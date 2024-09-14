@@ -20,14 +20,13 @@
  */
 
 #ifdef HAVE_CONFIG_H
-#include <config.h>
+#include "config.h"
 #endif
 
+#include <gtk/gtk.h>
 #include <stdlib.h>
 
-#include <gtk/gtk.h>
-#include <glib.h>
-#include <libxfce4ui/libxfce4ui.h>
+#include "libxfce4ui/libxfce4ui.h"
 
 
 static const gchar *APP_NAME = "libxfce4ui: Test";

@@ -35,14 +35,13 @@
  **/
 
 #ifdef HAVE_CONFIG_H
-#include <config.h>
+#include "config.h"
 #endif
 
-#include <X11/Xlib.h>
 #include <X11/Xatom.h>
-
-#include <gtk/gtk.h>
+#include <X11/Xlib.h>
 #include <gdk/gdkx.h>
+#include <gtk/gtk.h>
 
 #include "xfce-clipboard-manager.h"
 

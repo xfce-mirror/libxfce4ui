@@ -18,11 +18,12 @@
  */
 
 #ifdef HAVE_CONFIG_H
-#include <config.h>
+#include "config.h"
 #endif
 
 #include <libxfce4util/libxfce4util.h>
-#include <libxfce4kbd-private/xfce-shortcuts-xfwm4.h>
+
+#include "xfce-shortcuts-xfwm4.h"
 
 typedef struct _ShortcutTemplate ShortcutTemplate;
 

@@ -29,7 +29,7 @@
  **/
 
 #ifdef HAVE_CONFIG_H
-#include <config.h>
+#include "config.h"
 #endif
 
 #ifdef HAVE_STDARG_H
@@ -37,13 +37,12 @@
 #endif
 
 #include <gdk/gdkkeysyms.h>
-
 #include <libxfce4util/libxfce4util.h>
 
-#include <libxfce4ui/xfce-titled-dialog.h>
-#include <libxfce4ui/libxfce4ui-private.h>
-#include <libxfce4ui/libxfce4ui-alias.h>
-#include <libxfce4ui/xfce-gtk-extensions.h>
+#include "libxfce4ui-private.h"
+#include "xfce-gtk-extensions.h"
+#include "xfce-titled-dialog.h"
+#include "libxfce4ui-alias.h"
 
 
 #define XFCE_TITLED_DIALOG_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), XFCE_TYPE_TITLED_DIALOG, XfceTitledDialogPrivate))
@@ -778,4 +777,4 @@ xfce_titled_dialog_set_subtitle (XfceTitledDialog *titled_dialog,
 
 
 #define __XFCE_TITLED_DIALOG_C__
-#include <libxfce4ui/libxfce4ui-aliasdef.c>
+#include "libxfce4ui-aliasdef.c"

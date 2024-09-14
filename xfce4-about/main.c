@@ -17,25 +17,26 @@
  */
 
 #ifdef HAVE_CONFIG_H
-#include <config.h>
+#include "config.h"
 #endif
 
 #ifdef HAVE_STDLIB_H
 #include <stdlib.h>
 #endif
 
-#include <gtk/gtk.h>
 #ifdef ENABLE_X11
 #include <gdk/gdkx.h>
 #endif
 #ifdef ENABLE_WAYLAND
 #include <gdk/gdkwayland.h>
 #endif
-#include <libxfce4util/libxfce4util.h>
-#include <libxfce4ui/libxfce4ui.h>
 
-#include "contributors.h"
+#include <gtk/gtk.h>
+#include <libxfce4ui/libxfce4ui.h>
+#include <libxfce4util/libxfce4util.h>
+
 #include "about-dialog-ui.h"
+#include "contributors.h"
 
 #ifdef HAVE_GLIBTOP
 #include "system-info.h"

@@ -29,16 +29,16 @@
  **/
 
 #ifdef HAVE_CONFIG_H
-#include <config.h>
+#include "config.h"
 #endif
 
 #ifdef HAVE_STRING_H
 #include <string.h>
 #endif
 
-#include <libxfce4ui/xfce-gdk-extensions.h>
-#include <libxfce4ui/libxfce4ui-private.h>
-#include <libxfce4ui/libxfce4ui-alias.h>
+#include "libxfce4ui-private.h"
+#include "xfce-gdk-extensions.h"
+#include "libxfce4ui-alias.h"
 
 
 
@@ -202,4 +202,4 @@ xfce_gdk_device_grab (GdkSeat            *seat,
 }
 
 #define __XFCE_GDK_EXTENSIONS_C__
-#include <libxfce4ui/libxfce4ui-aliasdef.c>
+#include "libxfce4ui-aliasdef.c"

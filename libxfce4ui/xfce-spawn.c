@@ -29,7 +29,7 @@
  **/
 
 #ifdef HAVE_CONFIG_H
-#include <config.h>
+#include "config.h"
 #endif
 
 #ifdef HAVE_STRING_H
@@ -55,10 +55,11 @@
 
 #include <glib/gstdio.h>
 #include <libxfce4util/libxfce4util.h>
-#include <libxfce4ui/xfce-spawn.h>
-#include <libxfce4ui/xfce-gdk-extensions.h>
-#include <libxfce4ui/libxfce4ui-private.h>
-#include <libxfce4ui/libxfce4ui-alias.h>
+
+#include "libxfce4ui-private.h"
+#include "xfce-gdk-extensions.h"
+#include "xfce-spawn.h"
+#include "libxfce4ui-alias.h"
 
 #ifdef HAVE__NSGETENVIRON
 /* for support under apple/darwin */
@@ -729,4 +730,4 @@ xfce_spawn_command_line (GdkScreen    *screen,
 
 
 #define __XFCE_SPAWN_C__
-#include <libxfce4ui/libxfce4ui-aliasdef.c>
+#include "libxfce4ui-aliasdef.c"

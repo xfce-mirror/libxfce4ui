@@ -28,7 +28,7 @@
  **/
 
 #ifdef HAVE_CONFIG_H
-#include <config.h>
+#include "config.h"
 #endif
 
 #ifdef HAVE_STRING_H
@@ -36,19 +36,19 @@
 #endif
 
 #ifdef ENABLE_X11
-#include <X11/Xlib.h>
 #include <X11/Xatom.h>
+#include <X11/Xlib.h>
 #include <gdk/gdkx.h>
 #endif
 
 #include <gtk/gtk.h>
+#include <libxfce4util/libxfce4util.h>
 #include <pango/pango.h>
 
-#include <libxfce4ui/xfce-gtk-extensions.h>
-#include <libxfce4ui/xfce-gdk-extensions.h>
-#include <libxfce4ui/libxfce4ui-private.h>
-#include <libxfce4ui/libxfce4ui-alias.h>
-#include <libxfce4util/libxfce4util.h>
+#include "libxfce4ui-private.h"
+#include "xfce-gdk-extensions.h"
+#include "xfce-gtk-extensions.h"
+#include "libxfce4ui-alias.h"
 
 /* Xfce frame padding */
 #define PADDING (6)
@@ -1213,4 +1213,4 @@ xfce_gtk_label_set_a11y_relation (GtkLabel  *label,
 
 
 #define __XFCE_GTK_EXTENSIONS_C__
-#include <libxfce4ui/libxfce4ui-aliasdef.c>
+#include "libxfce4ui-aliasdef.c"
