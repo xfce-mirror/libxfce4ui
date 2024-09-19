@@ -537,9 +537,13 @@ xfce_shortcuts_provider_get_shortcuts (XfceShortcutsProvider *provider)
   context.properties = properties;
 
   if (G_LIKELY (properties != NULL))
-    g_hash_table_foreach (properties,
-                          (GHFunc) (void (*) (void)) _xfce_shortcuts_provider_get_shortcut,
-                          &context);
+    {
+      g_hash_table_foreach (properties,
+                            (GHFunc) (void (*) (void)) _xfce_shortcuts_provider_get_shortcut,
+                            &context);
+
+      g_hash_table_destroy (properties);
+    }
 
   return context.list;
 }
