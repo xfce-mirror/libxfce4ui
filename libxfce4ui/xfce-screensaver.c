@@ -35,6 +35,7 @@
 #include <xfconf/xfconf.h>
 
 #include "xfce-screensaver.h"
+#include "libxfce4ui-alias.h"
 
 
 
@@ -679,3 +680,6 @@ xfce_screensaver_lock (XfceScreensaver *saver)
 
   return FALSE;
 }
+
+#define __XFCE_SCREENSAVER_C__
+#include "libxfce4ui-aliasdef.c"

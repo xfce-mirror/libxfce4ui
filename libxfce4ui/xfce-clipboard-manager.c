@@ -44,6 +44,7 @@
 #include <gtk/gtk.h>
 
 #include "xfce-clipboard-manager.h"
+#include "libxfce4ui-alias.h"
 
 struct _XfceClipboardManager
 {
@@ -1224,3 +1225,6 @@ xfce_clipboard_manager_new (gboolean replace)
 
   return manager;
 }
+
+#define __XFCE_CLIPBOARD_MANAGER_C__
+#include "libxfce4ui-aliasdef.c"

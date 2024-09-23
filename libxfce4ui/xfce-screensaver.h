@@ -22,11 +22,14 @@
 #error "Only <libxfce4ui/libxfce4ui.h> can be included directly, this file is not part of the public API."
 #endif
 
-/* do not change this in __XFCE_SCREENSAVER_H__ or so: it allows xfce4-session and
- * xfce4-power-manager <= 4.18.0 to build with libxfce4ui >= 4.18.2 by avoiding
- * conflicting types */
-#ifndef __XFCE_SCREENSAVER_H
+/*
+ * __XFCE_SCREENSAVER_H is to avoid conflicting types when building xfce4-session and
+ * xfce4-power-manager <= 4.18.0 with libxfce4ui >= 4.18.2.
+ * __XFCE_SCREENSAVER_H__ is for GNU visibility generation.
+ */
+#if !defined(__XFCE_SCREENSAVER_H) && !defined(__XFCE_SCREENSAVER_H__)
 #define __XFCE_SCREENSAVER_H
+#define __XFCE_SCREENSAVER_H__
 
 #include <glib-object.h>
 
@@ -50,4 +53,4 @@ xfce_screensaver_lock (XfceScreensaver *saver);
 
 G_END_DECLS
 
-#endif /* __XFCE_SCREENSAVER_H */
+#endif /* __XFCE_SCREENSAVER_H && __XFCE_SCREENSAVER_H__ */
