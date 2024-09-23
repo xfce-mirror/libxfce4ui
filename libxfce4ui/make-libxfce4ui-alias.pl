@@ -111,18 +111,13 @@ while (<>)
 
     if ($_ =~ /^\#if.*IN_HEADER\((.*)\)/)
       {
-        my $header = $1;
         if ($option_def)
           {
             print "#if 1\n";
           }
-        elsif ($header !~ /__XFCE_SCREENSAVER_H__/)
-          {
-            print "#ifdef $header\n";
-          }
         else
           {
-            print "#ifdef __XFCE_SCREENSAVER_H\n";
+            print "#ifdef $1\n";
           }
         next;
       }
@@ -167,3 +162,5 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 
 #endif /* HAVE_GNUC_VISIBILITY */
 EOF
+
+
