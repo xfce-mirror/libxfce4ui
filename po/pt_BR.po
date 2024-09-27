@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Michael Martins <michaelfm21@gmail.com>, 2023
+# Michael Martins, 2023
 # Xfce Bot <transifex@xfce.org>, 2023
 # 
 #, fuzzy
