@@ -27,7 +27,7 @@ msgstr ""
 
 #: libxfce4ui/xfce-dialogs.c:110
 msgid "Failed to open web browser for online documentation"
-msgstr "Nie udało się uruchomić przeglądarki internetowej, w celu wyświetlenia dokumentacji sieciowej"
+msgstr "Nie udało się uruchomić przeglądarki internetowej w celu wyświetlenia dokumentacji sieciowej"
 
 #: libxfce4ui/xfce-dialogs.c:265
 #, c-format
@@ -135,7 +135,7 @@ msgstr "Pokaż opcje zarządzania sesją"
 #: libxfce4ui/xfce-sm-client.c:1619
 #, c-format
 msgid "Failed to connect to the session manager: %s"
-msgstr "Nie udało się połączyć z menadżerem sesji: %s"
+msgstr "Nie udało się połączyć z menedżerem sesji: %s"
 
 #: libxfce4ui/xfce-sm-client.c:1625
 msgid "Session manager did not return a valid client id"
@@ -242,7 +242,7 @@ msgstr "Przywróć domyślny skrót"
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:560
 #, c-format
 msgid "This keyboard shortcut is currently used by: '%s'"
-msgstr "Ten skrót klawiszowy jest obecnie używany przez: '%s'"
+msgstr "Ten skrót klawiszowy jest obecnie używany przez: „%s”"
 
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:474
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:563
