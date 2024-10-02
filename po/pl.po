@@ -118,7 +118,7 @@ msgstr "Identyfikator klienta zarządzania sesją"
 
 #: libxfce4ui/xfce-sm-client.c:1435
 msgid "ID"
-msgstr "ID"
+msgstr "Identyfikator"
 
 #: libxfce4ui/xfce-sm-client.c:1436
 msgid "Disable session management"
@@ -167,7 +167,7 @@ msgstr "Nazwy plików nie powinny zaczynać się ani kończyć spacją"
 msgid ""
 "This shortcut is already being used for the action '%s'. Which action do you"
 " want to use?"
-msgstr "Ten skrót jest już przypisany do czynności „%s”. Co zrobić?"
+msgstr "Ten skrót jest już przypisany do czynności „%s”. Którą czynność chcesz wykonać?"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:47
 #: libxfce4kbd-private/xfce-shortcuts.c:50
@@ -191,14 +191,14 @@ msgstr "Zachowaj „%s”"
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr "Ten skrót jest już przypisany do polecenia „%s”. Co zrobić?"
+msgstr "Ten skrót jest już przypisany do polecenia „%s”. Którą czynność chcesz wykonać?"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:55
 #, c-format
 msgid ""
 "This shortcut is already being used by the action '%s'. Which action do you "
 "want to use?"
-msgstr "Ten skrót jest już przypisany do czynności „%s”. Co zrobić?"
+msgstr "Ten skrót jest już przypisany do czynności „%s”. Którą czynność chcesz wykonać?"
 
 #. This shortcut already exists in the provider, we don't want it twice
 #. Warn the user
