@@ -137,12 +137,12 @@ msgstr "Pokaż opcje zarządzania sesją"
 #: ../libxfce4ui/xfce-sm-client.c:1609
 #, c-format
 msgid "Failed to connect to the session manager: %s"
-msgstr "Nie udało się połączyć z menadżerem sesji: %s"
+msgstr "Nie udało się połączyć z menedżerem sesji: %s"
 
 #: ../libxfce4ui/xfce-sm-client.c:1615
 #, c-format
 msgid "Session manager did not return a valid client id"
-msgstr "Menadżer sesji nie zwrócił poprawnego identyfikatora klienta"
+msgstr "Menedżer sesji nie zwrócił poprawnego identyfikatora klienta"
 
 #. print warning for user
 #: ../libxfce4ui/xfce-spawn.c:397
@@ -247,7 +247,7 @@ msgstr "Przywróć domyślny skrót"
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:562
 #, c-format
 msgid "This keyboard shortcut is currently used by: '%s'"
-msgstr "Ten skrót klawiszowy jest obecnie używany przez: '%s'"
+msgstr "Ten skrót klawiszowy jest obecnie używany przez: „%s”"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:476
 #: ../libxfce4kbd-private/xfce-shortcuts-editor.c:565
@@ -286,7 +286,7 @@ msgstr "Wyczyść"
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:273
 #, c-format
 msgid "Press keyboard keys to trigger the %s '%s'."
-msgstr "Naciśnij klawisze klawiatury, aby wyzwolić %s '%s'."
+msgstr "Naciśnij klawisze klawiatury, aby wyzwolić %s „%s”."
 
 #: ../libxfce4kbd-private/xfce-shortcut-dialog.c:295
 msgid "Please press a key"
