@@ -586,7 +586,7 @@ xfce_screensaver_lock (XfceScreensaver *saver)
         {
           gchar **env = g_environ_setenv (g_get_environ (), "XFCE_SCREENSAVER_LOCK", "", TRUE);
           gboolean ret = g_spawn_sync (NULL, argv, env, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, NULL, &status, NULL)
-                         && g_spawn_check_exit_status (status, NULL);
+                         && g_spawn_check_wait_status (status, NULL);
           g_strfreev (env);
           g_strfreev (argv);
           return ret;
@@ -667,15 +667,15 @@ xfce_screensaver_lock (XfceScreensaver *saver)
 
   /* no user command or dbus interface set up */
   if (g_spawn_command_line_sync ("xdg-screensaver lock", NULL, NULL, &status, NULL)
-      && g_spawn_check_exit_status (status, NULL))
+      && g_spawn_check_wait_status (status, NULL))
     return TRUE;
 
   if (g_spawn_command_line_sync ("xscreensaver-command --lock", NULL, NULL, &status, NULL)
-      && g_spawn_check_exit_status (status, NULL))
+      && g_spawn_check_wait_status (status, NULL))
     return TRUE;
 
   if (g_spawn_command_line_sync ("light-locker-command --lock", NULL, NULL, &status, NULL)
-      && g_spawn_check_exit_status (status, NULL))
+      && g_spawn_check_wait_status (status, NULL))
     return TRUE;
 
   return FALSE;
