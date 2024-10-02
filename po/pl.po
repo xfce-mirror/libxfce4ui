@@ -139,7 +139,7 @@ msgstr "Nie udało się połączyć z menedżerem sesji: %s"
 
 #: libxfce4ui/xfce-sm-client.c:1625
 msgid "Session manager did not return a valid client id"
-msgstr "Menadżer sesji nie zwrócił poprawnego identyfikatora klienta"
+msgstr "Menedżer sesji nie zwrócił poprawnego identyfikatora klienta"
 
 #. print warning for user
 #: libxfce4ui/xfce-spawn.c:383
