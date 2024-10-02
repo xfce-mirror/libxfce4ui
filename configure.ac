@@ -13,7 +13,7 @@ m4_define([libxfce4ui_version_api], [2])
 m4_define([libxfce4kbd_private_verinfo], [0:0:0])
 m4_define([libxfce4kbd_private_version_api], [3])
 
-m4_define([glib_min_version], [2.66.0])
+m4_define([glib_min_version], [2.72.0])
 m4_define([gtk_min_version], [3.24.0])
 m4_define([libxfce4util_min_version], [4.17.2])
 m4_define([xfconf_min_version], [4.12.0])
@@ -213,7 +213,7 @@ fi
 dnl ***************************************
 dnl *** Check for gobject-introspection ***
 dnl ***************************************
-GOBJECT_INTROSPECTION_CHECK([1.66.0])
+GOBJECT_INTROSPECTION_CHECK([1.72.0])
 
 dnl *************************
 dnl *** Check for vapigen ***
