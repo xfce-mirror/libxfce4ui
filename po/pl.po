@@ -629,7 +629,7 @@ msgstr "Panel"
 
 #: xfce4-about/main.c:196
 msgid "Provides a home for window buttons, launchers, app menu and more."
-msgstr "Zapewnia miejsce na przyciski okien, aktywatory, menu aplikacji i wiele innych."
+msgstr "Zapewnia miejsce na przyciski okien, aktywatory, menu programów i wiele innych."
 
 #: xfce4-about/main.c:200
 msgid "Desktop Manager"
@@ -678,7 +678,7 @@ msgstr "Wyszukiwarka programów"
 
 #: xfce4-about/main.c:226
 msgid "Quickly finds and launches applications installed on your system."
-msgstr "Szybko wyszukuje i uruchamia aplikacje zainstalowane w systemie."
+msgstr "Szybko wyszukuje i uruchamia programy zainstalowane w systemie."
 
 #: xfce4-about/main.c:230
 msgid "Settings Daemon"
@@ -895,7 +895,7 @@ msgid ""
 "Thank you for your interest in Xfce.\n"
 "\n"
 "\t- The Xfce Development Team"
-msgstr "Xfce to także platforma programistyczna udostępniająca kilka bibliotek, które pomagają programistom tworzyć aplikacje pasujące do środowiska graficznego.\n\nKomponenty Xfce są licencjonowane na podstawie wolnych lub otwartych licencji; GPL lub BSDL dla aplikacji oraz LGPL lub BSDL dla bibliotek. Zajrzyj do dokumentacji, kodu źródłowego lub na stronę internetową Xfce (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>), aby uzyskać więcej informacji.\n\nDziękujemy za zainteresowanie Xfce.\n\n\t- Zespół twórców Xfce"
+msgstr "Xfce to także platforma programistyczna oferująca szereg bibliotek ułatwiających programistom tworzenie programów dobrze dostosowanych do środowiska graficznego.\n\nKomponenty Xfce są licencjonowane na podstawie wolnych lub otwartych licencji; GPL lub BSDL dla programów oraz LGPL lub BSDL dla bibliotek. Zajrzyj do dokumentacji, kodu źródłowego lub na stronę internetową Xfce (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>), aby uzyskać więcej informacji.\n\nDziękujemy za zainteresowanie Xfce.\n\n\t- Zespół twórców Xfce"
 
 #: xfce4-about/xfce4-about-dialog.glade:834
 msgid "About"
