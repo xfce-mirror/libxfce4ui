@@ -653,7 +653,7 @@ msgstr "Panel"
 #: ../xfce4-about/main.c:152
 msgid "Provides a home for window buttons, launchers, app menu and more."
 msgstr ""
-"Zapewnia miejsce na przyciski okien, aktywatory, menu aplikacji i wiele "
+"Zapewnia miejsce na przyciski okien, aktywatory, menu programów i wiele "
 "innych."
 
 #: ../xfce4-about/main.c:156
@@ -705,7 +705,7 @@ msgstr "Wyszukiwarka programów"
 
 #: ../xfce4-about/main.c:182
 msgid "Quickly finds and launches applications installed on your system."
-msgstr "Szybko wyszukuje i uruchamia aplikacje zainstalowane w systemie."
+msgstr "Szybko wyszukuje i uruchamia programy zainstalowane w systemie."
 
 #: ../xfce4-about/main.c:186
 msgid "Settings Daemon"
