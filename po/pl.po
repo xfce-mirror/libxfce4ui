@@ -46,7 +46,7 @@ msgstr "Przeczytaj podręcznik"
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
-msgstr "Przeglądarka otworzy stronę dokumentacji, na której tworzone są podręczniki użytkownika i gdzie następuje ich tłumaczenie."
+msgstr "Przeglądarka otworzy stronę dokumentacji, na której tworzone i tłumaczone są podręczniki użytkownika."
 
 #. Create cancel button
 #: libxfce4ui/xfce-dialogs.c:275 libxfce4ui/xfce-dialogs.c:533
