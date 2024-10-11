@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the libxfce4ui.master package.
 # 
 # Translators:
+# Amirali Rahmani Vatan Khah, 2024
 # Behzad A <behzad.a_ir@hotmail.com>, 2021
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2023-04-06 12:45+0200\n"
+"POT-Creation-Date: 2024-07-07 12:45+0200\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Behzad A <behzad.a_ir@hotmail.com>, 2021\n"
+"Last-Translator: Amirali Rahmani Vatan Khah, 2024\n"
 "Language-Team: Persian (Iran) (http://app.transifex.com/xfce/libxfce4ui/language/fa_IR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,6 +32,10 @@ msgstr "آیا می‌خواهید راهنمای آنلاین %s را بخوا�
 msgid "Do you want to read the manual online?"
 msgstr "آیا می‌خواهید راهنمای آنلاین را بخوانید؟"
 
+#: libxfce4ui/xfce-dialogs.c:270
+msgid "Read the manual"
+msgstr "راهنمای آنلاین را بخوانید"
+
 #: libxfce4ui/xfce-dialogs.c:273
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
@@ -39,17 +44,17 @@ msgstr "شما به وب سایت مستندات که صفحات راهنما د
 
 #. Create cancel button
 #: libxfce4ui/xfce-dialogs.c:275 libxfce4ui/xfce-dialogs.c:533
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:256
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:252
 msgid "_Cancel"
 msgstr "انصراف"
 
 #: libxfce4ui/xfce-dialogs.c:277
 msgid "_Read Online"
-msgstr ""
+msgstr "_آنلاین بخوانید"
 
 #: libxfce4ui/xfce-dialogs.c:286
 msgid "_Always go directly to the online documentation"
-msgstr ""
+msgstr "_همیشه مستقیماً به راهنمای آنلاین رجوع کنید"
 
 #: libxfce4ui/xfce-dialogs.c:335 libxfce4ui/xfce-dialogs.c:370
 #: libxfce4ui/xfce-dialogs.c:406
@@ -91,52 +96,52 @@ msgstr "هشدار"
 
 #: libxfce4ui/xfce-dialogs.c:534
 msgid "Close T_ab"
-msgstr ""
+msgstr "بستن تب"
 
 #: libxfce4ui/xfce-dialogs.c:535
 msgid "Close _Window"
-msgstr ""
+msgstr "بستن پنجره"
 
 #: libxfce4ui/xfce-dialogs.c:540
 msgid "Do _not ask me again"
 msgstr "دوباره از من نپرس"
 
-#: libxfce4ui/xfce-sm-client.c:1427
+#: libxfce4ui/xfce-sm-client.c:1435
 msgid "Session management client ID"
 msgstr "شناسه کارخواه مدیریت نشست"
 
-#: libxfce4ui/xfce-sm-client.c:1427
+#: libxfce4ui/xfce-sm-client.c:1435
 msgid "ID"
 msgstr "شناسه"
 
-#: libxfce4ui/xfce-sm-client.c:1428
+#: libxfce4ui/xfce-sm-client.c:1436
 msgid "Disable session management"
 msgstr "غیرفعال کردن مدیریت نشست‌ها"
 
-#: libxfce4ui/xfce-sm-client.c:1438
+#: libxfce4ui/xfce-sm-client.c:1446
 msgid "Session management options"
 msgstr "تنظیمات مدیریت نشست‌ها"
 
-#: libxfce4ui/xfce-sm-client.c:1439
+#: libxfce4ui/xfce-sm-client.c:1447
 msgid "Show session management options"
 msgstr "نمایش تنظیمات مدیریت نشست‌ها"
 
-#: libxfce4ui/xfce-sm-client.c:1609
+#: libxfce4ui/xfce-sm-client.c:1619
 #, c-format
 msgid "Failed to connect to the session manager: %s"
 msgstr "شکست در اتصال به مدیر نشست‌ها %s"
 
-#: libxfce4ui/xfce-sm-client.c:1615
+#: libxfce4ui/xfce-sm-client.c:1625
 msgid "Session manager did not return a valid client id"
 msgstr "مدیر نشست، شناسه کاربری معتبری ارائه نکرد"
 
 #. print warning for user
-#: libxfce4ui/xfce-spawn.c:397
+#: libxfce4ui/xfce-spawn.c:383
 #, c-format
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
 "\"%s\"."
-msgstr ""
+msgstr "دیرکتوری کاری \"%s\" وجود ندارد. این برای ایجاد کردن \"%s\" استفاده نمی‌شود"
 
 #. retrieve the error and warning messages
 #: libxfce4ui/xfce-filename-input.c:232
@@ -145,7 +150,7 @@ msgstr "نام فایل خیلی طولانی است"
 
 #: libxfce4ui/xfce-filename-input.c:233
 msgid "Directory separator illegal in file name"
-msgstr ""
+msgstr "جدا کننده دیرکتوری در نام فایل غیرمجاز است"
 
 #: libxfce4ui/xfce-filename-input.c:234
 msgid "Filenames should not start or end with a space"
@@ -198,91 +203,91 @@ msgstr "لطفا از کلید ترکیبی دیگری استفاده کنید."
 #: libxfce4kbd-private/xfce-shortcuts.c:107
 #, c-format
 msgid "%s already triggers this action."
-msgstr ""
+msgstr "%s از قبل این کار را شروع می‌کند "
 
 #: libxfce4kbd-private/xfce-shortcuts.c:112
 #, c-format
 msgid "Conflicting actions for %s"
-msgstr ""
+msgstr "عملکردهای متناقض برای %s"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:174
 msgid "This shortcut is already being used for something else."
 msgstr "این میانبر در حال حاضر برای چیز دیگری استفاده می‌شود."
 
-#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:94
-#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:131
+#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:92
+#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:129
 msgid "Shortcuts Editor"
 msgstr "ویرایشگر میان‌برها"
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:380
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:378
 msgid "The current shortcut. Click to edit..."
-msgstr ""
+msgstr "میانبر کنونی. برای تغییر کلیک کنید..."
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:391
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:389
 msgid "Clear the shortcut"
-msgstr ""
+msgstr "پاک کردن میانبر"
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:401
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:399
 msgid "Restore the default shortcut"
-msgstr ""
+msgstr "میانبر اولیه را برگردانید"
 
 #. skip leading slash
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:473
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:562
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:471
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:560
 #, c-format
 msgid "This keyboard shortcut is currently used by: '%s'"
 msgstr "این میانبر صفحه‌کلید در حال استفاده توسط این موارد است: «%s»"
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:476
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:565
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:474
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:563
 msgid "Keyboard shortcut already in use"
 msgstr "میانبر صفحه‌کلید در حال استفاده است"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:217
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:215
 msgid "Window Manager Action Shortcut"
-msgstr ""
+msgstr "میانبر عملکرد مدیر پنجره"
 
 #. TRANSLATORS: this string will be used to create an explanation for
 #. * the user in a following string
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:220
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:236
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:218
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:234
 msgid "action"
-msgstr ""
+msgstr "عملکرد"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:225
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:223
 msgid "Command Shortcut"
 msgstr "میانبر فرمان"
 
 #. TRANSLATORS: this string will be used to create an explanation for
 #. * the user in a following string
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:228
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:226
 msgid "command"
 msgstr "فرمان"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:233
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:231
 msgid "Shortcut"
 msgstr "میانبر"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:250
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:246
 msgid "Clear"
 msgstr "تمیز کردن"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:273
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:269
 #, c-format
 msgid "Press keyboard keys to trigger the %s '%s'."
-msgstr ""
+msgstr "کلید های کیبورد را فشار دهید تا %s '%s' را فعال کنید."
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:295
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:291
 msgid "Please press a key"
 msgstr "لطفا یک کلید را فشار دهید"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:350
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:346
 msgid "Could not grab the keyboard."
-msgstr ""
+msgstr "موفق نشد کیبورد را متصل کند"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:36
 msgid "Window operations menu"
-msgstr ""
+msgstr "منوی عملیات‌های پنجره‌ها "
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:37
 msgid "Up"
@@ -302,11 +307,11 @@ msgstr "راست"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:42
 msgid "Cycle windows"
-msgstr ""
+msgstr "جابجایی پنجره‌ها"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:43
 msgid "Cycle windows (Reverse)"
-msgstr ""
+msgstr "جابجایی پنجره‌ها (برعکس)"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:44
 msgid "Switch window for same application"
@@ -596,124 +601,124 @@ msgstr ""
 msgid "Delete active workspace"
 msgstr ""
 
-#: xfce4-about/main.c:58
+#: xfce4-about/main.c:64
 msgid "Version information"
 msgstr "اطلاعات نسخه"
 
-#: xfce4-about/main.c:128
+#: xfce4-about/main.c:172
 msgid "GPUs"
 msgstr ""
 
-#: xfce4-about/main.c:146
+#: xfce4-about/main.c:190
 msgid "Window Manager"
 msgstr "مدیریت پنجره"
 
-#: xfce4-about/main.c:147
+#: xfce4-about/main.c:191
 msgid "Handles the placement of windows on the screen."
 msgstr ""
 
-#: xfce4-about/main.c:151
+#: xfce4-about/main.c:195
 msgid "Panel"
 msgstr "پنل"
 
-#: xfce4-about/main.c:152
+#: xfce4-about/main.c:196
 msgid "Provides a home for window buttons, launchers, app menu and more."
 msgstr ""
 
-#: xfce4-about/main.c:156
+#: xfce4-about/main.c:200
 msgid "Desktop Manager"
 msgstr "مدیر میزکار"
 
-#: xfce4-about/main.c:157
+#: xfce4-about/main.c:201
 msgid "Sets desktop backgrounds, handles icons and more."
 msgstr "تنظیمات پس‌ضمینه دسکتاپ، اداره کردن آیکن‌ها و بیشتر."
 
-#: xfce4-about/main.c:161
+#: xfce4-about/main.c:205
 msgid "File Manager"
 msgstr "مدیر پرونده"
 
-#: xfce4-about/main.c:162
+#: xfce4-about/main.c:206
 msgid "Manages your files in a modern, easy-to-use and fast way."
 msgstr "مدیریت فایل‌های شما به روشی پیش‌رفته، آسان برای استفاده و سریع."
 
-#: xfce4-about/main.c:166
+#: xfce4-about/main.c:210
 msgid "Volume Manager"
 msgstr ""
 
-#: xfce4-about/main.c:167
+#: xfce4-about/main.c:211
 msgid "Manages removable drives and media for Thunar."
 msgstr ""
 
-#: xfce4-about/main.c:171
+#: xfce4-about/main.c:215
 msgid "Session Manager"
 msgstr "مدیر نشست"
 
-#: xfce4-about/main.c:172
+#: xfce4-about/main.c:216
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
 msgstr ""
 
-#: xfce4-about/main.c:176
+#: xfce4-about/main.c:220
 msgid "Settings Manager"
 msgstr "مدیر تنظیمات"
 
-#: xfce4-about/main.c:177
+#: xfce4-about/main.c:221
 msgid "Configures appearance, display, keyboard and mouse settings."
 msgstr "پیکربندی کردن تنظیمات ظاهر، نمایشگر، کیبورد و موس."
 
-#: xfce4-about/main.c:181
+#: xfce4-about/main.c:225
 msgid "Application Finder"
 msgstr "یابنده برنامه‌"
 
-#: xfce4-about/main.c:182
+#: xfce4-about/main.c:226
 msgid "Quickly finds and launches applications installed on your system."
 msgstr "یافتن سریع و اجرای برنامه‌های نصب شده در سیستم شما."
 
-#: xfce4-about/main.c:186
+#: xfce4-about/main.c:230
 msgid "Settings Daemon"
 msgstr ""
 
-#: xfce4-about/main.c:187
+#: xfce4-about/main.c:231
 msgid "Stores your settings in a D-Bus-based configuration system."
 msgstr ""
 
-#: xfce4-about/main.c:191
+#: xfce4-about/main.c:235
 msgid "A Menu Library"
 msgstr ""
 
-#: xfce4-about/main.c:192
+#: xfce4-about/main.c:236
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
 msgstr ""
 
-#: xfce4-about/main.c:196
+#: xfce4-about/main.c:240
 msgid "Thumbnails Service"
 msgstr ""
 
-#: xfce4-about/main.c:197
+#: xfce4-about/main.c:241
 msgid "Implements the thumbnail management D-Bus specification."
 msgstr ""
 
-#: xfce4-about/main.c:251
+#: xfce4-about/main.c:295
 msgid "Please see <https://www.xfce.org/about/credits>"
 msgstr "لطفا ببینید <https://www.xfce.org/about/credits>"
 
-#: xfce4-about/main.c:312
+#: xfce4-about/main.c:356
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 msgstr ""
 
-#: xfce4-about/main.c:316
+#: xfce4-about/main.c:360
 msgid "Thanks to all who helped making this software available!"
 msgstr "سپاس از تمام کسانی که به در دسترس قرار گرفتن این نرم‌افزار کمک کردند!"
 
-#: xfce4-about/main.c:333
+#: xfce4-about/main.c:377
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
 msgstr ""
 
-#: xfce4-about/main.c:338
+#: xfce4-about/main.c:382
 msgid ""
 "The libxfce4ui, libxfce4util and exo packages are distributed under the "
 "terms of the GNU Library General Public License as published by the Free "
@@ -721,7 +726,7 @@ msgid ""
 "any later version."
 msgstr ""
 
-#: xfce4-about/main.c:345
+#: xfce4-about/main.c:389
 msgid ""
 "The packages thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
 "xfce4-settings, xfconf, xfdesktop and xfwm4 are distributed under the terms "
@@ -730,25 +735,25 @@ msgid ""
 "version."
 msgstr ""
 
-#: xfce4-about/main.c:491
+#: xfce4-about/main.c:535
 #, c-format
 msgid "Type '%s --help' for usage information."
 msgstr ""
 
-#: xfce4-about/main.c:497
+#: xfce4-about/main.c:541
 msgid "Unable to initialize GTK+."
 msgstr ""
 
-#: xfce4-about/main.c:506
+#: xfce4-about/main.c:550
 msgid "The Xfce development team. All rights reserved."
 msgstr "تیم توسعه Xfce. تمامی حقوق محفوظ است"
 
-#: xfce4-about/main.c:507
+#: xfce4-about/main.c:551
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "لطفا خطاها را در <%s> گزارش کنید."
 
-#: xfce4-about/main.c:517
+#: xfce4-about/main.c:561
 msgid "Failed to load interface"
 msgstr ""
 
@@ -782,10 +787,6 @@ msgstr "مترجمین"
 #: xfce4-about/contributors.h:162
 msgid "Previous contributors"
 msgstr "مشارکت کننده‌گان قبلی"
-
-#: xfce4-about/xfce4-about.desktop.in:6
-msgid "org.xfce.about"
-msgstr ""
 
 #: xfce4-about/xfce4-about.desktop.in:11
 msgid "About Xfce"
@@ -822,9 +823,10 @@ msgstr "دستگاه"
 #: xfce4-about/xfce4-about-dialog.glade:551
 #: xfce4-about/xfce4-about-dialog.glade:576
 #: xfce4-about/xfce4-about-dialog.glade:601
-#: xfce4-about/xfce4-about-dialog.glade:628
+#: xfce4-about/xfce4-about-dialog.glade:626
 #: xfce4-about/xfce4-about-dialog.glade:653
 #: xfce4-about/xfce4-about-dialog.glade:678
+#: xfce4-about/xfce4-about-dialog.glade:703
 msgid "label"
 msgstr ""
 
@@ -852,29 +854,33 @@ msgstr "نگارش جی‌تی‌کِی"
 msgid "Kernel Version"
 msgstr "نگارش کِرنِل"
 
-#: xfce4-about/xfce4-about-dialog.glade:615
+#: xfce4-about/xfce4-about-dialog.glade:614
+msgid "Windowing System"
+msgstr ""
+
+#: xfce4-about/xfce4-about-dialog.glade:640
 msgid "CPU"
 msgstr "CPU"
 
-#: xfce4-about/xfce4-about-dialog.glade:641
+#: xfce4-about/xfce4-about-dialog.glade:666
 msgid "Memory"
 msgstr "حافظه"
 
-#: xfce4-about/xfce4-about-dialog.glade:666
+#: xfce4-about/xfce4-about-dialog.glade:691
 msgid "GPU"
 msgstr "GPU"
 
-#: xfce4-about/xfce4-about-dialog.glade:699
+#: xfce4-about/xfce4-about-dialog.glade:724
 msgid "System"
 msgstr "سیستم"
 
-#: xfce4-about/xfce4-about-dialog.glade:741
+#: xfce4-about/xfce4-about-dialog.glade:766
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
 msgstr "Xfce مجموعه‌ای از برنامه‌ها هست که در کنار هم یک محیط دسکتاپ با امکانات کامل را فراهم می‌کنند.\nبرنامه‌هایی که در ادامه قید شده‌اند بخشی از هسته Xfce هستند:"
 
-#: xfce4-about/xfce4-about-dialog.glade:779
+#: xfce4-about/xfce4-about-dialog.glade:804
 msgid ""
 "Xfce is also a development platform providing several libraries that help programmers create applications that fit in well with the desktop environment.\n"
 "\n"
@@ -885,46 +891,46 @@ msgid ""
 "\t- The Xfce Development Team"
 msgstr ""
 
-#: xfce4-about/xfce4-about-dialog.glade:809
+#: xfce4-about/xfce4-about-dialog.glade:834
 msgid "About"
 msgstr "درباره"
 
-#: xfce4-about/xfce4-about-dialog.glade:843
+#: xfce4-about/xfce4-about-dialog.glade:868
 msgid "Credits"
 msgstr "دست‌اندکاران"
 
-#: xfce4-about/xfce4-about-dialog.glade:922
+#: xfce4-about/xfce4-about-dialog.glade:947
 msgid "GPL"
 msgstr "جی‌پی‌اِل"
 
-#: xfce4-about/xfce4-about-dialog.glade:935
+#: xfce4-about/xfce4-about-dialog.glade:960
 msgid "LGPL"
 msgstr "اِل‌جی‌پی‌اِل"
 
-#: xfce4-about/xfce4-about-dialog.glade:948
+#: xfce4-about/xfce4-about-dialog.glade:973
 msgid "BSD"
 msgstr "بی‌اِس‌دی"
 
-#: xfce4-about/xfce4-about-dialog.glade:978
+#: xfce4-about/xfce4-about-dialog.glade:1003
 msgid "Copyright"
 msgstr "حق رونوشت"
 
-#: xfce4-about/system-info.c:533 xfce4-about/system-info.c:555
-#: xfce4-about/system-info.c:673 xfce4-about/system-info.c:721
+#: xfce4-about/system-info.c:499 xfce4-about/system-info.c:521
+#: xfce4-about/system-info.c:639 xfce4-about/system-info.c:687
 msgid "Unknown"
 msgstr "ناشناخته"
 
 #. translators: This is the type of architecture for the OS
-#: xfce4-about/system-info.c:658
+#: xfce4-about/system-info.c:624
 msgid "64-bit (32-bit userspace)"
 msgstr "۶۴-بیت (فضای کاربری ۳۲-بیت)"
 
 #. translators: This is the type of architecture for the OS
-#: xfce4-about/system-info.c:661
+#: xfce4-about/system-info.c:627
 msgid "64-bit"
 msgstr "۶۴-بیت"
 
-#: xfce4-about/system-info.c:661
+#: xfce4-about/system-info.c:627
 msgid "32-bit"
 msgstr "۳۲-بیت"
 
@@ -932,7 +938,7 @@ msgstr "۳۲-بیت"
 #. * example:
 #. * "Fedora 25 (Workstation Edition); Build ID: xyz" or
 #. * "Ubuntu 16.04 LTS; Build ID: jki"
-#: xfce4-about/system-info.c:729
+#: xfce4-about/system-info.c:695
 #, c-format
 msgid "%s; Build ID: %s"
 msgstr ""
