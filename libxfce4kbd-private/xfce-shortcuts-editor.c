@@ -35,6 +35,7 @@ typedef struct
 {
   XfceShortcutsEditor *editor;
   XfceGtkActionEntry *entry;
+  size_t section_index;
   const gchar *displayed_label;
 } ShortcutEditClickedData;
 
@@ -51,6 +52,9 @@ typedef struct
   guint key;
   const gchar *current_path;
   gchar *other_path;
+
+  GHashTable *all_managed_paths;
+  GHashTable *conflicting_paths;
 } ShortcutInfo;
 
 
@@ -95,6 +99,8 @@ struct _XfceShortcutsEditor
 
   XfceShortcutsEditorSection *arrays;
   size_t arrays_count;
+
+  GList *exclusive_groups; // GArray<size_t>
 };
 
 
@@ -132,6 +138,12 @@ static void
 xfce_shortcuts_editor_finalize (GObject *object)
 {
   XfceShortcutsEditor *editor = XFCE_SHORTCUTS_EDITOR (object);
+
+  for (GList *l = editor->exclusive_groups; l != NULL; l = l->next)
+    {
+      g_array_free (l->data, TRUE);
+    }
+  g_list_free (editor->exclusive_groups);
 
   for (size_t i = 0; i < editor->arrays_count; i++)
     g_free (editor->arrays[i].section_name);
@@ -248,6 +260,85 @@ xfce_shortcuts_editor_new_variadic (int argument_count,
   gtk_widget_show (GTK_WIDGET (editor));
 
   return GTK_WIDGET (editor);
+}
+
+
+
+/**
+ * xfce_shortcuts_editor_add_exclusive_group:
+ * @editor: A #XfceShortcutsEditor.
+ * @first_section_index: The first index in the array of #XfceShortcutsEditorSection.
+ * @...: Other indexes that should be in the group, terminated with -1.
+ *
+ * Adds an exclusive group to @editor, which consists of a list of
+ * #XfceShortcutsEditorSection indexes.  Within actions inside all sections of
+ * the group, there may be no duplicate shortcuts set.
+ *
+ * The default (if this method is never called) is for there to be one
+ * exclusive group consisting of all sections.
+ *
+ * Don't forget the terminating -1 at the end of the variable list of indexes.
+ **/
+void
+xfce_shortcuts_editor_add_exclusive_group (XfceShortcutsEditor *editor,
+                                           ssize_t first_section_index,
+                                           ...)
+{
+  g_return_if_fail (XFCE_IS_SHORTCUTS_EDITOR (editor));
+  g_return_if_fail (first_section_index >= 0);
+
+  GArray *group_indexes = g_array_sized_new (FALSE, TRUE, sizeof (size_t), 2);
+  g_array_append_val (group_indexes, first_section_index);
+
+  va_list argument_list;
+  va_start (argument_list, first_section_index);
+
+  for (ssize_t index = va_arg (argument_list, ssize_t); index >= 0; index = va_arg (argument_list, ssize_t))
+    {
+      size_t index_pos = index;
+      g_return_if_fail (index_pos < editor->arrays_count);
+      g_array_append_val (group_indexes, index_pos);
+    }
+
+  va_end (argument_list);
+
+  editor->exclusive_groups = g_list_prepend (editor->exclusive_groups, group_indexes);
+}
+
+
+
+/**
+ * xfce_shortcuts_editor_add_exclusive_group_array:
+ * @editor: A #XfceShortcutsEditor.
+ * @section_indexes: An array of indexes.
+ * @n_section_indexes: The count of elements in @section_indexes.
+ *
+ * Adds an exclusive group to @editor, which consists of a list of
+ * #XfceShortcutsEditorSection indexes.  Within actions inside all sections of
+ * the group, there may be no duplicate shortcuts set.
+ *
+ * The default (if this method is never called) is for there to be one
+ * exclusive group consisting of all sections.
+ **/
+void
+xfce_shortcuts_editor_add_exclusive_group_array (XfceShortcutsEditor *editor,
+                                                 size_t *section_indexes,
+                                                 size_t n_section_indexes)
+{
+  g_return_if_fail (XFCE_IS_SHORTCUTS_EDITOR (editor));
+  g_return_if_fail (section_indexes != NULL);
+  g_return_if_fail (n_section_indexes > 0);
+#ifndef G_DISABLE_CHECKS
+  for (size_t i = 0; i < n_section_indexes; ++i)
+    {
+      g_return_if_fail (section_indexes[i] < editor->arrays_count);
+    }
+#endif
+
+  GArray *group_indexes = g_array_sized_new (FALSE, FALSE, sizeof (size_t), n_section_indexes);
+  memcpy (group_indexes->data, section_indexes, sizeof (*section_indexes) * n_section_indexes);
+  group_indexes->len = n_section_indexes;
+  editor->exclusive_groups = g_list_prepend (editor->exclusive_groups, group_indexes);
 }
 
 
@@ -387,6 +478,7 @@ xfce_shortcuts_editor_create_contents (XfceShortcutsEditor *editor)
 
           data->editor = editor;
           data->entry = editor->arrays[array_idx].entries + entry_idx;
+          data->section_index = array_idx;
           g_signal_connect_data (G_OBJECT (shortcut_button), "clicked", G_CALLBACK (xfce_shortcuts_editor_shortcut_clicked), data, free_data, 0);
 
           /* clear button */
@@ -416,6 +508,22 @@ xfce_shortcuts_editor_create_contents (XfceShortcutsEditor *editor)
 
 
 
+static inline gboolean
+shortcut_in_conflicting_group (ShortcutInfo *info,
+                               const gchar *path)
+{
+  // If our hash tables are NULL, then the exclusive group is everything, so
+  // always return TRUE.  If we're not in the all_managed_paths table, then
+  // that means we're a shortcut path not managed by this dialog, so assume we
+  // could conflict.  If we are managed, and are in the conflicting_paths table,
+  // then we can conflict as well.
+  return (info->all_managed_paths == NULL && info->conflicting_paths == NULL)
+         || !g_hash_table_contains (info->all_managed_paths, path)
+         || g_hash_table_contains (info->conflicting_paths, path);
+}
+
+
+
 static void
 xfce_shortcuts_editor_shortcut_check (gpointer data,
                                       const gchar *path,
@@ -429,7 +537,8 @@ xfce_shortcuts_editor_shortcut_check (gpointer data,
 
   info->in_use = info->mods == mods
                  && info->key == key
-                 && g_strcmp0 (info->current_path, path) != 0;
+                 && g_strcmp0 (info->current_path, path) != 0
+                 && shortcut_in_conflicting_group (info, path);
 
   if (info->in_use)
     info->other_path = g_strdup (path);
@@ -464,7 +573,66 @@ xfce_shortcuts_editor_validate_shortcut (XfceShortcutDialog *editor,
   info.current_path = data->entry->accel_path;
   info.other_path = NULL;
 
+  if (data->editor->exclusive_groups != NULL)
+    {
+      GHashTable *conflicting_sections = g_hash_table_new (g_direct_hash, g_direct_equal);
+
+      // First build a list of section indexes that this accelerator's section is
+      // exclusive with.
+      for (GList *l = data->editor->exclusive_groups; l != NULL; l = l->next)
+        {
+          GArray *exclusive_group = l->data;
+
+          gboolean in_our_section = FALSE;
+          for (gsize group_idx = 0; group_idx < exclusive_group->len; ++group_idx)
+            {
+              size_t section_index = g_array_index (exclusive_group, size_t, group_idx);
+              if (section_index == data->section_index)
+                {
+                  in_our_section = TRUE;
+                  break;
+                }
+            }
+
+          if (in_our_section)
+            {
+              for (gsize group_idx = 0; group_idx < exclusive_group->len; ++group_idx)
+                {
+                  size_t section_index = g_array_index (exclusive_group, size_t, group_idx);
+                  if (section_index != data->section_index)
+                    {
+                      g_hash_table_add (conflicting_sections, GUINT_TO_POINTER (section_index));
+                    }
+                }
+            }
+        }
+
+      info.all_managed_paths = g_hash_table_new (g_str_hash, g_str_equal);
+      info.conflicting_paths = g_hash_table_new (g_str_hash, g_str_equal);
+
+      // Insert all paths we know about into all_managed_paths.  Insert paths
+      // that can conflict with this accelerator into conflicting_paths.
+      for (size_t array_idx = 0; array_idx < data->editor->arrays_count; ++array_idx)
+        {
+          XfceShortcutsEditorSection *section = &data->editor->arrays[array_idx];
+          for (size_t entry_idx = 0; entry_idx < section->size; ++entry_idx)
+            {
+              gchar *accel_path = (gchar *) section->entries[entry_idx].accel_path;
+              g_hash_table_add (info.all_managed_paths, accel_path);
+              if (g_hash_table_contains (conflicting_sections, GUINT_TO_POINTER (array_idx)))
+                {
+                  g_hash_table_add (info.conflicting_paths, accel_path);
+                }
+            }
+        }
+
+      g_hash_table_destroy (conflicting_sections);
+    }
+
   gtk_accel_map_foreach_unfiltered (&info, xfce_shortcuts_editor_shortcut_check);
+
+  g_clear_pointer (&info.all_managed_paths, g_hash_table_destroy);
+  g_clear_pointer (&info.conflicting_paths, g_hash_table_destroy);
 
   if (info.in_use)
     {
