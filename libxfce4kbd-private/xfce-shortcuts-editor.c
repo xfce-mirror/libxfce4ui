@@ -612,7 +612,7 @@ build_paths_with_overlap_allowed_set (XfceShortcutsEditor *editor,
           for (size_t entry_idx = 0; entry_idx < section->size; ++entry_idx)
             {
               gchar *accel_path = (gchar *) section->entries[entry_idx].accel_path;
-              if (g_hash_table_contains (sections_with_overlap_allowed, GUINT_TO_POINTER (array_idx)))
+              if (accel_path != NULL && g_hash_table_contains (sections_with_overlap_allowed, GUINT_TO_POINTER (array_idx)))
                 {
                   g_hash_table_add (paths_with_overlap_allowed, accel_path);
                 }
