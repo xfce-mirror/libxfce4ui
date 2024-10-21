@@ -55,7 +55,7 @@ typedef struct
   const gchar *current_path;
   gchar *other_path;
 
-  // A set of all accel paths that are are allowed to have the same key+modifiers as 'current_path'
+  // A set of all accel paths that are allowed to have the same key+modifiers as 'current_path'
   // If no overlap is allowed, this will be NULL.
   GHashTable *paths_with_overlap_allowed; // gchar *accel_path (no values, used as set)
 
