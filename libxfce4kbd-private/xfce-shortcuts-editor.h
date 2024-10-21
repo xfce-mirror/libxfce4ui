@@ -58,12 +58,12 @@ xfce_shortcuts_editor_new_variadic (int argument_count,
 
 void
 xfce_shortcuts_editor_add_overlap_group (XfceShortcutsEditor *editor,
-                                           int first_section_index,
-                                           ...);
+                                         int first_section_index,
+                                         ...);
 void
 xfce_shortcuts_editor_add_overlap_group_array (XfceShortcutsEditor *editor,
-                                                 size_t *section_indexes,
-                                                 size_t n_section_indexes);
+                                               size_t *section_indexes,
+                                               size_t n_section_indexes);
 
 G_END_DECLS
 
