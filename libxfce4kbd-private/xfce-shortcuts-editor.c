@@ -328,6 +328,39 @@ xfce_shortcuts_editor_add_overlap_group (XfceShortcutsEditor *editor,
 
 
 
+/**
+ * xfce_shortcuts_editor_add_overlap_group_array:
+ * @editor: A #XfceShortcutsEditor.
+ * @section_indexes: An array of indexes.
+ * @n_section_indexes: The count of elements in @section_indexes.
+ *
+ * Adds an overlap group to @editor, which consists of a list of
+ * #XfceShortcutsEditorSection indexes.  Within actions inside all sections of
+ * the group, there may be duplicate shortcuts set.
+ **/
+void
+xfce_shortcuts_editor_add_overlap_group_array (XfceShortcutsEditor *editor,
+                                               size_t *section_indexes,
+                                               size_t n_section_indexes)
+{
+  g_return_if_fail (XFCE_IS_SHORTCUTS_EDITOR (editor));
+  g_return_if_fail (section_indexes != NULL);
+  g_return_if_fail (n_section_indexes > 0);
+#ifndef G_DISABLE_CHECKS
+  for (size_t i = 0; i < n_section_indexes; ++i)
+    {
+      g_return_if_fail (section_indexes[i] < editor->arrays_count);
+    }
+#endif
+
+  GArray *group_indexes = g_array_sized_new (FALSE, FALSE, sizeof (size_t), n_section_indexes);
+  memcpy (group_indexes->data, section_indexes, sizeof (*section_indexes) * n_section_indexes);
+  group_indexes->len = n_section_indexes;
+  editor->groups_with_overlap_allowed = g_list_prepend (editor->groups_with_overlap_allowed, group_indexes);
+}
+
+
+
 static void
 free_data (gpointer data,
            GClosure *closure)
