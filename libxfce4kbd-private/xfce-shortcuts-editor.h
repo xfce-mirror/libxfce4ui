@@ -56,6 +56,11 @@ GtkWidget *
 xfce_shortcuts_editor_new_variadic (int argument_count,
                                     va_list argument_list) G_GNUC_MALLOC;
 
+void
+xfce_shortcuts_editor_add_overlap_group (XfceShortcutsEditor *editor,
+                                         int first_section_index,
+                                         ...);
+
 G_END_DECLS
 
 #endif /* !__XFCE_SHORTCUTS_EDITOR_DIALOG_H__ */
