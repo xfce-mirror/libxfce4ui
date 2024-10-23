@@ -105,10 +105,9 @@ struct _XfceShortcutsEditor
   size_t arrays_count;
 
   /* Each group in this list is an array of XfceShortcutsEditorSection indexes
-   * (into 'arrays' above).  Within the sections listed in a group, shortcuts
-   * are allowed to overlap (that is, the key+modifiers can be the
-   * same), but shortcuts *cannot* overlap with others defined in sections outside
-   * the group.  A section can be in multiple groups.*/
+   * (into 'arrays' above). Within the sections listed in a group, shortcuts
+   * are allowed to overlap (key+modifiers can be the same).
+   * A section can be in multiple groups.*/
   GList *groups_with_overlap_allowed; /* GArray<size_t arrays_index> */
 };
 
@@ -280,7 +279,7 @@ xfce_shortcuts_editor_new_variadic (int argument_count,
  * @...: Other indexes that should be in the group, as ints, terminated with -1.
  *
  * Adds an overlap group to @editor, which consists of a list of
- * #XfceShortcutsEditorSection indexes.  Within actions inside all sections of
+ * #XfceShortcutsEditorSection indexes. Within actions inside all sections of
  * the group, there may be duplicate shortcuts set.
  *
  * Don't forget the terminating -1 at the end of the variable list of indexes.
@@ -572,7 +571,7 @@ build_paths_with_overlap_allowed_set (XfceShortcutsEditor *editor,
 
       paths_with_overlap_allowed = g_hash_table_new (g_str_hash, g_str_equal);
 
-      /* Insert paths that are allowed to overlap with this accelerator into 'paths_with_overlap' */
+      /* Insert paths that are allowed to overlap with this accelerator into 'paths_with_overlap_allowed' */
       for (size_t array_idx = 0; array_idx < editor->arrays_count; ++array_idx)
         {
           XfceShortcutsEditorSection *section = &editor->arrays[array_idx];
