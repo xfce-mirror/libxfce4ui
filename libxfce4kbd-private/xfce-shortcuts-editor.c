@@ -55,9 +55,9 @@ typedef struct
   const gchar *current_path;
   gchar *other_path;
 
-  // A set of all accel paths that are allowed to have the same key+modifiers as 'current_path'
-  // If no overlap is allowed, this will be NULL.
-  GHashTable *paths_with_overlap_allowed; // gchar *accel_path (no values, used as set)
+  /* A set of all accel paths that are allowed to have the same key+modifiers as 'current_path'
+   * If no overlap is allowed, this will be NULL. */
+  GHashTable *paths_with_overlap_allowed; /* gchar *accel_path (no values, used as set) */
 
 } ShortcutInfo;
 
@@ -104,12 +104,12 @@ struct _XfceShortcutsEditor
   XfceShortcutsEditorSection *arrays;
   size_t arrays_count;
 
-  // Each group in this list is an array of XfceShortcutsEditorSection indexes
-  // (into 'arrays' above).  Within the sections listed in a group, shortcuts
-  // are allowed to overlap (that is, the key+modifiers can be the
-  // same), but shortcuts *cannot* overlap with others defined in sections outside
-  // the group.  A section can be in multiple groups.
-  GList *groups_with_overlap_allowed; // GArray<size_t arrays_index>
+  /* Each group in this list is an array of XfceShortcutsEditorSection indexes
+   * (into 'arrays' above).  Within the sections listed in a group, shortcuts
+   * are allowed to overlap (that is, the key+modifiers can be the
+   * same), but shortcuts *cannot* overlap with others defined in sections outside
+   * the group.  A section can be in multiple groups.*/
+  GList *groups_with_overlap_allowed; /* GArray<size_t arrays_index> */
 };
 
 
@@ -290,13 +290,13 @@ xfce_shortcuts_editor_add_overlap_group (XfceShortcutsEditor *editor,
                                          int first_section_index,
                                          ...)
 {
-  // NB: This function takes ints instead of ssize_t because the compiler, at
-  // the call site, will not know that the varargs are supposed to be ssize_t,
-  // but will assume they are just ints.  Since those types are not the same
-  // size, we'll end up with invalid data in the function.  Expecting the
-  // caller to know this and cast to ssize_t is unreasonable.  But when we put
-  // the values into the GArray, they need to be the correct type and size for
-  // the array.
+  /* NB: This function takes ints instead of ssize_t because the compiler, at
+   * the call site, will not know that the varargs are supposed to be ssize_t,
+   * but will assume they are just ints.  Since those types are not the same
+   * size, we'll end up with invalid data in the function.  Expecting the
+   * caller to know this and cast to ssize_t is unreasonable.  But when we put
+   * the values into the GArray, they need to be the correct type and size for
+   * the array. */
 
   g_return_if_fail (XFCE_IS_SHORTCUTS_EDITOR (editor));
   g_return_if_fail (first_section_index >= 0);
@@ -541,7 +541,7 @@ build_paths_with_overlap_allowed_set (XfceShortcutsEditor *editor,
       GHashTable *paths_with_overlap_allowed = NULL;
       GHashTable *sections_with_overlap_allowed = g_hash_table_new (g_direct_hash, g_direct_equal);
 
-      // First build a list of section indexes that this accelerator's section can overlap with.
+      /* First build a list of section indexes that this accelerator's section can overlap with */
       for (GList *l = editor->groups_with_overlap_allowed; l != NULL; l = l->next)
         {
           GArray *overlap_allowed_group = l->data;
@@ -563,7 +563,7 @@ build_paths_with_overlap_allowed_set (XfceShortcutsEditor *editor,
                 {
                   size_t section_index = g_array_index (overlap_allowed_group, size_t, group_idx);
 
-                  // Dont allow overlap within our own section
+                  /* Dont allow overlap within our own section */
                   if (changed_section_index != section_index)
                     g_hash_table_add (sections_with_overlap_allowed, GUINT_TO_POINTER (section_index));
                 }
@@ -572,7 +572,7 @@ build_paths_with_overlap_allowed_set (XfceShortcutsEditor *editor,
 
       paths_with_overlap_allowed = g_hash_table_new (g_str_hash, g_str_equal);
 
-      // Insert paths that are allowed to overlap with this accelerator into 'paths_with_overlap'.
+      /* Insert paths that are allowed to overlap with this accelerator into 'paths_with_overlap' */
       for (size_t array_idx = 0; array_idx < editor->arrays_count; ++array_idx)
         {
           XfceShortcutsEditorSection *section = &editor->arrays[array_idx];
