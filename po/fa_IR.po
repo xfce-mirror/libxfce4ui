@@ -328,23 +328,23 @@ msgstr "جابجایی پنجره‌ها (برعکس)"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:44
 msgid "Switch window for same application"
-msgstr ""
+msgstr "تعویض پنجره برای برنامه یکسان"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:45
 msgid "Switch application"
-msgstr ""
+msgstr "تعویض برنامه"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:46
 msgid "Close window"
-msgstr ""
+msgstr "بستن پنجره"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:47
 msgid "Maximize window horizontally"
-msgstr ""
+msgstr "ماکسیمایز کردن پنجره به صورت افقی"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:48
 msgid "Maximize window vertically"
-msgstr ""
+msgstr "ماکسیمایز کردن پنجره به صورت عمودی"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:49
 msgid "Maximize window"
@@ -356,11 +356,11 @@ msgstr "پنجره را پنهان کن"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:51
 msgid "Move window"
-msgstr ""
+msgstr "جابجا کردن پنجره"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:52
 msgid "Resize window"
-msgstr ""
+msgstr "تغییر اندازه پنجره"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:53
 msgid "Shade window"
