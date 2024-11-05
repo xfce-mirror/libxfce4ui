@@ -281,7 +281,7 @@ msgstr "Wyczyść"
 #: libxfce4kbd-private/xfce-shortcut-dialog.c:269
 #, c-format
 msgid "Press keyboard keys to trigger the %s '%s'."
-msgstr "Naciśnij klawisze klawiatury, aby wyzwolić %s '%s'."
+msgstr "Naciśnij klawisze klawiatury, aby wyzwolić %s „%s”."
 
 #: libxfce4kbd-private/xfce-shortcut-dialog.c:291
 msgid "Please press a key"
