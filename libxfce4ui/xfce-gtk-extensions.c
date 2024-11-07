@@ -613,8 +613,11 @@ xfce_gtk_translate_action_entries (XfceGtkActionEntry *action_entries,
 {
   for (size_t i = 0; i < n_action_entries; i++)
     {
-      action_entries[i].menu_item_label_text = g_strdup (g_dgettext (NULL, action_entries[i].menu_item_label_text));
-      action_entries[i].menu_item_tooltip_text = g_strdup (g_dgettext (NULL, action_entries[i].menu_item_tooltip_text));
+      if (action_entries[i].menu_item_label_text != NULL)
+        action_entries[i].menu_item_label_text = g_strdup (g_dgettext (NULL, action_entries[i].menu_item_label_text));
+
+      if (action_entries[i].menu_item_tooltip_text != NULL)
+        action_entries[i].menu_item_tooltip_text = g_strdup (g_dgettext (NULL, action_entries[i].menu_item_tooltip_text));
     }
 }
 
