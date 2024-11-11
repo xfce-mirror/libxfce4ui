@@ -266,7 +266,7 @@ msgstr "Klávesová zkratka příkazu"
 #. * the user in a following string
 #: libxfce4kbd-private/xfce-shortcut-dialog.c:226
 msgid "command"
-msgstr "příkaz"
+msgstr "příkazu"
 
 #: libxfce4kbd-private/xfce-shortcut-dialog.c:231
 msgid "Shortcut"
