@@ -38,20 +38,16 @@ static const ContributorInfo xfce_contributors_core[] = {
   { "Gaël Bonithon", "gael@xfce.org" },
   { "Olivier Fourdan", "fourdan@xfce.org" },
   { "Romain Bouvier", "skunnyk@alteroot.org" },
-  { "Sergios Anestis Kefalidis", "skefalidis@xfce.org" },
-  { "Simon Steinbeiß", "simon@xfce.org" },
   { "Theo Linkspfeifer", "lastonestanding@tutanota.com" },
   { NULL, NULL }
 };
 
 static const ContributorInfo xfce_contributors_active[] = {
   { "Akbarkhon Variskhanov", "akbarkhon.variskhanov@gmail.com" },
-  { "Ali Abdallah", "ali@xfce.org" },
   { "Alistair Buxton", "a.j.buxton@gmail.com" },
   { "Arkadiy Illarionov", "qarkai@gmail.com" },
   { "Erkki Moorits", "erkki.moorits@mail.ee" },
   { "Graeme Gott", "graeme@gottcode.org" },
-  { "Jan Ziak", "0xe2.0x9a.0x9b@xfce.org" },
   { "Landry Breuil", "landry@xfce.org" },
   { "Sean Davis", "bluesabre@xfce.org" },
   { "Stephan Haller", "nomad@froevel.de" },
@@ -77,6 +73,7 @@ static const ContributorInfo xfce_contributors_documentation_supervision[] = {
 };
 
 static const ContributorInfo xfce_contributors_previous[] = {
+  { "Ali Abdallah", "ali@xfce.org" },
   { "Andrzej Radecki", "ndrwrdck@gmail.com" },
   { "Auke Kok", "sofar@foo-projects.org" },
   { "Benedikt Meurer", "benny@xfce.org" },
@@ -98,6 +95,7 @@ static const ContributorInfo xfce_contributors_previous[] = {
   { "Guido Berhoerster", "guido+xfce@berhoerster.name" },
   { "Harald Judt", "hjudt@xfce.org" },
   { "Igor", "f2404@yandex.ru" },
+  { "Jan Ziak", "0xe2.0x9a.0x9b@xfce.org" },
   { "Jannis Pohlmann", "jannis@xfce.org" },
   { "Jasper Huijsmans", "jasper@xfce.org" },
   { "Jean-François Wauthy", "pollux@xfce.org" },
@@ -117,7 +115,9 @@ static const ContributorInfo xfce_contributors_previous[] = {
   { "Pau Rul·lan Ferragut", "paurullan@bulma.net" },
   { "Peter de Ridder", "peter@xfce.org" },
   { "Samuel Verstraete", "elangelo@xfce.org" },
+  { "Sergios Anestis Kefalidis", "skefalidis@xfce.org" },
   { "Silvio Knizek", "killermoehre@gmx.net" },
+  { "Simon Steinbeiß", "simon@xfce.org" },
   { "Stephan Arts", "stephan@xfce.org" },
   { "Steve Dodier-Lazaro", "sidi@xfce.org" },
   { "Thomas Leonard", "tal00r@ecs.soton.ac.uk" },
