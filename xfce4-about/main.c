@@ -85,6 +85,8 @@ xfce_about_system (GtkBuilder *builder)
   const gchar *windowing_system_text = "";
   guint num_gpus = 0;
 
+  glibtop_init ();
+
   os_logo = get_os_logo ();
   if (os_logo)
     {
