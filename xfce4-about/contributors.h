@@ -54,6 +54,7 @@ static const ContributorInfo xfce_contributors_active[] = {
   { "Erkki Moorits", "erkki.moorits@mail.ee" },
   { "Graeme Gott", "graeme@gottcode.org" },
   { "Hunter Turcin", "huntertur@gmail.com" },
+  { "Ivalin Radulov", "" },
   { "Landry Breuil", "landry@xfce.org" },
   { "Sean Davis", "bluesabre@xfce.org" },
   { "Stephan Haller", "nomad@froevel.de" },
