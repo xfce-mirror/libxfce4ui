@@ -1,3 +1,12 @@
+4.19.7 (2024-12-01)
+======
+- xfce4-about: Don't show mail addresses
+- xfce4-about: Init glibtop before using it
+- Avoid undefined behavior with NULL msgid strings and dgettext
+- Translation Updates:
+  Czech, Finnish, Galician, Kazakh, Latvian, Persian (Iran), Polish,
+  Spanish, Turkish, Urdu, Urdu (Pakistan)
+
 4.19.6 (2024-10-24)
 ======
 - Add "overlap groups" to the shortcut editor (#115)
