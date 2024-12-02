@@ -332,7 +332,7 @@ msgstr "Przełączenie pomiędzy oknami w odwrotnej kolejności"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:44
 msgid "Switch window for same application"
-msgstr "Przełączenie okna bieącego programu"
+msgstr "Przełączenie okna bieżącego programu"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:45
 msgid "Switch application"
