@@ -27,7 +27,7 @@ msgstr ""
 
 #: libxfce4ui/xfce-dialogs.c:110
 msgid "Failed to open web browser for online documentation"
-msgstr "Nie udało się uruchomić przeglądarki internetowej w celu wyświetlenia dokumentacji sieciowej"
+msgstr "Nie udało się uruchomić przeglądarki internetowej w celu wyświetlenia dokumentacji sieciowej"
 
 #: libxfce4ui/xfce-dialogs.c:265
 #, c-format
@@ -46,7 +46,7 @@ msgstr "Przeczytaj podręcznik"
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
-msgstr "Przeglądarka otworzy stronę dokumentacji, na której tworzone i tłumaczone są podręczniki użytkownika."
+msgstr "Przeglądarka otworzy stronę dokumentacji, na której tworzone i tłumaczone są podręczniki użytkownika."
 
 #. Create cancel button
 #: libxfce4ui/xfce-dialogs.c:275 libxfce4ui/xfce-dialogs.c:533
@@ -60,7 +60,7 @@ msgstr "_Wyświetl podręcznik"
 
 #: libxfce4ui/xfce-dialogs.c:286
 msgid "_Always go directly to the online documentation"
-msgstr "_Pomijanie tego pytania w przyszłości"
+msgstr "_Pomijanie tego pytania w przyszłości"
 
 #: libxfce4ui/xfce-dialogs.c:335 libxfce4ui/xfce-dialogs.c:370
 #: libxfce4ui/xfce-dialogs.c:406
@@ -81,7 +81,7 @@ msgstr "Anuluj"
 
 #: libxfce4ui/xfce-dialogs.c:518
 msgid "Close window with multiple tabs?"
-msgstr "Zamknąć okno z wieloma kartami?"
+msgstr "Zamknąć okno z wieloma kartami?"
 
 #: libxfce4ui/xfce-dialogs.c:520
 msgid ""
@@ -110,7 +110,7 @@ msgstr "Zamknij _okno"
 
 #: libxfce4ui/xfce-dialogs.c:540
 msgid "Do _not ask me again"
-msgstr "_Ukrywanie tego okna w przyszłości"
+msgstr "_Ukrywanie tego okna w przyszłości"
 
 #: libxfce4ui/xfce-sm-client.c:1435
 msgid "Session management client ID"
@@ -135,7 +135,7 @@ msgstr "Pokaż opcje zarządzania sesją"
 #: libxfce4ui/xfce-sm-client.c:1619
 #, c-format
 msgid "Failed to connect to the session manager: %s"
-msgstr "Nie udało się połączyć z menedżerem sesji: %s"
+msgstr "Nie udało się połączyć z menedżerem sesji: %s"
 
 #: libxfce4ui/xfce-sm-client.c:1625
 msgid "Session manager did not return a valid client id"
@@ -156,7 +156,7 @@ msgstr "Nazwa pliku jest za długa"
 
 #: libxfce4ui/xfce-filename-input.c:233
 msgid "Directory separator illegal in file name"
-msgstr "Separator katalogu niedozwolony w nazwie pliku"
+msgstr "Separator katalogu niedozwolony w nazwie pliku"
 
 #: libxfce4ui/xfce-filename-input.c:234
 msgid "Filenames should not start or end with a space"
@@ -247,7 +247,7 @@ msgstr "Ten skrót klawiszowy jest obecnie używany przez: „%s”"
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:474
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:563
 msgid "Keyboard shortcut already in use"
-msgstr "Skrót klawiszowy jest już w użyciu"
+msgstr "Skrót klawiszowy jest już w użyciu"
 
 #: libxfce4kbd-private/xfce-shortcut-dialog.c:215
 msgid "Window Manager Action Shortcut"
@@ -317,11 +317,11 @@ msgstr "Przełączenie pomiędzy oknami"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:43
 msgid "Cycle windows (Reverse)"
-msgstr "Przełączenie pomiędzy oknami w odwrotnej kolejności"
+msgstr "Przełączenie pomiędzy oknami w odwrotnej kolejności"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:44
 msgid "Switch window for same application"
-msgstr "Przełączenie okna bieącego programu"
+msgstr "Przełączenie okna bieżącego programu"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:45
 msgid "Switch application"
@@ -333,11 +333,11 @@ msgstr "Zamknięcie"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:47
 msgid "Maximize window horizontally"
-msgstr "Zmaksymalizowanie w poziomie"
+msgstr "Zmaksymalizowanie w poziomie"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:48
 msgid "Maximize window vertically"
-msgstr "Zmaksymalizowanie w pionie"
+msgstr "Zmaksymalizowanie w pionie"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:49
 msgid "Maximize window"
@@ -381,11 +381,11 @@ msgstr "Wypełnienie"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:59
 msgid "Fill window horizontally"
-msgstr "Wypełnienie w poziomie"
+msgstr "Wypełnienie w poziomie"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:60
 msgid "Fill window vertically"
-msgstr "Wypełnienie w pionie"
+msgstr "Wypełnienie w pionie"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:61
 msgid "Toggle above"
@@ -397,19 +397,19 @@ msgstr "Przełączenie pełnego ekranu"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:63
 msgid "Move window to lower monitor"
-msgstr "Przeniesienie okna na dolny monitor"
+msgstr "Przemieszczenie na dolny monitor"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:64
 msgid "Move window to left monitor"
-msgstr "Przeniesienie okna na lewy monitor"
+msgstr "Przemieszczenie na lewy monitor"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:65
 msgid "Move window to right monitor"
-msgstr "Przeniesienie okna na prawy monitor"
+msgstr "Przemieszczenie na prawy monitor"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:66
 msgid "Move window to upper monitor"
-msgstr "Przeniesienie okna na górny monitor"
+msgstr "Przemieszczenie na górny monitor"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:67
 msgid "Move window to upper workspace"
@@ -629,7 +629,7 @@ msgstr "Panel"
 
 #: xfce4-about/main.c:196
 msgid "Provides a home for window buttons, launchers, app menu and more."
-msgstr "Zapewnia miejsce na przyciski okien, aktywatory, menu programów i wiele innych."
+msgstr "Zapewnia miejsce na przyciski okien, aktywatory, menu programów i wiele innych."
 
 #: xfce4-about/main.c:200
 msgid "Desktop Manager"
@@ -637,7 +637,7 @@ msgstr "Menedżer pulpitu"
 
 #: xfce4-about/main.c:201
 msgid "Sets desktop backgrounds, handles icons and more."
-msgstr "Ustawia tła pulpitu, obsługuje ikony i wiele innych."
+msgstr "Ustawia tła pulpitu, obsługuje ikony i wiele innych."
 
 #: xfce4-about/main.c:205
 msgid "File Manager"
@@ -645,7 +645,7 @@ msgstr "Menedżer plików"
 
 #: xfce4-about/main.c:206
 msgid "Manages your files in a modern, easy-to-use and fast way."
-msgstr "Zarządza plikami w nowoczesny, łatwy w obsłudze i szybki sposób."
+msgstr "Zarządza plikami w nowoczesny, łatwy w obsłudze i szybki sposób."
 
 #: xfce4-about/main.c:210
 msgid "Volume Manager"
@@ -653,7 +653,7 @@ msgstr "Menedżer wolumenów"
 
 #: xfce4-about/main.c:211
 msgid "Manages removable drives and media for Thunar."
-msgstr "Zarządza dyskami wymiennymi i nośnikami dla Thunara."
+msgstr "Zarządza dyskami wymiennymi i nośnikami dla menedżera Thunar."
 
 #: xfce4-about/main.c:215
 msgid "Session Manager"
@@ -662,7 +662,7 @@ msgstr "Menedżer sesji"
 #: xfce4-about/main.c:216
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
-msgstr "Zapisuje i przywraca sesję, obsługuje uruchamianie, automatyczny start i zamykanie."
+msgstr "Zapisuje i przywraca sesję, obsługuje uruchamianie, automatyczny start i zamykanie."
 
 #: xfce4-about/main.c:220
 msgid "Settings Manager"
@@ -670,7 +670,7 @@ msgstr "Menedżer ustawień"
 
 #: xfce4-about/main.c:221
 msgid "Configures appearance, display, keyboard and mouse settings."
-msgstr "Konfiguruje ustawienia: wyglądu, ekranu, klawiatury i myszy."
+msgstr "Konfiguruje ustawienia: wyglądu, ekranu, klawiatury i myszy."
 
 #: xfce4-about/main.c:225
 msgid "Application Finder"
@@ -678,7 +678,7 @@ msgstr "Wyszukiwarka programów"
 
 #: xfce4-about/main.c:226
 msgid "Quickly finds and launches applications installed on your system."
-msgstr "Szybko wyszukuje i uruchamia programy zainstalowane w systemie."
+msgstr "Szybko wyszukuje i uruchamia programy zainstalowane w systemie."
 
 #: xfce4-about/main.c:230
 msgid "Settings Daemon"
@@ -686,7 +686,7 @@ msgstr "Demon ustawień"
 
 #: xfce4-about/main.c:231
 msgid "Stores your settings in a D-Bus-based configuration system."
-msgstr "Przechowuje ustawienia w systemie konfiguracji opartym na D-Bus."
+msgstr "Przechowuje ustawienia w systemie konfiguracji opartym na D-Bus."
 
 #: xfce4-about/main.c:235
 msgid "A Menu Library"
@@ -694,7 +694,7 @@ msgstr "Biblioteka menu"
 
 #: xfce4-about/main.c:236
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
-msgstr "Implementuje menu zgodne z freedesktop.org oparte na GLib i GIO."
+msgstr "Implementuje menu zgodne z freedesktop.org oparte na GLib i GIO."
 
 #: xfce4-about/main.c:240
 msgid "Thumbnails Service"
@@ -712,11 +712,11 @@ msgstr "Odwiedź <https://www.xfce.org/about/credits>"
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
-msgstr "Jeśli znasz kogoś, kogo brakuje na tej liście, nie wahaj się i zgłoś błąd na <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
+msgstr "Jeśli znasz kogoś, kogo brakuje na tej liście, nie wahaj się i zgłoś błąd na <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 
 #: xfce4-about/main.c:360
 msgid "Thanks to all who helped making this software available!"
-msgstr "Dziękujemy wszystkim, którzy przyczynili się do stworzenia niniejszego oprogramowania."
+msgstr "Dziękujemy wszystkim, którzy przyczynili się do stworzenia niniejszego oprogramowania!"
 
 #: xfce4-about/main.c:377
 msgid ""
@@ -730,7 +730,7 @@ msgid ""
 "terms of the GNU Library General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
-msgstr "Pakiety libxfce4ui, libxfce4util i exo są rozprowadzane na warunkach Powszechnej Licencji Publicznej GNU Library, wydanej przez Free Software Foundation - według wersji 2. tej licencji lub którejś z późniejszych wersji."
+msgstr "Pakiety libxfce4ui, libxfce4util i exo są rozprowadzane na warunkach Powszechnej Licencji Publicznej GNU dla Bibliotek, wydanej przez Free Software Foundation – według wersji 2. tej licencji lub którejś z późniejszych wersji."
 
 #: xfce4-about/main.c:389
 msgid ""
@@ -739,7 +739,7 @@ msgid ""
 "of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr "Pakiety thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop i xfwm4 są rozprowadzane na warunkach Powszechnej Licencji Publicznej GNU, wydanej przez Free Software Foundation - według wersji 2. tej licencji lub którejś z późniejszych wersji."
+msgstr "Pakiety thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop i xfwm4 są rozprowadzane na warunkach Powszechnej Licencji Publicznej GNU, wydanej przez Free Software Foundation – według wersji 2. tej licencji lub którejś z późniejszych wersji."
 
 #: xfce4-about/main.c:535
 #, c-format
@@ -800,7 +800,7 @@ msgstr "O środowisku Xfce"
 
 #: xfce4-about/xfce4-about.desktop.in:12
 msgid "Information about the Xfce Desktop Environment"
-msgstr "Wyświetla informacje o środowisku graficznym Xfce"
+msgstr "Wyświetla informacje o środowisku graficznym Xfce"
 
 #: xfce4-about/xfce4-about-dialog.glade:116
 msgid "License"
@@ -808,7 +808,7 @@ msgstr "Licencja"
 
 #: xfce4-about/xfce4-about-dialog.glade:340
 msgid "About the Xfce Desktop Environment"
-msgstr "Informacje o środowisku graficznym Xfce"
+msgstr "Informacje o środowisku graficznym Xfce"
 
 #: xfce4-about/xfce4-about-dialog.glade:358
 msgid "_Help"
@@ -884,7 +884,7 @@ msgstr "System"
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
-msgstr "Xfce jest zestawem programów, które razem zapewniają w pełni funkcjonalne środowisko graficzne.\nDo podstawowych programów środowiska Xfce należą:"
+msgstr "Xfce jest zestawem programów, które razem zapewniają w pełni funkcjonalne środowisko graficzne.\nDo podstawowych programów środowiska Xfce należą:"
 
 #: xfce4-about/xfce4-about-dialog.glade:804
 msgid ""
@@ -954,7 +954,7 @@ msgstr "%s; Identyfikator kompilacji: %s"
 msgid ""
 "A file named \"%s\" already exists in this directory, the file hasn't been "
 "added."
-msgstr "Plik o nazwie „%s” już istnieje w tym katalogu. Nie dodano pliku."
+msgstr "Plik o nazwie „%s” już istnieje w tym katalogu. Nie dodano pliku."
 
 #: tests/test-ui.c:122
 msgid "Failed to migrate the old panel configuration"
