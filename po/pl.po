@@ -730,7 +730,7 @@ msgid ""
 "terms of the GNU Library General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
-msgstr "Pakiety libxfce4ui, libxfce4util i exo są rozprowadzane na warunkach Powszechnej Licencji Publicznej GNU dla Bibliotek, wydanej przez Free Software Foundation – według wersji 2. tej licencji lub którejś z późniejszych wersji."
+msgstr "Pakiety libxfce4ui, libxfce4util i exo są rozprowadzane na warunkach Powszechnej Licencji Publicznej GNU dla Bibliotek (LGPL), wydanej przez Free Software Foundation – według wersji 2. tej licencji lub którejś z późniejszych wersji."
 
 #: xfce4-about/main.c:389
 msgid ""
@@ -739,7 +739,7 @@ msgid ""
 "of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr "Pakiety thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop i xfwm4 są rozprowadzane na warunkach Powszechnej Licencji Publicznej GNU, wydanej przez Free Software Foundation – według wersji 2. tej licencji lub którejś z późniejszych wersji."
+msgstr "Pakiety thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop i xfwm4 są rozprowadzane na warunkach Powszechnej Licencji Publicznej GNU (GPL), wydanej przez Free Software Foundation – według wersji 2. tej licencji lub którejś z późniejszych wersji."
 
 #: xfce4-about/main.c:535
 #, c-format
