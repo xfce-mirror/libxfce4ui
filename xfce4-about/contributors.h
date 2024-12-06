@@ -45,6 +45,7 @@ static const ContributorInfo xfce_contributors_core[] = {
 static const ContributorInfo xfce_contributors_active[] = {
   { "Akbarkhon Variskhanov", "akbarkhon.variskhanov@gmail.com" },
   { "Alistair Buxton", "a.j.buxton@gmail.com" },
+  { "Amrit Kashyap Borah", "" },
   { "Andrzej Radecki", "andrzejr@xfce.org" },
   { "Arkadiy Illarionov", "qarkai@gmail.com" },
   { "Arthur Demchenkov", "spinal.by@gmail.com" },
