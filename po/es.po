@@ -317,11 +317,11 @@ msgstr "Derecha"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:42
 msgid "Cycle windows"
-msgstr "Seleccionar la ventana siguiente"
+msgstr "Seleccionar cíclicamente las ventanas"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:43
 msgid "Cycle windows (Reverse)"
-msgstr "Seleccionar la ventana anterior"
+msgstr "Seleccionar cíclicamente las ventanas (sentido inverso)"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:44
 msgid "Switch window for same application"
