@@ -153,7 +153,7 @@ msgstr "Tiedostonimi on liian pitkä"
 
 #: libxfce4ui/xfce-filename-input.c:233
 msgid "Directory separator illegal in file name"
-msgstr ""
+msgstr "Hakemistoerotin on kielletty tiedostonimessä "
 
 #: libxfce4ui/xfce-filename-input.c:234
 msgid "Filenames should not start or end with a space"
