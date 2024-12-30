@@ -890,7 +890,7 @@ msgid ""
 "Thank you for your interest in Xfce.\n"
 "\n"
 "\t- The Xfce Development Team"
-msgstr "Xfce-ja është edhe një platformë zhvillimi që furnizon disa librari të cilat i ndihmojnë programuesit të krijojnë aplikacione që i përshtaten mjedisit desktop.\n\nPërbërësit Xfce licenconhen sipas licencash të lira ose me burim të hapët; GPL ose BSDL për aplikacionet dhe LGPL ose BSDL për libraritë. Për më tepër të dhëna, shihni dokumentimin, kodin burim ose sajtin Xfce (https://www.xfce.org).\n\nFaleminderit për interesin që tregoni për Xfce-në.\n\n\t- Ekipi i Zhvillimit të Xfce-së"
+msgstr "Xfce-ja është edhe një platformë zhvillimi që furnizon disa librari të cilat i ndihmojnë programuesit të krijojnë aplikacione që i përshtaten mjedisit desktop.\n\nPërbërësit Xfce licencohen sipas licencash të lira ose me burim të hapët; GPL ose BSDL për aplikacionet dhe LGPL ose BSDL për libraritë. Për më tepër të dhëna, shihni dokumentimin, kodin burim ose sajtin Xfce (https://www.xfce.org).\n\nFaleminderit për interesin që tregoni për Xfce-në.\n\n\t- Ekipi i Zhvillimit të Xfce-së"
 
 #: xfce4-about/xfce4-about-dialog.glade:834
 msgid "About"
