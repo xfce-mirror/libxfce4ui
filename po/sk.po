@@ -6,15 +6,15 @@
 # Dušan Kazik <prescott66@gmail.com>, 2016-2017,2019-2020
 # 785411ef824cced88d3e197f5af1b61a_da6a977 <e5fae5b35c0c625157d991b31e113de3_956341>, 2021
 # Robert Hartl <hartl.robert@gmail.com>, 2009
-# Slavko <linux@slavino.sk>, 2014-2015,2023
+# Slavko <linux@slavino.sk>, 2014-2015,2023,2025
 # 7dcd6f74323fe8d9c477949ff8fcbb1c_c427b63 <3fcd202e3dfab15fda15b8e88e54d449_7173>, 2011-2012
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2023-04-06 12:45+0200\n"
+"POT-Creation-Date: 2024-07-07 12:45+0200\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Slavko <linux@slavino.sk>, 2014-2015,2023\n"
+"Last-Translator: Slavko <linux@slavino.sk>, 2014-2015,2023,2025\n"
 "Language-Team: Slovak (http://app.transifex.com/xfce/libxfce4ui/language/sk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,6 +35,10 @@ msgstr "Chcete si prečítať online príručku pre %s?"
 msgid "Do you want to read the manual online?"
 msgstr "Chcete si prečítať online príručku?"
 
+#: libxfce4ui/xfce-dialogs.c:270
+msgid "Read the manual"
+msgstr "Čítať manuál"
+
 #: libxfce4ui/xfce-dialogs.c:273
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
@@ -43,7 +47,7 @@ msgstr "Budete presmerovaní na webovú stránku dokumentácie, kde sa stránky 
 
 #. Create cancel button
 #: libxfce4ui/xfce-dialogs.c:275 libxfce4ui/xfce-dialogs.c:533
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:256
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:252
 msgid "_Cancel"
 msgstr "_Zrušiť"
 
@@ -105,37 +109,37 @@ msgstr "Zatvoriť _okno"
 msgid "Do _not ask me again"
 msgstr "Viac sa _nepýtať"
 
-#: libxfce4ui/xfce-sm-client.c:1427
+#: libxfce4ui/xfce-sm-client.c:1435
 msgid "Session management client ID"
 msgstr "ID klienta správy relácií"
 
-#: libxfce4ui/xfce-sm-client.c:1427
+#: libxfce4ui/xfce-sm-client.c:1435
 msgid "ID"
 msgstr "ID"
 
-#: libxfce4ui/xfce-sm-client.c:1428
+#: libxfce4ui/xfce-sm-client.c:1436
 msgid "Disable session management"
 msgstr "Vypnúť správu relácie"
 
-#: libxfce4ui/xfce-sm-client.c:1438
+#: libxfce4ui/xfce-sm-client.c:1446
 msgid "Session management options"
 msgstr "Voľby správy relácií"
 
-#: libxfce4ui/xfce-sm-client.c:1439
+#: libxfce4ui/xfce-sm-client.c:1447
 msgid "Show session management options"
 msgstr "Zobraziť voľby správy relácií"
 
-#: libxfce4ui/xfce-sm-client.c:1609
+#: libxfce4ui/xfce-sm-client.c:1619
 #, c-format
 msgid "Failed to connect to the session manager: %s"
 msgstr "Nepodarilo sa pripojiť k správcovi sedenia: %s"
 
-#: libxfce4ui/xfce-sm-client.c:1615
+#: libxfce4ui/xfce-sm-client.c:1625
 msgid "Session manager did not return a valid client id"
 msgstr "Správca sedenia nevrátil platný identifikátor klienta"
 
 #. print warning for user
-#: libxfce4ui/xfce-spawn.c:397
+#: libxfce4ui/xfce-spawn.c:383
 #, c-format
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
@@ -213,74 +217,74 @@ msgstr "Konflikt medzi akciami pre %s"
 msgid "This shortcut is already being used for something else."
 msgstr "Táto skratka už slúži na niečo iné."
 
-#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:94
-#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:131
+#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:92
+#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:129
 msgid "Shortcuts Editor"
 msgstr "Editor klávesových skratiek"
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:380
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:378
 msgid "The current shortcut. Click to edit..."
 msgstr "Aktuálna klávesová skratka. Kliknite na úpravu…"
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:391
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:389
 msgid "Clear the shortcut"
 msgstr "Vymazať klávesovú skratku"
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:401
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:399
 msgid "Restore the default shortcut"
 msgstr "Obnoviť predvolenú klávesovú skratku"
 
 #. skip leading slash
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:473
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:562
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:471
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:560
 #, c-format
 msgid "This keyboard shortcut is currently used by: '%s'"
 msgstr "Táto klávesová skrátka je použitá na: „%s”"
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:476
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:565
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:474
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:563
 msgid "Keyboard shortcut already in use"
 msgstr "Klávesová skratka je použitá"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:217
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:215
 msgid "Window Manager Action Shortcut"
 msgstr "Skratky akcií Správcu okien"
 
 #. TRANSLATORS: this string will be used to create an explanation for
 #. * the user in a following string
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:220
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:236
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:218
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:234
 msgid "action"
 msgstr "akcia"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:225
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:223
 msgid "Command Shortcut"
 msgstr "Skratka príkazu"
 
 #. TRANSLATORS: this string will be used to create an explanation for
 #. * the user in a following string
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:228
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:226
 msgid "command"
 msgstr "príkaz"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:233
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:231
 msgid "Shortcut"
 msgstr "Klávesová skratka"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:250
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:246
 msgid "Clear"
 msgstr "Vymazať"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:273
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:269
 #, c-format
 msgid "Press keyboard keys to trigger the %s '%s'."
 msgstr "Stlačte klávesy na spustenie  %s '%s'."
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:295
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:291
 msgid "Please press a key"
 msgstr "Prosím, stlačte kláves"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:350
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:346
 msgid "Could not grab the keyboard."
 msgstr "Nemožno zachytiť klávesnicu"
 
@@ -600,124 +604,124 @@ msgstr "Odstrániť poslednú pracovnú plochu"
 msgid "Delete active workspace"
 msgstr "Odstrániť pracovnú plochu"
 
-#: xfce4-about/main.c:58
+#: xfce4-about/main.c:64
 msgid "Version information"
 msgstr "Informácia o verzií"
 
-#: xfce4-about/main.c:128
+#: xfce4-about/main.c:172
 msgid "GPUs"
 msgstr "Grafické karty"
 
-#: xfce4-about/main.c:146
+#: xfce4-about/main.c:190
 msgid "Window Manager"
 msgstr "Správca okien"
 
-#: xfce4-about/main.c:147
+#: xfce4-about/main.c:191
 msgid "Handles the placement of windows on the screen."
 msgstr "Riadi umiestnenie okien na obrazovke."
 
-#: xfce4-about/main.c:151
+#: xfce4-about/main.c:195
 msgid "Panel"
 msgstr "Panel"
 
-#: xfce4-about/main.c:152
+#: xfce4-about/main.c:196
 msgid "Provides a home for window buttons, launchers, app menu and more."
 msgstr "Poskytuje miesto pre tlačidlá okien, spúšťače, menu aplikácie a ďalšie."
 
-#: xfce4-about/main.c:156
+#: xfce4-about/main.c:200
 msgid "Desktop Manager"
 msgstr "Správca prihlásenia"
 
-#: xfce4-about/main.c:157
+#: xfce4-about/main.c:201
 msgid "Sets desktop backgrounds, handles icons and more."
 msgstr "Nastavuje pozadia pracovnej plochy, spravuje ikony a viac."
 
-#: xfce4-about/main.c:161
+#: xfce4-about/main.c:205
 msgid "File Manager"
 msgstr "Správca súborov"
 
-#: xfce4-about/main.c:162
+#: xfce4-about/main.c:206
 msgid "Manages your files in a modern, easy-to-use and fast way."
 msgstr "Spravuje vaše súbory moderným, jednoduchým a rýchlym spôsobom."
 
-#: xfce4-about/main.c:166
+#: xfce4-about/main.c:210
 msgid "Volume Manager"
 msgstr "Správca zväzkov"
 
-#: xfce4-about/main.c:167
+#: xfce4-about/main.c:211
 msgid "Manages removable drives and media for Thunar."
 msgstr "Spravuje vymeniteľné jednotky a médiá pre aplikáciu Thunar."
 
-#: xfce4-about/main.c:171
+#: xfce4-about/main.c:215
 msgid "Session Manager"
 msgstr "Správca relácií"
 
-#: xfce4-about/main.c:172
+#: xfce4-about/main.c:216
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
 msgstr "Ukladá a obnovuje vaše sedenie, spravuje spúšťanie, automatické spúšťanie a vypínanie."
 
-#: xfce4-about/main.c:176
+#: xfce4-about/main.c:220
 msgid "Settings Manager"
 msgstr "Správca nastavení"
 
-#: xfce4-about/main.c:177
+#: xfce4-about/main.c:221
 msgid "Configures appearance, display, keyboard and mouse settings."
 msgstr "Konfiguruje vzhľad, zobrazenie, klávesnicu a nastavenia myši."
 
-#: xfce4-about/main.c:181
+#: xfce4-about/main.c:225
 msgid "Application Finder"
 msgstr "Vyhľadávač aplikácií"
 
-#: xfce4-about/main.c:182
+#: xfce4-about/main.c:226
 msgid "Quickly finds and launches applications installed on your system."
 msgstr "Rýchlo nájde a spustí aplikácie nainštalované vo vašom systéme."
 
-#: xfce4-about/main.c:186
+#: xfce4-about/main.c:230
 msgid "Settings Daemon"
 msgstr "Démon nastavení"
 
-#: xfce4-about/main.c:187
+#: xfce4-about/main.c:231
 msgid "Stores your settings in a D-Bus-based configuration system."
 msgstr "Uchováva Vaše nastavenia v konfiguračnom systéme na báze D-Bus."
 
-#: xfce4-about/main.c:191
+#: xfce4-about/main.c:235
 msgid "A Menu Library"
 msgstr "Knižnica menu"
 
-#: xfce4-about/main.c:192
+#: xfce4-about/main.c:236
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
 msgstr "Implementuje menu freedesktop.org založené na GLib and GIO."
 
-#: xfce4-about/main.c:196
+#: xfce4-about/main.c:240
 msgid "Thumbnails Service"
 msgstr "Služba miniatúr"
 
-#: xfce4-about/main.c:197
+#: xfce4-about/main.c:241
 msgid "Implements the thumbnail management D-Bus specification."
 msgstr "Implementuje správu miniatúr špecifikácie D-Bus."
 
-#: xfce4-about/main.c:251
+#: xfce4-about/main.c:295
 msgid "Please see <https://www.xfce.org/about/credits>"
 msgstr "Prosím, pozrite <https://www.xfce.org/about/credits>"
 
-#: xfce4-about/main.c:312
+#: xfce4-about/main.c:356
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 msgstr "Ak viete o niekom, kto v tomto zozname chýba, nehanbite sa a nahláste chybu na  <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 
-#: xfce4-about/main.c:316
+#: xfce4-about/main.c:360
 msgid "Thanks to all who helped making this software available!"
 msgstr "Ďakujeme všetkým, ktorí pomohli k tomu, aby bol tento softvér prístupný."
 
-#: xfce4-about/main.c:333
+#: xfce4-about/main.c:377
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
 msgstr "Xfce 4 je autorským právom Oliviera Fourdana (fourdan@xfce.org). Rôzne komponenty sú chránené autorskými právami ich autorov."
 
-#: xfce4-about/main.c:338
+#: xfce4-about/main.c:382
 msgid ""
 "The libxfce4ui, libxfce4util and exo packages are distributed under the "
 "terms of the GNU Library General Public License as published by the Free "
@@ -725,7 +729,7 @@ msgid ""
 "any later version."
 msgstr "Balíčky libxfce4ui, libxfce4util a exo sú šírené pod podmienkami licencie GNU Library General Public License vydanou nadáciou  Free Software Foundation, buď verzie 2 tejto licencie alebo (podľa vášho uváženia) ktorejkoľvek neskoršej verzie."
 
-#: xfce4-about/main.c:345
+#: xfce4-about/main.c:389
 msgid ""
 "The packages thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
 "xfce4-settings, xfconf, xfdesktop and xfwm4 are distributed under the terms "
@@ -734,25 +738,25 @@ msgid ""
 "version."
 msgstr "Balíčky thunar, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop a xfwm4 sú šírené pod podmienkami licencie GNU General Public License, vydanou nadáciou Free Software Foundation; buď verzie 2 tejto licencie alebo (podľa vášho uváženia) ktorejkoľvek neskoršej verzie."
 
-#: xfce4-about/main.c:491
+#: xfce4-about/main.c:535
 #, c-format
 msgid "Type '%s --help' for usage information."
 msgstr "Napíšte „%s --help” na zobrazenie pomocníka."
 
-#: xfce4-about/main.c:497
+#: xfce4-about/main.c:541
 msgid "Unable to initialize GTK+."
 msgstr "Nie je možné inicializovať GTK+."
 
-#: xfce4-about/main.c:506
+#: xfce4-about/main.c:550
 msgid "The Xfce development team. All rights reserved."
 msgstr "Vývojový tím Xfce. Všetky práva vyhradené."
 
-#: xfce4-about/main.c:507
+#: xfce4-about/main.c:551
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "Chyby prosím hláste na <%s>."
 
-#: xfce4-about/main.c:517
+#: xfce4-about/main.c:561
 msgid "Failed to load interface"
 msgstr "Načítanie rozhrania zlyhalo"
 
@@ -786,10 +790,6 @@ msgstr "Preklady"
 #: xfce4-about/contributors.h:162
 msgid "Previous contributors"
 msgstr "Predošlí prispievatelia"
-
-#: xfce4-about/xfce4-about.desktop.in:6
-msgid "org.xfce.about"
-msgstr ""
 
 #: xfce4-about/xfce4-about.desktop.in:11
 msgid "About Xfce"
@@ -826,9 +826,10 @@ msgstr "Zariadenie"
 #: xfce4-about/xfce4-about-dialog.glade:551
 #: xfce4-about/xfce4-about-dialog.glade:576
 #: xfce4-about/xfce4-about-dialog.glade:601
-#: xfce4-about/xfce4-about-dialog.glade:628
+#: xfce4-about/xfce4-about-dialog.glade:626
 #: xfce4-about/xfce4-about-dialog.glade:653
 #: xfce4-about/xfce4-about-dialog.glade:678
+#: xfce4-about/xfce4-about-dialog.glade:703
 msgid "label"
 msgstr "popisok"
 
@@ -856,29 +857,33 @@ msgstr "Verzia GTK"
 msgid "Kernel Version"
 msgstr "Verzia jadra"
 
-#: xfce4-about/xfce4-about-dialog.glade:615
+#: xfce4-about/xfce4-about-dialog.glade:614
+msgid "Windowing System"
+msgstr "Systém okien"
+
+#: xfce4-about/xfce4-about-dialog.glade:640
 msgid "CPU"
 msgstr "Procesor"
 
-#: xfce4-about/xfce4-about-dialog.glade:641
+#: xfce4-about/xfce4-about-dialog.glade:666
 msgid "Memory"
 msgstr "Pamäť"
 
-#: xfce4-about/xfce4-about-dialog.glade:666
+#: xfce4-about/xfce4-about-dialog.glade:691
 msgid "GPU"
 msgstr "Grafická karta"
 
-#: xfce4-about/xfce4-about-dialog.glade:699
+#: xfce4-about/xfce4-about-dialog.glade:724
 msgid "System"
 msgstr "Systém"
 
-#: xfce4-about/xfce4-about-dialog.glade:741
+#: xfce4-about/xfce4-about-dialog.glade:766
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
 msgstr "Xfce je zbierkou aplikácií, ktoré dokopy poskytujú plne vybavené pracovné prostredie. Súčasťou jadra Xfce sú tieto aplikácie:"
 
-#: xfce4-about/xfce4-about-dialog.glade:779
+#: xfce4-about/xfce4-about-dialog.glade:804
 msgid ""
 "Xfce is also a development platform providing several libraries that help programmers create applications that fit in well with the desktop environment.\n"
 "\n"
@@ -889,46 +894,46 @@ msgid ""
 "\t- The Xfce Development Team"
 msgstr "Xfce je aj vývojová platforma, poskytujúca viacero knižníc na pomoc programátorom vytvárať aplikácie, ktorá zapadajú do pracovného prostredia.\n\nKomponenty Xfce sú licencované pod slobodnými licenciami; GPL alebo BSDL pre aplikácie a LGPL alebo BSDL pre knižnice. Ďalšie informácie nájdete v dokumentácii, zdrojovom kóde alebo na webovej stránke Xfce (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>).\n\nVďaka za Váš podiel v Xfce.\n\n\t- Vývojový tím Xfce"
 
-#: xfce4-about/xfce4-about-dialog.glade:809
+#: xfce4-about/xfce4-about-dialog.glade:834
 msgid "About"
 msgstr "O prostredí"
 
-#: xfce4-about/xfce4-about-dialog.glade:843
+#: xfce4-about/xfce4-about-dialog.glade:868
 msgid "Credits"
 msgstr "Zásluhy"
 
-#: xfce4-about/xfce4-about-dialog.glade:922
+#: xfce4-about/xfce4-about-dialog.glade:947
 msgid "GPL"
 msgstr "GPL"
 
-#: xfce4-about/xfce4-about-dialog.glade:935
+#: xfce4-about/xfce4-about-dialog.glade:960
 msgid "LGPL"
 msgstr "LGPL"
 
-#: xfce4-about/xfce4-about-dialog.glade:948
+#: xfce4-about/xfce4-about-dialog.glade:973
 msgid "BSD"
 msgstr "BSD"
 
-#: xfce4-about/xfce4-about-dialog.glade:978
+#: xfce4-about/xfce4-about-dialog.glade:1003
 msgid "Copyright"
 msgstr "Autorské práva"
 
-#: xfce4-about/system-info.c:533 xfce4-about/system-info.c:555
-#: xfce4-about/system-info.c:673 xfce4-about/system-info.c:721
+#: xfce4-about/system-info.c:499 xfce4-about/system-info.c:521
+#: xfce4-about/system-info.c:639 xfce4-about/system-info.c:687
 msgid "Unknown"
 msgstr "Neznámy"
 
 #. translators: This is the type of architecture for the OS
-#: xfce4-about/system-info.c:658
+#: xfce4-about/system-info.c:624
 msgid "64-bit (32-bit userspace)"
 msgstr "64-bitový (32-bitový užívateľský priestor)"
 
 #. translators: This is the type of architecture for the OS
-#: xfce4-about/system-info.c:661
+#: xfce4-about/system-info.c:627
 msgid "64-bit"
 msgstr "64-bitový"
 
-#: xfce4-about/system-info.c:661
+#: xfce4-about/system-info.c:627
 msgid "32-bit"
 msgstr "32-bitový"
 
@@ -936,7 +941,7 @@ msgstr "32-bitový"
 #. * example:
 #. * "Fedora 25 (Workstation Edition); Build ID: xyz" or
 #. * "Ubuntu 16.04 LTS; Build ID: jki"
-#: xfce4-about/system-info.c:729
+#: xfce4-about/system-info.c:695
 #, c-format
 msgid "%s; Build ID: %s"
 msgstr "%s; ID zostavy: %s"
