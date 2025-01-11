@@ -1,0 +1,7 @@
+// xfce-dialogs.h
+message_dialog* skip = false
+dialog_* skip = false
+
+// xfce-titled-dialog.h
+TitledDialog
+  .new_with_* skip = false
