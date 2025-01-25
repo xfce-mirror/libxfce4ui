@@ -24,6 +24,7 @@
 #include <libxfce4util/libxfce4util.h>
 
 #include "xfce-shortcuts-xfwm4.h"
+#include "libxfce4kbd-private-visibility.h"
 
 typedef struct _ShortcutTemplate ShortcutTemplate;
 
@@ -156,3 +157,6 @@ xfce_shortcuts_xfwm4_get_feature_list (void)
 
   return g_list_reverse (list);
 }
+
+#define __XFCE_SHORTCUTS_XFWM4_C__
+#include "libxfce4kbd-private-visibility.c"

@@ -27,6 +27,7 @@
 
 #include "xfce-shortcuts-xfwm4.h"
 #include "xfce-shortcuts.h"
+#include "libxfce4kbd-private-visibility.h"
 
 
 
@@ -179,3 +180,6 @@ xfce_shortcut_conflict_dialog (GtkWindow *parent,
 
   return response;
 }
+
+#define __XFCE_SHORTCUTS_C__
+#include "libxfce4kbd-private-visibility.c"

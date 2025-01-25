@@ -1,0 +1,52 @@
+# file:xfce-shortcut-dialog
+xfce_shortcut_dialog_get_type attr:G_GNUC_CONST
+xfce_shortcut_dialog_new attr:G_GNUC_MALLOC
+xfce_shortcut_dialog_run
+xfce_shortcut_dialog_get_shortcut
+xfce_shortcut_dialog_get_action
+xfce_shortcut_dialog_get_action_name
+
+# file:xfce-shortcuts-editor-dialog
+xfce_shortcuts_editor_dialog_get_type attr:G_GNUC_CONST
+xfce_shortcuts_editor_dialog_new attr:G_GNUC_MALLOC
+xfce_shortcuts_editor_dialog_new_with_parent attr:G_GNUC_MALLOC
+
+# file:xfce-shortcuts-editor
+xfce_shortcuts_editor_get_type attr:G_GNUC_CONST
+xfce_shortcuts_editor_new attr:G_GNUC_MALLOC
+xfce_shortcuts_editor_new_array attr:G_GNUC_MALLOC
+xfce_shortcuts_editor_new_variadic attr:G_GNUC_MALLOC
+xfce_shortcuts_editor_add_overlap_group
+xfce_shortcuts_editor_add_overlap_group_array
+
+@BEGIN_X11_SYMBOLS@
+# file:xfce-shortcuts-grabber
+xfce_shortcuts_grabber_get_type attr:G_GNUC_CONST
+xfce_shortcuts_grabber_new attr:G_GNUC_MALLOC
+xfce_shortcuts_grabber_add
+xfce_shortcuts_grabber_remove
+@END_X11_SYMBOLS@
+
+# file:xfce-shortcuts-provider
+xfce_shortcuts_provider_get_type attr:G_GNUC_CONST
+xfce_shortcuts_provider_new attr:G_GNUC_MALLOC
+xfce_shortcuts_provider_get_providers attr:G_GNUC_MALLOC
+xfce_shortcuts_provider_free_providers
+xfce_shortcuts_provider_get_name
+xfce_shortcuts_provider_is_custom
+xfce_shortcuts_provider_reset_to_defaults
+xfce_shortcuts_provider_clone_defaults
+xfce_shortcuts_provider_get_shortcuts
+xfce_shortcuts_provider_get_shortcut
+xfce_shortcuts_provider_has_shortcut
+xfce_shortcuts_provider_set_shortcut
+xfce_shortcuts_provider_reset_shortcut
+xfce_shortcuts_free
+xfce_shortcut_free
+
+# file:xfce-shortcuts-xfwm4
+xfce_shortcuts_xfwm4_get_feature_name
+xfce_shortcuts_xfwm4_get_feature_list
+
+# file:xfce-shortcuts
+xfce_shortcut_conflict_dialog

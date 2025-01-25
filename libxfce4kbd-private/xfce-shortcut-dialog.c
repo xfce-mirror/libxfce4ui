@@ -28,6 +28,7 @@
 
 #include "xfce-shortcut-dialog.h"
 #include "xfce-shortcuts.h"
+#include "libxfce4kbd-private-visibility.h"
 
 
 
@@ -511,3 +512,6 @@ xfce_shortcut_dialog_prepare_grab (GdkSeat *seat,
 {
   gdk_window_show_unraised (window);
 }
+
+#define __XFCE_SHORTCUT_DIALOG_C__
+#include "libxfce4kbd-private-visibility.c"

@@ -87,6 +87,38 @@ settings_DATA = xfce4-keyboard-shortcuts.xml
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = libxfce4kbd-private-3.pc
 
+if ENABLE_X11
+symbols_sed_script = /@BEGIN_X11_SYMBOLS@/d; /@END_X11_SYMBOLS@/d;
+else
+symbols_sed_script = /@BEGIN_X11_SYMBOLS@/,/@END_X11_SYMBOLS@/d;
+endif
+if ENABLE_WAYLAND
+symbols_sed_script += /@BEGIN_WAYLAND_SYMBOLS@/d; /@END_WAYLAND_SYMBOLS@/d
+else
+symbols_sed_script += /@BEGIN_WAYLAND_SYMBOLS@/,/@END_WAYLAND_SYMBOLS@/d
+endif
+
+libxfce4kbd-private.symbols: libxfce4kbd-private.symbols.in
+	$(AM_V_GEN) $(SED) "$(symbols_sed_script)" < $< > $@
+
+libxfce4kbd-private-visibility.h: libxfce4kbd-private.symbols Makefile
+	$(AM_V_GEN) $(XDT_GEN_VISIBILITY) --kind=header $< $@
+
+libxfce4kbd-private-visibility.c: libxfce4kbd-private.symbols Makefile
+	$(AM_V_GEN) $(XDT_GEN_VISIBILITY) --kind=source $< $@
+
+DISTCLEANFILES = \
+	libxfce4kbd-private-visibility.c \
+	libxfce4kbd-private-visibility.h \
+	libxfce4kbd-private.symbols \
+	$(NULL)
+
+BUILT_SOURCES = \
+	libxfce4kbd-private-visibility.c \
+	libxfce4kbd-private-visibility.h \
+	libxfce4kbd-private.symbols \
+	$(NULL)
+
 
 if MAINTAINER_MODE
 xfce-shortcuts-marshal.h: xfce-shortcuts-marshal.list Makefile
@@ -96,15 +128,16 @@ xfce-shortcuts-marshal.c: xfce-shortcuts-marshal.list Makefile xfce-shortcuts-ma
 	$(AM_V_GEN) echo "#include \"xfce-shortcuts-marshal.h\"" > $@ \
 	&& glib-genmarshal --prefix=_xfce_shortcuts_marshal --body $< >> $@
 
-DISTCLEANFILES = \
+DISTCLEANFILES += \
 	$(libxfce4kbd_built_sources)
 
-BUILT_SOURCES = \
+BUILT_SOURCES += \
 	$(libxfce4kbd_built_sources)
 endif
 
 EXTRA_DIST = \
 	$(settings_DATA) \
+	libxfce4kbd-private.symbols.in \
 	xfce-shortcuts-marshal.list
 
 # required for gtk-doc

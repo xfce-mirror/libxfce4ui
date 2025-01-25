@@ -30,6 +30,7 @@
 #include <xfconf/xfconf.h>
 
 #include "xfce-shortcuts-provider.h"
+#include "libxfce4kbd-private-visibility.h"
 
 
 
@@ -713,3 +714,6 @@ xfce_shortcut_free (XfceShortcut *shortcut)
   g_free (shortcut->command);
   g_slice_free (XfceShortcut, shortcut);
 }
+
+#define __XFCE_SHORTCUTS_PROVIDER_C__
+#include "libxfce4kbd-private-visibility.c"
