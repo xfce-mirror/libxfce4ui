@@ -44,7 +44,7 @@
 #include <gtk/gtk.h>
 
 #include "xfce-clipboard-manager.h"
-#include "libxfce4ui-alias.h"
+#include "libxfce4ui-visibility.h"
 
 struct _XfceClipboardManager
 {
@@ -1227,4 +1227,4 @@ xfce_clipboard_manager_new (gboolean replace)
 }
 
 #define __XFCE_CLIPBOARD_MANAGER_C__
-#include "libxfce4ui-aliasdef.c"
+#include "libxfce4ui-visibility.c"

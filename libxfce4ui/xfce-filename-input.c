@@ -47,7 +47,7 @@
 
 #include "libxfce4ui-private.h"
 #include "xfce-filename-input.h"
-#include "libxfce4ui-alias.h"
+#include "libxfce4ui-visibility.h"
 
 /* Property identifiers */
 enum
@@ -540,4 +540,4 @@ xfce_filename_input_whitespace_warning_timer_destroy (gpointer data)
 }
 
 #define __XFCE_FILENAME_INPUT_C__
-#include "libxfce4ui-aliasdef.c"
+#include "libxfce4ui-visibility.c"

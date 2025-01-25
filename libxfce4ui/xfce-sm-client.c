@@ -65,7 +65,7 @@
 #include "libxfce4ui-marshal.h"
 #include "libxfce4ui-private.h"
 #include "xfce-sm-client.h"
-#include "libxfce4ui-alias.h"
+#include "libxfce4ui-visibility.h"
 
 #define GsmPriority "_GSM_Priority"
 #define GsmDesktopFile "_GSM_DesktopFile"
@@ -2384,4 +2384,4 @@ xfce_sm_client_get_restart_command (XfceSMClient *sm_client)
 
 
 #define __XFCE_SM_CLIENT_C__
-#include "libxfce4ui-aliasdef.c"
+#include "libxfce4ui-visibility.c"

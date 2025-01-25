@@ -11,7 +11,7 @@ IncludeCategories:
   - Regex: '".*/.*"'
     Priority: -1
     CaseSensitive: true
-  - Regex: '"libxfce4ui-alias\.h"'
+  - Regex: '"libxfce4ui-visibility\.h"'
     Priority: 0
     SortPriority: 2
     CaseSensitive: true

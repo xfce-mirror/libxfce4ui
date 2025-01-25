@@ -13,7 +13,7 @@ install-sh
 intltool-*.in
 libtool
 libxfce4kbd-private/libxfce4kbd-private-3.pc
-libxfce4ui/abicheck.sh
+libxfce4ui/libxfce4ui.symbols
 libxfce4ui/libxfce4ui.h
 libxfce4ui/libxfce4ui-2.pc
 libxfce4ui/libxfce4ui-config.h
@@ -74,8 +74,8 @@ docs/reference/version.xml
 *.stamp
 libxfce4kbd-private/xfce-shortcuts-marshal.c
 libxfce4kbd-private/xfce-shortcuts-marshal.h
-libxfce4ui/libxfce4ui-alias.h
-libxfce4ui/libxfce4ui-aliasdef.c
+libxfce4ui/libxfce4ui-visibility.h
+libxfce4ui/libxfce4ui-visibility.c
 libxfce4ui/libxfce4ui-enum-types.c
 libxfce4ui/libxfce4ui-enum-types.h
 libxfce4ui/libxfce4ui-marshal.c

@@ -53,7 +53,7 @@
 #include "xfce-gdk-extensions.h"
 #include "xfce-gtk-extensions.h"
 #include "xfce-spawn.h"
-#include "libxfce4ui-alias.h"
+#include "libxfce4ui-visibility.h"
 
 static void
 xfce_dialog_show_help_auto_toggled (GtkWidget *button)
@@ -884,4 +884,4 @@ xfce_message_dialog (GtkWindow *parent,
 
 
 #define __XFCE_DIALOGS_C__
-#include "libxfce4ui-aliasdef.c"
+#include "libxfce4ui-visibility.c"

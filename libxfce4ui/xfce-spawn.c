@@ -59,7 +59,7 @@
 #include "libxfce4ui-private.h"
 #include "xfce-gdk-extensions.h"
 #include "xfce-spawn.h"
-#include "libxfce4ui-alias.h"
+#include "libxfce4ui-visibility.h"
 
 #ifdef HAVE__NSGETENVIRON
 /* for support under apple/darwin */
@@ -733,4 +733,4 @@ xfce_spawn_command_line (GdkScreen *screen,
 
 
 #define __XFCE_SPAWN_C__
-#include "libxfce4ui-aliasdef.c"
+#include "libxfce4ui-visibility.c"
