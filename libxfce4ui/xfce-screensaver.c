@@ -35,7 +35,7 @@
 #include <xfconf/xfconf.h>
 
 #include "xfce-screensaver.h"
-#include "libxfce4ui-alias.h"
+#include "libxfce4ui-visibility.h"
 
 
 
@@ -682,4 +682,4 @@ xfce_screensaver_lock (XfceScreensaver *saver)
 }
 
 #define __XFCE_SCREENSAVER_C__
-#include "libxfce4ui-aliasdef.c"
+#include "libxfce4ui-visibility.c"

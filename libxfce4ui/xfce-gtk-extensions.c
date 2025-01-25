@@ -48,7 +48,7 @@
 #include "libxfce4ui-private.h"
 #include "xfce-gdk-extensions.h"
 #include "xfce-gtk-extensions.h"
-#include "libxfce4ui-alias.h"
+#include "libxfce4ui-visibility.h"
 
 /* Xfce frame padding */
 #define PADDING (6)
@@ -1228,4 +1228,4 @@ xfce_gtk_label_set_a11y_relation (GtkLabel *label,
 
 
 #define __XFCE_GTK_EXTENSIONS_C__
-#include "libxfce4ui-aliasdef.c"
+#include "libxfce4ui-visibility.c"

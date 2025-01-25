@@ -79,7 +79,7 @@ AC_PROG_CC()
 LT_PATH_LD([])
 AM_PROG_CC_C_O()
 AC_PROG_INSTALL()
-AC_CHECK_PROGS([PERL], [perl5 perl])
+AC_PATH_PROG([XDT_GEN_VISIBILITY], [xdt-gen-visibility])
 AC_PATH_PROG([GLIB_COMPILE_RESOURCES],[glib-compile-resources])
 AC_PROG_SED
 
@@ -318,19 +318,19 @@ AC_ARG_ENABLE([visibility],
               [enable_visibility=$enableval], [enable_visibility=yes])
 have_gnuc_visibility=no
 if test "x$enable_visibility" != "xno"; then
-  XDT_SUPPORTED_FLAGS([xdt_vis_test_cflags], [-Wall -Werror -Wno-unused-parameter])
+  XDT_SUPPORTED_FLAGS([xdt_vis_test_cflags], [-Wall -Werror -Wno-unused-parameter -fvisibility=hidden])
   saved_CFLAGS="$CFLAGS"
   CFLAGS="$CFLAGS $xdt_vis_test_cflags"
   AC_MSG_CHECKING([whether $CC supports the GNUC visibility attribute])
   AC_COMPILE_IFELSE([AC_LANG_SOURCE(
   [
-    void test_default (void);
-    void test_hidden (void);
-    void __attribute__ ((visibility("default"))) test_default (void) {}
-    void __attribute__ ((visibility("hidden"))) test_hidden (void) {}
-    int main (int argc, char **argv) {
-      test_default ();
-      test_hidden ();
+    void test_default(void);
+    void test_hidden(void);
+    void __attribute__((visibility("default"))) test_default(void) {}
+    void __attribute__((visibility("hidden"))) test_hidden(void) {}
+    int main(int argc, char **argv) {
+      test_default();
+      test_hidden();
       return 0;
     }
   ])],
@@ -344,9 +344,9 @@ if test "x$enable_visibility" != "xno"; then
   CFLAGS="$saved_CFLAGS"
 fi
 if test "x$have_gnuc_visibility" = "xyes"; then
-  CPPFLAGS="$CPPFLAGS -DHAVE_GNUC_VISIBILITY"
+  CPPFLAGS="$CPPFLAGS -DENABLE_SYMBOL_VISIBILITY=1"
+  CFLAGS="$CFLAGS -fvisibility=hidden"
 fi
-AM_CONDITIONAL([HAVE_GNUC_VISIBILITY], [test "x$have_gnuc_visibility" = "xyes"])
 
 dnl *************************************
 dnl *** Compensate for broken gtk-doc ***

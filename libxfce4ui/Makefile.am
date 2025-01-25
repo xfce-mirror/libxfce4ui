@@ -29,8 +29,6 @@ libxfce4ui_headers = \
 	$(libxfce4ui_enum_headers)
 
 libxfce4ui_built_sources = \
-	libxfce4ui-alias.h \
-	libxfce4ui-aliasdef.c \
 	libxfce4ui-enum-types.c \
 	libxfce4ui-enum-types.h \
 	libxfce4ui-marshal.c \
@@ -155,32 +153,42 @@ CLEANFILES += $(gir_DATA) $(typelib_DATA)
 endif
 
 if ENABLE_X11
-abicheck_sed_script = s/@-DENABLE_X11@/-DENABLE_X11/;
+symbols_sed_script = /@BEGIN_X11_SYMBOLS@/d; /@END_X11_SYMBOLS@/d;
 libxfce4ui_sed_script = /@BEGIN_X11_HEADERS@/d; /@END_X11_HEADERS@/d;
 else
-abicheck_sed_script = s/@-DENABLE_X11@//;
+symbols_sed_script = /@BEGIN_X11_SYMBOLS@/,/@END_X11_SYMBOLS@/d;
 libxfce4ui_sed_script = /@BEGIN_X11_HEADERS@/,/@END_X11_HEADERS@/d;
 endif
 if ENABLE_WAYLAND
-abicheck_sed_script += s/@-DENABLE_WAYLAND@/-DENABLE_WAYLAND/
+symbols_sed_script += /@BEGIN_WAYLAND_SYMBOLS@/d; /@END_WAYLAND_SYMBOLS@/d
 libxfce4ui_sed_script += /@BEGIN_WAYLAND_HEADERS@/d; /@END_WAYLAND_HEADERS@/d
 else
-abicheck_sed_script += s/@-DENABLE_WAYLAND@//
+symbols_sed_script += /@BEGIN_WAYLAND_SYMBOLS@/,/@END_WAYLAND_SYMBOLS@/d
 libxfce4ui_sed_script += /@BEGIN_WAYLAND_HEADERS@/,/@END_WAYLAND_HEADERS@/d
 endif
 
-abicheck.sh: abicheck.sh.in
-	$(AM_V_GEN) $(SED) "$(abicheck_sed_script)" < $< > $@; \
-	chmod a+x $@
+libxfce4ui.symbols: libxfce4ui.symbols.in
+	$(AM_V_GEN) $(SED) "$(symbols_sed_script)" < $< > $@
 
 libxfce4ui.h: libxfce4ui.h.in $(top_builddir)/config.h
 	$(AM_V_GEN) $(SED) "$(libxfce4ui_sed_script)" < $< > $@
 
+libxfce4ui-visibility.h: libxfce4ui.symbols Makefile
+	$(AM_V_GEN) $(XDT_GEN_VISIBILITY) --kind=header $< $@
+
+libxfce4ui-visibility.c: libxfce4ui.symbols Makefile
+	$(AM_V_GEN) $(XDT_GEN_VISIBILITY) --kind=source $< $@
+
 DISTCLEANFILES = \
-	abicheck.sh \
+	libxfce4ui-visibility.c \
+	libxfce4ui-visibility.h \
+	libxfce4ui.symbols \
 	libxfce4ui.h
 
 BUILT_SOURCES = \
+	libxfce4ui-visibility.c \
+	libxfce4ui-visibility.h \
+	libxfce4ui.symbols \
 	libxfce4ui.h
 
 ##
@@ -193,22 +201,12 @@ BUILT_SOURCES = \
 ## files as part of the dist tarball.
 ##
 if MAINTAINER_MODE
-CLEANFILES += \
-	actual-abi \
-	expected-abi
-
 DISTCLEANFILES += \
 	stamp-libxfce4ui-marshal.h \
 	$(libxfce4ui_built_sources)
 
 BUILT_SOURCES += \
 	$(libxfce4ui_built_sources)
-
-libxfce4ui-alias.h: make-libxfce4ui-alias.pl libxfce4ui.symbols
-	$(AM_V_GEN) $(PERL) $(srcdir)/make-libxfce4ui-alias.pl < $(srcdir)/libxfce4ui.symbols > libxfce4ui-alias.h
-
-libxfce4ui-aliasdef.c: make-libxfce4ui-alias.pl libxfce4ui.symbols
-	$(AM_V_GEN) $(PERL) $(srcdir)/make-libxfce4ui-alias.pl -def < $(srcdir)/libxfce4ui.symbols > libxfce4ui-aliasdef.c
 
 libxfce4ui-marshal.h: stamp-libxfce4ui-marshal.h
 	@true
@@ -238,12 +236,12 @@ stamp-libxfce4ui-enum-types.h: $(libxfce4ui_enum_headers) Makefile
 	echo timestamp > $(@F)
 libxfce4ui-enum-types.c: $(libxfce4ui_enum_headers) Makefile
 	$(AM_V_GEN) ( cd $(srcdir) && glib-mkenums \
-		--fhead "#include \"libxfce4ui.h\"\n#include \"libxfce4ui-alias.h\"\n\n" \
+		--fhead "#include \"libxfce4ui.h\"\n#include \"libxfce4ui-visibility.h\"\n\n" \
 		--fprod "/* enumerations from \"@filename@\" */\n\n" \
 		--vhead "GType\n@enum_name@_get_type(void)\n{\n    static GType type = 0;\n\n    if(!type) {\n        static const G@Type@Value values[] = {"\
 		--vprod "            { @VALUENAME@, \"@VALUENAME@\", \"@valuenick@\" }," \
 		--vtail "            { 0, NULL, NULL }\n\t};\n\ttype = g_@type@_register_static(\"@EnumName@\", values);\n    }\n\n    return type;\n}\n\n" \
-		--ftail "\n#define __LIBXFCE4UI_ENUM_TYPES_C__\n#include \"libxfce4ui-aliasdef.c\"\n" \
+		--ftail "\n#define __LIBXFCE4UI_ENUM_TYPES_C__\n#include \"libxfce4ui-visibility.c\"\n" \
 		$(libxfce4ui_enum_headers) ) > xgen-letc
 	cp xgen-letc libxfce4ui-enum-types.c
 	rm -f xgen-letc
@@ -259,15 +257,11 @@ endif
 dist-hook: all
 
 EXTRA_DIST = \
-	abicheck.sh.in \
 	libxfce4ui.h.in \
 	libxfce4ui.gresource.xml \
 	$(LIBXFCE4UI_RESOURCE_FILES) \
-	libxfce4ui.symbols \
-	libxfce4ui-alias.h \
-	libxfce4ui-aliasdef.c \
+	libxfce4ui.symbols.in \
 	libxfce4ui-marshal.list \
-	make-libxfce4ui-alias.pl \
 	libxfce4ui-2.deps
 
 
@@ -285,10 +279,6 @@ libxfce4ui_2_vapi_FILES = Libxfce4ui-2.0.gir
 vapidir = $(datadir)/vala/vapi
 vapi_DATA = $(VAPIGEN_VAPIS) $(VAPIGEN_VAPIS:.vapi=.deps)
 
-endif
-
-if HAVE_GNUC_VISIBILITY
-TESTS = abicheck.sh
 endif
 
 # vi:set ts=8 sw=8 noet ai nocindent syntax=automake:

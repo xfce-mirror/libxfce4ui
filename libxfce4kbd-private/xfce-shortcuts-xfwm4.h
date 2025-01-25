@@ -17,9 +17,18 @@
  * MA 02110-1301, USA.
  */
 
+#ifndef __XFCE_SHORTCUTS_XFWM4_H__
+#define __XFCE_SHORTCUTS_XFWM4_H__
+
 #include <glib.h>
+
+G_BEGIN_DECLS
 
 const gchar *
 xfce_shortcuts_xfwm4_get_feature_name (const gchar *feature);
 GList *
 xfce_shortcuts_xfwm4_get_feature_list (void);
+
+G_END_DECLS
+
+#endif /* !__XFCE_SHORTCUTS_XFWM4_H__ */

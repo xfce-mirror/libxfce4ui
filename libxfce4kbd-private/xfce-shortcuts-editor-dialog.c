@@ -30,6 +30,7 @@
 #include "xfce-shortcuts-editor-dialog.h"
 #include "xfce-shortcuts-editor.h"
 #include "xfce-shortcuts.h"
+#include "libxfce4kbd-private-visibility.h"
 
 
 
@@ -139,3 +140,6 @@ xfce_shortcuts_editor_dialog_new_with_parent (GtkWindow *parent,
 
   return GTK_WIDGET (dialog);
 }
+
+#define __XFCE_SHORTCUTS_EDITOR_DIALOG_C__
+#include "libxfce4kbd-private-visibility.c"

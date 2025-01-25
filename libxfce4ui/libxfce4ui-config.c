@@ -32,7 +32,7 @@
 #endif
 
 #include "libxfce4ui-config.h"
-#include "libxfce4ui-alias.h"
+#include "libxfce4ui-visibility.h"
 
 
 /**
@@ -111,4 +111,4 @@ libxfce4ui_check_version (guint required_major,
 
 
 #define __LIBXFCE4UI_CONFIG_C__
-#include "libxfce4ui-aliasdef.c"
+#include "libxfce4ui-visibility.c"

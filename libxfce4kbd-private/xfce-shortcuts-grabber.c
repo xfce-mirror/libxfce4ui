@@ -32,6 +32,7 @@
 
 #include "xfce-shortcuts-grabber.h"
 #include "xfce-shortcuts-marshal.h"
+#include "libxfce4kbd-private-visibility.h"
 
 
 
@@ -873,3 +874,6 @@ xfce_shortcuts_grabber_remove (XfceShortcutsGrabber *grabber,
       g_hash_table_remove (grabber->priv->keys, shortcut);
     }
 }
+
+#define __XFCE_SHORTCUTS_GRABBER_C__
+#include "libxfce4kbd-private-visibility.c"

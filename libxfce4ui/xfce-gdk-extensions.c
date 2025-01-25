@@ -38,7 +38,7 @@
 
 #include "libxfce4ui-private.h"
 #include "xfce-gdk-extensions.h"
-#include "libxfce4ui-alias.h"
+#include "libxfce4ui-visibility.h"
 
 
 
@@ -203,4 +203,4 @@ xfce_gdk_device_grab (GdkSeat *seat,
 }
 
 #define __XFCE_GDK_EXTENSIONS_C__
-#include "libxfce4ui-aliasdef.c"
+#include "libxfce4ui-visibility.c"

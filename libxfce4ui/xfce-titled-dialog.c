@@ -42,7 +42,7 @@
 #include "libxfce4ui-private.h"
 #include "xfce-gtk-extensions.h"
 #include "xfce-titled-dialog.h"
-#include "libxfce4ui-alias.h"
+#include "libxfce4ui-visibility.h"
 
 
 #define XFCE_TITLED_DIALOG_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), XFCE_TYPE_TITLED_DIALOG, XfceTitledDialogPrivate))
@@ -782,4 +782,4 @@ xfce_titled_dialog_set_subtitle (XfceTitledDialog *titled_dialog,
 
 
 #define __XFCE_TITLED_DIALOG_C__
-#include "libxfce4ui-aliasdef.c"
+#include "libxfce4ui-visibility.c"
