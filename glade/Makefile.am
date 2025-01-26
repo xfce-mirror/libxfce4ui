@@ -45,6 +45,8 @@ gladecatalog_DATA = \
 endif
 
 EXTRA_DIST = \
-	libxfce4ui-2.xml
+	libxfce4ui-2.xml \
+	meson.build \
+	$(NULL)
 
 # vi:set ts=8 sw=8 noet ai nocindent syntax=automake:
