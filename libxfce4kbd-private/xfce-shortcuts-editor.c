@@ -23,7 +23,8 @@
 #endif
 
 #include <gdk/gdkkeysyms.h>
-#include <libxfce4util/libxfce4util.h>
+
+#include "libxfce4ui/libxfce4ui.h"
 
 #include "xfce-shortcut-dialog.h"
 #include "xfce-shortcuts-editor.h"
