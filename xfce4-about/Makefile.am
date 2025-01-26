@@ -69,4 +69,6 @@ endif
 
 EXTRA_DIST = \
 	$(desktop_in_files) \
-	xfce4-about-dialog.glade
+	xfce4-about-dialog.glade \
+	meson.build \
+	$(NULL)

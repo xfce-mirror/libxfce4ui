@@ -138,7 +138,9 @@ endif
 EXTRA_DIST = \
 	$(settings_DATA) \
 	libxfce4kbd-private.symbols.in \
-	xfce-shortcuts-marshal.list
+	xfce-shortcuts-marshal.list \
+	meson.build \
+	$(NULL)
 
 # required for gtk-doc
 dist-hook: all
