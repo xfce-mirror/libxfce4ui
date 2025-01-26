@@ -25,7 +25,6 @@
 #endif
 
 #include <gdk/gdkx.h>
-#include <libxfce4ui/libxfce4ui.h>
 #include <libxfce4util/libxfce4util.h>
 #include <sys/utsname.h>
 
@@ -37,6 +36,8 @@
 #ifdef HAVE_GUDEV
 #include <gudev/gudev.h>
 #endif
+
+#include "libxfce4ui/libxfce4ui.h"
 
 #include "system-info.h"
 

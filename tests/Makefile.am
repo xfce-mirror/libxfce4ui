@@ -50,3 +50,7 @@ test_ui_LDADD =					\
 	$(top_builddir)/libxfce4ui/libxfce4ui-2.la
 
 endif # BUILD_TESTS
+
+EXTRA_DIST = \
+	meson.build \
+	$(NULL)

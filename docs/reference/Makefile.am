@@ -46,4 +46,9 @@ GTKDOC_LIBS= $(top_builddir)/libxfce4ui/libxfce4ui-$(LIBXFCE4UI_VERSION_API).la
 
 include $(top_srcdir)/gtk-doc.make
 
+EXTRA_DIST = \
+	gtkdocentities.ent.in \
+	meson.build \
+	$(NULL)
+
 # vi:set ts=8 sw=8 noet ai nocindent syntax=automake:

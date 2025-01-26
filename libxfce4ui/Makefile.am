@@ -262,7 +262,9 @@ EXTRA_DIST = \
 	$(LIBXFCE4UI_RESOURCE_FILES) \
 	libxfce4ui.symbols.in \
 	libxfce4ui-marshal.list \
-	libxfce4ui-2.deps
+	libxfce4ui-2.deps \
+	meson.build \
+	$(NULL)
 
 
 if ENABLE_VAPIGEN
