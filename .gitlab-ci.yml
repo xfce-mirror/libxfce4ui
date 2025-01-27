@@ -1,4 +1,400 @@
-include:
-  - project: 'xfce/xfce4-dev-tools'
-    file: '/ci/build_project.yml'
+image: xfce/xfce-build:latest
 
+# Variables not defined here or at job level are supposed to be defined in each
+# project as CI/CD variables, to enable optional jobs
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
+# Set overall pipeline rules to avoid duplicated pipelines
+# https://docs.gitlab.com/ee/ci/yaml/index.html#exclude-jobs-with-rules-from-certain-pipelines
+workflow:
+  rules:
+    - if: $CI_COMMIT_TAG
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - if: $CI_COMMIT_BRANCH =~ /xfce-4.[0-9]+/
+    - if: $CI_MERGE_REQUEST_IID
+
+stages:
+  - build
+  - analysis
+  - distcheck
+  - release
+
+clang-format:
+  rules:
+    # The job is only run for merge requests and if there is a .clang-format
+    # file at the repository root
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      exists:
+        - .clang-format
+  stage: analysis
+  allow_failure: true
+  interruptible: true
+  needs: []
+  script:
+    # The job fails if clang-format's analysis of the merge request diff produces
+    # non-empty output
+    - 'git diff -U0 --no-color "${CI_MERGE_REQUEST_DIFF_BASE_SHA:-.}" | clang-format-diff -p1'
+
+gcc-analyzer:
+  rules:
+    - if: $GCC_ANALYZER == null
+      when: never
+    - !reference [.static-analysis, rules]
+  needs:
+    - job: "build-gcc-autotools"
+      optional: true
+    - job: "build-gcc-meson"
+      optional: true
+  variables:
+    FALSE_POSITIVE_FILE: ".gcc-analyzer-false-positives"
+    WARNING_REGEX: 'warning:.+\[-Wanalyzer-.+\]'
+    GREP_OPTIONS: "-E"
+  extends: .static-analysis
+
+scan-build:
+  rules:
+    - if: $SCAN_BUILD == null
+      when: never
+    - !reference [.static-analysis, rules]
+  needs:
+    - job: "build-clang-autotools"
+      optional: true
+    - job: "build-clang-meson"
+      optional: true
+  variables:
+    FALSE_POSITIVE_FILE: ".scan-build-false-positives"
+    WARNING_REGEX: 'warning:.+\[(?!-Wdeprecated-declarations).+\]'
+    GREP_OPTIONS: "-P"
+  extends: .static-analysis
+
+translations:
+  extends: .translation
+  stage: build
+  script:
+    #  Could validate translations, but for now just pass
+    - "true"
+
+build-gcc-meson:
+  variables:
+    MESON_SETUP_FLAGS: "--buildtype=debug --werror"
+  extends:
+    - .build-meson
+    - .build-gcc
+
+build-gcc-autotools:
+  variables:
+    CONFIGURE_FLAGS: "--enable-debug=werror"
+  extends:
+    - .build-autotools
+    - .build-gcc
+
+.build-gcc:
+  variables:
+    CC: "gcc"
+    CXX: "g++"
+  before_script:
+    # We can't use shell parameter expansion under the variables keyword above,
+    # so let's use a before_script
+    # We can't disable -Werror for all analyzer warnings at once, e.g. by -Wno-error=analyzer,
+    # so we have to specify the entire list, which depends on the gcc version used.
+    # For gcc 13 see https://gcc.gnu.org/onlinedocs/gcc-13.3.0/gcc/Static-Analyzer-Options.html
+    - export CPPFLAGS=${GCC_ANALYZER+-fanalyzer -Wno-error=analyzer-allocation-size -Wno-error=analyzer-deref-before-check -Wno-error=analyzer-double-fclose -Wno-error=analyzer-double-free -Wno-error=analyzer-exposure-through-output-file -Wno-error=analyzer-exposure-through-uninit-copy -Wno-error=analyzer-fd-access-mode-mismatch -Wno-error=analyzer-fd-double-close -Wno-error=analyzer-fd-leak -Wno-error=analyzer-fd-phase-mismatch -Wno-error=analyzer-fd-type-mismatch -Wno-error=analyzer-fd-use-after-close -Wno-error=analyzer-fd-use-without-check -Wno-error=analyzer-file-leak -Wno-error=analyzer-free-of-non-heap -Wno-error=analyzer-imprecise-fp-arithmetic -Wno-error=analyzer-infinite-recursion -Wno-error=analyzer-jump-through-null -Wno-error=analyzer-malloc-leak -Wno-error=analyzer-mismatching-deallocation -Wno-error=analyzer-null-argument -Wno-error=analyzer-null-dereference -Wno-error=analyzer-out-of-bounds -Wno-error=analyzer-possible-null-argument -Wno-error=analyzer-possible-null-dereference -Wno-error=analyzer-putenv-of-auto-var -Wno-error=analyzer-shift-count-negative -Wno-error=analyzer-shift-count-overflow -Wno-error=analyzer-stale-setjmp-buffer -Wno-error=analyzer-unsafe-call-within-signal-handler -Wno-error=analyzer-use-after-free -Wno-error=analyzer-use-of-pointer-in-stale-stack-frame -Wno-error=analyzer-use-of-uninitialized-value -Wno-error=analyzer-va-arg-type-mismatch -Wno-error=analyzer-va-list-exhausted -Wno-error=analyzer-va-list-leak -Wno-error=analyzer-va-list-use-after-va-end -Wno-error=analyzer-write-to-const -Wno-error=analyzer-write-to-string-literal}
+
+build-clang-meson:
+  variables:
+    MESON_SETUP_FLAGS: "--buildtype=debug --werror"
+  extends:
+    - .build-meson
+    - .build-clang
+
+build-clang-autotools:
+  variables:
+    CONFIGURE_FLAGS: "--enable-debug=werror"
+  extends:
+    - .build-autotools
+    - .build-clang
+
+.build-clang:
+  variables:
+    CC: "clang"
+    CXX: "clang++"
+  before_script:
+    - WRAPPER=${SCAN_BUILD+scan-build --use-cc=clang --use-c++=clang++}
+
+build-no-x11-meson:
+  variables:
+    MESON_SETUP_FLAGS: "--buildtype=debug --werror -Dx11=disabled"
+  extends: .build-meson
+  before_script:
+    - 'unset ABI_CHECK'
+  rules:
+    - if: $X11_FEATURE == null
+      when: never
+    - !reference [.setup-meson, rules]
+
+build-no-x11-autotools:
+  variables:
+    CONFIGURE_FLAGS: "--enable-debug=werror --disable-x11"
+  extends: .build-autotools
+  before_script:
+    - 'unset ABI_CHECK'
+  rules:
+    - if: $X11_FEATURE == null
+      when: never
+    - !reference [.configure-autotools, rules]
+
+build-no-wayland-meson:
+  variables:
+    MESON_SETUP_FLAGS: "--buildtype=debug --werror -Dwayland=disabled"
+  extends: .build-meson
+  before_script:
+    - 'unset ABI_CHECK'
+  rules:
+    - if: $WAYLAND_FEATURE == null
+      when: never
+    - !reference [.setup-meson, rules]
+
+build-no-wayland-autotools:
+  variables:
+    CONFIGURE_FLAGS: "--enable-debug=werror --disable-wayland"
+  extends: .build-autotools
+  before_script:
+    - 'unset ABI_CHECK'
+  rules:
+    - if: $WAYLAND_FEATURE == null
+      when: never
+    - !reference [.configure-autotools, rules]
+
+dist-meson:
+  extends: .dist-meson
+  stage: distcheck
+  interruptible: true
+  before_script:
+    - |
+      if meson configure 2>/dev/null | grep -q '\<gtk-doc\>'; then
+          MESON_SETUP_FLAGS="-Dgtk-doc=true"
+      else
+          MESON_SETUP_FLAGS=""
+      fi
+      MESON_SETUP_FLAGS="--buildtype=release $MESON_SETUP_FLAGS"
+  rules:
+    - if: $CI_COMMIT_TAG
+      when: never
+      # We have to reference .configure rules to import the rules which skip build
+      # when only po/*.po are modified
+    - !reference [.setup-meson, rules]
+
+distcheck-autotools:
+  variables:
+    CONFIGURE_FLAGS: "--disable-debug"
+  extends: .distcheck-autotools
+  stage: distcheck
+  interruptible: true
+  rules:
+    - if: $CI_COMMIT_TAG
+      when: never
+      # We have to reference .configure rules to import the rules which skip build
+      # when only po/*.po are modified
+    - !reference [.configure-autotools, rules]
+
+release-meson:
+  extends: .dist-meson
+  stage: release
+  artifacts:
+    paths:
+      - ./*.tar.xz
+    expire_in: never
+  rules:
+    - if: $CI_COMMIT_TAG
+      exists:
+        - meson.build
+
+release-autotools:
+  extends: .distcheck-autotools
+  stage: release
+  artifacts:
+    paths:
+      - ./*.tar.bz2
+    expire_in: never
+  rules:
+    - if: $CI_COMMIT_TAG
+      exists:
+        - autogen.sh
+
+.setup-meson:
+  script:
+    - $WRAPPER meson setup --auto-features=enabled $MESON_SETUP_FLAGS build
+  rules:
+    - !reference [.no-translation, rules]
+      # Otherwise, run if previous stage didn't fail
+    - exists:
+      - meson.build
+      when: on_success
+
+.configure-autotools:
+  script:
+    - $WRAPPER ./autogen.sh $CONFIGURE_FLAGS
+  rules:
+    - !reference [.no-translation, rules]
+      # Otherwise, run if previous stage didn't fail
+    - exists:
+        - autogen.sh
+      when: on_success
+
+.build-meson:
+  extends:
+    - .setup-meson
+    - .build
+  stage: build
+  interruptible: true
+  script:
+    - !reference [.setup-meson, script]
+    - $WRAPPER meson compile -Cbuild 2>&1 | tee build.log
+    - !reference [.build-log-check-deprecation-warnings, script]
+    - !reference [.build-abi-check, script]
+
+.build-autotools:
+  extends: 
+    - .configure-autotools
+    - .build
+  stage: build
+  interruptible: true
+  script:
+    - !reference [.configure-autotools, script]
+    - $WRAPPER make -j$(nproc) 2>&1 | tee build.log
+    - !reference [.build-log-check-deprecation-warnings, script]
+    - !reference [.build-abi-check, script]
+
+.build:
+  artifacts:
+    paths:
+      - build.log
+    expire_in: 1 week
+
+.build-log-check-deprecation-warnings:
+  script:
+    # Equivalent to -Werror using grep for deprecation warnings only on glib symbols,
+    # which we care about since we set GLIB_VERSION_MIN_REQUIRED and GLIB_VERSION_MAX_ALLOWED
+    # Subshell is necessary for logical negation to work because of set -e
+    - '(! grep -E "warning: ''.*\b[gG]_.+\b.*''.+\[-Wdeprecated-declarations\]" build.log)'
+
+# Since this block is used by !reference, and runs as a final step of an
+# unconditional build, we can't use 'rules:' to determine when it should run.
+# We only run this for merge requests going to the default branch, or for
+# commits pushed directly to the default branch, since the (new style) ABI
+# checking is probably not set up on old branches.  However, it will probably
+# be desirable to run this for stable branches that are created in the future,
+# so this logic will need to be revisited.
+#
+# To use this, projects should set a CI variable in the respoitory config
+# called ABI_CHECK.  It should be a space-separated list of
+# $SYMBOL_PATH:$LIBRARY_FILENAME pairs.  Note that the symbol path should be a
+# full path, relative to the project root, but the library filename should be
+# just the filename.  The CI job will do its best to find it inside the
+# project.  See the README.md file in xfce4-dev-tools/scripts/ for the format
+# of the symbols file.
+.build-abi-check:
+  script:
+    - |
+      if [ "$ABI_CHECK" ] \
+        && [ "$CI_COMMIT_BRANCH" = "$CI_DEFAULT_BRANCH" \
+             -o "$CI_MERGE_REQUEST_TARGET_BRANCH_NAME" = "$CI_DEFAULT_BRANCH" ]
+      then
+          unset has_errors
+
+          for libpair in $ABI_CHECK; do
+              symfile=$(echo "$libpair" | cut -d: -f1)
+              [ -f "$symfile" ] || symfile="build/$symfile"
+              libfilename=$(echo "$libpair" | cut -d: -f2)
+              libfile=$(find . '(' -type f -o -type l ')' -name "$libfilename")
+              if [ -z "$libfile" ]; then
+                  echo "Unable to find built artifact for library '$libfilename'" >&2
+                  has_errors=yes
+              else
+                  echo "Checking ABI of $libfile against $symfile"
+                  xdt-check-abi "$symfile" "$libfile" || has_errors=yes
+              fi
+          done
+
+          if [ "$has_errors" = "yes" ]; then
+              exit 1
+          fi
+      fi
+
+.dist-meson:
+  extends: .setup-meson
+  script:
+    - !reference [.setup-meson, script]
+    - meson dist -Cbuild --include-subprojects
+
+.distcheck-autotools:
+  extends: .configure-autotools
+  script:
+    - !reference [.configure-autotools, script]
+    # Work around a bug in gettext when doing parallel make.  See:
+    # https://lists.gnu.org/archive/html/bug-gettext/2024-05/msg00014.html
+    - if [ -d po ]; then DISTCHECK_CONFIGURE_FLAGS="$CONFIGURE_FLAGS" make -j1 -C po || exit 1; fi
+    # Projects should use AM_DISTCHECK_CONFIGURE_FLAGS instead of DISTCHECK_CONFIGURE_FLAGS
+    # so that the flags set here are not overwritten
+    - DISTCHECK_CONFIGURE_FLAGS="$CONFIGURE_FLAGS" make -j$(nproc) distcheck
+
+.translation:
+  rules:
+    # If there are changes to .po, run this job
+    - changes:
+      - "po/*.po"
+      when: always
+    # Otherwise, never run
+    - when: never
+
+.no-translation:
+  rules:
+    # If there are changes to .po, never run, unless it's a merge request or a manual trigger
+    - if: '$CI_COMMIT_BEFORE_SHA != "0000000000000000000000000000000000000000"'
+      changes:
+        - "po/*.po"
+      when: never
+
+.static-analysis:
+  stage: analysis
+  interruptible: true
+  rules:
+    - !reference [.no-translation, rules]
+    # Maintaining static analysis on maintenance branches is out of scope: you don't always
+    # want to backport fixes from the defaut branch, and you can't be sure that it will always
+    # be enough to make the job succeed anyway. No need to run this on tags either.
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == $CI_DEFAULT_BRANCH
+  # This succeeds if and only if the list of warnings from the build and the list of regular
+  # expressions from the false positive file match each other. So:
+  # * if the false positive file doesn't exist or is empty, the build warning list must be empty;
+  # * if the file is not empty:
+  #   * the build warning list filtered by the file patterns must be empty;
+  #   * each file pattern must match exactly one build warning; if a pattern is to match several
+  #     warnings, it must be added as many times.
+  # Empty lines and lines starting with '#' in the false positive file are ignored (so you can
+  # comment on the addition of a false positive).
+  # Patterns added to this file should be as restrictive as possible, so that they normally
+  # match only one warning, allowing it to move around the same source file as changes are made.
+  # For example, for warning
+  # tumbler.c:2543:32: warning: Value stored to 'skeleton' during its initialization is never read [deadcode.DeadStores]
+  # , the added pattern should be
+  # tumbler.c:[0-9]+:[0-9]+: warning: Value stored to 'skeleton' during its initialization is never read \[deadcode.DeadStores\]
+  # (take care to correctly escape the characters that require it).
+  script:
+    - 'warnings=$(grep $GREP_OPTIONS "$WARNING_REGEX" build.log) || true'
+    - 'if [ -z "$warnings" ] && [ ! -f "$FALSE_POSITIVE_FILE" ]; then exit 0; fi'
+    - '[ -f "$FALSE_POSITIVE_FILE" ] || { echo "$warnings"; exit 1; }'
+    - 'filtered_warnings=$(grep -Ev -f <(sed -E "/^#|^$/d" "$FALSE_POSITIVE_FILE") <<< "$warnings" || true)'
+    - '[ -z "$filtered_warnings" ] || { echo "$filtered_warnings"; exit 1; }'
+    - 'n_warnings=$(wc -l <<< "$warnings")'
+    - 'n_patterns=$(sed -E "/^#|^$/d" "$FALSE_POSITIVE_FILE" | wc -l)'
+    - 'if ((n_warnings < n_patterns)); then
+         echo "Some patterns no longer match any warning and should be remove from ''$FALSE_POSITIVE_FILE''";
+         exit 1;
+       elif ((n_warnings > n_patterns)); then
+         echo "Some patterns match several warnings, but have either not been added to ''$FALSE_POSITIVE_FILE''
+               enough times, or some of the warnings they match are not false positives";
+         exit 1;
+       fi'
