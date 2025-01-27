@@ -1,0 +1,125 @@
+option(
+  'gtk-doc',
+  type: 'boolean',
+  value: false,
+  description: 'Build gtk-doc HTML',
+)
+
+option(
+  'introspection',
+  type: 'boolean',
+  value: true,
+  description: 'Build gobject-introspection files',
+)
+
+option(
+  'vala',
+  type: 'feature',
+  value: 'auto',
+  description: 'Build Vala language bindings',
+)
+
+option(
+  'visibility',
+  type: 'boolean',
+  value: true,
+  description: 'Build with GNU symbol visibility',
+)
+
+option(
+  'keyboard-library',
+  type: 'boolean',
+  value: true,
+  description: 'Build the keyboard library needed by xfwm4 and xfce4-settings',
+)
+
+option(
+  'x11',
+  type: 'feature',
+  value: 'auto',
+  description: 'Support for the X11 windowing system',
+)
+
+option(
+  'wayland',
+  type: 'feature',
+  value: 'auto',
+  description: 'Support for the Wayland windowing system',
+)
+
+option(
+  'session-management',
+  type: 'feature',
+  value: 'auto',
+  description: 'Session management support (X11 only)',
+)
+
+option(
+  'startup-notification',
+  type: 'feature',
+  value: 'auto',
+  description: 'Startup notification support (X11 only)',
+)
+
+option(
+  'libgtop',
+  type: 'feature',
+  value: 'auto',
+  description: 'Libgtop support for system information',
+)
+
+option(
+  'epoxy',
+  type: 'feature',
+  value: 'auto',
+  description: 'Library for handling OpenGL function pointer management (requires libgtop)',
+)
+
+option(
+  'gudev',
+  type: 'feature',
+  value: 'auto',
+  description: 'GObject bindings for libudev (requires libgtop)',
+)
+
+option(
+  'glade',
+  type: 'feature',
+  value: 'auto',
+  description: 'Generate files for libxfce4ui integration in Glade interface designer',
+)
+
+option(
+  'glade-catalogdir',
+  type: 'string',
+  value: '',
+  description: 'Specify where to install Glade catalog files (default: autodetect, requires glade)',
+)
+
+option(
+  'glade-moduledir',
+  type: 'string',
+  value: '',
+  description: 'Specify where to install Glade modules (default: autodetect, requires glade)',
+)
+
+option(
+  'glade-pixmapdir',
+  type: 'string',
+  value: '',
+  description: 'Specify where to install Glade pixmaps (default: autodetect, requires glade)',
+)
+
+option(
+  'vendor-info',
+  type: 'string',
+  value: '',
+  description: 'Specify an additional vendor name, optionally with a file in $prefix/share/xfce4/vendorinfo',
+)
+
+option(
+  'manual-website',
+  type: 'string',
+  value: '',
+  description: 'Specify an optional manual website (default: https://docs.xfce.org/help.php)',
+)
