@@ -20,7 +20,10 @@ xfce4_about_sources += custom_target(
 executable(
   'xfce4-about',
   xfce4_about_sources,
-  sources: libxfce4ui_h,
+  sources: [
+    libxfce4ui_h,
+    xfce_revision_h,
+  ],
   c_args: [
     '-DG_LOG_DOMAIN="@0@"'.format('xfce4-about'),
   ],
