@@ -1,0 +1,124 @@
+<interface>
+  <template class="XfceAppChooserDialog" parent="GtkWindow">
+    <property name="title">Select Application</property>
+    <property name="destroy-with-parent">True</property>
+    <child>
+      <object class="GtkBox" id="outer_container">
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkBox" id="content_area">
+            <property name="orientation">vertical</property>
+            <property name="border-width">6</property>
+            <property name="spacing">12</property>
+            <child>
+              <object class="GtkBox" id="vbox">
+                <property name="orientation">vertical</property>
+                <property name="border-width">6</property>
+                <property name="spacing">12</property>
+                <child>
+                  <object class="GtkBox" id="header">
+                    <property name="spacing">6</property>
+                    <child>
+                      <object class="GtkImage" id="header_image"></object>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="header_label">
+                        <property name="xalign">0.0f</property>
+                        <property name="wrap">True</property>
+                        <property name="width-request">350</property>
+                        <property name="height-request">-1</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkBox" id="box">
+                    <property name="spacing">6</property>
+                    <property name="orientation">vertical</property>
+                    <child>
+                      <object class="GtkScrolledWindow">
+                        <property name="width-request">-1</property>
+                        <property name="height-request">270</property>
+                        <property name="shadow-type">in</property>
+                        <property name="hscrollbar-policy">automatic</property>
+                        <property name="hscrollbar-policy">automatic</property>
+                        <child>
+                          <object class="GtkTreeView" id="tree_view">
+                            <property name="headers-visible">False</property>
+                            <property name="level-indentation">24</property>
+                            <property name="show-expanders">False</property>
+                            <property name="sensitive" bind-source="custom_expander" bind-property="expanded" bind-flags="sync-create|invert-boolean"/>
+                            <signal name="button-press-event" handler="xfce_app_chooser_dialog_button_press_event" />
+                            <signal name="popup-menu" handler="xfce_app_chooser_dialog_context_menu" />
+                            <signal name="row-activated" handler="xfce_app_chooser_dialog_row_activated" />
+                            <child>
+                              <object class="GtkTreeViewColumn" id="column"></object>
+                            </child>
+                            <child internal-child="selection">
+                              <object class="GtkTreeSelection" id="selection">
+                                <signal name="changed" handler="xfce_app_chooser_dialog_selection_changed"/>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkExpander" id="custom_expander">
+                        <property name="label" translatable="yes">Use a _custom command:</property>
+                        <property name="tooltip-text" translatable="yes">Use a custom command for an application that is not available from the above application list.</property>
+                        <signal name="notify::expanded" handler="xfce_app_chooser_dialog_notify_expanded"></signal>
+                        <child>
+                          <object class="GtkBox" id="hbox">
+                            <child>
+                              <object class="GtkEntry" id="custom_entry">
+                                <property name="activates-default">True</property>
+                                <signal name="changed" handler="xfce_app_chooser_dialog_update_accept" swapped="yes"/>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkButton" id="custom_button">
+                                <property name="label" translatable="yes">_Browse</property>
+                                <signal name="clicked" handler="xfce_app_chooser_dialog_browse_clicked"/>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="default_button">
+                        <property name="label" translatable="yes">Use as _default for this kind of file</property>
+                        <property name="active">False</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox" id="button_area">
+            <property name="halign">end</property>
+            <property name="spacing">12</property>
+            <property name="border-width">6</property>
+            <child>
+              <object class="GtkButton" id="cancel_button">
+                <property name="label">Cancel</property>
+                <signal name="clicked" handler="xfce_app_chooser_dialog_cancel_clicked"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="accept_button">
+                <property name="label">OK</property>
+                <property name="sensitive">False</property>
+                <signal name="clicked" handler="xfce_app_chooser_dialog_accept_clicked" swapped="yes"/>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </template>
+</interface>

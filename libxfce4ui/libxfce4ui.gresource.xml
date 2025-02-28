@@ -2,5 +2,6 @@
 <gresources>
   <gresource prefix="/org/xfce/libxfce4ui">
     <file>libxfce4ui-dialog-ui.ui</file>
+    <file>xfce-app-chooser.ui</file>
   </gresource>
 </gresources>
