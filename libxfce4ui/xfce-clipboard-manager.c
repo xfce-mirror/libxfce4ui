@@ -59,7 +59,10 @@ struct _XfceClipboardManager
   GSList *conversions;
   GdkPixbuf *image;
   GBytes *bytes;
+  GtkSelectionData **selection_data;
+  guint n_selection_data;
   gboolean is_image_available;
+  GdkEventOwnerChange *current_event;
 
   Window requestor;
   Atom property;
@@ -161,6 +164,19 @@ conversion_free (IncrConversion *rdata)
 }
 
 static void
+selection_data_free (XfceClipboardManager *manager)
+{
+  for (guint n = 0; n < manager->n_selection_data; n++)
+    {
+      if (manager->selection_data[n] != NULL)
+        gtk_selection_data_free (manager->selection_data[n]);
+    }
+  g_free (manager->selection_data);
+  manager->selection_data = NULL;
+  manager->n_selection_data = 0;
+}
+
+static void
 xfce_clipboard_manager_finalize (GObject *object)
 {
   XfceClipboardManager *manager = XFCE_CLIPBOARD_MANAGER (object);
@@ -195,6 +211,7 @@ xfce_clipboard_manager_finalize (GObject *object)
       manager->image = NULL;
       manager->bytes = NULL;
     }
+  selection_data_free (manager);
 
   if (manager->start_idle_id != 0)
     g_source_remove (manager->start_idle_id);
@@ -1154,51 +1171,106 @@ clipboard_manager_start (XfceClipboardManager *manager,
 }
 
 static void
+clipboard_get (GtkClipboard *clipboard,
+               GtkSelectionData *selection_data,
+               guint info,
+               gpointer data)
+{
+  XfceClipboardManager *manager = data;
+  if (manager->selection_data[info] != NULL)
+    gtk_selection_data_set (selection_data,
+                            gtk_selection_data_get_data_type (manager->selection_data[info]),
+                            gtk_selection_data_get_format (manager->selection_data[info]),
+                            gtk_selection_data_get_data (manager->selection_data[info]),
+                            gtk_selection_data_get_length (manager->selection_data[info]));
+}
+
+static void
+clipboard_clear (GtkClipboard *clipboard,
+                 gpointer data)
+{
+  XfceClipboardManager *manager = data;
+  selection_data_free (manager);
+}
+
+#define WAIT_CANCELLED (event != manager->current_event)
+
+static void
 owner_change (GtkClipboard *clipboard,
-              GdkEvent *event,
+              GdkEventOwnerChange *event,
               XfceClipboardManager *manager)
 {
   GdkAtom *targets;
   gint n_targets;
 
-  manager->is_image_available = FALSE;
-  if (gtk_clipboard_wait_for_targets (clipboard, &targets, &n_targets))
-    {
-      /* we replace the contents of the clipboard to take ownership of the image below,
-       * so we must not do this if there are other formats available */
-      manager->is_image_available = gtk_targets_include_image (targets, n_targets, FALSE)
-                                    && !gtk_targets_include_text (targets, n_targets)
-                                    && !gtk_targets_include_uri (targets, n_targets);
-      g_free (targets);
-    }
+  /* we're only interested in clients gaining ownership and we should not cancel
+   * an ongoing storage when a client loses ownership */
+  if (event->owner == NULL)
+    return;
 
-  if (manager->is_image_available)
+  manager->current_event = event;
+  manager->is_image_available = FALSE;
+  if (gtk_clipboard_wait_for_targets (clipboard, &targets, &n_targets) && !WAIT_CANCELLED)
     {
-      GdkPixbuf *image = gtk_clipboard_wait_for_image (clipboard);
-      if (image != NULL)
+      manager->is_image_available = gtk_targets_include_image (targets, n_targets, FALSE);
+      if (manager->is_image_available)
         {
-          GBytes *bytes = gdk_pixbuf_read_pixel_bytes (image);
-          if (manager->image == NULL || !g_bytes_equal (bytes, manager->bytes))
+          GdkPixbuf *image = gtk_clipboard_wait_for_image (clipboard);
+          if (image != NULL)
             {
-              if (manager->image != NULL)
+              GBytes *bytes = gdk_pixbuf_read_pixel_bytes (image);
+              if (!WAIT_CANCELLED && (manager->image == NULL || !g_bytes_equal (bytes, manager->bytes)))
                 {
-                  g_object_unref (manager->image);
-                  g_bytes_unref (manager->bytes);
+                  GtkTargetEntry entries[n_targets];
+                  GtkSelectionData **selection_data;
+
+                  if (manager->image != NULL)
+                    {
+                      g_object_unref (manager->image);
+                      g_bytes_unref (manager->bytes);
+                    }
+                  manager->image = g_object_ref (image);
+                  manager->bytes = g_bytes_ref (bytes);
+
+                  selection_data = g_new0 (GtkSelectionData *, n_targets);
+                  for (gint n = 0; n < n_targets && !WAIT_CANCELLED; n++)
+                    {
+                      selection_data[n] = gtk_clipboard_wait_for_contents (clipboard, targets[n]);
+                      entries[n].target = gdk_atom_name (targets[n]);
+                      entries[n].flags = GTK_TARGET_SAME_APP;
+                      entries[n].info = n;
+                    }
+
+                  if (!WAIT_CANCELLED)
+                    {
+                      manager->n_selection_data = n_targets;
+                      manager->selection_data = selection_data;
+                      gtk_clipboard_set_with_data (clipboard, entries, n_targets, clipboard_get, clipboard_clear, manager);
+                    }
+                  else
+                    {
+                      for (gint n = 0; n < n_targets; n++)
+                        {
+                          if (selection_data[n] != NULL)
+                            gtk_selection_data_free (selection_data[n]);
+                        }
+                      g_free (selection_data);
+                    }
                 }
-              manager->image = g_object_ref (image);
-              manager->bytes = g_bytes_ref (bytes);
-              gtk_clipboard_set_image (clipboard, image);
+
+              g_object_unref (image);
+              g_bytes_unref (bytes);
             }
-          g_object_unref (image);
-          g_bytes_unref (bytes);
         }
-    }
-  else if (manager->image != NULL)
-    {
-      g_object_unref (manager->image);
-      g_bytes_unref (manager->bytes);
-      manager->image = NULL;
-      manager->bytes = NULL;
+      else if (manager->image != NULL)
+        {
+          g_object_unref (manager->image);
+          g_bytes_unref (manager->bytes);
+          manager->image = NULL;
+          manager->bytes = NULL;
+        }
+
+      g_free (targets);
     }
 }
 
