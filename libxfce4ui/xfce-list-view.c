@@ -24,6 +24,8 @@
 
 #define EXO_PARAM_READWRITE G_PARAM_READWRITE
 
+#define XFCE_TYPE_LIST_VIEW xfce_list_view_get_type()
+
 //~ #include <exo/exo-config.h>
 //~ #include <exo/exo-gtk-extensions.h>
 //~ #include <exo/exo-private.h>
@@ -979,11 +981,11 @@ GtkTreeViewColumn* xfce_list_view_get_column (XfceListView *list_view,
 {
   GListStore* possible_columns = list_view->priv->possible_columns;
 
-  guint pos = -1;
+  guint pos = INT_MAX;
 
   // We have to pass a dummy tree column because GIO doesn't support a NULL until v2.76
   g_list_store_find_with_equal_func_full(possible_columns, gtk_tree_view_column_new(), xfce_list_view_column_equal_id, column_id, &pos);
-  if (pos >= 0){
+  if (pos != INT_MAX){
     GObject *obj = g_list_model_get_item(G_LIST_MODEL(possible_columns), pos);
     return GTK_TREE_VIEW_COLUMN(obj);
   }
@@ -1075,7 +1077,7 @@ gboolean xfce_list_view_get_column_visible (const XfceListView *list_view,
  * Returns : The current position of the column, or -1 if it is hidden
  *
  * Since : 4.21
- * */
+ **/
 guint xfce_list_view_get_column_position (const XfceListView *list_view,
                                           const gchar        *column_id)
 {
@@ -1161,7 +1163,7 @@ void xfce_list_view_render_text (XfceListView  *list_view,
 
   gtk_tree_view_column_pack_start(col, renderer, TRUE);
   gtk_tree_view_column_set_sort_column_id(col, column);
-  gtk_tree_view_column_set_attributes(GTK_TREE_VIEW_COLUMN(col), GTK_CELL_RENDERER(renderer), "text", column);
+  gtk_tree_view_column_set_attributes(GTK_TREE_VIEW_COLUMN(col), GTK_CELL_RENDERER(renderer), "text", column, NULL);
 }
 
 /**
@@ -1213,11 +1215,11 @@ void xfce_list_view_render_pixbuf_text (XfceListView  *list_view,
   GtkCellRenderer *pix_renderer = gtk_cell_renderer_pixbuf_new();
   gtk_tree_view_column_pack_start(col, pix_renderer, FALSE);
   gtk_tree_view_column_set_sort_column_id(col, text_column);
-  gtk_tree_view_column_set_attributes(GTK_TREE_VIEW_COLUMN(col), GTK_CELL_RENDERER(pix_renderer), "pixbuf", pixbuf_column);
+  gtk_tree_view_column_set_attributes(GTK_TREE_VIEW_COLUMN(col), GTK_CELL_RENDERER(pix_renderer), "pixbuf", pixbuf_column, NULL);
 
   GtkCellRenderer *text_renderer = gtk_cell_renderer_text_new();
   gtk_tree_view_column_pack_start(col, text_renderer, TRUE);
-  gtk_tree_view_column_set_attributes(GTK_TREE_VIEW_COLUMN(col), GTK_CELL_RENDERER(text_renderer), "text", text_column);
+  gtk_tree_view_column_set_attributes(GTK_TREE_VIEW_COLUMN(col), GTK_CELL_RENDERER(text_renderer), "text", text_column, NULL);
 
 }
 
@@ -1245,7 +1247,7 @@ gchar* xfce_list_view_serialize_state (XfceListView  *list_view)
   while (cols != NULL)
   {
     gchar *id = g_object_get_data(G_OBJECT(cols->data), "column_id");
-    if (state == "")
+    if (strcmp(state, "") == 0)
       state = id;
     else
       state = g_strconcat(state, ";", id, NULL);

@@ -59,7 +59,7 @@ struct _XfceListView
   XfceListViewPrivate *priv;
 };
 
-GType           xfce_list_view_get_type                 (void) G_GNUC_CONST;
+
 
 GtkWidget*      xfce_list_view_new                      (void) G_GNUC_MALLOC;
 
