@@ -24,7 +24,7 @@
 
 #define EXO_PARAM_READWRITE G_PARAM_READWRITE
 
-#define XFCE_TYPE_LIST_VIEW xfce_list_view_get_type()
+#define XFCE_TYPE_LIST_VIEW xfce_list_view_get_type ()
 
 //~ #include <exo/exo-config.h>
 //~ #include <exo/exo-gtk-extensions.h>
@@ -32,9 +32,10 @@
 //~ #include <exo/exo-tree-view.h>
 //~ #include <exo/exo-utils.h>
 //~ #include <exo/exo-alias.h>
-#include "xfce-list-view.h"
-#include <libxfce4util/libxfce4util.h>
 #include <gtk/gtk.h>
+#include <libxfce4util/libxfce4util.h>
+
+#include "xfce-list-view.h"
 
 /**
  * SECTION: xfce-list-view
@@ -46,7 +47,7 @@
  * the ability to activate rows using single button clicks instead of
  * the default double button clicks. Columns are drag and drop
  * reorderable, and can be hidden and restored as needed.
- * 
+ *
  * It also works around a few shortcomings
  * of #GtkTreeView, i.e. #XfceListView allows the user to drag around multiple
  * selected rows. The API is
@@ -65,59 +66,72 @@ enum
 
 
 
-static void     xfce_list_view_finalize                      (GObject          *object);
-static void     xfce_list_view_get_property                  (GObject          *object,
-                                                             guint             prop_id,
-                                                             GValue           *value,
-                                                             GParamSpec       *pspec);
-static void     xfce_list_view_set_property                  (GObject          *object,
-                                                             guint             prop_id,
-                                                             const GValue     *value,
-                                                             GParamSpec       *pspec);
-static gboolean xfce_list_view_button_press_event            (GtkWidget        *widget,
-                                                             GdkEventButton   *event);
-static gboolean xfce_list_view_button_release_event          (GtkWidget        *widget,
-                                                             GdkEventButton   *event);
-static gboolean xfce_list_view_motion_notify_event           (GtkWidget        *widget,
-                                                             GdkEventMotion   *event);
-static gboolean xfce_list_view_leave_notify_event            (GtkWidget        *widget,
-                                                             GdkEventCrossing *event);
-static void     xfce_list_view_drag_begin                    (GtkWidget        *widget,
-                                                             GdkDragContext   *context);
-static gboolean xfce_list_view_move_cursor                   (GtkTreeView      *view,
-                                                             GtkMovementStep   step,
-                                                             gint              count);
-static gboolean xfce_list_view_single_click_timeout          (gpointer          user_data);
-static void     xfce_list_view_single_click_timeout_destroy  (gpointer          user_data);
-static gboolean select_true                                 (GtkTreeSelection *selection,
-                                                             GtkTreeModel     *model,
-                                                             GtkTreePath      *path,
-                                                             gboolean          path_currently_selected,
-                                                             gpointer          data);
-static gboolean select_false                                (GtkTreeSelection *selection,
-                                                             GtkTreeModel     *model,
-                                                             GtkTreePath      *path,
-                                                             gboolean          path_currently_selected,
-                                                             gpointer          data);
+static void
+xfce_list_view_finalize (GObject *object);
+static void
+xfce_list_view_get_property (GObject *object,
+                             guint prop_id,
+                             GValue *value,
+                             GParamSpec *pspec);
+static void
+xfce_list_view_set_property (GObject *object,
+                             guint prop_id,
+                             const GValue *value,
+                             GParamSpec *pspec);
+static gboolean
+xfce_list_view_button_press_event (GtkWidget *widget,
+                                   GdkEventButton *event);
+static gboolean
+xfce_list_view_button_release_event (GtkWidget *widget,
+                                     GdkEventButton *event);
+static gboolean
+xfce_list_view_motion_notify_event (GtkWidget *widget,
+                                    GdkEventMotion *event);
+static gboolean
+xfce_list_view_leave_notify_event (GtkWidget *widget,
+                                   GdkEventCrossing *event);
+static void
+xfce_list_view_drag_begin (GtkWidget *widget,
+                           GdkDragContext *context);
+static gboolean
+xfce_list_view_move_cursor (GtkTreeView *view,
+                            GtkMovementStep step,
+                            gint count);
+static gboolean
+xfce_list_view_single_click_timeout (gpointer user_data);
+static void
+xfce_list_view_single_click_timeout_destroy (gpointer user_data);
+static gboolean
+select_true (GtkTreeSelection *selection,
+             GtkTreeModel *model,
+             GtkTreePath *path,
+             gboolean path_currently_selected,
+             gpointer data);
+static gboolean
+select_false (GtkTreeSelection *selection,
+              GtkTreeModel *model,
+              GtkTreePath *path,
+              gboolean path_currently_selected,
+              gpointer data);
 
 
 
 struct _XfceListViewPrivate
 {
   /* whether the next button-release-event should emit "row-activate" */
-  guint        button_release_activates : 1;
+  guint button_release_activates : 1;
 
   /* whether drag and drop must be re-enabled on button-release-event (rubberbanding active) */
-  guint        button_release_unblocks_dnd : 1;
+  guint button_release_unblocks_dnd : 1;
 
   /* whether rubberbanding must be re-enabled on button-release-event (drag and drop active) */
-  guint        button_release_enables_rubber_banding : 1;
+  guint button_release_enables_rubber_banding : 1;
 
   /* single click mode */
-  guint        single_click : 1;
-  guint        single_click_timeout;
-  gint         single_click_timeout_id;
-  guint        single_click_timeout_state;
+  guint single_click : 1;
+  guint single_click_timeout;
+  gint single_click_timeout_id;
+  guint single_click_timeout_state;
 
   /* the path below the pointer or NULL */
   GtkTreePath *hover_path;
@@ -130,8 +144,8 @@ static void
 xfce_list_view_class_init (XfceListViewClass *klass)
 {
   GtkTreeViewClass *gtklist_view_class;
-  GtkWidgetClass   *gtkwidget_class;
-  GObjectClass     *gobject_class;
+  GtkWidgetClass *gtkwidget_class;
+  GObjectClass *gobject_class;
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->finalize = xfce_list_view_finalize;
@@ -163,7 +177,7 @@ xfce_list_view_class_init (XfceListViewClass *klass)
                                    PROP_SINGLE_CLICK,
                                    g_param_spec_boolean ("single-click",
                                                          _("Single Click"),
-                                                         _("Whether the items in the view can be activated with single clicks"),
+                                                           _("Whether the items in the view can be activated with single clicks"),
                                                          FALSE,
                                                          EXO_PARAM_READWRITE));
 
@@ -180,7 +194,7 @@ xfce_list_view_class_init (XfceListViewClass *klass)
                                    PROP_SINGLE_CLICK_TIMEOUT,
                                    g_param_spec_uint ("single-click-timeout",
                                                       _("Single Click Timeout"),
-                                                      _("The amount of time after which the item under the mouse cursor will be selected automatically in single click mode"),
+                                                        _("The amount of time after which the item under the mouse cursor will be selected automatically in single click mode"),
                                                       0, G_MAXUINT, 0,
                                                       EXO_PARAM_READWRITE));
 }
@@ -195,10 +209,10 @@ xfce_list_view_init (XfceListView *list_view)
   list_view->priv->single_click_timeout_id = -1;
 
   //~ gtk_tree_view_set_search_position_func (GTK_TREE_VIEW (list_view),
-                                          //~ (GtkTreeViewSearchPositionFunc) exo_gtk_position_search_box,
-                                          //~ NULL, g_object_unref);
+  //~ (GtkTreeViewSearchPositionFunc) exo_gtk_position_search_box,
+  //~ NULL, g_object_unref);
 
-    list_view->priv->possible_columns = g_list_store_new(GTK_TYPE_TREE_VIEW_COLUMN);
+  list_view->priv->possible_columns = g_list_store_new (GTK_TYPE_TREE_VIEW_COLUMN);
 }
 
 
@@ -222,10 +236,10 @@ xfce_list_view_finalize (GObject *object)
 
 
 static void
-xfce_list_view_get_property (GObject    *object,
-                            guint       prop_id,
-                            GValue     *value,
-                            GParamSpec *pspec)
+xfce_list_view_get_property (GObject *object,
+                             guint prop_id,
+                             GValue *value,
+                             GParamSpec *pspec)
 {
   XfceListView *list_view = XFCE_LIST_VIEW (object);
 
@@ -248,10 +262,10 @@ xfce_list_view_get_property (GObject    *object,
 
 
 static void
-xfce_list_view_set_property (GObject      *object,
-                            guint         prop_id,
-                            const GValue *value,
-                            GParamSpec   *pspec)
+xfce_list_view_set_property (GObject *object,
+                             guint prop_id,
+                             const GValue *value,
+                             GParamSpec *pspec)
 {
   XfceListView *list_view = XFCE_LIST_VIEW (object);
 
@@ -274,17 +288,17 @@ xfce_list_view_set_property (GObject      *object,
 
 
 static gboolean
-xfce_list_view_button_press_event (GtkWidget      *widget,
-                                  GdkEventButton *event)
+xfce_list_view_button_press_event (GtkWidget *widget,
+                                   GdkEventButton *event)
 {
   GtkTreeSelection *selection;
-  XfceListView      *list_view = XFCE_LIST_VIEW (widget);
-  GtkTreePath      *path = NULL;
-  GtkTreePath      *cursor_path_start = NULL;
-  GtkTreePath      *cursor_path_end = NULL;
-  gboolean          ctrl_shift_clicked = FALSE;
-  gboolean          result;
-  gpointer          drag_data;
+  XfceListView *list_view = XFCE_LIST_VIEW (widget);
+  GtkTreePath *path = NULL;
+  GtkTreePath *cursor_path_start = NULL;
+  GtkTreePath *cursor_path_end = NULL;
+  gboolean ctrl_shift_clicked = FALSE;
+  gboolean result;
+  gpointer drag_data;
 
   /* by default we won't emit "row-activated" on button-release-events */
   list_view->priv->button_release_activates = FALSE;
@@ -337,7 +351,7 @@ xfce_list_view_button_press_event (GtkWidget      *widget,
       if (G_LIKELY (path == NULL || !gtk_tree_selection_path_is_selected (selection, path)))
         {
           /* need to disable drag and drop because we're rubberbanding now */
-          drag_data = g_object_get_data (G_OBJECT (list_view), I_("gtk-site-data"));
+          drag_data = g_object_get_data (G_OBJECT (list_view), I_ ("gtk-site-data"));
           if (G_LIKELY (drag_data != NULL))
             {
               g_signal_handlers_block_matched (G_OBJECT (list_view),
@@ -421,14 +435,14 @@ xfce_list_view_button_press_event (GtkWidget      *widget,
 
 
 static gboolean
-xfce_list_view_button_release_event (GtkWidget      *widget,
-                                    GdkEventButton *event)
+xfce_list_view_button_release_event (GtkWidget *widget,
+                                     GdkEventButton *event)
 {
   GtkTreeViewColumn *column;
-  GtkTreeSelection  *selection;
-  GtkTreePath       *path;
-  XfceListView       *list_view = XFCE_LIST_VIEW (widget);
-  gpointer           drag_data;
+  GtkTreeSelection *selection;
+  GtkTreePath *path;
+  XfceListView *list_view = XFCE_LIST_VIEW (widget);
+  gpointer drag_data;
 
   /* verify that the release event is for the internal tree view window */
   if (G_LIKELY (event->window == gtk_tree_view_get_bin_window (GTK_TREE_VIEW (list_view))))
@@ -476,7 +490,7 @@ xfce_list_view_button_release_event (GtkWidget      *widget,
   /* check if we need to re-enable drag and drop */
   if (G_LIKELY (list_view->priv->button_release_unblocks_dnd))
     {
-      drag_data = g_object_get_data (G_OBJECT (list_view), I_("gtk-site-data"));
+      drag_data = g_object_get_data (G_OBJECT (list_view), I_ ("gtk-site-data"));
       if (G_LIKELY (drag_data != NULL))
         {
           g_signal_handlers_unblock_matched (G_OBJECT (list_view),
@@ -501,12 +515,12 @@ xfce_list_view_button_release_event (GtkWidget      *widget,
 
 
 static gboolean
-xfce_list_view_motion_notify_event (GtkWidget      *widget,
-                                   GdkEventMotion *event)
+xfce_list_view_motion_notify_event (GtkWidget *widget,
+                                    GdkEventMotion *event)
 {
   XfceListView *list_view = XFCE_LIST_VIEW (widget);
   GtkTreePath *path;
-  GdkCursor   *cursor;
+  GdkCursor *cursor;
 
   /* check if the event occurred on the tree view internal window and we are in single-click mode */
   if (event->window == gtk_tree_view_get_bin_window (GTK_TREE_VIEW (list_view)) && list_view->priv->single_click)
@@ -583,8 +597,8 @@ xfce_list_view_motion_notify_event (GtkWidget      *widget,
 
 
 static gboolean
-xfce_list_view_leave_notify_event (GtkWidget        *widget,
-                                  GdkEventCrossing *event)
+xfce_list_view_leave_notify_event (GtkWidget *widget,
+                                   GdkEventCrossing *event)
 {
   XfceListView *list_view = XFCE_LIST_VIEW (widget);
 
@@ -613,8 +627,8 @@ xfce_list_view_leave_notify_event (GtkWidget        *widget,
 
 
 static void
-xfce_list_view_drag_begin (GtkWidget      *widget,
-                          GdkDragContext *context)
+xfce_list_view_drag_begin (GtkWidget *widget,
+                           GdkDragContext *context)
 {
   XfceListView *list_view = XFCE_LIST_VIEW (widget);
 
@@ -628,9 +642,9 @@ xfce_list_view_drag_begin (GtkWidget      *widget,
 
 
 static gboolean
-xfce_list_view_move_cursor (GtkTreeView    *view,
-                           GtkMovementStep step,
-                           gint            count)
+xfce_list_view_move_cursor (GtkTreeView *view,
+                            GtkMovementStep step,
+                            gint count)
 {
   XfceListView *list_view = XFCE_LIST_VIEW (view);
 
@@ -659,13 +673,13 @@ static gboolean
 xfce_list_view_single_click_timeout (gpointer user_data)
 {
   GtkTreeViewColumn *cursor_column;
-  GtkTreeSelection  *selection;
-  GtkTreeModel      *model;
-  GtkTreePath       *cursor_path;
-  GtkTreeIter        iter;
-  XfceListView       *list_view = XFCE_LIST_VIEW (user_data);
-  gboolean           hover_path_selected;
-  GtkWidget         *toplevel = gtk_widget_get_toplevel (GTK_WIDGET (list_view));
+  GtkTreeSelection *selection;
+  GtkTreeModel *model;
+  GtkTreePath *cursor_path;
+  GtkTreeIter iter;
+  XfceListView *list_view = XFCE_LIST_VIEW (user_data);
+  gboolean hover_path_selected;
+  GtkWidget *toplevel = gtk_widget_get_toplevel (GTK_WIDGET (list_view));
 
   /* verify that we are in single-click mode on an active window and have a hover path */
   if (GTK_IS_WINDOW (toplevel) && gtk_window_is_active (GTK_WINDOW (toplevel)) && list_view->priv->single_click && list_view->priv->hover_path != NULL)
@@ -732,8 +746,7 @@ xfce_list_view_single_click_timeout (gpointer user_data)
               gtk_tree_selection_set_select_function (selection, select_true, NULL, NULL);
 
               /* check what to do */
-              if ((gtk_tree_selection_get_mode (selection) == GTK_SELECTION_MULTIPLE ||
-                  (gtk_tree_selection_get_mode (selection) == GTK_SELECTION_SINGLE && hover_path_selected))
+              if ((gtk_tree_selection_get_mode (selection) == GTK_SELECTION_MULTIPLE || (gtk_tree_selection_get_mode (selection) == GTK_SELECTION_SINGLE && hover_path_selected))
                   && (list_view->priv->single_click_timeout_state & GDK_CONTROL_MASK) != 0)
                 {
                   /* toggle the selection state of the row */
@@ -769,39 +782,43 @@ xfce_list_view_single_click_timeout_destroy (gpointer user_data)
   XFCE_LIST_VIEW (user_data)->priv->single_click_timeout_id = -1;
 }
 
-gboolean xfce_list_view_column_equal_id (gconstpointer a,
-                                                 gconstpointer b,
-                                                 gpointer user_data)
+gboolean
+xfce_list_view_column_equal_id (gconstpointer a,
+                                gconstpointer b,
+                                gpointer user_data)
 {
-  if (!g_strcmp0(g_object_get_data(G_OBJECT(a), "column_id"), user_data))
+  if (!g_strcmp0 (g_object_get_data (G_OBJECT (a), "column_id"), user_data))
     return TRUE;
-  else return FALSE;
+  else
+    return FALSE;
 }
 
-gint xfce_list_view_column_equal_id_2 (gconstpointer a,
-                                                 gconstpointer b)
+gint
+xfce_list_view_column_equal_id_2 (gconstpointer a,
+                                  gconstpointer b)
 {
-  
-  if (!g_strcmp0(g_object_get_data(G_OBJECT(a), "column_id"), b)) return 0;
-  else return 1;
+  if (!g_strcmp0 (g_object_get_data (G_OBJECT (a), "column_id"), b))
+    return 0;
+  else
+    return 1;
 }
 
 static gboolean
 select_true (GtkTreeSelection *selection,
-             GtkTreeModel     *model,
-             GtkTreePath      *path,
-             gboolean          path_currently_selected,
-             gpointer          data)
+             GtkTreeModel *model,
+             GtkTreePath *path,
+             gboolean path_currently_selected,
+             gpointer data)
 {
   return TRUE;
 }
 
 static gboolean
 select_false (GtkTreeSelection *selection,
-              GtkTreeModel     *model,
-              GtkTreePath      *path,
-              gboolean          path_currently_selected,
-              gpointer          data)
+              GtkTreeModel *model,
+              GtkTreePath *path,
+              gboolean path_currently_selected,
+              gpointer data)
 {
   return FALSE;
 }
@@ -816,7 +833,7 @@ select_false (GtkTreeSelection *selection,
  *
  * Since: 4.21
  **/
-GtkWidget*
+GtkWidget *
 xfce_list_view_new (void)
 {
   return g_object_new (XFCE_TYPE_LIST_VIEW, NULL);
@@ -855,7 +872,7 @@ xfce_list_view_get_single_click (const XfceListView *list_view)
  **/
 void
 xfce_list_view_set_single_click (XfceListView *list_view,
-                                 gboolean     single_click)
+                                 gboolean single_click)
 {
   g_return_if_fail (XFCE_IS_LIST_VIEW (list_view));
 
@@ -909,7 +926,7 @@ xfce_list_view_get_single_click_timeout (const XfceListView *list_view)
  **/
 void
 xfce_list_view_set_single_click_timeout (XfceListView *list_view,
-                                         guint        single_click_timeout)
+                                         guint single_click_timeout)
 {
   g_return_if_fail (XFCE_IS_LIST_VIEW (list_view));
 
@@ -945,23 +962,23 @@ xfce_list_view_set_single_click_timeout (XfceListView *list_view,
  * Since: 4.21
  *
  **/
-GtkTreeViewColumn* xfce_list_view_add_possible_column (const XfceListView *list_view,
-                                                       const gchar                *column_id,
-                                                       const gchar                *column_title)
+GtkTreeViewColumn *
+xfce_list_view_add_possible_column (const XfceListView *list_view,
+                                    const gchar *column_id,
+                                    const gchar *column_title)
 {
-  GListStore* possible_columns = list_view->priv->possible_columns;
+  GListStore *possible_columns = list_view->priv->possible_columns;
 
-  GtkTreeViewColumn* column = gtk_tree_view_column_new();
+  GtkTreeViewColumn *column = gtk_tree_view_column_new ();
 
-  gtk_tree_view_column_set_title(column, column_title);
-  gtk_tree_view_column_set_reorderable(column, TRUE);
+  gtk_tree_view_column_set_title (column, column_title);
+  gtk_tree_view_column_set_reorderable (column, TRUE);
 
-  g_object_set_data(G_OBJECT(column), "column_id", (gpointer)column_id);
+  g_object_set_data (G_OBJECT (column), "column_id", (gpointer) column_id);
 
   g_list_store_append (possible_columns, column);
 
   return column;
-
 }
 
 /**
@@ -974,25 +991,27 @@ GtkTreeViewColumn* xfce_list_view_add_possible_column (const XfceListView *list_
  * in active use.
  *
  * Returns: A #GtkTreeViewColumn or %NULL if no column was found
- * 
+ *
  **/
-GtkTreeViewColumn* xfce_list_view_get_column (XfceListView *list_view,
-                                              gchar        *column_id)
+GtkTreeViewColumn *
+xfce_list_view_get_column (XfceListView *list_view,
+                           gchar *column_id)
 {
-  GListStore* possible_columns = list_view->priv->possible_columns;
+  GListStore *possible_columns = list_view->priv->possible_columns;
 
   guint pos = INT_MAX;
 
   // We have to pass a dummy tree column because GIO doesn't support a NULL until v2.76
-  g_list_store_find_with_equal_func_full(possible_columns, gtk_tree_view_column_new(), xfce_list_view_column_equal_id, column_id, &pos);
-  if (pos != INT_MAX){
-    GObject *obj = g_list_model_get_item(G_LIST_MODEL(possible_columns), pos);
-    return GTK_TREE_VIEW_COLUMN(obj);
-  }
+  g_list_store_find_with_equal_func_full (possible_columns, gtk_tree_view_column_new (), xfce_list_view_column_equal_id, column_id, &pos);
+  if (pos != INT_MAX)
+    {
+      GObject *obj = g_list_model_get_item (G_LIST_MODEL (possible_columns), pos);
+      return GTK_TREE_VIEW_COLUMN (obj);
+    }
   else
-  {
-    return NULL;
-  }
+    {
+      return NULL;
+    }
 }
 
 /**
@@ -1002,7 +1021,7 @@ GtkTreeViewColumn* xfce_list_view_get_column (XfceListView *list_view,
  * @visible      : the new visibility setting
  *
  * This function can be used to toggle the visibility of a column.
- * 
+ *
  * Passing the current value will have no effect.
  *
  * Passing %FALSE will not remove the column from the @list_view widget,
@@ -1021,23 +1040,25 @@ GtkTreeViewColumn* xfce_list_view_get_column (XfceListView *list_view,
  *
  * Since: 4.21
  **/
-void xfce_list_view_set_column_visible (XfceListView    *list_view,
-                                        const gchar     *column_id,
-                                        const gboolean   visible)
+void
+xfce_list_view_set_column_visible (XfceListView *list_view,
+                                   const gchar *column_id,
+                                   const gboolean visible)
 {
-  gboolean curr = xfce_list_view_get_column_visible(list_view, column_id);
-  if (curr == visible) return;
+  gboolean curr = xfce_list_view_get_column_visible (list_view, column_id);
+  if (curr == visible)
+    return;
 
   if (visible)
-  {
-    GtkTreeViewColumn *col = xfce_list_view_get_column(XFCE_LIST_VIEW(list_view), (gchar*)column_id);
-    gtk_tree_view_insert_column(GTK_TREE_VIEW(list_view), col, -1);
-  }
+    {
+      GtkTreeViewColumn *col = xfce_list_view_get_column (XFCE_LIST_VIEW (list_view), (gchar *) column_id);
+      gtk_tree_view_insert_column (GTK_TREE_VIEW (list_view), col, -1);
+    }
   else
-  {
-    GtkTreeViewColumn *col = xfce_list_view_get_column(XFCE_LIST_VIEW(list_view), (gchar*)column_id);
-    gtk_tree_view_remove_column(GTK_TREE_VIEW(list_view), col);
-  }
+    {
+      GtkTreeViewColumn *col = xfce_list_view_get_column (XFCE_LIST_VIEW (list_view), (gchar *) column_id);
+      gtk_tree_view_remove_column (GTK_TREE_VIEW (list_view), col);
+    }
 }
 
 /**
@@ -1056,15 +1077,17 @@ void xfce_list_view_set_column_visible (XfceListView    *list_view,
  *
  * Since: 4.21
  **/
-gboolean xfce_list_view_get_column_visible (const XfceListView *list_view,
-                                            const gchar        *column_id)
+gboolean
+xfce_list_view_get_column_visible (const XfceListView *list_view,
+                                   const gchar *column_id)
 {
-  GList *cols = gtk_tree_view_get_columns (GTK_TREE_VIEW(list_view));
-  gpointer found_col = g_list_find_custom(cols, column_id, xfce_list_view_column_equal_id_2);
+  GList *cols = gtk_tree_view_get_columns (GTK_TREE_VIEW (list_view));
+  gpointer found_col = g_list_find_custom (cols, column_id, xfce_list_view_column_equal_id_2);
 
-  if (found_col != NULL) return TRUE;
-  else return FALSE;
-
+  if (found_col != NULL)
+    return TRUE;
+  else
+    return FALSE;
 }
 
 /**
@@ -1078,12 +1101,13 @@ gboolean xfce_list_view_get_column_visible (const XfceListView *list_view,
  *
  * Since : 4.21
  **/
-guint xfce_list_view_get_column_position (const XfceListView *list_view,
-                                          const gchar        *column_id)
+guint
+xfce_list_view_get_column_position (const XfceListView *list_view,
+                                    const gchar *column_id)
 {
-  GList *cols = gtk_tree_view_get_columns (GTK_TREE_VIEW(list_view));
-  gpointer found_col = g_list_find_custom(cols, column_id, xfce_list_view_column_equal_id_2);
-  gint pos = g_list_position(cols, (GList*)found_col);
+  GList *cols = gtk_tree_view_get_columns (GTK_TREE_VIEW (list_view));
+  gpointer found_col = g_list_find_custom (cols, column_id, xfce_list_view_column_equal_id_2);
+  gint pos = g_list_position (cols, (GList *) found_col);
 
   return pos;
 }
@@ -1100,18 +1124,19 @@ guint xfce_list_view_get_column_position (const XfceListView *list_view,
  * position will append the column to the end of the visible columns
  *
  * Since : 4.21
- **/ 
-void xfce_list_view_insert_column_at_position (XfceListView *list_view,
-                                               gchar        *column_id,
-                                               const guint   position)
+ **/
+void
+xfce_list_view_insert_column_at_position (XfceListView *list_view,
+                                          gchar *column_id,
+                                          const guint position)
 {
-  GtkTreeViewColumn* col = xfce_list_view_get_column(list_view, (gchar*)column_id);
-  g_return_if_fail(col != NULL);
+  GtkTreeViewColumn *col = xfce_list_view_get_column (list_view, (gchar *) column_id);
+  g_return_if_fail (col != NULL);
 
-  if (gtk_tree_view_column_get_tree_view(GTK_TREE_VIEW_COLUMN(col)) != NULL)
-    gtk_tree_view_remove_column(GTK_TREE_VIEW(list_view), col);
+  if (gtk_tree_view_column_get_tree_view (GTK_TREE_VIEW_COLUMN (col)) != NULL)
+    gtk_tree_view_remove_column (GTK_TREE_VIEW (list_view), col);
 
-  gtk_tree_view_insert_column(GTK_TREE_VIEW(list_view), col, position);
+  gtk_tree_view_insert_column (GTK_TREE_VIEW (list_view), col, position);
 }
 
 /**
@@ -1123,10 +1148,11 @@ void xfce_list_view_insert_column_at_position (XfceListView *list_view,
  *
  * Since : 4.21
  **/
-void xfce_list_view_bind_model (XfceListView  *list_view,
-                                GtkTreeModel  *model)
+void
+xfce_list_view_bind_model (XfceListView *list_view,
+                           GtkTreeModel *model)
 {
-  gtk_tree_view_set_model(GTK_TREE_VIEW(list_view), model);
+  gtk_tree_view_set_model (GTK_TREE_VIEW (list_view), model);
 }
 
 /**
@@ -1136,9 +1162,10 @@ void xfce_list_view_bind_model (XfceListView  *list_view,
  * Returns : The #GtkTreeModel bound to @list_view
  * Since: 4.21
  **/
-GtkTreeModel* xfce_list_view_get_model (XfceListView  *list_view)
+GtkTreeModel *
+xfce_list_view_get_model (XfceListView *list_view)
 {
-  return gtk_tree_view_get_model(GTK_TREE_VIEW(list_view));
+  return gtk_tree_view_get_model (GTK_TREE_VIEW (list_view));
 }
 
 /**
@@ -1153,17 +1180,18 @@ GtkTreeModel* xfce_list_view_get_model (XfceListView  *list_view)
  *
  * Since: 4.21
  **/
-void xfce_list_view_render_text (XfceListView  *list_view,
-                                 const gchar   *column_id,
-                                 gint           column)
+void
+xfce_list_view_render_text (XfceListView *list_view,
+                            const gchar *column_id,
+                            gint column)
 {
-  GtkCellRenderer *renderer = gtk_cell_renderer_text_new();
-  GtkTreeViewColumn *col = xfce_list_view_get_column(list_view, (gchar*)column_id);
-  g_return_if_fail(col != NULL);
+  GtkCellRenderer *renderer = gtk_cell_renderer_text_new ();
+  GtkTreeViewColumn *col = xfce_list_view_get_column (list_view, (gchar *) column_id);
+  g_return_if_fail (col != NULL);
 
-  gtk_tree_view_column_pack_start(col, renderer, TRUE);
-  gtk_tree_view_column_set_sort_column_id(col, column);
-  gtk_tree_view_column_set_attributes(GTK_TREE_VIEW_COLUMN(col), GTK_CELL_RENDERER(renderer), "text", column, NULL);
+  gtk_tree_view_column_pack_start (col, renderer, TRUE);
+  gtk_tree_view_column_set_sort_column_id (col, column);
+  gtk_tree_view_column_set_attributes (GTK_TREE_VIEW_COLUMN (col), GTK_CELL_RENDERER (renderer), "text", column, NULL);
 }
 
 /**
@@ -1174,21 +1202,22 @@ void xfce_list_view_render_text (XfceListView  *list_view,
  *
  * Creates and binds a cell renderer to @column_id. It uses @func to
  * bind the data to the cell renderer. Use this if text needs to be
- * combined from multiple columns or formatted before display. Otherwise, 
+ * combined from multiple columns or formatted before display. Otherwise,
  * xfce_list_view_render_text is a better choice.
  *
  * Since: 4.21
  **/
-void xfce_list_view_render_text_with_func (XfceListView  *list_view,
-                                           const gchar   *column_id,
-                                           GtkTreeCellDataFunc func)
+void
+xfce_list_view_render_text_with_func (XfceListView *list_view,
+                                      const gchar *column_id,
+                                      GtkTreeCellDataFunc func)
 {
-  GtkCellRenderer *renderer = gtk_cell_renderer_text_new();
-  GtkTreeViewColumn *col = xfce_list_view_get_column(list_view, (gchar*)column_id);
-  g_return_if_fail(col != NULL);
+  GtkCellRenderer *renderer = gtk_cell_renderer_text_new ();
+  GtkTreeViewColumn *col = xfce_list_view_get_column (list_view, (gchar *) column_id);
+  g_return_if_fail (col != NULL);
 
-  gtk_tree_view_column_pack_start(col, renderer, TRUE);
-  gtk_tree_view_column_set_cell_data_func(GTK_TREE_VIEW_COLUMN(col), GTK_CELL_RENDERER(renderer), func, NULL, NULL);
+  gtk_tree_view_column_pack_start (col, renderer, TRUE);
+  gtk_tree_view_column_set_cell_data_func (GTK_TREE_VIEW_COLUMN (col), GTK_CELL_RENDERER (renderer), func, NULL, NULL);
 }
 
 /**
@@ -1204,29 +1233,29 @@ void xfce_list_view_render_text_with_func (XfceListView  *list_view,
  *
  * Since: 4.21
  **/
-void xfce_list_view_render_pixbuf_text (XfceListView  *list_view,
-                                        const gchar   *column_id,
-                                        gint           pixbuf_column,
-                                        gint           text_column)
+void
+xfce_list_view_render_pixbuf_text (XfceListView *list_view,
+                                   const gchar *column_id,
+                                   gint pixbuf_column,
+                                   gint text_column)
 {
-  GtkTreeViewColumn *col = xfce_list_view_get_column(list_view, (gchar*)column_id);
-  g_return_if_fail(col != NULL);
+  GtkTreeViewColumn *col = xfce_list_view_get_column (list_view, (gchar *) column_id);
+  g_return_if_fail (col != NULL);
 
-  GtkCellRenderer *pix_renderer = gtk_cell_renderer_pixbuf_new();
-  gtk_tree_view_column_pack_start(col, pix_renderer, FALSE);
-  gtk_tree_view_column_set_sort_column_id(col, text_column);
-  gtk_tree_view_column_set_attributes(GTK_TREE_VIEW_COLUMN(col), GTK_CELL_RENDERER(pix_renderer), "pixbuf", pixbuf_column, NULL);
+  GtkCellRenderer *pix_renderer = gtk_cell_renderer_pixbuf_new ();
+  gtk_tree_view_column_pack_start (col, pix_renderer, FALSE);
+  gtk_tree_view_column_set_sort_column_id (col, text_column);
+  gtk_tree_view_column_set_attributes (GTK_TREE_VIEW_COLUMN (col), GTK_CELL_RENDERER (pix_renderer), "pixbuf", pixbuf_column, NULL);
 
-  GtkCellRenderer *text_renderer = gtk_cell_renderer_text_new();
-  gtk_tree_view_column_pack_start(col, text_renderer, TRUE);
-  gtk_tree_view_column_set_attributes(GTK_TREE_VIEW_COLUMN(col), GTK_CELL_RENDERER(text_renderer), "text", text_column, NULL);
-
+  GtkCellRenderer *text_renderer = gtk_cell_renderer_text_new ();
+  gtk_tree_view_column_pack_start (col, text_renderer, TRUE);
+  gtk_tree_view_column_set_attributes (GTK_TREE_VIEW_COLUMN (col), GTK_CELL_RENDERER (text_renderer), "text", text_column, NULL);
 }
 
 /**
  * xfce_list_view_serialize_state:
  * @list_view : a #XfceListView
- * 
+ *
  * Generate a sring representation of the current column ordering and visibility
  * of @list_view.
  *
@@ -1234,25 +1263,25 @@ void xfce_list_view_render_pixbuf_text (XfceListView  *list_view,
  * a later time.
  *
  * Returns : The strig representation of the current state
- * 
+ *
  * Since: 4.21
  **/
-gchar* xfce_list_view_serialize_state (XfceListView  *list_view)
+gchar *
+xfce_list_view_serialize_state (XfceListView *list_view)
 {
+  gchar *state = "";
 
-  gchar* state = "";
-
-  GList *cols = gtk_tree_view_get_columns (GTK_TREE_VIEW(list_view));
+  GList *cols = gtk_tree_view_get_columns (GTK_TREE_VIEW (list_view));
 
   while (cols != NULL)
-  {
-    gchar *id = g_object_get_data(G_OBJECT(cols->data), "column_id");
-    if (strcmp(state, "") == 0)
-      state = id;
-    else
-      state = g_strconcat(state, ";", id, NULL);
-    cols = cols->next;
-  }
+    {
+      gchar *id = g_object_get_data (G_OBJECT (cols->data), "column_id");
+      if (strcmp (state, "") == 0)
+        state = id;
+      else
+        state = g_strconcat (state, ";", id, NULL);
+      cols = cols->next;
+    }
   return state;
 }
 
@@ -1260,7 +1289,7 @@ gchar* xfce_list_view_serialize_state (XfceListView  *list_view)
  * xfce_list_view_set_state_from_string:
  * @list_view : a #XfceListView
  * @state     : a string representing the column ordering
- * 
+ *
  * Sets the column ordering of @list_view to match the state represented
  * by @state.
  *
@@ -1270,27 +1299,28 @@ gchar* xfce_list_view_serialize_state (XfceListView  *list_view)
  * recognize. Thus, it is important to initialize @list_view using
  * xfce_list_view_add_possible_column with the relevant columns
  * before calling this function.
- * 
+ *
  * Since: 4.21
  **/
-void xfce_list_view_set_state_from_string (XfceListView  *list_view,
-                                           gchar         *state)
+void
+xfce_list_view_set_state_from_string (XfceListView *list_view,
+                                      gchar *state)
 {
-  GList *cols = gtk_tree_view_get_columns (GTK_TREE_VIEW(list_view));
+  GList *cols = gtk_tree_view_get_columns (GTK_TREE_VIEW (list_view));
 
   while (cols != NULL)
-  {
-    gtk_tree_view_remove_column(GTK_TREE_VIEW(list_view), GTK_TREE_VIEW_COLUMN(cols->data));
-    cols = cols->next;
-  }
+    {
+      gtk_tree_view_remove_column (GTK_TREE_VIEW (list_view), GTK_TREE_VIEW_COLUMN (cols->data));
+      cols = cols->next;
+    }
 
-  gchar **col_array = g_strsplit(state, ";", 0);
+  gchar **col_array = g_strsplit (state, ";", 0);
   int i = 0;
   while (col_array[i] != NULL)
-  {
-    xfce_list_view_insert_column_at_position(XFCE_LIST_VIEW(list_view), col_array[i], -1);
-    i++;
-  }
+    {
+      xfce_list_view_insert_column_at_position (XFCE_LIST_VIEW (list_view), col_array[i], -1);
+      i++;
+    }
 }
 
 #define __XFCE_LIST_VIEW_C__
