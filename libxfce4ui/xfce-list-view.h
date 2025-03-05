@@ -27,8 +27,7 @@ G_BEGIN_DECLS
 
 typedef struct _XfceListViewPrivate XfceListViewPrivate;
 
-#define XFCE_TYPE_LIST_VIEW  (xfce_list_view_get_type ())
-
+G_MODULE_EXPORT
 G_DECLARE_FINAL_TYPE (XfceListView, xfce_list_view, XFCE, LIST_VIEW, GtkTreeView)
 
 struct _XfceListViewClass
