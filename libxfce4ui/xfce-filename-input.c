@@ -226,7 +226,6 @@ xfce_filename_input_init (XfceFilenameInput *filename_input)
   filename_input->dir_sep_regex = g_regex_new (G_DIR_SEPARATOR_S, 0, 0, &err);
 
   gtk_orientable_set_orientation (GTK_ORIENTABLE (filename_input), GTK_ORIENTATION_VERTICAL);
-  gtk_container_set_border_width (GTK_CONTAINER (filename_input), 2);
 
   /* set up the GtkEntry for the input */
   filename_input->entry = GTK_ENTRY (gtk_entry_new ());
