@@ -214,6 +214,7 @@ xfce_filename_input_class_init (XfceFilenameInputClass *klass)
 static void
 xfce_filename_input_init (XfceFilenameInput *filename_input)
 {
+  PangoAttrList *attr_list;
   GError *err = NULL;
 
   /* by default there is no maximum length for the filename and no original filename */
@@ -234,15 +235,19 @@ xfce_filename_input_init (XfceFilenameInput *filename_input)
   gtk_box_pack_start (GTK_BOX (filename_input), GTK_WIDGET (filename_input->entry), FALSE, FALSE, 0);
 
   /* retrieve the error and warning messages */
-  filename_input->too_long_mssg = _("Filename is too long");
-  filename_input->sep_illegal_mssg = _("Directory separator illegal in file name");
-  filename_input->whitespace_mssg = _("Filenames should not start or end with a space");
+  filename_input->too_long_mssg = _("→ Filename is too long");
+  filename_input->sep_illegal_mssg = _("→ Directory separator illegal in file name");
+  filename_input->whitespace_mssg = _("→ Filenames should not start or end with a space");
 
   /* set up the GtkLabel to display any error or warning messages */
   filename_input->label = GTK_LABEL (gtk_label_new (""));
   gtk_label_set_xalign (filename_input->label, 0.0f);
-  gtk_box_pack_start (GTK_BOX (filename_input), GTK_WIDGET (filename_input->label), FALSE, FALSE, 0);
   gtk_label_set_line_wrap (filename_input->label, TRUE);
+  attr_list = pango_attr_list_new ();
+  pango_attr_list_insert (attr_list, pango_attr_style_new (PANGO_STYLE_ITALIC));
+  gtk_label_set_attributes (filename_input->label, attr_list);
+  pango_attr_list_unref (attr_list);
+  gtk_box_pack_start (GTK_BOX (filename_input), GTK_WIDGET (filename_input->label), FALSE, FALSE, 0);
 
   /* allow reverting the filename with ctrl + z */
   g_signal_connect (filename_input->entry, "key-press-event",
