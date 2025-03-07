@@ -18,7 +18,7 @@ libxfce4ui_enum_headers = \
 
 libxfce4ui_headers = \
 	libxfce4ui-config.h \
-	libxfce4ui-enum-types.h \
+		libxfce4ui-enum-types.h \
 	xfce-dialogs.h \
 	xfce-gdk-extensions.h \
 	xfce-gtk-extensions.h \
@@ -26,6 +26,7 @@ libxfce4ui_headers = \
 	xfce-spawn.h \
 	xfce-filename-input.h \
 	xfce-titled-dialog.h \
+	xfce-list-view.h \
 	$(libxfce4ui_enum_headers)
 
 libxfce4ui_built_sources = \
@@ -47,7 +48,8 @@ libxfce4ui_sources = \
 	xfce-screensaver.c \
 	xfce-spawn.c \
 	xfce-filename-input.c \
-	xfce-titled-dialog.c
+	xfce-titled-dialog.c \
+	xfce-list-view.c
 
 libxfce4ui_2_la_CFLAGS = \
 	$(GDK_CFLAGS) \

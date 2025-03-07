@@ -16,6 +16,7 @@ libxfce4ui_headers = libxfce4ui_enum_headers + [
   'xfce-screensaver.h',
   'xfce-spawn.h',
   'xfce-titled-dialog.h',
+  'xfce-list-view.h',
 ]
 
 libxfce4ui_headers += configure_file(
@@ -45,6 +46,7 @@ libxfce4ui_sources_gir = [
   'xfce-screensaver.c',
   'xfce-spawn.c',
   'xfce-titled-dialog.c',
+  'xfce-list-view.c',
 ]
 
 if enable_x11
