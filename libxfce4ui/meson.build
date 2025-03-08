@@ -10,6 +10,7 @@ libxfce4ui_enum_headers = [
 
 libxfce4ui_headers = libxfce4ui_enum_headers + [
   'xfce-dialogs.h',
+  'xfce-execute.h',
   'xfce-filename-input.h',
   'xfce-gdk-extensions.h',
   'xfce-gtk-extensions.h',
@@ -39,6 +40,7 @@ endif
 libxfce4ui_sources_gir = [
   'libxfce4ui-config.c',
   'xfce-dialogs.c',
+  'xfce-execute.c',
   'xfce-filename-input.c',
   'xfce-gdk-extensions.c',
   'xfce-gtk-extensions.c',
@@ -145,6 +147,7 @@ libxfce4ui_enums += gnome.mkenums(
 )
 
 libxfce4ui_deps = [
+  gio_unix,
   gtk,
   libxfce4util,
   xfconf,
