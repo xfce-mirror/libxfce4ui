@@ -119,3 +119,7 @@ xfce_titled_dialog_create_action_area
 xfce_titled_dialog_add_button
 xfce_titled_dialog_add_action_widget
 xfce_titled_dialog_set_default_response
+
+# file:xfce-execute
+xfce_execute_preferred_application
+xfce_execute_terminal_shell

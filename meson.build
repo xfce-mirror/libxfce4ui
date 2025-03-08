@@ -36,6 +36,7 @@ dependency_versions = {
 }
 
 glib = dependency('glib-2.0', version: dependency_versions['glib'])
+gio_unix = dependency('gio-unix-2.0', version: dependency_versions['glib'])
 gtk = dependency('gtk+-3.0', version: dependency_versions['gtk'])
 libxfce4util = dependency('libxfce4util-1.0', version: dependency_versions['libxfce4util'])
 xfconf = dependency('libxfconf-0', version: dependency_versions['xfconf'])
