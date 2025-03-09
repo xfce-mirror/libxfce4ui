@@ -20,6 +20,7 @@ libxfce4ui_headers = \
 	libxfce4ui-config.h \
 	libxfce4ui-enum-types.h \
 	xfce-dialogs.h \
+	xfce-execute.h \
 	xfce-gdk-extensions.h \
 	xfce-gtk-extensions.h \
 	xfce-screensaver.h \
@@ -42,6 +43,7 @@ libxfce4ui_sources = \
 	libxfce4ui-config.c \
 	libxfce4ui-private.h \
 	xfce-dialogs.c \
+	xfce-execute.c \
 	xfce-gdk-extensions.c \
 	xfce-gtk-extensions.c \
 	xfce-screensaver.c \
@@ -50,6 +52,7 @@ libxfce4ui_sources = \
 	xfce-titled-dialog.c
 
 libxfce4ui_2_la_CFLAGS = \
+	$(GIO_UNIX_CFLAGS) \
 	$(GDK_CFLAGS) \
 	$(GTK3_CFLAGS) \
 	$(XFCONF_CFLAGS) \
@@ -63,6 +66,7 @@ libxfce4ui_2_la_LDFLAGS = \
 	$(PLATFORM_LDFLAGS)
 
 libxfce4ui_2_la_LIBADD = \
+	$(GIO_UNIX_LIBS) \
 	$(GDK_LIBS) \
 	$(GTK3_LIBS) \
 	$(XFCONF_LIBS) \

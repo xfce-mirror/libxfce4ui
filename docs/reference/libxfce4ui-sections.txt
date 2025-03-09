@@ -193,3 +193,9 @@ XFCE_FILENAME_INPUT_GET_CLASS
 <SUBSECTION Private>
 xfce_filename_input_get_type
 </SECTION>
+
+<SECTION>
+<FILE>xfce-execute</FILE>
+xfce_execute_preferred_application
+xfce_execute_terminal_shell
+</SECTION>

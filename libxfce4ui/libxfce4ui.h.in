@@ -28,6 +28,7 @@
 #include <libxfce4ui/libxfce4ui-enum-types.h>
 #include <libxfce4ui/libxfce4ui-enums.h>
 #include <libxfce4ui/xfce-dialogs.h>
+#include <libxfce4ui/xfce-execute.h>
 #include <libxfce4ui/xfce-filename-input.h>
 #include <libxfce4ui/xfce-gdk-extensions.h>
 #include <libxfce4ui/xfce-gtk-extensions.h>
