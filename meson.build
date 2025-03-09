@@ -184,6 +184,7 @@ endif
 headers += [
   'sys/mman.h',
   'sys/stat.h',
+  'sys/types.h',
   'crt_externs.h',
   'errno.h',
   'fcntl.h',
@@ -194,6 +195,7 @@ headers += [
   'stdarg.h',
   'stdlib.h',
   'string.h',
+  'time.h',
   'unistd.h',
 ]
 foreach header : headers
