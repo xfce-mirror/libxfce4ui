@@ -49,7 +49,12 @@ libxfce4ui_sources = \
 	xfce-screensaver.c \
 	xfce-spawn.c \
 	xfce-filename-input.c \
-	xfce-titled-dialog.c
+	xfce-titled-dialog.c \
+	xfce-thumbnail-preview.c \
+	xfce-thumbnail-preview.h \
+	xfce-thumbnail.c \
+	xfce-thumbnail.h \
+	$(NULL)
 
 libxfce4ui_2_la_CFLAGS = \
 	$(GDK_CFLAGS) \
