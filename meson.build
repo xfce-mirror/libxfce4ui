@@ -180,6 +180,9 @@ if cc.has_function('_NSGetEnviron')
 endif
 
 headers += [
+  'sys/mman.h',
+  'sys/stat.h',
+  'sys/types.h',
   'crt_externs.h',
   'fcntl.h',
   'locale.h',
@@ -187,6 +190,7 @@ headers += [
   'stdarg.h',
   'stdlib.h',
   'string.h',
+  'time.h',
   'unistd.h',
 ]
 foreach header : headers

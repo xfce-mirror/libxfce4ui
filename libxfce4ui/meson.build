@@ -56,6 +56,10 @@ endif
 
 libxfce4ui_sources = libxfce4ui_sources_gir + [
   'libxfce4ui-private.h',
+  'xfce-thumbnail-preview.c',
+  'xfce-thumbnail-preview.h',
+  'xfce-thumbnail.c',
+  'xfce-thumbnail.h',
 ]
 
 libxfce4ui_sources += gnome.genmarshal(

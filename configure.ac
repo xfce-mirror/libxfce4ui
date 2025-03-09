@@ -112,7 +112,8 @@ dnl ***************************************
 dnl *** Check for standard header files ***
 dnl ***************************************
 AC_CHECK_HEADERS([crt_externs.h errno.h fcntl.h limits.h locale.h math.h \
-                  memory.h signal.h stdarg.h stdlib.h string.h unistd.h])
+                  memory.h signal.h stdarg.h stdlib.h string.h unistd.h \
+                  sys/mman.h sys/stat.h sys/types.h mmintrin.h time.h])
 AC_CHECK_DECLS([environ])
 AC_CHECK_FUNCS([_NSGetEnviron])
 
@@ -393,6 +394,7 @@ icons/Makefile
 icons/16x16/Makefile
 icons/48x48/Makefile
 icons/128x128/Makefile
+icons/pixmaps/Makefile
 icons/scalable/Makefile
 libxfce4kbd-private/libxfce4kbd-private-3.pc
 libxfce4kbd-private/Makefile
