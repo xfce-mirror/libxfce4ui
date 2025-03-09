@@ -37,6 +37,7 @@
   <part id="libxfce4ui-extensions">
     <title>Xfce UI Extensions</title>
     <xi:include href="xml/xfce-gdk-extensions.xml"/>
+    <xi:include href="xml/xfce-gdk-pixbuf-extensions.xml"/>
     <xi:include href="xml/xfce-gtk-extensions.xml"/>
   </part>
 
@@ -60,6 +61,10 @@
   <index id="api-index-deprecated">
     <title>Index of deprecated symbols</title>
     <xi:include href="xml/api-index-deprecated.xml"><xi:fallback /></xi:include>
+  </index>
+  <index id="api-index-4-22">
+    <title>Index of new symbols in 4.22</title>
+    <xi:include href="xml/api-index-4.21.0.xml"><xi:fallback /></xi:include>
   </index>
   <index id="api-index-4-20">
     <title>Index of new symbols in 4.20</title>
