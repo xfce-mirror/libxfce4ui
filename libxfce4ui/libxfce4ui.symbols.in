@@ -26,6 +26,15 @@ xfce_gdk_screen_get_active
 xfce_gdk_screen_get_geometry
 xfce_gdk_device_grab
 
+# file:xfce-gdk-pixbuf-extensions
+xfce_gdk_pixbuf_colorize attr:G_GNUC_MALLOC attr:G_GNUC_WARN_UNUSED_RESULT
+xfce_gdk_pixbuf_frame attr:G_GNUC_MALLOC attr:G_GNUC_WARN_UNUSED_RESULT
+xfce_gdk_pixbuf_lucent attr:G_GNUC_MALLOC attr:G_GNUC_WARN_UNUSED_RESULT
+xfce_gdk_pixbuf_spotlight attr:G_GNUC_MALLOC attr:G_GNUC_WARN_UNUSED_RESULT
+xfce_gdk_pixbuf_scale_down attr:G_GNUC_WARN_UNUSED_RESULT
+xfce_gdk_pixbuf_scale_ratio attr:G_GNUC_WARN_UNUSED_RESULT
+xfce_gdk_pixbuf_new_from_file_at_max_size attr:G_GNUC_MALLOC attr:G_GNUC_WARN_UNUSED_RESULT
+
 # file:xfce-gtk-extensions
 xfce_gtk_menu_item_new
 xfce_gtk_image_menu_item_new

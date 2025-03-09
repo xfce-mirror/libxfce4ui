@@ -21,6 +21,7 @@ libxfce4ui_headers = \
 	libxfce4ui-enum-types.h \
 	xfce-dialogs.h \
 	xfce-gdk-extensions.h \
+	xfce-gdk-pixbuf-extensions.h \
 	xfce-gtk-extensions.h \
 	xfce-screensaver.h \
 	xfce-spawn.h \
@@ -43,6 +44,7 @@ libxfce4ui_sources = \
 	libxfce4ui-private.h \
 	xfce-dialogs.c \
 	xfce-gdk-extensions.c \
+	xfce-gdk-pixbuf-extensions.c \
 	xfce-gtk-extensions.c \
 	xfce-screensaver.c \
 	xfce-spawn.c \
@@ -52,6 +54,7 @@ libxfce4ui_sources = \
 libxfce4ui_2_la_CFLAGS = \
 	$(GDK_CFLAGS) \
 	$(GTK3_CFLAGS) \
+	$(GDK_PIXBUF_CFLAGS) \
 	$(XFCONF_CFLAGS) \
 	$(LIBXFCE4UTIL_CFLAGS) \
 	$(PLATFORM_CFLAGS)
@@ -65,6 +68,7 @@ libxfce4ui_2_la_LDFLAGS = \
 libxfce4ui_2_la_LIBADD = \
 	$(GDK_LIBS) \
 	$(GTK3_LIBS) \
+	$(GDK_PIXBUF_LIBS) \
 	$(XFCONF_LIBS) \
 	$(LIBXFCE4UTIL_LIBS)
 

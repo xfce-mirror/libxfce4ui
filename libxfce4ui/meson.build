@@ -12,6 +12,7 @@ libxfce4ui_headers = libxfce4ui_enum_headers + [
   'xfce-dialogs.h',
   'xfce-filename-input.h',
   'xfce-gdk-extensions.h',
+  'xfce-gdk-pixbuf-extensions.h',
   'xfce-gtk-extensions.h',
   'xfce-screensaver.h',
   'xfce-spawn.h',
@@ -41,6 +42,7 @@ libxfce4ui_sources_gir = [
   'xfce-dialogs.c',
   'xfce-filename-input.c',
   'xfce-gdk-extensions.c',
+  'xfce-gdk-pixbuf-extensions.c',
   'xfce-gtk-extensions.c',
   'xfce-screensaver.c',
   'xfce-spawn.c',
@@ -146,6 +148,7 @@ libxfce4ui_enums += gnome.mkenums(
 
 libxfce4ui_deps = [
   gtk,
+  gdk_pixbuf,
   libxfce4util,
   xfconf,
   x11_deps,
