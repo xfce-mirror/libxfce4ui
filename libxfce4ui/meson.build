@@ -15,6 +15,8 @@ libxfce4ui_headers = libxfce4ui_enum_headers + [
   'xfce-gdk-extensions.h',
   'xfce-gdk-pixbuf-extensions.h',
   'xfce-gtk-extensions.h',
+  'xfce-icon-chooser-dialog.h',
+  'xfce-icon-view.h',
   'xfce-screensaver.h',
   'xfce-spawn.h',
   'xfce-titled-dialog.h',
@@ -46,6 +48,8 @@ libxfce4ui_sources_gir = [
   'xfce-gdk-extensions.c',
   'xfce-gdk-pixbuf-extensions.c',
   'xfce-gtk-extensions.c',
+  'xfce-icon-chooser-dialog.c',
+  'xfce-icon-view.c',
   'xfce-screensaver.c',
   'xfce-spawn.c',
   'xfce-titled-dialog.c',
@@ -60,6 +64,10 @@ endif
 
 libxfce4ui_sources = libxfce4ui_sources_gir + [
   'libxfce4ui-private.h',
+  'xfce-cell-renderer-icon.c',
+  'xfce-cell-renderer-icon.h',
+  'xfce-icon-chooser-model.c',
+  'xfce-icon-chooser-model.h',
   'xfce-thumbnail-preview.c',
   'xfce-thumbnail-preview.h',
   'xfce-thumbnail.c',
