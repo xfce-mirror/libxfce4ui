@@ -14,6 +14,8 @@ if get_option('gtk-doc')
 
   ignored_headers = [
     'libxfce4ui-visibility.h',
+    'xfce-cell-renderer-icon.h',
+    'xfce-icon-chooser-model.h',
     'xfce-thumbnail-preview.h',
     'xfce-thumbnail.h',
   ]
