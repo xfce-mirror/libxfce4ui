@@ -38,6 +38,7 @@
   <part id="libxfce4ui-extensions">
     <title>Xfce UI Extensions</title>
     <xi:include href="xml/xfce-gdk-extensions.xml"/>
+    <xi:include href="xml/xfce-gdk-pixbuf-extensions.xml"/>
     <xi:include href="xml/xfce-gtk-extensions.xml"/>
   </part>
 

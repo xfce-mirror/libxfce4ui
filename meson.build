@@ -20,6 +20,7 @@ i18n = import('i18n')
 dependency_versions = {
   'glib': '>= 2.72.0',
   'gtk': '>= 3.24.0',
+  'gdk-pixbuf': '>= 2.42.8',
   'libxfce4util': '>= 4.17.2',
   'xfconf': '>= 4.12.0',
 
@@ -38,6 +39,7 @@ dependency_versions = {
 glib = dependency('glib-2.0', version: dependency_versions['glib'])
 gio_unix = dependency('gio-unix-2.0', version: dependency_versions['glib'])
 gtk = dependency('gtk+-3.0', version: dependency_versions['gtk'])
+gdk_pixbuf = dependency('gdk-pixbuf-2.0', version: dependency_versions['gdk-pixbuf'])
 libxfce4util = dependency('libxfce4util-1.0', version: dependency_versions['libxfce4util'])
 xfconf = dependency('libxfconf-0', version: dependency_versions['xfconf'])
 
@@ -181,10 +183,15 @@ if cc.has_function('_NSGetEnviron')
 endif
 
 headers += [
+  'sys/mman.h',
+  'sys/stat.h',
   'crt_externs.h',
+  'errno.h',
   'fcntl.h',
   'locale.h',
+  'math.h',
   'memory.h',
+  'mmintrin.h',
   'stdarg.h',
   'stdlib.h',
   'string.h',
@@ -195,6 +202,8 @@ foreach header : headers
     feature_cflags += '-DHAVE_@0@=1'.format(header.underscorify().to_upper())
   endif
 endforeach
+
+libm = cc.find_library('m', required: true)
 
 extra_cflags = []
 extra_cflags_check = [
