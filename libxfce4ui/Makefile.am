@@ -37,11 +37,19 @@ libxfce4ui_built_sources = \
 	libxfce4ui-resources.c \
 	libxfce4ui-resources.h
 
+libxfce4ui_private_sources = \
+	libxfce4ui-private.h \
+	xfce-thumbnail-preview.c \
+	xfce-thumbnail-preview.h \
+	xfce-thumbnail.c \
+	xfce-thumbnail.h \
+	$(NULL)
+
 libxfce4ui_sources = \
 	$(libxfce4ui_headers) \
 	$(libxfce4ui_built_sources) \
+	$(libxfce4ui_private_sources) \
 	libxfce4ui-config.c \
-	libxfce4ui-private.h \
 	xfce-dialogs.c \
 	xfce-gdk-extensions.c \
 	xfce-gdk-pixbuf-extensions.c \
@@ -49,7 +57,8 @@ libxfce4ui_sources = \
 	xfce-screensaver.c \
 	xfce-spawn.c \
 	xfce-filename-input.c \
-	xfce-titled-dialog.c
+	xfce-titled-dialog.c \
+	$(NULL)
 
 libxfce4ui_2_la_CFLAGS = \
 	$(GDK_CFLAGS) \
@@ -138,7 +147,7 @@ INTROSPECTION_COMPILER_ARGS = \
 	--includedir=.
 
 if HAVE_INTROSPECTION
-introspection_sources = $(filter-out %private.h, $(libxfce4ui_2_la_SOURCES))
+introspection_sources = $(filter-out $(libxfce4ui_private_sources), $(libxfce4ui_2_la_SOURCES))
 
 Libxfce4ui-2.0.gir: libxfce4ui-2.la Makefile
 Libxfce4ui_2_0_gir_INCLUDES = GObject-2.0 GLib-2.0 Gtk-3.0 Libxfce4util-1.0

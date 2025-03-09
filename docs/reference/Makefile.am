@@ -22,7 +22,12 @@ HFILE_GLOB=
 CFILE_GLOB=
 
 # Header files to ignore when scanning
-IGNORE_HFILES=libxfce4ui-visibility.h
+IGNORE_HFILES = \
+	libxfce4ui-visibility.h \
+	xfce-thumbnail-preview.h \
+	xfce-thumbnail.h \
+	$(NULL)
+
 if !ENABLE_X11
 IGNORE_HFILES += \
 	xfce-clipboard-manager.h \
