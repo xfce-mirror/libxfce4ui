@@ -57,6 +57,10 @@ xfce_gtk_menu_item_set_accel_label
 xfce_has_gtk_frame_extents
 xfce_gtk_label_set_a11y_relation
 
+# file:xfce-list-view
+xfce_list_view_get_type
+xfce_list_view_new
+
 # file:xfce-spawn
 xfce_spawn_on_screen_with_child_watch
 xfce_spawn_on_screen
