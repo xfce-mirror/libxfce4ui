@@ -13,10 +13,10 @@ libxfce4ui_headers = libxfce4ui_enum_headers + [
   'xfce-filename-input.h',
   'xfce-gdk-extensions.h',
   'xfce-gtk-extensions.h',
+  'xfce-list-view.h',
   'xfce-screensaver.h',
   'xfce-spawn.h',
   'xfce-titled-dialog.h',
-  'xfce-list-view.h',
 ]
 
 libxfce4ui_headers += configure_file(
@@ -43,10 +43,10 @@ libxfce4ui_sources_gir = [
   'xfce-filename-input.c',
   'xfce-gdk-extensions.c',
   'xfce-gtk-extensions.c',
+  'xfce-list-view.c',
   'xfce-screensaver.c',
   'xfce-spawn.c',
   'xfce-titled-dialog.c',
-  'xfce-list-view.c',
 ]
 
 if enable_x11

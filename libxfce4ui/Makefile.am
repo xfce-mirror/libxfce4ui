@@ -18,7 +18,7 @@ libxfce4ui_enum_headers = \
 
 libxfce4ui_headers = \
 	libxfce4ui-config.h \
-		libxfce4ui-enum-types.h \
+	libxfce4ui-enum-types.h \
 	xfce-dialogs.h \
 	xfce-gdk-extensions.h \
 	xfce-gtk-extensions.h \
