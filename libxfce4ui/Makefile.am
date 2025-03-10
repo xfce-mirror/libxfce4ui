@@ -21,6 +21,7 @@ libxfce4ui_headers = \
 	libxfce4ui-enum-types.h \
 	xfce-dialogs.h \
 	xfce-gdk-extensions.h \
+	xfce-gdk-pixbuf-extensions.h \
 	xfce-gtk-extensions.h \
 	xfce-screensaver.h \
 	xfce-spawn.h \
@@ -36,22 +37,33 @@ libxfce4ui_built_sources = \
 	libxfce4ui-resources.c \
 	libxfce4ui-resources.h
 
+libxfce4ui_private_sources = \
+	libxfce4ui-private.h \
+	xfce-thumbnail-preview.c \
+	xfce-thumbnail-preview.h \
+	xfce-thumbnail.c \
+	xfce-thumbnail.h \
+	$(NULL)
+
 libxfce4ui_sources = \
 	$(libxfce4ui_headers) \
 	$(libxfce4ui_built_sources) \
+	$(libxfce4ui_private_sources) \
 	libxfce4ui-config.c \
-	libxfce4ui-private.h \
 	xfce-dialogs.c \
 	xfce-gdk-extensions.c \
+	xfce-gdk-pixbuf-extensions.c \
 	xfce-gtk-extensions.c \
 	xfce-screensaver.c \
 	xfce-spawn.c \
 	xfce-filename-input.c \
-	xfce-titled-dialog.c
+	xfce-titled-dialog.c \
+	$(NULL)
 
 libxfce4ui_2_la_CFLAGS = \
 	$(GDK_CFLAGS) \
 	$(GTK3_CFLAGS) \
+	$(GDK_PIXBUF_CFLAGS) \
 	$(XFCONF_CFLAGS) \
 	$(LIBXFCE4UTIL_CFLAGS) \
 	$(PLATFORM_CFLAGS)
@@ -65,8 +77,10 @@ libxfce4ui_2_la_LDFLAGS = \
 libxfce4ui_2_la_LIBADD = \
 	$(GDK_LIBS) \
 	$(GTK3_LIBS) \
+	$(GDK_PIXBUF_LIBS) \
 	$(XFCONF_LIBS) \
-	$(LIBXFCE4UTIL_LIBS)
+	$(LIBXFCE4UTIL_LIBS) \
+	-lm
 
 if ENABLE_X11
 libxfce4ui_headers += \
@@ -133,7 +147,7 @@ INTROSPECTION_COMPILER_ARGS = \
 	--includedir=.
 
 if HAVE_INTROSPECTION
-introspection_sources = $(filter-out %private.h, $(libxfce4ui_2_la_SOURCES))
+introspection_sources = $(filter-out $(libxfce4ui_private_sources), $(libxfce4ui_2_la_SOURCES))
 
 Libxfce4ui-2.0.gir: libxfce4ui-2.la Makefile
 Libxfce4ui_2_0_gir_INCLUDES = GObject-2.0 GLib-2.0 Gtk-3.0 Libxfce4util-1.0

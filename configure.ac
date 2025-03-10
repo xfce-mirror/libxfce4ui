@@ -15,6 +15,7 @@ m4_define([libxfce4kbd_private_version_api], [3])
 
 m4_define([glib_min_version], [2.72.0])
 m4_define([gtk_min_version], [3.24.0])
+m4_define([gdk_pixbuf_min_version], [2.42.8])
 m4_define([libxfce4util_min_version], [4.17.2])
 m4_define([xfconf_min_version], [4.12.0])
 
@@ -112,7 +113,8 @@ dnl ***************************************
 dnl *** Check for standard header files ***
 dnl ***************************************
 AC_CHECK_HEADERS([crt_externs.h errno.h fcntl.h limits.h locale.h math.h \
-                  memory.h signal.h stdarg.h stdlib.h string.h unistd.h])
+                  memory.h signal.h stdarg.h stdlib.h string.h unistd.h \
+                  sys/mman.h sys/stat.h sys/types.h mmintrin.h time.h])
 AC_CHECK_DECLS([environ])
 AC_CHECK_FUNCS([_NSGetEnviron])
 
@@ -133,6 +135,7 @@ dnl *** Check for required packages ***
 dnl ***********************************
 XDT_CHECK_PACKAGE([GLIB], [glib-2.0], [glib_min_version])
 XDT_CHECK_PACKAGE([GTK3], [gtk+-3.0], [gtk_min_version])
+XDT_CHECK_PACKAGE([GDK_PIXBUF], [gdk-pixbuf-2.0], [gdk_pixbuf_min_version])
 XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [libxfce4util_min_version])
 XDT_CHECK_PACKAGE([XFCONF], [libxfconf-0], [xfconf_min_version])
 
@@ -393,6 +396,7 @@ icons/Makefile
 icons/16x16/Makefile
 icons/48x48/Makefile
 icons/128x128/Makefile
+icons/pixmaps/Makefile
 icons/scalable/Makefile
 libxfce4kbd-private/libxfce4kbd-private-3.pc
 libxfce4kbd-private/Makefile
