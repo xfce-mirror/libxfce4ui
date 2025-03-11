@@ -20,7 +20,9 @@ libxfce4ui_headers = libxfce4ui_enum_headers + [
   'xfce-titled-dialog.h',
 ]
 
-libxfce4ui_headers += configure_file(
+# do not add this header to GI sources, it creates unsolvable conflicts with other
+# libs whose identifier prefix is Xfce, e.g. libxfce4util and libxfce4panel
+configure_file(
   configuration: configuration_data({
     'LIBXFCE4UI_VERSION_MAJOR': version_parts[0],
     'LIBXFCE4UI_VERSION_MINOR': version_parts[1],
@@ -28,7 +30,8 @@ libxfce4ui_headers += configure_file(
   }),
   input: 'libxfce4ui-config.h.in',
   output: 'libxfce4ui-config.h',
-  install: false,
+  install: true,
+  install_dir: libxfce4ui_install_dir,
 )
 
 if enable_x11
@@ -208,12 +211,9 @@ if get_option('introspection')
     sources: libxfce4ui_sources_gir + libxfce4ui_headers + libxfce4ui_enums,
     namespace: 'Libxfce4ui',
     nsversion: '@0@.0'.format(libxfce4ui_version_api),
-    identifier_prefix: [
-      'Xfce',
-    ],
+    identifier_prefix: 'Xfce',
     symbol_prefix: [
       'xfce',
-      'libxfce4ui',
     ],
     export_packages: libxfce4ui_pkgname,
     includes: [
