@@ -224,6 +224,17 @@ void
 xfce_gtk_label_set_a11y_relation (GtkLabel *label,
                                   GtkWidget *widget);
 
+GtkWidget *
+xfce_gtk_dialog_get_action_area (GtkDialog *dialog);
+
+void
+xfce_gtk_url_about_dialog_hook (GtkAboutDialog *about_dialog,
+                                const gchar *address,
+                                gpointer user_data);
+
+void
+xfce_gtk_file_chooser_add_thumbnail_preview (GtkFileChooser *chooser);
+
 G_END_DECLS
 
 #endif /* !__XFCE_GTK_EXTENSIONS_H__ */
