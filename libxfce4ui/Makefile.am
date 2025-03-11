@@ -143,7 +143,6 @@ INTROSPECTION_SCANNER_ARGS = \
 	--warn-all \
 	--identifier-prefix=Xfce \
 	--identifier-prefix=xfce \
-	--identifier-prefix=libxfce4ui \
 	--c-include=libxfce4ui/libxfce4ui.h
 INTROSPECTION_COMPILER_ARGS = \
 	--includedir=$(srcdir) \
@@ -151,7 +150,7 @@ INTROSPECTION_COMPILER_ARGS = \
 	--includedir=.
 
 if HAVE_INTROSPECTION
-introspection_sources = $(filter-out $(libxfce4ui_private_sources), $(libxfce4ui_2_la_SOURCES))
+introspection_sources = $(filter-out $(libxfce4ui_private_sources) libxfce4ui-config.h, $(libxfce4ui_2_la_SOURCES))
 
 Libxfce4ui-2.0.gir: libxfce4ui-2.la Makefile
 Libxfce4ui_2_0_gir_INCLUDES = GObject-2.0 GLib-2.0 Gtk-3.0 Libxfce4util-1.0
