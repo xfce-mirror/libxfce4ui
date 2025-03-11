@@ -44,6 +44,13 @@ G_BEGIN_DECLS
   G_STMT_END
 #endif
 
+G_GNUC_INTERNAL GdkPixbuf *
+xfce_gdk_pixbuf_colorize (const GdkPixbuf *source,
+                          const GdkColor *color) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
+
+G_GNUC_INTERNAL GdkPixbuf *
+xfce_gdk_pixbuf_spotlight (const GdkPixbuf *source) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
+
 G_END_DECLS
 
 #endif /* !__LIBXFCE4UI_PRIVATE_H__ */

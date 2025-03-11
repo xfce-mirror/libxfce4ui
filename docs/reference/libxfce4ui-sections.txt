@@ -30,6 +30,15 @@ xfce_gdk_device_grab
 </SECTION>
 
 <SECTION>
+<FILE>xfce-gdk-pixbuf-extensions</FILE>
+xfce_gdk_pixbuf_frame
+xfce_gdk_pixbuf_lucent
+xfce_gdk_pixbuf_scale_down
+xfce_gdk_pixbuf_scale_ratio
+xfce_gdk_pixbuf_new_from_file_at_max_size
+</SECTION>
+
+<SECTION>
 <FILE>xfce-gtk-extensions</FILE>
 XfceGtkMenuItem
 XfceGtkActionEntry
