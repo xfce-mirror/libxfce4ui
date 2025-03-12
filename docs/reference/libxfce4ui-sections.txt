@@ -211,3 +211,16 @@ xfce_filename_input_get_type
 xfce_execute_preferred_application
 xfce_execute_terminal_shell
 </SECTION>
+
+<SECTION>
+<FILE>xfce-tree-view</FILE>
+XfceTreeView
+xfce_tree_view_new
+xfce_tree_view_get_single_click
+xfce_tree_view_set_single_click
+xfce_tree_view_get_single_click_timeout
+xfce_tree_view_set_single_click_timeout
+<SUBSECTION Standard>
+XFCE_TYPE_TREE_VIEW
+xfce_tree_view_get_type
+</SECTION>

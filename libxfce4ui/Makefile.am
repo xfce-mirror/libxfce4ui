@@ -28,6 +28,7 @@ libxfce4ui_headers = \
 	xfce-spawn.h \
 	xfce-filename-input.h \
 	xfce-titled-dialog.h \
+	xfce-tree-view.h \
 	$(libxfce4ui_enum_headers)
 
 libxfce4ui_built_sources = \
@@ -60,6 +61,7 @@ libxfce4ui_sources = \
 	xfce-spawn.c \
 	xfce-filename-input.c \
 	xfce-titled-dialog.c \
+	xfce-tree-view.c \
 	$(NULL)
 
 libxfce4ui_2_la_CFLAGS = \

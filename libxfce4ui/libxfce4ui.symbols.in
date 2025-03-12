@@ -130,3 +130,11 @@ xfce_titled_dialog_set_default_response
 # file:xfce-execute
 xfce_execute_preferred_application
 xfce_execute_terminal_shell
+
+# file:xfce-tree-view
+xfce_tree_view_get_type attr:G_GNUC_CONST
+xfce_tree_view_new attr:G_GNUC_MALLOC
+xfce_tree_view_get_single_click
+xfce_tree_view_set_single_click
+xfce_tree_view_get_single_click_timeout
+xfce_tree_view_set_single_click_timeout
