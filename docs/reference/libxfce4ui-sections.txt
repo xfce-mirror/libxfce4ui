@@ -303,3 +303,15 @@ xfce_icon_view_get_type
 xfce_icon_view_drop_position_get_type
 xfce_icon_view_layout_mode_get_type
 </SECTION>
+
+<FILE>xfce-tree-view</FILE>
+XfceTreeView
+xfce_tree_view_new
+xfce_tree_view_get_single_click
+xfce_tree_view_set_single_click
+xfce_tree_view_get_single_click_timeout
+xfce_tree_view_set_single_click_timeout
+<SUBSECTION Standard>
+XFCE_TYPE_TREE_VIEW
+xfce_tree_view_get_type
+</SECTION>
