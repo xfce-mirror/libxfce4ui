@@ -24,6 +24,8 @@ CFILE_GLOB=
 # Header files to ignore when scanning
 IGNORE_HFILES = \
 	libxfce4ui-visibility.h \
+	xfce-cell-renderer-icon.h \
+	xfce-icon-chooser-model.h \
 	xfce-thumbnail-preview.h \
 	xfce-thumbnail.h \
 	$(NULL)

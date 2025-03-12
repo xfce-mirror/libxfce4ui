@@ -67,6 +67,44 @@ typedef enum
   XFCE_SM_CLIENT_SHUTDOWN_HINT_REBOOT,
 } XfceSMClientShutdownHint;
 
+/**
+ * XfceIconViewDropPosition:
+ * @XFCE_ICON_VIEW_NO_DROP    : no drop indicator.
+ * @XFCE_ICON_VIEW_DROP_INTO  : drop indicator on an item.
+ * @XFCE_ICON_VIEW_DROP_LEFT  : drop indicator on the left of an item.
+ * @XFCE_ICON_VIEW_DROP_RIGHT : drop indicator on the right of an item.
+ * @XFCE_ICON_VIEW_DROP_ABOVE : drop indicator above an item.
+ * @XFCE_ICON_VIEW_DROP_BELOW : drop indicator below an item.
+ *
+ * Specifies whether to display the drop indicator,
+ * i.e. where to drop into the icon view.
+ **/
+typedef enum
+{
+  XFCE_ICON_VIEW_NO_DROP,
+  XFCE_ICON_VIEW_DROP_INTO,
+  XFCE_ICON_VIEW_DROP_LEFT,
+  XFCE_ICON_VIEW_DROP_RIGHT,
+  XFCE_ICON_VIEW_DROP_ABOVE,
+  XFCE_ICON_VIEW_DROP_BELOW
+} XfceIconViewDropPosition;
+
+/**
+ * XfceIconViewLayoutMode:
+ * @XFCE_ICON_VIEW_LAYOUT_ROWS : layout items in rows.
+ * @XFCE_ICON_VIEW_LAYOUT_COLS : layout items in columns.
+ *
+ * Specifies the layouting mode of an #XfceIconView. @XFCE_ICON_VIEW_LAYOUT_ROWS
+ * is the default, which lays out items vertically in rows from top to bottom.
+ * @XFCE_ICON_VIEW_LAYOUT_COLS lays out items horizontally in columns from left
+ * to right.
+ **/
+typedef enum
+{
+  XFCE_ICON_VIEW_LAYOUT_ROWS,
+  XFCE_ICON_VIEW_LAYOUT_COLS
+} XfceIconViewLayoutMode;
+
 G_END_DECLS
 
 #endif /* __LIBXFCE4UI_ENUMS_H__ */

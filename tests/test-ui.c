@@ -249,6 +249,25 @@ show_xfce_filename_input_dialog (GtkButton *button,
   gtk_widget_destroy (dialog);
 }
 
+static void
+show_xfce_icon_chooser_dialog (GtkButton *button,
+                               gpointer unused)
+{
+  GtkWidget *dialog = xfce_icon_chooser_dialog_new ("Select an icon", NULL,
+                                                    "Cancel", GTK_RESPONSE_CANCEL,
+                                                    "OK", GTK_RESPONSE_ACCEPT,
+                                                    NULL);
+  gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_ACCEPT);
+  xfce_icon_chooser_dialog_set_icon (XFCE_ICON_CHOOSER_DIALOG (dialog), "xfce4-logo");
+  if (gtk_dialog_run (GTK_DIALOG (dialog)) == GTK_RESPONSE_ACCEPT)
+    {
+      gchar *icon = xfce_icon_chooser_dialog_get_icon (XFCE_ICON_CHOOSER_DIALOG (dialog));
+      g_message ("icon = '%s'", icon);
+      g_free (icon);
+    }
+  gtk_widget_destroy (dialog);
+}
+
 
 
 static void
@@ -361,6 +380,11 @@ create_main_window (void)
   button = gtk_button_new_with_label ("XfceFilenameInput");
   gtk_grid_attach (GTK_GRID (grid), button, 3, 2, 1, 1);
   g_signal_connect (G_OBJECT (button), "clicked", G_CALLBACK (show_xfce_filename_input_dialog), NULL);
+
+  /* xfce_icon_chooser_dialog */
+  button = gtk_button_new_with_label ("XfceIconChooserDialog");
+  gtk_grid_attach (GTK_GRID (grid), button, 3, 3, 1, 1);
+  g_signal_connect (G_OBJECT (button), "clicked", G_CALLBACK (show_xfce_icon_chooser_dialog), NULL);
 
   gtk_widget_show_all (window);
 }
