@@ -114,10 +114,10 @@ dnl *** Check for standard header files ***
 dnl ***************************************
 AC_CHECK_HEADERS([crt_externs.h errno.h fcntl.h limits.h locale.h math.h \
                   memory.h signal.h stdarg.h stdlib.h string.h unistd.h \
-                  sys/mman.h sys/stat.h sys/types.h mmintrin.h time.h])
+                  sys/mman.h sys/stat.h sys/types.h mmintrin.h time.h stdio.h])
 AC_CHECK_DECLS([environ])
 AC_FUNC_MMAP()
-AC_CHECK_FUNCS([_NSGetEnviron])
+AC_CHECK_FUNCS([_NSGetEnviron realpath])
 
 dnl ******************************
 dnl *** Check for i18n support ***
@@ -135,7 +135,9 @@ dnl ***********************************
 dnl *** Check for required packages ***
 dnl ***********************************
 XDT_CHECK_PACKAGE([GLIB], [glib-2.0], [glib_min_version])
+XDT_CHECK_PACKAGE([GIO], [gio-2.0], [glib_min_version])
 XDT_CHECK_PACKAGE([GIO_UNIX], [gio-unix-2.0], [glib_min_version])
+XDT_CHECK_PACKAGE([GTHREAD], [gthread-2.0], [glib_min_version])
 XDT_CHECK_PACKAGE([GTK3], [gtk+-3.0], [gtk_min_version])
 XDT_CHECK_PACKAGE([GDK_PIXBUF], [gdk-pixbuf-2.0], [gdk_pixbuf_min_version])
 XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [libxfce4util_min_version])
@@ -408,6 +410,7 @@ libxfce4ui/Makefile
 xfce4-about/Makefile
 po/Makefile.in
 tests/Makefile
+xfce-desktop-item-edit/Makefile
 ])
 AC_OUTPUT
 
