@@ -20,6 +20,7 @@ libxfce4ui_headers = libxfce4ui_enum_headers + [
   'xfce-screensaver.h',
   'xfce-spawn.h',
   'xfce-titled-dialog.h',
+  'xfce-tree-view.h',
 ]
 
 # do not add this header to GI sources, it creates unsolvable conflicts with other
@@ -56,6 +57,7 @@ libxfce4ui_sources_gir = [
   'xfce-screensaver.c',
   'xfce-spawn.c',
   'xfce-titled-dialog.c',
+  'xfce-tree-view.c',
 ]
 
 if enable_x11
