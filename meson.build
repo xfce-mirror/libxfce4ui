@@ -182,6 +182,15 @@ if cc.has_function('_NSGetEnviron')
   feature_cflags += '-DHAVE__NSGETENVIRON=1'
 endif
 
+functions = [
+  'mmap',
+]
+foreach function : functions
+  if cc.has_function(function)
+    feature_cflags += '-DHAVE_@0@=1'.format(function.to_upper())
+  endif
+endforeach
+
 headers += [
   'sys/mman.h',
   'sys/stat.h',

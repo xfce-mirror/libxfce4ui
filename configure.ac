@@ -116,6 +116,7 @@ AC_CHECK_HEADERS([crt_externs.h errno.h fcntl.h limits.h locale.h math.h \
                   memory.h signal.h stdarg.h stdlib.h string.h unistd.h \
                   sys/mman.h sys/stat.h sys/types.h mmintrin.h time.h])
 AC_CHECK_DECLS([environ])
+AC_FUNC_MMAP()
 AC_CHECK_FUNCS([_NSGetEnviron])
 
 dnl ******************************
