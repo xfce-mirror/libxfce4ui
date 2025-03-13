@@ -408,6 +408,7 @@ libxfce4ui/Makefile
 xfce4-about/Makefile
 po/Makefile.in
 tests/Makefile
+xfce-open/Makefile
 ])
 AC_OUTPUT
 

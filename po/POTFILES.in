@@ -41,3 +41,8 @@ xfce4-about/system-info.c
 # UI tests
 #
 tests/test-ui.c
+
+#
+# Xfce-open
+#
+xfce-open/main.c
