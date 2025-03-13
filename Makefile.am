@@ -11,6 +11,7 @@ SUBDIRS = \
 	po \
 	tests \
 	xfce-desktop-item-edit \
+	xfce-open \
 	$(NULL)
 
 distuninstallcheck_listfiles = \

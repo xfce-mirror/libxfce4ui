@@ -51,3 +51,8 @@ xfce-desktop-item-edit/xfce-die-command-entry.c
 xfce-desktop-item-edit/xfce-die-command-model.c
 xfce-desktop-item-edit/xfce-die-editor.c
 xfce-desktop-item-edit/xfce-die-utils.c
+
+#
+# Xfce-open
+#
+xfce-open/main.c
