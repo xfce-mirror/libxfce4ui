@@ -37,7 +37,9 @@ dependency_versions = {
 }
 
 glib = dependency('glib-2.0', version: dependency_versions['glib'])
+gio = dependency('gio-2.0', version: dependency_versions['glib'])
 gio_unix = dependency('gio-unix-2.0', version: dependency_versions['glib'])
+gthread = dependency('gthread-2.0', version: dependency_versions['glib'])
 gtk = dependency('gtk+-3.0', version: dependency_versions['gtk'])
 gdk_pixbuf = dependency('gdk-pixbuf-2.0', version: dependency_versions['gdk-pixbuf'])
 libxfce4util = dependency('libxfce4util-1.0', version: dependency_versions['libxfce4util'])
@@ -184,6 +186,7 @@ endif
 
 functions = [
   'mmap',
+  'realpath',
 ]
 foreach function : functions
   if cc.has_function(function)
@@ -198,11 +201,13 @@ headers += [
   'crt_externs.h',
   'errno.h',
   'fcntl.h',
+  'limits.h',
   'locale.h',
   'math.h',
   'memory.h',
   'mmintrin.h',
   'stdarg.h',
+  'stdio.h',
   'stdlib.h',
   'string.h',
   'time.h',
@@ -313,3 +318,4 @@ subdir('libxfce4kbd-private')
 subdir('po')
 subdir('tests')
 subdir('xfce4-about')
+subdir('xfce-desktop-item-edit')

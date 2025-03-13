@@ -42,3 +42,12 @@ xfce4-about/system-info.c
 # UI tests
 #
 tests/test-ui.c
+
+#
+# Xfce-desktop-item-edit
+#
+xfce-desktop-item-edit/main.c
+xfce-desktop-item-edit/xfce-die-command-entry.c
+xfce-desktop-item-edit/xfce-die-command-model.c
+xfce-desktop-item-edit/xfce-die-editor.c
+xfce-desktop-item-edit/xfce-die-utils.c
