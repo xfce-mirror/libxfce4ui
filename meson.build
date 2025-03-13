@@ -37,6 +37,7 @@ dependency_versions = {
 }
 
 glib = dependency('glib-2.0', version: dependency_versions['glib'])
+gio = dependency('gio-2.0', version: dependency_versions['glib'])
 gio_unix = dependency('gio-unix-2.0', version: dependency_versions['glib'])
 gtk = dependency('gtk+-3.0', version: dependency_versions['gtk'])
 gdk_pixbuf = dependency('gdk-pixbuf-2.0', version: dependency_versions['gdk-pixbuf'])
@@ -313,3 +314,4 @@ subdir('libxfce4kbd-private')
 subdir('po')
 subdir('tests')
 subdir('xfce4-about')
+subdir('xfce-open')

@@ -135,6 +135,7 @@ dnl ***********************************
 dnl *** Check for required packages ***
 dnl ***********************************
 XDT_CHECK_PACKAGE([GLIB], [glib-2.0], [glib_min_version])
+XDT_CHECK_PACKAGE([GIO], [gio-2.0], [glib_min_version])
 XDT_CHECK_PACKAGE([GIO_UNIX], [gio-unix-2.0], [glib_min_version])
 XDT_CHECK_PACKAGE([GTK3], [gtk+-3.0], [gtk_min_version])
 XDT_CHECK_PACKAGE([GDK_PIXBUF], [gdk-pixbuf-2.0], [gdk_pixbuf_min_version])
@@ -408,6 +409,7 @@ libxfce4ui/Makefile
 xfce4-about/Makefile
 po/Makefile.in
 tests/Makefile
+xfce-open/Makefile
 ])
 AC_OUTPUT
 
