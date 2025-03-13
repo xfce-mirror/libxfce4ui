@@ -367,7 +367,7 @@ xfce_about_copyright (GtkTextBuffer *buffer)
 
   gtk_text_buffer_insert (buffer, &end, "\n\n", -1);
   gtk_text_buffer_insert (buffer, &end,
-                          _("The libxfce4ui, libxfce4util and exo packages are "
+                          _("The libxfce4ui and libxfce4util packages are "
                             "distributed under the terms of the GNU Library General Public License as "
                             "published by the Free Software Foundation; either version 2 of the License, or "
                             "(at your option) any later version."),

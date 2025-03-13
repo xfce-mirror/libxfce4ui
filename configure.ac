@@ -411,6 +411,7 @@ xfce4-about/Makefile
 po/Makefile.in
 tests/Makefile
 xfce-desktop-item-edit/Makefile
+xfce-open/Makefile
 ])
 AC_OUTPUT
 
