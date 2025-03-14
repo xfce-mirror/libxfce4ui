@@ -450,7 +450,7 @@ xfce_filename_input_entry_changed (GtkEditable *editable,
       /* the string starts or ends with whitespace
        * this does not make the filename invalid, but we set a timer so that the user will be warned about this if
          the input remains unchanged for a time */
-      filename_input->whitespace_warning_timer_id = g_timeout_add_full (G_PRIORITY_DEFAULT, 1000,
+      filename_input->whitespace_warning_timer_id = g_timeout_add_full (G_PRIORITY_DEFAULT, 1500,
                                                                         xfce_filename_input_whitespace_warning_timer,
                                                                         filename_input,
                                                                         xfce_filename_input_whitespace_warning_timer_destroy);
