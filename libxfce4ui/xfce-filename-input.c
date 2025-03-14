@@ -108,7 +108,6 @@ struct _XfceFilenameInput
   GtkBox parent;
 
   GtkEntry *entry;
-  GtkLabel *label;
 
   GRegex *whitespace_regex;
   GRegex *dir_sep_regex;
@@ -225,24 +224,16 @@ xfce_filename_input_init (XfceFilenameInput *filename_input)
   filename_input->whitespace_regex = g_regex_new ("^\\s|\\s$", 0, 0, &err);
   filename_input->dir_sep_regex = g_regex_new (G_DIR_SEPARATOR_S, 0, 0, &err);
 
-  gtk_orientable_set_orientation (GTK_ORIENTABLE (filename_input), GTK_ORIENTATION_VERTICAL);
-
   /* set up the GtkEntry for the input */
   filename_input->entry = GTK_ENTRY (gtk_entry_new ());
   gtk_widget_set_hexpand (GTK_WIDGET (filename_input->entry), TRUE);
   gtk_widget_set_valign (GTK_WIDGET (filename_input->entry), GTK_ALIGN_CENTER);
-  gtk_box_pack_start (GTK_BOX (filename_input), GTK_WIDGET (filename_input->entry), FALSE, FALSE, 0);
+  gtk_box_pack_start (GTK_BOX (filename_input), GTK_WIDGET (filename_input->entry), TRUE, TRUE, 0);
 
   /* retrieve the error and warning messages */
   filename_input->too_long_mssg = _("Filename is too long");
   filename_input->sep_illegal_mssg = _("Directory separator illegal in file name");
   filename_input->whitespace_mssg = _("Filenames should not start or end with a space");
-
-  /* set up the GtkLabel to display any error or warning messages */
-  filename_input->label = GTK_LABEL (gtk_label_new (""));
-  gtk_label_set_xalign (filename_input->label, 0.0f);
-  gtk_box_pack_start (GTK_BOX (filename_input), GTK_WIDGET (filename_input->label), FALSE, FALSE, 0);
-  gtk_label_set_line_wrap (filename_input->label, TRUE);
 
   /* allow reverting the filename with ctrl + z */
   g_signal_connect (filename_input->entry, "key-press-event",
@@ -400,11 +391,10 @@ xfce_filename_input_entry_changed (GtkEditable *editable,
 {
   XfceFilenameInput *filename_input;
   GtkEntry *entry;
-  GtkLabel *label;
 
   gint text_length;
   const gchar *text;
-  const gchar *label_text = "";
+  const gchar *tooltip_text = NULL;
   const gchar *icon_name = NULL;
   gboolean new_text_valid = TRUE;
   gboolean match_ws, match_ds;
@@ -414,7 +404,6 @@ xfce_filename_input_entry_changed (GtkEditable *editable,
 
   g_return_if_fail (XFCE_IS_FILENAME_INPUT (data));
   filename_input = XFCE_FILENAME_INPUT (data);
-  label = filename_input->label;
 
   /* cancel any pending timer to display a warning about the text starting or ending with whitespace */
   if (filename_input->whitespace_warning_timer_id != 0)
@@ -436,13 +425,13 @@ xfce_filename_input_entry_changed (GtkEditable *editable,
     {
       /* the string is empty */
       icon_name = NULL;
-      label_text = "";
+      tooltip_text = NULL;
       new_text_valid = FALSE;
     }
   else if (match_ds)
     {
       /* the string contains a directory separator */
-      label_text = filename_input->sep_illegal_mssg;
+      tooltip_text = filename_input->sep_illegal_mssg;
       icon_name = "dialog-error";
       new_text_valid = FALSE;
     }
@@ -450,7 +439,7 @@ xfce_filename_input_entry_changed (GtkEditable *editable,
            text_length > filename_input->max_text_length)
     {
       /* the string is too long */
-      label_text = filename_input->too_long_mssg;
+      tooltip_text = filename_input->too_long_mssg;
       icon_name = "dialog-error";
       new_text_valid = FALSE;
     }
@@ -464,15 +453,15 @@ xfce_filename_input_entry_changed (GtkEditable *editable,
                                                                         filename_input,
                                                                         xfce_filename_input_whitespace_warning_timer_destroy);
       icon_name = NULL;
-      label_text = "";
+      tooltip_text = NULL;
       new_text_valid = TRUE;
     }
 
-  /* update the icon in the GtkEntry and the message in the GtkLabel */
+  /* update the icon and tooltip of the GtkEntry */
   gtk_entry_set_icon_from_icon_name (entry,
                                      GTK_ENTRY_ICON_SECONDARY,
                                      icon_name);
-  gtk_label_set_text (label, label_text);
+  gtk_widget_set_tooltip_text (GTK_WIDGET (filename_input), tooltip_text);
 
   /* send a signal to indicate whether the filename is valid */
   gtk_entry_set_activates_default (entry, new_text_valid);
@@ -521,11 +510,11 @@ xfce_filename_input_whitespace_warning_timer (gpointer data)
   g_return_val_if_fail (XFCE_IS_FILENAME_INPUT (data), FALSE);
   filename_input = XFCE_FILENAME_INPUT (data);
 
-  /* update the icon in the GtkEntry and the message in the GtkLabel */
+  /* update the icon and tooltip of the GtkEntry */
   gtk_entry_set_icon_from_icon_name (filename_input->entry,
                                      GTK_ENTRY_ICON_SECONDARY,
                                      "dialog-warning");
-  gtk_label_set_text (filename_input->label, filename_input->whitespace_mssg);
+  gtk_widget_set_tooltip_text (GTK_WIDGET (filename_input), filename_input->whitespace_mssg);
 
   return FALSE;
 }
