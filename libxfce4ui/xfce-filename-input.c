@@ -391,7 +391,7 @@ xfce_filename_input_entry_changed (GtkEditable *editable,
 {
   XfceFilenameInput *filename_input;
   GtkEntry *entry;
-
+  GtkStyleContext *style;
   gint text_length;
   const gchar *text;
   const gchar *tooltip_text = NULL;
@@ -463,6 +463,14 @@ xfce_filename_input_entry_changed (GtkEditable *editable,
                                      icon_name);
   gtk_widget_set_tooltip_text (GTK_WIDGET (filename_input), tooltip_text);
 
+  /* update the style of the GtkEntry */
+  style = gtk_widget_get_style_context (GTK_WIDGET (entry));
+  gtk_style_context_remove_class (style, "warning");
+  if (new_text_valid)
+    gtk_style_context_remove_class (style, "error");
+  else
+    gtk_style_context_add_class (style, "error");
+
   /* send a signal to indicate whether the filename is valid */
   gtk_entry_set_activates_default (entry, new_text_valid);
   if (new_text_valid)
@@ -515,6 +523,9 @@ xfce_filename_input_whitespace_warning_timer (gpointer data)
                                      GTK_ENTRY_ICON_SECONDARY,
                                      "dialog-warning");
   gtk_widget_set_tooltip_text (GTK_WIDGET (filename_input), filename_input->whitespace_mssg);
+
+  /* update the style of the GtkEntry */
+  gtk_style_context_add_class (gtk_widget_get_style_context (GTK_WIDGET (filename_input->entry)), "warning");
 
   return FALSE;
 }
