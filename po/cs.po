@@ -6,7 +6,7 @@
 # Alois Nešpor <info@aloisnespor.info>, 2013
 # Martin Polák, 2022
 # Martin Šiška <martin-siska@email.cz>, 2024
-# Michal Várady <miko.vaji@gmail.com>, 2014-2017,2019-2022,2024
+# Michal Várady <miko.vaji@gmail.com>, 2014-2017,2019-2022,2024-2025
 # Pavel Borecki <pavel.borecki@gmail.com>, 2018
 # Pavel Pernička <pernicka.pa@gmail.com>, 2019
 msgid ""
@@ -15,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2025-03-14 00:45+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Michal Várady <miko.vaji@gmail.com>, 2014-2017,2019-2022,2024\n"
+"Last-Translator: Michal Várady <miko.vaji@gmail.com>, 2014-2017,2019-2022,2024-2025\n"
 "Language-Team: Czech (http://app.transifex.com/xfce/libxfce4ui/language/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -841,7 +841,7 @@ msgid ""
 "the GNU Library General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
+msgstr "Balíčky libxfce4ui a libxfce4util jsou distribuovány pod podmínkami licence GNU Library General Public License publikované organizací Free Software Foundation; ve verzi 2 této licence, nebo (dle vašeho výběru) pozdější."
 
 #: xfce4-about/main.c:378
 msgid ""
@@ -1109,15 +1109,15 @@ msgstr "Vytvoří nový soubor plochy v daném adresáři"
 
 #: xfce-desktop-item-edit/main.c:88
 msgid "Type of desktop file to create (Application or Link)"
-msgstr "Typ vytvářeného souboru plochy\n                              (aplikace nebo odkaz)"
+msgstr "Typ vytvářeného souboru plochy (aplikace nebo odkaz)"
 
 #: xfce-desktop-item-edit/main.c:89
 msgid "Preset name when creating a desktop file"
-msgstr "Přednastavený název při vytváření souboru na\n                              ploše"
+msgstr "Přednastavený název při vytváření souboru na ploše"
 
 #: xfce-desktop-item-edit/main.c:90
 msgid "Preset comment when creating a desktop file"
-msgstr "Přednastavený komentář při vytváření souboru\n                              na ploše"
+msgstr "Přednastavený komentář při vytváření souboru na ploše"
 
 #: xfce-desktop-item-edit/main.c:91
 msgid "Preset command when creating a launcher"
@@ -1129,7 +1129,7 @@ msgstr "Přednastavená adresa URL při vytváření odkazu"
 
 #: xfce-desktop-item-edit/main.c:93
 msgid "Preset icon when creating a desktop file"
-msgstr "Přednastavená ikona při vytváření souboru na\n                              ploše"
+msgstr "Přednastavená ikona při vytváření souboru na ploše"
 
 #: xfce-desktop-item-edit/main.c:94
 msgid "Print the final saved URI after creating or editing the file"
@@ -1315,11 +1315,11 @@ msgstr "Umístění souboru není platným souborem nebo adresářem"
 
 #: xfce-open/main.c:221
 msgid "Usage: xfce-open [URLs...]"
-msgstr ""
+msgstr "Použití: xfce-open [AdresyURL...]"
 
 #: xfce-open/main.c:222
 msgid "       xfce-open --launch TYPE [PARAMETERs...]"
-msgstr ""
+msgstr "       xfce-open --launch TYP [PARAMETRY...]"
 
 #: xfce-open/main.c:224
 msgid "  -?, --help                          Print this help message and exit"
@@ -1365,7 +1365,7 @@ msgid ""
 "option, you can select which preferred application you want to run, and\n"
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
-msgstr ""
+msgstr "Nezadáte-li volbu --launch, xfce-open otevře všechny specifikované adresy URL\naplikací zvolenou podle tvaru adresy URL. Pokud však zadáte volbu --launch,\nbudete moci vybrat, kterou aplikaci chcete spustit a zadat dodatečné parametry\npro aplikace (např. pro TerminalEmulator můžete zadat příkaz, který se provede\nv nově otevřeném okně terminálu."
 
 #: xfce-open/main.c:420
 #, c-format
