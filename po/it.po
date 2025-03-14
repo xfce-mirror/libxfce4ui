@@ -5,6 +5,7 @@
 # Translators:
 # Cristian Marchi <cri.penta@gmail.com>, 2009,2013,2015-2016
 # Dmytro Tokayev, 2022
+# Emanuele Petriglia <inbox@emanuelepetriglia.com>, 2025
 # Emanuele Petriglia <inbox@emanuelepetriglia.com>, 2018
 # Emanuele Petriglia <inbox@emanuelepetriglia.com>, 2019-2024
 # Vincenzo Reale <vinx.reale@gmail.com>, 2020
@@ -12,9 +13,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2025-03-11 12:45+0100\n"
+"POT-Creation-Date: 2025-03-14 00:45+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Emanuele Petriglia <inbox@emanuelepetriglia.com>, 2019-2024\n"
+"Last-Translator: Emanuele Petriglia <inbox@emanuelepetriglia.com>, 2025\n"
 "Language-Team: Italian (http://app.transifex.com/xfce/libxfce4ui/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -46,8 +47,13 @@ msgid "Read the manual"
 msgstr "Leggere il manuale"
 
 #. Create cancel button
+#. add the "Cancel" button
 #: libxfce4ui/xfce-dialogs.c:273 libxfce4ui/xfce-dialogs.c:531
 #: libxfce4kbd-private/xfce-shortcut-dialog.c:256
+#: xfce-desktop-item-edit/main.c:348 xfce-desktop-item-edit/main.c:539
+#: xfce-desktop-item-edit/xfce-die-command-entry.c:266
+#: xfce-desktop-item-edit/xfce-die-editor.c:643
+#: xfce-desktop-item-edit/xfce-die-editor.c:687
 msgid "_Cancel"
 msgstr "A_nnulla"
 
@@ -128,6 +134,96 @@ msgstr "Impossibile caricare l'immagine \"%s\": ragione sconosciuta, probabilmen
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "Impossibile aprire \"%s\"."
+
+#. XFCE_ICON_CHOOSER_CONTEXT_ACTIONS
+#: libxfce4ui/xfce-icon-chooser-dialog.c:123
+msgid "Action Icons"
+msgstr "Icone delle azioni"
+
+#. XFCE_ICON_CHOOSER_CONTEXT_ANIMATIONS
+#: libxfce4ui/xfce-icon-chooser-dialog.c:125
+msgid "Animations"
+msgstr "Animazioni"
+
+#. XFCE_ICON_CHOOSER_CONTEXT_APPLICATIONS
+#: libxfce4ui/xfce-icon-chooser-dialog.c:127
+msgid "Application Icons"
+msgstr "Icone delle applicazioni"
+
+#. XFCE_ICON_CHOOSER_CONTEXT_CATEGORIES
+#: libxfce4ui/xfce-icon-chooser-dialog.c:129
+msgid "Menu Icons"
+msgstr "Icone del menu"
+
+#. XFCE_ICON_CHOOSER_CONTEXT_DEVICES
+#: libxfce4ui/xfce-icon-chooser-dialog.c:131
+msgid "Device Icons"
+msgstr "Icone dei dispositivi"
+
+#. XFCE_ICON_CHOOSER_CONTEXT_EMBLEMS
+#: libxfce4ui/xfce-icon-chooser-dialog.c:133
+msgid "Emblems"
+msgstr "Emblemi"
+
+#. XFCE_ICON_CHOOSER_CONTEXT_EMOTES
+#: libxfce4ui/xfce-icon-chooser-dialog.c:135
+msgid "Emoticons"
+msgstr "Emoticon"
+
+#. XFCE_ICON_CHOOSER_CONTEXT_MIME_TYPES
+#: libxfce4ui/xfce-icon-chooser-dialog.c:137
+msgid "File Type Icons"
+msgstr "Icone del tipo di file"
+
+#. XFCE_ICON_CHOOSER_CONTEXT_PLACES
+#: libxfce4ui/xfce-icon-chooser-dialog.c:139
+msgid "Location Icons"
+msgstr "Icone della posizione"
+
+#. XFCE_ICON_CHOOSER_CONTEXT_STATUS
+#: libxfce4ui/xfce-icon-chooser-dialog.c:141
+msgid "Status Icons"
+msgstr "Icone dello stato"
+
+#. XFCE_ICON_CHOOSER_CONTEXT_STOCK
+#: libxfce4ui/xfce-icon-chooser-dialog.c:143
+msgid "Stock Icons"
+msgstr "Fornitura di icone"
+
+#. XFCE_ICON_CHOOSER_CONTEXT_OTHER
+#: libxfce4ui/xfce-icon-chooser-dialog.c:145
+msgid "Uncategorized Icons"
+msgstr "Altre icone"
+
+#. XFCE_ICON_CHOOSER_CONTEXT_ALL
+#: libxfce4ui/xfce-icon-chooser-dialog.c:149
+msgid "All Icons"
+msgstr "Tutte le icone"
+
+#. XFCE_ICON_CHOOSER_CONTEXT_FILE
+#: libxfce4ui/xfce-icon-chooser-dialog.c:153
+#: libxfce4ui/xfce-icon-chooser-dialog.c:300
+msgid "Image Files"
+msgstr "File immagine"
+
+#. XFCE_ICON_CHOOSER_CONTEXT_NO_ICON
+#: libxfce4ui/xfce-icon-chooser-dialog.c:157
+msgid "No Icon"
+msgstr "Nessuna icona"
+
+#. setup the context combo box
+#: libxfce4ui/xfce-icon-chooser-dialog.c:225
+msgid "Select _icon from:"
+msgstr "Selezionare l'_icona da:"
+
+#. search filter
+#: libxfce4ui/xfce-icon-chooser-dialog.c:241
+msgid "_Search icon:"
+msgstr "C_erca icona:"
+
+#: libxfce4ui/xfce-icon-chooser-dialog.c:253
+msgid "Clear search field"
+msgstr "Pulisci il campo di ricerca"
 
 #: libxfce4ui/xfce-sm-client.c:1507
 msgid "Session management client ID"
@@ -741,11 +837,11 @@ msgstr "Xfce 4 è copyright di Olivier Fourdan (fourdan@xfce.org). I vari compon
 
 #: xfce4-about/main.c:370
 msgid ""
-"The libxfce4ui, libxfce4util and exo packages are distributed under the "
-"terms of the GNU Library General Public License as published by the Free "
-"Software Foundation; either version 2 of the License, or (at your option) "
-"any later version."
-msgstr "I pacchetti libxfce4ui, libxfce4util e exo sono distribuiti sotto i termini della GNU Library General Public License pubblicata dalla Free Software Foundation; nella versione 2 della Licenza o (a propria scelta) una delle versioni successive."
+"The libxfce4ui and libxfce4util packages are distributed under the terms of "
+"the GNU Library General Public License as published by the Free Software "
+"Foundation; either version 2 of the License, or (at your option) any later "
+"version."
+msgstr "I pacchetti libxfce4ui e libxfce4util sono distribuiti sotto i termini della GNU Library General Public License pubblicata dalla Free Software Foundation; nella versione 2 della Licenza o (a propria scelta) una delle versioni successive."
 
 #: xfce4-about/main.c:378
 msgid ""
@@ -765,11 +861,13 @@ msgstr "Digitare '%s --help' per le informazioni di utilizzo."
 msgid "Unable to initialize GTK+."
 msgstr "Impossibile inizializzare GTK+."
 
-#: xfce4-about/main.c:540
+#: xfce4-about/main.c:540 xfce-desktop-item-edit/main.c:205
+#: xfce-open/main.c:760
 msgid "The Xfce development team. All rights reserved."
 msgstr "Il team di sviluppo di Xfce. Tutti i diritti riservati."
 
-#: xfce4-about/main.c:541
+#: xfce4-about/main.c:541 xfce-desktop-item-edit/main.c:213
+#: xfce-open/main.c:769
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "Segnalare i problemi a <%s>."
@@ -825,7 +923,8 @@ msgstr "Licenza"
 msgid "About the Xfce Desktop Environment"
 msgstr "Informazioni sull'ambiente grafico Xfce"
 
-#: xfce4-about/xfce4-about-dialog.glade:358
+#. add the "Help" button
+#: xfce4-about/xfce4-about-dialog.glade:358 xfce-desktop-item-edit/main.c:342
 msgid "_Help"
 msgstr "_Aiuto"
 
@@ -978,3 +1077,306 @@ msgstr "Impossibile migrare la configurazione del vecchio pannello"
 #: tests/test-ui.c:171 tests/test-ui.c:196
 msgid "Customize settings stored by Xfconf"
 msgstr "Personalizzazione delle impostazioni immagazzinate da Xfconf"
+
+#. --- constants ---
+#: xfce-desktop-item-edit/main.c:60
+msgid "Create Launcher"
+msgstr "Crea avviatore"
+
+#: xfce-desktop-item-edit/main.c:60
+msgid "Create Link"
+msgstr "Crea collegamento"
+
+#: xfce-desktop-item-edit/main.c:60
+msgid "Create Directory"
+msgstr "Crea cartella"
+
+#: xfce-desktop-item-edit/main.c:61
+msgid "Edit Launcher"
+msgstr "Modifica avviatore"
+
+#: xfce-desktop-item-edit/main.c:61
+msgid "Edit Link"
+msgstr "Modifica collegamento"
+
+#: xfce-desktop-item-edit/main.c:61
+msgid "Edit Directory"
+msgstr "Modifica cartella"
+
+#: xfce-desktop-item-edit/main.c:87
+msgid "Create a new desktop file in the given directory"
+msgstr "Crea un nuovo file desktop nella cartella specificata"
+
+#: xfce-desktop-item-edit/main.c:88
+msgid "Type of desktop file to create (Application or Link)"
+msgstr "Tipo di file desktop da creare (applicazione o collegamento)"
+
+#: xfce-desktop-item-edit/main.c:89
+msgid "Preset name when creating a desktop file"
+msgstr "Nome predefinito quando si crea un file desktop"
+
+#: xfce-desktop-item-edit/main.c:90
+msgid "Preset comment when creating a desktop file"
+msgstr "Commento predefinito quando si crea un file desktop"
+
+#: xfce-desktop-item-edit/main.c:91
+msgid "Preset command when creating a launcher"
+msgstr "Comando predefinito quando si crea un avviatore"
+
+#: xfce-desktop-item-edit/main.c:92
+msgid "Preset URL when creating a link"
+msgstr "URL predefinito quando si crea un collegamento"
+
+#: xfce-desktop-item-edit/main.c:93
+msgid "Preset icon when creating a desktop file"
+msgstr "Icona predefinita quando si crea un file desktop"
+
+#: xfce-desktop-item-edit/main.c:94
+msgid "Print the final saved URI after creating or editing the file"
+msgstr "Stampa l'URI finale salvato dopo la creazione o la modifica del file"
+
+#: xfce-desktop-item-edit/main.c:95
+msgid "Print version information and exit"
+msgstr "Stampa le informazioni di versione ed esce"
+
+#. initialize Gtk+
+#: xfce-desktop-item-edit/main.c:177
+msgid "[FILE|FOLDER]"
+msgstr "[FILE|CARTELLA]"
+
+#: xfce-desktop-item-edit/main.c:203 xfce-open/main.c:758
+msgid "os-cillation e.K. All rights reserved."
+msgstr "os-cillation e.K. Tutti i diritti riservati."
+
+#: xfce-desktop-item-edit/main.c:207 xfce-open/main.c:762
+msgid "Written by Benedikt Meurer <benny@xfce.org>."
+msgstr "Scritto da Benedikt Meurer <benny@xfce.org>."
+
+#: xfce-desktop-item-edit/main.c:208 xfce-open/main.c:764
+#, c-format
+msgid ""
+"%s comes with ABSOLUTELY NO WARRANTY,\n"
+"You may redistribute copies of %s under the terms of\n"
+"the GNU Lesser General Public License which can be found in the\n"
+"%s source package.\n"
+"\n"
+msgstr "%s viene distribuito senza NESSUNA GARANZIA.\nÈ possibile ridistribuire copie di %s secondo i termini\ndella licenza GNU Lesser General Public License presente nel\npacchetto dei sorgenti di %s.\n\n"
+
+#. add the "Create"/"Save" button (as default)
+#: xfce-desktop-item-edit/main.c:352
+msgid "C_reate"
+msgstr "C_rea"
+
+#: xfce-desktop-item-edit/main.c:352 xfce-desktop-item-edit/main.c:540
+msgid "_Save"
+msgstr "_Salva"
+
+#. create failed, ask the user to specify a file name
+#: xfce-desktop-item-edit/main.c:537
+msgid "Choose filename"
+msgstr "Selezionare il nome del file"
+
+#: xfce-desktop-item-edit/main.c:663
+#, c-format
+msgid "Failed to create \"%s\"."
+msgstr "Impossibile creare \"%s\"."
+
+#: xfce-desktop-item-edit/main.c:663
+#, c-format
+msgid "Failed to save \"%s\"."
+msgstr "Impossibile salvare \"%s\"."
+
+#. allocate the file chooser
+#: xfce-desktop-item-edit/xfce-die-command-entry.c:264
+msgid "Select an Application"
+msgstr "Selezionare un'applicazione"
+
+#: xfce-desktop-item-edit/xfce-die-command-entry.c:267
+msgid "_Open"
+msgstr "_Apri"
+
+#: xfce-desktop-item-edit/xfce-die-command-entry.c:273
+msgid "All Files"
+msgstr "Tutti i file"
+
+#: xfce-desktop-item-edit/xfce-die-command-entry.c:278
+msgid "Executable Files"
+msgstr "File eseguibili"
+
+#: xfce-desktop-item-edit/xfce-die-command-entry.c:293
+msgid "Perl Scripts"
+msgstr "Script di Perl"
+
+#: xfce-desktop-item-edit/xfce-die-command-entry.c:299
+msgid "Python Scripts"
+msgstr "Script di Python"
+
+#: xfce-desktop-item-edit/xfce-die-command-entry.c:305
+msgid "Ruby Scripts"
+msgstr "Script di Ruby"
+
+#: xfce-desktop-item-edit/xfce-die-command-entry.c:311
+msgid "Shell Scripts"
+msgstr "Script per la shell"
+
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
+#: xfce-desktop-item-edit/xfce-die-editor.c:304
+msgid "_Name:"
+msgstr "Nom_e:"
+
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
+#: xfce-desktop-item-edit/xfce-die-editor.c:323
+msgid "C_omment:"
+msgstr "C_ommento:"
+
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
+#. conflicts
+#: xfce-desktop-item-edit/xfce-die-editor.c:342
+msgid "Comm_and:"
+msgstr "Co_mando:"
+
+#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
+#. conflicts
+#: xfce-desktop-item-edit/xfce-die-editor.c:366
+msgid "_URL:"
+msgstr "_URL:"
+
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
+#. conflicts
+#: xfce-desktop-item-edit/xfce-die-editor.c:391
+msgid "Working _Directory:"
+msgstr "Cartella di la_voro:"
+
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
+#: xfce-desktop-item-edit/xfce-die-editor.c:429
+msgid "_Icon:"
+msgstr "_Icona:"
+
+#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
+#. dialog if no icon selected
+#. setup a label to tell that no icon was selected
+#: xfce-desktop-item-edit/xfce-die-editor.c:443
+#: xfce-desktop-item-edit/xfce-die-editor.c:1297
+msgid "No icon"
+msgstr "Nessuna icona"
+
+#: xfce-desktop-item-edit/xfce-die-editor.c:449
+msgid "Options:"
+msgstr "Opzioni:"
+
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
+#. avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar
+#. and xfce4-panel.
+#: xfce-desktop-item-edit/xfce-die-editor.c:461
+msgid "Use _startup notification"
+msgstr "Usa noti_fica di avvio"
+
+#: xfce-desktop-item-edit/xfce-die-editor.c:462
+msgid ""
+"Select this option to enable startup notification when the command is run "
+"from the file manager or the menu. Not every application supports startup "
+"notification."
+msgstr "Selezionare questa opzione per abilitare la notifica di avvio quando il comando è eseguito dal gestore dei file o dal menu. Non tutte le applicazioni supportano la notifica di avvio."
+
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
+#. avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar
+#. and xfce4-panel.
+#: xfce-desktop-item-edit/xfce-die-editor.c:480
+msgid "Run in _terminal"
+msgstr "Esegui nel _terminale"
+
+#: xfce-desktop-item-edit/xfce-die-editor.c:481
+msgid "Select this option to run the command in a terminal window."
+msgstr "Selezionare questa opzione per eseguire il comando in una finestra di terminale."
+
+#. allocate the icon chooser dialog
+#: xfce-desktop-item-edit/xfce-die-editor.c:642
+msgid "Select an icon"
+msgstr "Selezionare un'icona"
+
+#: xfce-desktop-item-edit/xfce-die-editor.c:644
+#: xfce-desktop-item-edit/xfce-die-editor.c:688
+msgid "_OK"
+msgstr "_OK"
+
+#. allocate the file chooser dialog
+#: xfce-desktop-item-edit/xfce-die-editor.c:685
+msgid "Select a working directory"
+msgstr "Selezionare una cartella di lavoro"
+
+#: xfce-desktop-item-edit/xfce-die-utils.c:214
+msgid "File location is not a regular file or directory"
+msgstr "La posizione del file non è un file regolare od una cartella"
+
+#: xfce-open/main.c:221
+msgid "Usage: xfce-open [URLs...]"
+msgstr "Utilizzo: xfce-open [URLs...]"
+
+#: xfce-open/main.c:222
+msgid "       xfce-open --launch TYPE [PARAMETERs...]"
+msgstr "          xfce-open --launch TIPO [PARAMETRI...]"
+
+#: xfce-open/main.c:224
+msgid "  -?, --help                          Print this help message and exit"
+msgstr "  -?, --help                         Stampa questo messaggio di aiuto ed esce"
+
+#: xfce-open/main.c:225
+msgid ""
+"  -V, --version                       Print version information and exit"
+msgstr "  -V, --version                       Mostra le informazioni sulla versione ed esce"
+
+#: xfce-open/main.c:227
+msgid ""
+"  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
+"                                      TYPE with the optional PARAMETERs, where\n"
+"                                      TYPE is one of the following values."
+msgstr "  --launch TIPO [PARAMETRI...]      Lancia le applicazioni preferite di\nTIPO con PARAMETRI opzionali, dove\nTIPO è uno dei valori seguenti."
+
+#: xfce-open/main.c:231
+msgid ""
+"  --working-directory DIRECTORY       Default working directory for applications\n"
+"                                      when using the --launch option."
+msgstr "  --working-directory CARTELLA        Cartella di lavoro predefinita per le\napplicazioni quando si usa l'opzione --launch."
+
+#: xfce-open/main.c:234
+msgid "The following TYPEs are supported for the --launch command:"
+msgstr "I seguenti TIPI sono supportati per il comando --launch:"
+
+#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
+#. TerminalEmulator),
+#. * since the xfce4-mime-helper utility will not accept localized TYPEs.
+#: xfce-open/main.c:240
+msgid ""
+"  WebBrowser       - The preferred Web Browser.\n"
+"  MailReader       - The preferred Mail Reader.\n"
+"  FileManager      - The preferred File Manager.\n"
+"  TerminalEmulator - The preferred Terminal Emulator."
+msgstr "  WebBrowser - Browser web preferito.\n MailReader - Lettore di email preferito.\n FileManager - Gestore dei file preferito.\n TerminalEmulator - Emulatore di terminale preferito."
+
+#: xfce-open/main.c:245
+msgid ""
+"If you don't specify the --launch option, xfce-open will open all specified\n"
+"URLs with their preferred URL handlers. Else, if you specify the --launch\n"
+"option, you can select which preferred application you want to run, and\n"
+"pass additional parameters to the application (i.e. for TerminalEmulator\n"
+"you can pass the command line that should be run in the terminal)."
+msgstr "Se non si specifica l'opzione --launch, xfce-open aprirà tutti gli URL\nspecificati con i loro rispettivi gestori preferiti. Se invece si specifica\nl'opzione --launch, sarà possibile scegliere quale applicazione preferita si\ndesidera eseguire, passandole anche parametri addizionali (per esempio\nper TerminalEmulator è possibile indicare il comando che dovrebbe\n essere eseguito nel terminale stesso)."
+
+#: xfce-open/main.c:420
+#, c-format
+msgid "Failed to launch preferred application for category \"%s\"."
+msgstr "Impossibile eseguire l'applicazione preferita per la categoria \"%s\"."
+
+#: xfce-open/main.c:711
+#, c-format
+msgid "Unable to detect the URI-scheme of \"%s\"."
+msgstr "Impossibile determinare lo schema URI di \"%s\"."
+
+#: xfce-open/main.c:725
+msgid "Failed to open URI."
+msgstr "Impossibile aprire l'URI."
