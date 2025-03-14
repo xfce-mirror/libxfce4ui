@@ -4,7 +4,7 @@
 # 
 # Translators:
 # Kiril Kirilov <cybercop_montana@abv.bg>, 2012
-# Kiril Kirilov <cybercop_montana@abv.bg>, 2015-2017,2019-2024
+# Kiril Kirilov <cybercop_montana@abv.bg>, 2015-2017,2019-2025
 # Любомир Василев, 2015
 # Красимир Беров, 2017,2019,2021
 # Любомир Василев, 2016
@@ -14,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2025-03-14 00:45+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Kiril Kirilov <cybercop_montana@abv.bg>, 2015-2017,2019-2024\n"
+"Last-Translator: Kiril Kirilov <cybercop_montana@abv.bg>, 2015-2017,2019-2025\n"
 "Language-Team: Bulgarian (http://app.transifex.com/xfce/libxfce4ui/language/bg/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -840,7 +840,7 @@ msgid ""
 "the GNU Library General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
+msgstr "Пакетите libxfce4ui и libxfce4util се разпространяват съгласно условията на GNU Library General Public License, публикуван от Free Software Foundation; или версия 2 на Лиценза, или (по ваш избор) всяка следваща версия."
 
 #: xfce4-about/main.c:378
 msgid ""
@@ -1314,11 +1314,11 @@ msgstr "Мястото на файла не е обикновен файл ил�
 
 #: xfce-open/main.c:221
 msgid "Usage: xfce-open [URLs...]"
-msgstr ""
+msgstr "Използване на: xfce-open [URLs...]"
 
 #: xfce-open/main.c:222
 msgid "       xfce-open --launch TYPE [PARAMETERs...]"
-msgstr ""
+msgstr " xfce-open --launch TYPE [PARAMETERs...]"
 
 #: xfce-open/main.c:224
 msgid "  -?, --help                          Print this help message and exit"
@@ -1364,7 +1364,7 @@ msgid ""
 "option, you can select which preferred application you want to run, and\n"
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
-msgstr ""
+msgstr "Ако не посочите опцията --launch, xfce-open ще отвори всички посочени\nURL адреси с техните предпочитани URL манипулатори. В противен случай, ако посочите --launch\nопция, можете да изберете кое предпочитано приложение искате да стартирате и\nзадаване на допълнителни параметри към приложението (т.е. за TerminalEmulator\nможете да зададете командния ред, който трябва да се изпълнява в терминала)."
 
 #: xfce-open/main.c:420
 #, c-format
