@@ -215,3 +215,7 @@ xfce_tree_view_get_single_click
 xfce_tree_view_set_single_click
 xfce_tree_view_get_single_click_timeout
 xfce_tree_view_set_single_click_timeout
+
+# file:xfce-cell-renderer-icon
+xfce_cell_renderer_icon_get_type attr:G_GNUC_CONST
+xfce_cell_renderer_icon_new attr:G_GNUC_MALLOC attr:G_GNUC_WARN_UNUSED_RESULT

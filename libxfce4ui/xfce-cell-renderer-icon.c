@@ -29,6 +29,7 @@
 #include "xfce-cell-renderer-icon.h"
 #include "xfce-gdk-pixbuf-extensions.h"
 #include "xfce-thumbnail.h"
+#include "libxfce4ui-visibility.h"
 
 /**
  * SECTION: xfce-cell-renderer-icon
@@ -48,6 +49,8 @@
  * rendering icons based on the state of the view if the
  * <link linkend="XfceCellRendererIcon--follow-state">follow-state</link>
  * property is set.
+ *
+ * Since: 4.21.0
  **/
 
 /* Property identifiers */
@@ -97,6 +100,8 @@ xfce_cell_renderer_icon_render (GtkCellRenderer *renderer,
  *
  * The #XfceCellRendererIcon struct contains only private fields and
  * should not be directly accessed.
+ *
+ * Since: 4.21.0
  **/
 struct _XfceCellRendererIcon
 {
@@ -585,7 +590,7 @@ xfce_cell_renderer_icon_render (GtkCellRenderer *renderer,
  * cell renderer to an icon name in the model, thus rendering a different icon in each row
  * of the #GtkTreeView.
  *
- * Returns: the newly allocated #XfceCellRendererIcon.
+ * Returns: (transfer full): the newly allocated #XfceCellRendererIcon.
  *
  * Since: 4.21.0
  **/
@@ -594,3 +599,6 @@ xfce_cell_renderer_icon_new (void)
 {
   return g_object_new (XFCE_TYPE_CELL_RENDERER_ICON, NULL);
 }
+
+#define __XFCE_CELL_RENDERER_ICON_C__
+#include "libxfce4ui-visibility.c"
