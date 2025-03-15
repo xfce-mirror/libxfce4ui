@@ -13,7 +13,7 @@
 # Maximilian Schleiss <maximilian@xfce.org>, 2008
 # roxfr <roxfr@outlook.fr>, 2022
 # Urien Desterres <urien.desterres@gmail.com>, 2014-2015
-# Wallon Wallon, 2022-2024
+# Wallon Wallon, 2022-2025
 # Yannick Le Guen <leguen.yannick@gmail.com>, 2014-2020
 msgid ""
 msgstr ""
@@ -21,7 +21,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2025-03-14 00:45+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Wallon Wallon, 2022-2024\n"
+"Last-Translator: Wallon Wallon, 2022-2025\n"
 "Language-Team: French (http://app.transifex.com/xfce/libxfce4ui/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -199,7 +199,7 @@ msgstr "Icônes prédéfinies"
 #. XFCE_ICON_CHOOSER_CONTEXT_OTHER
 #: libxfce4ui/xfce-icon-chooser-dialog.c:145
 msgid "Uncategorized Icons"
-msgstr ""
+msgstr "Icônes non classées"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_ALL
 #: libxfce4ui/xfce-icon-chooser-dialog.c:149
@@ -847,7 +847,7 @@ msgid ""
 "the GNU Library General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
+msgstr "Les paquets libxfce4ui et libxfce4util sont distribués selon les termes de la GNU Library General Public License telle que publiée par la Free Software Foundation ; soit la version 2 de la licence, soit (à votre choix) toute version ultérieure."
 
 #: xfce4-about/main.c:378
 msgid ""
@@ -1321,11 +1321,11 @@ msgstr "L’emplacement du fichier n’est pas un fichier ou répertoire normal"
 
 #: xfce-open/main.c:221
 msgid "Usage: xfce-open [URLs...]"
-msgstr ""
+msgstr "Utilisation : xfce-open [URLs...]"
 
 #: xfce-open/main.c:222
 msgid "       xfce-open --launch TYPE [PARAMETERs...]"
-msgstr ""
+msgstr "       xfce-open --launch TYPE [PARAMETERs...]"
 
 #: xfce-open/main.c:224
 msgid "  -?, --help                          Print this help message and exit"
@@ -1371,7 +1371,7 @@ msgid ""
 "option, you can select which preferred application you want to run, and\n"
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
-msgstr ""
+msgstr "Si vous ne spécifiez pas l’option --launch, xfce-open ouvrira toutes les URL\nspécifiées avec leurs gestionnaires d’URL préférés.\nSinon, si vous spécifiez l’option --launch, vous pouvez sélectionner\nl’application préférée que vous souhaitez lancer, et passer des paramètres\nsupplémentaires à l’application (par ex., dans TerminalEmulator, vous\npouvez passer la ligne de commande qui doit être exécutée dans le terminal)."
 
 #: xfce-open/main.c:420
 #, c-format
