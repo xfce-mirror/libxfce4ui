@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the libxfce4ui.master package.
 # 
 # Translators:
-# Andreas Eitel <github-aneitel@online.de>, 2019-2024
+# Andreas Eitel <github-aneitel@online.de>, 2019-2025
 # Georg Eckert <eckert.georg@gmx.de>, 2013,2015
 # Harald Judt <h.judt@gmx.at>, 2013
 # Tobias Bannert <tobannert@gmail.com>, 2014-2017
@@ -14,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2025-03-14 00:45+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Andreas Eitel <github-aneitel@online.de>, 2019-2024\n"
+"Last-Translator: Andreas Eitel <github-aneitel@online.de>, 2019-2025\n"
 "Language-Team: German (http://app.transifex.com/xfce/libxfce4ui/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -840,7 +840,7 @@ msgid ""
 "the GNU Library General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
+msgstr "Die Pakete libxfce4ui und libxfce4util werden unter den Bedingungen der GNU Library General Public License, wie von der Free Software Foundation veröffentlicht, vertrieben; entweder unter Version 2 der Lizenz oder (nach Ihrer Wahl) unter einer späteren Version."
 
 #: xfce4-about/main.c:378
 msgid ""
@@ -1314,11 +1314,11 @@ msgstr "Dateiziel ist ist keine normale Datei oder Verzeichnis"
 
 #: xfce-open/main.c:221
 msgid "Usage: xfce-open [URLs...]"
-msgstr ""
+msgstr "Verwendung: xfce-open [URLs...]"
 
 #: xfce-open/main.c:222
 msgid "       xfce-open --launch TYPE [PARAMETERs...]"
-msgstr ""
+msgstr "xfce-open --launch TYP [PARAMETER...]"
 
 #: xfce-open/main.c:224
 msgid "  -?, --help                          Print this help message and exit"
@@ -1364,7 +1364,7 @@ msgid ""
 "option, you can select which preferred application you want to run, and\n"
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
-msgstr ""
+msgstr "Wenn Sie die Option --launch nicht angeben, öffnet xfce-open alle angegebenen\nURLs mit ihren bevorzugten URL-Handlern. Wenn Sie dagegen die Option --launch\nOption angeben, können Sie die bevorzugte Anwendung auswählen, die ausgeführt werden soll, und\nzusätzliche Parameter an die Anwendung übergeben (z. B. für den TerminalEmulator\nkönnen Sie die Befehlszeile übergeben, die im Terminal ausgeführt werden soll)."
 
 #: xfce-open/main.c:420
 #, c-format
