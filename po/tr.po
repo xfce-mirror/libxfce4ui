@@ -17,13 +17,14 @@
 # Serdar Sağlam <teknomobil@msn.com>, 2019-2020
 # Ufuk Furkan Öztürk, 2024
 # Volkan Gezer <volkangezer@gmail.com>, 2013
+# x x, 2025
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2025-03-14 00:45+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Ufuk Furkan Öztürk, 2024\n"
+"Last-Translator: x x, 2025\n"
 "Language-Team: Turkish (http://app.transifex.com/xfce/libxfce4ui/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -849,7 +850,7 @@ msgid ""
 "the GNU Library General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
+msgstr "Libxfce4ui ve libxfce4util paketleri, Özgür Yazılım Vakfı tarafından yayınlanan GNU Kütüphane Genel Kamu Lisansı'nın 2. sürümü veya (tercihinize bağlı olarak) daha sonraki bir sürümü koşulları altında dağıtılmaktadır."
 
 #: xfce4-about/main.c:378
 msgid ""
@@ -1323,11 +1324,11 @@ msgstr "Dosya yeri düzenli dosya veya dizin değil"
 
 #: xfce-open/main.c:221
 msgid "Usage: xfce-open [URLs...]"
-msgstr ""
+msgstr "Kullanım: xfce-open [URLs...]"
 
 #: xfce-open/main.c:222
 msgid "       xfce-open --launch TYPE [PARAMETERs...]"
-msgstr ""
+msgstr "       xfce-open --launch TYPE [PARAMETERs...]"
 
 #: xfce-open/main.c:224
 msgid "  -?, --help                          Print this help message and exit"
@@ -1373,7 +1374,7 @@ msgid ""
 "option, you can select which preferred application you want to run, and\n"
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
-msgstr ""
+msgstr "--launch seçeneğini belirtmezseniz, xfce-open belirtilen tüm dosyaları açacaktır.\nTercih edilen URL işleyicileriyle birlikte URL'ler. Aksi takdirde, --launch'ı belirtirseniz\nseçeneği, çalıştırmak istediğiniz tercih edilen uygulamayı seçebilir ve\nuygulamaya ek parametreler geçirin (örneğin TerminalEmulator için\nterminalde çalıştırılması gereken komut satırını geçebilirsiniz)."
 
 #: xfce-open/main.c:420
 #, c-format
