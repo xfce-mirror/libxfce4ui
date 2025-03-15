@@ -19,6 +19,7 @@ libxfce4ui_enum_headers = \
 libxfce4ui_headers = \
 	libxfce4ui-config.h \
 	libxfce4ui-enum-types.h \
+	xfce-cell-renderer-icon.h \
 	xfce-dialogs.h \
 	xfce-execute.h \
 	xfce-gdk-extensions.h \
@@ -43,8 +44,6 @@ libxfce4ui_built_sources = \
 
 libxfce4ui_private_sources = \
 	libxfce4ui-private.h \
-	xfce-cell-renderer-icon.c \
-	xfce-cell-renderer-icon.h \
 	xfce-icon-chooser-model.c \
 	xfce-icon-chooser-model.h \
 	xfce-thumbnail-preview.c \
@@ -58,6 +57,7 @@ libxfce4ui_sources = \
 	$(libxfce4ui_built_sources) \
 	$(libxfce4ui_private_sources) \
 	libxfce4ui-config.c \
+	xfce-cell-renderer-icon.c \
 	xfce-dialogs.c \
 	xfce-execute.c \
 	xfce-gdk-extensions.c \
