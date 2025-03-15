@@ -29,25 +29,26 @@
 #include "xfce-cell-renderer-icon.h"
 #include "xfce-gdk-pixbuf-extensions.h"
 #include "xfce-thumbnail.h"
+#include "libxfce4ui-visibility.h"
 
 /**
  * SECTION: xfce-cell-renderer-icon
  * @title: XfceCellRendererIcon
  * @short_description: Renders an icon in a cell
  * @include: libxfce4ui/libxfce4ui.h
- * @see_also: <link linkend="XfceIconView">XfceIconView</link>
+ * @see_also: #XfceIconView
  *
  * An #XfceCellRendererIcon can be used to render an icon in a cell. It
  * allows to render either a named icon, which is looked up using the
  * #GtkIconTheme, or an image file loaded from the file system. The icon
  * name or absolute path to the image file is set via the
- * <link linkend="XfceCellRendererIcon--icon">icon</link> property.
+ * XfceCellRendererIcon:icon property.
  *
- * To support the <link linkend="XfceIconView">XfceIconView</link> (and <link
- * linkend="GtkIconView">GtkIconView</link>), #XfceCellRendererIcon supports
+ * To support the #XfceIconView (and #GtkIconView) #XfceCellRendererIcon supports
  * rendering icons based on the state of the view if the
- * <link linkend="XfceCellRendererIcon--follow-state">follow-state</link>
- * property is set.
+ * XfceCellRendererIcon:follow-state property is set.
+ *
+ * Since: 4.21.0
  **/
 
 /* Property identifiers */
@@ -97,6 +98,8 @@ xfce_cell_renderer_icon_render (GtkCellRenderer *renderer,
  *
  * The #XfceCellRendererIcon struct contains only private fields and
  * should not be directly accessed.
+ *
+ * Since: 4.21.0
  **/
 struct _XfceCellRendererIcon
 {
@@ -581,11 +584,11 @@ xfce_cell_renderer_icon_render (GtkCellRenderer *renderer,
  * Creates a new #XfceCellRendererIcon. Adjust rendering parameters using object properties,
  * which can be set globally via g_object_set(). Also, with #GtkCellLayout and
  * #GtkTreeViewColumn, you can bind a property to a value in a #GtkTreeModel. For example
- * you can bind the <link linkend="XfceCellRendererIcon--icon">icon</link> property on the
+ * you can bind the XfceCellRendererIcon:icon property on the
  * cell renderer to an icon name in the model, thus rendering a different icon in each row
  * of the #GtkTreeView.
  *
- * Returns: the newly allocated #XfceCellRendererIcon.
+ * Returns: (transfer full): the newly allocated #XfceCellRendererIcon.
  *
  * Since: 4.21.0
  **/
@@ -594,3 +597,6 @@ xfce_cell_renderer_icon_new (void)
 {
   return g_object_new (XFCE_TYPE_CELL_RENDERER_ICON, NULL);
 }
+
+#define __XFCE_CELL_RENDERER_ICON_C__
+#include "libxfce4ui-visibility.c"
