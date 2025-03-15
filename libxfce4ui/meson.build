@@ -9,6 +9,7 @@ libxfce4ui_enum_headers = [
 ]
 
 libxfce4ui_headers = libxfce4ui_enum_headers + [
+  'xfce-cell-renderer-icon.h',
   'xfce-dialogs.h',
   'xfce-execute.h',
   'xfce-filename-input.h',
@@ -46,6 +47,7 @@ endif
 
 libxfce4ui_sources_gir = [
   'libxfce4ui-config.c',
+  'xfce-cell-renderer-icon.c',
   'xfce-dialogs.c',
   'xfce-execute.c',
   'xfce-filename-input.c',
@@ -69,8 +71,6 @@ endif
 
 libxfce4ui_sources = libxfce4ui_sources_gir + [
   'libxfce4ui-private.h',
-  'xfce-cell-renderer-icon.c',
-  'xfce-cell-renderer-icon.h',
   'xfce-icon-chooser-model.c',
   'xfce-icon-chooser-model.h',
   'xfce-thumbnail-preview.c',
