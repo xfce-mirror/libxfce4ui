@@ -4,7 +4,7 @@
 # 
 # Translators:
 # Elishai Eliyahu <elishai@mailfence.com>, 2016-2017,2019-2020
-# Elishai Eliyahu <elishai@mailfence.com>, 2020,2022,2024
+# Elishai Eliyahu <elishai@mailfence.com>, 2020,2022,2024-2025
 # gk <genghiskhan@gmx.ca>, 2014
 # gk <genghiskhan@gmx.ca>, 2014-2016
 # Hezy Amiel <open@hezyamiel.com>, 2010
@@ -18,7 +18,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2025-03-14 00:45+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Elishai Eliyahu <elishai@mailfence.com>, 2020,2022,2024\n"
+"Last-Translator: Elishai Eliyahu <elishai@mailfence.com>, 2020,2022,2024-2025\n"
 "Language-Team: Hebrew (http://app.transifex.com/xfce/libxfce4ui/language/he/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -844,7 +844,7 @@ msgid ""
 "the GNU Library General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
+msgstr "החבילות libxfce4ui, libxfce4util מופצות תחת התנאים של ספריית GNU רישיון ציבורי כללי כפי שפורסם על ידי קרן תוכנה חופשית: מהדורה 2 של הרישיון, או (לבחירתך) כל מהדורה מאוחרת יותר."
 
 #: xfce4-about/main.c:378
 msgid ""
@@ -1318,11 +1318,11 @@ msgstr "מיקום הקובץ אינו קובץ רגיל או ספריה"
 
 #: xfce-open/main.c:221
 msgid "Usage: xfce-open [URLs...]"
-msgstr ""
+msgstr "שימוש: xfce-open [URLs...]"
 
 #: xfce-open/main.c:222
 msgid "       xfce-open --launch TYPE [PARAMETERs...]"
-msgstr ""
+msgstr "       xfce-open --launch TYPE [PARAMETERs...]"
 
 #: xfce-open/main.c:224
 msgid "  -?, --help                          Print this help message and exit"
@@ -1368,7 +1368,7 @@ msgid ""
 "option, you can select which preferred application you want to run, and\n"
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
-msgstr ""
+msgstr "אם אתה לא מציין אפשרות --launch, כל ה-URL המפורטים יפתחו ע\"י xfce-open\nעם מטפלי ה-URL המועדפים שלהם. אחרת, אם אתה מציין את אפשרות --launch \nאתה יכול לבחור איזה ישום מועדף אתה רוצה להפעיל ולהעביר פרמטרים נוספים\nלישום (למשל עבור מדמה מסוף אתה יכול להעביר את שורת הפקודה שאמורה להיות \nמופעלת במסוף)."
 
 #: xfce-open/main.c:420
 #, c-format
