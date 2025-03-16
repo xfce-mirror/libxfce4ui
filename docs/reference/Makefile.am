@@ -46,4 +46,15 @@ GTKDOC_LIBS= $(top_builddir)/libxfce4ui/libxfce4ui-$(LIBXFCE4UI_VERSION_API).la
 
 include $(top_srcdir)/gtk-doc.make
 
+$(top_builddir)/docs/reference/$(DOC_MODULE)-docs.xml: $(DOC_MODULE)-docs.xml.in
+	$(AM_V_GEN) $(SED) -e "s,\@COPYRIGHT_YEAR\@,@COPYRIGHT_YEAR@,g" $< >$@
+
+EXTRA_DIST += \
+	$(DOC_MODULE)-docs.xml.in \
+	$(NULL)
+
+DISTCLEANFILES = \
+	$(DOC_MODULE)-docs.xml \
+	$(NULL)
+
 # vi:set ts=8 sw=8 noet ai nocindent syntax=automake:

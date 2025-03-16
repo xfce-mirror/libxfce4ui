@@ -6,6 +6,7 @@ dnl ***************************
 dnl *** Version information ***
 dnl ***************************
 XDT_VERSION_INIT([4.20.0], [git])
+m4_define([copyright_year], [2025])
 
 m4_define([libxfce4ui_verinfo], [0:0:0])
 m4_define([libxfce4ui_version_api], [2])
@@ -35,12 +36,15 @@ dnl # YOU ARE DOING.
 dnl ***************************
 dnl *** Initialize autoconf ***
 dnl ***************************
-AC_COPYRIGHT([Copyright (c) 2007-2024 The Xfce development team])
+AC_COPYRIGHT([Copyright (c) 2007-copyright_year() The Xfce development team])
 AC_INIT([libxfce4ui], [xdt_version], [https://gitlab.xfce.org/xfce/libxfce4ui/-/issues], [libxfce4ui])
 AC_PREREQ([2.69])
 AC_CONFIG_MACRO_DIRS([m4])
 AC_REVISION([xdt_version_build])
 AC_CANONICAL_TARGET()
+COPYRIGHT_YEAR=copyright_year()
+AC_DEFINE_UNQUOTED([COPYRIGHT_YEAR], ["$COPYRIGHT_YEAR"], [Copyright year])
+AC_SUBST([COPYRIGHT_YEAR])
 
 dnl ***************************
 dnl *** Initialize automake ***
