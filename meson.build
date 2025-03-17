@@ -111,6 +111,9 @@ if libgtop.found()
   if gudev.found()
     feature_cflags += '-DHAVE_GUDEV=1'
   endif
+else
+  epoxy = dependency('', required: false)
+  gudev = dependency('', required: false)
 endif
 
 glade = dependency('gladeui-2.0', version: dependency_versions['glade'], required: get_option('glade'))
