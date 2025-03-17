@@ -316,3 +316,12 @@ xfce_tree_view_set_single_click_timeout
 XFCE_TYPE_TREE_VIEW
 xfce_tree_view_get_type
 </SECTION>
+
+<SECTION>
+<FILE>xfce-cell-renderer-icon</FILE>
+XfceCellRendererIcon
+xfce_cell_renderer_icon_new
+<SUBSECTION Standard>
+XFCE_TYPE_CELL_RENDERER_ICON
+xfce_cell_renderer_icon_get_type
+</SECTION>

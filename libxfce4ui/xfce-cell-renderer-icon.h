@@ -31,7 +31,7 @@ G_BEGIN_DECLS
 #define XFCE_TYPE_CELL_RENDERER_ICON (xfce_cell_renderer_icon_get_type ())
 G_DECLARE_FINAL_TYPE (XfceCellRendererIcon, xfce_cell_renderer_icon, XFCE, CELL_RENDERER_ICON, GtkCellRenderer)
 
-G_GNUC_INTERNAL GtkCellRenderer *
+GtkCellRenderer *
 xfce_cell_renderer_icon_new (void) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
 
 G_END_DECLS
