@@ -1,3 +1,45 @@
+4.21.0 (2025-03-17)
+======
+- Expose xfce-cell-renderer-icon
+- build: Automate copyright year management
+- Add missing symbols to GNU visibility
+- Add xfce-tree-view from exo
+- Add xfce-open from exo
+- Add xfce-desktop-item-edit from exo
+- Add xfce-icon-chooser-dialog and xfce-icon-view from exo
+- build: Remove libxfce4ui-config.h from GI
+- build: Add missing check for mmap
+- Add xfce-gtk-extensions from exo
+- Add xfce-gdk-pixbuf-extensions from exo
+- Add xfce-execute from exo
+- I18n: Update po/LINGUAS list
+- xfce4-about: Add .desktop file to the settings manager
+- clipboard-manager: Preserve all image formats when taking ownership
+- meson-build: Use SPDX license expression
+- meson-build: Update debug/optimization flag management
+- Delete obsolete file libxfce4ui-1.pc.in
+- build: Use VERSION_FULL intead of VERSION or PACKAGE_VERSION
+- autotools-build: Fix EXTRA_DIST redefinition
+- Add meson build
+- build: Include local header libxfce4ui/libxfce4ui.h
+- build: Fix include guard position
+- Set up GNU symbol visibility for libxfce4kbd-private
+- Migrate to xdt-gen-visibility and xdt-check-abi
+- Add variadic functions to Vala
+- Fix namespace for GObject introspection
+- Translation Updates:
+  Albanian, Amharic, Arabic, Armenian, Armenian (Armenia), Asturian,
+  Azerbaijani, Basque, Belarusian, Bengali, Bulgarian, Catalan, Chinese
+  (China), Chinese (Hong Kong), Chinese (Taiwan), Croatian, Czech,
+  Danish, Dutch, Eastern Armenian, English (Australia), English (United
+  Kingdom), Estonian, Finnish, French, Galician, Georgian, German,
+  Greek, Hebrew, Hungarian, Icelandic, Indonesian, Interlingue,
+  Italian, Japanese, Kazakh, Korean, Latvian, Lithuanian, Malay,
+  Norwegian Bokmål, Norwegian Nynorsk, Occitan (post 1500), Persian
+  (Iran), Polish, Portuguese, Portuguese (Brazil), Romanian, Russian,
+  Serbian, Slovak, Slovenian, Spanish, Swedish, Telugu, Thai, Turkish,
+  Ukrainian, Urdu, Urdu (Pakistan), Uyghur, Venetian, Welsh
+
 4.20.0 (2024-12-15)
 ======
 - Update active contributors for 4.20
