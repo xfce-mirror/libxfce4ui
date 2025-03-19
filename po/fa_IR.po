@@ -6,6 +6,7 @@
 # Translators:
 # Xfce Bot <transifex@xfce.org>, 2023
 # Amirali Rahmani Vatan Khah, 2024
+# Goudarz Jafari <goudarz.jafari@gmail.com>, 2025
 # 
 #, fuzzy
 msgid ""
@@ -14,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-30 00:46+0200\n"
 "PO-Revision-Date: 2023-02-20 11:56+0000\n"
-"Last-Translator: Amirali Rahmani Vatan Khah, 2024\n"
+"Last-Translator: Goudarz Jafari <goudarz.jafari@gmail.com>, 2025\n"
 "Language-Team: Persian (Iran) (https://app.transifex.com/xfce/teams/16840/fa_IR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -368,19 +369,19 @@ msgstr "سایه کردن پنجره"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:54
 msgid "Stick window"
-msgstr ""
+msgstr "Stick window"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:55
 msgid "Raise window"
-msgstr ""
+msgstr "Raise window"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:56
 msgid "Lower window"
-msgstr ""
+msgstr "Lower window"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:57
 msgid "Raise or lower window"
-msgstr ""
+msgstr "Raise or lower window"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:58
 msgid "Fill window"
@@ -388,35 +389,35 @@ msgstr "انباشتن پنجره"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:59
 msgid "Fill window horizontally"
-msgstr ""
+msgstr "Fill window horizontally"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:60
 msgid "Fill window vertically"
-msgstr ""
+msgstr "Fill window vertically"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:61
 msgid "Toggle above"
-msgstr ""
+msgstr "Toggle above"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:62
 msgid "Toggle fullscreen"
-msgstr ""
+msgstr "Toggle fullscreen"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:63
 msgid "Move window to lower monitor"
-msgstr ""
+msgstr "Move window to lower monitor"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:64
 msgid "Move window to left monitor"
-msgstr ""
+msgstr "Move window to left monitor"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:65
 msgid "Move window to right monitor"
-msgstr ""
+msgstr "Move window to right monitor"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:66
 msgid "Move window to upper monitor"
-msgstr ""
+msgstr "Move window to upper monitor"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:67
 msgid "Move window to upper workspace"
@@ -492,35 +493,35 @@ msgstr "انتقال پنجره به ورک‌اسپیس 12"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:85
 msgid "Tile window to the top"
-msgstr ""
+msgstr "Tile window to the top"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:86
 msgid "Tile window to the bottom"
-msgstr ""
+msgstr "Tile window to the bottom"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:87
 msgid "Tile window to the left"
-msgstr ""
+msgstr "Tile window to the left"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:88
 msgid "Tile window to the right"
-msgstr ""
+msgstr "Tile window to the right"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:89
 msgid "Tile window to the top-left"
-msgstr ""
+msgstr "Tile window to the top-left"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:90
 msgid "Tile window to the top-right"
-msgstr ""
+msgstr "Tile window to the top-right"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:91
 msgid "Tile window to the bottom-left"
-msgstr ""
+msgstr "Tile window to the bottom-left"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:92
 msgid "Tile window to the bottom-right"
-msgstr ""
+msgstr "Tile window to the bottom-right"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:93
 msgid "Show desktop"
@@ -528,27 +529,27 @@ msgstr "نمایش دسکتاپ"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:94
 msgid "Upper workspace"
-msgstr ""
+msgstr "Upper workspace"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:95
 msgid "Bottom workspace"
-msgstr ""
+msgstr "Bottom workspace"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:96
 msgid "Left workspace"
-msgstr ""
+msgstr "Left workspace"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:97
 msgid "Right workspace"
-msgstr ""
+msgstr "Right workspace"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:98
 msgid "Previous workspace"
-msgstr ""
+msgstr "Previous workspace"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:99
 msgid "Next workspace"
-msgstr ""
+msgstr "Next workspace"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:100
 msgid "Workspace 1"
@@ -604,15 +605,15 @@ msgstr "افزودن فضای کاری"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:113
 msgid "Add adjacent workspace"
-msgstr ""
+msgstr "Add adjacent workspace"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:114
 msgid "Delete last workspace"
-msgstr ""
+msgstr "Delete last workspace"
 
 #: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:115
 msgid "Delete active workspace"
-msgstr ""
+msgstr "Delete active workspace"
 
 #: ../glade/libxfce4ui-2.xml.in.h:1
 msgid "Titled Dialog"
@@ -632,7 +633,7 @@ msgstr "اطلاعات نسخه"
 
 #: ../xfce4-about/main.c:128
 msgid "GPUs"
-msgstr ""
+msgstr "GPUs"
 
 #: ../xfce4-about/main.c:146
 msgid "Window Manager"
@@ -640,7 +641,7 @@ msgstr "مدیریت پنجره"
 
 #: ../xfce4-about/main.c:147
 msgid "Handles the placement of windows on the screen."
-msgstr ""
+msgstr "Handles the placement of windows on the screen."
 
 #: ../xfce4-about/main.c:151
 msgid "Panel"
@@ -648,7 +649,7 @@ msgstr "پنل"
 
 #: ../xfce4-about/main.c:152
 msgid "Provides a home for window buttons, launchers, app menu and more."
-msgstr ""
+msgstr "Provides a home for window buttons, launchers, app menu and more."
 
 #: ../xfce4-about/main.c:156
 msgid "Desktop Manager"
@@ -668,11 +669,11 @@ msgstr "مدیریت فایل‌های شما به روشی پیش‌رفته، 
 
 #: ../xfce4-about/main.c:166
 msgid "Volume Manager"
-msgstr ""
+msgstr "Volume Manager"
 
 #: ../xfce4-about/main.c:167
 msgid "Manages removable drives and media for Thunar."
-msgstr ""
+msgstr "Manages removable drives and media for Thunar."
 
 #: ../xfce4-about/main.c:171
 msgid "Session Manager"
@@ -682,6 +683,7 @@ msgstr "مدیر نشست"
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
 msgstr ""
+"Saves and restores your session, handles startup, autostart and shutdown."
 
 #: ../xfce4-about/main.c:176
 msgid "Settings Manager"
@@ -701,27 +703,27 @@ msgstr "یافتن سریع و اجرای برنامه‌های نصب شده د
 
 #: ../xfce4-about/main.c:186
 msgid "Settings Daemon"
-msgstr ""
+msgstr "Settings Daemon"
 
 #: ../xfce4-about/main.c:187
 msgid "Stores your settings in a D-Bus-based configuration system."
-msgstr ""
+msgstr "Stores your settings in a D-Bus-based configuration system."
 
 #: ../xfce4-about/main.c:191
 msgid "A Menu Library"
-msgstr ""
+msgstr "A Menu Library"
 
 #: ../xfce4-about/main.c:192
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
-msgstr ""
+msgstr "Implements a freedesktop.org compliant menu based on GLib and GIO."
 
 #: ../xfce4-about/main.c:196
 msgid "Thumbnails Service"
-msgstr ""
+msgstr "Thumbnails Service"
 
 #: ../xfce4-about/main.c:197
 msgid "Implements the thumbnail management D-Bus specification."
-msgstr ""
+msgstr "Implements the thumbnail management D-Bus specification."
 
 #: ../xfce4-about/main.c:251
 msgid "Please see <https://www.xfce.org/about/credits>"
@@ -732,6 +734,8 @@ msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 msgstr ""
+"If you know of anyone missing from this list; don't hesitate and file a bug "
+"on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 
 #: ../xfce4-about/main.c:316
 msgid "Thanks to all who helped making this software available!"
@@ -742,6 +746,8 @@ msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
 msgstr ""
+"Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
+"components are copyrighted by their respective authors."
 
 #: ../xfce4-about/main.c:338
 msgid ""
@@ -750,6 +756,10 @@ msgid ""
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
 msgstr ""
+"The libxfce4ui, libxfce4util and exo packages are distributed under the "
+"terms of the GNU Library General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version."
 
 #: ../xfce4-about/main.c:345
 msgid ""
@@ -759,15 +769,20 @@ msgid ""
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
 msgstr ""
+"The packages thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
+"xfce4-settings, xfconf, xfdesktop and xfwm4 are distributed under the terms "
+"of the GNU General Public License as published by the Free Software "
+"Foundation; either version 2 of the License, or (at your option) any later "
+"version."
 
 #: ../xfce4-about/main.c:491
 #, c-format
 msgid "Type '%s --help' for usage information."
-msgstr ""
+msgstr "Type '%s --help' for usage information."
 
 #: ../xfce4-about/main.c:497
 msgid "Unable to initialize GTK+."
-msgstr ""
+msgstr "Unable to initialize GTK+."
 
 #: ../xfce4-about/main.c:506
 msgid "The Xfce development team. All rights reserved."
@@ -780,14 +795,14 @@ msgstr "لطفا خطاها را در <%s> گزارش کنید."
 
 #: ../xfce4-about/main.c:517
 msgid "Failed to load interface"
-msgstr ""
+msgstr "Failed to load interface"
 
 #. { N_("Project Lead"),
 #. xfce_contributors_lead
 #. },
 #: ../xfce4-about/contributors.h:144
 msgid "Core developers"
-msgstr ""
+msgstr "Core developers"
 
 #: ../xfce4-about/contributors.h:147
 msgid "Active contributors"
@@ -843,7 +858,7 @@ msgstr "دستگاه"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:6
 msgid "label"
-msgstr ""
+msgstr "label"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:7
 msgid "OS Name"
@@ -903,6 +918,13 @@ msgid ""
 "\n"
 "\t- The Xfce Development Team"
 msgstr ""
+"Xfce is also a development platform providing several libraries that help programmers create applications that fit in well with the desktop environment.\n"
+"\n"
+"Xfce components are licensed under free or open source licences; GPL or BSDL for applications and LGPL or BSDL for libraries. Look at the documentation, the source code or the Xfce website (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) for more information.\n"
+"\n"
+"Thank you for your interest in Xfce.\n"
+"\n"
+"\t- The Xfce Development Team"
 
 #: ../xfce4-about/xfce4-about-dialog.glade.h:26
 msgid "About"
@@ -954,7 +976,7 @@ msgstr "۳۲-بیت"
 #: ../xfce4-about/system-info.c:729
 #, c-format
 msgid "%s; Build ID: %s"
-msgstr ""
+msgstr "%s; Build ID: %s"
 
 #: ../tests/test-ui.c:111
 #, c-format
@@ -966,8 +988,8 @@ msgstr ""
 
 #: ../tests/test-ui.c:122
 msgid "Failed to migrate the old panel configuration"
-msgstr ""
+msgstr "Failed to migrate the old panel configuration"
 
 #: ../tests/test-ui.c:172 ../tests/test-ui.c:197
 msgid "Customize settings stored by Xfconf"
-msgstr ""
+msgstr "Customize settings stored by Xfconf"
