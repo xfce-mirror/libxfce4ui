@@ -5,12 +5,15 @@
 # Translators:
 # Andre Miranda <andre@andreldm.com>, 2017,2019,2021-2022
 # Andre Miranda <andre@andreldm.com>, 2016
+# Andre Miranda <andre@andreldm.com>, 2015-2016
 # Andre Miranda <andre@andreldm.com>, 2015
+# C. E., 2020
 # C. E., 2020
 # Fábio Nogueira <deb-user-ba@ubuntu.com>, 2008
 # Lucas Wilm <lucaswilm@gmail.com>, 2020
 # Michael Martins, 2019-2020,2024
 # Rafael Fontenelle <rffontenelle@gmail.com>, 2019
+# The Cat, 2020,2023
 # The Cat, 2023
 # The Cat, 2020
 # Wellington Almeida <wsalmeida6@gmail.com>, 2021
@@ -20,7 +23,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2025-03-14 00:45+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Michael Martins, 2019-2020,2024\n"
+"Last-Translator: Wellington Almeida <wsalmeida6@gmail.com>, 2021\n"
 "Language-Team: Portuguese (Brazil) (http://app.transifex.com/xfce/libxfce4ui/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,11 +38,11 @@ msgstr "Falha ao abrir o navegador web para mostrar a documentação online"
 #: libxfce4ui/xfce-dialogs.c:265
 #, c-format
 msgid "Do you want to read the %s manual online?"
-msgstr "Você quer ler online o manual do %s?"
+msgstr "Deseja ler online o manual do %s?"
 
 #: libxfce4ui/xfce-dialogs.c:267
 msgid "Do you want to read the manual online?"
-msgstr "Você quer ler o manual online?"
+msgstr "Deseja ler o manual online?"
 
 #: libxfce4ui/xfce-dialogs.c:269
 msgid ""
@@ -110,11 +113,11 @@ msgstr "Aviso"
 
 #: libxfce4ui/xfce-dialogs.c:532
 msgid "Close T_ab"
-msgstr "Fechar A_ba"
+msgstr "Fechar a_ba"
 
 #: libxfce4ui/xfce-dialogs.c:533
 msgid "Close _Window"
-msgstr "Fechar _Janela"
+msgstr "Fechar _janela"
 
 #: libxfce4ui/xfce-dialogs.c:538
 msgid "Do _not ask me again"
@@ -253,7 +256,7 @@ msgstr "Mostra as opções de gerenciamento de sessão"
 #: libxfce4ui/xfce-sm-client.c:1692
 #, c-format
 msgid "Failed to connect to the session manager: %s"
-msgstr "Falhou ao conectar ao gerenciador de sessão: %s"
+msgstr "Falha ao conectar ao gerenciador de sessão: %s"
 
 #: libxfce4ui/xfce-sm-client.c:1701
 msgid "Session manager did not return a valid client id"
@@ -265,12 +268,12 @@ msgstr "O gerenciador de sessão não retornou um ID de cliente válido"
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
 "\"%s\"."
-msgstr "O diretório de trabalho \"%s\" não existe. Ele não será usado quando gerando \"%s\"."
+msgstr "O diretório de trabalho \"%s\" não existe. Ele não será usado ao gerar \"%s\"."
 
 #. retrieve the error and warning messages
 #: libxfce4ui/xfce-filename-input.c:238
 msgid "Filename is too long"
-msgstr "Nome do arquivo é muito longo"
+msgstr "O nome do arquivo é muito longo"
 
 #: libxfce4ui/xfce-filename-input.c:239
 msgid "Directory separator illegal in file name"
@@ -278,14 +281,14 @@ msgstr "Separador de diretório ilegal em nome do arquivo"
 
 #: libxfce4ui/xfce-filename-input.c:240
 msgid "Filenames should not start or end with a space"
-msgstr "Nomes de arquivos não devem começar ou terminar com um espaço"
+msgstr "Os nomes de arquivos não devem começar ou terminar com um espaço"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:48
 #, c-format
 msgid ""
 "This shortcut is already being used for the action '%s'. Which action do you"
 " want to use?"
-msgstr "Este atalho já está em uso por a ação \"%s\". Qual ação você deseja usar?"
+msgstr "Este atalho já está em uso por a ação \"%s\". Qual ação deseja usar?"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:49
 #: libxfce4kbd-private/xfce-shortcuts.c:52
@@ -309,18 +312,18 @@ msgstr "Manter \"%s\""
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr "Este atalho já está em uso pelo comando \"%s\". Qual ação você deseja usar?"
+msgstr "Este atalho já está em uso pelo comando \"%s\". Qual ação deseja usar?"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:57
 #, c-format
 msgid ""
 "This shortcut is already being used by the action '%s'. Which action do you "
 "want to use?"
-msgstr "Este atalho já está em uso pela ação \"%s\". Qual ação você deseja usar?"
+msgstr "Este atalho já está em uso pela ação \"%s\". Qual ação deseja usar?"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:109
 msgid "Please use another key combination."
-msgstr "Por favor, use outra combinação de teclas."
+msgstr "Use outra combinação de teclas."
 
 #: libxfce4kbd-private/xfce-shortcuts.c:109
 #, c-format
@@ -339,7 +342,7 @@ msgstr "Este atalho já está em uso para outra coisa."
 #: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:92
 #: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:129
 msgid "Shortcuts Editor"
-msgstr "Editor de Atalhos "
+msgstr "Editor de atalhos"
 
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:494
 msgid "The current shortcut. Click to edit..."
@@ -347,11 +350,11 @@ msgstr "O atalho atual. Clique para editar..."
 
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:506
 msgid "Clear the shortcut"
-msgstr "Limpe o atalho "
+msgstr "Limpar o atalho"
 
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:518
 msgid "Restore the default shortcut"
-msgstr "Restaurar o atalho padrão "
+msgstr "Restaurar o atalho padrão"
 
 #. skip leading slash
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:672
@@ -401,11 +404,11 @@ msgstr "Pressione as teclas para executar %s '%s'."
 
 #: libxfce4kbd-private/xfce-shortcut-dialog.c:295
 msgid "Please press a key"
-msgstr "Por favor, pressione uma tecla"
+msgstr "Pressione uma tecla"
 
 #: libxfce4kbd-private/xfce-shortcut-dialog.c:351
 msgid "Could not grab the keyboard."
-msgstr "Não foi possível capturar o teclado:"
+msgstr "Não foi possível capturar o teclado."
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:38
 msgid "Window operations menu"
@@ -489,7 +492,7 @@ msgstr "Baixar janela"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:59
 msgid "Raise or lower window"
-msgstr "Levantar janela"
+msgstr "Levantar ou baixar janela"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:60
 msgid "Fill window"
@@ -733,11 +736,11 @@ msgstr "GPUs"
 
 #: xfce4-about/main.c:194
 msgid "Window Manager"
-msgstr "Gerenciador de Janelas"
+msgstr "Gerenciador de janelas"
 
 #: xfce4-about/main.c:195
 msgid "Handles the placement of windows on the screen."
-msgstr "Controla o localização das janelas na tela."
+msgstr "Lida com o posicionamento das janelas na tela."
 
 #: xfce4-about/main.c:198
 msgid "Panel"
@@ -749,7 +752,7 @@ msgstr "Fornece um lugar para os botões de janela, lançadores, menu de aplica�
 
 #: xfce4-about/main.c:202
 msgid "Desktop Manager"
-msgstr "Gerenciador de janelas"
+msgstr "Gerenciador de área de trabalho"
 
 #: xfce4-about/main.c:203
 msgid "Sets desktop backgrounds, handles icons and more."
@@ -794,7 +797,7 @@ msgstr "Pesquisador de aplicativos"
 
 #: xfce4-about/main.c:223
 msgid "Quickly finds and launches applications installed on your system."
-msgstr "Acha rapidamente e lança aplicações instaladas no seu sistema."
+msgstr "Encontra e inicia rapidamente aplicativos instalados no seu sistema."
 
 #: xfce4-about/main.c:226
 msgid "Settings Daemon"
@@ -806,7 +809,7 @@ msgstr "Armazena suas configurações em um sistema de configuração baseado em
 
 #: xfce4-about/main.c:230
 msgid "A Menu Library"
-msgstr "Uma Biblioteca de Menus"
+msgstr "Uma biblioteca de menus"
 
 #: xfce4-about/main.c:231
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
@@ -814,7 +817,7 @@ msgstr "Implementa um menu compatível com freedesktop.org baseado em GLib e GIO
 
 #: xfce4-about/main.c:234
 msgid "Thumbnails Service"
-msgstr "Serviço de Miniaturas"
+msgstr "Serviço de miniaturas"
 
 #: xfce4-about/main.c:235
 msgid "Implements the thumbnail management D-Bus specification."
@@ -828,17 +831,17 @@ msgstr "Consulte <https://www.xfce.org/about/credits>"
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
-msgstr "Se você conhece alguém que está faltando nesta lista, não hesite e registre um relatório de erro em <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues>"
+msgstr "Se souber de alguém que esteja faltando nesta lista, não hesite e relate um bug em <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 
 #: xfce4-about/main.c:347
 msgid "Thanks to all who helped making this software available!"
-msgstr "Obrigado a todos aqueles que ajudaram tornar este software disponível."
+msgstr "Obrigado a todos que ajudaram a disponibilizar este software!"
 
 #: xfce4-about/main.c:364
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
-msgstr "O Xfce 4 é uma marca registrada de Olivier Fourdan (fourdan@xfce.org). Os componentes diferentes são marcas registradas de seus respectivos autores."
+msgstr "O Xfce 4 é uma marca registrada de Olivier Fourdan (fourdan@xfce.org). Os diferentes componentes são marcas registradas de seus respectivos autores."
 
 #: xfce4-about/main.c:370
 msgid ""
@@ -846,7 +849,7 @@ msgid ""
 "the GNU Library General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
+msgstr "Os pacotes libxfce4ui e libxfce4util são distribuídos sob os termos da Licença Pública Geral GNU como publicado pela Free Software Foundation; versão 2 da Licença ou (a seu critério) qualquer versão posterior."
 
 #: xfce4-about/main.c:378
 msgid ""
@@ -864,22 +867,22 @@ msgstr "Digite \"%s --help\" para as informações de uso."
 
 #: xfce4-about/main.c:531
 msgid "Unable to initialize GTK+."
-msgstr "Impossível inicializar GTK+."
+msgstr "Não foi possível inicializar o GTK+."
 
 #: xfce4-about/main.c:540 xfce-desktop-item-edit/main.c:205
 #: xfce-open/main.c:760
 msgid "The Xfce development team. All rights reserved."
-msgstr "Time de desenvolvimento do Xfce. Todos os direitos reservados."
+msgstr "Equipe de desenvolvimento do Xfce. Todos os direitos reservados."
 
 #: xfce4-about/main.c:541 xfce-desktop-item-edit/main.c:213
 #: xfce-open/main.c:769
 #, c-format
 msgid "Please report bugs to <%s>."
-msgstr "Por favor, relate erros para <%s>."
+msgstr "Relate bugs para <%s>."
 
 #: xfce4-about/main.c:551
 msgid "Failed to load interface"
-msgstr "Falhou ao carregar a interface"
+msgstr "Falha ao carregar a interface"
 
 #. { N_("Project Lead"),
 #. xfce_contributors_lead
@@ -918,7 +921,7 @@ msgstr "Sobre o Xfce"
 
 #: xfce4-about/xfce4-about.desktop.in:12
 msgid "Information about the Xfce Desktop Environment"
-msgstr "Informação sobre o Ambiente de área de trabalho Xfce"
+msgstr "Informação sobre o ambiente de desktop Xfce"
 
 #: xfce4-about/xfce4-about-dialog.glade:116
 msgid "License"
@@ -926,7 +929,7 @@ msgstr "Licença"
 
 #: xfce4-about/xfce4-about-dialog.glade:340
 msgid "About the Xfce Desktop Environment"
-msgstr "Sobre o Ambiente de área de trabalho Xfce"
+msgstr "Sobre o ambiente de desktop Xfce"
 
 #. add the "Help" button
 #: xfce4-about/xfce4-about-dialog.glade:358 xfce-desktop-item-edit/main.c:342
@@ -957,11 +960,11 @@ msgstr "rótulo"
 
 #: xfce4-about/xfce4-about-dialog.glade:462
 msgid "OS Name"
-msgstr "Nome do Sistema Operacional"
+msgstr "Nome do S.O."
 
 #: xfce4-about/xfce4-about-dialog.glade:487
 msgid "OS Type"
-msgstr "Tipo do Sistema Operacional"
+msgstr "Tipo do S.O."
 
 #: xfce4-about/xfce4-about-dialog.glade:512
 msgid "Distributor"
@@ -1003,7 +1006,7 @@ msgstr "Sistema"
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
-msgstr "O Xfce é uma coleção de programas que juntos fornecem um ambiente de desktop completo.\nOs programas seguintes fazem parte do núcleo do Xfce:"
+msgstr "O Xfce é uma coleção de programas que juntos fornecem um ambiente de desktop completo.\nOs seguintes programas fazem parte do núcleo do Xfce:"
 
 #: xfce4-about/xfce4-about-dialog.glade:804
 msgid ""
@@ -1038,7 +1041,7 @@ msgstr "BSD"
 
 #: xfce4-about/xfce4-about-dialog.glade:1003
 msgid "Copyright"
-msgstr "Copyright"
+msgstr "Direitos autorais"
 
 #: xfce4-about/system-info.c:499 xfce4-about/system-info.c:521
 #: xfce4-about/system-info.c:640 xfce4-about/system-info.c:689
@@ -1090,7 +1093,7 @@ msgstr "Criar lançador"
 
 #: xfce-desktop-item-edit/main.c:60
 msgid "Create Link"
-msgstr "Criar ligação"
+msgstr "Criar link"
 
 #: xfce-desktop-item-edit/main.c:60
 msgid "Create Directory"
@@ -1102,7 +1105,7 @@ msgstr "Editar lançador"
 
 #: xfce-desktop-item-edit/main.c:61
 msgid "Edit Link"
-msgstr "Editar ligação"
+msgstr "Editar link"
 
 #: xfce-desktop-item-edit/main.c:61
 msgid "Edit Directory"
@@ -1130,7 +1133,7 @@ msgstr "Comando predefinido ao criar um lançador"
 
 #: xfce-desktop-item-edit/main.c:92
 msgid "Preset URL when creating a link"
-msgstr "URL predefinido ao criar uma ligação"
+msgstr "URL predefinida ao criar um link"
 
 #: xfce-desktop-item-edit/main.c:93
 msgid "Preset icon when creating a desktop file"
@@ -1138,11 +1141,11 @@ msgstr "Ícone predefinido ao criar um arquivo de área de trabalho"
 
 #: xfce-desktop-item-edit/main.c:94
 msgid "Print the final saved URI after creating or editing the file"
-msgstr "Imprima o URI final salvo após criar ou editar o arquivo."
+msgstr "Mostra o URI final salvo após criar ou editar o arquivo"
 
 #: xfce-desktop-item-edit/main.c:95
 msgid "Print version information and exit"
-msgstr "Imprime informações da versão e sai"
+msgstr "Mostra informação de versão e sai"
 
 #. initialize Gtk+
 #: xfce-desktop-item-edit/main.c:177
@@ -1179,7 +1182,7 @@ msgstr "_Salvar"
 #. create failed, ask the user to specify a file name
 #: xfce-desktop-item-edit/main.c:537
 msgid "Choose filename"
-msgstr "Escolher nome do arquivo"
+msgstr "Escolher o nome do arquivo"
 
 #: xfce-desktop-item-edit/main.c:663
 #, c-format
@@ -1285,7 +1288,7 @@ msgid ""
 "Select this option to enable startup notification when the command is run "
 "from the file manager or the menu. Not every application supports startup "
 "notification."
-msgstr "Selecione esta opção para habilitar a notificação de inicialização quando o comando for executado a partir do gerenciador de arquivos ou do menu. Nem todos os aplicativos tem suporte a notificação de inicialização."
+msgstr "Selecione esta opção para habilitar a notificação de inicialização quando o comando for executado a partir do gerenciador de arquivos ou do menu. Nem todo aplicativo suporta notificação de inicialização."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
 #. avoid mnemonic conflicts
@@ -1320,11 +1323,11 @@ msgstr "A localização do arquivo não é um diretório ou arquivo comum"
 
 #: xfce-open/main.c:221
 msgid "Usage: xfce-open [URLs...]"
-msgstr ""
+msgstr "Uso: xfce-open [URLs...]"
 
 #: xfce-open/main.c:222
 msgid "       xfce-open --launch TYPE [PARAMETERs...]"
-msgstr ""
+msgstr "       xfce-open --launch TIPO [PARÂMETROs...]"
 
 #: xfce-open/main.c:224
 msgid "  -?, --help                          Print this help message and exit"
@@ -1340,17 +1343,17 @@ msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
-msgstr "  --launch TIPO [PARÂMETROs...]       Executar o aplicativo preferido do\n                                      TIPO com PARÂMETROs opcionais, onde\n                                      TIPO é um dos valores listados abaixo"
+msgstr "  --launch TIPO [PARÂMETROs...]       Executar o aplicativo preferido do\n                                      TIPO com PARÂMETROs opcionais, onde\n                                      TIPO é um dos valores listados abaixo."
 
 #: xfce-open/main.c:231
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
-msgstr "  --working-directory DIRETÓRIO       Diretório de trabalho padrão para aplicativos\n                                      ao usar a opção --launch"
+msgstr "  --working-directory DIRETÓRIO       Diretório de trabalho padrão para aplicativos\n                                      ao usar a opção --launch."
 
 #: xfce-open/main.c:234
 msgid "The following TYPEs are supported for the --launch command:"
-msgstr "Os seguintes TIPOs têm suporte para o comando --launch:"
+msgstr "Os seguintes TIPOS são suportados pelo comando --launch:"
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
 #. TerminalEmulator),
@@ -1370,7 +1373,7 @@ msgid ""
 "option, you can select which preferred application you want to run, and\n"
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
-msgstr ""
+msgstr "Se você não especificar a opção --launch, o xfce-open abrirá todas as\nURLs especificadas com seus manipuladores de URL preferidos. \nCaso contrário, se especificar a opção --launch, poderá selecionar qual \naplicativo preferido deseja executar e passar parâmetros adicionais \npara o aplicativo (por exemplo, para TerminalEmulator você pode passar \na linha de comando que deve ser executada no terminal)."
 
 #: xfce-open/main.c:420
 #, c-format
