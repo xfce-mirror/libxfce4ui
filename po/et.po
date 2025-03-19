@@ -123,7 +123,7 @@ msgstr "Faili „%s” lugemine ebaõnnestus: %s"
 #: libxfce4ui/xfce-gdk-pixbuf-extensions.c:910
 #, c-format
 msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr "Pildi „%s” laadimine ebaõnnestus: põhjust ei tea, pildifail on tõenäoliselt vigane"
+msgstr "„%s“ pildi laadimine ei õnnestunud: põhjust ei tea, pildifail on tõenäoliselt vigane"
 
 #: libxfce4ui/xfce-gtk-extensions.c:1325
 #, c-format
@@ -260,7 +260,7 @@ msgstr "Töökausta \"%s\" pole olemas. Seega teda ei kasutata \"%s\" käivitami
 #. retrieve the error and warning messages
 #: libxfce4ui/xfce-filename-input.c:238
 msgid "Filename is too long"
-msgstr "Faili nimi on liiga pikk"
+msgstr "Failinimi on liiga pikk"
 
 #: libxfce4ui/xfce-filename-input.c:239
 msgid "Directory separator illegal in file name"
@@ -268,7 +268,7 @@ msgstr "Kaustade eraldaja ei tohi sisalduda faili nimes"
 
 #: libxfce4ui/xfce-filename-input.c:240
 msgid "Filenames should not start or end with a space"
-msgstr "Faili nimi ei tohi alata ega lõppeda tühikuga"
+msgstr "Failinimi ei tohi alata ega lõppeda tühikuga"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:48
 #, c-format
@@ -1063,7 +1063,7 @@ msgstr "%s; Järgu tunnus: %s"
 msgid ""
 "A file named \"%s\" already exists in this directory, the file hasn't been "
 "added."
-msgstr "Fail nimega \"%s\" on juba olemas siin  kaustas ja uut faili ei lisatud."
+msgstr "Fail nimega „%s“ on juba siin kaustas olemas ja uut faili ei lisatud."
 
 #: tests/test-ui.c:121
 msgid "Failed to migrate the old panel configuration"
