@@ -1,26 +1,27 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Xfce
-# This file is distributed under the same license as the libxfce4ui.master package.
+# This file is distributed under the same license as the libxfce4ui.xfce-4-20 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# beriain, 2020-2022
-# Dabid Martinez <dabid@laborategia.eus>, 2020
-# Piarres Beobide <pi@beobide.net>, 2008-2009,2013,2015-2017
+# Xfce Bot <transifex@xfce.org>, 2025
+# 
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Libxfce4ui\n"
+"Project-Id-Version: libxfce4ui.xfce-4-20\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2023-04-06 12:45+0200\n"
-"PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: beriain, 2020-2022\n"
-"Language-Team: Basque (http://app.transifex.com/xfce/libxfce4ui/language/eu/)\n"
+"POT-Creation-Date: 2025-03-19 11:24+0100\n"
+"PO-Revision-Date: 2025-03-19 10:24+0000\n"
+"Last-Translator: Xfce Bot <transifex@xfce.org>, 2025\n"
+"Language-Team: Basque (https://app.transifex.com/xfce/teams/16840/eu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: eu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: libxfce4ui/xfce-dialogs.c:110
+#: libxfce4ui/xfce-dialogs.c:109
 msgid "Failed to open web browser for online documentation"
 msgstr "Huts sareko dokumentaziorako nabigatzailea irekitzean"
 
@@ -33,107 +34,117 @@ msgstr "%s manuala saretik irakurri nahi duzu?"
 msgid "Do you want to read the manual online?"
 msgstr "Manuala saretik irakurri nahi duzu?"
 
-#: libxfce4ui/xfce-dialogs.c:273
+#: libxfce4ui/xfce-dialogs.c:269
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
-msgstr "Laguntza orrialdeak itzultzen eta mantentzen diren dokumentazio webgunera birbidaliko zaizu."
+msgstr ""
+"Laguntza orrialdeak itzultzen eta mantentzen diren dokumentazio webgunera "
+"birbidaliko zaizu."
+
+#: libxfce4ui/xfce-dialogs.c:271
+msgid "Read the manual"
+msgstr ""
 
 #. Create cancel button
-#: libxfce4ui/xfce-dialogs.c:275 libxfce4ui/xfce-dialogs.c:533
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:256
+#: libxfce4ui/xfce-dialogs.c:273 libxfce4ui/xfce-dialogs.c:531
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:255
 msgid "_Cancel"
 msgstr "_Utzi"
 
-#: libxfce4ui/xfce-dialogs.c:277
+#: libxfce4ui/xfce-dialogs.c:274
 msgid "_Read Online"
 msgstr "I_rakurri sarean"
 
-#: libxfce4ui/xfce-dialogs.c:286
+#: libxfce4ui/xfce-dialogs.c:283
 msgid "_Always go directly to the online documentation"
 msgstr "Beti jo_an zuzenean sareko dokumentaziora"
 
-#: libxfce4ui/xfce-dialogs.c:335 libxfce4ui/xfce-dialogs.c:370
-#: libxfce4ui/xfce-dialogs.c:406
+#: libxfce4ui/xfce-dialogs.c:332 libxfce4ui/xfce-dialogs.c:367
+#: libxfce4ui/xfce-dialogs.c:403
 msgid "Close"
 msgstr "Itxi"
 
-#: libxfce4ui/xfce-dialogs.c:453
+#: libxfce4ui/xfce-dialogs.c:450
 msgid "No"
 msgstr "Ez"
 
-#: libxfce4ui/xfce-dialogs.c:455
+#: libxfce4ui/xfce-dialogs.c:452
 msgid "Yes"
 msgstr "Bai"
 
-#: libxfce4ui/xfce-dialogs.c:459 libxfce4kbd-private/xfce-shortcuts-xfwm4.c:41
+#: libxfce4ui/xfce-dialogs.c:456 libxfce4kbd-private/xfce-shortcuts-xfwm4.c:42
 msgid "Cancel"
 msgstr "Utzi"
 
-#: libxfce4ui/xfce-dialogs.c:518
+#: libxfce4ui/xfce-dialogs.c:515
 msgid "Close window with multiple tabs?"
 msgstr "Itxi leihoa hainbat fitxekin?"
 
-#: libxfce4ui/xfce-dialogs.c:520
+#: libxfce4ui/xfce-dialogs.c:517
 msgid ""
 "This window has multiple tabs open. Closing this window will also close all "
 "its tabs."
-msgstr "Leiho honek hainbat fitxa ditu irekita. Leiho hau ixteak bere fitxa guztiak itxiko ditu baita."
+msgstr ""
+"Leiho honek hainbat fitxa ditu irekita. Leiho hau ixteak bere fitxa guztiak "
+"itxiko ditu baita."
 
-#: libxfce4ui/xfce-dialogs.c:523
+#: libxfce4ui/xfce-dialogs.c:520
 #, c-format
 msgid ""
 "This window has %d tabs open. Closing this window will also close all its "
 "tabs."
-msgstr "Leiho honek %d fitxa ditu irekita. Leiho hau ixteak bere fitxa guztiak itxiko ditu baita."
+msgstr ""
+"Leiho honek %d fitxa ditu irekita. Leiho hau ixteak bere fitxa guztiak "
+"itxiko ditu baita."
 
-#: libxfce4ui/xfce-dialogs.c:529
+#: libxfce4ui/xfce-dialogs.c:527
 msgid "Warning"
 msgstr "Abisua"
 
-#: libxfce4ui/xfce-dialogs.c:534
+#: libxfce4ui/xfce-dialogs.c:532
 msgid "Close T_ab"
 msgstr "Fitxa itxi"
 
-#: libxfce4ui/xfce-dialogs.c:535
+#: libxfce4ui/xfce-dialogs.c:533
 msgid "Close _Window"
 msgstr "Leihoa itxi"
 
-#: libxfce4ui/xfce-dialogs.c:540
+#: libxfce4ui/xfce-dialogs.c:538
 msgid "Do _not ask me again"
 msgstr "Ez galdetu _niri berriz"
 
-#: libxfce4ui/xfce-sm-client.c:1427
+#: libxfce4ui/xfce-sm-client.c:1507
 msgid "Session management client ID"
 msgstr "Saio kudeatzaile bezero ID-a"
 
-#: libxfce4ui/xfce-sm-client.c:1427
+#: libxfce4ui/xfce-sm-client.c:1507
 msgid "ID"
 msgstr "IDa"
 
-#: libxfce4ui/xfce-sm-client.c:1428
+#: libxfce4ui/xfce-sm-client.c:1508
 msgid "Disable session management"
 msgstr "Desgaitu saio kudeaketa"
 
-#: libxfce4ui/xfce-sm-client.c:1438
+#: libxfce4ui/xfce-sm-client.c:1518
 msgid "Session management options"
 msgstr "Saio kudeaketa aukerak "
 
-#: libxfce4ui/xfce-sm-client.c:1439
+#: libxfce4ui/xfce-sm-client.c:1518
 msgid "Show session management options"
 msgstr "Ikusi saio kudeaketa aukeraj"
 
-#: libxfce4ui/xfce-sm-client.c:1609
+#: libxfce4ui/xfce-sm-client.c:1692
 #, c-format
 msgid "Failed to connect to the session manager: %s"
 msgstr "Huts saio-kudeatzailearekin konektatzerakoan: %s"
 
-#: libxfce4ui/xfce-sm-client.c:1615
+#: libxfce4ui/xfce-sm-client.c:1701
 msgid "Session manager did not return a valid client id"
 msgstr "Saio kudeatzaileak ez du ID erabilgarri bat erantzun"
 
 #. print warning for user
-#: libxfce4ui/xfce-spawn.c:397
+#: libxfce4ui/xfce-spawn.c:387
 #, c-format
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
@@ -141,140 +152,144 @@ msgid ""
 msgstr "\"%s\" lan direktorioa ez dago. Berau \"%s\" sortzean erabiliko da."
 
 #. retrieve the error and warning messages
-#: libxfce4ui/xfce-filename-input.c:232
+#: libxfce4ui/xfce-filename-input.c:238
 msgid "Filename is too long"
 msgstr "Fitxategiaren izena luzeegia da"
 
-#: libxfce4ui/xfce-filename-input.c:233
+#: libxfce4ui/xfce-filename-input.c:239
 msgid "Directory separator illegal in file name"
 msgstr "Direktorio bereizle ilegala fitxategiaren izenean"
 
-#: libxfce4ui/xfce-filename-input.c:234
+#: libxfce4ui/xfce-filename-input.c:240
 msgid "Filenames should not start or end with a space"
 msgstr "Fitxategi izenek ez lukete hutsune batekin hasi edo amaitu behar"
 
-#: libxfce4kbd-private/xfce-shortcuts.c:46
+#: libxfce4kbd-private/xfce-shortcuts.c:47
 #, c-format
 msgid ""
 "This shortcut is already being used for the action '%s'. Which action do you"
 " want to use?"
-msgstr "Lasterbide hau dagoeneko '%s' ekintzarentzat ezarririk dago. Zein ekintza erabiltzea nahi duzu?"
+msgstr ""
+"Lasterbide hau dagoeneko '%s' ekintzarentzat ezarririk dago. Zein ekintza "
+"erabiltzea nahi duzu?"
 
-#: libxfce4kbd-private/xfce-shortcuts.c:47
-#: libxfce4kbd-private/xfce-shortcuts.c:50
-#: libxfce4kbd-private/xfce-shortcuts.c:53
-#: libxfce4kbd-private/xfce-shortcuts.c:56
+#: libxfce4kbd-private/xfce-shortcuts.c:48
+#: libxfce4kbd-private/xfce-shortcuts.c:51
+#: libxfce4kbd-private/xfce-shortcuts.c:54
+#: libxfce4kbd-private/xfce-shortcuts.c:57
 #, c-format
 msgid "Use '%s'"
 msgstr "Erabili '%s' "
 
-#: libxfce4kbd-private/xfce-shortcuts.c:47
-#: libxfce4kbd-private/xfce-shortcuts.c:50
-#: libxfce4kbd-private/xfce-shortcuts.c:53
-#: libxfce4kbd-private/xfce-shortcuts.c:56
+#: libxfce4kbd-private/xfce-shortcuts.c:48
+#: libxfce4kbd-private/xfce-shortcuts.c:51
+#: libxfce4kbd-private/xfce-shortcuts.c:54
+#: libxfce4kbd-private/xfce-shortcuts.c:57
 #, c-format
 msgid "Keep '%s'"
 msgstr "Mantendu '%s'"
 
-#: libxfce4kbd-private/xfce-shortcuts.c:49
-#: libxfce4kbd-private/xfce-shortcuts.c:52
+#: libxfce4kbd-private/xfce-shortcuts.c:50
+#: libxfce4kbd-private/xfce-shortcuts.c:53
 #, c-format
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr "Lasterbide hau dagoeneko '%s' komandoarentzat ezarririk dago. Zein ekintza erabiltzea nahi duzu?"
+msgstr ""
+"Lasterbide hau dagoeneko '%s' komandoarentzat ezarririk dago. Zein ekintza "
+"erabiltzea nahi duzu?"
 
-#: libxfce4kbd-private/xfce-shortcuts.c:55
+#: libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid ""
 "This shortcut is already being used by the action '%s'. Which action do you "
 "want to use?"
-msgstr "Lasterbide hau dagoeneko '%s' ekintzarentzat ezarririk dago. Zein ekintza erabiltzea nahi duzu?"
+msgstr ""
+"Lasterbide hau dagoeneko '%s' ekintzarentzat ezarririk dago. Zein ekintza "
+"erabiltzea nahi duzu?"
 
-#. This shortcut already exists in the provider, we don't want it twice
-#. Warn the user
-#: libxfce4kbd-private/xfce-shortcuts.c:106
+#: libxfce4kbd-private/xfce-shortcuts.c:108
 msgid "Please use another key combination."
 msgstr "Mesedez erabili beste tekla konbinazio bat"
 
-#: libxfce4kbd-private/xfce-shortcuts.c:107
+#: libxfce4kbd-private/xfce-shortcuts.c:108
 #, c-format
 msgid "%s already triggers this action."
 msgstr "%s-ek dagoeneko ekintza hau abiarazten du."
 
-#: libxfce4kbd-private/xfce-shortcuts.c:112
+#: libxfce4kbd-private/xfce-shortcuts.c:113
 #, c-format
 msgid "Conflicting actions for %s"
 msgstr "Gatazka sortzen duten ekintzak %s-rentzat"
 
-#: libxfce4kbd-private/xfce-shortcuts.c:174
+#: libxfce4kbd-private/xfce-shortcuts.c:173
 msgid "This shortcut is already being used for something else."
 msgstr "Lasterbide hau dagoeneko beste zerbaitek erabiltzen du."
 
-#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:94
-#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:131
+#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:91
+#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:128
 msgid "Shortcuts Editor"
 msgstr "Lasterbideen editorea"
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:380
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:493
 msgid "The current shortcut. Click to edit..."
 msgstr "Oraingo lasterbidea. Klikatu editatzeko..."
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:391
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:505
 msgid "Clear the shortcut"
 msgstr "Lasterbidea ezabatu"
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:401
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:517
 msgid "Restore the default shortcut"
 msgstr "Lasterbide lehenetsia berrezarri"
 
 #. skip leading slash
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:473
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:562
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:671
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:761
 #, c-format
 msgid "This keyboard shortcut is currently used by: '%s'"
 msgstr "Teklatu lasterbide hau honetarako erabilia izaten hari da: '%s'"
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:476
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:565
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:674
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:764
 msgid "Keyboard shortcut already in use"
 msgstr "Teklatu lasterbidea erabilia izaten ari da une honetan"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:217
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:218
 msgid "Window Manager Action Shortcut"
 msgstr "Leiho kudeatzaile ekintza laster-tekla"
 
 #. TRANSLATORS: this string will be used to create an explanation for
 #. * the user in a following string
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:220
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:236
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:221
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:237
 msgid "action"
 msgstr "ekintza"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:225
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:226
 msgid "Command Shortcut"
 msgstr "Komando laster-tekla"
 
 #. TRANSLATORS: this string will be used to create an explanation for
 #. * the user in a following string
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:228
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:229
 msgid "command"
 msgstr "Komandoa"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:233
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:234
 msgid "Shortcut"
 msgstr "Laster-tekla"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:250
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:249
 msgid "Clear"
 msgstr "Garbitu"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:273
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:272
 #, c-format
 msgid "Press keyboard keys to trigger the %s '%s'."
 msgstr "Sakatu teklak %s '%s' abiarazteko."
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:295
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:294
 msgid "Please press a key"
 msgstr "Mesedez sakatu tekla bat"
 
@@ -282,512 +297,529 @@ msgstr "Mesedez sakatu tekla bat"
 msgid "Could not grab the keyboard."
 msgstr "Ezin da teklatua kapturatu."
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:36
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:37
 msgid "Window operations menu"
 msgstr "Leiho ekintza menua"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:37
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:38
 msgid "Up"
 msgstr "Gora"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:38
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:39
 msgid "Down"
 msgstr "Behera"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:39
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:40
 msgid "Left"
 msgstr "Ezkerra"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:40
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:41
 msgid "Right"
 msgstr "Eskuina"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:42
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:43
 msgid "Cycle windows"
 msgstr "Leiho ziklikoak"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:43
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:44
 msgid "Cycle windows (Reverse)"
 msgstr "Leiho ziklikoak (Alderantziz)"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:44
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:45
 msgid "Switch window for same application"
 msgstr "Aldatu leihoa aplikazio berarentzat"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:45
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:46
 msgid "Switch application"
 msgstr "Aldatu aplikazioa"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:46
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:47
 msgid "Close window"
 msgstr "Itxi leihoa"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:47
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:48
 msgid "Maximize window horizontally"
 msgstr "Handitu leihoa alboetaraka"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:48
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:49
 msgid "Maximize window vertically"
 msgstr "Handitu leihoa goraka"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:49
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:50
 msgid "Maximize window"
 msgstr "Handitu leihoa"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:50
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:51
 msgid "Hide window"
 msgstr "Ezkutatu leihoa"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:51
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:52
 msgid "Move window"
 msgstr "Mugitu leihoa"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:52
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:53
 msgid "Resize window"
 msgstr "Leiho tamaina aldatu"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:53
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:54
 msgid "Shade window"
 msgstr "Bildu leihoa"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:54
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:55
 msgid "Stick window"
 msgstr "Itsatsi leihoa"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:55
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:56
 msgid "Raise window"
 msgstr "Goratu leihoa"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:56
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:57
 msgid "Lower window"
 msgstr "Atzeratu leihoa"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:57
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:58
 msgid "Raise or lower window"
 msgstr "Goratu edo beheratu leihoa"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:58
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:59
 msgid "Fill window"
 msgstr "Bete leihoa"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:59
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:60
 msgid "Fill window horizontally"
 msgstr "Bete leihoa horizontalean"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:60
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:61
 msgid "Fill window vertically"
 msgstr "Bete leihoa bertikalean"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:61
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:62
 msgid "Toggle above"
 msgstr "Txandakatu gainean"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:62
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:63
 msgid "Toggle fullscreen"
 msgstr "Txandakatu pantaila-osoa"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:63
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:64
 msgid "Move window to lower monitor"
 msgstr ""
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:64
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:65
 msgid "Move window to left monitor"
 msgstr ""
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:65
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:66
 msgid "Move window to right monitor"
 msgstr ""
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:66
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:67
 msgid "Move window to upper monitor"
 msgstr ""
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:67
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:68
 msgid "Move window to upper workspace"
 msgstr "Mugitu leihoa goiko idazmahaiera"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:68
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:69
 msgid "Move window to bottom workspace"
 msgstr "Mugitu leihoa beheko idazmahaiera"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:69
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:70
 msgid "Move window to left workspace"
 msgstr "Mugitu leihoa ezkerreko idazmahaiera"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:70
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:71
 msgid "Move window to right workspace"
 msgstr "Mugitu leihoa eskuineko idazmahaiera"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:71
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:72
 msgid "Move window to previous workspace"
 msgstr "Mugitu leihoa aurreko idazmahaiera"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:72
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:73
 msgid "Move window to next workspace"
 msgstr "Mugitu leihoa hurrengo idazmahaiera"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:73
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:74
 msgid "Move window to workspace 1"
 msgstr "Mugitu leihoa 1 idazmahaiera"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:74
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:75
 msgid "Move window to workspace 2"
 msgstr "Mugitu leihoa 2 idazmahaiera"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:75
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:76
 msgid "Move window to workspace 3"
 msgstr "Mugitu leihoa 3 idazmahaiera"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:76
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:77
 msgid "Move window to workspace 4"
 msgstr "Mugitu leihoa 4 idazmahaiera"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:77
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:78
 msgid "Move window to workspace 5"
 msgstr "Mugitu leihoa 5 idazmahaiera"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:78
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:79
 msgid "Move window to workspace 6"
 msgstr "Mugitu leihoa 6 idazmahaiera"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:79
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:80
 msgid "Move window to workspace 7"
 msgstr "Mugitu leihoa 7 idazmahaiera"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:80
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:81
 msgid "Move window to workspace 8"
 msgstr "Mugitu leihoa 8 idazmahaiera"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:81
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:82
 msgid "Move window to workspace 9"
 msgstr "Mugitu leihoa 9 idazmahaiera"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:82
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:83
 msgid "Move window to workspace 10"
 msgstr "Mugitu leihoa 10 idazmahaiera"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:83
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:84
 msgid "Move window to workspace 11"
 msgstr "Mugitu leihoa 11 idazmahaiera"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:84
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:85
 msgid "Move window to workspace 12"
 msgstr "Mugitu leihoa 12 idazmahaiera"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:85
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:86
 msgid "Tile window to the top"
 msgstr "Mosaikoa leihoa goian"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:86
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:87
 msgid "Tile window to the bottom"
 msgstr "Mosaikoa leihoa behean"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:87
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:88
 msgid "Tile window to the left"
 msgstr "Mosaikoa leihoa ezkerrean"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:88
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:89
 msgid "Tile window to the right"
 msgstr "Mosaikoa leihoa eskuinean"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:89
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:90
 msgid "Tile window to the top-left"
 msgstr "Mosaiko goian eskubira"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:90
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:91
 msgid "Tile window to the top-right"
 msgstr "Mosaiko goian ezkerrera"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:91
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:92
 msgid "Tile window to the bottom-left"
 msgstr "Mosaiko behean eskubira"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:92
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:93
 msgid "Tile window to the bottom-right"
 msgstr "Mosaiko behean ezkerrera"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:93
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:94
 msgid "Show desktop"
 msgstr "Ikusi idazmahaia"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:94
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:95
 msgid "Upper workspace"
 msgstr "Goiko idazmahaia"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:95
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:96
 msgid "Bottom workspace"
 msgstr "Beheko idazmahaia"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:96
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:97
 msgid "Left workspace"
 msgstr "Ezkerreko idazmahaia"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:97
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:98
 msgid "Right workspace"
 msgstr "Eskuineko idazmahaia"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:98
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:99
 msgid "Previous workspace"
 msgstr "Aurreko idazmahaia"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:99
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:100
 msgid "Next workspace"
 msgstr "Hurrengo idazmahaia"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:100
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:101
 msgid "Workspace 1"
 msgstr "1 idazmahaia"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:101
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:102
 msgid "Workspace 2"
 msgstr "2 idazmahaia"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:102
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:103
 msgid "Workspace 3"
 msgstr "3 idazmahaia"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:103
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:104
 msgid "Workspace 4"
 msgstr "4 idazmahaia"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:104
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:105
 msgid "Workspace 5"
 msgstr "5 idazmahaia"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:105
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:106
 msgid "Workspace 6"
 msgstr "6 idazmahaia"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:106
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:107
 msgid "Workspace 7"
 msgstr "7 idazmahaia"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:107
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:108
 msgid "Workspace 8"
 msgstr "8 idazmahaia"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:108
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:109
 msgid "Workspace 9"
 msgstr "9 Idazmahaia"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:109
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:110
 msgid "Workspace 10"
 msgstr "10 Idazmahaia"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:110
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:111
 msgid "Workspace 11"
 msgstr "11 idazmahaia"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:111
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:112
 msgid "Workspace 12"
 msgstr "12 Idazmahaia"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:112
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:113
 msgid "Add workspace"
 msgstr "Gehitu idazmahaia"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:113
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:114
 msgid "Add adjacent workspace"
 msgstr "Gehitu ondoko idazmahaia"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:114
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:115
 msgid "Delete last workspace"
 msgstr "Ezabatu azken idazmahaia"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:115
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:116
 msgid "Delete active workspace"
 msgstr "Ezabatu idazmahai aktiboa"
 
-#: xfce4-about/main.c:58
+#: xfce4-about/main.c:64
 msgid "Version information"
 msgstr "Bertsio argibideak"
 
-#: xfce4-about/main.c:128
+#: xfce4-about/main.c:174
 msgid "GPUs"
 msgstr "GPUak"
 
-#: xfce4-about/main.c:146
+#: xfce4-about/main.c:191
 msgid "Window Manager"
 msgstr "Leiho kudeatzailea"
 
-#: xfce4-about/main.c:147
+#: xfce4-about/main.c:192
 msgid "Handles the placement of windows on the screen."
 msgstr "Pantailan leihoen kokapena kudeatzen du."
 
-#: xfce4-about/main.c:151
+#: xfce4-about/main.c:195
 msgid "Panel"
 msgstr "Panela"
 
-#: xfce4-about/main.c:152
+#: xfce4-about/main.c:196
 msgid "Provides a home for window buttons, launchers, app menu and more."
-msgstr "Leihoen botoientzako, abiarazleentzako, aplikazio menuetarako eta gehiagorako lekua hornitzen du."
+msgstr ""
+"Leihoen botoientzako, abiarazleentzako, aplikazio menuetarako eta "
+"gehiagorako lekua hornitzen du."
 
-#: xfce4-about/main.c:156
+#: xfce4-about/main.c:199
 msgid "Desktop Manager"
 msgstr "Mahaigain kudeatzailea"
 
-#: xfce4-about/main.c:157
+#: xfce4-about/main.c:200
 msgid "Sets desktop backgrounds, handles icons and more."
 msgstr "Ezarri mahaigaineko atzeko planoa, ikonoen kudeaketa eta gehiago."
 
-#: xfce4-about/main.c:161
+#: xfce4-about/main.c:203
 msgid "File Manager"
 msgstr "Fitxategi kudeatzailea"
 
-#: xfce4-about/main.c:162
+#: xfce4-about/main.c:204
 msgid "Manages your files in a modern, easy-to-use and fast way."
 msgstr "Kudeatu zure fitxategiak modu moderno, erabilerraz eta azkarrean."
 
-#: xfce4-about/main.c:166
+#: xfce4-about/main.c:207
 msgid "Volume Manager"
 msgstr "Bolumen kudeatzailea"
 
-#: xfce4-about/main.c:167
+#: xfce4-about/main.c:208
 msgid "Manages removable drives and media for Thunar."
 msgstr "Kudeatu gailu eta euskarri aldagarriak Thunar-rentzat."
 
-#: xfce4-about/main.c:171
+#: xfce4-about/main.c:211
 msgid "Session Manager"
 msgstr "Saio kudeatzailea"
 
-#: xfce4-about/main.c:172
+#: xfce4-about/main.c:212
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
-msgstr "Zure saioa gordetzen eta berrezartzen du, abiaraztea, hasiera automatikoa eta itzaltzea kudeatzen ditu."
+msgstr ""
+"Zure saioa gordetzen eta berrezartzen du, abiaraztea, hasiera automatikoa "
+"eta itzaltzea kudeatzen ditu."
 
-#: xfce4-about/main.c:176
+#: xfce4-about/main.c:215
 msgid "Settings Manager"
 msgstr "Ezarpen kudeatzailea"
 
-#: xfce4-about/main.c:177
+#: xfce4-about/main.c:216
 msgid "Configures appearance, display, keyboard and mouse settings."
-msgstr "Itxura, bistaratzea, teklatua eta saguaren ezarpenak kofiguratzen ditu."
+msgstr ""
+"Itxura, bistaratzea, teklatua eta saguaren ezarpenak kofiguratzen ditu."
 
-#: xfce4-about/main.c:181
+#: xfce4-about/main.c:219
 msgid "Application Finder"
 msgstr "Aplikazio bilatzailea"
 
-#: xfce4-about/main.c:182
+#: xfce4-about/main.c:220
 msgid "Quickly finds and launches applications installed on your system."
 msgstr "Azkar bilatu eta abiarazi zure sisteman instalatutako aplikazioak"
 
-#: xfce4-about/main.c:186
+#: xfce4-about/main.c:223
 msgid "Settings Daemon"
 msgstr "Ezarpena deabrua"
 
-#: xfce4-about/main.c:187
+#: xfce4-about/main.c:224
 msgid "Stores your settings in a D-Bus-based configuration system."
-msgstr "Zure ezarpenak D-Bus-en oinarritutako konfigurazio sistema baten gordetzen ditu."
+msgstr ""
+"Zure ezarpenak D-Bus-en oinarritutako konfigurazio sistema baten gordetzen "
+"ditu."
 
-#: xfce4-about/main.c:191
+#: xfce4-about/main.c:227
 msgid "A Menu Library"
 msgstr "Liburutegi menu bat"
 
-#: xfce4-about/main.c:192
+#: xfce4-about/main.c:228
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
-msgstr "freedesktop.org-ekin konplitzen duen menu inplementazio bat inplementatzen du, GLib eta GIOn oinarritutakoa."
+msgstr ""
+"freedesktop.org-ekin konplitzen duen menu inplementazio bat inplementatzen "
+"du, GLib eta GIOn oinarritutakoa."
 
-#: xfce4-about/main.c:196
+#: xfce4-about/main.c:231
 msgid "Thumbnails Service"
 msgstr "Argazkitxoen zerbitzua"
 
-#: xfce4-about/main.c:197
+#: xfce4-about/main.c:232
 msgid "Implements the thumbnail management D-Bus specification."
 msgstr "D-Bus argazkitxoen kudeaketa espezifikazioa inplementatzen du."
 
-#: xfce4-about/main.c:251
+#: xfce4-about/main.c:285
 msgid "Please see <https://www.xfce.org/about/credits>"
 msgstr "Mesedez ikusi <https://www.xfce.org/about/credits>"
 
-#: xfce4-about/main.c:312
+#: xfce4-about/main.c:339
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
-msgstr "Zerrenda honetan faltan den norbaiten berri baduzu, mesedez esaguzu programa errore baten bidez <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> -en."
+msgstr ""
+"Zerrenda honetan faltan den norbaiten berri baduzu, mesedez esaguzu programa"
+" errore baten bidez <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> -en."
 
-#: xfce4-about/main.c:316
+#: xfce4-about/main.c:344
 msgid "Thanks to all who helped making this software available!"
 msgstr "Milesker software hau eskuragarri egiten lagundu duten guztiei."
 
-#: xfce4-about/main.c:333
+#: xfce4-about/main.c:361
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
-msgstr "Xfce 4 Olivier Fourdan (fourdan@xfce.org)-en copyright du. Osagai ezberdinek bere egileen copyrighta dute."
+msgstr ""
+"Xfce 4 Olivier Fourdan (fourdan@xfce.org)-en copyright du. Osagai ezberdinek"
+" bere egileen copyrighta dute."
 
-#: xfce4-about/main.c:338
+#: xfce4-about/main.c:367
 msgid ""
 "The libxfce4ui, libxfce4util and exo packages are distributed under the "
 "terms of the GNU Library General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
-msgstr "libxfce4ui, libxfce4util eta exo paketeak Free Software Foundation-ek kaleratutako GNU liburutegi lizentzia publiko orokorraren terminoetan banatzen dira; edo lizentziaren 2. bertsioan edo (zure aukeran) edozein beranduagokoan."
+msgstr ""
+"libxfce4ui, libxfce4util eta exo paketeak Free Software Foundation-ek "
+"kaleratutako GNU liburutegi lizentzia publiko orokorraren terminoetan "
+"banatzen dira; edo lizentziaren 2. bertsioan edo (zure aukeran) edozein "
+"beranduagokoan."
 
-#: xfce4-about/main.c:345
+#: xfce4-about/main.c:375
 msgid ""
 "The packages thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
 "xfce4-settings, xfconf, xfdesktop and xfwm4 are distributed under the terms "
 "of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr "Thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop eta xfwm4 paketeak Free Software Foundation-ek kaleratutako GNU lizentzia publiko orokorraren terminoetan banatzen dira; edo lizentziaren 2. bertsioan edo (zure aukeran) edozein beranduagokoan."
+msgstr ""
+"Thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf,"
+" xfdesktop eta xfwm4 paketeak Free Software Foundation-ek kaleratutako GNU "
+"lizentzia publiko orokorraren terminoetan banatzen dira; edo lizentziaren 2."
+" bertsioan edo (zure aukeran) edozein beranduagokoan."
 
-#: xfce4-about/main.c:491
+#: xfce4-about/main.c:522
 #, c-format
 msgid "Type '%s --help' for usage information."
 msgstr "Idatzi \"%s --help\" erabilerarako."
 
-#: xfce4-about/main.c:497
+#: xfce4-about/main.c:528
 msgid "Unable to initialize GTK+."
 msgstr "Ezinda GTK+ abiarazi."
 
-#: xfce4-about/main.c:506
+#: xfce4-about/main.c:537
 msgid "The Xfce development team. All rights reserved."
 msgstr "Xfce garapen taldea. Eskubide guztiak erreserbatuta"
 
-#: xfce4-about/main.c:507
+#: xfce4-about/main.c:538
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "Mesedez eman programa-erroreen berri <%s>-n."
 
-#: xfce4-about/main.c:517
+#: xfce4-about/main.c:548
 msgid "Failed to load interface"
 msgstr "Huts interfazea kargatzean."
 
 #. { N_("Project Lead"),
 #. xfce_contributors_lead
 #. },
-#: xfce4-about/contributors.h:144
+#: xfce4-about/contributors.h:142
 msgid "Core developers"
 msgstr "Muin garatzaileak"
 
-#: xfce4-about/contributors.h:147
+#: xfce4-about/contributors.h:144
 msgid "Active contributors"
 msgstr "Laguntzaile aktiboak"
 
-#: xfce4-about/contributors.h:150
+#: xfce4-about/contributors.h:146
 msgid "Servers maintained by"
 msgstr "Zerbitzari mantenua: "
 
-#: xfce4-about/contributors.h:153
+#: xfce4-about/contributors.h:148
 msgid "Translations supervision"
 msgstr "Itzulpen gainbegiratzea"
 
-#: xfce4-about/contributors.h:156
+#: xfce4-about/contributors.h:150
 msgid "Documentation supervision"
 msgstr "Dokumentazio gainbegiratzea"
 
-#: xfce4-about/contributors.h:159
+#: xfce4-about/contributors.h:152
 msgid "Translators"
 msgstr "Piarres Beobide <pi@beobide.net>"
 
-#: xfce4-about/contributors.h:162
+#: xfce4-about/contributors.h:154
 msgid "Previous contributors"
 msgstr "Aurreko idazmahaia"
-
-#: xfce4-about/xfce4-about.desktop.in:6
-msgid "org.xfce.about"
-msgstr ""
 
 #: xfce4-about/xfce4-about.desktop.in:11
 msgid "About Xfce"
@@ -824,9 +856,10 @@ msgstr "Gailua"
 #: xfce4-about/xfce4-about-dialog.glade:551
 #: xfce4-about/xfce4-about-dialog.glade:576
 #: xfce4-about/xfce4-about-dialog.glade:601
-#: xfce4-about/xfce4-about-dialog.glade:628
+#: xfce4-about/xfce4-about-dialog.glade:626
 #: xfce4-about/xfce4-about-dialog.glade:653
 #: xfce4-about/xfce4-about-dialog.glade:678
+#: xfce4-about/xfce4-about-dialog.glade:703
 msgid "label"
 msgstr "etiketa"
 
@@ -854,29 +887,35 @@ msgstr "GTK bertsioa"
 msgid "Kernel Version"
 msgstr "Kernel bertsioa"
 
-#: xfce4-about/xfce4-about-dialog.glade:615
+#: xfce4-about/xfce4-about-dialog.glade:614
+msgid "Windowing System"
+msgstr ""
+
+#: xfce4-about/xfce4-about-dialog.glade:640
 msgid "CPU"
 msgstr "PUZ"
 
-#: xfce4-about/xfce4-about-dialog.glade:641
+#: xfce4-about/xfce4-about-dialog.glade:666
 msgid "Memory"
 msgstr "Memoria"
 
-#: xfce4-about/xfce4-about-dialog.glade:666
+#: xfce4-about/xfce4-about-dialog.glade:691
 msgid "GPU"
 msgstr "GPU"
 
-#: xfce4-about/xfce4-about-dialog.glade:699
+#: xfce4-about/xfce4-about-dialog.glade:724
 msgid "System"
 msgstr "Sistema"
 
-#: xfce4-about/xfce4-about-dialog.glade:741
+#: xfce4-about/xfce4-about-dialog.glade:766
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
-msgstr "Xfce mahaigain ingurune osoa eskaintzen duten programen bilduma da.\nHurrengo programak dira Xfce muinaren zati:"
+msgstr ""
+"Xfce mahaigain ingurune osoa eskaintzen duten programen bilduma da.\n"
+"Hurrengo programak dira Xfce muinaren zati:"
 
-#: xfce4-about/xfce4-about-dialog.glade:779
+#: xfce4-about/xfce4-about-dialog.glade:804
 msgid ""
 "Xfce is also a development platform providing several libraries that help programmers create applications that fit in well with the desktop environment.\n"
 "\n"
@@ -885,48 +924,55 @@ msgid ""
 "Thank you for your interest in Xfce.\n"
 "\n"
 "\t- The Xfce Development Team"
-msgstr "Xfce garapen plataforma bat da ere, hainbat liburutegi ematen dituena garatzaileei laguntzeko mahaigain ingurunearekin bat datozen aplikazioak sortzen.\n\nXfceren osagaiak iturburu libre edo irekiko lizentziapekoak dira; GPL edo BSDL aplikazioetarako eta LGPL edo BSDL liburutegietarako. Ikusi dokumentazioa, iturburu kodea edo Xfceren webgunea (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) informazio gehiago lortzeko.\n\nEskerrik asko zure Xfcerekiko interesagatik.\n\n\t- Xfceren garapen taldea"
+msgstr ""
+"Xfce garapen plataforma bat da ere, hainbat liburutegi ematen dituena garatzaileei laguntzeko mahaigain ingurunearekin bat datozen aplikazioak sortzen.\n"
+"\n"
+"Xfceren osagaiak iturburu libre edo irekiko lizentziapekoak dira; GPL edo BSDL aplikazioetarako eta LGPL edo BSDL liburutegietarako. Ikusi dokumentazioa, iturburu kodea edo Xfceren webgunea (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) informazio gehiago lortzeko.\n"
+"\n"
+"Eskerrik asko zure Xfcerekiko interesagatik.\n"
+"\n"
+"\t- Xfceren garapen taldea"
 
-#: xfce4-about/xfce4-about-dialog.glade:809
+#: xfce4-about/xfce4-about-dialog.glade:834
 msgid "About"
 msgstr "Honi buruz"
 
-#: xfce4-about/xfce4-about-dialog.glade:843
+#: xfce4-about/xfce4-about-dialog.glade:868
 msgid "Credits"
 msgstr "Kredituak"
 
-#: xfce4-about/xfce4-about-dialog.glade:922
+#: xfce4-about/xfce4-about-dialog.glade:947
 msgid "GPL"
 msgstr "GPL"
 
-#: xfce4-about/xfce4-about-dialog.glade:935
+#: xfce4-about/xfce4-about-dialog.glade:960
 msgid "LGPL"
 msgstr "LGPL"
 
-#: xfce4-about/xfce4-about-dialog.glade:948
+#: xfce4-about/xfce4-about-dialog.glade:973
 msgid "BSD"
 msgstr "BSD"
 
-#: xfce4-about/xfce4-about-dialog.glade:978
+#: xfce4-about/xfce4-about-dialog.glade:1003
 msgid "Copyright"
 msgstr "Copyright"
 
-#: xfce4-about/system-info.c:533 xfce4-about/system-info.c:555
-#: xfce4-about/system-info.c:673 xfce4-about/system-info.c:721
+#: xfce4-about/system-info.c:499 xfce4-about/system-info.c:521
+#: xfce4-about/system-info.c:640 xfce4-about/system-info.c:689
 msgid "Unknown"
 msgstr "(ezezaguna)"
 
 #. translators: This is the type of architecture for the OS
-#: xfce4-about/system-info.c:658
+#: xfce4-about/system-info.c:624
 msgid "64-bit (32-bit userspace)"
 msgstr "64-bit (32-bit erabiltzaile espazioa)"
 
 #. translators: This is the type of architecture for the OS
-#: xfce4-about/system-info.c:661
+#: xfce4-about/system-info.c:627
 msgid "64-bit"
 msgstr "64-bit"
 
-#: xfce4-about/system-info.c:661
+#: xfce4-about/system-info.c:627
 msgid "32-bit"
 msgstr "32-bit"
 
@@ -934,22 +980,24 @@ msgstr "32-bit"
 #. * example:
 #. * "Fedora 25 (Workstation Edition); Build ID: xyz" or
 #. * "Ubuntu 16.04 LTS; Build ID: jki"
-#: xfce4-about/system-info.c:729
+#: xfce4-about/system-info.c:697
 #, c-format
 msgid "%s; Build ID: %s"
 msgstr "%s; Eraikitze IDa: %s"
 
-#: tests/test-ui.c:111
+#: tests/test-ui.c:110
 #, c-format
 msgid ""
 "A file named \"%s\" already exists in this directory, the file hasn't been "
 "added."
-msgstr "Dagoeneko badago \"%s\" izeneko fitxategi bat karpeta honetan, fitxategia ez da gehitu."
+msgstr ""
+"Dagoeneko badago \"%s\" izeneko fitxategi bat karpeta honetan, fitxategia ez"
+" da gehitu."
 
-#: tests/test-ui.c:122
+#: tests/test-ui.c:121
 msgid "Failed to migrate the old panel configuration"
 msgstr "Huts panel zaharrek konfigurazioa migratzean"
 
-#: tests/test-ui.c:172 tests/test-ui.c:197
+#: tests/test-ui.c:171 tests/test-ui.c:196
 msgid "Customize settings stored by Xfconf"
 msgstr "Xfconf-ek gordetako ezarpenak pertsonlizatu"
