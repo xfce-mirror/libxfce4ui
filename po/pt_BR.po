@@ -5,15 +5,16 @@
 # 
 # Translators:
 # Xfce Bot <transifex@xfce.org>, 2025
+# Michael Martins, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: libxfce4ui.xfce-4-20\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2025-03-19 11:24+0100\n"
+"POT-Creation-Date: 2025-03-19 12:46+0100\n"
 "PO-Revision-Date: 2025-03-19 10:24+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>, 2025\n"
+"Last-Translator: Michael Martins, 2025\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/xfce/teams/16840/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,11 +29,11 @@ msgstr "Falha ao abrir o navegador web para mostrar a documentação online"
 #: libxfce4ui/xfce-dialogs.c:265
 #, c-format
 msgid "Do you want to read the %s manual online?"
-msgstr "Você quer ler online o manual do %s?"
+msgstr "Deseja ler online o manual do %s?"
 
 #: libxfce4ui/xfce-dialogs.c:267
 msgid "Do you want to read the manual online?"
-msgstr "Você quer ler o manual online?"
+msgstr "Deseja ler o manual online?"
 
 #: libxfce4ui/xfce-dialogs.c:269
 msgid ""
@@ -104,11 +105,11 @@ msgstr "Aviso"
 
 #: libxfce4ui/xfce-dialogs.c:532
 msgid "Close T_ab"
-msgstr "Fechar A_ba"
+msgstr "Fechar a_ba"
 
 #: libxfce4ui/xfce-dialogs.c:533
 msgid "Close _Window"
-msgstr "Fechar _Janela"
+msgstr "Fechar _janela"
 
 #: libxfce4ui/xfce-dialogs.c:538
 msgid "Do _not ask me again"
@@ -137,7 +138,7 @@ msgstr "Mostra as opções de gerenciamento de sessão"
 #: libxfce4ui/xfce-sm-client.c:1692
 #, c-format
 msgid "Failed to connect to the session manager: %s"
-msgstr "Falhou ao conectar ao gerenciador de sessão: %s"
+msgstr "Falha ao conectar ao gerenciador de sessão: %s"
 
 #: libxfce4ui/xfce-sm-client.c:1701
 msgid "Session manager did not return a valid client id"
@@ -150,13 +151,13 @@ msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
 "\"%s\"."
 msgstr ""
-"O diretório de trabalho \"%s\" não existe. Ele não será usado quando gerando"
-" \"%s\"."
+"O diretório de trabalho \"%s\" não existe. Ele não será usado ao gerar "
+"\"%s\"."
 
 #. retrieve the error and warning messages
 #: libxfce4ui/xfce-filename-input.c:238
 msgid "Filename is too long"
-msgstr "Nome do arquivo é muito longo"
+msgstr "O nome do arquivo é muito longo"
 
 #: libxfce4ui/xfce-filename-input.c:239
 msgid "Directory separator illegal in file name"
@@ -164,14 +165,14 @@ msgstr "Separador de diretório ilegal em nome do arquivo"
 
 #: libxfce4ui/xfce-filename-input.c:240
 msgid "Filenames should not start or end with a space"
-msgstr "Nomes de arquivos não devem começar ou terminar com um espaço"
+msgstr "Os nomes de arquivos não devem começar ou terminar com um espaço"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:47
 #, c-format
 msgid ""
 "This shortcut is already being used for the action '%s'. Which action do you"
 " want to use?"
-msgstr "Este atalho já está em uso por a ação \"%s\". Qual ação você deseja usar?"
+msgstr "Este atalho já está em uso por a ação \"%s\". Qual ação deseja usar?"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:48
 #: libxfce4kbd-private/xfce-shortcuts.c:51
@@ -195,19 +196,18 @@ msgstr "Manter \"%s\""
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr ""
-"Este atalho já está em uso pelo comando \"%s\". Qual ação você deseja usar?"
+msgstr "Este atalho já está em uso pelo comando \"%s\". Qual ação deseja usar?"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid ""
 "This shortcut is already being used by the action '%s'. Which action do you "
 "want to use?"
-msgstr "Este atalho já está em uso pela ação \"%s\". Qual ação você deseja usar?"
+msgstr "Este atalho já está em uso pela ação \"%s\". Qual ação deseja usar?"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:108
 msgid "Please use another key combination."
-msgstr "Por favor, use outra combinação de teclas."
+msgstr "Use outra combinação de teclas."
 
 #: libxfce4kbd-private/xfce-shortcuts.c:108
 #, c-format
@@ -226,7 +226,7 @@ msgstr "Este atalho já está em uso para outra coisa."
 #: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:91
 #: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:128
 msgid "Shortcuts Editor"
-msgstr "Editor de Atalhos "
+msgstr "Editor de atalhos"
 
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:493
 msgid "The current shortcut. Click to edit..."
@@ -234,11 +234,11 @@ msgstr "O atalho atual. Clique para editar..."
 
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:505
 msgid "Clear the shortcut"
-msgstr "Limpe o atalho "
+msgstr "Limpar o atalho"
 
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:517
 msgid "Restore the default shortcut"
-msgstr "Restaurar o atalho padrão "
+msgstr "Restaurar o atalho padrão"
 
 #. skip leading slash
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:671
@@ -288,11 +288,11 @@ msgstr "Pressione as teclas para executar %s '%s'."
 
 #: libxfce4kbd-private/xfce-shortcut-dialog.c:294
 msgid "Please press a key"
-msgstr "Por favor, pressione uma tecla"
+msgstr "Pressione uma tecla"
 
 #: libxfce4kbd-private/xfce-shortcut-dialog.c:350
 msgid "Could not grab the keyboard."
-msgstr "Não foi possível capturar o teclado:"
+msgstr "Não foi possível capturar o teclado."
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:37
 msgid "Window operations menu"
@@ -376,7 +376,7 @@ msgstr "Baixar janela"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:58
 msgid "Raise or lower window"
-msgstr "Levantar janela"
+msgstr "Levantar ou baixar janela"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:59
 msgid "Fill window"
@@ -620,11 +620,11 @@ msgstr "GPUs"
 
 #: xfce4-about/main.c:191
 msgid "Window Manager"
-msgstr "Gerenciador de Janelas"
+msgstr "Gerenciador de janelas"
 
 #: xfce4-about/main.c:192
 msgid "Handles the placement of windows on the screen."
-msgstr "Controla o localização das janelas na tela."
+msgstr "Lida com o posicionamento das janelas na tela."
 
 #: xfce4-about/main.c:195
 msgid "Panel"
@@ -654,7 +654,7 @@ msgstr "Gerencia seus arquivos de um jeito moderno, fácil de usar e rápido."
 
 #: xfce4-about/main.c:207
 msgid "Volume Manager"
-msgstr "Gerenciador de Volume"
+msgstr "Gerenciador de volume"
 
 #: xfce4-about/main.c:208
 msgid "Manages removable drives and media for Thunar."
@@ -685,7 +685,7 @@ msgstr "Pesquisador de aplicativos"
 
 #: xfce4-about/main.c:220
 msgid "Quickly finds and launches applications installed on your system."
-msgstr "Acha rapidamente e lança aplicações instaladas no seu sistema."
+msgstr "Encontra e inicia rapidamente aplicativos instalados no seu sistema."
 
 #: xfce4-about/main.c:223
 msgid "Settings Daemon"
@@ -698,7 +698,7 @@ msgstr ""
 
 #: xfce4-about/main.c:227
 msgid "A Menu Library"
-msgstr "Uma Biblioteca de Menus"
+msgstr "Uma biblioteca de menus"
 
 #: xfce4-about/main.c:228
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
@@ -707,7 +707,7 @@ msgstr ""
 
 #: xfce4-about/main.c:231
 msgid "Thumbnails Service"
-msgstr "Serviço de Miniaturas"
+msgstr "Serviço de miniaturas"
 
 #: xfce4-about/main.c:232
 msgid "Implements the thumbnail management D-Bus specification."
@@ -722,13 +722,12 @@ msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 msgstr ""
-"Se você conhece alguém que está faltando nesta lista, não hesite e registre "
-"um relatório de erro em <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues>"
+"Se souber de alguém que esteja faltando nesta lista, não hesite e relate um "
+"bug em <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 
 #: xfce4-about/main.c:344
 msgid "Thanks to all who helped making this software available!"
-msgstr ""
-"Obrigado a todos aqueles que ajudaram tornar este software disponível."
+msgstr "Obrigado a todos que ajudaram a disponibilizar este software!"
 
 #: xfce4-about/main.c:361
 msgid ""
@@ -736,7 +735,7 @@ msgid ""
 "components are copyrighted by their respective authors."
 msgstr ""
 "O Xfce 4 é uma marca registrada de Olivier Fourdan (fourdan@xfce.org). Os "
-"componentes diferentes são marcas registradas de seus respectivos autores."
+"diferentes componentes são marcas registradas de seus respectivos autores."
 
 #: xfce4-about/main.c:367
 msgid ""
@@ -771,20 +770,20 @@ msgstr "Digite \"%s --help\" para as informações de uso."
 
 #: xfce4-about/main.c:528
 msgid "Unable to initialize GTK+."
-msgstr "Impossível inicializar GTK+."
+msgstr "Não foi possível inicializar o GTK+."
 
 #: xfce4-about/main.c:537
 msgid "The Xfce development team. All rights reserved."
-msgstr "Time de desenvolvimento do Xfce. Todos os direitos reservados."
+msgstr "Equipe de desenvolvimento do Xfce. Todos os direitos reservados."
 
 #: xfce4-about/main.c:538
 #, c-format
 msgid "Please report bugs to <%s>."
-msgstr "Por favor, relate erros para <%s>."
+msgstr "Relate bugs para <%s>."
 
 #: xfce4-about/main.c:548
 msgid "Failed to load interface"
-msgstr "Falhou ao carregar a interface"
+msgstr "Falha ao carregar a interface"
 
 #. { N_("Project Lead"),
 #. xfce_contributors_lead
@@ -823,7 +822,7 @@ msgstr "Sobre o Xfce"
 
 #: xfce4-about/xfce4-about.desktop.in:12
 msgid "Information about the Xfce Desktop Environment"
-msgstr "Informação sobre o Ambiente de área de trabalho Xfce"
+msgstr "Informação sobre o ambiente de desktop Xfce"
 
 #: xfce4-about/xfce4-about-dialog.glade:116
 msgid "License"
@@ -831,7 +830,7 @@ msgstr "Licença"
 
 #: xfce4-about/xfce4-about-dialog.glade:340
 msgid "About the Xfce Desktop Environment"
-msgstr "Sobre o Ambiente de área de trabalho Xfce"
+msgstr "Sobre o ambiente de desktop Xfce"
 
 #: xfce4-about/xfce4-about-dialog.glade:358
 msgid "_Help"
@@ -861,11 +860,11 @@ msgstr "rótulo"
 
 #: xfce4-about/xfce4-about-dialog.glade:462
 msgid "OS Name"
-msgstr "Nome do Sistema Operacional"
+msgstr "Nome do S.O."
 
 #: xfce4-about/xfce4-about-dialog.glade:487
 msgid "OS Type"
-msgstr "Tipo do Sistema Operacional"
+msgstr "Tipo do S.O."
 
 #: xfce4-about/xfce4-about-dialog.glade:512
 msgid "Distributor"
@@ -909,7 +908,7 @@ msgid ""
 "The following programs are part of the Xfce core:"
 msgstr ""
 "O Xfce é uma coleção de programas que juntos fornecem um ambiente de desktop completo.\n"
-"Os programas seguintes fazem parte do núcleo do Xfce:"
+"Os seguintes programas fazem parte do núcleo do Xfce:"
 
 #: xfce4-about/xfce4-about-dialog.glade:804
 msgid ""
@@ -951,7 +950,7 @@ msgstr "BSD"
 
 #: xfce4-about/xfce4-about-dialog.glade:1003
 msgid "Copyright"
-msgstr "Copyright"
+msgstr "Direitos autorais"
 
 #: xfce4-about/system-info.c:499 xfce4-about/system-info.c:521
 #: xfce4-about/system-info.c:640 xfce4-about/system-info.c:689
