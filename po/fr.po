@@ -1,35 +1,27 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Xfce
-# This file is distributed under the same license as the libxfce4ui.master package.
+# This file is distributed under the same license as the libxfce4ui.xfce-4-20 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Charles Monzat <c.monzat@laposte.net>, 2018
-# David D, 2023
-# jc1 <jc1.quebecos@gmail.com>, 2013
-# jc1 <jc1.quebecos@gmail.com>, 2013,2020-2022
-# Luclu7 <theluc7andcompagnie@gmail.com>, 2020
-# math Matmutant <matmutant@gmail.com>, 2016
-# math Matmutant <matmutant@gmail.com>, 2016
-# Maximilian Schleiss <maximilian@xfce.org>, 2008
-# roxfr <roxfr@outlook.fr>, 2022
-# Urien Desterres <urien.desterres@gmail.com>, 2014-2015
-# Wallon Wallon, 2022-2024
-# Yannick Le Guen <leguen.yannick@gmail.com>, 2014-2020
+# Xfce Bot <transifex@xfce.org>, 2025
+# 
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Libxfce4ui\n"
+"Project-Id-Version: libxfce4ui.xfce-4-20\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2024-07-07 12:45+0200\n"
-"PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Wallon Wallon, 2022-2024\n"
-"Language-Team: French (http://app.transifex.com/xfce/libxfce4ui/language/fr/)\n"
+"POT-Creation-Date: 2025-03-19 11:24+0100\n"
+"PO-Revision-Date: 2025-03-19 10:24+0000\n"
+"Last-Translator: Xfce Bot <transifex@xfce.org>, 2025\n"
+"Language-Team: French (https://app.transifex.com/xfce/teams/16840/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: libxfce4ui/xfce-dialogs.c:110
+#: libxfce4ui/xfce-dialogs.c:109
 msgid "Failed to open web browser for online documentation"
 msgstr "Impossible d’ouvrir le navigateur web pour la documentation en ligne"
 
@@ -42,572 +34,585 @@ msgstr "Souhaitez-vous consulter le manuel %s en ligne ?"
 msgid "Do you want to read the manual online?"
 msgstr "Souhaitez-vous consulter le manuel en ligne ?"
 
-#: libxfce4ui/xfce-dialogs.c:270
-msgid "Read the manual"
-msgstr "Lire le manuel"
-
-#: libxfce4ui/xfce-dialogs.c:273
+#: libxfce4ui/xfce-dialogs.c:269
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
-msgstr "Vous allez être redirigé vers le site de documentation en ligne où les pages d’aide sont maintenues et traduites."
+msgstr ""
+"Vous allez être redirigé vers le site de documentation en ligne où les pages"
+" d’aide sont maintenues et traduites."
+
+#: libxfce4ui/xfce-dialogs.c:271
+msgid "Read the manual"
+msgstr "Lire le manuel"
 
 #. Create cancel button
-#: libxfce4ui/xfce-dialogs.c:275 libxfce4ui/xfce-dialogs.c:533
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:252
+#: libxfce4ui/xfce-dialogs.c:273 libxfce4ui/xfce-dialogs.c:531
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:255
 msgid "_Cancel"
 msgstr "_Annuler"
 
-#: libxfce4ui/xfce-dialogs.c:277
+#: libxfce4ui/xfce-dialogs.c:274
 msgid "_Read Online"
 msgstr "_Lire en ligne"
 
-#: libxfce4ui/xfce-dialogs.c:286
+#: libxfce4ui/xfce-dialogs.c:283
 msgid "_Always go directly to the online documentation"
 msgstr "_Toujours aller directement sur la documentation en ligne"
 
-#: libxfce4ui/xfce-dialogs.c:335 libxfce4ui/xfce-dialogs.c:370
-#: libxfce4ui/xfce-dialogs.c:406
+#: libxfce4ui/xfce-dialogs.c:332 libxfce4ui/xfce-dialogs.c:367
+#: libxfce4ui/xfce-dialogs.c:403
 msgid "Close"
 msgstr "Fermer"
 
-#: libxfce4ui/xfce-dialogs.c:453
+#: libxfce4ui/xfce-dialogs.c:450
 msgid "No"
 msgstr "Non"
 
-#: libxfce4ui/xfce-dialogs.c:455
+#: libxfce4ui/xfce-dialogs.c:452
 msgid "Yes"
 msgstr "Oui"
 
-#: libxfce4ui/xfce-dialogs.c:459 libxfce4kbd-private/xfce-shortcuts-xfwm4.c:41
+#: libxfce4ui/xfce-dialogs.c:456 libxfce4kbd-private/xfce-shortcuts-xfwm4.c:42
 msgid "Cancel"
 msgstr "Annuler"
 
-#: libxfce4ui/xfce-dialogs.c:518
+#: libxfce4ui/xfce-dialogs.c:515
 msgid "Close window with multiple tabs?"
 msgstr "Fermer la fenêtre avec plusieurs onglets ?"
 
-#: libxfce4ui/xfce-dialogs.c:520
+#: libxfce4ui/xfce-dialogs.c:517
 msgid ""
 "This window has multiple tabs open. Closing this window will also close all "
 "its tabs."
-msgstr "Cette fenêtre a plusieurs onglets ouverts. Fermer cette fenêtre fermera également tous ses onglets."
+msgstr ""
+"Cette fenêtre a plusieurs onglets ouverts. Fermer cette fenêtre fermera "
+"également tous ses onglets."
 
-#: libxfce4ui/xfce-dialogs.c:523
+#: libxfce4ui/xfce-dialogs.c:520
 #, c-format
 msgid ""
 "This window has %d tabs open. Closing this window will also close all its "
 "tabs."
-msgstr "Cette fenêtre a %d onglets ouverts. Fermer cette fenêtre fermera aussi tous ses onglets."
+msgstr ""
+"Cette fenêtre a %d onglets ouverts. Fermer cette fenêtre fermera aussi tous "
+"ses onglets."
 
-#: libxfce4ui/xfce-dialogs.c:529
+#: libxfce4ui/xfce-dialogs.c:527
 msgid "Warning"
 msgstr "Avertissement"
 
-#: libxfce4ui/xfce-dialogs.c:534
+#: libxfce4ui/xfce-dialogs.c:532
 msgid "Close T_ab"
 msgstr "Fermer l’_onglet"
 
-#: libxfce4ui/xfce-dialogs.c:535
+#: libxfce4ui/xfce-dialogs.c:533
 msgid "Close _Window"
 msgstr "Fermer la _fenêtre"
 
-#: libxfce4ui/xfce-dialogs.c:540
+#: libxfce4ui/xfce-dialogs.c:538
 msgid "Do _not ask me again"
 msgstr "Ne plus poser la _question"
 
-#: libxfce4ui/xfce-sm-client.c:1435
+#: libxfce4ui/xfce-sm-client.c:1507
 msgid "Session management client ID"
 msgstr "ID client du gestionnaire de session"
 
-#: libxfce4ui/xfce-sm-client.c:1435
+#: libxfce4ui/xfce-sm-client.c:1507
 msgid "ID"
 msgstr "ID"
 
-#: libxfce4ui/xfce-sm-client.c:1436
+#: libxfce4ui/xfce-sm-client.c:1508
 msgid "Disable session management"
 msgstr "Désactiver le gestionnaire de session"
 
-#: libxfce4ui/xfce-sm-client.c:1446
+#: libxfce4ui/xfce-sm-client.c:1518
 msgid "Session management options"
 msgstr "Options du gestionnaire de session"
 
-#: libxfce4ui/xfce-sm-client.c:1447
+#: libxfce4ui/xfce-sm-client.c:1518
 msgid "Show session management options"
 msgstr "Afficher les options du gestionnaire de session"
 
-#: libxfce4ui/xfce-sm-client.c:1619
+#: libxfce4ui/xfce-sm-client.c:1692
 #, c-format
 msgid "Failed to connect to the session manager: %s"
 msgstr "Impossible de se connecter au gestionnaire de session : %s"
 
-#: libxfce4ui/xfce-sm-client.c:1625
+#: libxfce4ui/xfce-sm-client.c:1701
 msgid "Session manager did not return a valid client id"
 msgstr "Le gestionnaire de session n’a pas retourné un ID client valide"
 
 #. print warning for user
-#: libxfce4ui/xfce-spawn.c:383
+#: libxfce4ui/xfce-spawn.c:387
 #, c-format
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
 "\"%s\"."
-msgstr "Le répertoire de travail « %s » n’existe pas. Il ne sera pas utilisé à la réouverture de « %s »."
+msgstr ""
+"Le répertoire de travail « %s » n’existe pas. Il ne sera pas utilisé à la "
+"réouverture de « %s »."
 
 #. retrieve the error and warning messages
-#: libxfce4ui/xfce-filename-input.c:232
+#: libxfce4ui/xfce-filename-input.c:238
 msgid "Filename is too long"
 msgstr "Nom de fichier trop long"
 
-#: libxfce4ui/xfce-filename-input.c:233
+#: libxfce4ui/xfce-filename-input.c:239
 msgid "Directory separator illegal in file name"
 msgstr "Séparateur de répertoire interdit dans le nom de fichier"
 
-#: libxfce4ui/xfce-filename-input.c:234
+#: libxfce4ui/xfce-filename-input.c:240
 msgid "Filenames should not start or end with a space"
-msgstr "Les noms de fichiers ne devraient pas commencer ni se terminer par un espace"
+msgstr ""
+"Les noms de fichiers ne devraient pas commencer ni se terminer par un espace"
 
-#: libxfce4kbd-private/xfce-shortcuts.c:46
+#: libxfce4kbd-private/xfce-shortcuts.c:47
 #, c-format
 msgid ""
 "This shortcut is already being used for the action '%s'. Which action do you"
 " want to use?"
-msgstr "Ce raccourci est déjà utilisé pour l’action « %s ». Quelle action voulez-vous garder ?"
+msgstr ""
+"Ce raccourci est déjà utilisé pour l’action « %s ». Quelle action voulez-"
+"vous garder ?"
 
-#: libxfce4kbd-private/xfce-shortcuts.c:47
-#: libxfce4kbd-private/xfce-shortcuts.c:50
-#: libxfce4kbd-private/xfce-shortcuts.c:53
-#: libxfce4kbd-private/xfce-shortcuts.c:56
+#: libxfce4kbd-private/xfce-shortcuts.c:48
+#: libxfce4kbd-private/xfce-shortcuts.c:51
+#: libxfce4kbd-private/xfce-shortcuts.c:54
+#: libxfce4kbd-private/xfce-shortcuts.c:57
 #, c-format
 msgid "Use '%s'"
 msgstr "Utiliser « %s »"
 
-#: libxfce4kbd-private/xfce-shortcuts.c:47
-#: libxfce4kbd-private/xfce-shortcuts.c:50
-#: libxfce4kbd-private/xfce-shortcuts.c:53
-#: libxfce4kbd-private/xfce-shortcuts.c:56
+#: libxfce4kbd-private/xfce-shortcuts.c:48
+#: libxfce4kbd-private/xfce-shortcuts.c:51
+#: libxfce4kbd-private/xfce-shortcuts.c:54
+#: libxfce4kbd-private/xfce-shortcuts.c:57
 #, c-format
 msgid "Keep '%s'"
 msgstr "Garder « %s »"
 
-#: libxfce4kbd-private/xfce-shortcuts.c:49
-#: libxfce4kbd-private/xfce-shortcuts.c:52
+#: libxfce4kbd-private/xfce-shortcuts.c:50
+#: libxfce4kbd-private/xfce-shortcuts.c:53
 #, c-format
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr "Ce raccourci est déjà utilisé pour la commande « %s ». Quelle action voulez-vous garder ?"
+msgstr ""
+"Ce raccourci est déjà utilisé pour la commande « %s ». Quelle action voulez-"
+"vous garder ?"
 
-#: libxfce4kbd-private/xfce-shortcuts.c:55
+#: libxfce4kbd-private/xfce-shortcuts.c:56
 #, c-format
 msgid ""
 "This shortcut is already being used by the action '%s'. Which action do you "
 "want to use?"
-msgstr "Ce raccourci est déjà utilisé pour l’action « %s ». Quelle action voulez-vous garder ?"
+msgstr ""
+"Ce raccourci est déjà utilisé pour l’action « %s ». Quelle action voulez-"
+"vous garder ?"
 
-#. This shortcut already exists in the provider, we don't want it twice
-#. Warn the user
-#: libxfce4kbd-private/xfce-shortcuts.c:106
+#: libxfce4kbd-private/xfce-shortcuts.c:108
 msgid "Please use another key combination."
 msgstr "Veuillez utiliser une autre combinaison de touches."
 
-#: libxfce4kbd-private/xfce-shortcuts.c:107
+#: libxfce4kbd-private/xfce-shortcuts.c:108
 #, c-format
 msgid "%s already triggers this action."
 msgstr "%s déclenche déjà cette action."
 
-#: libxfce4kbd-private/xfce-shortcuts.c:112
+#: libxfce4kbd-private/xfce-shortcuts.c:113
 #, c-format
 msgid "Conflicting actions for %s"
 msgstr "Actions en conflit pour %s"
 
-#: libxfce4kbd-private/xfce-shortcuts.c:174
+#: libxfce4kbd-private/xfce-shortcuts.c:173
 msgid "This shortcut is already being used for something else."
 msgstr "Ce raccourci est déjà utilisé pour autre chose."
 
-#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:92
-#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:129
+#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:91
+#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:128
 msgid "Shortcuts Editor"
 msgstr "Éditeur des raccourcis"
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:378
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:493
 msgid "The current shortcut. Click to edit..."
 msgstr "Le raccourci actuel. Cliquez pour éditer..."
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:389
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:505
 msgid "Clear the shortcut"
 msgstr "Effacer le raccourci"
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:399
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:517
 msgid "Restore the default shortcut"
 msgstr "Restaurer le raccourci par défaut"
 
 #. skip leading slash
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:471
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:560
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:671
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:761
 #, c-format
 msgid "This keyboard shortcut is currently used by: '%s'"
 msgstr "Ce raccourci clavier est actuellement utilisé par : « %s »"
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:474
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:563
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:674
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:764
 msgid "Keyboard shortcut already in use"
 msgstr "Raccourci clavier déjà utilisé"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:215
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:218
 msgid "Window Manager Action Shortcut"
 msgstr "Raccourci d’une action du gestionnaire de fenêtres"
 
 #. TRANSLATORS: this string will be used to create an explanation for
 #. * the user in a following string
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:218
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:234
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:221
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:237
 msgid "action"
 msgstr "l’action"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:223
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:226
 msgid "Command Shortcut"
 msgstr "Raccourci commande"
 
 #. TRANSLATORS: this string will be used to create an explanation for
 #. * the user in a following string
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:226
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:229
 msgid "command"
 msgstr "la commande"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:231
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:234
 msgid "Shortcut"
 msgstr "Raccourci"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:246
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:249
 msgid "Clear"
 msgstr "Effacer"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:269
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:272
 #, c-format
 msgid "Press keyboard keys to trigger the %s '%s'."
 msgstr "Appuyer sur les touches du clavier pour déclencher %s « %s »."
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:291
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:294
 msgid "Please press a key"
 msgstr "Veuillez appuyer sur une touche"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:346
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:350
 msgid "Could not grab the keyboard."
 msgstr "Impossible d’accéder au clavier."
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:36
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:37
 msgid "Window operations menu"
 msgstr "Menu des opérations des fenêtres"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:37
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:38
 msgid "Up"
 msgstr "Haut"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:38
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:39
 msgid "Down"
 msgstr "Bas"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:39
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:40
 msgid "Left"
 msgstr "Aligné à gauche"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:40
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:41
 msgid "Right"
 msgstr "Aligné à droite"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:42
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:43
 msgid "Cycle windows"
 msgstr "Naviguer parmi les fenêtres"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:43
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:44
 msgid "Cycle windows (Reverse)"
 msgstr "Naviguer parmi les fenêtres (ordre inverse)"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:44
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:45
 msgid "Switch window for same application"
 msgstr "Basculer de fenêtre pour la même application"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:45
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:46
 msgid "Switch application"
 msgstr "Basculer d’application"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:46
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:47
 msgid "Close window"
 msgstr "Fermer la fenêtre"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:47
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:48
 msgid "Maximize window horizontally"
 msgstr "Maximiser la fenêtre horizontalement"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:48
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:49
 msgid "Maximize window vertically"
 msgstr "Maximiser la fenêtre verticalement"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:49
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:50
 msgid "Maximize window"
 msgstr "Maximiser la fenêtre"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:50
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:51
 msgid "Hide window"
 msgstr "Masquer la fenêtre"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:51
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:52
 msgid "Move window"
 msgstr "Déplacer la fenêtre"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:52
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:53
 msgid "Resize window"
 msgstr "Redimensionner la fenêtre"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:53
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:54
 msgid "Shade window"
 msgstr "Enrouler la fenêtre"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:54
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:55
 msgid "Stick window"
 msgstr "Coller la fenêtre"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:55
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:56
 msgid "Raise window"
 msgstr "Monter la fenêtre"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:56
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:57
 msgid "Lower window"
 msgstr "Abaisser la fenêtre"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:57
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:58
 msgid "Raise or lower window"
 msgstr "Élever ou abaisser la fenêtre"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:58
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:59
 msgid "Fill window"
 msgstr "Étendre la fenêtre"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:59
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:60
 msgid "Fill window horizontally"
 msgstr "Étendre la fenêtre horizontalement"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:60
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:61
 msgid "Fill window vertically"
 msgstr "Étendre la fenêtre verticalement"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:61
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:62
 msgid "Toggle above"
 msgstr "Basculer au-dessus"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:62
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:63
 msgid "Toggle fullscreen"
 msgstr "Basculer en plein écran"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:63
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:64
 msgid "Move window to lower monitor"
 msgstr "Déplacer la fenêtre vers le bas du moniteur"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:64
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:65
 msgid "Move window to left monitor"
 msgstr "Déplacer la fenêtre vers la gauche du moniteur"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:65
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:66
 msgid "Move window to right monitor"
 msgstr "Déplacer la fenêtre vers la droite du moniteur"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:66
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:67
 msgid "Move window to upper monitor"
 msgstr "Déplacer la fenêtre vers le haut du moniteur"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:67
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:68
 msgid "Move window to upper workspace"
 msgstr "Déplacer la fenêtre vers l’espace de travail supérieur"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:68
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:69
 msgid "Move window to bottom workspace"
 msgstr "Déplacer la fenêtre vers l’espace de travail inférieur"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:69
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:70
 msgid "Move window to left workspace"
 msgstr "Déplacer la fenêtre vers l’espace de travail à gauche"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:70
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:71
 msgid "Move window to right workspace"
 msgstr "Déplacer la fenêtre vers l’espace de travail à droite"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:71
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:72
 msgid "Move window to previous workspace"
 msgstr "Déplacer la fenêtre vers l’espace de travail précédent"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:72
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:73
 msgid "Move window to next workspace"
 msgstr "Déplacer la fenêtre vers l’espace de travail suivant"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:73
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:74
 msgid "Move window to workspace 1"
 msgstr "Déplacer la fenêtre vers l’espace de travail 1"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:74
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:75
 msgid "Move window to workspace 2"
 msgstr "Déplacer la fenêtre vers l’espace de travail 2"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:75
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:76
 msgid "Move window to workspace 3"
 msgstr "Déplacer la fenêtre vers l’espace de travail 3"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:76
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:77
 msgid "Move window to workspace 4"
 msgstr "Déplacer la fenêtre vers l’espace de travail 4"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:77
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:78
 msgid "Move window to workspace 5"
 msgstr "Déplacer la fenêtre vers l’espace de travail 5"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:78
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:79
 msgid "Move window to workspace 6"
 msgstr "Déplacer la fenêtre vers l’espace  de travail 6"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:79
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:80
 msgid "Move window to workspace 7"
 msgstr "Déplacer la fenêtre vers l’espace de travail 7"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:80
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:81
 msgid "Move window to workspace 8"
 msgstr "Déplacer la fenêtre vers l’espace de travail 8"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:81
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:82
 msgid "Move window to workspace 9"
 msgstr "Déplacer la fenêtre vers l’espace de travail 9"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:82
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:83
 msgid "Move window to workspace 10"
 msgstr "Déplacer la fenêtre vers l’espace de travail 10"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:83
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:84
 msgid "Move window to workspace 11"
 msgstr "Déplacer la fenêtre vers l’espace de travail 11"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:84
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:85
 msgid "Move window to workspace 12"
 msgstr "Déplacer la fenêtre vers l’espace de travail 12"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:85
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:86
 msgid "Tile window to the top"
 msgstr "Agencer la fenêtre en mosaïque vers le haut"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:86
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:87
 msgid "Tile window to the bottom"
 msgstr "Agencer la fenêtre en mosaïque vers le bas"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:87
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:88
 msgid "Tile window to the left"
 msgstr "Agencer la fenêtre en mosaïque vers la gauche"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:88
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:89
 msgid "Tile window to the right"
 msgstr "Agencer la fenêtre en mosaïque vers la droite"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:89
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:90
 msgid "Tile window to the top-left"
 msgstr "Agencer la fenêtre en mosaïque en haut à gauche"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:90
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:91
 msgid "Tile window to the top-right"
 msgstr "Agencer la fenêtre en mosaïque en haut à droite"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:91
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:92
 msgid "Tile window to the bottom-left"
 msgstr "Agencer la fenêtre en mosaïque en bas à gauche"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:92
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:93
 msgid "Tile window to the bottom-right"
 msgstr "Agencer la fenêtre en mosaïque en bas à droite"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:93
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:94
 msgid "Show desktop"
 msgstr "Afficher le bureau"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:94
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:95
 msgid "Upper workspace"
 msgstr "Espace de travail supérieur"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:95
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:96
 msgid "Bottom workspace"
 msgstr "Espace de travail inférieur"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:96
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:97
 msgid "Left workspace"
 msgstr "Espace de travail à gauche"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:97
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:98
 msgid "Right workspace"
 msgstr "Espace de travail à droite"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:98
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:99
 msgid "Previous workspace"
 msgstr "Espace de travail précédent"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:99
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:100
 msgid "Next workspace"
 msgstr "Espace de travail suivant"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:100
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:101
 msgid "Workspace 1"
 msgstr "Espace de travail 1"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:101
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:102
 msgid "Workspace 2"
 msgstr "Espace de travail 2"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:102
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:103
 msgid "Workspace 3"
 msgstr "Espace de travail 3"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:103
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:104
 msgid "Workspace 4"
 msgstr "Espace de travail 4"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:104
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:105
 msgid "Workspace 5"
 msgstr "Espace de travail 5"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:105
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:106
 msgid "Workspace 6"
 msgstr "Espace de travail 6"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:106
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:107
 msgid "Workspace 7"
 msgstr "Espace de travail 7"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:107
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:108
 msgid "Workspace 8"
 msgstr "Espace de travail 8"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:108
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:109
 msgid "Workspace 9"
 msgstr "Espace de travail 9"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:109
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:110
 msgid "Workspace 10"
 msgstr "Espace de travail 10"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:110
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:111
 msgid "Workspace 11"
 msgstr "Espace de travail 11"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:111
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:112
 msgid "Workspace 12"
 msgstr "Espace de travail 12"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:112
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:113
 msgid "Add workspace"
 msgstr "Ajouter un espace de travail"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:113
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:114
 msgid "Add adjacent workspace"
 msgstr "Ajouter un espace de travail adjacent"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:114
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:115
 msgid "Delete last workspace"
 msgstr "Supprimer le dernier espace de travail"
 
-#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:115
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:116
 msgid "Delete active workspace"
 msgstr "Supprimer l’espace de travail actif"
 
@@ -615,15 +620,15 @@ msgstr "Supprimer l’espace de travail actif"
 msgid "Version information"
 msgstr "Informations sur la version"
 
-#: xfce4-about/main.c:172
+#: xfce4-about/main.c:174
 msgid "GPUs"
 msgstr "Processeurs graphiques"
 
-#: xfce4-about/main.c:190
+#: xfce4-about/main.c:191
 msgid "Window Manager"
 msgstr "Gestionnaire de fenêtres"
 
-#: xfce4-about/main.c:191
+#: xfce4-about/main.c:192
 msgid "Handles the placement of windows on the screen."
 msgstr "Gère le placement des fenêtres sur l’écran."
 
@@ -633,168 +638,188 @@ msgstr "Tableau de bord"
 
 #: xfce4-about/main.c:196
 msgid "Provides a home for window buttons, launchers, app menu and more."
-msgstr "Fournit une zone pour les boutons de fenêtres, les lanceurs, le menu des applications et plus encore."
+msgstr ""
+"Fournit une zone pour les boutons de fenêtres, les lanceurs, le menu des "
+"applications et plus encore."
 
-#: xfce4-about/main.c:200
+#: xfce4-about/main.c:199
 msgid "Desktop Manager"
 msgstr "Gestionnaire du bureau"
 
-#: xfce4-about/main.c:201
+#: xfce4-about/main.c:200
 msgid "Sets desktop backgrounds, handles icons and more."
 msgstr "Définit les fonds d’écran du bureau, gère les icônes et plus encore."
 
-#: xfce4-about/main.c:205
+#: xfce4-about/main.c:203
 msgid "File Manager"
 msgstr "Gestionnaire de fichiers"
 
-#: xfce4-about/main.c:206
+#: xfce4-about/main.c:204
 msgid "Manages your files in a modern, easy-to-use and fast way."
 msgstr "Gère vos fichiers de façon moderne, rapide et simple d’utilisation."
 
-#: xfce4-about/main.c:210
+#: xfce4-about/main.c:207
 msgid "Volume Manager"
 msgstr "Gestionnaire de volumes"
 
-#: xfce4-about/main.c:211
+#: xfce4-about/main.c:208
 msgid "Manages removable drives and media for Thunar."
 msgstr "Gère les disques et médias amovibles pour Thunar."
 
-#: xfce4-about/main.c:215
+#: xfce4-about/main.c:211
 msgid "Session Manager"
 msgstr "Gestionnaire de sessions"
 
-#: xfce4-about/main.c:216
+#: xfce4-about/main.c:212
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
-msgstr "Enregistre et restaure votre session, gère le lancement de session, le démarrage automatique et l’arrêt."
+msgstr ""
+"Enregistre et restaure votre session, gère le lancement de session, le "
+"démarrage automatique et l’arrêt."
 
-#: xfce4-about/main.c:220
+#: xfce4-about/main.c:215
 msgid "Settings Manager"
 msgstr "Gestionnaire de paramètres"
 
-#: xfce4-about/main.c:221
+#: xfce4-about/main.c:216
 msgid "Configures appearance, display, keyboard and mouse settings."
 msgstr "Configure l’apparence, l’affichage, le clavier et la souris."
 
-#: xfce4-about/main.c:225
+#: xfce4-about/main.c:219
 msgid "Application Finder"
 msgstr "Liste des applications"
 
-#: xfce4-about/main.c:226
+#: xfce4-about/main.c:220
 msgid "Quickly finds and launches applications installed on your system."
-msgstr "Retrouve et lance rapidement les applications installées sur votre système."
+msgstr ""
+"Retrouve et lance rapidement les applications installées sur votre système."
 
-#: xfce4-about/main.c:230
+#: xfce4-about/main.c:223
 msgid "Settings Daemon"
 msgstr "Service des paramètres"
 
-#: xfce4-about/main.c:231
+#: xfce4-about/main.c:224
 msgid "Stores your settings in a D-Bus-based configuration system."
-msgstr "Stocke vos paramètres dans un système de configuration basé sur D-Bus."
+msgstr ""
+"Stocke vos paramètres dans un système de configuration basé sur D-Bus."
 
-#: xfce4-about/main.c:235
+#: xfce4-about/main.c:227
 msgid "A Menu Library"
 msgstr "Une bibliothèque de menus"
 
-#: xfce4-about/main.c:236
+#: xfce4-about/main.c:228
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
 msgstr "Implémente un menu conforme freedesktop.org basé sur GLib et GIO."
 
-#: xfce4-about/main.c:240
+#: xfce4-about/main.c:231
 msgid "Thumbnails Service"
 msgstr "Service de miniatures"
 
-#: xfce4-about/main.c:241
+#: xfce4-about/main.c:232
 msgid "Implements the thumbnail management D-Bus specification."
 msgstr "Implémente la spécification D-Bus de gestion des miniatures."
 
-#: xfce4-about/main.c:295
+#: xfce4-about/main.c:285
 msgid "Please see <https://www.xfce.org/about/credits>"
 msgstr "Veuillez consulter <https://www.xfce.org/about/credits>"
 
-#: xfce4-about/main.c:356
+#: xfce4-about/main.c:339
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
-msgstr "Si vous connaissez quelqu’un d’absent dans cette liste, n’hésitez pas et signalez un bug sur <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues>."
+msgstr ""
+"Si vous connaissez quelqu’un d’absent dans cette liste, n’hésitez pas et "
+"signalez un bug sur <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues>."
 
-#: xfce4-about/main.c:360
+#: xfce4-about/main.c:344
 msgid "Thanks to all who helped making this software available!"
 msgstr "Merci à tous ceux qui ont aidé à rendre ce logiciel disponible !"
 
-#: xfce4-about/main.c:377
+#: xfce4-about/main.c:361
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
-msgstr "Les droits d’auteur de Xfce 4 appartiennent à Olivier Fourdan (fourdan@xfce.org). Les différents composants sont protégés par copyright par leurs auteurs respectifs."
+msgstr ""
+"Les droits d’auteur de Xfce 4 appartiennent à Olivier Fourdan "
+"(fourdan@xfce.org). Les différents composants sont protégés par copyright "
+"par leurs auteurs respectifs."
 
-#: xfce4-about/main.c:382
+#: xfce4-about/main.c:367
 msgid ""
 "The libxfce4ui, libxfce4util and exo packages are distributed under the "
 "terms of the GNU Library General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
-msgstr "Les paquets libxfce4ui, libxfce4util et exo sont distribués sous les termes de la GNU Library General Public License telle que publiée par la Free Software Foundation ; que ce soit en version 2, ou (à votre guise) toute version ultérieure."
+msgstr ""
+"Les paquets libxfce4ui, libxfce4util et exo sont distribués sous les termes "
+"de la GNU Library General Public License telle que publiée par la Free "
+"Software Foundation ; que ce soit en version 2, ou (à votre guise) toute "
+"version ultérieure."
 
-#: xfce4-about/main.c:389
+#: xfce4-about/main.c:375
 msgid ""
 "The packages thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
 "xfce4-settings, xfconf, xfdesktop and xfwm4 are distributed under the terms "
 "of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr "Les paquets thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop et xfwm4 sont distribués sous les termes de la GNU General Public License telle que publiée par la Free Software Foundation ; que ce soit en version 2, ou (à votre guise) toute version ultérieure."
+msgstr ""
+"Les paquets thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
+"xfce4-settings, xfconf, xfdesktop et xfwm4 sont distribués sous les termes "
+"de la GNU General Public License telle que publiée par la Free Software "
+"Foundation ; que ce soit en version 2, ou (à votre guise) toute version "
+"ultérieure."
 
-#: xfce4-about/main.c:535
+#: xfce4-about/main.c:522
 #, c-format
 msgid "Type '%s --help' for usage information."
 msgstr "Taper « %s --help » pour plus d’aide."
 
-#: xfce4-about/main.c:541
+#: xfce4-about/main.c:528
 msgid "Unable to initialize GTK+."
 msgstr "Impossible d’initialiser GTK+."
 
-#: xfce4-about/main.c:550
+#: xfce4-about/main.c:537
 msgid "The Xfce development team. All rights reserved."
 msgstr "L’équipe de développement Xfce. Tous droits réservés."
 
-#: xfce4-about/main.c:551
+#: xfce4-about/main.c:538
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "Veuillez signaler les bogues à <%s>."
 
-#: xfce4-about/main.c:561
+#: xfce4-about/main.c:548
 msgid "Failed to load interface"
 msgstr "Impossible de charger l’interface"
 
 #. { N_("Project Lead"),
 #. xfce_contributors_lead
 #. },
-#: xfce4-about/contributors.h:144
+#: xfce4-about/contributors.h:142
 msgid "Core developers"
 msgstr "Développeurs principaux"
 
-#: xfce4-about/contributors.h:147
+#: xfce4-about/contributors.h:144
 msgid "Active contributors"
 msgstr "Contributeurs actifs"
 
-#: xfce4-about/contributors.h:150
+#: xfce4-about/contributors.h:146
 msgid "Servers maintained by"
 msgstr "Serveurs maintenus par"
 
-#: xfce4-about/contributors.h:153
+#: xfce4-about/contributors.h:148
 msgid "Translations supervision"
 msgstr "Supervision des traductions"
 
-#: xfce4-about/contributors.h:156
+#: xfce4-about/contributors.h:150
 msgid "Documentation supervision"
 msgstr "Supervision de la documentation"
 
-#: xfce4-about/contributors.h:159
+#: xfce4-about/contributors.h:152
 msgid "Translators"
 msgstr "Traducteurs"
 
-#: xfce4-about/contributors.h:162
+#: xfce4-about/contributors.h:154
 msgid "Previous contributors"
 msgstr "Contributeurs précédents"
 
@@ -888,7 +913,9 @@ msgstr "Système"
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
-msgstr "Xfce est un ensemble de programmes qui, ensemble, fournissent un environnement de bureau complet.\nLes programmes suivants font partie du cœur de Xfce :"
+msgstr ""
+"Xfce est un ensemble de programmes qui, ensemble, fournissent un environnement de bureau complet.\n"
+"Les programmes suivants font partie du cœur de Xfce :"
 
 #: xfce4-about/xfce4-about-dialog.glade:804
 msgid ""
@@ -899,7 +926,14 @@ msgid ""
 "Thank you for your interest in Xfce.\n"
 "\n"
 "\t- The Xfce Development Team"
-msgstr "Xfce est aussi une plateforme de développement fournissant plusieurs bibliothèques qui aident les programmeurs à créer des applications qui s’intègrent bien à l’environnement de bureau.\n\nLes composants Xfce sont placés sous des licences libres ou open source ; GPL ou BSDL pour les applications et LGPL ou BSDL pour les bibliothèques. Consultez la documentation, le code source ou le site web de Xfce (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) pour plus d’informations.\n\nMerci de votre intérêt pour Xfce.\n\n\t- L’équipe de développement Xfce"
+msgstr ""
+"Xfce est aussi une plateforme de développement fournissant plusieurs bibliothèques qui aident les programmeurs à créer des applications qui s’intègrent bien à l’environnement de bureau.\n"
+"\n"
+"Les composants Xfce sont placés sous des licences libres ou open source ; GPL ou BSDL pour les applications et LGPL ou BSDL pour les bibliothèques. Consultez la documentation, le code source ou le site web de Xfce (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) pour plus d’informations.\n"
+"\n"
+"Merci de votre intérêt pour Xfce.\n"
+"\n"
+"\t- L’équipe de développement Xfce"
 
 #: xfce4-about/xfce4-about-dialog.glade:834
 msgid "About"
@@ -926,7 +960,7 @@ msgid "Copyright"
 msgstr "Copyright"
 
 #: xfce4-about/system-info.c:499 xfce4-about/system-info.c:521
-#: xfce4-about/system-info.c:639 xfce4-about/system-info.c:687
+#: xfce4-about/system-info.c:640 xfce4-about/system-info.c:689
 msgid "Unknown"
 msgstr "Inconnu"
 
@@ -948,22 +982,24 @@ msgstr "32 bits"
 #. * example:
 #. * "Fedora 25 (Workstation Edition); Build ID: xyz" or
 #. * "Ubuntu 16.04 LTS; Build ID: jki"
-#: xfce4-about/system-info.c:695
+#: xfce4-about/system-info.c:697
 #, c-format
 msgid "%s; Build ID: %s"
 msgstr "%s ; ID de compilation : %s"
 
-#: tests/test-ui.c:111
+#: tests/test-ui.c:110
 #, c-format
 msgid ""
 "A file named \"%s\" already exists in this directory, the file hasn't been "
 "added."
-msgstr "Un fichier nommé « %s » existe déjà dans ce répertoire, le fichier n’a pas été ajouté."
+msgstr ""
+"Un fichier nommé « %s » existe déjà dans ce répertoire, le fichier n’a pas "
+"été ajouté."
 
-#: tests/test-ui.c:122
+#: tests/test-ui.c:121
 msgid "Failed to migrate the old panel configuration"
 msgstr "Impossible de migrer l’ancienne configuration du tableau de bord"
 
-#: tests/test-ui.c:172 tests/test-ui.c:197
+#: tests/test-ui.c:171 tests/test-ui.c:196
 msgid "Customize settings stored by Xfconf"
 msgstr "Modifier les paramètres stockés par Xfconf"
