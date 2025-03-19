@@ -5,15 +5,16 @@
 # 
 # Translators:
 # Xfce Bot <transifex@xfce.org>, 2025
+# Marek Adamski, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: libxfce4ui.xfce-4-20\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2025-03-19 11:24+0100\n"
+"POT-Creation-Date: 2025-03-19 12:46+0100\n"
 "PO-Revision-Date: 2025-03-19 10:24+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>, 2025\n"
+"Last-Translator: Marek Adamski, 2025\n"
 "Language-Team: Polish (https://app.transifex.com/xfce/teams/16840/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -619,7 +620,7 @@ msgstr "Usunięcie bieżącego obszaru roboczego"
 
 #: xfce4-about/main.c:64
 msgid "Version information"
-msgstr "Wypisuje informacje o wersji i kończy"
+msgstr "Wypisuje informacje o wersji i kończy"
 
 #: xfce4-about/main.c:174
 msgid "GPUs"
