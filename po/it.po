@@ -5,15 +5,16 @@
 # 
 # Translators:
 # Xfce Bot <transifex@xfce.org>, 2025
+# Vincenzo Reale <vinx.reale@gmail.com>, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: libxfce4ui.xfce-4-20\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2025-03-19 11:24+0100\n"
+"POT-Creation-Date: 2025-03-19 12:46+0100\n"
 "PO-Revision-Date: 2025-03-19 10:24+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>, 2025\n"
+"Last-Translator: Vincenzo Reale <vinx.reale@gmail.com>, 2025\n"
 "Language-Team: Italian (https://app.transifex.com/xfce/teams/16840/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,28 +24,28 @@ msgstr ""
 
 #: libxfce4ui/xfce-dialogs.c:109
 msgid "Failed to open web browser for online documentation"
-msgstr "Impossibile aprire il browser per la documentazione online"
+msgstr "Impossibile aprire il browser per la documentazione in linea"
 
 #: libxfce4ui/xfce-dialogs.c:265
 #, c-format
 msgid "Do you want to read the %s manual online?"
-msgstr "Leggere il manuale di %s online?"
+msgstr "Vuoi leggere il manuale in linea di %s? "
 
 #: libxfce4ui/xfce-dialogs.c:267
 msgid "Do you want to read the manual online?"
-msgstr "Leggere il manuale online?"
+msgstr "Vuoi leggere il manuale in linea?"
 
 #: libxfce4ui/xfce-dialogs.c:269
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
 msgstr ""
-"Si verrà reindirizzati al sito web della documentazione dove le pagine "
-"d'aiuto sono mantenute e tradotte."
+"Sarai reindirizzato al sito web della documentazione dove le pagine d'aiuto "
+"sono mantenute e tradotte."
 
 #: libxfce4ui/xfce-dialogs.c:271
 msgid "Read the manual"
-msgstr "Leggere il manuale"
+msgstr "Leggi il manuale"
 
 #. Create cancel button
 #: libxfce4ui/xfce-dialogs.c:273 libxfce4ui/xfce-dialogs.c:531
@@ -54,11 +55,11 @@ msgstr "A_nnulla"
 
 #: libxfce4ui/xfce-dialogs.c:274
 msgid "_Read Online"
-msgstr "_Leggi online"
+msgstr "_Leggi in linea"
 
 #: libxfce4ui/xfce-dialogs.c:283
 msgid "_Always go directly to the online documentation"
-msgstr "_Vai sempre direttamente alla documentazione online"
+msgstr "_Vai sempre direttamente alla documentazione in linea"
 
 #: libxfce4ui/xfce-dialogs.c:332 libxfce4ui/xfce-dialogs.c:367
 #: libxfce4ui/xfce-dialogs.c:403
@@ -79,7 +80,7 @@ msgstr "Annulla"
 
 #: libxfce4ui/xfce-dialogs.c:515
 msgid "Close window with multiple tabs?"
-msgstr "Chiudere la finestra con più schede?"
+msgstr "Vuoi chiudere la finestra con più schede?"
 
 #: libxfce4ui/xfce-dialogs.c:517
 msgid ""
@@ -180,7 +181,7 @@ msgstr ""
 #: libxfce4kbd-private/xfce-shortcuts.c:57
 #, c-format
 msgid "Use '%s'"
-msgstr "Usare '%s'"
+msgstr "Usa '%s'"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:48
 #: libxfce4kbd-private/xfce-shortcuts.c:51
@@ -188,7 +189,7 @@ msgstr "Usare '%s'"
 #: libxfce4kbd-private/xfce-shortcuts.c:57
 #, c-format
 msgid "Keep '%s'"
-msgstr "Mantenere '%s'"
+msgstr "Mantieni '%s'"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:50
 #: libxfce4kbd-private/xfce-shortcuts.c:53
@@ -209,7 +210,7 @@ msgstr ""
 
 #: libxfce4kbd-private/xfce-shortcuts.c:108
 msgid "Please use another key combination."
-msgstr "Usare un'altra combinazione di tasti."
+msgstr "Usa un'altra combinazione di tasti."
 
 #: libxfce4kbd-private/xfce-shortcuts.c:108
 #, c-format
@@ -232,7 +233,7 @@ msgstr "Editor delle scorciatoie"
 
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:493
 msgid "The current shortcut. Click to edit..."
-msgstr "La scorciatoia attuale. Premere per modificare…"
+msgstr "La scorciatoia attuale. Fai clic per modificare…"
 
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:505
 msgid "Clear the shortcut"
