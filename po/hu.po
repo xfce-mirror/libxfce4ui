@@ -981,7 +981,7 @@ msgstr "Kernel verzió"
 
 #: xfce4-about/xfce4-about-dialog.glade:614
 msgid "Windowing System"
-msgstr ""
+msgstr "Ablakkezelő rendszer"
 
 #: xfce4-about/xfce4-about-dialog.glade:640
 msgid "CPU"
