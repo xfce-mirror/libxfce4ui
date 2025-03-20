@@ -330,15 +330,15 @@ msgstr "Спалучэнне ўжо выкарыстоўваецца."
 #: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:92
 #: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:129
 msgid "Shortcuts Editor"
-msgstr ""
+msgstr "Рэдактар ярлыкоў"
 
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:494
 msgid "The current shortcut. Click to edit..."
-msgstr ""
+msgstr "Бягучы ярлык. Націсніце для рэдагавання..."
 
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:506
 msgid "Clear the shortcut"
-msgstr ""
+msgstr "Ачысціць ярлык"
 
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:518
 msgid "Restore the default shortcut"
