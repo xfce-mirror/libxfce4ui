@@ -5,6 +5,7 @@
 # Translators:
 # Balázs Meskó <meskobalazs@mailbox.org>, 2018
 # Balázs Meskó <meskobalazs@mailbox.org>, 2018
+# Csani10, 2025
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2009,2011-2012
 # Gábor P., 2017,2019-2020
 # gyeben <gyonkibendeguz@gmail.com>, 2016
@@ -20,7 +21,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2025-03-14 00:45+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: SZERVÁC  Libre art  Attila  Libre art, 2022\n"
+"Last-Translator: Csani10, 2025\n"
 "Language-Team: Hungarian (http://app.transifex.com/xfce/libxfce4ui/language/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -846,7 +847,7 @@ msgid ""
 "the GNU Library General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
+msgstr "A libxfce4ui, libxfce4util és exo csomagok a Free Software Foundation által kiadott GNU Library General Public License 2. (vagy bármely későbbi) változatában foglaltak alapján kerülnek terjesztésre."
 
 #: xfce4-about/main.c:378
 msgid ""
@@ -1138,7 +1139,7 @@ msgstr "Előre beállított ikon asztali fájl létrehozásakor"
 
 #: xfce-desktop-item-edit/main.c:94
 msgid "Print the final saved URI after creating or editing the file"
-msgstr ""
+msgstr "A fájl létrehozása vagy szerkesztése után nyomtassa ki a végleges mentett URI-t"
 
 #: xfce-desktop-item-edit/main.c:95
 msgid "Print version information and exit"
@@ -1151,7 +1152,7 @@ msgstr "[FÁJL|MAPPA]"
 
 #: xfce-desktop-item-edit/main.c:203 xfce-open/main.c:758
 msgid "os-cillation e.K. All rights reserved."
-msgstr ""
+msgstr "os-cillation e.K. Minden jog fenntartva."
 
 #: xfce-desktop-item-edit/main.c:207 xfce-open/main.c:762
 msgid "Written by Benedikt Meurer <benny@xfce.org>."
@@ -1320,11 +1321,11 @@ msgstr "A fájlhely nem szabályos fájl vagy könyvtár"
 
 #: xfce-open/main.c:221
 msgid "Usage: xfce-open [URLs...]"
-msgstr ""
+msgstr "Használat: xfce-open [URL-ek...]"
 
 #: xfce-open/main.c:222
 msgid "       xfce-open --launch TYPE [PARAMETERs...]"
-msgstr ""
+msgstr "xfce-open --launch TÍPUS [PARAMÉTER-ek...]"
 
 #: xfce-open/main.c:224
 msgid "  -?, --help                          Print this help message and exit"
@@ -1370,7 +1371,7 @@ msgid ""
 "option, you can select which preferred application you want to run, and\n"
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
-msgstr ""
+msgstr "Ha nem adja meg a --launch kapcsolót, az exo-open az összes megadott URL címetmegnyitja az alapértelmezett URL kezelővel. Egyébként a --launch kapcsolómegadásakor kiválaszthatja a futtatandó alapértelmezett alkalmazást és továbbiparamétereket adhat meg az alkalmazásnak (például a TerminalEmulatoresetén átadhatja a terminálban futtatandó parancssort)."
 
 #: xfce-open/main.c:420
 #, c-format
