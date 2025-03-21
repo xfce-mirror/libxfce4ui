@@ -39,8 +39,7 @@ libxfce4ui_built_sources = \
 	libxfce4ui-enum-types.h \
 	libxfce4ui-marshal.c \
 	libxfce4ui-marshal.h \
-	libxfce4ui-resources.c \
-	libxfce4ui-resources.h
+	libxfce4ui-resources.c
 
 libxfce4ui_private_sources = \
 	libxfce4ui-private.h \
@@ -141,7 +140,8 @@ pkgconfig_DATA += \
 
 
 LIBXFCE4UI_RESOURCE_FILES = \
-	libxfce4ui-dialog-ui.ui \
+	resources/libxfce4ui-dialog-ui.ui \
+	resources/xfce4-about-dialog.glade \
 	$(NULL)
 
 -include $(INTROSPECTION_MAKEFILE)
@@ -273,10 +273,8 @@ libxfce4ui-enum-types.c: $(libxfce4ui_enum_headers) Makefile
 	cp xgen-letc libxfce4ui-enum-types.c
 	rm -f xgen-letc
 
-libxfce4ui-resources.c: libxfce4ui.gresource.xml $(LIBXFCE4UI_RESOURCE_FILES)
-	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate-source --internal --c-name libxfce4ui libxfce4ui.gresource.xml
-libxfce4ui-resources.h: libxfce4ui.gresource.xml $(LIBXFCE4UI_RESOURCE_FILES)
-	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate-header --internal --c-name libxfce4ui libxfce4ui.gresource.xml
+libxfce4ui-resources.c: resources/libxfce4ui.gresource.xml $(LIBXFCE4UI_RESOURCE_FILES)
+	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir)/resources --generate-source --internal --c-name libxfce4ui resources/libxfce4ui.gresource.xml
 
 endif
 
@@ -285,7 +283,7 @@ dist-hook: all
 
 EXTRA_DIST = \
 	libxfce4ui.h.in \
-	libxfce4ui.gresource.xml \
+	resources/libxfce4ui.gresource.xml \
 	$(LIBXFCE4UI_RESOURCE_FILES) \
 	libxfce4ui.symbols.in \
 	libxfce4ui-marshal.list \
