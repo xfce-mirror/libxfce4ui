@@ -51,7 +51,7 @@ AC_SUBST([COPYRIGHT_YEAR])
 dnl ***************************
 dnl *** Initialize automake ***
 dnl ***************************
-AM_INIT_AUTOMAKE([1.11 dist-bzip2 tar-ustar no-dist-gzip foreign])
+AM_INIT_AUTOMAKE([1.11 dist-bzip2 tar-ustar no-dist-gzip foreign subdir-objects])
 AC_CONFIG_HEADERS([config.h])
 AM_MAINTAINER_MODE()
 AM_SILENT_RULES([yes])
