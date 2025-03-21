@@ -47,7 +47,6 @@ libxfce4util = dependency('libxfce4util-1.0', version: dependency_versions['libx
 xfconf = dependency('libxfconf-0', version: dependency_versions['xfconf'])
 
 xdt_gen_visibility = find_program('xdt-gen-visibility', required: true)
-xdt_csource = find_program('xdt-csource', required: true)
 sed = find_program('sed', required: true)
 
 # Feature: 'x11'

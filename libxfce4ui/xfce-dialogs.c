@@ -48,7 +48,6 @@
 #include <libxfce4util/libxfce4util.h>
 
 #include "libxfce4ui-private.h"
-#include "libxfce4ui-resources.h"
 #include "xfce-dialogs.h"
 #include "xfce-gdk-extensions.h"
 #include "xfce-gtk-extensions.h"

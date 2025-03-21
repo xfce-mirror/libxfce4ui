@@ -131,9 +131,10 @@ libxfce4ui_sources += custom_target(
   command: [xdt_gen_visibility, '--kind=source', '@INPUT@', '@OUTPUT@'],
 )
 
-libxfce4ui_sources += gnome.compile_resources(
+libxfce4ui_resources_c = gnome.compile_resources(
   'libxfce4ui-resources',
-  'libxfce4ui.gresource.xml',
+  'resources' / 'libxfce4ui.gresource.xml',
+  source_dir: 'resources',
   c_name: 'libxfce4ui',
   extra_args: [
     '--internal',
@@ -180,7 +181,7 @@ libxfce4ui_version = '@0@.0.0'.format(libxfce4ui_so_version)
 
 libxfce4ui = library(
   libxfce4ui_pkgname.substring(3),
-  sources: libxfce4ui_sources + libxfce4ui_enums,
+  sources: libxfce4ui_sources + libxfce4ui_enums + libxfce4ui_resources_c,
   version: libxfce4ui_version,
   soversion: libxfce4ui_so_version,
   c_args: [

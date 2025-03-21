@@ -39,7 +39,6 @@
 
 #include "libxfce4ui/libxfce4ui.h"
 
-#include "about-dialog-ui.h"
 #include "contributors.h"
 
 #ifdef HAVE_GLIBTOP
@@ -545,8 +544,7 @@ main (gint argc,
     }
 
   builder = gtk_builder_new ();
-  if (!gtk_builder_add_from_string (builder, xfce_about_dialog_ui,
-                                    xfce_about_dialog_ui_length, &error))
+  if (!gtk_builder_add_from_resource (builder, "/org/xfce/libxfce4ui/xfce4-about-dialog.glade", &error))
     {
       xfce_dialog_show_error (NULL, error, _("Failed to load interface"));
       g_error_free (error);
