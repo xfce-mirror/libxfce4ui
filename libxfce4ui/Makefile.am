@@ -31,11 +31,7 @@ libxfce4ui_headers = \
 	xfce-spawn.h \
 	xfce-filename-input.h \
 	xfce-titled-dialog.h \
-<<<<<<< HEAD
-	xfce-list-view.h \
-=======
 	xfce-tree-view.h \
->>>>>>> 06925588668abe91af101998b4252363fd64891a
 	$(libxfce4ui_enum_headers)
 
 libxfce4ui_built_sources = \
@@ -72,12 +68,8 @@ libxfce4ui_sources = \
 	xfce-spawn.c \
 	xfce-filename-input.c \
 	xfce-titled-dialog.c \
-<<<<<<< HEAD
-	xfce-list-view.c
-=======
 	xfce-tree-view.c \
 	$(NULL)
->>>>>>> 06925588668abe91af101998b4252363fd64891a
 
 libxfce4ui_2_la_CFLAGS = \
 	$(GIO_UNIX_CFLAGS) \
