@@ -69,10 +69,6 @@ xfce_gtk_dialog_get_action_area
 xfce_gtk_url_about_dialog_hook
 xfce_gtk_file_chooser_add_thumbnail_preview
 
-# file:xfce-list-view
-xfce_list_view_get_type
-xfce_list_view_new
-
 # file:xfce-spawn
 xfce_spawn_on_screen_with_child_watch
 xfce_spawn_on_screen
