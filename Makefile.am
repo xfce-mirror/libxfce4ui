@@ -9,7 +9,10 @@ SUBDIRS = \
 	icons \
 	docs \
 	po \
-	tests
+	tests \
+	xfce-desktop-item-edit \
+	xfce-open \
+	$(NULL)
 
 distuninstallcheck_listfiles = \
 	find . -type f -print | grep -v ./share/icons/hicolor/icon-theme.cache

@@ -19,14 +19,23 @@ libxfce4ui_enum_headers = \
 libxfce4ui_headers = \
 	libxfce4ui-config.h \
 	libxfce4ui-enum-types.h \
+	xfce-cell-renderer-icon.h \
 	xfce-dialogs.h \
+	xfce-execute.h \
 	xfce-gdk-extensions.h \
+	xfce-gdk-pixbuf-extensions.h \
 	xfce-gtk-extensions.h \
+	xfce-icon-chooser-dialog.h \
+	xfce-icon-view.h \
 	xfce-screensaver.h \
 	xfce-spawn.h \
 	xfce-filename-input.h \
 	xfce-titled-dialog.h \
+<<<<<<< HEAD
 	xfce-list-view.h \
+=======
+	xfce-tree-view.h \
+>>>>>>> 06925588668abe91af101998b4252363fd64891a
 	$(libxfce4ui_enum_headers)
 
 libxfce4ui_built_sources = \
@@ -34,26 +43,47 @@ libxfce4ui_built_sources = \
 	libxfce4ui-enum-types.h \
 	libxfce4ui-marshal.c \
 	libxfce4ui-marshal.h \
-	libxfce4ui-resources.c \
-	libxfce4ui-resources.h
+	libxfce4ui-resources.c
+
+libxfce4ui_private_sources = \
+	libxfce4ui-private.h \
+	xfce-icon-chooser-model.c \
+	xfce-icon-chooser-model.h \
+	xfce-thumbnail-preview.c \
+	xfce-thumbnail-preview.h \
+	xfce-thumbnail.c \
+	xfce-thumbnail.h \
+	$(NULL)
 
 libxfce4ui_sources = \
 	$(libxfce4ui_headers) \
 	$(libxfce4ui_built_sources) \
+	$(libxfce4ui_private_sources) \
 	libxfce4ui-config.c \
-	libxfce4ui-private.h \
+	xfce-cell-renderer-icon.c \
 	xfce-dialogs.c \
+	xfce-execute.c \
 	xfce-gdk-extensions.c \
+	xfce-gdk-pixbuf-extensions.c \
 	xfce-gtk-extensions.c \
+	xfce-icon-chooser-dialog.c \
+	xfce-icon-view.c \
 	xfce-screensaver.c \
 	xfce-spawn.c \
 	xfce-filename-input.c \
 	xfce-titled-dialog.c \
+<<<<<<< HEAD
 	xfce-list-view.c
+=======
+	xfce-tree-view.c \
+	$(NULL)
+>>>>>>> 06925588668abe91af101998b4252363fd64891a
 
 libxfce4ui_2_la_CFLAGS = \
+	$(GIO_UNIX_CFLAGS) \
 	$(GDK_CFLAGS) \
 	$(GTK3_CFLAGS) \
+	$(GDK_PIXBUF_CFLAGS) \
 	$(XFCONF_CFLAGS) \
 	$(LIBXFCE4UTIL_CFLAGS) \
 	$(PLATFORM_CFLAGS)
@@ -65,10 +95,13 @@ libxfce4ui_2_la_LDFLAGS = \
 	$(PLATFORM_LDFLAGS)
 
 libxfce4ui_2_la_LIBADD = \
+	$(GIO_UNIX_LIBS) \
 	$(GDK_LIBS) \
 	$(GTK3_LIBS) \
+	$(GDK_PIXBUF_LIBS) \
 	$(XFCONF_LIBS) \
-	$(LIBXFCE4UTIL_LIBS)
+	$(LIBXFCE4UTIL_LIBS) \
+	-lm
 
 if ENABLE_X11
 libxfce4ui_headers += \
@@ -115,7 +148,8 @@ pkgconfig_DATA += \
 
 
 LIBXFCE4UI_RESOURCE_FILES = \
-	libxfce4ui-dialog-ui.ui \
+	resources/libxfce4ui-dialog-ui.ui \
+	resources/xfce4-about-dialog.glade \
 	$(NULL)
 
 -include $(INTROSPECTION_MAKEFILE)
@@ -127,7 +161,6 @@ INTROSPECTION_SCANNER_ARGS = \
 	--warn-all \
 	--identifier-prefix=Xfce \
 	--identifier-prefix=xfce \
-	--identifier-prefix=libxfce4ui \
 	--c-include=libxfce4ui/libxfce4ui.h
 INTROSPECTION_COMPILER_ARGS = \
 	--includedir=$(srcdir) \
@@ -135,7 +168,7 @@ INTROSPECTION_COMPILER_ARGS = \
 	--includedir=.
 
 if HAVE_INTROSPECTION
-introspection_sources = $(filter-out %private.h, $(libxfce4ui_2_la_SOURCES))
+introspection_sources = $(filter-out $(libxfce4ui_private_sources) libxfce4ui-config.h, $(libxfce4ui_2_la_SOURCES))
 
 Libxfce4ui-2.0.gir: libxfce4ui-2.la Makefile
 Libxfce4ui_2_0_gir_INCLUDES = GObject-2.0 GLib-2.0 Gtk-3.0 Libxfce4util-1.0
@@ -248,10 +281,8 @@ libxfce4ui-enum-types.c: $(libxfce4ui_enum_headers) Makefile
 	cp xgen-letc libxfce4ui-enum-types.c
 	rm -f xgen-letc
 
-libxfce4ui-resources.c: libxfce4ui.gresource.xml $(LIBXFCE4UI_RESOURCE_FILES)
-	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate-source --internal --c-name libxfce4ui libxfce4ui.gresource.xml
-libxfce4ui-resources.h: libxfce4ui.gresource.xml $(LIBXFCE4UI_RESOURCE_FILES)
-	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate-header --internal --c-name libxfce4ui libxfce4ui.gresource.xml
+libxfce4ui-resources.c: resources/libxfce4ui.gresource.xml $(LIBXFCE4UI_RESOURCE_FILES)
+	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir)/resources --generate-source --internal --c-name libxfce4ui resources/libxfce4ui.gresource.xml
 
 endif
 
@@ -260,12 +291,13 @@ dist-hook: all
 
 EXTRA_DIST = \
 	libxfce4ui.h.in \
-	libxfce4ui.gresource.xml \
+	resources/libxfce4ui.gresource.xml \
 	$(LIBXFCE4UI_RESOURCE_FILES) \
 	libxfce4ui.symbols.in \
 	libxfce4ui-marshal.list \
 	libxfce4ui-2.deps \
 	meson.build \
+	xfce-icon-view-accessible.c \
 	$(NULL)
 
 

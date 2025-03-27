@@ -17,3 +17,8 @@ foreach name : names
     install_dir: get_option('prefix') / get_option('datadir') / 'icons' / 'hicolor' / 'scalable' / 'apps',
   )
 endforeach
+
+install_data(
+  'pixmaps' / 'xfce-thumbnail-frame.png',
+  install_dir: get_option('prefix') / get_option('datadir') / 'pixmaps' / 'libxfce4ui',
+)

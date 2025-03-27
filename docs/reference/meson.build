@@ -14,6 +14,9 @@ if get_option('gtk-doc')
 
   ignored_headers = [
     'libxfce4ui-visibility.h',
+    'xfce-icon-chooser-model.h',
+    'xfce-thumbnail-preview.h',
+    'xfce-thumbnail.h',
   ]
   if not enable_x11
     ignored_headers += [
@@ -22,13 +25,22 @@ if get_option('gtk-doc')
     ]
   endif
 
+  configure_file(
+    configuration: configuration_data({
+      'COPYRIGHT_YEAR': copyright_year,
+    }),
+    input: 'libxfce4ui-docs.xml.in',
+    output: 'libxfce4ui-docs.xml',
+    install: false,
+  )
+
   gnome.gtkdoc(
     libxfce4ui_doc_name,
     src_dir: [
       'libxfce4ui',
     ],
     ignore_headers: ignored_headers,
-    main_xml: 'libxfce4ui-docs.xml',
+    main_xml: meson.project_build_root() / 'docs' / 'reference' / 'libxfce4ui-docs.xml',
     dependencies: [
       libxfce4ui_dep,
     ],

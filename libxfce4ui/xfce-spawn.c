@@ -476,14 +476,14 @@ _xfce_spawn_command_line (GdkScreen *screen,
     {
       /* create an argv to run the command in a terminal */
       argv = g_new0 (gchar *, 5);
-      argv[0] = g_strdup ("exo-open");
+      argv[0] = g_strdup ("xfce-open");
       argv[1] = g_strdup ("--launch");
       argv[2] = g_strdup ("TerminalEmulator");
       argv[3] = g_strdup (command_line);
       argv[4] = NULL;
 
       /* FIXME: startup notification does not work when
-       * launching with exo-open */
+       * launching with xfce-open */
       startup_notify = FALSE;
     }
 

@@ -5,7 +5,8 @@ dnl
 dnl ***************************
 dnl *** Version information ***
 dnl ***************************
-XDT_VERSION_INIT([4.20.0], [git])
+XDT_VERSION_INIT([4.21.0], [git])
+m4_define([copyright_year], [2025])
 
 m4_define([libxfce4ui_verinfo], [0:0:0])
 m4_define([libxfce4ui_version_api], [2])
@@ -15,6 +16,7 @@ m4_define([libxfce4kbd_private_version_api], [3])
 
 m4_define([glib_min_version], [2.72.0])
 m4_define([gtk_min_version], [3.24.0])
+m4_define([gdk_pixbuf_min_version], [2.42.8])
 m4_define([libxfce4util_min_version], [4.17.2])
 m4_define([xfconf_min_version], [4.12.0])
 
@@ -35,18 +37,21 @@ dnl # YOU ARE DOING.
 dnl ***************************
 dnl *** Initialize autoconf ***
 dnl ***************************
-AC_COPYRIGHT([Copyright (c) 2007-2024 The Xfce development team])
+AC_COPYRIGHT([Copyright (c) 2007-copyright_year() The Xfce development team])
 AC_INIT([libxfce4ui], [xdt_version], [https://gitlab.xfce.org/xfce/libxfce4ui/-/issues], [libxfce4ui])
 AC_PREREQ([2.69])
 AC_CONFIG_MACRO_DIRS([m4])
 AC_REVISION([xdt_version_build])
 AC_CANONICAL_TARGET()
 AC_DEFINE([VERSION_FULL], [PACKAGE_VERSION], [Alias for VERSION and PACKAGE_VERSION for meson compatibility])
+COPYRIGHT_YEAR=copyright_year()
+AC_DEFINE_UNQUOTED([COPYRIGHT_YEAR], ["$COPYRIGHT_YEAR"], [Copyright year])
+AC_SUBST([COPYRIGHT_YEAR])
 
 dnl ***************************
 dnl *** Initialize automake ***
 dnl ***************************
-AM_INIT_AUTOMAKE([1.11 dist-bzip2 tar-ustar no-dist-gzip foreign])
+AM_INIT_AUTOMAKE([1.11 dist-bzip2 tar-ustar no-dist-gzip foreign subdir-objects])
 AC_CONFIG_HEADERS([config.h])
 AM_MAINTAINER_MODE()
 AM_SILENT_RULES([yes])
@@ -112,9 +117,11 @@ dnl ***************************************
 dnl *** Check for standard header files ***
 dnl ***************************************
 AC_CHECK_HEADERS([crt_externs.h errno.h fcntl.h limits.h locale.h math.h \
-                  memory.h signal.h stdarg.h stdlib.h string.h unistd.h])
+                  memory.h signal.h stdarg.h stdlib.h string.h unistd.h \
+                  sys/mman.h sys/stat.h sys/types.h mmintrin.h time.h stdio.h])
 AC_CHECK_DECLS([environ])
-AC_CHECK_FUNCS([_NSGetEnviron])
+AC_FUNC_MMAP()
+AC_CHECK_FUNCS([_NSGetEnviron realpath])
 
 dnl ******************************
 dnl *** Check for i18n support ***
@@ -132,7 +139,11 @@ dnl ***********************************
 dnl *** Check for required packages ***
 dnl ***********************************
 XDT_CHECK_PACKAGE([GLIB], [glib-2.0], [glib_min_version])
+XDT_CHECK_PACKAGE([GIO], [gio-2.0], [glib_min_version])
+XDT_CHECK_PACKAGE([GIO_UNIX], [gio-unix-2.0], [glib_min_version])
+XDT_CHECK_PACKAGE([GTHREAD], [gthread-2.0], [glib_min_version])
 XDT_CHECK_PACKAGE([GTK3], [gtk+-3.0], [gtk_min_version])
+XDT_CHECK_PACKAGE([GDK_PIXBUF], [gdk-pixbuf-2.0], [gdk_pixbuf_min_version])
 XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [libxfce4util_min_version])
 XDT_CHECK_PACKAGE([XFCONF], [libxfconf-0], [xfconf_min_version])
 
@@ -393,6 +404,7 @@ icons/Makefile
 icons/16x16/Makefile
 icons/48x48/Makefile
 icons/128x128/Makefile
+icons/pixmaps/Makefile
 icons/scalable/Makefile
 libxfce4kbd-private/libxfce4kbd-private-3.pc
 libxfce4kbd-private/Makefile
@@ -402,6 +414,8 @@ libxfce4ui/Makefile
 xfce4-about/Makefile
 po/Makefile.in
 tests/Makefile
+xfce-desktop-item-edit/Makefile
+xfce-open/Makefile
 ])
 AC_OUTPUT
 

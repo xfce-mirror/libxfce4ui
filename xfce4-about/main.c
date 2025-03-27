@@ -39,7 +39,6 @@
 
 #include "libxfce4ui/libxfce4ui.h"
 
-#include "about-dialog-ui.h"
 #include "contributors.h"
 
 #ifdef HAVE_GLIBTOP
@@ -367,7 +366,7 @@ xfce_about_copyright (GtkTextBuffer *buffer)
 
   gtk_text_buffer_insert (buffer, &end, "\n\n", -1);
   gtk_text_buffer_insert (buffer, &end,
-                          _("The libxfce4ui, libxfce4util and exo packages are "
+                          _("The libxfce4ui and libxfce4util packages are "
                             "distributed under the terms of the GNU Library General Public License as "
                             "published by the Free Software Foundation; either version 2 of the License, or "
                             "(at your option) any later version."),
@@ -536,7 +535,7 @@ main (gint argc,
   if (G_UNLIKELY (opt_version))
     {
       g_print ("%s %s (Xfce %s)\n\n", G_LOG_DOMAIN, VERSION_FULL, xfce_version_string ());
-      g_print ("%s\n", "Copyright (c) 2008-2024");
+      g_print ("%s\n", "Copyright (c) 2008-" COPYRIGHT_YEAR);
       g_print ("\t%s\n\n", _("The Xfce development team. All rights reserved."));
       g_print (_("Please report bugs to <%s>."), PACKAGE_BUGREPORT);
       g_print ("\n");
@@ -545,8 +544,7 @@ main (gint argc,
     }
 
   builder = gtk_builder_new ();
-  if (!gtk_builder_add_from_string (builder, xfce_about_dialog_ui,
-                                    xfce_about_dialog_ui_length, &error))
+  if (!gtk_builder_add_from_resource (builder, "/org/xfce/libxfce4ui/xfce4-about-dialog.glade", &error))
     {
       xfce_dialog_show_error (NULL, error, _("Failed to load interface"));
       g_error_free (error);

@@ -1,7 +1,7 @@
 project(
   'libxfce4ui',
   'c',
-version : '4.20.0-dev',
+version : '4.21.0-dev',
   license : 'GPL-2.0-or-later',
   meson_version : '>= 0.57.0',
   default_options : ['c_std=gnu11', 'buildtype=debugoptimized', 'warning_level=2']
@@ -9,6 +9,7 @@ version : '4.20.0-dev',
 
 project_namespace = 'xfce'
 pkgdatadir = get_option('prefix') / get_option('datadir') / meson.project_name()
+copyright_year = '2025'
 libxfce4ui_version_api = '2'
 libxfce4kbd_version_api = '3'
 
@@ -20,6 +21,7 @@ i18n = import('i18n')
 dependency_versions = {
   'glib': '>= 2.74.0',
   'gtk': '>= 3.24.0',
+  'gdk-pixbuf': '>= 2.42.8',
   'libxfce4util': '>= 4.17.2',
   'xfconf': '>= 4.12.0',
 
@@ -36,12 +38,15 @@ dependency_versions = {
 }
 
 glib = dependency('glib-2.0', version: dependency_versions['glib'])
+gio = dependency('gio-2.0', version: dependency_versions['glib'])
+gio_unix = dependency('gio-unix-2.0', version: dependency_versions['glib'])
+gthread = dependency('gthread-2.0', version: dependency_versions['glib'])
 gtk = dependency('gtk+-3.0', version: dependency_versions['gtk'])
+gdk_pixbuf = dependency('gdk-pixbuf-2.0', version: dependency_versions['gdk-pixbuf'])
 libxfce4util = dependency('libxfce4util-1.0', version: dependency_versions['libxfce4util'])
 xfconf = dependency('libxfconf-0', version: dependency_versions['xfconf'])
 
 xdt_gen_visibility = find_program('xdt-gen-visibility', required: true)
-xdt_csource = find_program('xdt-csource', required: true)
 sed = find_program('sed', required: true)
 
 # Feature: 'x11'
@@ -105,6 +110,9 @@ if libgtop.found()
   if gudev.found()
     feature_cflags += '-DHAVE_GUDEV=1'
   endif
+else
+  epoxy = dependency('', required: false)
+  gudev = dependency('', required: false)
 endif
 
 glade = dependency('gladeui-2.0', version: dependency_versions['glade'], required: get_option('glade'))
@@ -179,14 +187,33 @@ if cc.has_function('_NSGetEnviron')
   feature_cflags += '-DHAVE__NSGETENVIRON=1'
 endif
 
+functions = [
+  'mmap',
+  'realpath',
+]
+foreach function : functions
+  if cc.has_function(function)
+    feature_cflags += '-DHAVE_@0@=1'.format(function.to_upper())
+  endif
+endforeach
+
 headers += [
+  'sys/mman.h',
+  'sys/stat.h',
+  'sys/types.h',
   'crt_externs.h',
+  'errno.h',
   'fcntl.h',
+  'limits.h',
   'locale.h',
+  'math.h',
   'memory.h',
+  'mmintrin.h',
   'stdarg.h',
+  'stdio.h',
   'stdlib.h',
   'string.h',
+  'time.h',
   'unistd.h',
 ]
 foreach header : headers
@@ -194,6 +221,8 @@ foreach header : headers
     feature_cflags += '-DHAVE_@0@=1'.format(header.underscorify().to_upper())
   endif
 endforeach
+
+libm = cc.find_library('m', required: true)
 
 extra_cflags = []
 extra_cflags_check = [
@@ -256,6 +285,7 @@ extra_cflags += [
   '-DVERSION_SHORT="@0@"'.format(version_short),
   '-DPACKAGE_STRING="@0@ @1@"'.format(meson.project_name(), meson.project_version()),
   '-DPACKAGE_DATADIR="@0@"'.format(pkgdatadir),
+  '-DCOPYRIGHT_YEAR="@0@"'.format(copyright_year),
   '-DPACKAGE_LOCALE_DIR="@0@"'.format(get_option('prefix') / get_option('localedir')),
   '-DPACKAGE_BUGREPORT="https://gitlab.xfce.org/@0@/@1@/-/issues"'.format(project_namespace, meson.project_name()),
   '-DGETTEXT_PACKAGE="@0@"'.format(meson.project_name()),
@@ -292,3 +322,5 @@ subdir('libxfce4kbd-private')
 subdir('po')
 subdir('tests')
 subdir('xfce4-about')
+subdir('xfce-desktop-item-edit')
+subdir('xfce-open')

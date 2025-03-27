@@ -48,7 +48,6 @@
 #include <libxfce4util/libxfce4util.h>
 
 #include "libxfce4ui-private.h"
-#include "libxfce4ui-resources.h"
 #include "xfce-dialogs.h"
 #include "xfce-gdk-extensions.h"
 #include "xfce-gtk-extensions.h"
@@ -87,7 +86,7 @@ xfce_dialog_show_help_uri (GdkScreen *screen,
   g_return_if_fail (GDK_IS_SCREEN (screen));
   g_return_if_fail (parent == NULL || GTK_IS_WINDOW (parent));
 
-  path = g_find_program_in_path ("exo-open");
+  path = g_find_program_in_path ("xfce-open");
   if (G_LIKELY (path != NULL))
     {
       cmd = g_strdup_printf ("%s --launch WebBrowser '%s'", path, uri->str);
@@ -99,7 +98,7 @@ xfce_dialog_show_help_uri (GdkScreen *screen,
     }
   else
     {
-      /* not very likely to happen, but it is possible exo is not installed */
+      /* should never happen, but better safe than worry */
       result = gtk_show_uri_on_window (parent, uri->str, gtk_get_current_event_time (), &error);
     }
 

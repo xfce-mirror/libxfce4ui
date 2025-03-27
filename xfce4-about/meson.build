@@ -10,18 +10,12 @@ if libgtop.found()
   ]
 endif
 
-xfce4_about_sources += custom_target(
-  'about-dialog-ui.h',
-  input: 'xfce4-about-dialog.glade',
-  output: 'about-dialog-ui.h',
-  command: [xdt_csource, '--static', '--strip-comments', '--strip-content', '--name=xfce_about_dialog_ui', '--output=@OUTPUT@', '@INPUT@'],
-)
-
 executable(
   'xfce4-about',
   xfce4_about_sources,
   sources: [
     libxfce4ui_h,
+    libxfce4ui_resources_c,
     xfce_revision_h,
   ],
   c_args: [

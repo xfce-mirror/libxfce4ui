@@ -9,17 +9,28 @@ libxfce4ui_enum_headers = [
 ]
 
 libxfce4ui_headers = libxfce4ui_enum_headers + [
+  'xfce-cell-renderer-icon.h',
   'xfce-dialogs.h',
+  'xfce-execute.h',
   'xfce-filename-input.h',
   'xfce-gdk-extensions.h',
+  'xfce-gdk-pixbuf-extensions.h',
   'xfce-gtk-extensions.h',
+<<<<<<< HEAD
   'xfce-list-view.h',
+=======
+  'xfce-icon-chooser-dialog.h',
+  'xfce-icon-view.h',
+>>>>>>> 06925588668abe91af101998b4252363fd64891a
   'xfce-screensaver.h',
   'xfce-spawn.h',
   'xfce-titled-dialog.h',
+  'xfce-tree-view.h',
 ]
 
-libxfce4ui_headers += configure_file(
+# do not add this header to GI sources, it creates unsolvable conflicts with other
+# libs whose identifier prefix is Xfce, e.g. libxfce4util and libxfce4panel
+configure_file(
   configuration: configuration_data({
     'LIBXFCE4UI_VERSION_MAJOR': version_parts[0],
     'LIBXFCE4UI_VERSION_MINOR': version_parts[1],
@@ -27,7 +38,8 @@ libxfce4ui_headers += configure_file(
   }),
   input: 'libxfce4ui-config.h.in',
   output: 'libxfce4ui-config.h',
-  install: false,
+  install: true,
+  install_dir: libxfce4ui_install_dir,
 )
 
 if enable_x11
@@ -39,14 +51,23 @@ endif
 
 libxfce4ui_sources_gir = [
   'libxfce4ui-config.c',
+  'xfce-cell-renderer-icon.c',
   'xfce-dialogs.c',
+  'xfce-execute.c',
   'xfce-filename-input.c',
   'xfce-gdk-extensions.c',
+  'xfce-gdk-pixbuf-extensions.c',
   'xfce-gtk-extensions.c',
+<<<<<<< HEAD
   'xfce-list-view.c',
+=======
+  'xfce-icon-chooser-dialog.c',
+  'xfce-icon-view.c',
+>>>>>>> 06925588668abe91af101998b4252363fd64891a
   'xfce-screensaver.c',
   'xfce-spawn.c',
   'xfce-titled-dialog.c',
+  'xfce-tree-view.c',
 ]
 
 if enable_x11
@@ -58,6 +79,12 @@ endif
 
 libxfce4ui_sources = libxfce4ui_sources_gir + [
   'libxfce4ui-private.h',
+  'xfce-icon-chooser-model.c',
+  'xfce-icon-chooser-model.h',
+  'xfce-thumbnail-preview.c',
+  'xfce-thumbnail-preview.h',
+  'xfce-thumbnail.c',
+  'xfce-thumbnail.h',
 ]
 
 libxfce4ui_sources += gnome.genmarshal(
@@ -112,9 +139,10 @@ libxfce4ui_sources += custom_target(
   command: [xdt_gen_visibility, '--kind=source', '@INPUT@', '@OUTPUT@'],
 )
 
-libxfce4ui_sources += gnome.compile_resources(
+libxfce4ui_resources_c = gnome.compile_resources(
   'libxfce4ui-resources',
-  'libxfce4ui.gresource.xml',
+  'resources' / 'libxfce4ui.gresource.xml',
+  source_dir: 'resources',
   c_name: 'libxfce4ui',
   extra_args: [
     '--internal',
@@ -147,10 +175,13 @@ libxfce4ui_enums += gnome.mkenums(
 )
 
 libxfce4ui_deps = [
+  gio_unix,
   gtk,
+  gdk_pixbuf,
   libxfce4util,
   xfconf,
   x11_deps,
+  libm,
 ]
 
 libxfce4ui_so_version = '0'
@@ -158,7 +189,7 @@ libxfce4ui_version = '@0@.0.0'.format(libxfce4ui_so_version)
 
 libxfce4ui = library(
   libxfce4ui_pkgname.substring(3),
-  sources: libxfce4ui_sources + libxfce4ui_enums,
+  sources: libxfce4ui_sources + libxfce4ui_enums + libxfce4ui_resources_c,
   version: libxfce4ui_version,
   soversion: libxfce4ui_so_version,
   c_args: [
@@ -199,12 +230,9 @@ if get_option('introspection')
     sources: libxfce4ui_sources_gir + libxfce4ui_headers + libxfce4ui_enums,
     namespace: 'Libxfce4ui',
     nsversion: '@0@.0'.format(libxfce4ui_version_api),
-    identifier_prefix: [
-      'Xfce',
-    ],
+    identifier_prefix: 'Xfce',
     symbol_prefix: [
       'xfce',
-      'libxfce4ui',
     ],
     export_packages: libxfce4ui_pkgname,
     includes: [
