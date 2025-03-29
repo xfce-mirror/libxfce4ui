@@ -60,7 +60,6 @@ struct _XfceClipboardManager
   GdkPixbuf *image;
   GBytes *bytes;
   GtkSelectionData **selection_data;
-  gchar **target_names;
   guint n_selection_data;
   gboolean is_image_available;
   GdkEventOwnerChange *current_event;
@@ -173,9 +172,7 @@ selection_data_free (XfceClipboardManager *manager)
         gtk_selection_data_free (manager->selection_data[n]);
     }
   g_free (manager->selection_data);
-  g_strfreev (manager->target_names);
   manager->selection_data = NULL;
-  manager->target_names = NULL;
   manager->n_selection_data = 0;
 }
 
@@ -1224,9 +1221,8 @@ owner_change (GtkClipboard *clipboard,
               GBytes *bytes = gdk_pixbuf_read_pixel_bytes (image);
               if (!WAIT_CANCELLED && (manager->image == NULL || !g_bytes_equal (bytes, manager->bytes)))
                 {
-                  GtkTargetEntry entries[n_targets];
+                  GtkTargetList *list;
                   GtkSelectionData **selection_data;
-                  gchar **target_names;
 
                   if (manager->image != NULL)
                     {
@@ -1236,23 +1232,21 @@ owner_change (GtkClipboard *clipboard,
                   manager->image = g_object_ref (image);
                   manager->bytes = g_bytes_ref (bytes);
 
+                  list = gtk_target_list_new (NULL, 0);
                   selection_data = g_new0 (GtkSelectionData *, n_targets);
-                  target_names = g_new0 (gchar *, n_targets + 1);
                   for (gint n = 0; n < n_targets && !WAIT_CANCELLED; n++)
                     {
+                      gtk_target_list_add (list, targets[n], GTK_TARGET_SAME_APP, n);
                       selection_data[n] = gtk_clipboard_wait_for_contents (clipboard, targets[n]);
-                      target_names[n] = gdk_atom_name (targets[n]);
-                      entries[n].target = target_names[n];
-                      entries[n].flags = GTK_TARGET_SAME_APP;
-                      entries[n].info = n;
                     }
 
                   if (!WAIT_CANCELLED)
                     {
+                      GtkTargetEntry *entries = gtk_target_table_new_from_list (list, &n_targets);
                       manager->n_selection_data = n_targets;
                       manager->selection_data = selection_data;
-                      manager->target_names = target_names;
                       gtk_clipboard_set_with_data (clipboard, entries, n_targets, clipboard_get, clipboard_clear, manager);
+                      gtk_target_table_free (entries, n_targets);
                     }
                   else
                     {
@@ -1262,8 +1256,9 @@ owner_change (GtkClipboard *clipboard,
                             gtk_selection_data_free (selection_data[n]);
                         }
                       g_free (selection_data);
-                      g_strfreev (target_names);
                     }
+
+                  gtk_target_list_unref (list);
                 }
 
               g_object_unref (image);
