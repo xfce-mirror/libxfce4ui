@@ -59,8 +59,6 @@ struct _XfceClipboardManager
   GSList *conversions;
   GdkPixbuf *image;
   GBytes *bytes;
-  GtkSelectionData **selection_data;
-  guint n_selection_data;
   gboolean is_image_available;
   GdkEventOwnerChange *current_event;
 
@@ -164,19 +162,6 @@ conversion_free (IncrConversion *rdata)
 }
 
 static void
-selection_data_free (XfceClipboardManager *manager)
-{
-  for (guint n = 0; n < manager->n_selection_data; n++)
-    {
-      if (manager->selection_data[n] != NULL)
-        gtk_selection_data_free (manager->selection_data[n]);
-    }
-  g_free (manager->selection_data);
-  manager->selection_data = NULL;
-  manager->n_selection_data = 0;
-}
-
-static void
 xfce_clipboard_manager_finalize (GObject *object)
 {
   XfceClipboardManager *manager = XFCE_CLIPBOARD_MANAGER (object);
@@ -211,7 +196,6 @@ xfce_clipboard_manager_finalize (GObject *object)
       manager->image = NULL;
       manager->bytes = NULL;
     }
-  selection_data_free (manager);
 
   if (manager->start_idle_id != 0)
     g_source_remove (manager->start_idle_id);
@@ -1170,27 +1154,39 @@ clipboard_manager_start (XfceClipboardManager *manager,
   return TRUE;
 }
 
+typedef struct _ClipboardData
+{
+  GtkSelectionData **selection_data;
+  guint n_selection_data;
+} ClipboardData;
+
 static void
 clipboard_get (GtkClipboard *clipboard,
                GtkSelectionData *selection_data,
                guint info,
-               gpointer data)
+               gpointer _data)
 {
-  XfceClipboardManager *manager = data;
-  if (manager->selection_data[info] != NULL)
+  ClipboardData *data = _data;
+  if (data->selection_data[info] != NULL)
     gtk_selection_data_set (selection_data,
-                            gtk_selection_data_get_data_type (manager->selection_data[info]),
-                            gtk_selection_data_get_format (manager->selection_data[info]),
-                            gtk_selection_data_get_data (manager->selection_data[info]),
-                            gtk_selection_data_get_length (manager->selection_data[info]));
+                            gtk_selection_data_get_data_type (data->selection_data[info]),
+                            gtk_selection_data_get_format (data->selection_data[info]),
+                            gtk_selection_data_get_data (data->selection_data[info]),
+                            gtk_selection_data_get_length (data->selection_data[info]));
 }
 
 static void
 clipboard_clear (GtkClipboard *clipboard,
-                 gpointer data)
+                 gpointer _data)
 {
-  XfceClipboardManager *manager = data;
-  selection_data_free (manager);
+  ClipboardData *data = _data;
+  for (guint n = 0; n < data->n_selection_data; n++)
+    {
+      if (data->selection_data[n] != NULL)
+        gtk_selection_data_free (data->selection_data[n]);
+    }
+  g_free (data->selection_data);
+  g_free (data);
 }
 
 #define WAIT_CANCELLED (event != manager->current_event)
@@ -1243,9 +1239,10 @@ owner_change (GtkClipboard *clipboard,
                   if (!WAIT_CANCELLED)
                     {
                       GtkTargetEntry *entries = gtk_target_table_new_from_list (list, &n_targets);
-                      manager->n_selection_data = n_targets;
-                      manager->selection_data = selection_data;
-                      gtk_clipboard_set_with_data (clipboard, entries, n_targets, clipboard_get, clipboard_clear, manager);
+                      ClipboardData *data = g_new (ClipboardData, 1);
+                      data->n_selection_data = n_targets;
+                      data->selection_data = selection_data;
+                      gtk_clipboard_set_with_data (clipboard, entries, n_targets, clipboard_get, clipboard_clear, data);
                       gtk_target_table_free (entries, n_targets);
                     }
                   else
