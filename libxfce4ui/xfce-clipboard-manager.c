@@ -1206,68 +1206,71 @@ owner_change (GtkClipboard *clipboard,
 
   manager->current_event = event;
   manager->is_image_available = FALSE;
-  if (gtk_clipboard_wait_for_targets (clipboard, &targets, &n_targets) && !WAIT_CANCELLED)
+  if (gtk_clipboard_wait_for_targets (clipboard, &targets, &n_targets))
     {
-      manager->is_image_available = gtk_targets_include_image (targets, n_targets, FALSE);
-      if (manager->is_image_available)
+      if (!WAIT_CANCELLED)
         {
-          GdkPixbuf *image = gtk_clipboard_wait_for_image (clipboard);
-          if (image != NULL)
+          manager->is_image_available = gtk_targets_include_image (targets, n_targets, FALSE);
+          if (manager->is_image_available)
             {
-              GBytes *bytes = gdk_pixbuf_read_pixel_bytes (image);
-              if (!WAIT_CANCELLED && (manager->image == NULL || !g_bytes_equal (bytes, manager->bytes)))
+              GdkPixbuf *image = gtk_clipboard_wait_for_image (clipboard);
+              if (image != NULL)
                 {
-                  GtkTargetList *list;
-                  GtkSelectionData **selection_data;
+                  GBytes *bytes = gdk_pixbuf_read_pixel_bytes (image);
+                  if (!WAIT_CANCELLED && (manager->image == NULL || !g_bytes_equal (bytes, manager->bytes)))
+                    {
+                      GtkTargetList *list;
+                      GtkSelectionData **selection_data;
 
-                  if (manager->image != NULL)
-                    {
-                      g_object_unref (manager->image);
-                      g_bytes_unref (manager->bytes);
-                    }
-                  manager->image = g_object_ref (image);
-                  manager->bytes = g_bytes_ref (bytes);
-
-                  list = gtk_target_list_new (NULL, 0);
-                  selection_data = g_new0 (GtkSelectionData *, n_targets);
-                  for (gint n = 0; n < n_targets && !WAIT_CANCELLED; n++)
-                    {
-                      gtk_target_list_add (list, targets[n], GTK_TARGET_SAME_APP, n);
-                      selection_data[n] = gtk_clipboard_wait_for_contents (clipboard, targets[n]);
-                    }
-
-                  if (!WAIT_CANCELLED)
-                    {
-                      GtkTargetEntry *entries = gtk_target_table_new_from_list (list, &n_targets);
-                      ClipboardData *data = g_new (ClipboardData, 1);
-                      data->n_selection_data = n_targets;
-                      data->selection_data = selection_data;
-                      gtk_clipboard_set_with_data (clipboard, entries, n_targets, clipboard_get, clipboard_clear, data);
-                      gtk_target_table_free (entries, n_targets);
-                    }
-                  else
-                    {
-                      for (gint n = 0; n < n_targets; n++)
+                      if (manager->image != NULL)
                         {
-                          if (selection_data[n] != NULL)
-                            gtk_selection_data_free (selection_data[n]);
+                          g_object_unref (manager->image);
+                          g_bytes_unref (manager->bytes);
                         }
-                      g_free (selection_data);
+                      manager->image = g_object_ref (image);
+                      manager->bytes = g_bytes_ref (bytes);
+
+                      list = gtk_target_list_new (NULL, 0);
+                      selection_data = g_new0 (GtkSelectionData *, n_targets);
+                      for (gint n = 0; n < n_targets && !WAIT_CANCELLED; n++)
+                        {
+                          gtk_target_list_add (list, targets[n], GTK_TARGET_SAME_APP, n);
+                          selection_data[n] = gtk_clipboard_wait_for_contents (clipboard, targets[n]);
+                        }
+
+                      if (!WAIT_CANCELLED)
+                        {
+                          GtkTargetEntry *entries = gtk_target_table_new_from_list (list, &n_targets);
+                          ClipboardData *data = g_new (ClipboardData, 1);
+                          data->n_selection_data = n_targets;
+                          data->selection_data = selection_data;
+                          gtk_clipboard_set_with_data (clipboard, entries, n_targets, clipboard_get, clipboard_clear, data);
+                          gtk_target_table_free (entries, n_targets);
+                        }
+                      else
+                        {
+                          for (gint n = 0; n < n_targets; n++)
+                            {
+                              if (selection_data[n] != NULL)
+                                gtk_selection_data_free (selection_data[n]);
+                            }
+                          g_free (selection_data);
+                        }
+
+                      gtk_target_list_unref (list);
                     }
 
-                  gtk_target_list_unref (list);
+                  g_object_unref (image);
+                  g_bytes_unref (bytes);
                 }
-
-              g_object_unref (image);
-              g_bytes_unref (bytes);
             }
-        }
-      else if (manager->image != NULL)
-        {
-          g_object_unref (manager->image);
-          g_bytes_unref (manager->bytes);
-          manager->image = NULL;
-          manager->bytes = NULL;
+          else if (manager->image != NULL)
+            {
+              g_object_unref (manager->image);
+              g_bytes_unref (manager->bytes);
+              manager->image = NULL;
+              manager->bytes = NULL;
+            }
         }
 
       g_free (targets);
