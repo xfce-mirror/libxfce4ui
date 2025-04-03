@@ -5,14 +5,14 @@
 # Translators:
 # Cédric Valmary <cvalmary@yahoo.fr>, 2013,2015-2016
 # Cédric Valmary <cvalmary@yahoo.fr>, 2013
-# Quentin PAGÈS, 2021-2022,2024
+# Quentin PAGÈS, 2021-2022,2024-2025
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2025-03-14 00:45+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Quentin PAGÈS, 2021-2022,2024\n"
+"Last-Translator: Quentin PAGÈS, 2021-2022,2024-2025\n"
 "Language-Team: Occitan (post 1500) (http://app.transifex.com/xfce/libxfce4ui/language/oc/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -838,7 +838,7 @@ msgid ""
 "the GNU Library General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
+msgstr "Los paquets libxfce4ui e libxfce4util son distribuits jos los tèrmes de la licéncia GNU Library General Public License tala que publicada per la Free Software Foundation; siá en version 2 de la licéncia, o (segon vòstra causida), quina version ulteriora que siá."
 
 #: xfce4-about/main.c:378
 msgid ""
@@ -1312,11 +1312,11 @@ msgstr "L' emplaçament del fichièr es pas un fichièr o repertòri normal"
 
 #: xfce-open/main.c:221
 msgid "Usage: xfce-open [URLs...]"
-msgstr ""
+msgstr "Usatge : xfce-open [URLs...]"
 
 #: xfce-open/main.c:222
 msgid "       xfce-open --launch TYPE [PARAMETERs...]"
-msgstr ""
+msgstr "       xfce-open --launch TIPE [PARAMÈTREs...]"
 
 #: xfce-open/main.c:224
 msgid "  -?, --help                          Print this help message and exit"
@@ -1362,7 +1362,7 @@ msgid ""
 "option, you can select which preferred application you want to run, and\n"
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
-msgstr ""
+msgstr "Se especificatz pas l'opcion --launch, xfce-open dobrirà totas las\nURL especificadas amb lo gestionari d'URL preferit. Senon, se\nespecificatz l'opcion --launch, podètz seleccionar quina aplicacion\npreferida volètz executar, e passar de paramètres addicionals a\nl'aplicacion (ex : per TerminalEmulator podètz passar la linha de\ncomanda que deu èsser executada dins lo terminal)."
 
 #: xfce-open/main.c:420
 #, c-format
