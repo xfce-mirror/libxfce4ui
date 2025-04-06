@@ -1133,8 +1133,7 @@ xfce_tree_view_get_column (XfceTreeView *tree_view,
 {
   GListStore *possible_columns = tree_view->possible_columns;
   guint pos = INT_MAX;
-  // We have to pass a dummy tree column because GIO doesn't support a NULL until v2.76
-  g_list_store_find_with_equal_func_full (possible_columns, gtk_tree_view_column_new (), xfce_tree_view_column_equal_id, column_id, &pos);
+  g_list_store_find_with_equal_func_full (possible_columns, NULL, xfce_tree_view_column_equal_id, column_id, &pos);
   if (pos != INT_MAX)
     {
       GObject *obj = g_list_model_get_item (G_LIST_MODEL (possible_columns), pos);
