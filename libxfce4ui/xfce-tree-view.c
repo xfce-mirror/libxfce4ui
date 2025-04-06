@@ -902,7 +902,7 @@ xfce_tree_view_column_editor_popup_refresh (XfceTreeView *tree_view)
       if ((insert_row == 0) || (pos == -1))
         gtk_widget_set_sensitive (GTK_WIDGET (upbutton), FALSE);
       downbutton = gtk_button_new_from_icon_name ("go-down", GTK_ICON_SIZE_SMALL_TOOLBAR);
-      if ((pos == -1))
+      if (pos == -1)
         gtk_widget_set_sensitive (GTK_WIDGET (downbutton), FALSE);
       g_object_set_data (G_OBJECT (checkbutton), "column_id", column_id);
       g_object_set_data (G_OBJECT (upbutton), "column_id", column_id);
