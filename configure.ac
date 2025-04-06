@@ -14,7 +14,7 @@ m4_define([libxfce4ui_version_api], [2])
 m4_define([libxfce4kbd_private_verinfo], [0:0:0])
 m4_define([libxfce4kbd_private_version_api], [3])
 
-m4_define([glib_min_version], [2.72.0])
+m4_define([glib_min_version], [2.76.0])
 m4_define([gtk_min_version], [3.24.0])
 m4_define([gdk_pixbuf_min_version], [2.42.8])
 m4_define([libxfce4util_min_version], [4.17.2])
