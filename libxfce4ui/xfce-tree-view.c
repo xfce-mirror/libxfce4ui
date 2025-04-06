@@ -89,6 +89,21 @@ xfce_tree_view_single_click_timeout (gpointer user_data);
 static void
 xfce_tree_view_single_click_timeout_destroy (gpointer user_data);
 static gboolean
+xfce_tree_view_column_header_clicked (XfceTreeView *tree_view,
+                                      GdkEventButton *event);
+static void
+xfce_tree_view_column_editor_popup_refresh (XfceTreeView *tree_view);
+static void
+xfce_tree_view_column_editor_popup_check_button_toggled (GtkWidget *widget,
+                                                         GtkWidget *tree_view);
+static void
+xfce_tree_view_column_editor_popup_down_button_clicked (GtkWidget *widget,
+                                                        GtkWidget *tree_view);
+static void
+xfce_tree_view_column_editor_popup_up_button_clicked (GtkWidget *widget,
+                                                      GtkWidget *tree_view);
+
+static gboolean
 select_true (GtkTreeSelection *selection,
              GtkTreeModel *model,
              GtkTreePath *path,
@@ -100,7 +115,13 @@ select_false (GtkTreeSelection *selection,
               GtkTreePath *path,
               gboolean path_currently_selected,
               gpointer data);
-
+gboolean
+xfce_tree_view_column_equal_id (gconstpointer a,
+                                gconstpointer b,
+                                gpointer user_data);
+gint
+xfce_tree_view_column_equal_id_2 (gconstpointer a,
+                                  gconstpointer b);
 
 
 /**
@@ -130,6 +151,12 @@ struct _XfceTreeView
 
   /* the path below the pointer or NULL */
   GtkTreePath *hover_path;
+
+  /* for storing hidden columns */
+  GListStore *possible_columns;
+
+  /* the right-click menu */
+  GtkWidget *popover;
 };
 
 
@@ -206,6 +233,9 @@ static void
 xfce_tree_view_init (XfceTreeView *tree_view)
 {
   tree_view->single_click_timeout_id = -1;
+  tree_view->possible_columns = g_list_store_new (GTK_TYPE_TREE_VIEW_COLUMN);
+  tree_view->popover = gtk_popover_new (GTK_WIDGET (tree_view));
+
 
   gtk_tree_view_set_search_position_func (GTK_TREE_VIEW (tree_view),
                                           (GtkTreeViewSearchPositionFunc) xfce_gtk_position_search_box,
@@ -307,34 +337,35 @@ xfce_tree_view_button_press_event (GtkWidget *widget,
   if (G_UNLIKELY (tree_view->single_click_timeout_id >= 0))
     g_source_remove (tree_view->single_click_timeout_id);
 
-  /* check if the button press was on the internal tree view window */
-  if (G_LIKELY (event->window == gtk_tree_view_get_bin_window (GTK_TREE_VIEW (tree_view))))
+  /* If header was clicked, handle popup instead */
+  if (G_UNLIKELY (event->window != gtk_tree_view_get_bin_window (GTK_TREE_VIEW (tree_view))))
+    return xfce_tree_view_column_header_clicked (tree_view, event);
+
+  /* determine the path at the event coordinates */
+  if (!gtk_tree_view_get_path_at_pos (GTK_TREE_VIEW (tree_view), event->x, event->y, &path, NULL, NULL, NULL))
+    path = NULL;
+
+  /* we unselect all selected items i f the user clicks on an empty
+   * area of the tree view and no modifier key is active.
+   */
+  if (path == NULL && (event->state & gtk_accelerator_get_default_mod_mask ()) == 0)
+    gtk_tree_selection_unselect_all (selection);
+
+  /* completely ignore double-clicks in single-click mode */
+  if (tree_view->single_click && event->type == GDK_2BUTTON_PRESS)
     {
-      /* determine the path at the event coordinates */
-      if (!gtk_tree_view_get_path_at_pos (GTK_TREE_VIEW (tree_view), event->x, event->y, &path, NULL, NULL, NULL))
-        path = NULL;
-
-      /* we unselect all selected items if the user clicks on an empty
-       * area of the tree view and no modifier key is active.
+      /* make sure we ignore the GDK_BUTTON_RELEASE
+       * event for this GDK_2BUTTON_PRESS event.
        */
-      if (path == NULL && (event->state & gtk_accelerator_get_default_mod_mask ()) == 0)
-        gtk_tree_selection_unselect_all (selection);
-
-      /* completely ignore double-clicks in single-click mode */
-      if (tree_view->single_click && event->type == GDK_2BUTTON_PRESS)
-        {
-          /* make sure we ignore the GDK_BUTTON_RELEASE
-           * event for this GDK_2BUTTON_PRESS event.
-           */
-          gtk_tree_path_free (path);
-          return TRUE;
-        }
-
-      /* check if the next button-release-event should activate the selected row (single click support) */
-      tree_view->button_release_activates = tree_view->single_click
-                                            && event->type == GDK_BUTTON_PRESS && event->button == 1
-                                            && (event->state & gtk_accelerator_get_default_mod_mask ()) == 0;
+      gtk_tree_path_free (path);
+      return TRUE;
     }
+
+  /* check if the next button-release-event should activate the selected row (single click support) */
+  tree_view->button_release_activates = tree_view->single_click
+                                        && event->type == GDK_BUTTON_PRESS && event->button == 1
+                                        && (event->state & gtk_accelerator_get_default_mod_mask ()) == 0;
+
 
   /* Rubberbanding in GtkTreeView 2.9.0 and above is rather buggy, unfortunately, and
    * doesn't interact properly with GTKs own DnD mechanism. So we need to block all
@@ -787,7 +818,150 @@ xfce_tree_view_single_click_timeout_destroy (gpointer user_data)
   XFCE_TREE_VIEW (user_data)->single_click_timeout_id = -1;
 }
 
+static gboolean
+xfce_tree_view_column_header_clicked (XfceTreeView *tree_view,
+                                      GdkEventButton *event)
+{
+  GtkWidget *menu;
+  GdkRectangle rect;
+  gint pointer_x;
+  gint pointer_y;
+  GdkWindow *event_window;
+  if (event->button == 3)
+    {
+      /* The x and y values provided by the event are based on the column,
+         not the treeview as a whole. So, we need to manually extract cursor
+         position from the treeview. */
+      event_window = gtk_widget_get_window (GTK_WIDGET (tree_view));
+      gdk_window_get_device_position (event_window, event->device, &pointer_x, &pointer_y, NULL);
+      rect = (GdkRectangle) { .x = (int) pointer_x, .y = (int) pointer_y, .width = 1, .height = 1 };
+      menu = tree_view->popover;
+      xfce_tree_view_column_editor_popup_refresh (tree_view);
 
+      gtk_popover_set_relative_to (GTK_POPOVER (menu), GTK_WIDGET (tree_view));
+      gtk_popover_set_pointing_to (GTK_POPOVER (menu), &rect);
+      gtk_widget_show_all (menu);
+      gtk_popover_popup (GTK_POPOVER (menu));
+      return TRUE;
+    }
+  return FALSE;
+}
+
+static void
+xfce_tree_view_column_editor_popup_refresh (XfceTreeView *tree_view)
+{
+  GtkWidget *menu;
+  GtkWidget *vbox;
+  GtkWidget *checkbutton;
+  GtkWidget *grid;
+  GtkWidget *upbutton;
+  GtkWidget *downbutton;
+
+  GObject *col;
+
+  gint index;
+  gint max_index;
+  gint appended_cols;
+  gint insert_row;
+  gint pos;
+
+  menu = tree_view->popover;
+  /* Delete the old popover if it exists */
+  vbox = gtk_bin_get_child (GTK_BIN (menu));
+  if (vbox != NULL)
+    gtk_container_remove (GTK_CONTAINER (menu), vbox);
+
+  /* Now create the new popover */
+  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 2);
+  gtk_container_add (GTK_CONTAINER (menu), vbox);
+  grid = gtk_grid_new ();
+  gtk_container_add (GTK_CONTAINER (vbox), grid);
+
+  index = 0;
+  appended_cols = 0;
+  max_index = g_list_model_get_n_items (G_LIST_MODEL (tree_view->possible_columns));
+  col = g_list_model_get_item (G_LIST_MODEL (tree_view->possible_columns), index);
+  while (col != NULL)
+    {
+      gchar *column_id = (gchar *) g_object_get_data (col, "column_id");
+      gboolean is_vis = xfce_tree_view_get_column_visible (tree_view, column_id);
+      pos = xfce_tree_view_get_column_position (tree_view, column_id);
+      if (pos >= 0)
+        insert_row = pos;
+      else
+        {
+          /* This column is hidden, so add it to the end of the list*/
+          insert_row = max_index - appended_cols;
+          appended_cols++;
+        }
+
+      const gchar *title = gtk_tree_view_column_get_title (GTK_TREE_VIEW_COLUMN (col));
+      checkbutton = gtk_check_button_new_with_label (title);
+      gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (checkbutton), is_vis);
+      upbutton = gtk_button_new_from_icon_name ("go-up", GTK_ICON_SIZE_BUTTON);
+      if ((insert_row == 0) || (pos == -1))
+        gtk_widget_set_sensitive (GTK_WIDGET (upbutton), FALSE);
+      downbutton = gtk_button_new_from_icon_name ("go-down", GTK_ICON_SIZE_SMALL_TOOLBAR);
+      if ((pos == -1))
+        gtk_widget_set_sensitive (GTK_WIDGET (downbutton), FALSE);
+      g_object_set_data (G_OBJECT (checkbutton), "column_id", column_id);
+      g_object_set_data (G_OBJECT (upbutton), "column_id", column_id);
+      g_object_set_data (G_OBJECT (downbutton), "column_id", column_id);
+      gtk_grid_attach (GTK_GRID (grid), checkbutton, 0, insert_row, 1, 1);
+      gtk_grid_attach (GTK_GRID (grid), upbutton, 1, insert_row, 1, 1);
+      gtk_grid_attach (GTK_GRID (grid), downbutton, 2, insert_row, 1, 1);
+      g_signal_connect (G_OBJECT (checkbutton), "toggled", G_CALLBACK (xfce_tree_view_column_editor_popup_check_button_toggled), tree_view);
+      g_signal_connect (G_OBJECT (upbutton), "clicked", G_CALLBACK (xfce_tree_view_column_editor_popup_up_button_clicked), tree_view);
+      g_signal_connect (G_OBJECT (downbutton), "clicked", G_CALLBACK (xfce_tree_view_column_editor_popup_down_button_clicked), tree_view);
+      index++;
+      col = g_list_model_get_item (G_LIST_MODEL (tree_view->possible_columns), index);
+    }
+
+  /* Desensitive the down button for the last visible col */
+  downbutton = gtk_grid_get_child_at (GTK_GRID (grid), 2, ((max_index - appended_cols) - 1));
+  if (downbutton != NULL)
+    gtk_widget_set_sensitive (GTK_WIDGET (downbutton), FALSE);
+  gtk_widget_show_all (menu);
+}
+
+static void
+xfce_tree_view_column_editor_popup_check_button_toggled (GtkWidget *widget,
+                                                         GtkWidget *tree_view)
+{
+  gchar *column_id;
+  gboolean current_state;
+
+  column_id = (gchar *) g_object_get_data (G_OBJECT (widget), "column_id");
+  current_state = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (widget));
+  xfce_tree_view_set_column_visible (XFCE_TREE_VIEW (tree_view), column_id, current_state);
+  xfce_tree_view_column_editor_popup_refresh (XFCE_TREE_VIEW (tree_view));
+}
+
+static void
+xfce_tree_view_column_editor_popup_down_button_clicked (GtkWidget *widget,
+                                                        GtkWidget *tree_view)
+{
+  gchar *column_id;
+  gint current_pos;
+
+  column_id = (gchar *) g_object_get_data (G_OBJECT (widget), "column_id");
+  current_pos = xfce_tree_view_get_column_position (XFCE_TREE_VIEW (tree_view), column_id);
+  xfce_tree_view_insert_column_at_position (XFCE_TREE_VIEW (tree_view), column_id, current_pos + 1);
+  xfce_tree_view_column_editor_popup_refresh (XFCE_TREE_VIEW (tree_view));
+}
+
+static void
+xfce_tree_view_column_editor_popup_up_button_clicked (GtkWidget *widget,
+                                                      GtkWidget *tree_view)
+{
+  gchar *column_id;
+  gint current_pos;
+
+  column_id = (gchar *) g_object_get_data (G_OBJECT (widget), "column_id");
+  current_pos = xfce_tree_view_get_column_position (XFCE_TREE_VIEW (tree_view), column_id);
+  xfce_tree_view_insert_column_at_position (XFCE_TREE_VIEW (tree_view), column_id, current_pos - 1);
+  xfce_tree_view_column_editor_popup_refresh (XFCE_TREE_VIEW (tree_view));
+}
 
 /**
  * xfce_tree_view_new:
@@ -910,7 +1084,334 @@ xfce_tree_view_set_single_click_timeout (XfceTreeView *tree_view,
     }
 }
 
+/**
+ * xfce_tree_view_add_possible_column:
+ * @tree_view     : a #XfceTreeView
+ * @column_id     : a unique string used to identify the column. Do not transalate!
+ * @column_title  : the header diaplayed above the column
+ *
+ * This registers a column with @tree_view. It does not display the
+ * column. This function must be called before attempting to interact
+ * with the column. You generally do not need to use the returned
+ * widget unless you intend to modify the default rendering. @tree_view
+ * will be able to retrieve the column by @column_id.
+ *
+ * Returns :(transfer none): The newly created #GtkTreeViewColumn
+ *
+ * Since: 4.21
+ *
+ **/
+GtkTreeViewColumn *
+xfce_tree_view_add_possible_column (XfceTreeView *tree_view,
+                                    gchar *column_id,
+                                    gchar *column_title)
+{
+  GListStore *possible_columns = tree_view->possible_columns;
+  GtkTreeViewColumn *column = gtk_tree_view_column_new ();
+  gtk_tree_view_column_set_title (column, column_title);
+  gtk_tree_view_column_set_reorderable (column, TRUE);
+  g_object_set_data (G_OBJECT (column), "column_id", (gpointer) column_id);
+  g_list_store_append (possible_columns, column);
+  return column;
+}
 
+/**
+ * xfce_tree_view_get_column:
+ * @tree_view  : a #XfceTreeView
+ * @column_id  : the id used to register the column
+ *
+ * This function can be used to retrieve a previously registered column.
+ * This function will return columns regardless of whether they are
+ * in active use.
+ *
+ * Returns:(transfer none): A #GtkTreeViewColumn or %NULL if no column was found
+ *
+ **/
+GtkTreeViewColumn *
+xfce_tree_view_get_column (XfceTreeView *tree_view,
+                           gchar *column_id)
+{
+  GListStore *possible_columns = tree_view->possible_columns;
+  guint pos = INT_MAX;
+  g_list_store_find_with_equal_func_full (possible_columns, NULL, xfce_tree_view_column_equal_id, column_id, &pos);
+  if (pos != INT_MAX)
+    {
+      GObject *obj = g_list_model_get_item (G_LIST_MODEL (possible_columns), pos);
+      return GTK_TREE_VIEW_COLUMN (obj);
+    }
+  else
+    {
+      return NULL;
+    }
+}
+
+/**
+ * xfce_tree_view_get_column_visible
+ * @tree_view  : a #XfceTreeView
+ * @column_id  : the id of the column
+ *
+ * Query the current visibility of a column. This will only check if
+ * the column is currently visible, and not if it is a valid column. It
+ * is assumed that you either registered @column_id yourself or else
+ * verified it first with xfce_tree_view_get_column. Otherwise,
+ * xfce_tree_view_get_column_position can be used.
+ *
+ * Returns: %TRUE if the column is visible, %FALSE if it is hidden or
+ *          nonexistent
+ *
+ * Since: 4.21
+ **/
+gboolean
+xfce_tree_view_get_column_visible (XfceTreeView *tree_view,
+                                   const gchar *column_id)
+{
+  GList *cols = gtk_tree_view_get_columns (GTK_TREE_VIEW (tree_view));
+  gpointer found_col = g_list_find_custom (cols, column_id, xfce_tree_view_column_equal_id_2);
+  if (found_col != NULL)
+    return TRUE;
+  else
+    return FALSE;
+}
+
+/**
+ * xfce_tree_view_set_column_visible:
+ * @tree_view    : a #XfceTreeView
+ * @column_id    : the column to adjust
+ * @visible      : the new visibility setting
+ *
+ * This function can be used to toggle the visibility of a column.
+ *
+ * Passing the current value will have no effect.
+ *
+ * Passing %FALSE will not remove the column from the @tree_view widget,
+ * but will not delete the column, and it can be restored later.
+ *
+ * Passing %TRUE will append the column to the end of @tree_view. Use
+ * xfce_tree_view_insert_column_at_position if you want to control where
+ * the column will appear.
+ *
+ * Warning: this function is not symmetric.
+ * Setting the visibility to %FALSE and then %TRUE will likely adjust
+ * the ordering of columns. Use other functions such as
+ * xfce_tree_view_insert_column_at_position or
+ * xfce_tree_view_get_column_position if preserving the order is
+ * important.
+ *
+ * Since: 4.21
+ **/
+void
+xfce_tree_view_set_column_visible (XfceTreeView *tree_view,
+                                   const gchar *column_id,
+                                   const gboolean visible)
+{
+  gboolean curr = xfce_tree_view_get_column_visible (tree_view, column_id);
+  if (curr == visible)
+    return;
+  if (visible)
+    {
+      GtkTreeViewColumn *col = xfce_tree_view_get_column (XFCE_TREE_VIEW (tree_view), (gchar *) column_id);
+      gtk_tree_view_insert_column (GTK_TREE_VIEW (tree_view), col, -1);
+    }
+  else
+    {
+      GtkTreeViewColumn *col = xfce_tree_view_get_column (XFCE_TREE_VIEW (tree_view), (gchar *) column_id);
+      gtk_tree_view_remove_column (GTK_TREE_VIEW (tree_view), col);
+    }
+}
+
+/**
+ * xfce_tree_view_get_column_position:
+ * @tree_view  : a #XfceTreeView
+ * @column_id  : the id of the column
+ *
+ * Query the current position of the column
+ *
+ * Returns : The current position of the column, or -1 if it is hidden
+ *
+ * Since : 4.21
+ **/
+guint
+xfce_tree_view_get_column_position (XfceTreeView *tree_view,
+                                    const gchar *column_id)
+{
+  GList *cols = gtk_tree_view_get_columns (GTK_TREE_VIEW (tree_view));
+  gpointer found_col = g_list_find_custom (cols, column_id, xfce_tree_view_column_equal_id_2);
+  gint pos = g_list_position (cols, (GList *) found_col);
+  return pos;
+}
+
+/**
+ * xfce_tree_view_insert_column_at_position:
+ * @tree_view : a #XfceTreeView
+ * @column_id : the id of the column
+ * @position  : the position at which to insert the column
+ *
+ * Inserts the given column at the sepcified position. This can be used
+ * for both visible and hidden columns. In the former case, the column
+ * will be repositioned, otherwise it will be added. Passing -1 as the
+ * position will append the column to the end of the visible columns
+ *
+ * Since : 4.21
+ **/
+void
+xfce_tree_view_insert_column_at_position (XfceTreeView *tree_view,
+                                          gchar *column_id,
+                                          const guint position)
+{
+  GtkTreeViewColumn *col = xfce_tree_view_get_column (tree_view, (gchar *) column_id);
+  g_return_if_fail (col != NULL);
+  if (gtk_tree_view_column_get_tree_view (GTK_TREE_VIEW_COLUMN (col)) != NULL)
+    gtk_tree_view_remove_column (GTK_TREE_VIEW (tree_view), col);
+  gtk_tree_view_insert_column (GTK_TREE_VIEW (tree_view), col, position);
+}
+
+/**
+ * xfce_tree_view_render_text:
+ * @tree_view : a #XfceTreeView
+ * @column_id : the id of the column
+ * @column    : the model column
+ *
+ * Binds the text in @column of @tree_view 's model to @column_id.
+ * This function handles creating and binding the cell renderers for
+ * cases in which the text is displayed directly from the model, thus
+ * avoiding the need to manage the cell renderers yourself.
+ *
+ * Since: 4.21
+ **/
+void
+xfce_tree_view_render_text (XfceTreeView *tree_view,
+                            const gchar *column_id,
+                            gint column)
+{
+  GtkCellRenderer *renderer = gtk_cell_renderer_text_new ();
+  GtkTreeViewColumn *col = xfce_tree_view_get_column (tree_view, (gchar *) column_id);
+  g_return_if_fail (col != NULL);
+  gtk_tree_view_column_pack_start (col, renderer, TRUE);
+  gtk_tree_view_column_set_sort_column_id (col, column);
+  gtk_tree_view_column_set_attributes (GTK_TREE_VIEW_COLUMN (col), GTK_CELL_RENDERER (renderer), "text", column, NULL);
+}
+
+/**
+ * xfce_tree_view_render_text_with_func:
+ * @tree_view : a #XfceTreeView
+ * @column_id : the id of the column
+ * @func      :(scope forever): the custom render function
+ *
+ * Creates and binds a cell renderer to @column_id. It uses @func to
+ * bind the data to the cell renderer. Use this if text needs to be
+ * combined from multiple columns or formatted before display. Otherwise,
+ * xfce_tree_view_render_text is a better choice.
+ *
+ * Since: 4.21
+ **/
+void
+xfce_tree_view_render_text_with_func (XfceTreeView *tree_view,
+                                      const gchar *column_id,
+                                      GtkTreeCellDataFunc func)
+{
+  GtkCellRenderer *renderer = gtk_cell_renderer_text_new ();
+  GtkTreeViewColumn *col = xfce_tree_view_get_column (tree_view, (gchar *) column_id);
+  g_return_if_fail (col != NULL);
+  gtk_tree_view_column_pack_start (col, renderer, TRUE);
+  gtk_tree_view_column_set_cell_data_func (GTK_TREE_VIEW_COLUMN (col), GTK_CELL_RENDERER (renderer), func, NULL, NULL);
+}
+
+/**
+ * xfce_tree_view_render_pixbuf_text:
+ * @tree_view : a #XfceTreeView
+ * @column_id : the id of the column
+ * @pixbuf_column : the model column containing the pixbuf
+ * @text_column   : the model column containing the text
+ *
+ * Creates and binds two cell renderers to @column_id. The first
+ * displays a pixbuf from @pixbuf_column of the model. The second
+ * displays the text in @text_column of the model.
+ *
+ * Since: 4.21
+ **/
+void
+xfce_tree_view_render_pixbuf_text (XfceTreeView *tree_view,
+                                   const gchar *column_id,
+                                   gint pixbuf_column,
+                                   gint text_column)
+{
+  GtkTreeViewColumn *col = xfce_tree_view_get_column (tree_view, (gchar *) column_id);
+  g_return_if_fail (col != NULL);
+  GtkCellRenderer *pix_renderer = gtk_cell_renderer_pixbuf_new ();
+  gtk_tree_view_column_pack_start (col, pix_renderer, FALSE);
+  gtk_tree_view_column_set_sort_column_id (col, text_column);
+  gtk_tree_view_column_set_attributes (GTK_TREE_VIEW_COLUMN (col), GTK_CELL_RENDERER (pix_renderer), "pixbuf", pixbuf_column, NULL);
+  GtkCellRenderer *text_renderer = gtk_cell_renderer_text_new ();
+  gtk_tree_view_column_pack_start (col, text_renderer, TRUE);
+  gtk_tree_view_column_set_attributes (GTK_TREE_VIEW_COLUMN (col), GTK_CELL_RENDERER (text_renderer), "text", text_column, NULL);
+}
+
+/**
+ * xfce_tree_view_serialize_state:
+ * @tree_view : a #XfceTreeView
+ *
+ * Generate a sring representation of the current column ordering and visibility
+ * of @tree_view.
+ *
+ *  This representation can be stored and used to restore the state at
+ * a later time.
+ *
+ * Returns : The strig representation of the current state
+ *
+ * Since: 4.21
+ **/
+gchar *
+xfce_tree_view_serialize_state (XfceTreeView *tree_view)
+{
+  gchar *state = "";
+  GList *cols = gtk_tree_view_get_columns (GTK_TREE_VIEW (tree_view));
+  while (cols != NULL)
+    {
+      gchar *id = g_object_get_data (G_OBJECT (cols->data), "column_id");
+      if (strcmp (state, "") == 0)
+        state = id;
+      else
+        state = g_strconcat (state, ";", id, NULL);
+      cols = cols->next;
+    }
+  return state;
+}
+
+/**
+ * xfce_tree_view_set_state_from_string:
+ * @tree_view : a #XfceTreeView
+ * @state     : a string representing the column ordering
+ *
+ * Sets the column ordering of @tree_view to match the state represented
+ * by @state.
+ *
+ * This string is generally obtained from xfce_tree_view_serialize_state,
+ * but can be generated manually. This function does not create any
+ * columns that do not exist, and will ignore column ids it does not
+ * recognize. Thus, it is important to initialize @tree_view using
+ * xfce_tree_view_add_possible_column with the relevant columns
+ * before calling this function.
+ *
+ * Since: 4.21
+ **/
+void
+xfce_tree_view_set_state_from_string (XfceTreeView *tree_view,
+                                      gchar *state)
+{
+  GList *cols = gtk_tree_view_get_columns (GTK_TREE_VIEW (tree_view));
+  while (cols != NULL)
+    {
+      gtk_tree_view_remove_column (GTK_TREE_VIEW (tree_view), GTK_TREE_VIEW_COLUMN (cols->data));
+      cols = cols->next;
+    }
+  gchar **col_array = g_strsplit (state, ";", 0);
+  int i = 0;
+  while (col_array[i] != NULL)
+    {
+      xfce_tree_view_insert_column_at_position (XFCE_TREE_VIEW (tree_view), col_array[i], -1);
+      i++;
+    }
+}
 
 static gboolean
 select_true (GtkTreeSelection *selection,
@@ -922,8 +1423,6 @@ select_true (GtkTreeSelection *selection,
   return TRUE;
 }
 
-
-
 static gboolean
 select_false (GtkTreeSelection *selection,
               GtkTreeModel *model,
@@ -932,6 +1431,27 @@ select_false (GtkTreeSelection *selection,
               gpointer data)
 {
   return FALSE;
+}
+
+gboolean
+xfce_tree_view_column_equal_id (gconstpointer a,
+                                gconstpointer b,
+                                gpointer user_data)
+{
+  if (!g_strcmp0 (g_object_get_data (G_OBJECT (a), "column_id"), user_data))
+    return TRUE;
+  else
+    return FALSE;
+}
+
+gint
+xfce_tree_view_column_equal_id_2 (gconstpointer a,
+                                  gconstpointer b)
+{
+  if (!g_strcmp0 (g_object_get_data (G_OBJECT (a), "column_id"), b))
+    return 0;
+  else
+    return 1;
 }
 
 #define __XFCE_TREE_VIEW_C__
