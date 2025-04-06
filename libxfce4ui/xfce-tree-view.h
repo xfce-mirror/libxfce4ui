@@ -45,7 +45,45 @@ xfce_tree_view_get_single_click_timeout (XfceTreeView *tree_view);
 void
 xfce_tree_view_set_single_click_timeout (XfceTreeView *tree_view,
                                          guint single_click_timeout);
-
+GtkTreeViewColumn *
+xfce_tree_view_add_possible_column (XfceTreeView *tree_view,
+                                    gchar *column_id,
+                                    gchar *column_title);
+GtkTreeViewColumn *
+xfce_tree_view_get_column (XfceTreeView *tree_view,
+                           gchar *column_id);
+void
+xfce_tree_view_set_column_visible (XfceTreeView *tree_view,
+                                   const gchar *column_id,
+                                   const gboolean visible);
+gboolean
+xfce_tree_view_get_column_visible (XfceTreeView *tree_view,
+                                   const gchar *column_id);
+guint
+xfce_tree_view_get_column_position (XfceTreeView *tree_view,
+                                    const gchar *column_id);
+void
+xfce_tree_view_insert_column_at_position (XfceTreeView *tree_view,
+                                          gchar *column_id,
+                                          const guint position);
+void
+xfce_tree_view_render_text (XfceTreeView *tree_view,
+                            const gchar *column_id,
+                            gint column);
+void
+xfce_tree_view_render_text_with_func (XfceTreeView *tree_view,
+                                      const gchar *column_id,
+                                      GtkTreeCellDataFunc func);
+void
+xfce_tree_view_render_pixbuf_text (XfceTreeView *tree_view,
+                                   const gchar *column_id,
+                                   gint pixbuf_column,
+                                   gint text_column);
+gchar *
+xfce_tree_view_serialize_state (XfceTreeView *tree_view);
+void
+xfce_tree_view_set_state_from_string (XfceTreeView *tree_view,
+                                      gchar *state);
 G_END_DECLS
 
 #endif /* !__XFCE_TREE_VIEW_H__ */
