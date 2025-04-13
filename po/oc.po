@@ -995,7 +995,7 @@ msgstr "Sistèma"
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
-msgstr "Xfce es un ensemble de programas que, ensemble, provesisson un environament de burèu complet.\nLos programas seguents fan partida del còr de Xfce :"
+msgstr "Xfce es un ensemble de programas que, ensemble, provesisson un environament de burèu complèt.\nLos programas seguents fan partida del còr de Xfce :"
 
 #: xfce4-about/xfce4-about-dialog.glade:804
 msgid ""
