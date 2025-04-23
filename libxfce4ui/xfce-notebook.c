@@ -36,7 +36,6 @@
  *
  * The #XfceNotebook class derives from #GtkNotebook and extends it with
  * the ability to scroll through tabs.
- *
  **/
 
 
