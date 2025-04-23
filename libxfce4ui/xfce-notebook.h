@@ -34,7 +34,6 @@ G_DECLARE_FINAL_TYPE (XfceNotebook, xfce_notebook, XFCE, NOTEBOOK, GtkNotebook)
 GtkWidget *
 xfce_notebook_new (void) G_GNUC_MALLOC;
 
-
 G_END_DECLS
 
 #endif /* !__XFCE_NOTEBOOK_H__ */
