@@ -4351,6 +4351,7 @@ xfce_icon_view_rows_reordered (GtkTreeModel *model,
       item->item_iter = new_iter;
     }
 
+  g_sequence_free (priv->items);
   priv->items = new_sequence;
   xfce_icon_view_queue_layout (icon_view);
 }
