@@ -518,7 +518,8 @@ static gboolean
 xfce_icon_view_search_timeout (gpointer user_data);
 static void
 xfce_icon_view_search_timeout_destroy (gpointer user_data);
-
+static void
+xfce_icon_view_release_items (XfceIconView *icon_view);
 
 
 struct _XfceIconViewCellInfo
@@ -1473,7 +1474,6 @@ xfce_icon_view_finalize (GObject *object)
 {
   XfceIconView *icon_view = XFCE_ICON_VIEW (object);
   XfceIconViewPrivate *priv = get_instance_private (icon_view);
-  GSequenceIter *item_iter;
 
   /* drop the scroll adjustments */
   g_object_unref (G_OBJECT (priv->hadjustment));
@@ -1486,14 +1486,8 @@ xfce_icon_view_finalize (GObject *object)
   if (G_UNLIKELY (priv->single_click_timeout_id != 0))
     g_source_remove (priv->single_click_timeout_id);
 
-  /* drop all items belonging to the  model */
-  for (item_iter = g_sequence_get_begin_iter (priv->items);
-       !g_sequence_iter_is_end (item_iter);
-       item_iter = g_sequence_iter_next (item_iter))
-    {
-      g_free (XFCE_ICON_VIEW_ITEM (g_sequence_get (item_iter))->box);
-      g_slice_free (XfceIconViewItem, g_sequence_get (item_iter));
-    }
+  /* drop all items belonging to the model and release the sequence */
+  xfce_icon_view_release_items (icon_view);
   g_sequence_free (priv->items);
 
   /* kill the layout idle source (it's important to have this last!) */
@@ -5854,18 +5848,12 @@ xfce_icon_view_set_model (XfceIconView *icon_view,
       g_object_unref (G_OBJECT (priv->model));
 
       if (!g_sequence_is_empty (priv->items))
-        {
-          /* drop all items belonging to the previous model */
-          for (item_iter = g_sequence_get_begin_iter (priv->items);
-               !g_sequence_iter_is_end (item_iter);
-               item_iter = g_sequence_iter_next (item_iter))
-            {
-              g_free (XFCE_ICON_VIEW_ITEM (g_sequence_get (item_iter))->box);
-              g_slice_free (XfceIconViewItem, g_sequence_get (item_iter));
-            }
-          g_sequence_free (priv->items);
-          priv->items = g_sequence_new (NULL);
-        }
+      {
+        /* drop all items belonging to the previous model */
+        xfce_icon_view_release_items (icon_view);
+        g_sequence_free (priv->items);
+        priv->items = g_sequence_new (NULL);
+      }
 
       /* reset statistics */
       priv->search_column = -1;
@@ -9347,6 +9335,23 @@ static void
 xfce_icon_view_search_timeout_destroy (gpointer user_data)
 {
   get_instance_private (user_data)->search_timeout_id = 0;
+}
+
+
+
+static void
+xfce_icon_view_release_items (XfceIconView *icon_view)
+{
+  XfceIconViewPrivate *priv = get_instance_private (icon_view);
+  GSequenceIter *item_iter;
+
+  for (item_iter = g_sequence_get_begin_iter (priv->items);
+       !g_sequence_iter_is_end (item_iter);
+       item_iter = g_sequence_iter_next (item_iter))
+    {
+      g_free (XFCE_ICON_VIEW_ITEM (g_sequence_get (item_iter))->box);
+      g_slice_free (XfceIconViewItem, g_sequence_get (item_iter));
+    }
 }
 
 #define __XFCE_ICON_VIEW_C__
