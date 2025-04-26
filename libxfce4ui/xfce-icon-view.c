@@ -5848,12 +5848,12 @@ xfce_icon_view_set_model (XfceIconView *icon_view,
       g_object_unref (G_OBJECT (priv->model));
 
       if (!g_sequence_is_empty (priv->items))
-      {
-        /* drop all items belonging to the previous model */
-        xfce_icon_view_release_items (icon_view);
-        g_sequence_free (priv->items);
-        priv->items = g_sequence_new (NULL);
-      }
+        {
+          /* drop all items belonging to the previous model */
+          xfce_icon_view_release_items (icon_view);
+          g_sequence_free (priv->items);
+          priv->items = g_sequence_new (NULL);
+        }
 
       /* reset statistics */
       priv->search_column = -1;
