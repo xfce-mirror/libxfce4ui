@@ -1389,7 +1389,7 @@ xfce_icon_view_init (XfceIconView *icon_view)
   gtk_style_context_add_class (gtk_widget_get_style_context (GTK_WIDGET (icon_view)),
                                GTK_STYLE_CLASS_VIEW);
 
-  priv->items = NULL;
+  priv->items = g_sequence_new (NULL);
   priv->selection_mode = GTK_SELECTION_SINGLE;
   priv->pressed_button = -1;
   priv->press_start_x = -1;
@@ -3042,9 +3042,6 @@ xfce_icon_view_unselect_all_internal (XfceIconView *icon_view)
   GSequenceIter *iter;
   gboolean dirty = FALSE;
 
-  if (priv->items == NULL)
-    return FALSE;
-
   if (G_LIKELY (priv->selection_mode != GTK_SELECTION_NONE))
     {
       for (iter = g_sequence_get_begin_iter (priv->items);
@@ -3879,9 +3876,6 @@ xfce_icon_view_invalidate_sizes (XfceIconView *icon_view)
 {
   XfceIconViewPrivate *priv = get_instance_private (icon_view);
   GSequenceIter *iter;
-
-  if (priv->items == NULL)
-    return;
 
   for (iter = g_sequence_get_begin_iter (priv->items);
        !g_sequence_iter_is_end (iter);
@@ -5853,7 +5847,7 @@ xfce_icon_view_set_model (XfceIconView *icon_view,
       /* release our reference on the model */
       g_object_unref (G_OBJECT (priv->model));
 
-      if (priv->items != NULL)
+      if (!g_sequence_is_empty (priv->items))
         {
           /* drop all items belonging to the previous model */
           for (item_iter = g_sequence_get_begin_iter (priv->items);
@@ -5864,7 +5858,7 @@ xfce_icon_view_set_model (XfceIconView *icon_view,
               g_slice_free (XfceIconViewItem, g_sequence_get (item_iter));
             }
           g_sequence_free (priv->items);
-          priv->items = NULL;
+          priv->items = g_sequence_new (NULL);
         }
 
       /* reset statistics */
@@ -5928,7 +5922,6 @@ xfce_icon_view_set_model (XfceIconView *icon_view,
         }
 
       /* build up the initial items list */
-      priv->items = g_sequence_new (NULL);
       if (gtk_tree_model_get_iter_first (model, &iter))
         {
           do
@@ -6179,9 +6172,6 @@ xfce_icon_view_get_selected_items (XfceIconView *icon_view)
   gint i = 0;
 
   g_return_val_if_fail (XFCE_IS_ICON_VIEW (icon_view), NULL);
-
-  if (priv->items == NULL)
-    return NULL;
 
   for (iter = g_sequence_get_begin_iter (priv->items);
        !g_sequence_iter_is_end (iter);
