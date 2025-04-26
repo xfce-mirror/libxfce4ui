@@ -1488,8 +1488,8 @@ xfce_icon_view_finalize (GObject *object)
 
   /* drop all items belonging to the  model */
   for (item_iter = g_sequence_get_begin_iter (priv->items);
-      !g_sequence_iter_is_end (item_iter);
-      item_iter = g_sequence_iter_next (item_iter))
+       !g_sequence_iter_is_end (item_iter);
+       item_iter = g_sequence_iter_next (item_iter))
     {
       g_free (XFCE_ICON_VIEW_ITEM (g_sequence_get (item_iter))->box);
       g_slice_free (XfceIconViewItem, g_sequence_get (item_iter));
@@ -1998,8 +1998,8 @@ xfce_icon_view_draw (GtkWidget *widget,
 
   /* paint all items that are affected by the expose event */
   for (iter = g_sequence_get_begin_iter (priv->items);
-        !g_sequence_iter_is_end (iter);
-        iter = g_sequence_iter_next (iter))
+       !g_sequence_iter_is_end (iter);
+       iter = g_sequence_iter_next (iter))
     {
       item = XFCE_ICON_VIEW_ITEM (g_sequence_get (iter));
 
