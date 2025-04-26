@@ -1389,7 +1389,7 @@ xfce_icon_view_init (XfceIconView *icon_view)
   gtk_style_context_add_class (gtk_widget_get_style_context (GTK_WIDGET (icon_view)),
                                GTK_STYLE_CLASS_VIEW);
 
-  priv->items = NULL;
+  priv->items = g_sequence_new (NULL);
   priv->selection_mode = GTK_SELECTION_SINGLE;
   priv->pressed_button = -1;
   priv->press_start_x = -1;
@@ -1473,6 +1473,7 @@ xfce_icon_view_finalize (GObject *object)
 {
   XfceIconView *icon_view = XFCE_ICON_VIEW (object);
   XfceIconViewPrivate *priv = get_instance_private (icon_view);
+  GSequenceIter *item_iter;
 
   /* drop the scroll adjustments */
   g_object_unref (G_OBJECT (priv->hadjustment));
@@ -1484,6 +1485,16 @@ xfce_icon_view_finalize (GObject *object)
   /* be sure to cancel the single click timeout */
   if (G_UNLIKELY (priv->single_click_timeout_id != 0))
     g_source_remove (priv->single_click_timeout_id);
+
+  /* drop all items belonging to the  model */
+  for (item_iter = g_sequence_get_begin_iter (priv->items);
+       !g_sequence_iter_is_end (item_iter);
+       item_iter = g_sequence_iter_next (item_iter))
+    {
+      g_free (XFCE_ICON_VIEW_ITEM (g_sequence_get (item_iter))->box);
+      g_slice_free (XfceIconViewItem, g_sequence_get (item_iter));
+    }
+  g_sequence_free (priv->items);
 
   /* kill the layout idle source (it's important to have this last!) */
   if (G_UNLIKELY (priv->layout_idle_id != 0))
@@ -1986,31 +1997,28 @@ xfce_icon_view_draw (GtkWidget *widget,
     }
 
   /* paint all items that are affected by the expose event */
-  if (priv->items != NULL)
+  for (iter = g_sequence_get_begin_iter (priv->items);
+       !g_sequence_iter_is_end (iter);
+       iter = g_sequence_iter_next (iter))
     {
-      for (iter = g_sequence_get_begin_iter (priv->items);
-           !g_sequence_iter_is_end (iter);
-           iter = g_sequence_iter_next (iter))
+      item = XFCE_ICON_VIEW_ITEM (g_sequence_get (iter));
+
+      /* FIXME: padding? */
+      paint_area.x = item->area.x;
+      paint_area.y = item->area.y;
+      paint_area.width = item->area.width;
+      paint_area.height = item->area.height;
+
+      /* check whether we are clipped fully */
+      if (!gdk_rectangle_intersect (&paint_area, &clip, NULL))
+        continue;
+
+      /* paint the item */
+      xfce_icon_view_paint_item (icon_view, item, cr, item->area.x, item->area.y, TRUE);
+      if (G_UNLIKELY (dest_index >= 0 && dest_item == NULL))
         {
-          item = XFCE_ICON_VIEW_ITEM (g_sequence_get (iter));
-
-          /* FIXME: padding? */
-          paint_area.x = item->area.x;
-          paint_area.y = item->area.y;
-          paint_area.width = item->area.width;
-          paint_area.height = item->area.height;
-
-          /* check whether we are clipped fully */
-          if (!gdk_rectangle_intersect (&paint_area, &clip, NULL))
-            continue;
-
-          /* paint the item */
-          xfce_icon_view_paint_item (icon_view, item, cr, item->area.x, item->area.y, TRUE);
-          if (G_UNLIKELY (dest_index >= 0 && dest_item == NULL))
-            {
-              if (dest_index == g_sequence_iter_get_position (item->item_iter))
-                dest_item = item;
-            }
+          if (dest_index == g_sequence_iter_get_position (item->item_iter))
+            dest_item = item;
         }
     }
 
@@ -3042,9 +3050,6 @@ xfce_icon_view_unselect_all_internal (XfceIconView *icon_view)
   GSequenceIter *iter;
   gboolean dirty = FALSE;
 
-  if (priv->items == NULL)
-    return FALSE;
-
   if (G_LIKELY (priv->selection_mode != GTK_SELECTION_NONE))
     {
       for (iter = g_sequence_get_begin_iter (priv->items);
@@ -3880,9 +3885,6 @@ xfce_icon_view_invalidate_sizes (XfceIconView *icon_view)
   XfceIconViewPrivate *priv = get_instance_private (icon_view);
   GSequenceIter *iter;
 
-  if (priv->items == NULL)
-    return;
-
   for (iter = g_sequence_get_begin_iter (priv->items);
        !g_sequence_iter_is_end (iter);
        iter = g_sequence_iter_next (iter))
@@ -4348,9 +4350,6 @@ xfce_icon_view_rows_reordered (GtkTreeModel *model,
       new_iter = g_sequence_append (new_sequence, item);
       item->item_iter = new_iter;
     }
-
-  if (priv->items != NULL)
-    g_sequence_free (priv->items);
 
   priv->items = new_sequence;
   xfce_icon_view_queue_layout (icon_view);
@@ -5853,7 +5852,7 @@ xfce_icon_view_set_model (XfceIconView *icon_view,
       /* release our reference on the model */
       g_object_unref (G_OBJECT (priv->model));
 
-      if (priv->items != NULL)
+      if (!g_sequence_is_empty (priv->items))
         {
           /* drop all items belonging to the previous model */
           for (item_iter = g_sequence_get_begin_iter (priv->items);
@@ -5864,7 +5863,7 @@ xfce_icon_view_set_model (XfceIconView *icon_view,
               g_slice_free (XfceIconViewItem, g_sequence_get (item_iter));
             }
           g_sequence_free (priv->items);
-          priv->items = NULL;
+          priv->items = g_sequence_new (NULL);
         }
 
       /* reset statistics */
@@ -5928,7 +5927,6 @@ xfce_icon_view_set_model (XfceIconView *icon_view,
         }
 
       /* build up the initial items list */
-      priv->items = g_sequence_new (NULL);
       if (gtk_tree_model_get_iter_first (model, &iter))
         {
           do
@@ -6179,9 +6177,6 @@ xfce_icon_view_get_selected_items (XfceIconView *icon_view)
   gint i = 0;
 
   g_return_val_if_fail (XFCE_IS_ICON_VIEW (icon_view), NULL);
-
-  if (priv->items == NULL)
-    return NULL;
 
   for (iter = g_sequence_get_begin_iter (priv->items);
        !g_sequence_iter_is_end (iter);
