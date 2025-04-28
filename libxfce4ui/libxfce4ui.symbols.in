@@ -208,6 +208,10 @@ xfce_icon_view_set_search_equal_func
 xfce_icon_view_get_search_position_func
 xfce_icon_view_set_search_position_func
 
+# file:xfce-notebook
+xfce_notebook_get_type attr:G_GNUC_CONST
+xfce_notebook_new attr:G_GNUC_MALLOC
+
 # file:xfce-tree-view
 xfce_tree_view_get_type attr:G_GNUC_CONST
 xfce_tree_view_new attr:G_GNUC_MALLOC

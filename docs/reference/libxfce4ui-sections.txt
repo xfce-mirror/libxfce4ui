@@ -305,6 +305,15 @@ xfce_icon_view_layout_mode_get_type
 </SECTION>
 
 <SECTION>
+<FILE>xfce-notebook</FILE>
+XfceNotebook
+xfce_notebook_new
+<SUBSECTION Standard>
+XFCE_TYPE_NOTEBOOK
+xfce_notebook_get_type
+</SECTION>
+
+<SECTION>
 <FILE>xfce-tree-view</FILE>
 XfceTreeView
 xfce_tree_view_new

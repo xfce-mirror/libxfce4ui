@@ -27,6 +27,7 @@ libxfce4ui_headers = \
 	xfce-gtk-extensions.h \
 	xfce-icon-chooser-dialog.h \
 	xfce-icon-view.h \
+	xfce-notebook.h \
 	xfce-screensaver.h \
 	xfce-spawn.h \
 	xfce-filename-input.h \
@@ -64,6 +65,7 @@ libxfce4ui_sources = \
 	xfce-gtk-extensions.c \
 	xfce-icon-chooser-dialog.c \
 	xfce-icon-view.c \
+	xfce-notebook.c \
 	xfce-screensaver.c \
 	xfce-spawn.c \
 	xfce-filename-input.c \
