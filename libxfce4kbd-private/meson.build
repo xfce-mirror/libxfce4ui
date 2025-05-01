@@ -59,14 +59,12 @@ if get_option('keyboard-library')
     capture: true,
   )
 
-  libxfce4kbd_sources += custom_target(
-    'libxfce4kbd-private-visibility.h',
+  libxfce4kbd_sources += configure_file(
     input: symbols,
     output: 'libxfce4kbd-private-visibility.h',
     command: [xdt_gen_visibility, '--kind=header', '@INPUT@', '@OUTPUT@'],
   )
-  libxfce4kbd_sources += custom_target(
-    'libxfce4kbd-private-visibility.c',
+  libxfce4kbd_sources += configure_file(
     input: symbols,
     output: 'libxfce4kbd-private-visibility.c',
     command: [xdt_gen_visibility, '--kind=source', '@INPUT@', '@OUTPUT@'],
