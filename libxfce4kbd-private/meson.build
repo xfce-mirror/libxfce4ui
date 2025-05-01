@@ -51,22 +51,19 @@ if get_option('keyboard-library')
   else
     symbols_sed_script += '/@BEGIN_WAYLAND_SYMBOLS@/,/@END_WAYLAND_SYMBOLS@/d'
   endif
-  symbols = custom_target(
-    'libxfce4kbd-private.symbols',
+  symbols = configure_file(
     input: 'libxfce4kbd-private.symbols.in',
     output: 'libxfce4kbd-private.symbols',
     command: [sed, symbols_sed_script, '@INPUT@'],
     capture: true,
   )
 
-  libxfce4kbd_sources += custom_target(
-    'libxfce4kbd-private-visibility.h',
+  libxfce4kbd_sources += configure_file(
     input: symbols,
     output: 'libxfce4kbd-private-visibility.h',
     command: [xdt_gen_visibility, '--kind=header', '@INPUT@', '@OUTPUT@'],
   )
-  libxfce4kbd_sources += custom_target(
-    'libxfce4kbd-private-visibility.c',
+  libxfce4kbd_sources += configure_file(
     input: symbols,
     output: 'libxfce4kbd-private-visibility.c',
     command: [xdt_gen_visibility, '--kind=source', '@INPUT@', '@OUTPUT@'],
