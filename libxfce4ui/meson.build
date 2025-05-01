@@ -120,14 +120,12 @@ symbols = custom_target(
   capture: true,
 )
 
-libxfce4ui_sources += custom_target(
-  'libxfce4ui-visibility.h',
+libxfce4ui_sources += configure_file(
   input: symbols,
   output: 'libxfce4ui-visibility.h',
   command: [xdt_gen_visibility, '--kind=header', '@INPUT@', '@OUTPUT@'],
 )
-libxfce4ui_sources += custom_target(
-  'libxfce4ui-visibility.c',
+libxfce4ui_sources += configure_file(
   input: symbols,
   output: 'libxfce4ui-visibility.c',
   command: [xdt_gen_visibility, '--kind=source', '@INPUT@', '@OUTPUT@'],
