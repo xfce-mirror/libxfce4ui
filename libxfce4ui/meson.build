@@ -112,22 +112,19 @@ libxfce4ui_h = custom_target(
   install: true,
   install_dir: libxfce4ui_install_dir,
 )
-symbols = custom_target(
-  'libxfce4ui.symbols',
+symbols = configure_file(
   input: 'libxfce4ui.symbols.in',
   output: 'libxfce4ui.symbols',
   command: [sed, symbols_sed_script, '@INPUT@'],
   capture: true,
 )
 
-libxfce4ui_sources += custom_target(
-  'libxfce4ui-visibility.h',
+libxfce4ui_sources += configure_file(
   input: symbols,
   output: 'libxfce4ui-visibility.h',
   command: [xdt_gen_visibility, '--kind=header', '@INPUT@', '@OUTPUT@'],
 )
-libxfce4ui_sources += custom_target(
-  'libxfce4ui-visibility.c',
+libxfce4ui_sources += configure_file(
   input: symbols,
   output: 'libxfce4ui-visibility.c',
   command: [xdt_gen_visibility, '--kind=source', '@INPUT@', '@OUTPUT@'],
