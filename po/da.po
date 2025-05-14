@@ -11,14 +11,14 @@
 # olegb <olegb@omgwtf.dk>, 2008
 # olegb <olegb@omgwtf.dk>, 2008
 # Per Kongstad <p_kongstad@op.pl>, 2009
-# scootergrisen, 2016-2024
+# scootergrisen, 2016-2025
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2025-03-14 00:45+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: scootergrisen, 2016-2024\n"
+"Last-Translator: scootergrisen, 2016-2025\n"
 "Language-Team: Danish (http://app.transifex.com/xfce/libxfce4ui/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -121,27 +121,27 @@ msgstr "Spørg mig _ikke igen"
 #: libxfce4ui/xfce-gdk-pixbuf-extensions.c:790
 #, c-format
 msgid "Failed to open file \"%s\": %s"
-msgstr ""
+msgstr "Kunne ikke åbne filen \"%s\": %s"
 
 #: libxfce4ui/xfce-gdk-pixbuf-extensions.c:863
 #, c-format
 msgid "Failed to read file \"%s\": %s"
-msgstr ""
+msgstr "Kunne ikke læse filen \"%s\": %s"
 
 #: libxfce4ui/xfce-gdk-pixbuf-extensions.c:910
 #, c-format
 msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr ""
+msgstr "Kunne ikke indlæse billedet \"%s\": Ukendt årsag, formodentligt en beskadiget billedfil"
 
 #: libxfce4ui/xfce-gtk-extensions.c:1325
 #, c-format
 msgid "Failed to open \"%s\"."
-msgstr ""
+msgstr "Kunne ikke åbne \"%s\"."
 
 #. XFCE_ICON_CHOOSER_CONTEXT_ACTIONS
 #: libxfce4ui/xfce-icon-chooser-dialog.c:123
 msgid "Action Icons"
-msgstr ""
+msgstr "Handlingsikoner"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_ANIMATIONS
 #: libxfce4ui/xfce-icon-chooser-dialog.c:125
@@ -151,17 +151,17 @@ msgstr "Animationer"
 #. XFCE_ICON_CHOOSER_CONTEXT_APPLICATIONS
 #: libxfce4ui/xfce-icon-chooser-dialog.c:127
 msgid "Application Icons"
-msgstr ""
+msgstr "Programikoner"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_CATEGORIES
 #: libxfce4ui/xfce-icon-chooser-dialog.c:129
 msgid "Menu Icons"
-msgstr ""
+msgstr "Menuikoner"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_DEVICES
 #: libxfce4ui/xfce-icon-chooser-dialog.c:131
 msgid "Device Icons"
-msgstr ""
+msgstr "Enhedsikoner"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_EMBLEMS
 #: libxfce4ui/xfce-icon-chooser-dialog.c:133
@@ -171,22 +171,22 @@ msgstr "Emblemer"
 #. XFCE_ICON_CHOOSER_CONTEXT_EMOTES
 #: libxfce4ui/xfce-icon-chooser-dialog.c:135
 msgid "Emoticons"
-msgstr ""
+msgstr "Emojikoner"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_MIME_TYPES
 #: libxfce4ui/xfce-icon-chooser-dialog.c:137
 msgid "File Type Icons"
-msgstr ""
+msgstr "Filtypeikoner"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_PLACES
 #: libxfce4ui/xfce-icon-chooser-dialog.c:139
 msgid "Location Icons"
-msgstr ""
+msgstr "Placeringsikoner"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_STATUS
 #: libxfce4ui/xfce-icon-chooser-dialog.c:141
 msgid "Status Icons"
-msgstr ""
+msgstr "Statusikoner"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_STOCK
 #: libxfce4ui/xfce-icon-chooser-dialog.c:143
@@ -201,7 +201,7 @@ msgstr "Ukategoriserede ikoner"
 #. XFCE_ICON_CHOOSER_CONTEXT_ALL
 #: libxfce4ui/xfce-icon-chooser-dialog.c:149
 msgid "All Icons"
-msgstr ""
+msgstr "Alle ikoner"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_FILE
 #: libxfce4ui/xfce-icon-chooser-dialog.c:153
@@ -844,7 +844,7 @@ msgid ""
 "the GNU Library General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
+msgstr "Pakkerne libxfce4ui og libxfce4util distribueres under vilkårene i GNU Library General Public License som udgivet af Free Software Foundation; enten version 2 af licensen, eller (efter eget valg) enhver senere version."
 
 #: xfce4-about/main.c:378
 msgid ""
@@ -1088,11 +1088,11 @@ msgstr "Opret starter"
 
 #: xfce-desktop-item-edit/main.c:60
 msgid "Create Link"
-msgstr ""
+msgstr "Opret henvisning"
 
 #: xfce-desktop-item-edit/main.c:60
 msgid "Create Directory"
-msgstr ""
+msgstr "Opret mappe"
 
 #: xfce-desktop-item-edit/main.c:61
 msgid "Edit Launcher"
@@ -1100,15 +1100,15 @@ msgstr "Rediger starter"
 
 #: xfce-desktop-item-edit/main.c:61
 msgid "Edit Link"
-msgstr ""
+msgstr "Rediger henvisning"
 
 #: xfce-desktop-item-edit/main.c:61
 msgid "Edit Directory"
-msgstr ""
+msgstr "Rediger mappe"
 
 #: xfce-desktop-item-edit/main.c:87
 msgid "Create a new desktop file in the given directory"
-msgstr ""
+msgstr "Opret en ny skrivebordsfil i den givne mappe"
 
 #: xfce-desktop-item-edit/main.c:88
 msgid "Type of desktop file to create (Application or Link)"
@@ -1163,7 +1163,7 @@ msgid ""
 "the GNU Lesser General Public License which can be found in the\n"
 "%s source package.\n"
 "\n"
-msgstr ""
+msgstr "%s kommer med ABSOLUT INGEN GARANTI,\nDu må videredistribuere kopier af %s under vilkårene i\nGNU Lesser General Public License hvilket kan findes i\n%s-kildepakken.\n\n"
 
 #. add the "Create"/"Save" button (as default)
 #: xfce-desktop-item-edit/main.c:352
@@ -1177,12 +1177,12 @@ msgstr "_Gem"
 #. create failed, ask the user to specify a file name
 #: xfce-desktop-item-edit/main.c:537
 msgid "Choose filename"
-msgstr ""
+msgstr "Vælg filnavn"
 
 #: xfce-desktop-item-edit/main.c:663
 #, c-format
 msgid "Failed to create \"%s\"."
-msgstr ""
+msgstr "Kunne ikke oprette \"%s\"."
 
 #: xfce-desktop-item-edit/main.c:663
 #, c-format
@@ -1250,7 +1250,7 @@ msgstr "_URL:"
 #. conflicts
 #: xfce-desktop-item-edit/xfce-die-editor.c:391
 msgid "Working _Directory:"
-msgstr ""
+msgstr "Arbejds_mappe:"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
@@ -1310,19 +1310,19 @@ msgstr "_OK"
 #. allocate the file chooser dialog
 #: xfce-desktop-item-edit/xfce-die-editor.c:685
 msgid "Select a working directory"
-msgstr ""
+msgstr "Vælg en arbejdsmappe"
 
 #: xfce-desktop-item-edit/xfce-die-utils.c:214
 msgid "File location is not a regular file or directory"
-msgstr ""
+msgstr "Filplaceringen er ikke en almindelig fil eller mappe"
 
 #: xfce-open/main.c:221
 msgid "Usage: xfce-open [URLs...]"
-msgstr ""
+msgstr "Anvendelse: xfce-open [URL'er...]"
 
 #: xfce-open/main.c:222
 msgid "       xfce-open --launch TYPE [PARAMETERs...]"
-msgstr ""
+msgstr "       xfce-open --launch TYPE [PARAMETRE ...]"
 
 #: xfce-open/main.c:224
 msgid "  -?, --help                          Print this help message and exit"
