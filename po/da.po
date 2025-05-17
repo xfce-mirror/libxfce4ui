@@ -1331,7 +1331,7 @@ msgstr "  -?, --help                          Udskriv denne hjælpemeddelelse og
 #: xfce-open/main.c:225
 msgid ""
 "  -V, --version                       Print version information and exit"
-msgstr ""
+msgstr "  -V, --version                       Udskriv versionsinformation og afslut"
 
 #: xfce-open/main.c:227
 msgid ""
@@ -1344,7 +1344,7 @@ msgstr "  --launch TYPE [PARAMETRE ...]       Start foretrukne program for\n    
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
-msgstr ""
+msgstr "  --working-directory DIRECTORY       Standardarbejdsmappe for programmer\n                                      når valgmuligheden --launch bruges."
 
 #: xfce-open/main.c:234
 msgid "The following TYPEs are supported for the --launch command:"
@@ -1378,7 +1378,7 @@ msgstr "Kunne ikke starte det foretrukne program for kategorien \"%s\"."
 #: xfce-open/main.c:711
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
-msgstr ""
+msgstr "Kunne ikke genkende URI-skemaet for \"%s\"."
 
 #: xfce-open/main.c:725
 msgid "Failed to open URI."
