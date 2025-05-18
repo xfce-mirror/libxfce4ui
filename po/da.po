@@ -1368,7 +1368,7 @@ msgid ""
 "option, you can select which preferred application you want to run, and\n"
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
-msgstr ""
+msgstr "Hvis du ikke angiver valgmuligheden --launch, så åbner xfce-open alle angivne\nURL'er med deres foretrukne URL-håndtering. Ellers, hvis du angiver valgmuligheden --launch\n, så kan du vælge hvilket foretrukne program du vil køre og \nvideregive yderligere parametre til programmet (f.eks. for TerminalEmulator\nkan du videregive den kommandolinje som skal køres i terminalen)."
 
 #: xfce-open/main.c:420
 #, c-format
