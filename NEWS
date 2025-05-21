@@ -1,3 +1,24 @@
+4.21.1 (2025-05-21)
+======
+- meson-build: Use configure_file() to generate GNU visibility files
+- Add xfce-notebook Adds scrolling capabilities to GtkNotebook Taken 
+from xfce4-terminal
+- Make sure "priv->item" never is NULL
+- clipboard-manager: Fix potential leak on targets
+- clipboard-manager: Use separate struct for each call to 
+set_with_data()
+- clipboard-manager: Use GtkTargetList instead of manual allocation
+- build: Replace xdt-csource with glib-compile-resources
+- clipboard-manager: Fix memory leak
+- meson-build: Define missing dependencies when libgtop is disbaled
+- filename-input: Use CSS styling to indicate errors
+- filename-input: Use tooltip instead of label for errors
+- filename-input: Remove extra border
+- Translation Updates:
+  Belarusian, Danish, English (United Kingdom), Estonian, Galician,
+  Georgian, Hungarian, Japanese, Lithuanian, Occitan (post 1500),
+  Persian (Iran), Portuguese, Portuguese (Brazil)
+
 4.21.0 (2025-03-17)
 ======
 - Expose xfce-cell-renderer-icon
