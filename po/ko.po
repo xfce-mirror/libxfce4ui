@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the libxfce4ui.master package.
 # 
 # Translators:
+# Junghee Lee <daemul72@gmail.com>, 2025
 # 1763f4a4329a2376c933c5e919a36cbc_341ca53 <1f851310383599d03339229d772e1290_119292>, 2017
 # 엠존, 2023
 # Seong-ho Cho <darkcircle.0426@gmail.com>, 2013-2017,2019-2023
@@ -12,7 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2025-03-14 00:45+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: 엠존, 2023\n"
+"Last-Translator: Junghee Lee <daemul72@gmail.com>, 2025\n"
 "Language-Team: Korean (http://app.transifex.com/xfce/libxfce4ui/language/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -838,7 +839,7 @@ msgid ""
 "the GNU Library General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
+msgstr "libxfce4ui와 libxfce4util 꾸러미는 자유 소프트웨어 재단이 공표한 GNU 라이브러리 일반 공중 사용 허가서(GNU Library General Public License)의 조건에 따라 배포됩니다; 라이선스 버전 2 또는 (사용자의 선택에 따라) 이후 버전 중 하나를 따릅니다."
 
 #: xfce4-about/main.c:378
 msgid ""
@@ -973,7 +974,7 @@ msgstr "커널 버전"
 
 #: xfce4-about/xfce4-about-dialog.glade:614
 msgid "Windowing System"
-msgstr ""
+msgstr "창 관리 시스템"
 
 #: xfce4-about/xfce4-about-dialog.glade:640
 msgid "CPU"
@@ -1130,7 +1131,7 @@ msgstr "데스크톱 파일을 만들 때 미리 설정하는 아이콘"
 
 #: xfce-desktop-item-edit/main.c:94
 msgid "Print the final saved URI after creating or editing the file"
-msgstr ""
+msgstr "파일을 만들거나 편집한 후 최종 저장된 URI를 인쇄합니다"
 
 #: xfce-desktop-item-edit/main.c:95
 msgid "Print version information and exit"
@@ -1143,7 +1144,7 @@ msgstr "[<파일>|<폴더>]"
 
 #: xfce-desktop-item-edit/main.c:203 xfce-open/main.c:758
 msgid "os-cillation e.K. All rights reserved."
-msgstr ""
+msgstr "os-cillation e.K. All rights reserved."
 
 #: xfce-desktop-item-edit/main.c:207 xfce-open/main.c:762
 msgid "Written by Benedikt Meurer <benny@xfce.org>."
@@ -1312,11 +1313,11 @@ msgstr "파일의 위치가 일반적인 파일이나 디렉터리가 아닙니�
 
 #: xfce-open/main.c:221
 msgid "Usage: xfce-open [URLs...]"
-msgstr ""
+msgstr "사용법: xfce-open [URLs...]"
 
 #: xfce-open/main.c:222
 msgid "       xfce-open --launch TYPE [PARAMETERs...]"
-msgstr ""
+msgstr "       xfce-open --launch <형식> [<매개변수>...]"
 
 #: xfce-open/main.c:224
 msgid "  -?, --help                          Print this help message and exit"
@@ -1362,7 +1363,7 @@ msgid ""
 "option, you can select which preferred application you want to run, and\n"
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
-msgstr ""
+msgstr "--launch 옵션을 지정하지 않으면, xfce-open은 기본 URL 핸들러를 사용하여\n지정된 모든 URL을 엽니다. 그렇지 않은 경우 --launch 옵션을 지정하면 실행할\n선호하는 애플리케이션을 선택하고 애플리케이션에 추가 매개변수를 전달할 수\n있습니다(예: 터미널 에뮬레이터의 경우 터미널에서 실행해야 하는 명령줄을\n전달할 수 있음)."
 
 #: xfce-open/main.c:420
 #, c-format
