@@ -501,7 +501,7 @@ msgstr "Bascuolar en dessús"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:64
 msgid "Toggle fullscreen"
-msgstr "Bascuolar en ecran complet"
+msgstr "Bascular en ecran complèt"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:65
 msgid "Move window to lower monitor"
