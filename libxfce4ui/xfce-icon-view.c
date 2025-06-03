@@ -5817,7 +5817,6 @@ xfce_icon_view_set_model (XfceIconView *icon_view,
   /* verify the new model */
   if (G_LIKELY (model != NULL))
     {
-      g_return_if_fail (gtk_tree_model_get_flags (model) & GTK_TREE_MODEL_LIST_ONLY);
 
       if (G_UNLIKELY (priv->pixbuf_column != -1))
         g_return_if_fail (gtk_tree_model_get_column_type (model, priv->pixbuf_column) == GDK_TYPE_PIXBUF);
