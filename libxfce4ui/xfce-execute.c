@@ -110,6 +110,10 @@ find_fallback_application_from_xdg_mime (const gchar *category)
     {
       info = g_desktop_app_info_new ("xfce4-terminal.desktop");
     }
+  else if (g_strcmp0 (category, "TextEditor") == 0)
+    {
+      query = "xdg-mime query default text/plain";
+    }
   else
     {
       return NULL;
@@ -170,9 +174,9 @@ find_fallback_application (const gchar *category)
  * @parameter in the specified @working_directory.
  *
  * Libxfce4ui currently supports the following categories: %"WebBrowser",
- * %"MailReader" and %"TerminalEmulator". If you specify an invalid
- * @category here, the execution will fail at a later stage and the
- * user will be presented with an error dialog.
+ * %"MailReader", %"FileManager", %"TextEditor", and %"TerminalEmulator".
+ * If you specify an invalid @category here, the execution will fail at
+ * a later stage and the user will be presented with an error dialog.
  *
  * Note that even if this method returns %TRUE there's no warranty that
  * the preferred application for @category was run successfully, because
