@@ -240,7 +240,8 @@ usage (void)
   g_print ("%s\n", _("  WebBrowser       - The preferred Web Browser.\n"
                      "  MailReader       - The preferred Mail Reader.\n"
                      "  FileManager      - The preferred File Manager.\n"
-                     "  TerminalEmulator - The preferred Terminal Emulator."));
+                     "  TerminalEmulator - The preferred Terminal Emulator.\n"
+                     "  TextEditor       - The preferred Text Editor."));
   g_print ("\n");
   g_print ("%s\n", _("If you don't specify the --launch option, xfce-open will open all specified\n"
                      "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
