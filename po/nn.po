@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2025-03-14 00:45+0100\n"
+"POT-Creation-Date: 2025-06-08 00:45+0200\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: Kevin Brubeck Unhammer <unhammer+dill@mm.st>, 2017-2019\n"
 "Language-Team: Norwegian Nynorsk (http://app.transifex.com/xfce/libxfce4ui/language/nn/)\n"
@@ -19,32 +19,153 @@ msgstr ""
 "Language: nn\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: libxfce4ui/xfce-dialogs.c:109
+#: libxfce4ui/resources/xfce4-about-dialog.glade:116
+msgid "License"
+msgstr "Lisens"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:340
+msgid "About the Xfce Desktop Environment"
+msgstr "Om skrivebordsmiljøet Xfce"
+
+#. add the "Help" button
+#: libxfce4ui/resources/xfce4-about-dialog.glade:358
+#: xfce-desktop-item-edit/main.c:342
+msgid "_Help"
+msgstr "_Hjelp"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:374
+msgid "_Close"
+msgstr "_Lat att"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:437
+msgid "Device"
+msgstr "Eining"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:449
+#: libxfce4ui/resources/xfce4-about-dialog.glade:474
+#: libxfce4ui/resources/xfce4-about-dialog.glade:499
+#: libxfce4ui/resources/xfce4-about-dialog.glade:524
+#: libxfce4ui/resources/xfce4-about-dialog.glade:551
+#: libxfce4ui/resources/xfce4-about-dialog.glade:576
+#: libxfce4ui/resources/xfce4-about-dialog.glade:601
+#: libxfce4ui/resources/xfce4-about-dialog.glade:626
+#: libxfce4ui/resources/xfce4-about-dialog.glade:653
+#: libxfce4ui/resources/xfce4-about-dialog.glade:678
+#: libxfce4ui/resources/xfce4-about-dialog.glade:703
+msgid "label"
+msgstr "merkelapp"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:462
+msgid "OS Name"
+msgstr ""
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:487
+msgid "OS Type"
+msgstr ""
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:512
+msgid "Distributor"
+msgstr ""
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:538
+msgid "Xfce Version"
+msgstr ""
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:564
+msgid "GTK Version"
+msgstr ""
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:589
+msgid "Kernel Version"
+msgstr ""
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:614
+msgid "Windowing System"
+msgstr ""
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:640
+msgid "CPU"
+msgstr ""
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:666
+msgid "Memory"
+msgstr ""
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:691
+msgid "GPU"
+msgstr ""
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:724
+msgid "System"
+msgstr "System"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:766
+msgid ""
+"Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
+"The following programs are part of the Xfce core:"
+msgstr ""
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:804
+msgid ""
+"Xfce is also a development platform providing several libraries that help programmers create applications that fit in well with the desktop environment.\n"
+"\n"
+"Xfce components are licensed under free or open source licences; GPL or BSDL for applications and LGPL or BSDL for libraries. Look at the documentation, the source code or the Xfce website (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) for more information.\n"
+"\n"
+"Thank you for your interest in Xfce.\n"
+"\n"
+"\t- The Xfce Development Team"
+msgstr ""
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:834
+msgid "About"
+msgstr "Om"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:868
+msgid "Credits"
+msgstr "Heider og ære"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:947
+msgid "GPL"
+msgstr "GPL"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:960
+msgid "LGPL"
+msgstr "LGPL"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:973
+msgid "BSD"
+msgstr "BSD"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:1003
+msgid "Copyright"
+msgstr "Opphavsrett"
+
+#: libxfce4ui/xfce-dialogs.c:108
 msgid "Failed to open web browser for online documentation"
 msgstr "Greidde ikkje opna nettlesaren for å lesa dokumentasjonen som ligg på nettet"
 
-#: libxfce4ui/xfce-dialogs.c:265
+#: libxfce4ui/xfce-dialogs.c:264
 #, c-format
 msgid "Do you want to read the %s manual online?"
 msgstr "Vil du lesa bruksrettleiinga for %s på nettet?"
 
-#: libxfce4ui/xfce-dialogs.c:267
+#: libxfce4ui/xfce-dialogs.c:266
 msgid "Do you want to read the manual online?"
 msgstr "Vil du lesa bruksrettleiinga på nettet?"
 
-#: libxfce4ui/xfce-dialogs.c:269
+#: libxfce4ui/xfce-dialogs.c:268
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
 msgstr "Du blir sendt vidare til dokumentasjonssida, der hjelpefilene blir oppdaterte og omsette."
 
-#: libxfce4ui/xfce-dialogs.c:271
+#: libxfce4ui/xfce-dialogs.c:270
 msgid "Read the manual"
 msgstr ""
 
 #. Create cancel button
 #. add the "Cancel" button
-#: libxfce4ui/xfce-dialogs.c:273 libxfce4ui/xfce-dialogs.c:531
+#: libxfce4ui/xfce-dialogs.c:272 libxfce4ui/xfce-dialogs.c:530
 #: libxfce4kbd-private/xfce-shortcut-dialog.c:256
 #: xfce-desktop-item-edit/main.c:348 xfce-desktop-item-edit/main.c:539
 #: xfce-desktop-item-edit/xfce-die-command-entry.c:266
@@ -53,61 +174,61 @@ msgstr ""
 msgid "_Cancel"
 msgstr "Av_bryt"
 
-#: libxfce4ui/xfce-dialogs.c:274
+#: libxfce4ui/xfce-dialogs.c:273
 msgid "_Read Online"
 msgstr "Les på _Internett"
 
-#: libxfce4ui/xfce-dialogs.c:283
+#: libxfce4ui/xfce-dialogs.c:282
 msgid "_Always go directly to the online documentation"
 msgstr "_Alltid gå direkte til dokumentasjonen på nettet"
 
-#: libxfce4ui/xfce-dialogs.c:332 libxfce4ui/xfce-dialogs.c:367
-#: libxfce4ui/xfce-dialogs.c:403
+#: libxfce4ui/xfce-dialogs.c:331 libxfce4ui/xfce-dialogs.c:366
+#: libxfce4ui/xfce-dialogs.c:402
 msgid "Close"
 msgstr "Lukk"
 
-#: libxfce4ui/xfce-dialogs.c:450
+#: libxfce4ui/xfce-dialogs.c:449
 msgid "No"
 msgstr "Nei"
 
-#: libxfce4ui/xfce-dialogs.c:452
+#: libxfce4ui/xfce-dialogs.c:451
 msgid "Yes"
 msgstr "Ja"
 
-#: libxfce4ui/xfce-dialogs.c:456 libxfce4kbd-private/xfce-shortcuts-xfwm4.c:43
+#: libxfce4ui/xfce-dialogs.c:455 libxfce4kbd-private/xfce-shortcuts-xfwm4.c:43
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: libxfce4ui/xfce-dialogs.c:515
+#: libxfce4ui/xfce-dialogs.c:514
 msgid "Close window with multiple tabs?"
 msgstr ""
 
-#: libxfce4ui/xfce-dialogs.c:517
+#: libxfce4ui/xfce-dialogs.c:516
 msgid ""
 "This window has multiple tabs open. Closing this window will also close all "
 "its tabs."
 msgstr ""
 
-#: libxfce4ui/xfce-dialogs.c:520
+#: libxfce4ui/xfce-dialogs.c:519
 #, c-format
 msgid ""
 "This window has %d tabs open. Closing this window will also close all its "
 "tabs."
 msgstr ""
 
-#: libxfce4ui/xfce-dialogs.c:527
+#: libxfce4ui/xfce-dialogs.c:526
 msgid "Warning"
 msgstr "Åtvaring"
 
-#: libxfce4ui/xfce-dialogs.c:532
+#: libxfce4ui/xfce-dialogs.c:531
 msgid "Close T_ab"
 msgstr ""
 
-#: libxfce4ui/xfce-dialogs.c:533
+#: libxfce4ui/xfce-dialogs.c:532
 msgid "Close _Window"
 msgstr ""
 
-#: libxfce4ui/xfce-dialogs.c:538
+#: libxfce4ui/xfce-dialogs.c:537
 msgid "Do _not ask me again"
 msgstr "Ikkje spør meg igje_n"
 
@@ -259,15 +380,15 @@ msgid ""
 msgstr "Arbeidsmappa «%s» finst ikkje. Me kjem ikkje til å bruka henne når me startar «%s»."
 
 #. retrieve the error and warning messages
-#: libxfce4ui/xfce-filename-input.c:238
+#: libxfce4ui/xfce-filename-input.c:234
 msgid "Filename is too long"
 msgstr ""
 
-#: libxfce4ui/xfce-filename-input.c:239
+#: libxfce4ui/xfce-filename-input.c:235
 msgid "Directory separator illegal in file name"
 msgstr ""
 
-#: libxfce4ui/xfce-filename-input.c:240
+#: libxfce4ui/xfce-filename-input.c:236
 msgid "Filenames should not start or end with a space"
 msgstr ""
 
@@ -714,124 +835,124 @@ msgstr "Slett siste arbeidsområdet"
 msgid "Delete active workspace"
 msgstr "Slett dette arbeidsområdet"
 
-#: xfce4-about/main.c:67
+#: xfce4-about/main.c:66
 msgid "Version information"
 msgstr "Informasjon om denne utgåva"
 
-#: xfce4-about/main.c:177
+#: xfce4-about/main.c:176
 msgid "GPUs"
 msgstr ""
 
-#: xfce4-about/main.c:194
+#: xfce4-about/main.c:193
 msgid "Window Manager"
 msgstr "Vindaugshandsamar"
 
-#: xfce4-about/main.c:195
+#: xfce4-about/main.c:194
 msgid "Handles the placement of windows on the screen."
 msgstr "Handterer korleis vindaugo blir plasserte på skjermen."
 
-#: xfce4-about/main.c:198
+#: xfce4-about/main.c:197
 msgid "Panel"
 msgstr "Panel"
 
-#: xfce4-about/main.c:199
+#: xfce4-about/main.c:198
 msgid "Provides a home for window buttons, launchers, app menu and more."
 msgstr ""
 
-#: xfce4-about/main.c:202
+#: xfce4-about/main.c:201
 msgid "Desktop Manager"
 msgstr "Skrivebordshandsamar"
 
-#: xfce4-about/main.c:203
+#: xfce4-about/main.c:202
 msgid "Sets desktop backgrounds, handles icons and more."
 msgstr ""
 
-#: xfce4-about/main.c:206
+#: xfce4-about/main.c:205
 msgid "File Manager"
 msgstr "Filhandsamar"
 
-#: xfce4-about/main.c:207
+#: xfce4-about/main.c:206
 msgid "Manages your files in a modern, easy-to-use and fast way."
 msgstr ""
 
-#: xfce4-about/main.c:210
+#: xfce4-about/main.c:209
 msgid "Volume Manager"
 msgstr ""
 
-#: xfce4-about/main.c:211
+#: xfce4-about/main.c:210
 msgid "Manages removable drives and media for Thunar."
 msgstr ""
 
-#: xfce4-about/main.c:214
+#: xfce4-about/main.c:213
 msgid "Session Manager"
 msgstr "Økthandsamar"
 
-#: xfce4-about/main.c:215
+#: xfce4-about/main.c:214
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
 msgstr ""
 
-#: xfce4-about/main.c:218
+#: xfce4-about/main.c:217
 msgid "Settings Manager"
 msgstr "Innstillingshandterar"
 
-#: xfce4-about/main.c:219
+#: xfce4-about/main.c:218
 msgid "Configures appearance, display, keyboard and mouse settings."
 msgstr ""
 
-#: xfce4-about/main.c:222
+#: xfce4-about/main.c:221
 msgid "Application Finder"
 msgstr "Programfinnar"
 
-#: xfce4-about/main.c:223
+#: xfce4-about/main.c:222
 msgid "Quickly finds and launches applications installed on your system."
 msgstr ""
 
-#: xfce4-about/main.c:226
+#: xfce4-about/main.c:225
 msgid "Settings Daemon"
 msgstr "Innstillingsnisse"
 
-#: xfce4-about/main.c:227
+#: xfce4-about/main.c:226
 msgid "Stores your settings in a D-Bus-based configuration system."
 msgstr ""
 
-#: xfce4-about/main.c:230
+#: xfce4-about/main.c:229
 msgid "A Menu Library"
 msgstr ""
 
-#: xfce4-about/main.c:231
+#: xfce4-about/main.c:230
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
 msgstr ""
 
-#: xfce4-about/main.c:234
+#: xfce4-about/main.c:233
 msgid "Thumbnails Service"
 msgstr ""
 
-#: xfce4-about/main.c:235
+#: xfce4-about/main.c:234
 msgid "Implements the thumbnail management D-Bus specification."
 msgstr ""
 
-#: xfce4-about/main.c:288
+#: xfce4-about/main.c:287
 msgid "Please see <https://www.xfce.org/about/credits>"
 msgstr ""
 
-#: xfce4-about/main.c:342
+#: xfce4-about/main.c:341
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 msgstr ""
 
-#: xfce4-about/main.c:347
+#: xfce4-about/main.c:346
 msgid "Thanks to all who helped making this software available!"
 msgstr "Takk til alle som har hjelpt til å laga denne programvara!"
 
-#: xfce4-about/main.c:364
+#: xfce4-about/main.c:363
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
 msgstr "Xfce 4 er copyright Olivier Fourdan (fourdan@xfce.org). Dei ulike programskaparane har kopieringsretten til sine eigne program."
 
-#: xfce4-about/main.c:370
+#: xfce4-about/main.c:369
 msgid ""
 "The libxfce4ui and libxfce4util packages are distributed under the terms of "
 "the GNU Library General Public License as published by the Free Software "
@@ -839,7 +960,7 @@ msgid ""
 "version."
 msgstr ""
 
-#: xfce4-about/main.c:378
+#: xfce4-about/main.c:377
 msgid ""
 "The packages thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
 "xfce4-settings, xfconf, xfdesktop and xfwm4 are distributed under the terms "
@@ -848,27 +969,27 @@ msgid ""
 "version."
 msgstr ""
 
-#: xfce4-about/main.c:525
+#: xfce4-about/main.c:524
 #, c-format
 msgid "Type '%s --help' for usage information."
 msgstr "Skriv «%s --help» for brukarrettleiing."
 
-#: xfce4-about/main.c:531
+#: xfce4-about/main.c:530
 msgid "Unable to initialize GTK+."
 msgstr "Klarte ikkje starta GTK+"
 
-#: xfce4-about/main.c:540 xfce-desktop-item-edit/main.c:205
-#: xfce-open/main.c:760
+#: xfce4-about/main.c:539 xfce-desktop-item-edit/main.c:205
+#: xfce-open/main.c:761
 msgid "The Xfce development team. All rights reserved."
 msgstr "Utviklingslaget for Xfce. Alle rettar er reserverte."
 
-#: xfce4-about/main.c:541 xfce-desktop-item-edit/main.c:213
-#: xfce-open/main.c:769
+#: xfce4-about/main.c:540 xfce-desktop-item-edit/main.c:213
+#: xfce-open/main.c:770
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "Rapporter feil til <%s>."
 
-#: xfce4-about/main.c:551
+#: xfce4-about/main.c:549
 msgid "Failed to load interface"
 msgstr "Klarte ikkje å lasta grensesnittet"
 
@@ -910,126 +1031,6 @@ msgstr "Om Xfce"
 #: xfce4-about/xfce4-about.desktop.in:12
 msgid "Information about the Xfce Desktop Environment"
 msgstr "Opplysingar om skrivebordsmiljøet Xfce"
-
-#: xfce4-about/xfce4-about-dialog.glade:116
-msgid "License"
-msgstr "Lisens"
-
-#: xfce4-about/xfce4-about-dialog.glade:340
-msgid "About the Xfce Desktop Environment"
-msgstr "Om skrivebordsmiljøet Xfce"
-
-#. add the "Help" button
-#: xfce4-about/xfce4-about-dialog.glade:358 xfce-desktop-item-edit/main.c:342
-msgid "_Help"
-msgstr "_Hjelp"
-
-#: xfce4-about/xfce4-about-dialog.glade:374
-msgid "_Close"
-msgstr "_Lat att"
-
-#: xfce4-about/xfce4-about-dialog.glade:437
-msgid "Device"
-msgstr "Eining"
-
-#: xfce4-about/xfce4-about-dialog.glade:449
-#: xfce4-about/xfce4-about-dialog.glade:474
-#: xfce4-about/xfce4-about-dialog.glade:499
-#: xfce4-about/xfce4-about-dialog.glade:524
-#: xfce4-about/xfce4-about-dialog.glade:551
-#: xfce4-about/xfce4-about-dialog.glade:576
-#: xfce4-about/xfce4-about-dialog.glade:601
-#: xfce4-about/xfce4-about-dialog.glade:626
-#: xfce4-about/xfce4-about-dialog.glade:653
-#: xfce4-about/xfce4-about-dialog.glade:678
-#: xfce4-about/xfce4-about-dialog.glade:703
-msgid "label"
-msgstr "merkelapp"
-
-#: xfce4-about/xfce4-about-dialog.glade:462
-msgid "OS Name"
-msgstr ""
-
-#: xfce4-about/xfce4-about-dialog.glade:487
-msgid "OS Type"
-msgstr ""
-
-#: xfce4-about/xfce4-about-dialog.glade:512
-msgid "Distributor"
-msgstr ""
-
-#: xfce4-about/xfce4-about-dialog.glade:538
-msgid "Xfce Version"
-msgstr ""
-
-#: xfce4-about/xfce4-about-dialog.glade:564
-msgid "GTK Version"
-msgstr ""
-
-#: xfce4-about/xfce4-about-dialog.glade:589
-msgid "Kernel Version"
-msgstr ""
-
-#: xfce4-about/xfce4-about-dialog.glade:614
-msgid "Windowing System"
-msgstr ""
-
-#: xfce4-about/xfce4-about-dialog.glade:640
-msgid "CPU"
-msgstr ""
-
-#: xfce4-about/xfce4-about-dialog.glade:666
-msgid "Memory"
-msgstr ""
-
-#: xfce4-about/xfce4-about-dialog.glade:691
-msgid "GPU"
-msgstr ""
-
-#: xfce4-about/xfce4-about-dialog.glade:724
-msgid "System"
-msgstr "System"
-
-#: xfce4-about/xfce4-about-dialog.glade:766
-msgid ""
-"Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
-"The following programs are part of the Xfce core:"
-msgstr ""
-
-#: xfce4-about/xfce4-about-dialog.glade:804
-msgid ""
-"Xfce is also a development platform providing several libraries that help programmers create applications that fit in well with the desktop environment.\n"
-"\n"
-"Xfce components are licensed under free or open source licences; GPL or BSDL for applications and LGPL or BSDL for libraries. Look at the documentation, the source code or the Xfce website (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) for more information.\n"
-"\n"
-"Thank you for your interest in Xfce.\n"
-"\n"
-"\t- The Xfce Development Team"
-msgstr ""
-
-#: xfce4-about/xfce4-about-dialog.glade:834
-msgid "About"
-msgstr "Om"
-
-#: xfce4-about/xfce4-about-dialog.glade:868
-msgid "Credits"
-msgstr "Heider og ære"
-
-#: xfce4-about/xfce4-about-dialog.glade:947
-msgid "GPL"
-msgstr "GPL"
-
-#: xfce4-about/xfce4-about-dialog.glade:960
-msgid "LGPL"
-msgstr "LGPL"
-
-#: xfce4-about/xfce4-about-dialog.glade:973
-msgid "BSD"
-msgstr "BSD"
-
-#: xfce4-about/xfce4-about-dialog.glade:1003
-msgid "Copyright"
-msgstr "Opphavsrett"
 
 #: xfce4-about/system-info.c:499 xfce4-about/system-info.c:521
 #: xfce4-about/system-info.c:640 xfce4-about/system-info.c:689
@@ -1140,15 +1141,15 @@ msgstr "Vis versjonsinformasjonen og avslutt"
 msgid "[FILE|FOLDER]"
 msgstr "[FIL|MAPPE]"
 
-#: xfce-desktop-item-edit/main.c:203 xfce-open/main.c:758
+#: xfce-desktop-item-edit/main.c:203 xfce-open/main.c:759
 msgid "os-cillation e.K. All rights reserved."
 msgstr ""
 
-#: xfce-desktop-item-edit/main.c:207 xfce-open/main.c:762
+#: xfce-desktop-item-edit/main.c:207 xfce-open/main.c:763
 msgid "Written by Benedikt Meurer <benny@xfce.org>."
 msgstr "Skrive av Benedikt Meurer <benny@xfce.org>."
 
-#: xfce-desktop-item-edit/main.c:208 xfce-open/main.c:764
+#: xfce-desktop-item-edit/main.c:208 xfce-open/main.c:765
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -1351,10 +1352,11 @@ msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
-"  TerminalEmulator - The preferred Terminal Emulator."
-msgstr "  WebBrowser       - Standard nettlesar.\n  MailReader       - Standard epostlesar.\n FileManager       - Standard filutforskar\n TerminalEmulator - Standard teminalprogram."
+"  TerminalEmulator - The preferred Terminal Emulator.\n"
+"  TextEditor       - The preferred Text Editor."
+msgstr ""
 
-#: xfce-open/main.c:245
+#: xfce-open/main.c:246
 msgid ""
 "If you don't specify the --launch option, xfce-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1363,16 +1365,16 @@ msgid ""
 "you can pass the command line that should be run in the terminal)."
 msgstr ""
 
-#: xfce-open/main.c:420
+#: xfce-open/main.c:421
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Klarte ikkje å starta standardprogram for kategorien \"%s\"."
 
-#: xfce-open/main.c:711
+#: xfce-open/main.c:712
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "Klarte ikkje finna URI-schema for \"%s\"."
 
-#: xfce-open/main.c:725
+#: xfce-open/main.c:726
 msgid "Failed to open URI."
 msgstr ""
