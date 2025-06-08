@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2025-03-14 00:45+0100\n"
+"POT-Creation-Date: 2025-06-08 00:45+0200\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: Źmicier Turok <nashtlumach@gmail.com>, 2019\n"
 "Language-Team: Belarusian (http://app.transifex.com/xfce/libxfce4ui/language/be/)\n"
@@ -19,32 +19,153 @@ msgstr ""
 "Language: be\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: libxfce4ui/xfce-dialogs.c:109
+#: libxfce4ui/resources/xfce4-about-dialog.glade:116
+msgid "License"
+msgstr "Ліцэнзія"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:340
+msgid "About the Xfce Desktop Environment"
+msgstr "Пра працоўнае асяроддзе Xfce"
+
+#. add the "Help" button
+#: libxfce4ui/resources/xfce4-about-dialog.glade:358
+#: xfce-desktop-item-edit/main.c:342
+msgid "_Help"
+msgstr "_Даведка"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:374
+msgid "_Close"
+msgstr "Закры_ць"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:437
+msgid "Device"
+msgstr "Прылада"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:449
+#: libxfce4ui/resources/xfce4-about-dialog.glade:474
+#: libxfce4ui/resources/xfce4-about-dialog.glade:499
+#: libxfce4ui/resources/xfce4-about-dialog.glade:524
+#: libxfce4ui/resources/xfce4-about-dialog.glade:551
+#: libxfce4ui/resources/xfce4-about-dialog.glade:576
+#: libxfce4ui/resources/xfce4-about-dialog.glade:601
+#: libxfce4ui/resources/xfce4-about-dialog.glade:626
+#: libxfce4ui/resources/xfce4-about-dialog.glade:653
+#: libxfce4ui/resources/xfce4-about-dialog.glade:678
+#: libxfce4ui/resources/xfce4-about-dialog.glade:703
+msgid "label"
+msgstr "адмеціна"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:462
+msgid "OS Name"
+msgstr "Назва АС"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:487
+msgid "OS Type"
+msgstr "Тып АС"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:512
+msgid "Distributor"
+msgstr "Дыстрыбутар"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:538
+msgid "Xfce Version"
+msgstr "Версія Xfce"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:564
+msgid "GTK Version"
+msgstr ""
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:589
+msgid "Kernel Version"
+msgstr ""
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:614
+msgid "Windowing System"
+msgstr ""
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:640
+msgid "CPU"
+msgstr "Працэсар"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:666
+msgid "Memory"
+msgstr "Памяць"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:691
+msgid "GPU"
+msgstr "GPU"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:724
+msgid "System"
+msgstr "Сістэма"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:766
+msgid ""
+"Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
+"The following programs are part of the Xfce core:"
+msgstr "Xfce - набор праграм, што разам складаюць паўнавартаснае працоўнае асяроддзе. У ядро Xfce уваходзяць наступныя праграмы:"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:804
+msgid ""
+"Xfce is also a development platform providing several libraries that help programmers create applications that fit in well with the desktop environment.\n"
+"\n"
+"Xfce components are licensed under free or open source licences; GPL or BSDL for applications and LGPL or BSDL for libraries. Look at the documentation, the source code or the Xfce website (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) for more information.\n"
+"\n"
+"Thank you for your interest in Xfce.\n"
+"\n"
+"\t- The Xfce Development Team"
+msgstr "Xfce - гэта таксама платформа для распрацоўкі, якая падае некалькі бібліятэк, якія дапамагаюць праграмістам ствараць праграмы, якія добра пасуюць працоўнаму асяроддзю.\n\n Кампаненты Xfce ліцэнзуюцца бясплатнымі альбо свабоднымі ліцэнзіямі; GPL або BSDL для праграм і LGPL або BSDL для бібліятэк. Паглядзіце дадатковую інфармацыю ў дакументацыі, зыходным кодзе альбо на сайце Xfce (<a href=\"https://www.xfce.org\"> https://www.xfce.org </a>).\n\n Дзякуем за цікавасць да Xfce.\n\n - Каманда распрацоўшчыкаў Xfce"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:834
+msgid "About"
+msgstr "Пра праграму"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:868
+msgid "Credits"
+msgstr "Цітры"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:947
+msgid "GPL"
+msgstr "GPL"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:960
+msgid "LGPL"
+msgstr "LGPL"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:973
+msgid "BSD"
+msgstr "BSD"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:1003
+msgid "Copyright"
+msgstr "Аўтарскія правы"
+
+#: libxfce4ui/xfce-dialogs.c:108
 msgid "Failed to open web browser for online documentation"
 msgstr "Не атрымалася адкрыць браўзер для прагляду сеціўнай дакументацыі"
 
-#: libxfce4ui/xfce-dialogs.c:265
+#: libxfce4ui/xfce-dialogs.c:264
 #, c-format
 msgid "Do you want to read the %s manual online?"
 msgstr "Хочаце пачытаць дапаможнік %s у сеціве?"
 
-#: libxfce4ui/xfce-dialogs.c:267
+#: libxfce4ui/xfce-dialogs.c:266
 msgid "Do you want to read the manual online?"
 msgstr "Хочаце пачытаць дапаможнік у сеціве?"
 
-#: libxfce4ui/xfce-dialogs.c:269
+#: libxfce4ui/xfce-dialogs.c:268
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
 msgstr "Вас накіруюць на сайт дакументацыі, дзе старонкі дапаможніка перакладаюцца і падтрымліваюцца суполкай."
 
-#: libxfce4ui/xfce-dialogs.c:271
+#: libxfce4ui/xfce-dialogs.c:270
 msgid "Read the manual"
 msgstr ""
 
 #. Create cancel button
 #. add the "Cancel" button
-#: libxfce4ui/xfce-dialogs.c:273 libxfce4ui/xfce-dialogs.c:531
+#: libxfce4ui/xfce-dialogs.c:272 libxfce4ui/xfce-dialogs.c:530
 #: libxfce4kbd-private/xfce-shortcut-dialog.c:256
 #: xfce-desktop-item-edit/main.c:348 xfce-desktop-item-edit/main.c:539
 #: xfce-desktop-item-edit/xfce-die-command-entry.c:266
@@ -53,61 +174,61 @@ msgstr ""
 msgid "_Cancel"
 msgstr "_Скасаваць"
 
-#: libxfce4ui/xfce-dialogs.c:274
+#: libxfce4ui/xfce-dialogs.c:273
 msgid "_Read Online"
 msgstr "_Чытаць у сеціве"
 
-#: libxfce4ui/xfce-dialogs.c:283
+#: libxfce4ui/xfce-dialogs.c:282
 msgid "_Always go directly to the online documentation"
 msgstr "_Заўсёды накіроўваць на сеціўную дакументацыю"
 
-#: libxfce4ui/xfce-dialogs.c:332 libxfce4ui/xfce-dialogs.c:367
-#: libxfce4ui/xfce-dialogs.c:403
+#: libxfce4ui/xfce-dialogs.c:331 libxfce4ui/xfce-dialogs.c:366
+#: libxfce4ui/xfce-dialogs.c:402
 msgid "Close"
 msgstr "Закрыць"
 
-#: libxfce4ui/xfce-dialogs.c:450
+#: libxfce4ui/xfce-dialogs.c:449
 msgid "No"
 msgstr "Не"
 
-#: libxfce4ui/xfce-dialogs.c:452
+#: libxfce4ui/xfce-dialogs.c:451
 msgid "Yes"
 msgstr "Так"
 
-#: libxfce4ui/xfce-dialogs.c:456 libxfce4kbd-private/xfce-shortcuts-xfwm4.c:43
+#: libxfce4ui/xfce-dialogs.c:455 libxfce4kbd-private/xfce-shortcuts-xfwm4.c:43
 msgid "Cancel"
 msgstr "Скасаваць"
 
-#: libxfce4ui/xfce-dialogs.c:515
+#: libxfce4ui/xfce-dialogs.c:514
 msgid "Close window with multiple tabs?"
 msgstr "Закрыць акно з некалькімі ўкладкамі?"
 
-#: libxfce4ui/xfce-dialogs.c:517
+#: libxfce4ui/xfce-dialogs.c:516
 msgid ""
 "This window has multiple tabs open. Closing this window will also close all "
 "its tabs."
 msgstr "У гэтым акне адкрыта некалькі ўкладак. Калі яго закрыць, то закрыюцца і ўсе ўкладкі."
 
-#: libxfce4ui/xfce-dialogs.c:520
+#: libxfce4ui/xfce-dialogs.c:519
 #, c-format
 msgid ""
 "This window has %d tabs open. Closing this window will also close all its "
 "tabs."
 msgstr "У акна %d адкрытыя ўкладкі. Калі закрыць акно, \nзакрыюцца і ўкладкі."
 
-#: libxfce4ui/xfce-dialogs.c:527
+#: libxfce4ui/xfce-dialogs.c:526
 msgid "Warning"
 msgstr "Папярэджанне"
 
-#: libxfce4ui/xfce-dialogs.c:532
+#: libxfce4ui/xfce-dialogs.c:531
 msgid "Close T_ab"
 msgstr "Закрыць _укладку"
 
-#: libxfce4ui/xfce-dialogs.c:533
+#: libxfce4ui/xfce-dialogs.c:532
 msgid "Close _Window"
 msgstr "Закрыць _акно"
 
-#: libxfce4ui/xfce-dialogs.c:538
+#: libxfce4ui/xfce-dialogs.c:537
 msgid "Do _not ask me again"
 msgstr "Больш н_е пытацца"
 
@@ -259,15 +380,15 @@ msgid ""
 msgstr "Працоўны каталог \"%s\" не існуе. Ён не будзе выкарыстоўвацца для \"%s\"."
 
 #. retrieve the error and warning messages
-#: libxfce4ui/xfce-filename-input.c:238
+#: libxfce4ui/xfce-filename-input.c:234
 msgid "Filename is too long"
 msgstr "Назва занадта доўгая"
 
-#: libxfce4ui/xfce-filename-input.c:239
+#: libxfce4ui/xfce-filename-input.c:235
 msgid "Directory separator illegal in file name"
 msgstr "Падзяляльнік каталогаў непрыдатны ў назве файла"
 
-#: libxfce4ui/xfce-filename-input.c:240
+#: libxfce4ui/xfce-filename-input.c:236
 msgid "Filenames should not start or end with a space"
 msgstr "Назвы файлаў не могуць пачынацца ці заканчвацца прагалам"
 
@@ -714,124 +835,124 @@ msgstr "Выдаліць апошнюю працоўную прастору"
 msgid "Delete active workspace"
 msgstr "Выдаліць бягучую працоўную прастору"
 
-#: xfce4-about/main.c:67
+#: xfce4-about/main.c:66
 msgid "Version information"
 msgstr "Інфармацыя пра версію"
 
-#: xfce4-about/main.c:177
+#: xfce4-about/main.c:176
 msgid "GPUs"
 msgstr "GPU"
 
-#: xfce4-about/main.c:194
+#: xfce4-about/main.c:193
 msgid "Window Manager"
 msgstr "Кіраўнік акон"
 
-#: xfce4-about/main.c:195
+#: xfce4-about/main.c:194
 msgid "Handles the placement of windows on the screen."
 msgstr "Апрацоўвае размяшчэнне акон на экране."
 
-#: xfce4-about/main.c:198
+#: xfce4-about/main.c:197
 msgid "Panel"
 msgstr "Панэль"
 
-#: xfce4-about/main.c:199
+#: xfce4-about/main.c:198
 msgid "Provides a home for window buttons, launchers, app menu and more."
 msgstr "Забяспечвае інтэрфейсам для кнопак акон, запускальнікаў, меню і інш."
 
-#: xfce4-about/main.c:202
+#: xfce4-about/main.c:201
 msgid "Desktop Manager"
 msgstr "Кіраўнік працоўнага стала"
 
-#: xfce4-about/main.c:203
+#: xfce4-about/main.c:202
 msgid "Sets desktop backgrounds, handles icons and more."
 msgstr "Вызначае фон працоўнага стала, значкі і інш."
 
-#: xfce4-about/main.c:206
+#: xfce4-about/main.c:205
 msgid "File Manager"
 msgstr "Кіраўнік файлаў"
 
-#: xfce4-about/main.c:207
+#: xfce4-about/main.c:206
 msgid "Manages your files in a modern, easy-to-use and fast way."
 msgstr "Кіруе вашымі файламі."
 
-#: xfce4-about/main.c:210
+#: xfce4-about/main.c:209
 msgid "Volume Manager"
 msgstr "Кіраўнік тамоў"
 
-#: xfce4-about/main.c:211
+#: xfce4-about/main.c:210
 msgid "Manages removable drives and media for Thunar."
 msgstr "Кіруе рухомымі дыскамі і носьбітамі для Thunar."
 
-#: xfce4-about/main.c:214
+#: xfce4-about/main.c:213
 msgid "Session Manager"
 msgstr "Кіраўнік сеанса"
 
-#: xfce4-about/main.c:215
+#: xfce4-about/main.c:214
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
 msgstr "Захоўвае і аднаўляе сеанс, апрацоўвае аўтазапуск і выключэнне."
 
-#: xfce4-about/main.c:218
+#: xfce4-about/main.c:217
 msgid "Settings Manager"
 msgstr "Кіраўнік налад"
 
-#: xfce4-about/main.c:219
+#: xfce4-about/main.c:218
 msgid "Configures appearance, display, keyboard and mouse settings."
 msgstr "Наладжвае выгляд, дысплей, клавіятуру і мыш."
 
-#: xfce4-about/main.c:222
+#: xfce4-about/main.c:221
 msgid "Application Finder"
 msgstr "Пошук праграм"
 
-#: xfce4-about/main.c:223
+#: xfce4-about/main.c:222
 msgid "Quickly finds and launches applications installed on your system."
 msgstr "Хутка знаходзіць і запускае ўсталяваныя ў вашай сістэме праграмы."
 
-#: xfce4-about/main.c:226
+#: xfce4-about/main.c:225
 msgid "Settings Daemon"
 msgstr "Дэман налад"
 
-#: xfce4-about/main.c:227
+#: xfce4-about/main.c:226
 msgid "Stores your settings in a D-Bus-based configuration system."
 msgstr "Захоўвае вашыя налады ў заснаванай на D-Bus сістэме канфігурацыі."
 
-#: xfce4-about/main.c:230
+#: xfce4-about/main.c:229
 msgid "A Menu Library"
 msgstr "Бібліятэка меню"
 
-#: xfce4-about/main.c:231
+#: xfce4-about/main.c:230
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
 msgstr "Рэалізуе заснаванае на GLib і GIO меню па прынцыпах freedesktop.org."
 
-#: xfce4-about/main.c:234
+#: xfce4-about/main.c:233
 msgid "Thumbnails Service"
 msgstr "Служба мініяцюр"
 
-#: xfce4-about/main.c:235
+#: xfce4-about/main.c:234
 msgid "Implements the thumbnail management D-Bus specification."
 msgstr "Рэалізуе спецыфікацыю мініяцюр для D-Bus."
 
-#: xfce4-about/main.c:288
+#: xfce4-about/main.c:287
 msgid "Please see <https://www.xfce.org/about/credits>"
 msgstr "Глядзіце <https://www.xfce.org/about/credits>"
 
-#: xfce4-about/main.c:342
+#: xfce4-about/main.c:341
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 msgstr "Калі вы ведаеце таго, каго няма ў спісе, паведаміце на <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues>."
 
-#: xfce4-about/main.c:347
+#: xfce4-about/main.c:346
 msgid "Thanks to all who helped making this software available!"
 msgstr "Дзякуй усім, хто дапамог стварыць гэтае праграмнае забеспячэнне!"
 
-#: xfce4-about/main.c:364
+#: xfce4-about/main.c:363
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
 msgstr "Аўтарскія правы на Xfce 4 належаць Olivier Fourdan (fourdan@xfce.org). Аўтарскія правы на кампаненты належаць іх распрацоўшчыкам."
 
-#: xfce4-about/main.c:370
+#: xfce4-about/main.c:369
 msgid ""
 "The libxfce4ui and libxfce4util packages are distributed under the terms of "
 "the GNU Library General Public License as published by the Free Software "
@@ -839,7 +960,7 @@ msgid ""
 "version."
 msgstr ""
 
-#: xfce4-about/main.c:378
+#: xfce4-about/main.c:377
 msgid ""
 "The packages thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
 "xfce4-settings, xfconf, xfdesktop and xfwm4 are distributed under the terms "
@@ -848,27 +969,27 @@ msgid ""
 "version."
 msgstr "thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfce-utils, xfconf, xfdesktop і xfwm4 распаўсюджваюцца на ўмовах GNU Library General Public License апублікаванай Free Software Foundation версіі 2 альбо пазнейшай."
 
-#: xfce4-about/main.c:525
+#: xfce4-about/main.c:524
 #, c-format
 msgid "Type '%s --help' for usage information."
 msgstr "Увядзіце \"%s --help\", каб праглядзець дапаможнік."
 
-#: xfce4-about/main.c:531
+#: xfce4-about/main.c:530
 msgid "Unable to initialize GTK+."
 msgstr "Не атрымалася ініцыялізаваць GTK+."
 
-#: xfce4-about/main.c:540 xfce-desktop-item-edit/main.c:205
-#: xfce-open/main.c:760
+#: xfce4-about/main.c:539 xfce-desktop-item-edit/main.c:205
+#: xfce-open/main.c:761
 msgid "The Xfce development team. All rights reserved."
 msgstr "Каманда распрацоўкі Xfce. Усе правы абароненыя."
 
-#: xfce4-about/main.c:541 xfce-desktop-item-edit/main.c:213
-#: xfce-open/main.c:769
+#: xfce4-about/main.c:540 xfce-desktop-item-edit/main.c:213
+#: xfce-open/main.c:770
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "Калі ласка, паведамляйце пра памылкі на <%s>."
 
-#: xfce4-about/main.c:551
+#: xfce4-about/main.c:549
 msgid "Failed to load interface"
 msgstr "Не атрымалася загрузіць інтэрфейс"
 
@@ -910,126 +1031,6 @@ msgstr "Пра Xfce"
 #: xfce4-about/xfce4-about.desktop.in:12
 msgid "Information about the Xfce Desktop Environment"
 msgstr "Звесткі пра працоўнае асяроддзе Xfce"
-
-#: xfce4-about/xfce4-about-dialog.glade:116
-msgid "License"
-msgstr "Ліцэнзія"
-
-#: xfce4-about/xfce4-about-dialog.glade:340
-msgid "About the Xfce Desktop Environment"
-msgstr "Пра працоўнае асяроддзе Xfce"
-
-#. add the "Help" button
-#: xfce4-about/xfce4-about-dialog.glade:358 xfce-desktop-item-edit/main.c:342
-msgid "_Help"
-msgstr "_Даведка"
-
-#: xfce4-about/xfce4-about-dialog.glade:374
-msgid "_Close"
-msgstr "Закры_ць"
-
-#: xfce4-about/xfce4-about-dialog.glade:437
-msgid "Device"
-msgstr "Прылада"
-
-#: xfce4-about/xfce4-about-dialog.glade:449
-#: xfce4-about/xfce4-about-dialog.glade:474
-#: xfce4-about/xfce4-about-dialog.glade:499
-#: xfce4-about/xfce4-about-dialog.glade:524
-#: xfce4-about/xfce4-about-dialog.glade:551
-#: xfce4-about/xfce4-about-dialog.glade:576
-#: xfce4-about/xfce4-about-dialog.glade:601
-#: xfce4-about/xfce4-about-dialog.glade:626
-#: xfce4-about/xfce4-about-dialog.glade:653
-#: xfce4-about/xfce4-about-dialog.glade:678
-#: xfce4-about/xfce4-about-dialog.glade:703
-msgid "label"
-msgstr "адмеціна"
-
-#: xfce4-about/xfce4-about-dialog.glade:462
-msgid "OS Name"
-msgstr "Назва АС"
-
-#: xfce4-about/xfce4-about-dialog.glade:487
-msgid "OS Type"
-msgstr "Тып АС"
-
-#: xfce4-about/xfce4-about-dialog.glade:512
-msgid "Distributor"
-msgstr "Дыстрыбутар"
-
-#: xfce4-about/xfce4-about-dialog.glade:538
-msgid "Xfce Version"
-msgstr "Версія Xfce"
-
-#: xfce4-about/xfce4-about-dialog.glade:564
-msgid "GTK Version"
-msgstr ""
-
-#: xfce4-about/xfce4-about-dialog.glade:589
-msgid "Kernel Version"
-msgstr ""
-
-#: xfce4-about/xfce4-about-dialog.glade:614
-msgid "Windowing System"
-msgstr ""
-
-#: xfce4-about/xfce4-about-dialog.glade:640
-msgid "CPU"
-msgstr "Працэсар"
-
-#: xfce4-about/xfce4-about-dialog.glade:666
-msgid "Memory"
-msgstr "Памяць"
-
-#: xfce4-about/xfce4-about-dialog.glade:691
-msgid "GPU"
-msgstr "GPU"
-
-#: xfce4-about/xfce4-about-dialog.glade:724
-msgid "System"
-msgstr "Сістэма"
-
-#: xfce4-about/xfce4-about-dialog.glade:766
-msgid ""
-"Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
-"The following programs are part of the Xfce core:"
-msgstr "Xfce - набор праграм, што разам складаюць паўнавартаснае працоўнае асяроддзе. У ядро Xfce уваходзяць наступныя праграмы:"
-
-#: xfce4-about/xfce4-about-dialog.glade:804
-msgid ""
-"Xfce is also a development platform providing several libraries that help programmers create applications that fit in well with the desktop environment.\n"
-"\n"
-"Xfce components are licensed under free or open source licences; GPL or BSDL for applications and LGPL or BSDL for libraries. Look at the documentation, the source code or the Xfce website (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) for more information.\n"
-"\n"
-"Thank you for your interest in Xfce.\n"
-"\n"
-"\t- The Xfce Development Team"
-msgstr "Xfce - гэта таксама платформа для распрацоўкі, якая падае некалькі бібліятэк, якія дапамагаюць праграмістам ствараць праграмы, якія добра пасуюць працоўнаму асяроддзю.\n\n Кампаненты Xfce ліцэнзуюцца бясплатнымі альбо свабоднымі ліцэнзіямі; GPL або BSDL для праграм і LGPL або BSDL для бібліятэк. Паглядзіце дадатковую інфармацыю ў дакументацыі, зыходным кодзе альбо на сайце Xfce (<a href=\"https://www.xfce.org\"> https://www.xfce.org </a>).\n\n Дзякуем за цікавасць да Xfce.\n\n - Каманда распрацоўшчыкаў Xfce"
-
-#: xfce4-about/xfce4-about-dialog.glade:834
-msgid "About"
-msgstr "Пра праграму"
-
-#: xfce4-about/xfce4-about-dialog.glade:868
-msgid "Credits"
-msgstr "Цітры"
-
-#: xfce4-about/xfce4-about-dialog.glade:947
-msgid "GPL"
-msgstr "GPL"
-
-#: xfce4-about/xfce4-about-dialog.glade:960
-msgid "LGPL"
-msgstr "LGPL"
-
-#: xfce4-about/xfce4-about-dialog.glade:973
-msgid "BSD"
-msgstr "BSD"
-
-#: xfce4-about/xfce4-about-dialog.glade:1003
-msgid "Copyright"
-msgstr "Аўтарскія правы"
 
 #: xfce4-about/system-info.c:499 xfce4-about/system-info.c:521
 #: xfce4-about/system-info.c:640 xfce4-about/system-info.c:689
@@ -1140,15 +1141,15 @@ msgstr "Вывесці інфармацыю пра версію і выйсці"
 msgid "[FILE|FOLDER]"
 msgstr "[ФАЙЛ|КАТАЛОГ]"
 
-#: xfce-desktop-item-edit/main.c:203 xfce-open/main.c:758
+#: xfce-desktop-item-edit/main.c:203 xfce-open/main.c:759
 msgid "os-cillation e.K. All rights reserved."
 msgstr ""
 
-#: xfce-desktop-item-edit/main.c:207 xfce-open/main.c:762
+#: xfce-desktop-item-edit/main.c:207 xfce-open/main.c:763
 msgid "Written by Benedikt Meurer <benny@xfce.org>."
 msgstr "Стваральнік Benedikt Meurer <benny@xfce.org>."
 
-#: xfce-desktop-item-edit/main.c:208 xfce-open/main.c:764
+#: xfce-desktop-item-edit/main.c:208 xfce-open/main.c:765
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -1351,10 +1352,11 @@ msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
-"  TerminalEmulator - The preferred Terminal Emulator."
-msgstr "  WebBrowser       - Пераважны вэб-браўзер.\n  MailReader       - Пераважная паштовая праграма.\n  FileManager      - Пераважны кіраўнік файлаў.\n  TerminalEmulator - Пераважны эмулятар тэрмінала."
+"  TerminalEmulator - The preferred Terminal Emulator.\n"
+"  TextEditor       - The preferred Text Editor."
+msgstr ""
 
-#: xfce-open/main.c:245
+#: xfce-open/main.c:246
 msgid ""
 "If you don't specify the --launch option, xfce-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1363,16 +1365,16 @@ msgid ""
 "you can pass the command line that should be run in the terminal)."
 msgstr ""
 
-#: xfce-open/main.c:420
+#: xfce-open/main.c:421
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Не атрымалася запусціць пераважную праграму для катэгорыі  \"%s\""
 
-#: xfce-open/main.c:711
+#: xfce-open/main.c:712
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "Не атрымалася выявіць URI-scheme у \"%s\"."
 
-#: xfce-open/main.c:725
+#: xfce-open/main.c:726
 msgid "Failed to open URI."
 msgstr "Не атрымалася адкрыць URl."
