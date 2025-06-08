@@ -32,7 +32,7 @@ msgstr "О радном окружењу Иксфце-а"
 #: libxfce4ui/resources/xfce4-about-dialog.glade:358
 #: xfce-desktop-item-edit/main.c:342
 msgid "_Help"
-msgstr "_Помоћи"
+msgstr "_Помоћ"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:374
 msgid "_Close"
@@ -58,11 +58,11 @@ msgstr "натпис"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:462
 msgid "OS Name"
-msgstr "Име оперативног система"
+msgstr "Име обрадног склопа"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:487
 msgid "OS Type"
-msgstr "Врста оперативног система"
+msgstr "Врста обрадног склопа"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:512
 msgid "Distributor"
@@ -82,7 +82,7 @@ msgstr "Издање језгра"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:614
 msgid "Windowing System"
-msgstr "Устројство прозора"
+msgstr "Склоп прозора"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:640
 msgid "CPU"
@@ -90,7 +90,7 @@ msgstr "ЦПУ"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:666
 msgid "Memory"
-msgstr "Меморија"
+msgstr "Памет"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:691
 msgid "GPU"
@@ -98,7 +98,7 @@ msgstr "ГПУ"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:724
 msgid "System"
-msgstr "Систем"
+msgstr "Склоп"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:766
 msgid ""
@@ -115,7 +115,7 @@ msgid ""
 "Thank you for your interest in Xfce.\n"
 "\n"
 "\t- The Xfce Development Team"
-msgstr "ИксФЦЕ је такође и развојна платформа која пружа неколико библиотека помажућих програмерима да их лепо ускладе у радно окружење.\n\nЈединице ИксФЦЕ-а су објављене под слободним и отворненог кода дозволама: ОЈЛ или БСДЛ за програме и ЛОЈЛ или БСДЛ за библиотеке. Погледајте упутства, изворни код и странице ИксФЦЕ-а (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) ради више података.\n\nХвала Вам на занимању за ИксФЦЕ.\n\nt- Развојна дружина ИксФЦЕ-а"
+msgstr "ИксФЦЕ је такође и развојна платформа која пружа неколико библиотека помажућих програмерима да их лепо ускладе у радно окружење.\n\nЈединице ИксФЦЕ-а су објављене под дозволама слободним и отворненог кода: ОЈЛ или БСДЛ за програме и ЛОЈЛ или БСДЛ за књижнице. Погледајте упутства, изворни код и странице ИксФЦЕ-а (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) ради више података.\n\nХвала Вам на занимању за ИксФЦЕ.\n\n\t- Развојна дружина ИксФЦЕ-а"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:834
 msgid "About"
@@ -526,19 +526,19 @@ msgstr "Избор радњи прозора"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:39
 msgid "Up"
-msgstr "горе"
+msgstr "Горе"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:40
 msgid "Down"
-msgstr "доле"
+msgstr "Доле"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:41
 msgid "Left"
-msgstr "лево"
+msgstr "Лево"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:42
 msgid "Right"
-msgstr "десно"
+msgstr "Десно"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:44
 msgid "Cycle windows"
@@ -774,51 +774,51 @@ msgstr "Следећи радни простор"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:102
 msgid "Workspace 1"
-msgstr "радни простор 1"
+msgstr "Радни простор 1"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:103
 msgid "Workspace 2"
-msgstr "радни простор 2"
+msgstr "Радни простор 2"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:104
 msgid "Workspace 3"
-msgstr "радни простор 3"
+msgstr "Радни простор 3"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:105
 msgid "Workspace 4"
-msgstr "радни простор 4"
+msgstr "Радни простор 4"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:106
 msgid "Workspace 5"
-msgstr "радни простор 5"
+msgstr "Радни простор 5"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:107
 msgid "Workspace 6"
-msgstr "радни простор 6"
+msgstr "Радни простор 6"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:108
 msgid "Workspace 7"
-msgstr "радни простор 7"
+msgstr "Радни простор 7"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:109
 msgid "Workspace 8"
-msgstr "радни простор 8"
+msgstr "Радни простор 8"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:110
 msgid "Workspace 9"
-msgstr "радни простор 9"
+msgstr "Радни простор 9"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:111
 msgid "Workspace 10"
-msgstr "радни простор 10"
+msgstr "Радни простор 10"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:112
 msgid "Workspace 11"
-msgstr "радни простор 11"
+msgstr "Радни простор 11"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:113
 msgid "Workspace 12"
-msgstr "радни простор 12"
+msgstr "Радни простор 12"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:114
 msgid "Add workspace"
@@ -1326,7 +1326,7 @@ msgstr "  -?, --help                          Исписује ову порук
 #: xfce-open/main.c:225
 msgid ""
 "  -V, --version                       Print version information and exit"
-msgstr "-V, --version                         Исписује податке о издању и излази"
+msgstr "  -V, --version                         Исписује податке о издању и излази"
 
 #: xfce-open/main.c:227
 msgid ""
@@ -1355,7 +1355,7 @@ msgid ""
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator.\n"
 "  TextEditor       - The preferred Text Editor."
-msgstr ""
+msgstr " Мрежни прегледник    - Омиљени прегледач мреже.\n Поштански читач     - Омиљени читач електронске поште.\n Управник датотека   - Омиљени читач стечених података.\n Опонашач терминала  - Омиљени опонашач терминала.\n Уредник писања  - Омиљени уређивач писма."
 
 #: xfce-open/main.c:246
 msgid ""
