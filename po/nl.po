@@ -1354,7 +1354,7 @@ msgid ""
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator.\n"
 "  TextEditor       - The preferred Text Editor."
-msgstr ""
+msgstr "  WebBrowser       - De voorkeurs-webverkenner.\n  MailReader       - De voorkeurs-maillezer.\n  FileManager      - De voorkeurs-bestandbeheerder.\n  TerminalEmulator - Het voorkeurs-terminalvenster.\n  TextEditor       - De voorkeurs-tekstbewerker."
 
 #: xfce-open/main.c:246
 msgid ""
