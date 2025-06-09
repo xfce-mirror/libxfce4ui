@@ -1363,7 +1363,7 @@ msgid ""
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator.\n"
 "  TextEditor       - The preferred Text Editor."
-msgstr ""
+msgstr "  WebBrowser       - 首选网络浏览器。\\n\n  MailReader       - 首选邮件阅读器。\\n\n  FileManager      - 首选文件管理器。\\n\n  TerminalEmulator - 首选终端模拟器。\n  TextEditor - 首选文本编辑器。"
 
 #: xfce-open/main.c:246
 msgid ""
