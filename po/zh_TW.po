@@ -1356,7 +1356,7 @@ msgid ""
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator.\n"
 "  TextEditor       - The preferred Text Editor."
-msgstr ""
+msgstr "  網路瀏覽器       - 偏好的網路瀏覽器。\n  郵件閱讀程式       - 偏好的郵件閱讀程式。\n  檔案管理程式      - 偏好的檔案管理程式。\n  終端機模擬程式 - 偏好的終端機模擬程式。\n  文字編輯器       - 偏好的文字編輯器。"
 
 #: xfce-open/main.c:246
 msgid ""
