@@ -1355,7 +1355,7 @@ msgid ""
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator.\n"
 "  TextEditor       - The preferred Text Editor."
-msgstr ""
+msgstr " WebBrowser - Shfletuesi i parapëlqyer.\nMailReader - Lexuesi i parapëlqyer i Postës.\nFileManager - Përgjegjësi i parapëlqyer i Kartelave.\nTerminalEmulator - Emuluesi i parapëlqyer i Terminalit.\nTextEditor - Përpunuesi i parapëlqyer i Teksteve."
 
 #: xfce-open/main.c:246
 msgid ""
