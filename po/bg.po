@@ -1357,7 +1357,7 @@ msgid ""
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator.\n"
 "  TextEditor       - The preferred Text Editor."
-msgstr ""
+msgstr " WebBrowser - Предпочитаният Уеб браузър.\nMailReader - Предпочитаният Четец на електронна поща.\nFileManager - Предпочитаният Файлов мениджър.\nTerminalEmulator - Предпочитаният Терминален емулатор.\nTextEditor - Предпочитаният Текстов редактор."
 
 #: xfce-open/main.c:246
 msgid ""
