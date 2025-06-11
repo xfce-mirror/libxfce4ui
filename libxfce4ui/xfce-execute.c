@@ -114,6 +114,18 @@ find_fallback_application_from_xdg_mime (const gchar *category)
     {
       query = "xdg-mime query default text/plain";
     }
+  else if (g_strcmp0 (category, "ImageViewer") == 0)
+    {
+      query = "xdg-mime query default image/jpeg";
+    }
+  else if (g_strcmp0 (category, "AudioPlayer") == 0)
+    {
+      query = "xdg-mime query default audio/mp3";
+    }
+  else if (g_strcmp0 (category, "VideoPlayer") == 0)
+    {
+      query = "xdg-mime query default video/mp4";
+    }
   else
     {
       return NULL;
@@ -174,7 +186,8 @@ find_fallback_application (const gchar *category)
  * @parameter in the specified @working_directory.
  *
  * Libxfce4ui currently supports the following categories: %"WebBrowser",
- * %"MailReader", %"FileManager", %"TextEditor", and %"TerminalEmulator".
+ * %"MailReader", %"FileManager", %"TextEditor", %"TerminalEmulator",
+ * %"ImageViewer", %"AudioPlayer", and %"VideoPlayer".
  * If you specify an invalid @category here, the execution will fail at
  * a later stage and the user will be presented with an error dialog.
  *
