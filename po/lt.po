@@ -1355,7 +1355,7 @@ msgid ""
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator.\n"
 "  TextEditor       - The preferred Text Editor."
-msgstr ""
+msgstr "  WebBrowser       – Pageidaujama saityno naršyklė.\n  MailReader       – Pageidaujama pašto programa.\n  FileManager      – Pageidaujama failų tvarkytuvė.\n  TerminalEmulator – Pageidaujamas terminalo emuliatorius.\n  TextEditor       – Pageidaujamas tekstų redaktorius."
 
 #: xfce-open/main.c:246
 msgid ""
