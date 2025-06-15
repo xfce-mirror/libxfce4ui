@@ -241,7 +241,11 @@ usage (void)
                      "  MailReader       - The preferred Mail Reader.\n"
                      "  FileManager      - The preferred File Manager.\n"
                      "  TerminalEmulator - The preferred Terminal Emulator.\n"
-                     "  TextEditor       - The preferred Text Editor."));
+                     "  TextEditor       - The preferred Text Editor.\n"
+                     "  ImageViewer      - The preferred Image Viewer.\n"
+                     "  AudioPlayer      - The preferred Audio Player.\n"
+                     "  VideoPlayer      - The preferred Video Player."
+                     ));
   g_print ("\n");
   g_print ("%s\n", _("If you don't specify the --launch option, xfce-open will open all specified\n"
                      "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
