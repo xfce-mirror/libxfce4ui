@@ -7,7 +7,7 @@
 # Allan Nordhøy <epost@anotheragency.no>, 2015-2016
 # heskjestad, 2021-2023
 # Harald H. <haarektrans@gmail.com>, 2014
-# heskjestad, 2024
+# heskjestad, 2024-2025
 # heskjestad, 2019-2021
 # Terje Uriansrud <terje@uriansrud.net>, 2010
 msgid ""
@@ -16,7 +16,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2025-06-08 00:45+0200\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: heskjestad, 2024\n"
+"Last-Translator: heskjestad, 2024-2025\n"
 "Language-Team: Norwegian Bokmål (http://app.transifex.com/xfce/libxfce4ui/language/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -963,7 +963,7 @@ msgid ""
 "the GNU Library General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
+msgstr "Pakkene libxfce4ui og libxfce4util distribueres under betingelsene til GNU Library General Public License som publisert av Free Software Foundation; enten lisensens versjon 2, eller (ditt valg) enhver senere versjon. "
 
 #: xfce4-about/main.c:377
 msgid ""
@@ -1317,11 +1317,11 @@ msgstr "Filplassering er ikke en fil eller en mappe"
 
 #: xfce-open/main.c:221
 msgid "Usage: xfce-open [URLs...]"
-msgstr ""
+msgstr "Bruk: xfce-open [URL-er …]"
 
 #: xfce-open/main.c:222
 msgid "       xfce-open --launch TYPE [PARAMETERs...]"
-msgstr ""
+msgstr "       xfce-open --launch TYPE [PARAMETERE …]"
 
 #: xfce-open/main.c:224
 msgid "  -?, --help                          Print this help message and exit"
@@ -1359,7 +1359,7 @@ msgid ""
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator.\n"
 "  TextEditor       - The preferred Text Editor."
-msgstr ""
+msgstr "  WebBrowser       - Foretrukket nettleser.\n  MailReader       - Foretrukket epostleser.\n  FileManager      - Foretrukket filbehandler.\n  TerminalEmulator - Foretrukket terminalemulator.\n  TextEditor       - Foretrukket tekstredigering."
 
 #: xfce-open/main.c:246
 msgid ""
@@ -1368,7 +1368,7 @@ msgid ""
 "option, you can select which preferred application you want to run, and\n"
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
-msgstr ""
+msgstr "Hvis du ikke angir «--launch» vil xfce-open åpne alle spesifiserte\nURL-er med deres foretrukne URL-håndterere. Hvis du spesifierer «--launch»\nkan du velge hvilket foretrukket program du vil kjøre og i tillegg\nsende parametre til programmet (f.eks. for terminalemulatoren kan du sende\nkommandoene som skal kjøres i terminalvinduet)."
 
 #: xfce-open/main.c:421
 #, c-format
