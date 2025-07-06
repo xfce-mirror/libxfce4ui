@@ -4185,6 +4185,10 @@ xfce_icon_view_row_changed (GtkTreeModel *model,
   XfceIconViewItem *item;
   GSequenceIter *item_iter;
 
+  /* ignore changes in branches */
+  if (gtk_tree_path_get_depth (path) > 1)
+    return;
+
   item_iter = g_sequence_get_iter_at_pos (priv->items, gtk_tree_path_get_indices (path)[0]);
 
   if (g_sequence_iter_is_end (item_iter))
@@ -4219,6 +4223,10 @@ xfce_icon_view_row_inserted (GtkTreeModel *model,
   XfceIconViewItem *item;
   GSequenceIter *item_iter;
   gint idx;
+  
+  /* ignore changes in branches */
+  if (gtk_tree_path_get_depth (path) > 1)
+    return;
 
   idx = gtk_tree_path_get_indices (path)[0];
   item_iter = g_sequence_get_iter_at_pos (priv->items, idx);
@@ -4251,6 +4259,10 @@ xfce_icon_view_row_deleted (GtkTreeModel *model,
   XfceIconViewItem *item;
   gboolean changed = FALSE;
   GSequenceIter *iter, *next, *prev;
+
+  /* ignore changes in branches */
+  if (gtk_tree_path_get_depth (path) > 1)
+    return;
 
   /* determine the position and the item for the path */
   iter = g_sequence_get_iter_at_pos (priv->items, gtk_tree_path_get_indices (path)[0]);
@@ -4330,6 +4342,10 @@ xfce_icon_view_rows_reordered (GtkTreeModel *model,
   GSequenceIter *new_iter;
   gint old_pos;
   XfceIconViewItem *item;
+  
+  /* ignore changes in branches */
+  if (iter != NULL)
+    return;
 
   /* cancel any editing attempt */
   xfce_icon_view_stop_editing (icon_view, TRUE);
