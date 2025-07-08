@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2025-06-08 00:45+0200\n"
+"POT-Creation-Date: 2025-07-08 00:45+0200\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: 黃柏諺 <s8321414@gmail.com>, 2019-2025\n"
 "Language-Team: Chinese (Taiwan) (http://app.transifex.com/xfce/libxfce4ui/language/zh_TW/)\n"
@@ -981,12 +981,12 @@ msgid "Unable to initialize GTK+."
 msgstr "無法初始化 GTK+。"
 
 #: xfce4-about/main.c:539 xfce-desktop-item-edit/main.c:205
-#: xfce-open/main.c:761
+#: xfce-open/main.c:765
 msgid "The Xfce development team. All rights reserved."
 msgstr "Xfce 開發團隊。保留所有權利。"
 
 #: xfce4-about/main.c:540 xfce-desktop-item-edit/main.c:213
-#: xfce-open/main.c:770
+#: xfce-open/main.c:774
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "請回報臭蟲至 <%s>。"
@@ -1143,15 +1143,15 @@ msgstr "顯示版本資訊後結束"
 msgid "[FILE|FOLDER]"
 msgstr "[檔案|資料夾]"
 
-#: xfce-desktop-item-edit/main.c:203 xfce-open/main.c:759
+#: xfce-desktop-item-edit/main.c:203 xfce-open/main.c:763
 msgid "os-cillation e.K. All rights reserved."
 msgstr "os-cillation e.K。保留所有權利。"
 
-#: xfce-desktop-item-edit/main.c:207 xfce-open/main.c:763
+#: xfce-desktop-item-edit/main.c:207 xfce-open/main.c:767
 msgid "Written by Benedikt Meurer <benny@xfce.org>."
 msgstr "由 Benedikt Meurer 編寫 <benny@xfce.org>。"
 
-#: xfce-desktop-item-edit/main.c:208 xfce-open/main.c:765
+#: xfce-desktop-item-edit/main.c:208 xfce-open/main.c:769
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -1355,10 +1355,13 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator.\n"
-"  TextEditor       - The preferred Text Editor."
-msgstr "  網路瀏覽器       - 偏好的網路瀏覽器。\n  郵件閱讀程式       - 偏好的郵件閱讀程式。\n  檔案管理程式      - 偏好的檔案管理程式。\n  終端機模擬程式 - 偏好的終端機模擬程式。\n  文字編輯器       - 偏好的文字編輯器。"
+"  TextEditor       - The preferred Text Editor.\n"
+"  ImageViewer      - The preferred Image Viewer.\n"
+"  AudioPlayer      - The preferred Audio Player.\n"
+"  VideoPlayer      - The preferred Video Player."
+msgstr "  網路瀏覽器       - 偏好的網路瀏覽器。\n  郵件閱讀程式       - 偏好的郵件閱讀程式。\n  檔案管理程式      - 偏好的檔案管理程式。\n  終端機模擬程式 - 偏好的終端機模擬程式。\n  文字編輯器       - 偏好的文字編輯器。\n  影像檢視程式      - 偏好的影像檢視程式。\n  音訊播放程式      - 偏好的音訊播放程式。\n  視訊播放程式      - 偏好的視訊播放程式。"
 
-#: xfce-open/main.c:246
+#: xfce-open/main.c:250
 msgid ""
 "If you don't specify the --launch option, xfce-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1367,16 +1370,16 @@ msgid ""
 "you can pass the command line that should be run in the terminal)."
 msgstr "若您未指定 --launch 選項，xfce-open 將以它們所偏好的 URL 處理程式來開啟\n所有指定的 URL。否則，若您指定 --launch 選項，您可以選取您想要執行哪個\n偏好的應用程式，並且將額外的參數傳遞給該應用程式 (例：對於終端機模擬器\n而言，您可以傳遞應該在終端機內執行的指令列)。"
 
-#: xfce-open/main.c:421
+#: xfce-open/main.c:425
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "為分類「%s」啟動偏好應用程式失敗。"
 
-#: xfce-open/main.c:712
+#: xfce-open/main.c:716
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "無法偵測「%s」的 URI-scheme。"
 
-#: xfce-open/main.c:726
+#: xfce-open/main.c:730
 msgid "Failed to open URI."
 msgstr "開啟 URI 失敗。"
