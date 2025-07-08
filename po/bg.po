@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2025-06-08 00:45+0200\n"
+"POT-Creation-Date: 2025-07-08 00:45+0200\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: Kiril Kirilov <cybercop_montana@abv.bg>, 2015-2017,2019-2025\n"
 "Language-Team: Bulgarian (http://app.transifex.com/xfce/libxfce4ui/language/bg/)\n"
@@ -982,12 +982,12 @@ msgid "Unable to initialize GTK+."
 msgstr "Не може да бъде инициализирана GTK+."
 
 #: xfce4-about/main.c:539 xfce-desktop-item-edit/main.c:205
-#: xfce-open/main.c:761
+#: xfce-open/main.c:765
 msgid "The Xfce development team. All rights reserved."
 msgstr "Екипът по разработката на Xfce. Всички права запазени."
 
 #: xfce4-about/main.c:540 xfce-desktop-item-edit/main.c:213
-#: xfce-open/main.c:770
+#: xfce-open/main.c:774
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "Моля, докладвайте грешките на <%s>."
@@ -1144,15 +1144,15 @@ msgstr "Показване на сведения за изданието и из
 msgid "[FILE|FOLDER]"
 msgstr "[ФАЙЛ|ПАПКА]"
 
-#: xfce-desktop-item-edit/main.c:203 xfce-open/main.c:759
+#: xfce-desktop-item-edit/main.c:203 xfce-open/main.c:763
 msgid "os-cillation e.K. All rights reserved."
 msgstr "os-cillation e.K. Всички права са запазени."
 
-#: xfce-desktop-item-edit/main.c:207 xfce-open/main.c:763
+#: xfce-desktop-item-edit/main.c:207 xfce-open/main.c:767
 msgid "Written by Benedikt Meurer <benny@xfce.org>."
 msgstr "Автор: Benedikt Meurer <benny@xfce.org>."
 
-#: xfce-desktop-item-edit/main.c:208 xfce-open/main.c:765
+#: xfce-desktop-item-edit/main.c:208 xfce-open/main.c:769
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -1356,10 +1356,13 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator.\n"
-"  TextEditor       - The preferred Text Editor."
-msgstr " WebBrowser - Предпочитаният Уеб браузър.\nMailReader - Предпочитаният Четец на електронна поща.\nFileManager - Предпочитаният Файлов мениджър.\nTerminalEmulator - Предпочитаният Терминален емулатор.\nTextEditor - Предпочитаният Текстов редактор."
+"  TextEditor       - The preferred Text Editor.\n"
+"  ImageViewer      - The preferred Image Viewer.\n"
+"  AudioPlayer      - The preferred Audio Player.\n"
+"  VideoPlayer      - The preferred Video Player."
+msgstr ""
 
-#: xfce-open/main.c:246
+#: xfce-open/main.c:250
 msgid ""
 "If you don't specify the --launch option, xfce-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1368,16 +1371,16 @@ msgid ""
 "you can pass the command line that should be run in the terminal)."
 msgstr "Ако не посочите опцията --launch, xfce-open ще отвори всички посочени\nURL адреси с техните предпочитани URL манипулатори. В противен случай, ако посочите --launch\nопция, можете да изберете кое предпочитано приложение искате да стартирате и\nзадаване на допълнителни параметри към приложението (т.е. за TerminalEmulator\nможете да зададете командния ред, който трябва да се изпълнява в терминала)."
 
-#: xfce-open/main.c:421
+#: xfce-open/main.c:425
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Не може да се изпълни предпочитаната програма за категория „%s“"
 
-#: xfce-open/main.c:712
+#: xfce-open/main.c:716
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "Не може да се открие URI схемата на „%s“."
 
-#: xfce-open/main.c:726
+#: xfce-open/main.c:730
 msgid "Failed to open URI."
 msgstr "URI не може да бъде отворен."
