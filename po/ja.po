@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2025-06-08 00:45+0200\n"
+"POT-Creation-Date: 2025-07-08 00:45+0200\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: UTUMI Hirosi <utuhiro78@yahoo.co.jp>, 2020-2022,2024-2025\n"
 "Language-Team: Japanese (http://app.transifex.com/xfce/libxfce4ui/language/ja/)\n"
@@ -979,12 +979,12 @@ msgid "Unable to initialize GTK+."
 msgstr "GTK+ を初期化できません。"
 
 #: xfce4-about/main.c:539 xfce-desktop-item-edit/main.c:205
-#: xfce-open/main.c:761
+#: xfce-open/main.c:765
 msgid "The Xfce development team. All rights reserved."
 msgstr "The Xfce development team. All rights reserved."
 
 #: xfce4-about/main.c:540 xfce-desktop-item-edit/main.c:213
-#: xfce-open/main.c:770
+#: xfce-open/main.c:774
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "バグの報告は <%s> までお願いします。"
@@ -1141,15 +1141,15 @@ msgstr "バージョン情報を表示して終了する"
 msgid "[FILE|FOLDER]"
 msgstr "[ファイル|フォルダー]"
 
-#: xfce-desktop-item-edit/main.c:203 xfce-open/main.c:759
+#: xfce-desktop-item-edit/main.c:203 xfce-open/main.c:763
 msgid "os-cillation e.K. All rights reserved."
 msgstr "os-cillation e.K. All rights reserved."
 
-#: xfce-desktop-item-edit/main.c:207 xfce-open/main.c:763
+#: xfce-desktop-item-edit/main.c:207 xfce-open/main.c:767
 msgid "Written by Benedikt Meurer <benny@xfce.org>."
 msgstr "Benedikt Meurer <benny@xfce.org> が製作しました。"
 
-#: xfce-desktop-item-edit/main.c:208 xfce-open/main.c:765
+#: xfce-desktop-item-edit/main.c:208 xfce-open/main.c:769
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -1353,10 +1353,13 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator.\n"
-"  TextEditor       - The preferred Text Editor."
-msgstr "  WebBrowser       - 推奨されるウェブブラウザー。\n  MailReader       - 推奨されるメールリーダー。\n  FileManager      - 推奨されるファイルマネージャー。\n  TerminalEmulator - 推奨されるターミナルエミュレーター。\n  TextEditor       - 推奨されるテキストエディター。"
+"  TextEditor       - The preferred Text Editor.\n"
+"  ImageViewer      - The preferred Image Viewer.\n"
+"  AudioPlayer      - The preferred Audio Player.\n"
+"  VideoPlayer      - The preferred Video Player."
+msgstr ""
 
-#: xfce-open/main.c:246
+#: xfce-open/main.c:250
 msgid ""
 "If you don't specify the --launch option, xfce-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1365,16 +1368,16 @@ msgid ""
 "you can pass the command line that should be run in the terminal)."
 msgstr "--launch オプションを指定しない場合、xfce-open は指定されたすべての URL を\n優先 URL ハンドラーで開きます。--launch オプションを指定すると、\n実行する優先アプリケーションを選択し、アプリケーションに追加のパラメーターを\n渡すことができます (つまり、ターミナルエミュレーターの場合は、\nターミナルで実行するコマンドラインを渡すことができます)。"
 
-#: xfce-open/main.c:421
+#: xfce-open/main.c:425
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "タイプが \"%s\" のファイルを開くアプリケーションの実行に失敗しました。"
 
-#: xfce-open/main.c:712
+#: xfce-open/main.c:716
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "\"%s\" の URI スキームを検出できません。"
 
-#: xfce-open/main.c:726
+#: xfce-open/main.c:730
 msgid "Failed to open URI."
 msgstr "URIを開けませんでした。"
