@@ -1360,7 +1360,7 @@ msgid ""
 "  ImageViewer      - The preferred Image Viewer.\n"
 "  AudioPlayer      - The preferred Audio Player.\n"
 "  VideoPlayer      - The preferred Video Player."
-msgstr ""
+msgstr "WebBrowser - Предпочитаният Уеб браузър.\nMailReader - Предпочитаният Четец на ел. поща.\nFileManager - Предпочитаният Файлов мениджър.\nTerminalEmulator - Предпочитаният Терминален емулатор.\nTextEditor - Предпочитаният Текстов редактор.\nImageViewer - Предпочитаната програма за Преглед на изображения.\nAudioPlayer - Предпочитаният Аудио плеър.\nVideoPlayer - Предпочитаният Видео плеър."
 
 #: xfce-open/main.c:250
 msgid ""
