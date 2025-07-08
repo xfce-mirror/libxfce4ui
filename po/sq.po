@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2025-06-08 00:45+0200\n"
+"POT-Creation-Date: 2025-07-08 00:45+0200\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: Besnik Bleta <besnik@programeshqip.org>, 2020-2025\n"
 "Language-Team: Albanian (http://app.transifex.com/xfce/libxfce4ui/language/sq/)\n"
@@ -980,12 +980,12 @@ msgid "Unable to initialize GTK+."
 msgstr "S’arrihet të gatitet dot GTK+."
 
 #: xfce4-about/main.c:539 xfce-desktop-item-edit/main.c:205
-#: xfce-open/main.c:761
+#: xfce-open/main.c:765
 msgid "The Xfce development team. All rights reserved."
 msgstr "Ekipi i zhvillimit të Xfce-së. Tërë të drejtat të rezervuara."
 
 #: xfce4-about/main.c:540 xfce-desktop-item-edit/main.c:213
-#: xfce-open/main.c:770
+#: xfce-open/main.c:774
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "Ju lutemi, njoftoni të meta te <%s>."
@@ -1142,15 +1142,15 @@ msgstr "Shtyp hollësi versioni dhe dil"
 msgid "[FILE|FOLDER]"
 msgstr "[KARTELË|DOSJE]"
 
-#: xfce-desktop-item-edit/main.c:203 xfce-open/main.c:759
+#: xfce-desktop-item-edit/main.c:203 xfce-open/main.c:763
 msgid "os-cillation e.K. All rights reserved."
 msgstr "os-cillation e.K. Tërë të drejtat të rezervuara."
 
-#: xfce-desktop-item-edit/main.c:207 xfce-open/main.c:763
+#: xfce-desktop-item-edit/main.c:207 xfce-open/main.c:767
 msgid "Written by Benedikt Meurer <benny@xfce.org>."
 msgstr "Shkruar nga Benedikt Meurer <benny@xfce.org>."
 
-#: xfce-desktop-item-edit/main.c:208 xfce-open/main.c:765
+#: xfce-desktop-item-edit/main.c:208 xfce-open/main.c:769
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -1354,10 +1354,13 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator.\n"
-"  TextEditor       - The preferred Text Editor."
-msgstr " WebBrowser - Shfletuesi i parapëlqyer.\nMailReader - Lexuesi i parapëlqyer i Postës.\nFileManager - Përgjegjësi i parapëlqyer i Kartelave.\nTerminalEmulator - Emuluesi i parapëlqyer i Terminalit.\nTextEditor - Përpunuesi i parapëlqyer i Teksteve."
+"  TextEditor       - The preferred Text Editor.\n"
+"  ImageViewer      - The preferred Image Viewer.\n"
+"  AudioPlayer      - The preferred Audio Player.\n"
+"  VideoPlayer      - The preferred Video Player."
+msgstr ""
 
-#: xfce-open/main.c:246
+#: xfce-open/main.c:250
 msgid ""
 "If you don't specify the --launch option, xfce-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1366,16 +1369,16 @@ msgid ""
 "you can pass the command line that should be run in the terminal)."
 msgstr "Nëse s’jepni mundësinë --launch, xfce-open do të hapë krejt\nURL-të e dhëna me trajtuesit e parapëlqyer për ato URL. Përndryshe,\nnëse jepni mundësinë --launch, mund të përzgjidhni cilin aplikacion\ntë parapëlqyer dëshironi të përdoret dhe të jepni parametra shtesë\nte aplikacioni (d.m.th., për TerminalEmulator-in mund të jepni\nrreshtin e urdhrave që duhet xhiruar te terminali)."
 
-#: xfce-open/main.c:421
+#: xfce-open/main.c:425
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "S’u arrit të nisej aplikacioni parazgjedhje për kategorinë “%s”."
 
-#: xfce-open/main.c:712
+#: xfce-open/main.c:716
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "S’arrihet të pikase skema e URI-t të \"%s\"."
 
-#: xfce-open/main.c:726
+#: xfce-open/main.c:730
 msgid "Failed to open URI."
 msgstr "S’u arrit të hapej URI."
