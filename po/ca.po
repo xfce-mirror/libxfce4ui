@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2025-06-08 00:45+0200\n"
+"POT-Creation-Date: 2025-07-08 00:45+0200\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: Davidmp <medipas@gmail.com>, 2015,2025\n"
 "Language-Team: Catalan (http://app.transifex.com/xfce/libxfce4ui/language/ca/)\n"
@@ -983,12 +983,12 @@ msgid "Unable to initialize GTK+."
 msgstr "No es pot inicialitzar GTK+."
 
 #: xfce4-about/main.c:539 xfce-desktop-item-edit/main.c:205
-#: xfce-open/main.c:761
+#: xfce-open/main.c:765
 msgid "The Xfce development team. All rights reserved."
 msgstr "L'equip de desenvolupament de Xfce. Tots els drets reservats."
 
 #: xfce4-about/main.c:540 xfce-desktop-item-edit/main.c:213
-#: xfce-open/main.c:770
+#: xfce-open/main.c:774
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "Envieu els errors a <%s>."
@@ -1145,15 +1145,15 @@ msgstr "Imprimeix la informació de la versió i surt"
 msgid "[FILE|FOLDER]"
 msgstr "[FITXER|CARPETA]"
 
-#: xfce-desktop-item-edit/main.c:203 xfce-open/main.c:759
+#: xfce-desktop-item-edit/main.c:203 xfce-open/main.c:763
 msgid "os-cillation e.K. All rights reserved."
 msgstr "os-cil·lació e.K. Tots els drets reservats."
 
-#: xfce-desktop-item-edit/main.c:207 xfce-open/main.c:763
+#: xfce-desktop-item-edit/main.c:207 xfce-open/main.c:767
 msgid "Written by Benedikt Meurer <benny@xfce.org>."
 msgstr "Escrit per Benedikt Meurer <benny@xfce.org>."
 
-#: xfce-desktop-item-edit/main.c:208 xfce-open/main.c:765
+#: xfce-desktop-item-edit/main.c:208 xfce-open/main.c:769
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -1357,10 +1357,13 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator.\n"
-"  TextEditor       - The preferred Text Editor."
-msgstr "Navegador web: el navegador web preferit.\nLector de correu: el lector de correu preferit.\nGestor de fitxers: el gestor de fitxers preferit.\nEmulador de terminal: l'emulador de terminal preferit.\nEditor de text: l'editor de text preferit."
+"  TextEditor       - The preferred Text Editor.\n"
+"  ImageViewer      - The preferred Image Viewer.\n"
+"  AudioPlayer      - The preferred Audio Player.\n"
+"  VideoPlayer      - The preferred Video Player."
+msgstr "WebBrowser - El navegador web preferit.\nMailReader - El lector de correu preferit.\nFileManager - El gestor de fitxers preferit.\nTerminalEmulator - L'emulador de terminal preferit.\nTextEditor - L'editor de text preferit.\nImageViewer - El visualitzador d'imatges preferit.\nAudioPlayer - El reproductor d'àudio preferit.\nVideoPlayer - El reproductor de vídeo preferit."
 
-#: xfce-open/main.c:246
+#: xfce-open/main.c:250
 msgid ""
 "If you don't specify the --launch option, xfce-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1369,16 +1372,16 @@ msgid ""
 "you can pass the command line that should be run in the terminal)."
 msgstr "Si no especifiqueu l'opció --launch, xfce-open obrirà tots els URL especificats\namb els identificadors preferits. Altrament, si voleu especificar l'opció --launch\npodreu seleccionar l'aplicació preferida voleu executar. També podeu passar\nparàmetres addicionals per a l'aplicació (per exemple, per a TerminalEmulator\npodeu passar la línia d'ordres que s'ha d'executar al terminal)."
 
-#: xfce-open/main.c:421
+#: xfce-open/main.c:425
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Ha fallat el llançament de l'aplicació preferida per a la categoria «%s»."
 
-#: xfce-open/main.c:712
+#: xfce-open/main.c:716
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "No s'ha pogut detectar l'esquema URI de «%s»."
 
-#: xfce-open/main.c:726
+#: xfce-open/main.c:730
 msgid "Failed to open URI."
 msgstr "Ha fallat l'obriment de l'URI"
