@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2025-06-08 00:45+0200\n"
+"POT-Creation-Date: 2025-07-08 00:45+0200\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: Marek Adamski, 2021-2025\n"
 "Language-Team: Polish (http://app.transifex.com/xfce/libxfce4ui/language/pl/)\n"
@@ -985,12 +985,12 @@ msgid "Unable to initialize GTK+."
 msgstr "Nie można zainicjować GTK+."
 
 #: xfce4-about/main.c:539 xfce-desktop-item-edit/main.c:205
-#: xfce-open/main.c:761
+#: xfce-open/main.c:765
 msgid "The Xfce development team. All rights reserved."
 msgstr "Zespół twórców Xfce. Wszystkie prawa zastrzeżone."
 
 #: xfce4-about/main.c:540 xfce-desktop-item-edit/main.c:213
-#: xfce-open/main.c:770
+#: xfce-open/main.c:774
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "Proszę zgłaszać błędy na adres <%s>."
@@ -1147,15 +1147,15 @@ msgstr "Wypisuje informacje o wersji i kończy"
 msgid "[FILE|FOLDER]"
 msgstr "[PLIK|KATALOG]"
 
-#: xfce-desktop-item-edit/main.c:203 xfce-open/main.c:759
+#: xfce-desktop-item-edit/main.c:203 xfce-open/main.c:763
 msgid "os-cillation e.K. All rights reserved."
 msgstr "os-cillation e.K. Wszystkie prawa zastrzeżone."
 
-#: xfce-desktop-item-edit/main.c:207 xfce-open/main.c:763
+#: xfce-desktop-item-edit/main.c:207 xfce-open/main.c:767
 msgid "Written by Benedikt Meurer <benny@xfce.org>."
 msgstr "Autor: Benedikt Meurer <benny@xfce.org>."
 
-#: xfce-desktop-item-edit/main.c:208 xfce-open/main.c:765
+#: xfce-desktop-item-edit/main.c:208 xfce-open/main.c:769
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -1359,10 +1359,13 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator.\n"
-"  TextEditor       - The preferred Text Editor."
-msgstr "  WebBrowser       – Preferowana przeglądarka internetowa.\n  MailReader       – Preferowany program pocztowy.\n  FileManager      - Preferowany menedżer plików.\n  TerminalEmulator – Preferowany emulator terminala.\n  TextEditor       – Preferowany edytor tekstu."
+"  TextEditor       - The preferred Text Editor.\n"
+"  ImageViewer      - The preferred Image Viewer.\n"
+"  AudioPlayer      - The preferred Audio Player.\n"
+"  VideoPlayer      - The preferred Video Player."
+msgstr "  WebBrowser       – Preferowana przeglądarka internetowa.\n  MailReader       – Preferowany program pocztowy.\n  FileManager      - Preferowany menedżer plików.\n  TerminalEmulator – Preferowany emulator terminala.\n  TextEditor       – Preferowany edytor tekstu.\n  ImageViewer      – Preferowana przeglądarka obrazów.\n  AudioPlayer      – Preferowany odtwarzacz audio.\n  VideoPlayer      – Preferowany odtwarzacz wideo."
 
-#: xfce-open/main.c:246
+#: xfce-open/main.c:250
 msgid ""
 "If you don't specify the --launch option, xfce-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1371,16 +1374,16 @@ msgid ""
 "you can pass the command line that should be run in the terminal)."
 msgstr "Jeśli opcja --launch nie zostanie użyta, xfce-open automatycznie otworzy\nwszystkie podane adresy URL za pomocą preferowanego programu.\nUżycie opcji --launch umożliwia wybór preferowanego programu\ni przekazanie mu dodatkowych parametrów (np. dla TerminalEmulator\nmożna podać polecenie, które ma zostać uruchomione w terminalu)."
 
-#: xfce-open/main.c:421
+#: xfce-open/main.c:425
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Nie udało się uruchomić preferowanego programu dla kategorii „%s”."
 
-#: xfce-open/main.c:712
+#: xfce-open/main.c:716
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "Nie można wykryć schematu identyfikatora URI „%s”."
 
-#: xfce-open/main.c:726
+#: xfce-open/main.c:730
 msgid "Failed to open URI."
 msgstr "Nie udało się otworzyć identyfikatora URI."
