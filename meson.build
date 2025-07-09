@@ -87,6 +87,9 @@ enable_wayland = not get_option('wayland').disabled()
 foreach dep : wayland_deps
   enable_wayland = enable_wayland and dep.found()
 endforeach
+if enable_wayland
+  feature_cflags += '-DENABLE_WAYLAND=1'
+endif
 
 if not enable_x11 and not enable_wayland
   error('At least one of the X11 and Wayland backends must be enabled')
