@@ -1418,26 +1418,6 @@ xfce_gtk_file_chooser_add_thumbnail_preview (GtkFileChooser *chooser)
 
 
 
-static void
-xfce_gtk_get_work_area_dimensions (GdkWindow *window,
-                                   GdkRectangle *dimensions)
-{
-  GdkDisplay *display = gdk_window_get_display (window);
-  GdkMonitor *monitor = gdk_display_get_monitor_at_window (display, window);
-  GdkRectangle geometry;
-
-  gdk_monitor_get_workarea (monitor, &geometry);
-  if (dimensions != NULL)
-    {
-      dimensions->x = geometry.x;
-      dimensions->y = geometry.y;
-      dimensions->width = geometry.width;
-      dimensions->height = geometry.height;
-    }
-}
-
-
-
 /**
  * xfce_gtk_position_search_box:
  * @view : The view which owns the search box
@@ -1454,64 +1434,34 @@ xfce_gtk_position_search_box (GtkWidget *view,
                               GtkWidget *search_dialog,
                               gpointer user_data)
 {
-  GtkRequisition requisition;
   GdkWindow *view_window = gtk_widget_get_window (view);
-  GdkRectangle work_area_dimensions;
-  gint view_width, view_height;
-  gint view_x, view_y;
+  GdkDisplay *display = gdk_window_get_display (view_window);
+  GdkRectangle view_geom;
+  GtkRequisition search_geom;
   gint x, y;
-  GdkDisplay *display;
-  GdkRectangle monitor_dimensions;
-  GdkMonitor *monitor;
 
   /* make sure the search dialog is realized */
   gtk_widget_realize (search_dialog);
 
-  gdk_window_get_origin (view_window, &view_x, &view_y);
-  view_width = gdk_window_get_width (view_window);
-  view_height = gdk_window_get_height (view_window);
+  /* basic positioning valid for all windowing systems */
+  gdk_window_get_origin (view_window, &view_geom.x, &view_geom.y);
+  view_geom.width = gdk_window_get_width (view_window);
+  view_geom.height = gdk_window_get_height (view_window);
+  gtk_widget_get_preferred_size (search_dialog, NULL, &search_geom);
+  x = view_geom.x + view_geom.width - search_geom.width;
+  y = view_geom.y + view_geom.height - search_geom.height;
 
-  /* FIXME: make actual use of new Gtk3 layout system */
-  gtk_widget_get_preferred_width (search_dialog, NULL, &requisition.width);
-  gtk_widget_get_preferred_height (search_dialog, NULL, &requisition.height);
-
-  xfce_gtk_get_work_area_dimensions (view_window, &work_area_dimensions);
-
-#ifdef ENABLE_WAYLAND
-  if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
-    x = view_x + view_width - requisition.width;
-  else
-#endif
-    if (view_x + view_width > work_area_dimensions.x + work_area_dimensions.width)
-    x = work_area_dimensions.x + work_area_dimensions.width - requisition.width;
-  else if (view_x + view_width - requisition.width < work_area_dimensions.x)
-    x = work_area_dimensions.x;
-  else
-    x = view_x + view_width - requisition.width;
-
-#ifdef ENABLE_WAYLAND
-  if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
-    y = view_y + view_height - requisition.height;
-  else
-#endif
-    if (view_y + view_height > work_area_dimensions.y + work_area_dimensions.height)
-    y = work_area_dimensions.y + work_area_dimensions.height - requisition.height;
-  else if (view_y + view_height < work_area_dimensions.y)
-    y = work_area_dimensions.y;
-  else
-    y = view_y + view_height - requisition.height;
-
-  display = gdk_window_get_display (view_window);
-  if (display)
+  /* on X11, we're able to avoid the search dialog going off-screen */
+#ifdef ENABLE_X11
+  if (GDK_IS_X11_DISPLAY (display))
     {
-      monitor = gdk_display_get_monitor_at_window (display, view_window);
-      if (monitor)
-        {
-          gdk_monitor_get_geometry (monitor, &monitor_dimensions);
-          if (y + requisition.height > monitor_dimensions.height)
-            y = monitor_dimensions.height - requisition.height;
-        }
+      GdkMonitor *monitor = gdk_display_get_monitor_at_window (display, view_window);
+      GdkRectangle workarea;
+      gdk_monitor_get_workarea (monitor, &workarea);
+      x = CLAMP (x, workarea.x, workarea.x + workarea.width - search_geom.width);
+      y = CLAMP (y, workarea.y, workarea.y + workarea.height - search_geom.height);
     }
+#endif
 
   gtk_window_move (GTK_WINDOW (search_dialog), x, y);
 }
