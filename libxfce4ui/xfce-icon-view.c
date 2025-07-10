@@ -4223,6 +4223,7 @@ xfce_icon_view_row_inserted (GtkTreeModel *model,
   XfceIconViewItem *item;
   GSequenceIter *item_iter;
   gint idx;
+
   /* ignore changes in branches */
   if (gtk_tree_path_get_depth (path) > 1)
     return;
@@ -4341,6 +4342,7 @@ xfce_icon_view_rows_reordered (GtkTreeModel *model,
   GSequenceIter *new_iter;
   gint old_pos;
   XfceIconViewItem *item;
+
   /* ignore changes in branches */
   if (iter != NULL)
     return;
