@@ -115,11 +115,11 @@ msgid ""
 "Thank you for your interest in Xfce.\n"
 "\n"
 "\t- The Xfce Development Team"
-msgstr "ИксФЦЕ је такође и развојна платформа која пружа неколико библиотека помажућих програмерима да их лепо ускладе у радно окружење.\n\nЈединице ИксФЦЕ-а су објављене под дозволама слободним и отворненог кода: ОЈЛ или БСДЛ за програме и ЛОЈЛ или БСДЛ за књижнице. Погледајте упутства, изворни код и странице ИксФЦЕ-а (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) ради више података.\n\nХвала Вам на занимању за ИксФЦЕ.\n\n\t- Развојна дружина ИксФЦЕ-а"
+msgstr "ИксФЦЕ је такође и развојна платформа која пружа неколико књижница које омогућују програмерима да их лепо ускладе у радно окружење.\n\nЈединице ИксФЦЕ-а су објављене под дозволама слободним и отвореног кода: ОЈЛ или БСДЛ за програме и ЛОЈЛ или БСДЛ за књижнице. Погледајте упутства, изворни код и странице ИксФЦЕ-а (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) ради више података.\n\nХвала Вам на занимању за ИксФЦЕ.\n\n\t- Развојна дружина ИксФЦЕ-а"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:834
 msgid "About"
-msgstr "О програму"
+msgstr "Опширније"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:868
 msgid "Credits"
@@ -143,7 +143,7 @@ msgstr "Права умножавања"
 
 #: libxfce4ui/xfce-dialogs.c:108
 msgid "Failed to open web browser for online documentation"
-msgstr "Нисам успео да отворим помоћ са мреже у прегледнику веба"
+msgstr "Нисам успео да отворим помоћ са мреже у мрежном прегледнику"
 
 #: libxfce4ui/xfce-dialogs.c:264
 #, c-format
@@ -158,11 +158,11 @@ msgstr "Да ли желите да читате упутство са мреж�
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
-msgstr "Бићете преусмерени на страницу веба где се одржава и преводи помоћ."
+msgstr "Бићете преусмерени на мрежну страницу где се одржава и преводи помоћ."
 
 #: libxfce4ui/xfce-dialogs.c:270
 msgid "Read the manual"
-msgstr "Читајте упутсво"
+msgstr "Читајте упутство"
 
 #. Create cancel button
 #. add the "Cancel" button
@@ -246,7 +246,7 @@ msgstr "Нисам успео да прочитам датотеку „%s“: %
 #: libxfce4ui/xfce-gdk-pixbuf-extensions.c:910
 #, c-format
 msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr "Нисам успео да учитам слику „%s“: Разлог није познат, вероватно неисправан запис"
+msgstr "Нисам успео да учитам слику „%s“: Разлог није познат, вероватно запис није исправан"
 
 #: libxfce4ui/xfce-gtk-extensions.c:1325
 #, c-format
@@ -256,7 +256,7 @@ msgstr "Нисам успео да отворим „%s“."
 #. XFCE_ICON_CHOOSER_CONTEXT_ACTIONS
 #: libxfce4ui/xfce-icon-chooser-dialog.c:123
 msgid "Action Icons"
-msgstr "Сличице радње"
+msgstr "Сличице дејства"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_ANIMATIONS
 #: libxfce4ui/xfce-icon-chooser-dialog.c:125
@@ -291,12 +291,12 @@ msgstr "Изрази лица"
 #. XFCE_ICON_CHOOSER_CONTEXT_MIME_TYPES
 #: libxfce4ui/xfce-icon-chooser-dialog.c:137
 msgid "File Type Icons"
-msgstr "Сличице врсте датотеке"
+msgstr "Сличице врсти датотека"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_PLACES
 #: libxfce4ui/xfce-icon-chooser-dialog.c:139
 msgid "Location Icons"
-msgstr "Сличице места"
+msgstr "Сличице положаја"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_STATUS
 #: libxfce4ui/xfce-icon-chooser-dialog.c:141
@@ -341,7 +341,7 @@ msgstr "_Потражи сличицу:"
 
 #: libxfce4ui/xfce-icon-chooser-dialog.c:253
 msgid "Clear search field"
-msgstr "Очистите поље претраге"
+msgstr "Очисти поље претраге"
 
 #: libxfce4ui/xfce-sm-client.c:1507
 msgid "Session management client ID"
@@ -378,12 +378,12 @@ msgstr "Управник седнице није вратио исправни �
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
 "\"%s\"."
-msgstr "Радна фасцикла „%s“ не постоји. Неће бити коришћена приликом израђања „%s“."
+msgstr "Радни омот „%s“ не постоји. Неће бити коришћен приликом израђања „%s“."
 
 #. retrieve the error and warning messages
 #: libxfce4ui/xfce-filename-input.c:234
 msgid "Filename is too long"
-msgstr "Име датотеке је предугачно"
+msgstr "Име датотеке је предугачко"
 
 #: libxfce4ui/xfce-filename-input.c:235
 msgid "Directory separator illegal in file name"
@@ -471,23 +471,23 @@ msgstr "Поврати подразумевану пречицу"
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:762
 #, c-format
 msgid "This keyboard shortcut is currently used by: '%s'"
-msgstr "Пречица са тастатуре се тренутно користи за: '%s'"
+msgstr "Пречица дугмади се тренутно користи за: '%s'"
 
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:675
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:765
 msgid "Keyboard shortcut already in use"
-msgstr "Пречица са тастатуре је већ у употреби"
+msgstr "Пречица дугмади је већ у употреби"
 
 #: libxfce4kbd-private/xfce-shortcut-dialog.c:219
 msgid "Window Manager Action Shortcut"
-msgstr "Пречица радње управника прозора"
+msgstr "Пречица дејства управника прозора"
 
 #. TRANSLATORS: this string will be used to create an explanation for
 #. * the user in a following string
 #: libxfce4kbd-private/xfce-shortcut-dialog.c:222
 #: libxfce4kbd-private/xfce-shortcut-dialog.c:238
 msgid "action"
-msgstr "радња"
+msgstr "дејство"
 
 #: libxfce4kbd-private/xfce-shortcut-dialog.c:227
 msgid "Command Shortcut"
@@ -522,7 +522,7 @@ msgstr "Нисам успео да захватим тастатуру."
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:38
 msgid "Window operations menu"
-msgstr "Избор радњи прозора"
+msgstr "Изборник радњи прозора"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:39
 msgid "Up"
@@ -850,7 +850,7 @@ msgstr "Управник прозора"
 
 #: xfce4-about/main.c:194
 msgid "Handles the placement of windows on the screen."
-msgstr "Управља смештајем прозора на приказу."
+msgstr "Управља смештајем прозора на заслону."
 
 #: xfce4-about/main.c:197
 msgid "Panel"
@@ -907,7 +907,7 @@ msgstr "Проналазач програма"
 
 #: xfce4-about/main.c:222
 msgid "Quickly finds and launches applications installed on your system."
-msgstr "Брзо налази и покреће уграђене програме на систему."
+msgstr "Брзо налази и покреће уграђене програме на радном склопу."
 
 #: xfce4-about/main.c:225
 msgid "Settings Daemon"
@@ -923,7 +923,7 @@ msgstr "Књижница изборника"
 
 #: xfce4-about/main.c:230
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
-msgstr "Спроводи изборник сагласан са freedesktop.org-ом заснован на Глиб и ГИО."
+msgstr "Спроводи изборник у складу са freedesktop.org-ом заснован на Глиб и ГИО."
 
 #: xfce4-about/main.c:233
 msgid "Thumbnails Service"
@@ -1066,7 +1066,7 @@ msgstr "%s; ЛБ изградње: %s"
 msgid ""
 "A file named \"%s\" already exists in this directory, the file hasn't been "
 "added."
-msgstr "Датотека са именом „%s“ већ постоји у фасцикли, датотека није додата."
+msgstr "Датотека са именом „%s“ већ постоји у омоту, датотека није додата."
 
 #: tests/test-ui.c:121
 msgid "Failed to migrate the old panel configuration"
@@ -1079,15 +1079,15 @@ msgstr "Прилагодите поставке које чува Иксфкон
 #. --- constants ---
 #: xfce-desktop-item-edit/main.c:60
 msgid "Create Launcher"
-msgstr "Направи покретач"
+msgstr "Створи покретач"
 
 #: xfce-desktop-item-edit/main.c:60
 msgid "Create Link"
-msgstr "Направи везу"
+msgstr "Створи везу"
 
 #: xfce-desktop-item-edit/main.c:60
 msgid "Create Directory"
-msgstr "Направи директоријум"
+msgstr "Створи путању"
 
 #: xfce-desktop-item-edit/main.c:61
 msgid "Edit Launcher"
@@ -1099,11 +1099,11 @@ msgstr "Уреди везу"
 
 #: xfce-desktop-item-edit/main.c:61
 msgid "Edit Directory"
-msgstr "Уреди директоријум"
+msgstr "Уреди путању"
 
 #: xfce-desktop-item-edit/main.c:87
 msgid "Create a new desktop file in the given directory"
-msgstr "Прави нову датотеку радне површи у датом директоријуму"
+msgstr "Прави нову датотеку радне површи у датој путањи"
 
 #: xfce-desktop-item-edit/main.c:88
 msgid "Type of desktop file to create (Application or Link)"
@@ -1111,23 +1111,23 @@ msgstr "Врста датотеке радне површи за стварањ�
 
 #: xfce-desktop-item-edit/main.c:89
 msgid "Preset name when creating a desktop file"
-msgstr "Назив претподешавања приликом стварања датотеке радне површи"
+msgstr "Образац назива приликом стварања датотеке радне површи"
 
 #: xfce-desktop-item-edit/main.c:90
 msgid "Preset comment when creating a desktop file"
-msgstr "Напомена претподешавања приликом стварања датотеке радне површи"
+msgstr "Образац напомене приликом стварања датотеке радне површи"
 
 #: xfce-desktop-item-edit/main.c:91
 msgid "Preset command when creating a launcher"
-msgstr "Наредба претподешавања приликом стварања покретача"
+msgstr "Образац наредбе приликом стварања покретача"
 
 #: xfce-desktop-item-edit/main.c:92
 msgid "Preset URL when creating a link"
-msgstr "Адреса претподешавања приликом стварања везе"
+msgstr "Образац адресе приликом стварања везе"
 
 #: xfce-desktop-item-edit/main.c:93
 msgid "Preset icon when creating a desktop file"
-msgstr "Сличица претподешавања приликом стварања датотеке радне површи"
+msgstr "Образац сличице приликом стварања датотеке радне површи"
 
 #: xfce-desktop-item-edit/main.c:94
 msgid "Print the final saved URI after creating or editing the file"
@@ -1140,11 +1140,11 @@ msgstr "Испиши податке о издању и изађи"
 #. initialize Gtk+
 #: xfce-desktop-item-edit/main.c:177
 msgid "[FILE|FOLDER]"
-msgstr "[ДАТОТЕКА|ФАСЦИКЛА]"
+msgstr "[ДАТОТЕКА|ОМОТ]"
 
 #: xfce-desktop-item-edit/main.c:203 xfce-open/main.c:763
 msgid "os-cillation e.K. All rights reserved."
-msgstr "ос-цилатион е.К. Сва права су задржана."
+msgstr "ос-килатион е.К. Сва права су задржана."
 
 #: xfce-desktop-item-edit/main.c:207 xfce-open/main.c:767
 msgid "Written by Benedikt Meurer <benny@xfce.org>."
@@ -1158,7 +1158,7 @@ msgid ""
 "the GNU Lesser General Public License which can be found in the\n"
 "%s source package.\n"
 "\n"
-msgstr "%s долази БЕЗ ИКАКВЕ ГАРАНЦИЈЕ\nМожете да расподељујете примерке %s под одредбама\nГнуове мање опште јавне лиценце коју можете пронаћи\nу %s изворном пакету.\n\n"
+msgstr "%s долази БЕЗ ИКАКВОГ ЈЕМСТВА\nМожете да расподељујете примерке %s под одредбама\nГнуове мање опште јавне дозволе коју можете пронаћи\nу %s изворном пакету.\n\n"
 
 #. add the "Create"/"Save" button (as default)
 #: xfce-desktop-item-edit/main.c:352
@@ -1177,17 +1177,17 @@ msgstr "Изаберите назив датотеке"
 #: xfce-desktop-item-edit/main.c:663
 #, c-format
 msgid "Failed to create \"%s\"."
-msgstr "Нисам успео да направим „%s“."
+msgstr "Нисам успео да створим „%s“."
 
 #: xfce-desktop-item-edit/main.c:663
 #, c-format
 msgid "Failed to save \"%s\"."
-msgstr "Не могу да сачувам „%s“."
+msgstr "Нисам успео да сачувам „%s“."
 
 #. allocate the file chooser
 #: xfce-desktop-item-edit/xfce-die-command-entry.c:264
 msgid "Select an Application"
-msgstr "Одабери програм"
+msgstr "Означи програм"
 
 #: xfce-desktop-item-edit/xfce-die-command-entry.c:267
 msgid "_Open"
@@ -1245,7 +1245,7 @@ msgstr "_Адреса:"
 #. conflicts
 #: xfce-desktop-item-edit/xfce-die-editor.c:391
 msgid "Working _Directory:"
-msgstr "Радни _директоријум:"
+msgstr "Радна _путања:"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
@@ -1263,7 +1263,7 @@ msgstr "Нема сличице"
 
 #: xfce-desktop-item-edit/xfce-die-editor.c:449
 msgid "Options:"
-msgstr "Опције:"
+msgstr "Могућности:"
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
 #. avoid mnemonic conflicts
@@ -1290,7 +1290,7 @@ msgstr "Покрени у _терминалу"
 
 #: xfce-desktop-item-edit/xfce-die-editor.c:481
 msgid "Select this option to run the command in a terminal window."
-msgstr "Изаберите ову опцију за покретање наредбе у прозору терминала."
+msgstr "Изаберите ову могућност за покретање наредбе у прозору терминала."
 
 #. allocate the icon chooser dialog
 #: xfce-desktop-item-edit/xfce-die-editor.c:642
@@ -1305,11 +1305,11 @@ msgstr "_У реду"
 #. allocate the file chooser dialog
 #: xfce-desktop-item-edit/xfce-die-editor.c:685
 msgid "Select a working directory"
-msgstr "Изаберите радни директоријум"
+msgstr "Изаберите радну путању"
 
 #: xfce-desktop-item-edit/xfce-die-utils.c:214
 msgid "File location is not a regular file or directory"
-msgstr "Место датотеке није редовна датотека или директоријум"
+msgstr "Место датотеке није редовна датотека или путања"
 
 #: xfce-open/main.c:221
 msgid "Usage: xfce-open [URLs...]"
@@ -1333,13 +1333,13 @@ msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
-msgstr "  --launch ВРСТА [ПАРАМЕТРИ...]       Покреће омиљени програм\n                                      ВРСТЕ са могућим ОДРЕДНИЦАМ, где је\n                                      ВРСТА једна од следећих вредности."
+msgstr "  --launch ВРСТА [ОДРЕДНИЦА...]       Покреће омиљени програм\n                                      ВРСТЕ са могућим ОДРЕДНИЦАМа, где је\n                                      ВРСТА једна од следећих вредности."
 
 #: xfce-open/main.c:231
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
-msgstr "  --working-directory ДИРЕКТОРИЈУМ    Основни радни директоријум за програме\n                                      приликом коришћења могућности „--launch“."
+msgstr "  --working-directory ПУТАЊА    Основна радна путања за програме\n                                      приликом коришћења могућности „--launch“."
 
 #: xfce-open/main.c:234
 msgid "The following TYPEs are supported for the --launch command:"
@@ -1358,7 +1358,7 @@ msgid ""
 "  ImageViewer      - The preferred Image Viewer.\n"
 "  AudioPlayer      - The preferred Audio Player.\n"
 "  VideoPlayer      - The preferred Video Player."
-msgstr ""
+msgstr "  WebBrowser       - Омиљени мрежни прегледник.\n  MailReader       - Омиљени читач е-поште.\n  FileManager      - Омиљени управник датотека.\n  TerminalEmulator - Омиљени опонашач терминала.\n  TextEditor       - Омиљени уредник писма.\n  ImageViewer      - Омиљени прегледник слика.\n  AudioPlayer      - Омиљени извођач звука.\n  VideoPlayer      - Омиљени извођач видеа."
 
 #: xfce-open/main.c:250
 msgid ""
@@ -1367,12 +1367,12 @@ msgid ""
 "option, you can select which preferred application you want to run, and\n"
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
-msgstr "Уколико не одредите могућнос --launch, xfce-open ће отворити све\nодређене УРЛ-ове са сопственим руковаоцима. Иначе, уколико\nодредите могућност --launch, можете одабрати које омиљене програме\nжелите покренути и проследити додатне одреднице програмима (нпр.\nопонашачу терминала можете проследити наредбену линију за\nизвршавање у терминалу."
+msgstr "Уколико не одредите могућност --launch, xfce-open ће отворити све\nодређене УРЛ-ове са сопственим руковаоцима. Иначе, уколико\nодредите могућност --launch, можете одабрати које омиљене програме\nжелите покренути и проследити додатне одреднице програмима (нпр.\nопонашачу терминала можете проследити наредбену линију за\nизвршавање у терминалу."
 
 #: xfce-open/main.c:425
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
-msgstr "Нисам успео да покренем омиљрни програм за категорију „%s“."
+msgstr "Нисам успео да покренем омиљени програм за врсту „%s“."
 
 #: xfce-open/main.c:716
 #, c-format
