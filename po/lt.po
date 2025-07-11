@@ -1358,7 +1358,7 @@ msgid ""
 "  ImageViewer      - The preferred Image Viewer.\n"
 "  AudioPlayer      - The preferred Audio Player.\n"
 "  VideoPlayer      - The preferred Video Player."
-msgstr ""
+msgstr "  WebBrowser       - Pageidaujama saityno naršyklė.\n  MailReader       - Pageidaujama pašto programa.\n  FileManager      - Pageidaujama failų tvarkytuvė.\n  TerminalEmulator - Pageidaujamas terminalo emuliatorius.\n  TextEditor       - Pageidaujamas tekstų redaktorius.\n  ImageViewer      - Pageidaujama paveikslų žiūryklė.\n  AudioPlayer      - Pageidaujamas garso įrašų grotuvas.\n  VideoPlayer      - Pageidaujama vaizdo įrašų leistuvė."
 
 #: xfce-open/main.c:250
 msgid ""
