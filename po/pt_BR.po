@@ -1370,7 +1370,7 @@ msgid ""
 "  ImageViewer      - The preferred Image Viewer.\n"
 "  AudioPlayer      - The preferred Audio Player.\n"
 "  VideoPlayer      - The preferred Video Player."
-msgstr ""
+msgstr "  WebBrowser       - O navegador preferido.\n  MailReader       - O leitor de email preferido.\n  FileManager      - O gerenciador de arquivos.\n  TerminalEmulator - O emulador de terminal preferido.\n  TextEditor       - O editor de texto preferido.\n  ImageViewer      - O visualizador de imagens preferido.\n  AudioPlayer      - O reprodutor de áudio preferido.\n  VideoPlayer      - O reprodutor de vídeo preferido."
 
 #: xfce-open/main.c:250
 msgid ""
