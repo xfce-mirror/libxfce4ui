@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2025-06-08 00:45+0200\n"
+"POT-Creation-Date: 2025-07-08 00:45+0200\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: Abdualrahman Hasan, 2025\n"
 "Language-Team: Arabic (http://app.transifex.com/xfce/libxfce4ui/language/ar/)\n"
@@ -984,12 +984,12 @@ msgid "Unable to initialize GTK+."
 msgstr "غير قادر على بدء جتك+."
 
 #: xfce4-about/main.c:539 xfce-desktop-item-edit/main.c:205
-#: xfce-open/main.c:761
+#: xfce-open/main.c:765
 msgid "The Xfce development team. All rights reserved."
 msgstr "فريق تطوير إكسفس. كل الحقوق محفوظة."
 
 #: xfce4-about/main.c:540 xfce-desktop-item-edit/main.c:213
-#: xfce-open/main.c:770
+#: xfce-open/main.c:774
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "لُطقًا أبلغ عن العلل إلى <%s>."
@@ -1146,15 +1146,15 @@ msgstr "طباعة معلومات الإصدار والخروج"
 msgid "[FILE|FOLDER]"
 msgstr "[ملف|مجلد]"
 
-#: xfce-desktop-item-edit/main.c:203 xfce-open/main.c:759
+#: xfce-desktop-item-edit/main.c:203 xfce-open/main.c:763
 msgid "os-cillation e.K. All rights reserved."
 msgstr "os-cillation e.K كل الحقوق محفوظة."
 
-#: xfce-desktop-item-edit/main.c:207 xfce-open/main.c:763
+#: xfce-desktop-item-edit/main.c:207 xfce-open/main.c:767
 msgid "Written by Benedikt Meurer <benny@xfce.org>."
 msgstr "كتب من طرف Benedikt Meurer <benny@xfce.org>."
 
-#: xfce-desktop-item-edit/main.c:208 xfce-open/main.c:765
+#: xfce-desktop-item-edit/main.c:208 xfce-open/main.c:769
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -1358,10 +1358,13 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator.\n"
-"  TextEditor       - The preferred Text Editor."
-msgstr ""
+"  TextEditor       - The preferred Text Editor.\n"
+"  ImageViewer      - The preferred Image Viewer.\n"
+"  AudioPlayer      - The preferred Audio Player.\n"
+"  VideoPlayer      - The preferred Video Player."
+msgstr "  WebBrowser      - متصفح الويب المفضل.\n  MailReader        - قارئ البريد المفضل.\n  FileManager      - مدير الملفات المفضل.\n  TerminalEmulator - محاكي الوحدة الطرفية المفضل.\n  TextEditor      - محرر النص المفضل.\n  ImageViewer      - عارض الصور المفضل.\n  AudioPlayer      - مشغل الصوت المفضل.\n  VideoPlayer      - مشغل الفيديو المفضل."
 
-#: xfce-open/main.c:246
+#: xfce-open/main.c:250
 msgid ""
 "If you don't specify the --launch option, xfce-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1370,16 +1373,16 @@ msgid ""
 "you can pass the command line that should be run in the terminal)."
 msgstr "إذا لم تحدد الخيار --launch ، xfce-open سيفتح كل\nURLs المحددة مع معالجي URL المفضلين. غير ذلك، إذا حددت\nخيار ال --launch ، يمكنك اختيار أي تطبيق مفضل تريد تشغيله،\nوتمرير معلمات إضافية إلى التطبيق (مثلا لتطبيق TerminalEmulator\nيمكنك تمرير سطر الأوامر الذي يجب تشغيله في المحطة الطرفية)."
 
-#: xfce-open/main.c:421
+#: xfce-open/main.c:425
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "فشل إطلاق التطبيق المفضل للصنف \"%s\"."
 
-#: xfce-open/main.c:712
+#: xfce-open/main.c:716
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "غير قادر على كشف URI-scheme لـ \"%s\"."
 
-#: xfce-open/main.c:726
+#: xfce-open/main.c:730
 msgid "Failed to open URI."
 msgstr "فشل فتح المسار"
