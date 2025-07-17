@@ -21,10 +21,6 @@
  * MA 02110-1301 USA
  */
 
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
-
 #ifdef HAVE_MATH_H
 #include <math.h>
 #endif
