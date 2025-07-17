@@ -18,10 +18,6 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
-
 #include <libxfce4util/libxfce4util.h>
 
 #include "libxfce4ui/libxfce4ui.h"

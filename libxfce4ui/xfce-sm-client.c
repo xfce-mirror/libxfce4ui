@@ -30,10 +30,6 @@
  * of the more esoteric feaures of XSMP from the API user.
  **/
 
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
-
 #ifdef HAVE_FCNTL_H
 #include <fcntl.h>
 #endif

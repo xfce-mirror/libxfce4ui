@@ -17,10 +17,6 @@
  * MA 02110-1301 USA
  */
 
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
-
 #ifdef ENABLE_X11
 #include <gdk/gdkx.h>
 #endif

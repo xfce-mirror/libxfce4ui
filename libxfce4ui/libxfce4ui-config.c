@@ -27,10 +27,6 @@
  * Variables and functions to check the Libxfce4ui version.
  **/
 
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
-
 #include "libxfce4ui-config.h"
 #include "libxfce4ui-visibility.h"
 

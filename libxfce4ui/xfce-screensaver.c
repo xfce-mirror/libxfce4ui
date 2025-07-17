@@ -27,10 +27,6 @@
  * Since: 4.18.2
  **/
 
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
-
 #include <libxfce4util/libxfce4util.h>
 #include <xfconf/xfconf.h>
 

@@ -2,9 +2,6 @@
 BasedOnStyle: InheritParentConfig
 
 IncludeCategories:
-  - Regex: '"config\.h"'
-    Priority: -3
-    CaseSensitive: true
   - Regex: '<.*>'
     Priority: -2
     CaseSensitive: true
