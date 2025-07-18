@@ -120,7 +120,7 @@ msgid ""
 "Thank you for your interest in Xfce.\n"
 "\n"
 "\t- The Xfce Development Team"
-msgstr "Xfce to także platforma programistyczna oferująca szereg bibliotek ułatwiających programistom tworzenie programów dobrze dostosowanych do środowiska graficznego.\n\nKomponenty Xfce są licencjonowane na podstawie wolnych lub otwartych licencji; GPL lub BSDL dla programów oraz LGPL lub BSDL dla bibliotek. Zajrzyj do dokumentacji, kodu źródłowego lub na stronę internetową Xfce (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>), aby uzyskać więcej informacji.\n\nDziękujemy za zainteresowanie Xfce.\n\n\t- Zespół twórców Xfce"
+msgstr "Xfce to także platforma programistyczna oferująca szereg bibliotek ułatwiających programistom tworzenie programów dobrze dostosowanych do środowiska graficznego.\n\nKomponenty Xfce są licencjonowane na podstawie wolnych lub otwartych licencji; GPL lub BSDL dla programów oraz LGPL lub BSDL dla bibliotek. Zajrzyj do dokumentacji, kodu źródłowego lub na stronę internetową Xfce (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>), aby uzyskać więcej informacji.\n\nDziękujemy za zainteresowanie Xfce.\n\n\t– Zespół twórców Xfce"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:834
 msgid "About"
