@@ -934,7 +934,7 @@ msgstr ""
 "\n"
 "Dziękujemy za zainteresowanie Xfce.\n"
 "\n"
-"\t- Zespół twórców Xfce"
+"\t– Zespół twórców Xfce"
 
 #: xfce4-about/xfce4-about-dialog.glade:834
 msgid "About"
