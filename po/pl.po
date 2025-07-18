@@ -620,7 +620,7 @@ msgstr "Usunięcie bieżącego obszaru roboczego"
 
 #: xfce4-about/main.c:64
 msgid "Version information"
-msgstr "Wypisuje informacje o wersji i kończy"
+msgstr "Wyświetla informacje o wersji"
 
 #: xfce4-about/main.c:174
 msgid "GPUs"
