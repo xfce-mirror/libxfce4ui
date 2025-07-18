@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the libxfce4ui.master package.
 # 
 # Translators:
 # Daniel Muñiz Fontoira <dani@damufo.eu>, 2017,2019-2020
@@ -11,8 +11,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-18 00:45+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2025-07-18 10:54+0200\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: Yago Raña Gayoso <yago.rana.gayoso@gmail.com>, 2025\n"
 "Language-Team: Galician (http://app.transifex.com/xfce/libxfce4ui/language/gl/)\n"
@@ -22,83 +22,93 @@ msgstr ""
 "Language: gl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../libxfce4ui/resources/xfce4-about-dialog.glade.h:1
+#: libxfce4ui/resources/xfce4-about-dialog.glade:116
 msgid "License"
 msgstr "Licenza"
 
-#: ../libxfce4ui/resources/xfce4-about-dialog.glade.h:2
+#: libxfce4ui/resources/xfce4-about-dialog.glade:340
 msgid "About the Xfce Desktop Environment"
 msgstr "Sobre o contorno de escritorio Xfce"
 
 #. add the "Help" button
-#: ../libxfce4ui/resources/xfce4-about-dialog.glade.h:3
-#: ../xfce-desktop-item-edit/main.c:339
+#: libxfce4ui/resources/xfce4-about-dialog.glade:358
+#: xfce-desktop-item-edit/main.c:339
 msgid "_Help"
 msgstr "A_xuda"
 
-#: ../libxfce4ui/resources/xfce4-about-dialog.glade.h:4
+#: libxfce4ui/resources/xfce4-about-dialog.glade:374
 msgid "_Close"
 msgstr "_Pechar"
 
-#: ../libxfce4ui/resources/xfce4-about-dialog.glade.h:5
+#: libxfce4ui/resources/xfce4-about-dialog.glade:437
 msgid "Device"
 msgstr "Dispositivo"
 
-#: ../libxfce4ui/resources/xfce4-about-dialog.glade.h:6
+#: libxfce4ui/resources/xfce4-about-dialog.glade:449
+#: libxfce4ui/resources/xfce4-about-dialog.glade:474
+#: libxfce4ui/resources/xfce4-about-dialog.glade:499
+#: libxfce4ui/resources/xfce4-about-dialog.glade:524
+#: libxfce4ui/resources/xfce4-about-dialog.glade:551
+#: libxfce4ui/resources/xfce4-about-dialog.glade:576
+#: libxfce4ui/resources/xfce4-about-dialog.glade:601
+#: libxfce4ui/resources/xfce4-about-dialog.glade:626
+#: libxfce4ui/resources/xfce4-about-dialog.glade:653
+#: libxfce4ui/resources/xfce4-about-dialog.glade:678
+#: libxfce4ui/resources/xfce4-about-dialog.glade:703
 msgid "label"
 msgstr "etiqueta"
 
-#: ../libxfce4ui/resources/xfce4-about-dialog.glade.h:7
+#: libxfce4ui/resources/xfce4-about-dialog.glade:462
 msgid "OS Name"
 msgstr "Nome do SO"
 
-#: ../libxfce4ui/resources/xfce4-about-dialog.glade.h:8
+#: libxfce4ui/resources/xfce4-about-dialog.glade:487
 msgid "OS Type"
 msgstr "Tipo de SO"
 
-#: ../libxfce4ui/resources/xfce4-about-dialog.glade.h:9
+#: libxfce4ui/resources/xfce4-about-dialog.glade:512
 msgid "Distributor"
 msgstr "Distribuidor"
 
-#: ../libxfce4ui/resources/xfce4-about-dialog.glade.h:10
+#: libxfce4ui/resources/xfce4-about-dialog.glade:538
 msgid "Xfce Version"
 msgstr "Versión do Xfce"
 
-#: ../libxfce4ui/resources/xfce4-about-dialog.glade.h:11
+#: libxfce4ui/resources/xfce4-about-dialog.glade:564
 msgid "GTK Version"
 msgstr "Versión do GTK"
 
-#: ../libxfce4ui/resources/xfce4-about-dialog.glade.h:12
+#: libxfce4ui/resources/xfce4-about-dialog.glade:589
 msgid "Kernel Version"
 msgstr "Versión do Kérnel"
 
-#: ../libxfce4ui/resources/xfce4-about-dialog.glade.h:13
+#: libxfce4ui/resources/xfce4-about-dialog.glade:614
 msgid "Windowing System"
 msgstr "Sistema de xanelas"
 
-#: ../libxfce4ui/resources/xfce4-about-dialog.glade.h:14
+#: libxfce4ui/resources/xfce4-about-dialog.glade:640
 msgid "CPU"
 msgstr "Procesador"
 
-#: ../libxfce4ui/resources/xfce4-about-dialog.glade.h:15
+#: libxfce4ui/resources/xfce4-about-dialog.glade:666
 msgid "Memory"
 msgstr "Memoria"
 
-#: ../libxfce4ui/resources/xfce4-about-dialog.glade.h:16
+#: libxfce4ui/resources/xfce4-about-dialog.glade:691
 msgid "GPU"
 msgstr "GPU"
 
-#: ../libxfce4ui/resources/xfce4-about-dialog.glade.h:17
+#: libxfce4ui/resources/xfce4-about-dialog.glade:724
 msgid "System"
 msgstr "Sistema"
 
-#: ../libxfce4ui/resources/xfce4-about-dialog.glade.h:18
+#: libxfce4ui/resources/xfce4-about-dialog.glade:766
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
 msgstr "O Xfce é unha colección de programas que xuntos fornecen un contorno de escritorio con moitas características.\nOs seguintes programas forman parte do núcleo de Xfce:"
 
-#: ../libxfce4ui/resources/xfce4-about-dialog.glade.h:20
+#: libxfce4ui/resources/xfce4-about-dialog.glade:804
 msgid ""
 "Xfce is also a development platform providing several libraries that help programmers create applications that fit in well with the desktop environment.\n"
 "\n"
@@ -109,265 +119,263 @@ msgid ""
 "\t- The Xfce Development Team"
 msgstr "O Xfce é tamén unha plataforma de desenvolvemento que fornece varias bibliotecas que axudan aos programadores a crear aplicacións que se axusten ben ao contorno de escritorio.\n\nOs compoñentes de Xfce están baixo licenzas libres ou de código aberto; GPL ou BSDL para as aplicacións e LGPL ou BSDL para as bibliotecas. Consulte a documentación, o código fonte ou o sitio web do Xfce (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) para máis información.\n\nGrazas polo seu interese no Xfce.\n\n- O equipo de desenvolvemento do Xfce."
 
-#: ../libxfce4ui/resources/xfce4-about-dialog.glade.h:27
+#: libxfce4ui/resources/xfce4-about-dialog.glade:834
 msgid "About"
 msgstr "Sobre"
 
-#: ../libxfce4ui/resources/xfce4-about-dialog.glade.h:28
+#: libxfce4ui/resources/xfce4-about-dialog.glade:868
 msgid "Credits"
 msgstr "Créditos"
 
-#: ../libxfce4ui/resources/xfce4-about-dialog.glade.h:29
+#: libxfce4ui/resources/xfce4-about-dialog.glade:947
 msgid "GPL"
 msgstr "GPL"
 
-#: ../libxfce4ui/resources/xfce4-about-dialog.glade.h:30
+#: libxfce4ui/resources/xfce4-about-dialog.glade:960
 msgid "LGPL"
 msgstr "LGPL"
 
-#: ../libxfce4ui/resources/xfce4-about-dialog.glade.h:31
+#: libxfce4ui/resources/xfce4-about-dialog.glade:973
 msgid "BSD"
 msgstr "BSD"
 
-#: ../libxfce4ui/resources/xfce4-about-dialog.glade.h:32
+#: libxfce4ui/resources/xfce4-about-dialog.glade:1003
 msgid "Copyright"
 msgstr "Copyright"
 
-#: ../libxfce4ui/xfce-dialogs.c:104
+#: libxfce4ui/xfce-dialogs.c:104
 msgid "Failed to open web browser for online documentation"
 msgstr "Produciuse un fallo ao abrir o navegador web para consultar a documentación en liña"
 
-#: ../libxfce4ui/xfce-dialogs.c:260
+#: libxfce4ui/xfce-dialogs.c:260
 #, c-format
 msgid "Do you want to read the %s manual online?"
 msgstr "Desexa ler o manual de %s en liña?"
 
-#: ../libxfce4ui/xfce-dialogs.c:262
+#: libxfce4ui/xfce-dialogs.c:262
 msgid "Do you want to read the manual online?"
 msgstr "Desexa ler o manual en liña?"
 
-#: ../libxfce4ui/xfce-dialogs.c:264
+#: libxfce4ui/xfce-dialogs.c:264
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
 msgstr "Redirixiráselle ao sitio web de documentación no que se manteñen e traducen as páxinas de axuda."
 
-#: ../libxfce4ui/xfce-dialogs.c:266
+#: libxfce4ui/xfce-dialogs.c:266
 msgid "Read the manual"
 msgstr "Ler o manual"
 
 #. Create cancel button
 #. add the "Cancel" button
-#: ../libxfce4ui/xfce-dialogs.c:268 ../libxfce4ui/xfce-dialogs.c:526
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:252
-#: ../xfce-desktop-item-edit/main.c:345 ../xfce-desktop-item-edit/main.c:536
-#: ../xfce-desktop-item-edit/xfce-die-command-entry.c:262
-#: ../xfce-desktop-item-edit/xfce-die-editor.c:639
-#: ../xfce-desktop-item-edit/xfce-die-editor.c:683
+#: libxfce4ui/xfce-dialogs.c:268 libxfce4ui/xfce-dialogs.c:526
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:252
+#: xfce-desktop-item-edit/main.c:345 xfce-desktop-item-edit/main.c:536
+#: xfce-desktop-item-edit/xfce-die-command-entry.c:262
+#: xfce-desktop-item-edit/xfce-die-editor.c:639
+#: xfce-desktop-item-edit/xfce-die-editor.c:683
 msgid "_Cancel"
 msgstr "_Cancelar"
 
-#: ../libxfce4ui/xfce-dialogs.c:269
+#: libxfce4ui/xfce-dialogs.c:269
 msgid "_Read Online"
 msgstr "Le_r en liña"
 
-#: ../libxfce4ui/xfce-dialogs.c:278
+#: libxfce4ui/xfce-dialogs.c:278
 msgid "_Always go directly to the online documentation"
 msgstr "Ir _sempre directamente á documentación en liña"
 
-#: ../libxfce4ui/xfce-dialogs.c:327 ../libxfce4ui/xfce-dialogs.c:362
-#: ../libxfce4ui/xfce-dialogs.c:398
+#: libxfce4ui/xfce-dialogs.c:327 libxfce4ui/xfce-dialogs.c:362
+#: libxfce4ui/xfce-dialogs.c:398
 msgid "Close"
 msgstr "Pechar"
 
-#: ../libxfce4ui/xfce-dialogs.c:445
+#: libxfce4ui/xfce-dialogs.c:445
 msgid "No"
 msgstr "Non"
 
-#: ../libxfce4ui/xfce-dialogs.c:447
+#: libxfce4ui/xfce-dialogs.c:447
 msgid "Yes"
 msgstr "Si"
 
-#: ../libxfce4ui/xfce-dialogs.c:451
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:39
+#: libxfce4ui/xfce-dialogs.c:451 libxfce4kbd-private/xfce-shortcuts-xfwm4.c:39
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: ../libxfce4ui/xfce-dialogs.c:510
+#: libxfce4ui/xfce-dialogs.c:510
 msgid "Close window with multiple tabs?"
 msgstr "Pechar a xanela con varias lapelas?"
 
-#: ../libxfce4ui/xfce-dialogs.c:512
+#: libxfce4ui/xfce-dialogs.c:512
 msgid ""
 "This window has multiple tabs open. Closing this window will also close all "
 "its tabs."
 msgstr "Esta xanela ten varias lapelas abertas. Pechando esta xanela tamén pechará todas estas lapelas."
 
-#: ../libxfce4ui/xfce-dialogs.c:515
+#: libxfce4ui/xfce-dialogs.c:515
 #, c-format
 msgid ""
 "This window has %d tabs open. Closing this window will also close all its "
 "tabs."
 msgstr "Esta xanela ten %d lapelas abertas. Pechando esta xanela tamén pechará todas estas lapelas."
 
-#: ../libxfce4ui/xfce-dialogs.c:522
+#: libxfce4ui/xfce-dialogs.c:522
 msgid "Warning"
 msgstr "Advertencia"
 
-#: ../libxfce4ui/xfce-dialogs.c:527
+#: libxfce4ui/xfce-dialogs.c:527
 msgid "Close T_ab"
 msgstr "Pechar _a lapela"
 
-#: ../libxfce4ui/xfce-dialogs.c:528
+#: libxfce4ui/xfce-dialogs.c:528
 msgid "Close _Window"
 msgstr "Pechar a _Xanela"
 
-#: ../libxfce4ui/xfce-dialogs.c:533
+#: libxfce4ui/xfce-dialogs.c:533
 msgid "Do _not ask me again"
 msgstr "_Non preguntar de novo"
 
-#: ../libxfce4ui/xfce-gdk-pixbuf-extensions.c:786
+#: libxfce4ui/xfce-gdk-pixbuf-extensions.c:786
 #, c-format
 msgid "Failed to open file \"%s\": %s"
 msgstr "Produciuse un fallo ao abrir o ficheiro «%s»: %s"
 
-#: ../libxfce4ui/xfce-gdk-pixbuf-extensions.c:859
+#: libxfce4ui/xfce-gdk-pixbuf-extensions.c:859
 #, c-format
 msgid "Failed to read file \"%s\": %s"
 msgstr "Produciuse un fallo ao ler o ficheiro «%s»: %s"
 
-#: ../libxfce4ui/xfce-gdk-pixbuf-extensions.c:906
+#: libxfce4ui/xfce-gdk-pixbuf-extensions.c:906
 #, c-format
 msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
 msgstr "Produciuse un fallo ao cargar a imaxe «%s»: o motivo é descoñecido, é probábel que o ficheiro de imaxe estea corrompido"
 
-#: ../libxfce4ui/xfce-gtk-extensions.c:1321
+#: libxfce4ui/xfce-gtk-extensions.c:1321
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "Produciuse un fallo ao abrir «%s»."
 
 #. XFCE_ICON_CHOOSER_CONTEXT_ACTIONS
-#: ../libxfce4ui/xfce-icon-chooser-dialog.c:119
+#: libxfce4ui/xfce-icon-chooser-dialog.c:119
 msgid "Action Icons"
 msgstr "Iconas de acción"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_ANIMATIONS
-#: ../libxfce4ui/xfce-icon-chooser-dialog.c:121
+#: libxfce4ui/xfce-icon-chooser-dialog.c:121
 msgid "Animations"
 msgstr "Animacións"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_APPLICATIONS
-#: ../libxfce4ui/xfce-icon-chooser-dialog.c:123
+#: libxfce4ui/xfce-icon-chooser-dialog.c:123
 msgid "Application Icons"
 msgstr "Iconas de aplicación"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_CATEGORIES
-#: ../libxfce4ui/xfce-icon-chooser-dialog.c:125
+#: libxfce4ui/xfce-icon-chooser-dialog.c:125
 msgid "Menu Icons"
 msgstr "Iconas de menú"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_DEVICES
-#: ../libxfce4ui/xfce-icon-chooser-dialog.c:127
+#: libxfce4ui/xfce-icon-chooser-dialog.c:127
 msgid "Device Icons"
 msgstr "Iconas de dispositivo"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_EMBLEMS
-#: ../libxfce4ui/xfce-icon-chooser-dialog.c:129
+#: libxfce4ui/xfce-icon-chooser-dialog.c:129
 msgid "Emblems"
 msgstr "Emblemas"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_EMOTES
-#: ../libxfce4ui/xfce-icon-chooser-dialog.c:131
+#: libxfce4ui/xfce-icon-chooser-dialog.c:131
 msgid "Emoticons"
 msgstr "Emoticonas"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_MIME_TYPES
-#: ../libxfce4ui/xfce-icon-chooser-dialog.c:133
+#: libxfce4ui/xfce-icon-chooser-dialog.c:133
 msgid "File Type Icons"
 msgstr "Iconas de tipo de ficheiro"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_PLACES
-#: ../libxfce4ui/xfce-icon-chooser-dialog.c:135
+#: libxfce4ui/xfce-icon-chooser-dialog.c:135
 msgid "Location Icons"
 msgstr "Iconas de localización"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_STATUS
-#: ../libxfce4ui/xfce-icon-chooser-dialog.c:137
+#: libxfce4ui/xfce-icon-chooser-dialog.c:137
 msgid "Status Icons"
 msgstr "Iconas de estado"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_STOCK
-#: ../libxfce4ui/xfce-icon-chooser-dialog.c:139
+#: libxfce4ui/xfce-icon-chooser-dialog.c:139
 msgid "Stock Icons"
 msgstr "Iconas de reserva"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_OTHER
-#: ../libxfce4ui/xfce-icon-chooser-dialog.c:141
+#: libxfce4ui/xfce-icon-chooser-dialog.c:141
 msgid "Uncategorized Icons"
 msgstr "Iconas sen categoría"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_ALL
-#: ../libxfce4ui/xfce-icon-chooser-dialog.c:145
+#: libxfce4ui/xfce-icon-chooser-dialog.c:145
 msgid "All Icons"
 msgstr "Todas as iconas"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_FILE
-#: ../libxfce4ui/xfce-icon-chooser-dialog.c:149
-#: ../libxfce4ui/xfce-icon-chooser-dialog.c:296
+#: libxfce4ui/xfce-icon-chooser-dialog.c:149
+#: libxfce4ui/xfce-icon-chooser-dialog.c:296
 msgid "Image Files"
 msgstr "Ficheiros de imaxe"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_NO_ICON
-#: ../libxfce4ui/xfce-icon-chooser-dialog.c:153
+#: libxfce4ui/xfce-icon-chooser-dialog.c:153
 msgid "No Icon"
 msgstr "Sen icona"
 
 #. setup the context combo box
-#: ../libxfce4ui/xfce-icon-chooser-dialog.c:221
+#: libxfce4ui/xfce-icon-chooser-dialog.c:221
 msgid "Select _icon from:"
 msgstr "Seleccionar a _icona de:"
 
 #. search filter
-#: ../libxfce4ui/xfce-icon-chooser-dialog.c:237
+#: libxfce4ui/xfce-icon-chooser-dialog.c:237
 msgid "_Search icon:"
 msgstr "Icona de _busca:"
 
-#: ../libxfce4ui/xfce-icon-chooser-dialog.c:249
+#: libxfce4ui/xfce-icon-chooser-dialog.c:249
 msgid "Clear search field"
 msgstr "Limpar o campo de busca"
 
-#: ../libxfce4ui/xfce-sm-client.c:1503
+#: libxfce4ui/xfce-sm-client.c:1503
 msgid "Session management client ID"
 msgstr "Identificador do cliente de xestión de sesións"
 
-#: ../libxfce4ui/xfce-sm-client.c:1503
+#: libxfce4ui/xfce-sm-client.c:1503
 msgid "ID"
 msgstr "Identificador"
 
-#: ../libxfce4ui/xfce-sm-client.c:1504
+#: libxfce4ui/xfce-sm-client.c:1504
 msgid "Disable session management"
 msgstr "Desactivar a xestión de sesións"
 
-#: ../libxfce4ui/xfce-sm-client.c:1514
+#: libxfce4ui/xfce-sm-client.c:1514
 msgid "Session management options"
 msgstr "Opcións de xestión de sesións"
 
-#: ../libxfce4ui/xfce-sm-client.c:1514
+#: libxfce4ui/xfce-sm-client.c:1514
 msgid "Show session management options"
 msgstr "Amosar as opcións de xestión de sesión"
 
-#: ../libxfce4ui/xfce-sm-client.c:1688
+#: libxfce4ui/xfce-sm-client.c:1688
 #, c-format
 msgid "Failed to connect to the session manager: %s"
 msgstr "Produciuse un fallo ao conectar co xestor de sesións: %s"
 
-#: ../libxfce4ui/xfce-sm-client.c:1697
-#, c-format
+#: libxfce4ui/xfce-sm-client.c:1697
 msgid "Session manager did not return a valid client id"
 msgstr "O xestor de sesións non devolveu ningún identificador de cliente correcto"
 
 #. print warning for user
-#: ../libxfce4ui/xfce-spawn.c:383
+#: libxfce4ui/xfce-spawn.c:383
 #, c-format
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
@@ -375,579 +383,579 @@ msgid ""
 msgstr "O directorio de traballo «%s» non existe. Non se usará ao iniciar «%s»."
 
 #. retrieve the error and warning messages
-#: ../libxfce4ui/xfce-filename-input.c:230
+#: libxfce4ui/xfce-filename-input.c:230
 msgid "Filename is too long"
 msgstr "O nome do ficheiro é longo de máis"
 
-#: ../libxfce4ui/xfce-filename-input.c:231
+#: libxfce4ui/xfce-filename-input.c:231
 msgid "Directory separator illegal in file name"
 msgstr "O separador de directorios empregado no nome do ficheiro non se permite"
 
-#: ../libxfce4ui/xfce-filename-input.c:232
+#: libxfce4ui/xfce-filename-input.c:232
 msgid "Filenames should not start or end with a space"
 msgstr "Os nomes de ficheiros non deberían non comezar nin rematar cos espazo"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:44
+#: libxfce4kbd-private/xfce-shortcuts.c:44
 #, c-format
 msgid ""
 "This shortcut is already being used for the action '%s'. Which action do you"
 " want to use?"
 msgstr "Este atallo xa está sendo usado para a acción «%s». Que acción desexa usar?"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:45
-#: ../libxfce4kbd-private/xfce-shortcuts.c:48
-#: ../libxfce4kbd-private/xfce-shortcuts.c:51
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
+#: libxfce4kbd-private/xfce-shortcuts.c:45
+#: libxfce4kbd-private/xfce-shortcuts.c:48
+#: libxfce4kbd-private/xfce-shortcuts.c:51
+#: libxfce4kbd-private/xfce-shortcuts.c:54
 #, c-format
 msgid "Use '%s'"
 msgstr "Usar «%s»"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:45
-#: ../libxfce4kbd-private/xfce-shortcuts.c:48
-#: ../libxfce4kbd-private/xfce-shortcuts.c:51
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
+#: libxfce4kbd-private/xfce-shortcuts.c:45
+#: libxfce4kbd-private/xfce-shortcuts.c:48
+#: libxfce4kbd-private/xfce-shortcuts.c:51
+#: libxfce4kbd-private/xfce-shortcuts.c:54
 #, c-format
 msgid "Keep '%s'"
 msgstr "Manter «%s»"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:47
-#: ../libxfce4kbd-private/xfce-shortcuts.c:50
+#: libxfce4kbd-private/xfce-shortcuts.c:47
+#: libxfce4kbd-private/xfce-shortcuts.c:50
 #, c-format
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
 msgstr "Este atallo xa está sendo usado para a orde «%s». Que acción desexa usar?"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:53
+#: libxfce4kbd-private/xfce-shortcuts.c:53
 #, c-format
 msgid ""
 "This shortcut is already being used by the action '%s'. Which action do you "
 "want to use?"
 msgstr "Este atallo xa está sendo usado pola acción «%s». Que acción desexa usar?"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:105
+#: libxfce4kbd-private/xfce-shortcuts.c:105
 msgid "Please use another key combination."
 msgstr "Empregue outra combinación de teclas."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:105
+#: libxfce4kbd-private/xfce-shortcuts.c:105
 #, c-format
 msgid "%s already triggers this action."
 msgstr "%s xa activa esta acción."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:110
+#: libxfce4kbd-private/xfce-shortcuts.c:110
 #, c-format
 msgid "Conflicting actions for %s"
 msgstr "Accións en conflito para %s"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:170
+#: libxfce4kbd-private/xfce-shortcuts.c:170
 msgid "This shortcut is already being used for something else."
 msgstr "Este atallo xa está sendo usado por algo."
 
-#: ../libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:88
-#: ../libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:125
+#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:88
+#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:125
 msgid "Shortcuts Editor"
 msgstr "Editor de atallos"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:490
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:490
 msgid "The current shortcut. Click to edit..."
 msgstr "O atallo actual. Facer clic para modificar..."
 
-#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:502
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:502
 msgid "Clear the shortcut"
 msgstr "Limpar o atallo"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:514
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:514
 msgid "Restore the default shortcut"
 msgstr "Restaurar o atallo predeterminado"
 
 #. skip leading slash
-#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:668
-#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:758
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:668
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:758
 #, c-format
 msgid "This keyboard shortcut is currently used by: '%s'"
 msgstr "O atallo de teclado está sendo usado por: «%s»"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:671
-#: ../libxfce4kbd-private/xfce-shortcuts-editor.c:761
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:671
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:761
 msgid "Keyboard shortcut already in use"
 msgstr "O atallo de teclado xa está en uso"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:215
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:215
 msgid "Window Manager Action Shortcut"
 msgstr "Atallo de acción do xestor de xanelas"
 
 #. TRANSLATORS: this string will be used to create an explanation for
 #. * the user in a following string
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:218
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:234
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:218
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:234
 msgid "action"
 msgstr "acción"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:223
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:223
 msgid "Command Shortcut"
 msgstr "Atallo de orde"
 
 #. TRANSLATORS: this string will be used to create an explanation for
 #. * the user in a following string
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:226
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:226
 msgid "command"
 msgstr "orde"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:231
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:231
 msgid "Shortcut"
 msgstr "Atallo"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:246
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:246
 msgid "Clear"
 msgstr "Limpar"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:269
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:269
 #, c-format
 msgid "Press keyboard keys to trigger the %s '%s'."
 msgstr "Prema as teclas do teclado para activar o %s '%s'."
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:291
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:291
 msgid "Please press a key"
 msgstr "Prema a tecla"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:347
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:347
 msgid "Could not grab the keyboard."
 msgstr "Non se puido obter o teclado."
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:34
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:34
 msgid "Window operations menu"
 msgstr "Menú de operacións da xanela"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:35
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:35
 msgid "Up"
 msgstr "Arriba"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:36
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:36
 msgid "Down"
 msgstr "Abaixo"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:37
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:37
 msgid "Left"
 msgstr "Esquerda"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:38
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:38
 msgid "Right"
 msgstr "Dereita"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:40
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:40
 msgid "Cycle windows"
 msgstr "Percorrer as xanelas"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:41
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:41
 msgid "Cycle windows (Reverse)"
 msgstr "Percorrer as xanelas (Ao revés)"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:42
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:42
 msgid "Switch window for same application"
 msgstr "Cambiar de xanela da mesma aplicación"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:43
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:43
 msgid "Switch application"
 msgstr "Cambiar de aplicación"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:44
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:44
 msgid "Close window"
 msgstr "Pechar a xanela"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:45
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:45
 msgid "Maximize window horizontally"
 msgstr "Maximizar a xanela horizontalmente"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:46
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:46
 msgid "Maximize window vertically"
 msgstr "Maximizar a xanela verticalmente"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:47
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:47
 msgid "Maximize window"
 msgstr "Maximizar a xanela"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:48
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:48
 msgid "Hide window"
 msgstr "Agochar a xanela"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:49
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:49
 msgid "Move window"
 msgstr "Mover a xanela"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:50
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:50
 msgid "Resize window"
 msgstr "Redimensionar a xanela"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:51
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:51
 msgid "Shade window"
 msgstr "Ensombrecer a xanela"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:52
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:52
 msgid "Stick window"
 msgstr "Fixar a xanela"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:53
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:53
 msgid "Raise window"
 msgstr "Elevar a xanela"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:54
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:54
 msgid "Lower window"
 msgstr "Baixar a xanela"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:55
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:55
 msgid "Raise or lower window"
 msgstr "Elevar ou baixar a xanela"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:56
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:56
 msgid "Fill window"
 msgstr "Ampliar a xanela"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:57
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:57
 msgid "Fill window horizontally"
 msgstr "Ampliar a xanela horizontalmente"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:58
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:58
 msgid "Fill window vertically"
 msgstr "Ampliar a xanela verticalmente"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:59
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:59
 msgid "Toggle above"
 msgstr "Manter por enriba"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:60
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:60
 msgid "Toggle fullscreen"
 msgstr "Activar a pantalla completa"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:61
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:61
 msgid "Move window to lower monitor"
 msgstr "Mover a xanela para a pantalla de abaixo"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:62
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:62
 msgid "Move window to left monitor"
 msgstr "Mover a xanela para a pantalla da esquerda"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:63
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:63
 msgid "Move window to right monitor"
 msgstr "Mover a xanela para a pantalla da dereita"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:64
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:64
 msgid "Move window to upper monitor"
 msgstr "Mover a xanela para a pantalla de arriba"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:65
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:65
 msgid "Move window to upper workspace"
 msgstr "Mover a xanela ao espazo de traballo superior"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:66
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:66
 msgid "Move window to bottom workspace"
 msgstr "Mover a xanela ao espazo de traballo inferior"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:67
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:67
 msgid "Move window to left workspace"
 msgstr "Mover a xanela ao espazo de traballo da esquerda"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:68
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:68
 msgid "Move window to right workspace"
 msgstr "Mover a xanela ao espazo de traballo da dereita"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:69
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:69
 msgid "Move window to previous workspace"
 msgstr "Mover a xanela ao espazo de traballo anterior"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:70
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:70
 msgid "Move window to next workspace"
 msgstr "Mover a xanela ao seguinte espazo de traballo"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:71
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:71
 msgid "Move window to workspace 1"
 msgstr "Mover a xanela ao espazo de traballo 1"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:72
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:72
 msgid "Move window to workspace 2"
 msgstr "Mover a xanela ao espazo de traballo 2"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:73
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:73
 msgid "Move window to workspace 3"
 msgstr "Mover a xanela ao espazo de traballo 3"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:74
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:74
 msgid "Move window to workspace 4"
 msgstr "Mover a xanela ao espazo de traballo 4"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:75
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:75
 msgid "Move window to workspace 5"
 msgstr "Mover a xanela ao espazo de traballo 5"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:76
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:76
 msgid "Move window to workspace 6"
 msgstr "Mover a xanela ao espazo de traballo 6"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:77
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:77
 msgid "Move window to workspace 7"
 msgstr "Mover a xanela ao espazo de traballo 7"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:78
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:78
 msgid "Move window to workspace 8"
 msgstr "Mover a xanela ao espazo de traballo 8"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:79
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:79
 msgid "Move window to workspace 9"
 msgstr "Mover a xanela ao espazo de traballo 9"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:80
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:80
 msgid "Move window to workspace 10"
 msgstr "Mover a xanela ao espazo de traballo 10"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:81
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:81
 msgid "Move window to workspace 11"
 msgstr "Mover a xanela ao espazo de traballo 11"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:82
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:82
 msgid "Move window to workspace 12"
 msgstr "Mover a xanela ao espazo de traballo 12"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:83
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:83
 msgid "Tile window to the top"
 msgstr "Xerar mosaico da xanela na cima"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:84
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:84
 msgid "Tile window to the bottom"
 msgstr "Xerar mosaico da xanela cara abaixo"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:85
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:85
 msgid "Tile window to the left"
 msgstr "Xerar mosaico da xanela cara á esquerda"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:86
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:86
 msgid "Tile window to the right"
 msgstr "Xerar mosaico da xanela cara á dereita"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:87
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:87
 msgid "Tile window to the top-left"
 msgstr "Xear mosaico da xanela arriba á esquerda"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:88
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:88
 msgid "Tile window to the top-right"
 msgstr "Xerar mosaico da xanela arriba á dereita"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:89
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:89
 msgid "Tile window to the bottom-left"
 msgstr "Xerar mosaico da xanela abaixo á esquerda"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:90
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:90
 msgid "Tile window to the bottom-right"
 msgstr "Xerar mosaico da xanela abaixo á dereita"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:91
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:91
 msgid "Show desktop"
 msgstr "Amosar o escritorio"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:92
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:92
 msgid "Upper workspace"
 msgstr "Espazo de traballo superior"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:93
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:93
 msgid "Bottom workspace"
 msgstr "Espazo de traballo inferior"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:94
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:94
 msgid "Left workspace"
 msgstr "Espazo de traballo da esquerda"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:95
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:95
 msgid "Right workspace"
 msgstr "Espazo de traballo da dereita"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:96
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:96
 msgid "Previous workspace"
 msgstr "Espazo de traballo anterior"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:97
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:97
 msgid "Next workspace"
 msgstr "Espazo de traballo seguinte"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:98
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:98
 msgid "Workspace 1"
 msgstr "Espazo de traballo 1"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:99
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:99
 msgid "Workspace 2"
 msgstr "Espazo de traballo 2"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:100
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:100
 msgid "Workspace 3"
 msgstr "Espazo de traballo 3"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:101
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:101
 msgid "Workspace 4"
 msgstr "Espazo de traballo 4"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:102
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:102
 msgid "Workspace 5"
 msgstr "Espazo de traballo 5"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:103
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:103
 msgid "Workspace 6"
 msgstr "Espazo de traballo 6"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:104
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:104
 msgid "Workspace 7"
 msgstr "Espazo de traballo 7"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:105
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:105
 msgid "Workspace 8"
 msgstr "Espazo de traballo 8"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:106
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:106
 msgid "Workspace 9"
 msgstr "Espazo de traballo 9"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:107
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:107
 msgid "Workspace 10"
 msgstr "Espazo de traballo 10"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:108
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:108
 msgid "Workspace 11"
 msgstr "Espazo de traballo 11"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:109
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:109
 msgid "Workspace 12"
 msgstr "Espazo de traballo 12"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:110
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:110
 msgid "Add workspace"
 msgstr "Engadir un espazo de traballo"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:111
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:111
 msgid "Add adjacent workspace"
 msgstr "Engadir un espazo de traballo adxacente"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:112
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:112
 msgid "Delete last workspace"
 msgstr "Eliminar o último espazo de traballo"
 
-#: ../libxfce4kbd-private/xfce-shortcuts-xfwm4.c:113
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:113
 msgid "Delete active workspace"
 msgstr "Eliminar o espazo de traballo activo"
 
-#: ../xfce4-about/main.c:63
+#: xfce4-about/main.c:63
 msgid "Version information"
 msgstr "Información da versión"
 
-#: ../xfce4-about/main.c:173
+#: xfce4-about/main.c:173
 msgid "GPUs"
 msgstr "GPUs"
 
-#: ../xfce4-about/main.c:190
+#: xfce4-about/main.c:190
 msgid "Window Manager"
 msgstr "Xestor de xanelas"
 
-#: ../xfce4-about/main.c:191
+#: xfce4-about/main.c:191
 msgid "Handles the placement of windows on the screen."
 msgstr "Xestiona a colocación das xanelas na pantalla."
 
-#: ../xfce4-about/main.c:194
+#: xfce4-about/main.c:194
 msgid "Panel"
 msgstr "Panel"
 
-#: ../xfce4-about/main.c:195
+#: xfce4-about/main.c:195
 msgid "Provides a home for window buttons, launchers, app menu and more."
 msgstr "Fornece un lugar para botóns de xanelas, lanzadores, menú de aplicacións e moito máis."
 
-#: ../xfce4-about/main.c:198
+#: xfce4-about/main.c:198
 msgid "Desktop Manager"
 msgstr "Xestor de xanelas"
 
-#: ../xfce4-about/main.c:199
+#: xfce4-about/main.c:199
 msgid "Sets desktop backgrounds, handles icons and more."
 msgstr "Define os fondos de escritorio, manexa iconas e moito mais."
 
-#: ../xfce4-about/main.c:202
+#: xfce4-about/main.c:202
 msgid "File Manager"
 msgstr "Xestor de ficheiros"
 
-#: ../xfce4-about/main.c:203
+#: xfce4-about/main.c:203
 msgid "Manages your files in a modern, easy-to-use and fast way."
 msgstr "Manexa os seus ficheiros de xeito moderno, doado de usar e rápido."
 
-#: ../xfce4-about/main.c:206
+#: xfce4-about/main.c:206
 msgid "Volume Manager"
 msgstr "Xestor do volume"
 
-#: ../xfce4-about/main.c:207
+#: xfce4-about/main.c:207
 msgid "Manages removable drives and media for Thunar."
 msgstr "Manexa unidades e soportes extraíbeis no Thunar."
 
-#: ../xfce4-about/main.c:210
+#: xfce4-about/main.c:210
 msgid "Session Manager"
 msgstr "Xestor de sesións"
 
-#: ../xfce4-about/main.c:211
+#: xfce4-about/main.c:211
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
 msgstr "Garda e restaura a súa sesión, manexa o inicio, inicio automático de aplicacións e o apagado."
 
-#: ../xfce4-about/main.c:214
+#: xfce4-about/main.c:214
 msgid "Settings Manager"
 msgstr "Xestor de configuración"
 
-#: ../xfce4-about/main.c:215
+#: xfce4-about/main.c:215
 msgid "Configures appearance, display, keyboard and mouse settings."
 msgstr "Configura as opcións  de aparencia, pantalla, teclado e rato. "
 
-#: ../xfce4-about/main.c:218
+#: xfce4-about/main.c:218
 msgid "Application Finder"
 msgstr "Buscador de aplicacións"
 
-#: ../xfce4-about/main.c:219
+#: xfce4-about/main.c:219
 msgid "Quickly finds and launches applications installed on your system."
 msgstr "Atopa rapidamente e inicia aplicacións instaladas no seu sistema."
 
-#: ../xfce4-about/main.c:222
+#: xfce4-about/main.c:222
 msgid "Settings Daemon"
 msgstr "Daemon de configuración"
 
-#: ../xfce4-about/main.c:223
+#: xfce4-about/main.c:223
 msgid "Stores your settings in a D-Bus-based configuration system."
 msgstr "Almacena as súas opcións nun sistema de configuración baseado en D-Bus."
 
-#: ../xfce4-about/main.c:226
+#: xfce4-about/main.c:226
 msgid "A Menu Library"
 msgstr "Unha biblioteca de menús"
 
-#: ../xfce4-about/main.c:227
+#: xfce4-about/main.c:227
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
 msgstr "Incorpora un menú compatíbel coa especificación freedesktop.org baseado en GLib e GIO."
 
-#: ../xfce4-about/main.c:230
+#: xfce4-about/main.c:230
 msgid "Thumbnails Service"
 msgstr "Servizo de miniaturas"
 
-#: ../xfce4-about/main.c:231
+#: xfce4-about/main.c:231
 msgid "Implements the thumbnail management D-Bus specification."
 msgstr "Incorpora un servizo de xestión de miniaturas coa especificación D-Bus."
 
-#: ../xfce4-about/main.c:284
+#: xfce4-about/main.c:284
 msgid "Please see <https://www.xfce.org/about/credits>"
 msgstr "Visite <https://www.xfce.org/about/credits>"
 
-#: ../xfce4-about/main.c:338
+#: xfce4-about/main.c:338
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 msgstr "Se considera que falta algo nesta lista; non dubide e redacte un informe de fallos a través de  <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues>."
 
-#: ../xfce4-about/main.c:343
+#: xfce4-about/main.c:343
 msgid "Thanks to all who helped making this software available!"
 msgstr "Grazas a todas as persoas que axudaron a facer que este software estea dispoñíbel!"
 
-#: ../xfce4-about/main.c:360
+#: xfce4-about/main.c:360
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
 msgstr "Xfce 4 ten copyright de Olivier Fourdan (fourdan@xfce.org). Os diferentes compoñentes de teñen copyright dos seus respectivos autores."
 
-#: ../xfce4-about/main.c:366
+#: xfce4-about/main.c:366
 msgid ""
 "The libxfce4ui and libxfce4util packages are distributed under the terms of "
 "the GNU Library General Public License as published by the Free Software "
@@ -955,7 +963,7 @@ msgid ""
 "version."
 msgstr "Os paquetes libxfce4ui e libxfce4util distribúense baixo os termos da Licenza pública xeral da biblioteca GNU tal e como a publica a Free Software Foundation; xa sexa a versión 2 da licenza, ou (segundo a súa elección) calquera versión posterior."
 
-#: ../xfce4-about/main.c:374
+#: xfce4-about/main.c:374
 msgid ""
 "The packages thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
 "xfce4-settings, xfconf, xfdesktop and xfwm4 are distributed under the terms "
@@ -964,77 +972,85 @@ msgid ""
 "version."
 msgstr "Os paquetes thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop e xfwm4 distribúense baixo os termos da licenza pública xeral GNU tal como foi publicada pola Free Software Foundation; xa sexa a versión 2 da licenza, ou (segundo a súa elección) calquera versión posterior."
 
-#: ../xfce4-about/main.c:521
+#: xfce4-about/main.c:521
 #, c-format
 msgid "Type '%s --help' for usage information."
 msgstr "Escriba «%s --help» para obter información sobre o modo de uso."
 
-#: ../xfce4-about/main.c:527
+#: xfce4-about/main.c:527
 msgid "Unable to initialize GTK+."
 msgstr "Non se puido inicializar GTK+."
 
-#: ../xfce4-about/main.c:536 ../xfce-desktop-item-edit/main.c:202
-#: ../xfce-open/main.c:762
+#: xfce4-about/main.c:536 xfce-desktop-item-edit/main.c:202
+#: xfce-open/main.c:762
 msgid "The Xfce development team. All rights reserved."
 msgstr "O equipo de desenvolvemento de Xfce. Todos os dereitos reservados."
 
-#: ../xfce4-about/main.c:537 ../xfce-desktop-item-edit/main.c:210
-#: ../xfce-open/main.c:771
+#: xfce4-about/main.c:537 xfce-desktop-item-edit/main.c:210
+#: xfce-open/main.c:771
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "Por favor, comunique os fallos a <%s>."
 
-#: ../xfce4-about/main.c:546
+#: xfce4-about/main.c:546
 msgid "Failed to load interface"
 msgstr "Produciuse un fallo ao cargar a interface"
 
 #. { N_("Project Lead"),
 #. xfce_contributors_lead
 #. },
-#: ../xfce4-about/contributors.h:142
+#: xfce4-about/contributors.h:142
 msgid "Core developers"
 msgstr "Desenvolvedores principais"
 
-#: ../xfce4-about/contributors.h:144
+#: xfce4-about/contributors.h:144
 msgid "Active contributors"
 msgstr "Colaboradores activos"
 
-#: ../xfce4-about/contributors.h:146
+#: xfce4-about/contributors.h:146
 msgid "Servers maintained by"
 msgstr "Servidores mantidos por"
 
-#: ../xfce4-about/contributors.h:148
+#: xfce4-about/contributors.h:148
 msgid "Translations supervision"
 msgstr "Supervisión da tradución"
 
-#: ../xfce4-about/contributors.h:150
+#: xfce4-about/contributors.h:150
 msgid "Documentation supervision"
 msgstr "Supervisión da documentación"
 
-#: ../xfce4-about/contributors.h:152
+#: xfce4-about/contributors.h:152
 msgid "Translators"
 msgstr "Tradutores"
 
-#: ../xfce4-about/contributors.h:154
+#: xfce4-about/contributors.h:154
 msgid "Previous contributors"
 msgstr "Anteriores colaboradores"
 
-#: ../xfce4-about/system-info.c:495 ../xfce4-about/system-info.c:517
-#: ../xfce4-about/system-info.c:636 ../xfce4-about/system-info.c:685
+#: xfce4-about/xfce4-about.desktop.in:11
+msgid "About Xfce"
+msgstr "Sobre Xfce"
+
+#: xfce4-about/xfce4-about.desktop.in:12
+msgid "Information about the Xfce Desktop Environment"
+msgstr "Información sobre o contorno de escritorio Xfce"
+
+#: xfce4-about/system-info.c:495 xfce4-about/system-info.c:517
+#: xfce4-about/system-info.c:636 xfce4-about/system-info.c:685
 msgid "Unknown"
 msgstr "Descoñecido"
 
 #. translators: This is the type of architecture for the OS
-#: ../xfce4-about/system-info.c:620
+#: xfce4-about/system-info.c:620
 msgid "64-bit (32-bit userspace)"
 msgstr "64 bits (espazo de usuario de 32 bits)"
 
 #. translators: This is the type of architecture for the OS
-#: ../xfce4-about/system-info.c:623
+#: xfce4-about/system-info.c:623
 msgid "64-bit"
 msgstr "64-bit"
 
-#: ../xfce4-about/system-info.c:623
+#: xfce4-about/system-info.c:623
 msgid "32-bit"
 msgstr "32-bit"
 
@@ -1042,101 +1058,101 @@ msgstr "32-bit"
 #. * example:
 #. * "Fedora 25 (Workstation Edition); Build ID: xyz" or
 #. * "Ubuntu 16.04 LTS; Build ID: jki"
-#: ../xfce4-about/system-info.c:693
+#: xfce4-about/system-info.c:693
 #, c-format
 msgid "%s; Build ID: %s"
 msgstr "%s; ID da compilación: %s"
 
-#: ../tests/test-ui.c:106
+#: tests/test-ui.c:106
 #, c-format
 msgid ""
 "A file named \"%s\" already exists in this directory, the file hasn't been "
 "added."
 msgstr "Xa existe un ficheiro chamado «%s» neste directorio; non se engadiu o ficheiro."
 
-#: ../tests/test-ui.c:117
+#: tests/test-ui.c:117
 msgid "Failed to migrate the old panel configuration"
 msgstr "Non se puido migrar a configuración antiga do panel"
 
-#: ../tests/test-ui.c:167 ../tests/test-ui.c:192
+#: tests/test-ui.c:167 tests/test-ui.c:192
 msgid "Customize settings stored by Xfconf"
 msgstr "Personalizar a configuración almacenada por Xfconf"
 
 #. --- constants ---
-#: ../xfce-desktop-item-edit/main.c:57
+#: xfce-desktop-item-edit/main.c:57
 msgid "Create Launcher"
 msgstr "Crear un iniciador"
 
-#: ../xfce-desktop-item-edit/main.c:57
+#: xfce-desktop-item-edit/main.c:57
 msgid "Create Link"
 msgstr "Crear unha ligazón"
 
-#: ../xfce-desktop-item-edit/main.c:57
+#: xfce-desktop-item-edit/main.c:57
 msgid "Create Directory"
 msgstr "Crear un cartafol"
 
-#: ../xfce-desktop-item-edit/main.c:58
+#: xfce-desktop-item-edit/main.c:58
 msgid "Edit Launcher"
 msgstr "Modificar un iniciador"
 
-#: ../xfce-desktop-item-edit/main.c:58
+#: xfce-desktop-item-edit/main.c:58
 msgid "Edit Link"
 msgstr "Modificar unha ligazón"
 
-#: ../xfce-desktop-item-edit/main.c:58
+#: xfce-desktop-item-edit/main.c:58
 msgid "Edit Directory"
 msgstr "Modificar un cartafol"
 
-#: ../xfce-desktop-item-edit/main.c:84
+#: xfce-desktop-item-edit/main.c:84
 msgid "Create a new desktop file in the given directory"
 msgstr "Crear un novo ficheiro de escritorio no directorio dado"
 
-#: ../xfce-desktop-item-edit/main.c:85
+#: xfce-desktop-item-edit/main.c:85
 msgid "Type of desktop file to create (Application or Link)"
 msgstr "O tipo de ficheiro de escritorio que se vai crear (Aplicación ou Ligazón)"
 
-#: ../xfce-desktop-item-edit/main.c:86
+#: xfce-desktop-item-edit/main.c:86
 msgid "Preset name when creating a desktop file"
 msgstr "Nome predeterminado ao crear un ficheiro de escritorio"
 
-#: ../xfce-desktop-item-edit/main.c:87
+#: xfce-desktop-item-edit/main.c:87
 msgid "Preset comment when creating a desktop file"
 msgstr "Comentario predeterminado ao crear un ficheiro de escritorio"
 
-#: ../xfce-desktop-item-edit/main.c:88
+#: xfce-desktop-item-edit/main.c:88
 msgid "Preset command when creating a launcher"
 msgstr "Orde predeterminada ao crear un iniciador"
 
-#: ../xfce-desktop-item-edit/main.c:89
+#: xfce-desktop-item-edit/main.c:89
 msgid "Preset URL when creating a link"
 msgstr "URL predeterminado ao crear unha ligazón"
 
-#: ../xfce-desktop-item-edit/main.c:90
+#: xfce-desktop-item-edit/main.c:90
 msgid "Preset icon when creating a desktop file"
 msgstr "Icona predeterminada ao crear un ficheiro de escritorio"
 
-#: ../xfce-desktop-item-edit/main.c:91
+#: xfce-desktop-item-edit/main.c:91
 msgid "Print the final saved URI after creating or editing the file"
 msgstr "Imprimir o URI final gardado despois de crear ou modificar o ficheiro"
 
-#: ../xfce-desktop-item-edit/main.c:92
+#: xfce-desktop-item-edit/main.c:92
 msgid "Print version information and exit"
 msgstr "Amosar información da versión e saír"
 
 #. initialize Gtk+
-#: ../xfce-desktop-item-edit/main.c:174
+#: xfce-desktop-item-edit/main.c:174
 msgid "[FILE|FOLDER]"
 msgstr "[FICHEIRO|CARTAFOL]"
 
-#: ../xfce-desktop-item-edit/main.c:200 ../xfce-open/main.c:760
+#: xfce-desktop-item-edit/main.c:200 xfce-open/main.c:760
 msgid "os-cillation e.K. All rights reserved."
 msgstr "os-cillation e.K. Todos os dereitos reservados."
 
-#: ../xfce-desktop-item-edit/main.c:204 ../xfce-open/main.c:764
+#: xfce-desktop-item-edit/main.c:204 xfce-open/main.c:764
 msgid "Written by Benedikt Meurer <benny@xfce.org>."
 msgstr "Escrito por Benedikt Meurer <benny@xfce.org>."
 
-#: ../xfce-desktop-item-edit/main.c:205 ../xfce-open/main.c:766
+#: xfce-desktop-item-edit/main.c:205 xfce-open/main.c:766
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -1147,107 +1163,107 @@ msgid ""
 msgstr "%s ven sen NINGÚN TIPO DE GARANTIA,\nPódese redistribuír copias de %s baixo os termos da\nGNU Lesser General Public License a cal se pode atopar no\npaquete de código fonte de %s.\n\n"
 
 #. add the "Create"/"Save" button (as default)
-#: ../xfce-desktop-item-edit/main.c:349
+#: xfce-desktop-item-edit/main.c:349
 msgid "C_reate"
 msgstr "C_rear"
 
-#: ../xfce-desktop-item-edit/main.c:349 ../xfce-desktop-item-edit/main.c:537
+#: xfce-desktop-item-edit/main.c:349 xfce-desktop-item-edit/main.c:537
 msgid "_Save"
 msgstr "_Gardar"
 
 #. create failed, ask the user to specify a file name
-#: ../xfce-desktop-item-edit/main.c:534
+#: xfce-desktop-item-edit/main.c:534
 msgid "Choose filename"
 msgstr "Escolla o nome de ficheiro"
 
-#: ../xfce-desktop-item-edit/main.c:660
+#: xfce-desktop-item-edit/main.c:660
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "Produciuse un fallo ao crear «%s»."
 
-#: ../xfce-desktop-item-edit/main.c:660
+#: xfce-desktop-item-edit/main.c:660
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "Produciuse un fallo ao gardar «%s»."
 
 #. allocate the file chooser
-#: ../xfce-desktop-item-edit/xfce-die-command-entry.c:260
+#: xfce-desktop-item-edit/xfce-die-command-entry.c:260
 msgid "Select an Application"
 msgstr "Seleccionar unha aplicación"
 
-#: ../xfce-desktop-item-edit/xfce-die-command-entry.c:263
+#: xfce-desktop-item-edit/xfce-die-command-entry.c:263
 msgid "_Open"
 msgstr "_Abrir"
 
-#: ../xfce-desktop-item-edit/xfce-die-command-entry.c:269
+#: xfce-desktop-item-edit/xfce-die-command-entry.c:269
 msgid "All Files"
 msgstr "Todos os ficheiros"
 
-#: ../xfce-desktop-item-edit/xfce-die-command-entry.c:274
+#: xfce-desktop-item-edit/xfce-die-command-entry.c:274
 msgid "Executable Files"
 msgstr "Ficheiros executábeis"
 
-#: ../xfce-desktop-item-edit/xfce-die-command-entry.c:289
+#: xfce-desktop-item-edit/xfce-die-command-entry.c:289
 msgid "Perl Scripts"
 msgstr "Scripts en Perl"
 
-#: ../xfce-desktop-item-edit/xfce-die-command-entry.c:295
+#: xfce-desktop-item-edit/xfce-die-command-entry.c:295
 msgid "Python Scripts"
 msgstr "Scripts en Python"
 
-#: ../xfce-desktop-item-edit/xfce-die-command-entry.c:301
+#: xfce-desktop-item-edit/xfce-die-command-entry.c:301
 msgid "Ruby Scripts"
 msgstr "Scripts en Ruby"
 
-#: ../xfce-desktop-item-edit/xfce-die-command-entry.c:307
+#: xfce-desktop-item-edit/xfce-die-command-entry.c:307
 msgid "Shell Scripts"
 msgstr "Scripts en shell"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
-#: ../xfce-desktop-item-edit/xfce-die-editor.c:300
+#: xfce-desktop-item-edit/xfce-die-editor.c:300
 msgid "_Name:"
 msgstr "_Nome:"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
-#: ../xfce-desktop-item-edit/xfce-die-editor.c:319
+#: xfce-desktop-item-edit/xfce-die-editor.c:319
 msgid "C_omment:"
 msgstr "C_omentario:"
 
 #. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
 #. conflicts
-#: ../xfce-desktop-item-edit/xfce-die-editor.c:338
+#: xfce-desktop-item-edit/xfce-die-editor.c:338
 msgid "Comm_and:"
 msgstr "O_rde:"
 
 #. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
 #. conflicts
-#: ../xfce-desktop-item-edit/xfce-die-editor.c:362
+#: xfce-desktop-item-edit/xfce-die-editor.c:362
 msgid "_URL:"
 msgstr "_URL:"
 
 #. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
 #. conflicts
-#: ../xfce-desktop-item-edit/xfce-die-editor.c:387
+#: xfce-desktop-item-edit/xfce-die-editor.c:387
 msgid "Working _Directory:"
 msgstr "Cartafol _de traballo:"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
-#: ../xfce-desktop-item-edit/xfce-die-editor.c:425
+#: xfce-desktop-item-edit/xfce-die-editor.c:425
 msgid "_Icon:"
 msgstr "_Icona:"
 
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
 #. dialog if no icon selected
 #. setup a label to tell that no icon was selected
-#: ../xfce-desktop-item-edit/xfce-die-editor.c:439
-#: ../xfce-desktop-item-edit/xfce-die-editor.c:1293
+#: xfce-desktop-item-edit/xfce-die-editor.c:439
+#: xfce-desktop-item-edit/xfce-die-editor.c:1293
 msgid "No icon"
 msgstr "Sen icona"
 
-#: ../xfce-desktop-item-edit/xfce-die-editor.c:445
+#: xfce-desktop-item-edit/xfce-die-editor.c:445
 msgid "Options:"
 msgstr "Opcións:"
 
@@ -1255,11 +1271,11 @@ msgstr "Opcións:"
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#: ../xfce-desktop-item-edit/xfce-die-editor.c:457
+#: xfce-desktop-item-edit/xfce-die-editor.c:457
 msgid "Use _startup notification"
 msgstr "Usar a notificación de _inicio"
 
-#: ../xfce-desktop-item-edit/xfce-die-editor.c:458
+#: xfce-desktop-item-edit/xfce-die-editor.c:458
 msgid ""
 "Select this option to enable startup notification when the command is run "
 "from the file manager or the menu. Not every application supports startup "
@@ -1270,71 +1286,71 @@ msgstr "Seleccionar esta opción para activar a notificación de inicio cando a 
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#: ../xfce-desktop-item-edit/xfce-die-editor.c:476
+#: xfce-desktop-item-edit/xfce-die-editor.c:476
 msgid "Run in _terminal"
 msgstr "Executar nun _terminal"
 
-#: ../xfce-desktop-item-edit/xfce-die-editor.c:477
+#: xfce-desktop-item-edit/xfce-die-editor.c:477
 msgid "Select this option to run the command in a terminal window."
 msgstr "Seleccionar esta opción para executar a orde nunha xanela de terminal."
 
 #. allocate the icon chooser dialog
-#: ../xfce-desktop-item-edit/xfce-die-editor.c:638
+#: xfce-desktop-item-edit/xfce-die-editor.c:638
 msgid "Select an icon"
 msgstr "Seleccionar unha icona"
 
-#: ../xfce-desktop-item-edit/xfce-die-editor.c:640
-#: ../xfce-desktop-item-edit/xfce-die-editor.c:684
+#: xfce-desktop-item-edit/xfce-die-editor.c:640
+#: xfce-desktop-item-edit/xfce-die-editor.c:684
 msgid "_OK"
 msgstr "De ac_ordo"
 
 #. allocate the file chooser dialog
-#: ../xfce-desktop-item-edit/xfce-die-editor.c:681
+#: xfce-desktop-item-edit/xfce-die-editor.c:681
 msgid "Select a working directory"
 msgstr "Seleccionar un cartafol de traballo"
 
-#: ../xfce-desktop-item-edit/xfce-die-utils.c:210
+#: xfce-desktop-item-edit/xfce-die-utils.c:210
 msgid "File location is not a regular file or directory"
 msgstr "A localización do ficheiro non está nun ficheiro ou directorio normal"
 
-#: ../xfce-open/main.c:218
+#: xfce-open/main.c:218
 msgid "Usage: xfce-open [URLs...]"
 msgstr "Uso: xfce-open [URLs...]"
 
-#: ../xfce-open/main.c:219
+#: xfce-open/main.c:219
 msgid "       xfce-open --launch TYPE [PARAMETERs...]"
 msgstr "       xfce-open --launch TIPO [PARAMETROS...]"
 
-#: ../xfce-open/main.c:221
+#: xfce-open/main.c:221
 msgid "  -?, --help                          Print this help message and exit"
 msgstr "  -?, --help                          Amosa esta mensaxe de axuda e sae"
 
-#: ../xfce-open/main.c:222
+#: xfce-open/main.c:222
 msgid ""
 "  -V, --version                       Print version information and exit"
 msgstr "  -V, --version                       Amosa a información da versión e sae"
 
-#: ../xfce-open/main.c:224
+#: xfce-open/main.c:224
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
 msgstr "  --launch TIPO [PARÁMETROS...]        Inicia a aplicación preferida do\n                                      TIPO cos PARÁMETROS opcionais, onde\n                                      TIPO é un dos seguintes valores."
 
-#: ../xfce-open/main.c:228
+#: xfce-open/main.c:228
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
 msgstr "  --working-directory DIRECTORIO      Directorio de traballo predeterminado\n                                        para as aplicacións iniciadas\n                                        coa opción --launch."
 
-#: ../xfce-open/main.c:231
+#: xfce-open/main.c:231
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "A orde --launch admite os seguintes TIPOS:"
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
 #. TerminalEmulator),
 #. * since the xfce4-mime-helper utility will not accept localized TYPEs.
-#: ../xfce-open/main.c:237
+#: xfce-open/main.c:237
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1346,7 +1362,7 @@ msgid ""
 "  VideoPlayer      - The preferred Video Player."
 msgstr ""
 
-#: ../xfce-open/main.c:247
+#: xfce-open/main.c:247
 msgid ""
 "If you don't specify the --launch option, xfce-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1355,16 +1371,16 @@ msgid ""
 "you can pass the command line that should be run in the terminal)."
 msgstr "Se non especifica a opción --launch, xfce-open abrirá todos os URLs especificados con seus xestores de URLs preferidos. Se se especifica a opción --launch, pódese seleccionar a aplicación preferida que se desexa executar e pasar parámetros adicionais a dita aplicación (p. ex. para o Emulador de Terminal pode pasarse a liña de ordes que se debe executar dento do terminal)."
 
-#: ../xfce-open/main.c:422
+#: xfce-open/main.c:422
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Produciuse un fallo ao iniciar a aplicación preferida da categoría «%s»."
 
-#: ../xfce-open/main.c:713
+#: xfce-open/main.c:713
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "Non se puido detectar o esquema de URI de «%s»."
 
-#: ../xfce-open/main.c:727
+#: xfce-open/main.c:727
 msgid "Failed to open URI."
 msgstr "Produciuse un erro ao abrir o URI,"
