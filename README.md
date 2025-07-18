@@ -30,17 +30,17 @@ See [NEWS](https://gitlab.xfce.org/xfce/libxfce4ui/-/blob/master/NEWS) for detai
 From source: 
 
     % cd libxfce4ui
-    % ./autogen.sh
-    % make
-    % make install
+    % meson setup build
+    % meson compile -C build
+    % meson install -C build
 
 From release tarball:
 
-    % tar xf libxfce4ui-<version>.tar.bz2
+    % tar xf libxfce4ui-<version>.tar.xz
     % cd libxfce4ui-<version>
-    % ./configure
-    % make
-    % make install
+    % meson setup build
+    % meson compile -C build
+    % meson install -C build
 
 ### Reporting Bugs
 
