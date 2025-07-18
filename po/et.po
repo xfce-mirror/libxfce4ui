@@ -693,7 +693,7 @@ msgstr "Kiiresti leiab ja käivitab süsteemi paigaldatud rakendusi."
 
 #: xfce4-about/main.c:223
 msgid "Settings Daemon"
-msgstr "Seadete taustaprotsess"
+msgstr "Seadistuste taustaprotsess"
 
 #: xfce4-about/main.c:224
 msgid "Stores your settings in a D-Bus-based configuration system."
@@ -791,7 +791,7 @@ msgstr "Palun teata vigadest aadressil <%s>."
 
 #: xfce4-about/main.c:548
 msgid "Failed to load interface"
-msgstr "Liidese laadimine ebaõnnestus"
+msgstr "Liidese laadimine ei õnnestunud"
 
 #. { N_("Project Lead"),
 #. xfce_contributors_lead
@@ -997,7 +997,7 @@ msgstr "Fail nimega „%s“ on juba siin kaustas olemas ja uut faili ei lisatud
 
 #: tests/test-ui.c:121
 msgid "Failed to migrate the old panel configuration"
-msgstr "Riba vanade sätete ülekandmine ebaõnnestus"
+msgstr "Riba vanade seadistuste ülekandmine ei õnnestunud"
 
 #: tests/test-ui.c:171 tests/test-ui.c:196
 msgid "Customize settings stored by Xfconf"
