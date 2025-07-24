@@ -288,7 +288,9 @@ main (int argc, char **argv)
               xfce_die_error ("The file \"%s\" contains no data", argv[1]);
             }
 
-          return EXIT_FAILURE;
+          g_free (contents);
+          result = EXIT_FAILURE;
+          goto out;
         }
 
       /* load the data into the key file */
@@ -300,7 +302,8 @@ main (int argc, char **argv)
           /* failed to parse the file */
           xfce_die_error ("Failed to parse contents of \"%s\": %s", argv[1], error->message);
           g_error_free (error);
-          return EXIT_FAILURE;
+          result = EXIT_FAILURE;
+          goto out;
         }
     }
 
@@ -311,7 +314,8 @@ main (int argc, char **argv)
     {
       /* we cannot continue without a type */
       xfce_die_error ("File \"%s\" has no type key", argv[1]);
-      return EXIT_FAILURE;
+      result = EXIT_FAILURE;
+      goto out;
     }
 
   /* verify that we support the type */
@@ -321,7 +325,9 @@ main (int argc, char **argv)
     {
       /* tell the user that we don't support the type */
       xfce_die_error ("Unsupported desktop file type \"%s\"", value);
-      return EXIT_FAILURE;
+      g_free (value);
+      result = EXIT_FAILURE;
+      goto out;
     }
   g_free (value);
   mode = enum_value->value;
@@ -678,10 +684,6 @@ main (int argc, char **argv)
   /* destroy the editor dialog */
   gtk_widget_destroy (dialog);
 
-  /* cleanup */
-  g_key_file_free (key_file);
-  g_object_unref (G_OBJECT (gfile));
-
   if (result == EXIT_SUCCESS && result_file != NULL && opt_print_saved_uri)
     {
       gchar *uri = g_file_get_uri (result_file);
@@ -693,6 +695,11 @@ main (int argc, char **argv)
     {
       g_object_unref (result_file);
     }
+
+out:
+  /* cleanup */
+  g_key_file_free (key_file);
+  g_object_unref (G_OBJECT (gfile));
 
   return result;
 }
