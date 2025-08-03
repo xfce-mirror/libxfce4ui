@@ -1206,7 +1206,16 @@ owner_change (GtkClipboard *clipboard,
     {
       if (!WAIT_CANCELLED)
         {
-          manager->is_image_available = gtk_targets_include_image (targets, n_targets, FALSE);
+          /*
+           * This piece of code concerns the copying "real" images, to fix issues such as #105. If there's
+           * text and image data, we're probably in a case like copying formulas in LibreOffice (#112, #135),
+           * so best leave it to the X11 code. On the other hand, if we wanted to use this code in this case
+           * too, we'd also have to test the text data changes below, to refeed the clipboard when only these
+           * change.
+           */
+          manager->is_image_available = gtk_targets_include_image (targets, n_targets, FALSE)
+                                        && !gtk_targets_include_text (targets, n_targets)
+                                        && !gtk_targets_include_uri (targets, n_targets);
           if (manager->is_image_available)
             {
               GdkPixbuf *image = gtk_clipboard_wait_for_image (clipboard);
