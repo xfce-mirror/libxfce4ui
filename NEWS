@@ -1,3 +1,15 @@
+4.20.2 (2025-08-14)
+======
+- clipboard-manager: Use GtkClipboard iff image-only format is available
+- I18n: Update po/LINGUAS list
+- clipboard-manager: Fix potential leak on targets
+- clipboard-manager: Use separate struct for each call to 
+set_with_data()
+- clipboard-manager: Use GtkTargetList instead of manual allocation
+- Translation Updates:
+  Arabic, Esperanto, Estonian, Galician, Georgian, Greek, Korean,
+  Polish
+
 4.20.1 (2025-03-23)
 ======
 - clipboard-manager: Fix memory leak
