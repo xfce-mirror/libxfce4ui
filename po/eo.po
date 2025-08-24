@@ -301,12 +301,12 @@ msgstr "Lokoj-piktogramoj"
 #. XFCE_ICON_CHOOSER_CONTEXT_STATUS
 #: libxfce4ui/xfce-icon-chooser-dialog.c:137
 msgid "Status Icons"
-msgstr ""
+msgstr "Stataj piktogramoj"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_STOCK
 #: libxfce4ui/xfce-icon-chooser-dialog.c:139
 msgid "Stock Icons"
-msgstr ""
+msgstr "Provizaj piktogramoj"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_OTHER
 #: libxfce4ui/xfce-icon-chooser-dialog.c:141
@@ -341,7 +341,7 @@ msgstr "_Serĉi piktogramon:"
 
 #: libxfce4ui/xfce-icon-chooser-dialog.c:249
 msgid "Clear search field"
-msgstr ""
+msgstr "Malplenigi la serĉkampon"
 
 #: libxfce4ui/xfce-sm-client.c:1503
 msgid "Session management client ID"
@@ -1158,7 +1158,7 @@ msgid ""
 "the GNU Lesser General Public License which can be found in the\n"
 "%s source package.\n"
 "\n"
-msgstr ""
+msgstr "%s venas kun absolute neniu garantio,\nVi eble redistribuos kopiojn de %s sub la kondiĉoj de\nla GNU malpli granda ĝenerala publika licenco trovebla en la %s Fonta Pako.\n\n"
 
 #. add the "Create"/"Save" button (as default)
 #: xfce-desktop-item-edit/main.c:349
