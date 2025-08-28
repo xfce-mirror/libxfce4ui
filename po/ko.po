@@ -1359,7 +1359,7 @@ msgid ""
 "  ImageViewer      - The preferred Image Viewer.\n"
 "  AudioPlayer      - The preferred Audio Player.\n"
 "  VideoPlayer      - The preferred Video Player."
-msgstr ""
+msgstr "WebBrowser - 기본 웹 브라우저.\nMailReader - 기본 메일 리더.\nFileManager - 기본 파일 관리자.\nTerminalEmulator - 기본 터미널 에뮬레이터.\nTextEditor - 기본 텍스트 편집기.\nImageViewer - 기본 이미지 뷰어.\nAudioPlayer - 기본 오디오 플레이어.\nVideoPlayer - 기본 비디오 플레이어."
 
 #: xfce-open/main.c:247
 msgid ""
