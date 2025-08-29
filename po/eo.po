@@ -1127,7 +1127,7 @@ msgstr ""
 
 #: xfce-desktop-item-edit/main.c:90
 msgid "Preset icon when creating a desktop file"
-msgstr ""
+msgstr "Antaŭagordi bilsimbolon kiam labortabla dosiero kreiĝas"
 
 #: xfce-desktop-item-edit/main.c:91
 msgid "Print the final saved URI after creating or editing the file"
@@ -1295,7 +1295,7 @@ msgstr "Elektu ĉi tiun opcion por lanĉi la komandon en terminal-fenestro."
 #. allocate the icon chooser dialog
 #: xfce-desktop-item-edit/xfce-die-editor.c:638
 msgid "Select an icon"
-msgstr ""
+msgstr "Elekti bildsimbolon"
 
 #: xfce-desktop-item-edit/xfce-die-editor.c:640
 #: xfce-desktop-item-edit/xfce-die-editor.c:684
