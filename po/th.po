@@ -1131,7 +1131,7 @@ msgstr "กำหนดไอคอนเตรียมไว้เมื่อ
 
 #: xfce-desktop-item-edit/main.c:91
 msgid "Print the final saved URI after creating or editing the file"
-msgstr ""
+msgstr "แสดงลิงก์บันทึก URI ล่าสุด หลังจากสร้างหรือแก้ไขไฟล์ "
 
 #: xfce-desktop-item-edit/main.c:92
 msgid "Print version information and exit"
@@ -1144,7 +1144,7 @@ msgstr "[แฟ้ม|โฟลเดอร์]"
 
 #: xfce-desktop-item-edit/main.c:200 xfce-open/main.c:760
 msgid "os-cillation e.K. All rights reserved."
-msgstr ""
+msgstr "os-cillation e.K. All rights reserved."
 
 #: xfce-desktop-item-edit/main.c:204 xfce-open/main.c:764
 msgid "Written by Benedikt Meurer <benny@xfce.org>."
