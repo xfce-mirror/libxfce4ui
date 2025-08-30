@@ -1365,7 +1365,7 @@ msgid ""
 "  ImageViewer      - The preferred Image Viewer.\n"
 "  AudioPlayer      - The preferred Audio Player.\n"
 "  VideoPlayer      - The preferred Video Player."
-msgstr "WebBrowser       - Ο προτιμώμενος περιηγητής διαδικτύου.\nMailReader       - Ο προτιμώμενος αναγνώστης αλληλογραφίας.\nFileManager      - Ο προτιμώμενος διαχειριστής αρχείων.\nTerminalEmulator - Ο προτιμώμενος εξομοιωτής τερματικού.\nTextEditor      - Ο προτιμώμενος επεξεργαστής κειμένου.\nImageViewer     - Το προτιμώμενο πρόγραμμα προβολής εικόνων.\nAudioPlayer     - Το προτιμώμενο πρόγραμμα αναπαραγωγής ήχου.\nVideoPlayer     - Το προτιμώμενο πρόγραμμα αναπαραγωγής βίντεο."
+msgstr "WebBrowser       - Ο προτιμώμενος περιηγητής διαδικτύου.\nMailReader       - Η προτιμώμενη εφαρμογή αλληλογραφίας.\nFileManager      - Ο προτιμώμενος διαχειριστής αρχείων.\nTerminalEmulator - Ο προτιμώμενος εξομοιωτής τερματικού.\nTextEditor      - Η προτιμώμενη εφαρμογή επεξεργασίας κειμένου.\nImageViewer     - Η προτιμώμενη εφαρμογή προβολής εικόνων.\nAudioPlayer     - Η προτιμώμενη εφαρμογή αναπαραγωγής ήχου.\nVideoPlayer     - Η προτιμώμενη εφαρμογή αναπαραγωγής βίντεο."
 
 #: xfce-open/main.c:247
 msgid ""
