@@ -10,6 +10,7 @@
 # Nick Schermer <nick@xfce.org>, 2025
 # Robin van der Vliet <info@robinvandervliet.com>, 2025
 # Jakub Szafranek Fabijan <jakubfabijan@tuta.io>, 2025
+# Warut Bunprasert <warut.b@disroot.org>, 2025
 # 
 #, fuzzy
 msgid ""
@@ -18,7 +19,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2025-03-19 12:46+0100\n"
 "PO-Revision-Date: 2025-03-19 10:24+0000\n"
-"Last-Translator: Jakub Szafranek Fabijan <jakubfabijan@tuta.io>, 2025\n"
+"Last-Translator: Warut Bunprasert <warut.b@disroot.org>, 2025\n"
 "Language-Team: Esperanto (https://app.transifex.com/xfce/teams/16840/eo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -44,6 +45,8 @@ msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
 msgstr ""
+"Vi estos redirektita al la dokumenta retejo, kie la helppaĝoj estas "
+"konservitaj kaj tradukitaj."
 
 #: libxfce4ui/xfce-dialogs.c:271
 msgid "Read the manual"
@@ -61,7 +64,7 @@ msgstr "Legi su_rrete"
 
 #: libxfce4ui/xfce-dialogs.c:283
 msgid "_Always go directly to the online documentation"
-msgstr ""
+msgstr "_Iru ĉiam rekte al la interreta dokumentado"
 
 #: libxfce4ui/xfce-dialogs.c:332 libxfce4ui/xfce-dialogs.c:367
 #: libxfce4ui/xfce-dialogs.c:403
@@ -119,32 +122,32 @@ msgstr "_Ne demandu min plue"
 
 #: libxfce4ui/xfce-sm-client.c:1507
 msgid "Session management client ID"
-msgstr ""
+msgstr "ID de Seanca administrado"
 
 #: libxfce4ui/xfce-sm-client.c:1507
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: libxfce4ui/xfce-sm-client.c:1508
 msgid "Disable session management"
-msgstr ""
+msgstr "Malebligi seancan administradon"
 
 #: libxfce4ui/xfce-sm-client.c:1518
 msgid "Session management options"
-msgstr ""
+msgstr "Opico de seanca administrado"
 
 #: libxfce4ui/xfce-sm-client.c:1518
 msgid "Show session management options"
-msgstr ""
+msgstr "Montri opciojn de seanca administrado "
 
 #: libxfce4ui/xfce-sm-client.c:1692
 #, c-format
 msgid "Failed to connect to the session manager: %s"
-msgstr ""
+msgstr "Malsukcesis konekti al la seanca administrado: %s"
 
 #: libxfce4ui/xfce-sm-client.c:1701
 msgid "Session manager did not return a valid client id"
-msgstr ""
+msgstr "Seanca administranto ne redonis validan klientan identigilon"
 
 #. print warning for user
 #: libxfce4ui/xfce-spawn.c:387
@@ -152,7 +155,7 @@ msgstr ""
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
 "\"%s\"."
-msgstr ""
+msgstr "Laboranta dosierujo \"%s\" ne ekzistas. Ĝi ne estos uzata kiam fuŝas \"%s\"."
 
 #. retrieve the error and warning messages
 #: libxfce4ui/xfce-filename-input.c:238
@@ -161,7 +164,7 @@ msgstr "Dosiernomo trolonga"
 
 #: libxfce4ui/xfce-filename-input.c:239
 msgid "Directory separator illegal in file name"
-msgstr ""
+msgstr "Dosieruja apartigilo malpremesita en dosiernomo"
 
 #: libxfce4ui/xfce-filename-input.c:240
 msgid "Filenames should not start or end with a space"
@@ -258,7 +261,7 @@ msgstr "Fulmoklavo jam uzata"
 
 #: libxfce4kbd-private/xfce-shortcut-dialog.c:218
 msgid "Window Manager Action Shortcut"
-msgstr ""
+msgstr "Fenestra administra agoŝparvojo"
 
 #. TRANSLATORS: this string will be used to create an explanation for
 #. * the user in a following string
@@ -300,7 +303,7 @@ msgstr "Ne povis kapti la klavaron."
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:37
 msgid "Window operations menu"
-msgstr ""
+msgstr "Fenestra operacia menuo"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:38
 msgid "Up"
@@ -328,11 +331,11 @@ msgstr "Cikligi la fenestrojn (inverse)"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:45
 msgid "Switch window for same application"
-msgstr ""
+msgstr "Ŝanĝi fenestron por sama aplikaĵo"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:46
 msgid "Switch application"
-msgstr ""
+msgstr "Ŝanĝi aplikaĵon"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:47
 msgid "Close window"
@@ -380,23 +383,23 @@ msgstr "Malaltigu la fenestron"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:58
 msgid "Raise or lower window"
-msgstr ""
+msgstr "Levu aŭ malsupreniru fenestron"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:59
 msgid "Fill window"
-msgstr ""
+msgstr "Plenigu fenestron"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:60
 msgid "Fill window horizontally"
-msgstr ""
+msgstr "Plenigi fenestron horizontale"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:61
 msgid "Fill window vertically"
-msgstr ""
+msgstr "Plenigi fenestron vertikale"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:62
 msgid "Toggle above"
-msgstr ""
+msgstr "Baskuligi supre"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:63
 msgid "Toggle fullscreen"
@@ -404,19 +407,19 @@ msgstr "Baskulu tutekranen"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:64
 msgid "Move window to lower monitor"
-msgstr ""
+msgstr "Movu fenestron al malsupra ekrano"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:65
 msgid "Move window to left monitor"
-msgstr ""
+msgstr "Movu fenestron al maldekstra ekrano"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:66
 msgid "Move window to right monitor"
-msgstr ""
+msgstr "Movu fenestron al dekstra ekrano"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:67
 msgid "Move window to upper monitor"
-msgstr ""
+msgstr "Movu fenestron al supra ekrano"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:68
 msgid "Move window to upper workspace"
@@ -492,35 +495,35 @@ msgstr "Transloki fenestron al laborspaco 12"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:86
 msgid "Tile window to the top"
-msgstr ""
+msgstr "Kaheligi fenestron al la supro"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:87
 msgid "Tile window to the bottom"
-msgstr ""
+msgstr "Kaheligi fenestron al la fundo"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:88
 msgid "Tile window to the left"
-msgstr ""
+msgstr "Kaheligi fenestron al la maldesktro"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:89
 msgid "Tile window to the right"
-msgstr ""
+msgstr "Kaheligi fenestron al la dekstro"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:90
 msgid "Tile window to the top-left"
-msgstr ""
+msgstr "Kaheligi fenestron al la supra maldekstro"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:91
 msgid "Tile window to the top-right"
-msgstr ""
+msgstr "Kaheligi fenestron al la supra dekstro"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:92
 msgid "Tile window to the bottom-left"
-msgstr ""
+msgstr "Kaheligi fenestron al la funda maldekstro"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:93
 msgid "Tile window to the bottom-right"
-msgstr ""
+msgstr "Kaheligi fenestron al la funda dekstro"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:94
 msgid "Show desktop"
@@ -616,7 +619,7 @@ msgstr "Forigi aktivan laborspacon"
 
 #: xfce4-about/main.c:64
 msgid "Version information"
-msgstr ""
+msgstr "Versiaj Informoj"
 
 #: xfce4-about/main.c:174
 msgid "GPUs"
@@ -628,7 +631,7 @@ msgstr "Administradilo de Fenestroj"
 
 #: xfce4-about/main.c:192
 msgid "Handles the placement of windows on the screen."
-msgstr ""
+msgstr "Pritraktas la lokadon de fenestroj sur la ekrano."
 
 #: xfce4-about/main.c:195
 msgid "Panel"
@@ -637,6 +640,7 @@ msgstr "Panelo"
 #: xfce4-about/main.c:196
 msgid "Provides a home for window buttons, launchers, app menu and more."
 msgstr ""
+"Provizas hejmon por fenestraj butonoj, lanĉiloj, aplikaĵ-menuo kaj pli."
 
 #: xfce4-about/main.c:199
 msgid "Desktop Manager"
@@ -644,7 +648,7 @@ msgstr "Labortabla administrilo"
 
 #: xfce4-about/main.c:200
 msgid "Sets desktop backgrounds, handles icons and more."
-msgstr ""
+msgstr "Fiksas labortablajn fonojn, trakti bildsimbolojn kaj pli."
 
 #: xfce4-about/main.c:203
 msgid "File Manager"
@@ -661,16 +665,18 @@ msgstr "Portila administrilo"
 
 #: xfce4-about/main.c:208
 msgid "Manages removable drives and media for Thunar."
-msgstr ""
+msgstr "Administri demeteblajn diskojn kaj datumportilojn por Thunar."
 
 #: xfce4-about/main.c:211
 msgid "Session Manager"
-msgstr ""
+msgstr "Seanca administranto"
 
 #: xfce4-about/main.c:212
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
 msgstr ""
+"Konservi kaj restartigi vian seancon, pritraktas startigon, aŭtolanĉon kaj "
+"sistemfermon."
 
 #: xfce4-about/main.c:215
 msgid "Settings Manager"
@@ -678,35 +684,36 @@ msgstr "Agordo-administrilo"
 
 #: xfce4-about/main.c:216
 msgid "Configures appearance, display, keyboard and mouse settings."
-msgstr ""
+msgstr "Agordi aspekton, ekranon, klavaron kaj muson."
 
 #: xfce4-about/main.c:219
 msgid "Application Finder"
-msgstr ""
+msgstr "Aplikaĵo-serĉilo"
 
 #: xfce4-about/main.c:220
 msgid "Quickly finds and launches applications installed on your system."
-msgstr ""
+msgstr "Rapide trovi kaj lanĉi instalitajn aplikaĵojn en via sistemo."
 
 #: xfce4-about/main.c:223
 msgid "Settings Daemon"
-msgstr ""
+msgstr "Agordi Demonon"
 
 #: xfce4-about/main.c:224
 msgid "Stores your settings in a D-Bus-based configuration system."
-msgstr ""
+msgstr "Konservi viajn agordojn en D-Bus-bazita agordsistemo."
 
 #: xfce4-about/main.c:227
 msgid "A Menu Library"
-msgstr ""
+msgstr "Menua Biblioteko"
 
 #: xfce4-about/main.c:228
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
 msgstr ""
+"Realigi konforman menuon bazitan de  freedesktop.org sur Glib kaj Gio."
 
 #: xfce4-about/main.c:231
 msgid "Thumbnails Service"
-msgstr ""
+msgstr "Bildeta servo"
 
 #: xfce4-about/main.c:232
 msgid "Implements the thumbnail management D-Bus specification."
@@ -842,7 +849,7 @@ msgstr "Aparato"
 #: xfce4-about/xfce4-about-dialog.glade:678
 #: xfce4-about/xfce4-about-dialog.glade:703
 msgid "label"
-msgstr ""
+msgstr "etikedo"
 
 #: xfce4-about/xfce4-about-dialog.glade:462
 msgid "OS Name"
@@ -850,7 +857,7 @@ msgstr "Operaciuma nomo"
 
 #: xfce4-about/xfce4-about-dialog.glade:487
 msgid "OS Type"
-msgstr ""
+msgstr "Tipo de operaciumo"
 
 #: xfce4-about/xfce4-about-dialog.glade:512
 msgid "Distributor"
@@ -906,6 +913,13 @@ msgid ""
 "\n"
 "\t- The Xfce Development Team"
 msgstr ""
+"XFCE ankaŭ estas disvolva platformo provizanta plurajn bibliotekojn, kiuj helpas programistojn krei aplikaĵojn, kiuj kongruas bone kun la fenestrilo.\n"
+"\n"
+"XFCE-komponentoj estas rajtigitaj sub senpagaj aŭ malfermitkodaj licencoj; GPL aŭ BSDL por aplikaĵoj kaj LGPL aŭ BSDL por bibliotekoj. Rigardu la dokumentaron, la fontkodon aŭ la XFCE -retejon (https://www.xfce.org) por pli da informo.\n"
+"\n"
+"Dankon pro via intereso pri XFCE.\n"
+"\n"
+"- La programada skipo XFCE."
 
 #: xfce4-about/xfce4-about-dialog.glade:834
 msgid "About"
