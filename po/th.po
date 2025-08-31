@@ -5,15 +5,16 @@
 # 
 # Translators:
 # Xfce Bot <transifex@xfce.org>, 2025
+# Warut Bunprasert <warut.b@disroot.org>, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: libxfce4ui.xfce-4-20\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2025-03-19 11:24+0100\n"
+"POT-Creation-Date: 2025-03-19 12:46+0100\n"
 "PO-Revision-Date: 2025-03-19 10:24+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>, 2025\n"
+"Last-Translator: Warut Bunprasert <warut.b@disroot.org>, 2025\n"
 "Language-Team: Thai (https://app.transifex.com/xfce/teams/16840/th/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,7 +43,7 @@ msgstr "คุณจะถูกนำไปสู่เว็บไซต์เ
 
 #: libxfce4ui/xfce-dialogs.c:271
 msgid "Read the manual"
-msgstr ""
+msgstr "อ่านคู่มือ"
 
 #. Create cancel button
 #: libxfce4ui/xfce-dialogs.c:273 libxfce4ui/xfce-dialogs.c:531
@@ -221,19 +222,19 @@ msgstr "ปุ่มลัดนี้ถูกใช้ทำอย่างอ
 #: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:91
 #: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:128
 msgid "Shortcuts Editor"
-msgstr ""
+msgstr "เครื่องมือแก้ไขปุ่มลัด"
 
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:493
 msgid "The current shortcut. Click to edit..."
-msgstr ""
+msgstr "ปุ่มลัดปัจจุบัน คลิกเพื่อแก้ไข"
 
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:505
 msgid "Clear the shortcut"
-msgstr ""
+msgstr "ลบปุ่มลัด"
 
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:517
 msgid "Restore the default shortcut"
-msgstr ""
+msgstr "คืนค่าปุ่มลัดปริยาย"
 
 #. skip leading slash
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:671
@@ -395,19 +396,19 @@ msgstr "เปิด/ปิดการแสดงเต็มจอ"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:64
 msgid "Move window to lower monitor"
-msgstr ""
+msgstr "ย้ายหน้าต่างไปยังจอภาพต่ำกว่า"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:65
 msgid "Move window to left monitor"
-msgstr ""
+msgstr "ย้ายหน้าต่างไปยังจอภาพซ้าย"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:66
 msgid "Move window to right monitor"
-msgstr ""
+msgstr "ย้ายหน้าต่างไปยังจอภาพขวา"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:67
 msgid "Move window to upper monitor"
-msgstr ""
+msgstr "ย้ายหน้าต่างไปยังจอภาพบน"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:68
 msgid "Move window to upper workspace"
@@ -866,15 +867,15 @@ msgstr "รุ่นของ Xfce"
 
 #: xfce4-about/xfce4-about-dialog.glade:564
 msgid "GTK Version"
-msgstr ""
+msgstr "รุ่นของ GTK"
 
 #: xfce4-about/xfce4-about-dialog.glade:589
 msgid "Kernel Version"
-msgstr ""
+msgstr "รุ่นของเคอร์เนล "
 
 #: xfce4-about/xfce4-about-dialog.glade:614
 msgid "Windowing System"
-msgstr ""
+msgstr "ระบบหน้าต่าง"
 
 #: xfce4-about/xfce4-about-dialog.glade:640
 msgid "CPU"
