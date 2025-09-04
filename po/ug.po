@@ -5,15 +5,16 @@
 # 
 # Translators:
 # Xfce Bot <transifex@xfce.org>, 2025
+# Abduqadir Abliz <sahranbay@gmail.com>, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: libxfce4ui.xfce-4-20\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2025-03-19 11:24+0100\n"
+"POT-Creation-Date: 2025-03-19 12:46+0100\n"
 "PO-Revision-Date: 2025-03-19 10:24+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>, 2025\n"
+"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>, 2025\n"
 "Language-Team: Uyghur (https://app.transifex.com/xfce/teams/16840/ug/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,7 +43,7 @@ msgstr "سىز ياردەم بەتلىرى ۋە تەرجىمىلىرى بار ب
 
 #: libxfce4ui/xfce-dialogs.c:271
 msgid "Read the manual"
-msgstr ""
+msgstr "قوللانمىنى ئوقۇڭ"
 
 #. Create cancel button
 #: libxfce4ui/xfce-dialogs.c:273 libxfce4ui/xfce-dialogs.c:531
@@ -77,13 +78,15 @@ msgstr "ۋاز كەچ"
 
 #: libxfce4ui/xfce-dialogs.c:515
 msgid "Close window with multiple tabs?"
-msgstr ""
+msgstr "كۆپ بەتكۈچلۈك كۆزنەكنى ياپامدۇ؟"
 
 #: libxfce4ui/xfce-dialogs.c:517
 msgid ""
 "This window has multiple tabs open. Closing this window will also close all "
 "its tabs."
 msgstr ""
+"بۇ كۆزنەك كۆپ بەتكۈچ ئاچقان. بۇ كۆنەك يېپىلسا ئۇنىڭدىكى ھەممە بەتكۈچمۇ "
+"يېپىلىدۇ."
 
 #: libxfce4ui/xfce-dialogs.c:520
 #, c-format
@@ -91,6 +94,8 @@ msgid ""
 "This window has %d tabs open. Closing this window will also close all its "
 "tabs."
 msgstr ""
+"بۇ كۆزنەك %d بەتكۈچ ئاچقان. بۇ كۆنەك يېپىلسا ئۇنىڭدىكى ھەممە بەتكۈچمۇ "
+"يېپىلىدۇ."
 
 #: libxfce4ui/xfce-dialogs.c:527
 msgid "Warning"
@@ -98,7 +103,7 @@ msgstr "دىققەت"
 
 #: libxfce4ui/xfce-dialogs.c:532
 msgid "Close T_ab"
-msgstr ""
+msgstr "بەتكۈچنى ياپ(_A)"
 
 #: libxfce4ui/xfce-dialogs.c:533
 msgid "Close _Window"
@@ -152,11 +157,11 @@ msgstr "ھۆججەت ئىسمى بەك ئۇزۇن"
 
 #: libxfce4ui/xfce-filename-input.c:239
 msgid "Directory separator illegal in file name"
-msgstr ""
+msgstr "ھۆججەت ئىسمىدىكى مۇندەرىجە ئايرىغۇچ قانۇنسىز"
 
 #: libxfce4ui/xfce-filename-input.c:240
 msgid "Filenames should not start or end with a space"
-msgstr ""
+msgstr "ھۆججەت ئىسمى بوشلۇق بىلەن باشلانمايدۇ ياكى ئاخىرلاشمايدۇ"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:47
 #, c-format
@@ -221,31 +226,31 @@ msgstr "مەزكۇر تېزلەتمە باشقا يەردە ئىشلىتىلىۋ
 #: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:91
 #: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:128
 msgid "Shortcuts Editor"
-msgstr ""
+msgstr "تېزلەتمە تەھرىرلىگۈچ"
 
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:493
 msgid "The current shortcut. Click to edit..."
-msgstr ""
+msgstr "نۆۋەتتىكى تېزلەتمە. چېكىلسە تەھرىرلەيدۇ…"
 
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:505
 msgid "Clear the shortcut"
-msgstr ""
+msgstr "تېزلەتمىنى تازىلا"
 
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:517
 msgid "Restore the default shortcut"
-msgstr ""
+msgstr "كۆڭۈلدىكى تېزلەتمىنى ئەسلىگە كەلتۈر"
 
 #. skip leading slash
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:671
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:761
 #, c-format
 msgid "This keyboard shortcut is currently used by: '%s'"
-msgstr ""
+msgstr "بۇ ھەرپتاختا تېزلەتمىسىنى ئىشلىتىۋاتقىنى: «%s»"
 
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:674
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:764
 msgid "Keyboard shortcut already in use"
-msgstr ""
+msgstr "ھەرپتاختا تېزلەتمىسى ئىشلىتىلىۋاتىدۇ"
 
 #: libxfce4kbd-private/xfce-shortcut-dialog.c:218
 msgid "Window Manager Action Shortcut"
@@ -279,7 +284,7 @@ msgstr "تازىلا"
 #: libxfce4kbd-private/xfce-shortcut-dialog.c:272
 #, c-format
 msgid "Press keyboard keys to trigger the %s '%s'."
-msgstr ""
+msgstr "ھەرپتاختىدىكى ھەرپ بېسىلسا قوزغىتىدىغىنى %s '%s'."
 
 #: libxfce4kbd-private/xfce-shortcut-dialog.c:294
 msgid "Please press a key"
@@ -395,19 +400,19 @@ msgstr "پۈتۈن ئېكران شەكلىگە ئالماشتۇر"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:64
 msgid "Move window to lower monitor"
-msgstr ""
+msgstr "كۆزنەكنى ئاستىدىكى كۆزەتكۈچكە يۆتكە"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:65
 msgid "Move window to left monitor"
-msgstr ""
+msgstr "كۆزنەكنى سولدىكى كۆزەتكۈچكە يۆتكە"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:66
 msgid "Move window to right monitor"
-msgstr ""
+msgstr "كۆزنەكنى ئوڭدىكى كۆزەتكۈچكە يۆتكە"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:67
 msgid "Move window to upper monitor"
-msgstr ""
+msgstr "كۆزنەكنى ئۈستىدىكى كۆزەتكۈچكە يۆتكە"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:68
 msgid "Move window to upper workspace"
@@ -499,19 +504,19 @@ msgstr "ئوڭ تەرەپكە كۆزنەكنى كاھىش شەكىلدە تىز"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:90
 msgid "Tile window to the top-left"
-msgstr ""
+msgstr "كۆزنەكنى سول چوققىسىغا تەكشى ياي"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:91
 msgid "Tile window to the top-right"
-msgstr ""
+msgstr "كۆزنەكنى ئوڭ چوققىسىغا تەكشى ياي"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:92
 msgid "Tile window to the bottom-left"
-msgstr ""
+msgstr "كۆزنەكنى سول ئاستىغا تەكشى ياي"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:93
 msgid "Tile window to the bottom-right"
-msgstr ""
+msgstr "كۆزنەكنى ئوڭ ئاستىغا تەكشى ياي"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:94
 msgid "Show desktop"
@@ -627,7 +632,7 @@ msgstr "كۆزنەك"
 
 #: xfce4-about/main.c:196
 msgid "Provides a home for window buttons, launchers, app menu and more."
-msgstr ""
+msgstr "كۆزنەك توپچە، قوزغاتقۇچ، ئەپ تىزىملىكى ۋە باشقىلارغا ئۆي تەمىنلەيدۇ."
 
 #: xfce4-about/main.c:199
 msgid "Desktop Manager"
@@ -636,6 +641,7 @@ msgstr "ئۈستەلئۈستى باشقۇرغۇچ"
 #: xfce4-about/main.c:200
 msgid "Sets desktop backgrounds, handles icons and more."
 msgstr ""
+"ئۈستەلئۈستى تەگلىكىنى تەڭشەيدۇ، سىنبەلگە ۋە باشقىلارنى بىر تەرەپ قىلىدۇ."
 
 #: xfce4-about/main.c:203
 msgid "File Manager"
@@ -643,7 +649,7 @@ msgstr "ھۆججەت باشقۇرغۇ"
 
 #: xfce4-about/main.c:204
 msgid "Manages your files in a modern, easy-to-use and fast way."
-msgstr ""
+msgstr "زامانىۋى، ئاسان ۋە تېز سۈرئەتتە ھۆججەت باشقۇرىدۇ."
 
 #: xfce4-about/main.c:207
 msgid "Volume Manager"
@@ -651,7 +657,7 @@ msgstr "دىسكا باشقۇرغۇ"
 
 #: xfce4-about/main.c:208
 msgid "Manages removable drives and media for Thunar."
-msgstr ""
+msgstr "يۆتكىلىشچان ئۈسكۈنە ۋە ۋاسىتە باشقۇرىدۇ."
 
 #: xfce4-about/main.c:211
 msgid "Session Manager"
@@ -661,6 +667,8 @@ msgstr "سۆزلىشىش باشقۇرغۇچ"
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
 msgstr ""
+"سۆزلىشىشنى ساقلاپ ۋە ئەسلىگە قايتۇرىدۇ، قوزغىلىش، ئاپتوماتىك قوزغىلىش ۋە "
+"تاقاشنى بىر تەرەپ قىلىدۇ."
 
 #: xfce4-about/main.c:215
 msgid "Settings Manager"
@@ -668,7 +676,7 @@ msgstr "تەڭشەك باشقۇرغۇ"
 
 #: xfce4-about/main.c:216
 msgid "Configures appearance, display, keyboard and mouse settings."
-msgstr ""
+msgstr "كۆرۈنۈش، ئېكران، ھەرپتاختا ۋە چاشقىنەك تەڭشىكىنى سەپلەيدۇ."
 
 #: xfce4-about/main.c:219
 msgid "Application Finder"
@@ -676,7 +684,7 @@ msgstr "پروگرامما ئىزدىگۈ"
 
 #: xfce4-about/main.c:220
 msgid "Quickly finds and launches applications installed on your system."
-msgstr ""
+msgstr "سىستېمىغا ئورنىتىلغان پىروگراممىلارنى تېز تاپىدۇ ۋە قوزغىتىدۇ."
 
 #: xfce4-about/main.c:223
 msgid "Settings Daemon"
@@ -684,33 +692,38 @@ msgstr "تەڭشەك كۆزەتكۈچى"
 
 #: xfce4-about/main.c:224
 msgid "Stores your settings in a D-Bus-based configuration system."
-msgstr ""
+msgstr "تەڭشەكنى D-Bus ئاساسىدىكى سەپلىمە سىستېمىسىدا ساقلايدۇ."
 
 #: xfce4-about/main.c:227
 msgid "A Menu Library"
-msgstr ""
+msgstr "تىزىملىك ئامبىرى"
 
 #: xfce4-about/main.c:228
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
 msgstr ""
+"GLib ۋە GIO ئاساسىدىكى freedesktop.org ماسلىشىشچان تىزىملىكنى ئىشقا "
+"ئاشۇرىدۇ."
 
 #: xfce4-about/main.c:231
 msgid "Thumbnails Service"
-msgstr ""
+msgstr "كىچىك كۆرۈنۈش مۇلازىمىتى"
 
 #: xfce4-about/main.c:232
 msgid "Implements the thumbnail management D-Bus specification."
-msgstr ""
+msgstr "كىچىك كۆرۈنۈش D-Bus بەلگىلىمىسىنى ئىشقا ئاشۇرىدۇ."
 
 #: xfce4-about/main.c:285
 msgid "Please see <https://www.xfce.org/about/credits>"
-msgstr ""
+msgstr "<https://www.xfce.org/about/credits> نى كۆرۈڭ"
 
 #: xfce4-about/main.c:339
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 msgstr ""
+"ئەگەر بۇ تىزىمدا مەلۇم بىرەيلەننى ئۇنتۇپ قالغان بولسىڭىز، ھەرگىز ئىككىلەنمەي"
+" <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> دا كەمتۈك دوكلاتى "
+"يوللاڭ."
 
 #: xfce4-about/main.c:344
 msgid "Thanks to all who helped making this software available!"
@@ -741,6 +754,10 @@ msgid ""
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
 msgstr ""
+"بۇthunar، xfce4-appfinder، xfce4-panel، xfce4-session، xfce4-settings، "
+"xfconf، xfdesktop ۋە xfwm4 بوغچىسى ئەركىن يۇمشاق دېتال ۋەخپىسى GNU ئادەتتىكى"
+" ئاممىۋى ئىجازەتنامە ماددىلىرى بويىچە تارقىتىلغان؛ شۇ ئىجازەت كېلىشىمىنىڭ 2 "
+"نەشرى ياكى خالىغان تېخىمۇ يۇقىرى نەشرىنى ئىشلەتسىڭىز بولىدۇ."
 
 #: xfce4-about/main.c:522
 #, c-format
@@ -785,7 +802,7 @@ msgstr "تەرجىمە يېتەكچىسى"
 
 #: xfce4-about/contributors.h:150
 msgid "Documentation supervision"
-msgstr ""
+msgstr "قوللانما باشقۇرغۇچى"
 
 #: xfce4-about/contributors.h:152
 msgid "Translators"
@@ -839,7 +856,7 @@ msgstr "ئەن"
 
 #: xfce4-about/xfce4-about-dialog.glade:462
 msgid "OS Name"
-msgstr ""
+msgstr "مەشغۇلات سىستېما ئىسمى"
 
 #: xfce4-about/xfce4-about-dialog.glade:487
 msgid "OS Type"
@@ -847,7 +864,7 @@ msgstr "مەشغۇلات سىستېمىسى"
 
 #: xfce4-about/xfce4-about-dialog.glade:512
 msgid "Distributor"
-msgstr ""
+msgstr "تەمىنلىگۈچى"
 
 #: xfce4-about/xfce4-about-dialog.glade:538
 msgid "Xfce Version"
@@ -855,15 +872,15 @@ msgstr "Xfce نەشرى"
 
 #: xfce4-about/xfce4-about-dialog.glade:564
 msgid "GTK Version"
-msgstr ""
+msgstr "GTK نەشرى"
 
 #: xfce4-about/xfce4-about-dialog.glade:589
 msgid "Kernel Version"
-msgstr ""
+msgstr "يادرو نەشرى"
 
 #: xfce4-about/xfce4-about-dialog.glade:614
 msgid "Windowing System"
-msgstr ""
+msgstr "كۆزنەك سىستېمىسى"
 
 #: xfce4-about/xfce4-about-dialog.glade:640
 msgid "CPU"
@@ -871,7 +888,7 @@ msgstr "CPU"
 
 #: xfce4-about/xfce4-about-dialog.glade:666
 msgid "Memory"
-msgstr ""
+msgstr "ئەسلەك"
 
 #: xfce4-about/xfce4-about-dialog.glade:691
 msgid "GPU"
@@ -886,6 +903,8 @@ msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
 msgstr ""
+"Xfce تولۇق ئىقتىدار بىلەن تەمىنلەيدىغان ئۈستەلئۈستى مۇھىتى بىلەن تەمىنلەيدىغان پىروگراممىلارنىڭ توپلىمىدۇر.\n"
+"تۆۋەندىكى پىروگراممىلار Xfce نىڭ يادرولۇق بۆلەكلىرى:"
 
 #: xfce4-about/xfce4-about-dialog.glade:804
 msgid ""
@@ -897,6 +916,11 @@ msgid ""
 "\n"
 "\t- The Xfce Development Team"
 msgstr ""
+"Xfce يەنە بىر ئىجادىيەت سۇپىسى بولۇپ، بىر قانچە ئامبار بىلەن تەمىنلەپ پىروگراممىرلارنىڭ ئۈستەل مۇھىتىغا ماسلىشىدىغان پىروگرامما تۈزۈشىگە ياردەم بېرىدۇ.\n"
+"\n"
+"Xfce بۆلىكى ئەركىن ياكى ئوچۇق كودلۇق ئىجازەت كېلىشىمى: پىروگراممىلار GPL ياكى BSDL، ئامبار ھۆججىتى LGPL ياكى BSDL ئىجازىتىدە تارقىتىلىدۇ. قوللانما، مەنبە كودى ياكى Xfce تور بېكىتى (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) نى زىيارەت قىلىپ تەپسىلاتىنى كۆرۈڭ.\n"
+"\n"
+"-Xfce ئىجادىيەت قوشۇنى"
 
 #: xfce4-about/xfce4-about-dialog.glade:834
 msgid "About"
@@ -930,7 +954,7 @@ msgstr "نامەلۇم"
 #. translators: This is the type of architecture for the OS
 #: xfce4-about/system-info.c:624
 msgid "64-bit (32-bit userspace)"
-msgstr ""
+msgstr "64 بىت (32 بىت ئىشلەتكۈچى بوشلۇقى)"
 
 #. translators: This is the type of architecture for the OS
 #: xfce4-about/system-info.c:627
@@ -948,7 +972,7 @@ msgstr "32 بىت"
 #: xfce4-about/system-info.c:697
 #, c-format
 msgid "%s; Build ID: %s"
-msgstr ""
+msgstr "%s; ئىچكى نەشر كىملىكى: %s"
 
 #: tests/test-ui.c:110
 #, c-format
@@ -956,6 +980,7 @@ msgid ""
 "A file named \"%s\" already exists in this directory, the file hasn't been "
 "added."
 msgstr ""
+"«%s» دېگەن ئاتتىكى ھۆججەت ئاللىقاچان بار ئىكەن. شۇڭا بۇ ھۆججەت قوشۇلمىدى."
 
 #: tests/test-ui.c:121
 msgid "Failed to migrate the old panel configuration"
