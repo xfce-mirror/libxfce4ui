@@ -729,7 +729,7 @@ msgstr "Bildeta servo"
 
 #: ../xfce4-about/main.c:197
 msgid "Implements the thumbnail management D-Bus specification."
-msgstr ""
+msgstr "Realigi la specifan administradon D-Bus de bildeto."
 
 #: ../xfce4-about/main.c:251
 msgid "Please see <https://www.xfce.org/about/credits>"
