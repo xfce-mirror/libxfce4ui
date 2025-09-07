@@ -721,23 +721,27 @@ msgstr "Realigi la specifan administradon D-Bus de bildeto."
 
 #: xfce4-about/main.c:285
 msgid "Please see <https://www.xfce.org/about/credits>"
-msgstr ""
+msgstr "Bonvolu vidi ĉe <https://www.xfce.org/about/credits>"
 
 #: xfce4-about/main.c:339
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 msgstr ""
+"Se vi scias pri iu ajn mankas en ĉi tiu listo; ne hezitu kaj raporti cimon "
+"ĉe <https://www.xfce.org/about/credits>."
 
 #: xfce4-about/main.c:344
 msgid "Thanks to all who helped making this software available!"
-msgstr ""
+msgstr "Dankon al ĉiuj, kiuj helpis disponigi ĉi tiun programon!"
 
 #: xfce4-about/main.c:361
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
 msgstr ""
+"Xfce 4 estas kopirajto Olivier Fourdan (fourdan@xfce.org). La malsamaj "
+"komponentoj estas kopirajtitaj de iliaj aliaj aŭtoroj."
 
 #: xfce4-about/main.c:367
 msgid ""
@@ -746,6 +750,10 @@ msgid ""
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
 msgstr ""
+"La pakaĵoj libxfce4util  kaj exo estas distribuitaj laŭ la kondiĉoj de la "
+"Ĝenerala Publika Permesilo de GNU kiel eldonita de la Fondumo por Libera "
+"Programaro; ĉu versio 2 de la permesilo, aŭ (laŭ via opcio) ajnan pli postan"
+" version."
 
 #: xfce4-about/main.c:375
 msgid ""
@@ -755,19 +763,24 @@ msgid ""
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
 msgstr ""
+"La pakaĵoj thunar, xfce4-appfinder, xfce4-panel, xfce4-sesion, "
+"xfce4-settings, xfconf, xfdesktop kaj xfwm4 estas distribuitaj laŭ la "
+"terminoj de la Ĝenerala Publika Permesilo de GNU kiel eldonita de la Fondumo"
+" por Libera Programaro; ĉu versio 2 de la permesilo, aŭ (laŭ via opcio) "
+"ajnan pli postan version."
 
 #: xfce4-about/main.c:522
 #, c-format
 msgid "Type '%s --help' for usage information."
-msgstr ""
+msgstr "Tajpu  '%s --help' por utilaj informoj."
 
 #: xfce4-about/main.c:528
 msgid "Unable to initialize GTK+."
-msgstr ""
+msgstr "Nekapablas pravalorizi GTK+."
 
 #: xfce4-about/main.c:537
 msgid "The Xfce development team. All rights reserved."
-msgstr ""
+msgstr "La programada skipo de Xfce. Ĉiuj rajtoj rezervitaj."
 
 #: xfce4-about/main.c:538
 #, c-format
@@ -776,30 +789,30 @@ msgstr "Bonvolu raporti cimojn al <%s>."
 
 #: xfce4-about/main.c:548
 msgid "Failed to load interface"
-msgstr ""
+msgstr "Malsukcesis ŝarĝi interfacon"
 
 #. { N_("Project Lead"),
 #. xfce_contributors_lead
 #. },
 #: xfce4-about/contributors.h:142
 msgid "Core developers"
-msgstr ""
+msgstr "Kernaj programistoj"
 
 #: xfce4-about/contributors.h:144
 msgid "Active contributors"
-msgstr ""
+msgstr "Aktivaj kontribuantoj"
 
 #: xfce4-about/contributors.h:146
 msgid "Servers maintained by"
-msgstr ""
+msgstr "Serviloj konservitaj de"
 
 #: xfce4-about/contributors.h:148
 msgid "Translations supervision"
-msgstr ""
+msgstr "Tradukada kontrolitsto"
 
 #: xfce4-about/contributors.h:150
 msgid "Documentation supervision"
-msgstr ""
+msgstr "Dokumenta kontrolisto"
 
 #: xfce4-about/contributors.h:152
 msgid "Translators"
@@ -807,7 +820,7 @@ msgstr "Tradukantoj"
 
 #: xfce4-about/contributors.h:154
 msgid "Previous contributors"
-msgstr ""
+msgstr "Antaŭaj kontribuantoj"
 
 #: xfce4-about/xfce4-about.desktop.in:11
 msgid "About Xfce"
@@ -815,7 +828,7 @@ msgstr "Pri Xfce"
 
 #: xfce4-about/xfce4-about.desktop.in:12
 msgid "Information about the Xfce Desktop Environment"
-msgstr ""
+msgstr "Informoj pri la fenestrilo Xfce"
 
 #: xfce4-about/xfce4-about-dialog.glade:116
 msgid "License"
@@ -953,16 +966,16 @@ msgstr "Nekonata"
 #. translators: This is the type of architecture for the OS
 #: xfce4-about/system-info.c:624
 msgid "64-bit (32-bit userspace)"
-msgstr ""
+msgstr "64-bita (32-bita uzanto-spaco)"
 
 #. translators: This is the type of architecture for the OS
 #: xfce4-about/system-info.c:627
 msgid "64-bit"
-msgstr ""
+msgstr "64-bita"
 
 #: xfce4-about/system-info.c:627
 msgid "32-bit"
-msgstr ""
+msgstr "32-bita"
 
 #. translators: This is the name of the OS, followed by the build ID, for
 #. * example:
@@ -971,7 +984,7 @@ msgstr ""
 #: xfce4-about/system-info.c:697
 #, c-format
 msgid "%s; Build ID: %s"
-msgstr ""
+msgstr "%s; laboranta ID: %s"
 
 #: tests/test-ui.c:110
 #, c-format
@@ -979,11 +992,13 @@ msgid ""
 "A file named \"%s\" already exists in this directory, the file hasn't been "
 "added."
 msgstr ""
+"Dosiero nomata \"%s\" jam ekzistas en ĉi tiu dosierujo, la dosiero ne estis "
+"aldonita."
 
 #: tests/test-ui.c:121
 msgid "Failed to migrate the old panel configuration"
-msgstr ""
+msgstr "Malsukcesis migri la malnovan panelan agordon"
 
 #: tests/test-ui.c:171 tests/test-ui.c:196
 msgid "Customize settings stored by Xfconf"
-msgstr ""
+msgstr "Adapti agordojn stokitajn de Xconf"
