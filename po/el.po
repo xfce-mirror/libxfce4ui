@@ -19,7 +19,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2025-07-18 10:54+0200\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Ioannis LM, 2022-2023,2025\n"
+"Last-Translator: Πέτρος Σαμαράς <psamaras1@gmail.com>, 2017\n"
 "Language-Team: Greek (http://app.transifex.com/xfce/libxfce4ui/language/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -529,7 +529,7 @@ msgstr "Δεν είναι δυνατή η δέσμευση του πληκτρο
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:34
 msgid "Window operations menu"
-msgstr "Λειτουργίες παραθύρων"
+msgstr "Μενού παραθύρων"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:35
 msgid "Up"
@@ -569,11 +569,11 @@ msgstr "Κλείσιμο παραθύρου"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:45
 msgid "Maximize window horizontally"
-msgstr "Μεγιστοποίηση ενός παραθύρου οριζόντια"
+msgstr "Μεγιστοποίηση του παραθύρου οριζόντια"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:46
 msgid "Maximize window vertically"
-msgstr "Μεγιστοποίηση ενός παραθύρου κάθετα"
+msgstr "Μεγιστοποίηση του παραθύρου κάθετα"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:47
 msgid "Maximize window"
@@ -601,11 +601,11 @@ msgstr "Συγκόλληση παραθύρου"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:53
 msgid "Raise window"
-msgstr "Ανύψωση παραθύρου "
+msgstr "Ανύψωση παραθύρου"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:54
 msgid "Lower window"
-msgstr "Χαμήλωση παραθύρου"
+msgstr "Κατέβασμα παραθύρου"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:55
 msgid "Raise or lower window"
@@ -625,7 +625,7 @@ msgstr "Κάθετη μεγιστοποίηση παραθύρου"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:59
 msgid "Toggle above"
-msgstr "Εναλλαγή πάνω από"
+msgstr "Εναλλαγή από πάνω"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:60
 msgid "Toggle fullscreen"
@@ -737,19 +737,19 @@ msgstr "Μετακίνηση παραθύρου στο χώρο εργασίας
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:87
 msgid "Tile window to the top-left"
-msgstr "Μετακίνηση του παραθύρου πάνω-αριστερά"
+msgstr "Μετακίνηση παραθύρου επάνω-αριστερά"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:88
 msgid "Tile window to the top-right"
-msgstr "Μετακίνηση του παραθύρου πάνω-δεξιά"
+msgstr "Μετακίνηση παραθύρου επάνω-δεξιά"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:89
 msgid "Tile window to the bottom-left"
-msgstr "Μετακίνηση του παραθύρου κάτω-αριστερά"
+msgstr "Μετακίνηση παραθύρου κάτω-αριστερά"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:90
 msgid "Tile window to the bottom-right"
-msgstr "Μετακίνηση του παραθύρου κάτω-δεξιά"
+msgstr "Μετακίνηση παραθύρου κάτω-δεξιά"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:91
 msgid "Show desktop"
@@ -841,7 +841,7 @@ msgstr "Διαγραφή του τελευταίου χώρου εργασίας
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:113
 msgid "Delete active workspace"
-msgstr "Διαγραφή ενεργού χώρου εργασίας"
+msgstr "Διαγραφή του ενεργού χώρου εργασίας"
 
 #: xfce4-about/main.c:63
 msgid "Version information"
@@ -857,7 +857,7 @@ msgstr "Διαχειριστής παραθύρων"
 
 #: xfce4-about/main.c:191
 msgid "Handles the placement of windows on the screen."
-msgstr "Χειρίζεται την τοποθέτηση παραθύρων στην οθόνη."
+msgstr "Διαχειρίζεται την τοποθέτηση παραθύρων στην οθόνη."
 
 #: xfce4-about/main.c:194
 msgid "Panel"
@@ -922,7 +922,7 @@ msgstr "Υπηρεσία ρυθμίσεων"
 
 #: xfce4-about/main.c:223
 msgid "Stores your settings in a D-Bus-based configuration system."
-msgstr "Αποθηκεύει τις ρυθμίσεις σας σε ένα σύστημα διαμόρφωσης με βάση το D-Bus."
+msgstr "Αποθηκεύει τις ρυθμίσεις σας σε ένα σύστημα βασισμένο στο D-Bus."
 
 #: xfce4-about/main.c:226
 msgid "A Menu Library"
@@ -930,7 +930,7 @@ msgstr "Βιβλιοθήκη μενού"
 
 #: xfce4-about/main.c:227
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
-msgstr "Υλοποιεί ένα μενού συμβατό με το freedesktop.org βασισμένο στο GLib και το GIO."
+msgstr "Υλοποιεί ένα μενού συμβατό με το freedesktop.org βασισμένο σε GLib και GIO."
 
 #: xfce4-about/main.c:230
 msgid "Thumbnails Service"
@@ -1073,7 +1073,7 @@ msgstr "%s; ID κατασκευής: %s"
 msgid ""
 "A file named \"%s\" already exists in this directory, the file hasn't been "
 "added."
-msgstr "Ένα αρχείο με όνομα \"%s\" υπάρχει ήδη σε αυτόν τον κατάλογο. Το αρχείο δεν προστέθηκε."
+msgstr "Υπάρχει αρχείο με όνομα \"%s\" σε αυτόν τον κατάλογο. Το αρχείο δεν προστέθηκε."
 
 #: tests/test-ui.c:117
 msgid "Failed to migrate the old panel configuration"
