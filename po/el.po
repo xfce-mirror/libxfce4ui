@@ -306,7 +306,7 @@ msgstr "Δεν είναι δυνατή η δέσμευση του πληκτρο
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:37
 msgid "Window operations menu"
-msgstr "Λειτουργίες παραθύρων"
+msgstr "Μενού παραθύρων"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:38
 msgid "Up"
@@ -346,11 +346,11 @@ msgstr "Κλείσιμο παραθύρου"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:48
 msgid "Maximize window horizontally"
-msgstr "Μεγιστοποίηση ενός παραθύρου οριζόντια"
+msgstr "Μεγιστοποίηση του παραθύρου οριζόντια"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:49
 msgid "Maximize window vertically"
-msgstr "Μεγιστοποίηση ενός παραθύρου κάθετα"
+msgstr "Μεγιστοποίηση του παραθύρου κάθετα"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:50
 msgid "Maximize window"
@@ -378,11 +378,11 @@ msgstr "Συγκόλληση παραθύρου"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:56
 msgid "Raise window"
-msgstr "Ανύψωση παραθύρου "
+msgstr "Ανύψωση παραθύρου"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:57
 msgid "Lower window"
-msgstr "Χαμήλωση παραθύρου"
+msgstr "Κατέβασμα παραθύρου"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:58
 msgid "Raise or lower window"
@@ -402,7 +402,7 @@ msgstr "Κάθετη μεγιστοποίηση παραθύρου"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:62
 msgid "Toggle above"
-msgstr "Εναλλαγή πάνω από"
+msgstr "Εναλλαγή από πάνω"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:63
 msgid "Toggle fullscreen"
@@ -514,19 +514,19 @@ msgstr "Μετακίνηση παραθύρου στο χώρο εργασίας
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:90
 msgid "Tile window to the top-left"
-msgstr "Μετακίνηση του παραθύρου πάνω-αριστερά"
+msgstr "Μετακίνηση παραθύρου επάνω-αριστερά"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:91
 msgid "Tile window to the top-right"
-msgstr "Μετακίνηση του παραθύρου πάνω-δεξιά"
+msgstr "Μετακίνηση παραθύρου επάνω-δεξιά"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:92
 msgid "Tile window to the bottom-left"
-msgstr "Μετακίνηση του παραθύρου κάτω-αριστερά"
+msgstr "Μετακίνηση παραθύρου κάτω-αριστερά"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:93
 msgid "Tile window to the bottom-right"
-msgstr "Μετακίνηση του παραθύρου κάτω-δεξιά"
+msgstr "Μετακίνηση παραθύρου κάτω-δεξιά"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:94
 msgid "Show desktop"
@@ -618,7 +618,7 @@ msgstr "Διαγραφή του τελευταίου χώρου εργασίας
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:116
 msgid "Delete active workspace"
-msgstr "Διαγραφή ενεργού χώρου εργασίας"
+msgstr "Διαγραφή του ενεργού χώρου εργασίας"
 
 #: xfce4-about/main.c:64
 msgid "Version information"
@@ -634,7 +634,7 @@ msgstr "Διαχειριστής παραθύρων"
 
 #: xfce4-about/main.c:192
 msgid "Handles the placement of windows on the screen."
-msgstr "Χειρίζεται την τοποθέτηση παραθύρων στην οθόνη."
+msgstr "Διαχειρίζεται την τοποθέτηση παραθύρων στην οθόνη."
 
 #: xfce4-about/main.c:195
 msgid "Panel"
@@ -709,8 +709,7 @@ msgstr "Υπηρεσία ρυθμίσεων"
 
 #: xfce4-about/main.c:224
 msgid "Stores your settings in a D-Bus-based configuration system."
-msgstr ""
-"Αποθηκεύει τις ρυθμίσεις σας σε ένα σύστημα διαμόρφωσης με βάση το D-Bus."
+msgstr "Αποθηκεύει τις ρυθμίσεις σας σε ένα σύστημα βασισμένο στο D-Bus."
 
 #: xfce4-about/main.c:227
 msgid "A Menu Library"
@@ -719,8 +718,7 @@ msgstr "Βιβλιοθήκη μενού"
 #: xfce4-about/main.c:228
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
 msgstr ""
-"Υλοποιεί ένα μενού συμβατό με το freedesktop.org βασισμένο στο GLib και το "
-"GIO."
+"Υλοποιεί ένα μενού συμβατό με το freedesktop.org βασισμένο σε GLib και GIO."
 
 #: xfce4-about/main.c:231
 msgid "Thumbnails Service"
