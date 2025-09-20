@@ -912,7 +912,7 @@ msgstr "Rapide trovi kaj lanĉi instalitajn aplikaĵojn en via sistemo."
 
 #: xfce4-about/main.c:222
 msgid "Settings Daemon"
-msgstr "Agordi Demonon"
+msgstr "Demono-agordo"
 
 #: xfce4-about/main.c:223
 msgid "Stores your settings in a D-Bus-based configuration system."
