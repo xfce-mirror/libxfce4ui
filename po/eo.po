@@ -257,7 +257,7 @@ msgstr "Malsukcesis malfermi \"%s\"."
 #. XFCE_ICON_CHOOSER_CONTEXT_ACTIONS
 #: libxfce4ui/xfce-icon-chooser-dialog.c:119
 msgid "Action Icons"
-msgstr "Agaj piktogramoj"
+msgstr "Agaj bildsimboloj"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_ANIMATIONS
 #: libxfce4ui/xfce-icon-chooser-dialog.c:121
@@ -267,17 +267,17 @@ msgstr "Animacioj"
 #. XFCE_ICON_CHOOSER_CONTEXT_APPLICATIONS
 #: libxfce4ui/xfce-icon-chooser-dialog.c:123
 msgid "Application Icons"
-msgstr "Aplikaĵaj piktogramoj"
+msgstr "Aplikaĵaj bildsimboloj"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_CATEGORIES
 #: libxfce4ui/xfce-icon-chooser-dialog.c:125
 msgid "Menu Icons"
-msgstr "Menuaj piktogramoj"
+msgstr "Menuaj bilsimboloj"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_DEVICES
 #: libxfce4ui/xfce-icon-chooser-dialog.c:127
 msgid "Device Icons"
-msgstr "Aparataj piktogramoj"
+msgstr "Aparataj bildsimboloj"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_EMBLEMS
 #: libxfce4ui/xfce-icon-chooser-dialog.c:129
@@ -292,32 +292,32 @@ msgstr "Emoĝioj"
 #. XFCE_ICON_CHOOSER_CONTEXT_MIME_TYPES
 #: libxfce4ui/xfce-icon-chooser-dialog.c:133
 msgid "File Type Icons"
-msgstr "Dosiertipaj piktogramoj"
+msgstr "Dosiertipaj bildsimboloj"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_PLACES
 #: libxfce4ui/xfce-icon-chooser-dialog.c:135
 msgid "Location Icons"
-msgstr "Lokoj-piktogramoj"
+msgstr "Lokoj-bildsimboloj"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_STATUS
 #: libxfce4ui/xfce-icon-chooser-dialog.c:137
 msgid "Status Icons"
-msgstr "Stataj piktogramoj"
+msgstr "Stataj bildsimboloj"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_STOCK
 #: libxfce4ui/xfce-icon-chooser-dialog.c:139
 msgid "Stock Icons"
-msgstr "Provizaj piktogramoj"
+msgstr "Provizaj bildsimboloj"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_OTHER
 #: libxfce4ui/xfce-icon-chooser-dialog.c:141
 msgid "Uncategorized Icons"
-msgstr "Nekategorigitaj piktogramoj"
+msgstr "Nekategorigitaj bildsimboloj"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_ALL
 #: libxfce4ui/xfce-icon-chooser-dialog.c:145
 msgid "All Icons"
-msgstr "Ĉiuj piktogramoj"
+msgstr "Ĉiuj bildsimboloj"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_FILE
 #: libxfce4ui/xfce-icon-chooser-dialog.c:149
@@ -328,7 +328,7 @@ msgstr "Bildo-dosieroj"
 #. XFCE_ICON_CHOOSER_CONTEXT_NO_ICON
 #: libxfce4ui/xfce-icon-chooser-dialog.c:153
 msgid "No Icon"
-msgstr "Sen piktogramo"
+msgstr "Sen bildsimbolo"
 
 #. setup the context combo box
 #: libxfce4ui/xfce-icon-chooser-dialog.c:221
@@ -1260,7 +1260,7 @@ msgstr "P_iktogramo:"
 #: xfce-desktop-item-edit/xfce-die-editor.c:439
 #: xfce-desktop-item-edit/xfce-die-editor.c:1293
 msgid "No icon"
-msgstr "Mankas piktogramo"
+msgstr "Mankas bildsimbolo"
 
 #: xfce-desktop-item-edit/xfce-die-editor.c:445
 msgid "Options:"
