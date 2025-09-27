@@ -12,7 +12,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2025-07-18 10:54+0200\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Quentin PAGÈS, 2021-2022,2024-2025\n"
+"Last-Translator: Cédric Valmary <cvalmary@yahoo.fr>, 2013,2015-2016\n"
 "Language-Team: Occitan (post 1500) (http://app.transifex.com/xfce/libxfce4ui/language/oc/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -398,7 +398,7 @@ msgstr "Los noms de fichièrs devon pas començar o acabar amb un espaci"
 msgid ""
 "This shortcut is already being used for the action '%s'. Which action do you"
 " want to use?"
-msgstr "Aqueste acorchi es ja utilizat per l'accion '%s'. Quina accion volètz gardar ?"
+msgstr "Aqueste acorchi es ja utilizat per l'accion « %s ». Quina accion volètz gardar ?"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:45
 #: libxfce4kbd-private/xfce-shortcuts.c:48
@@ -422,14 +422,14 @@ msgstr "Gardar '%s'"
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr "Aqueste acorchi es ja utilizat per la comanda '%s'. Quina accion volètz gardar ?"
+msgstr "Aqueste acorchi es ja utilizat per la comanda « %s ». Quina accion volètz gardar ?"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:53
 #, c-format
 msgid ""
 "This shortcut is already being used by the action '%s'. Which action do you "
 "want to use?"
-msgstr "Aqueste acorchi es ja atribuit per l'accion '%s'. Quina accion volètz gardar ?"
+msgstr "Aqueste acorchi es ja atribuit per l'accion « %s ». Quina accion volètz gardar ?"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:105
 msgid "Please use another key combination."
@@ -1358,7 +1358,7 @@ msgid ""
 "  ImageViewer      - The preferred Image Viewer.\n"
 "  AudioPlayer      - The preferred Audio Player.\n"
 "  VideoPlayer      - The preferred Video Player."
-msgstr "  WebBrowser       - Lo navegador preferit.\n  MailReader       - Lo lector de corrièk preferit.\n  FileManager      - Lo gestionari de fichièrs preferits.\n  TerminalEmulator - L’emolator de terminal preferit.\n  TextEditor       - L’editor de tèxt preferit.\n  ImageViewer      - Lo visionador d’imatges preferit.\n  AudioPlayer      - Lo lector d’àudio preferit.\n  VideoPlayer      - Lo lector vidèo preferit."
+msgstr "  WebBrowser       - Lo navigador preferit.\n  MailReader       - Lo lector de corrièk preferit.\n  FileManager      - Lo gestionari de fichièrs preferits.\n  TerminalEmulator - L’emolator de terminal preferit.\n  TextEditor       - L’editor de tèxt preferit.\n  ImageViewer      - Lo visionador d’imatges preferit.\n  AudioPlayer      - Lo lector d’àudio preferit.\n  VideoPlayer      - Lo lector vidèo preferit."
 
 #: xfce-open/main.c:247
 msgid ""
