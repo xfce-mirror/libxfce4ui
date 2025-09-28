@@ -1278,14 +1278,14 @@ msgstr "Επιλογές:"
 #. and xfce4-panel.
 #: xfce-desktop-item-edit/xfce-die-editor.c:457
 msgid "Use _startup notification"
-msgstr "Χρήση γνω_στοποίησης εκκίνησης"
+msgstr "Ειδοποίη_ση στην εκκίνηση"
 
 #: xfce-desktop-item-edit/xfce-die-editor.c:458
 msgid ""
 "Select this option to enable startup notification when the command is run "
 "from the file manager or the menu. Not every application supports startup "
 "notification."
-msgstr "Επιλέξτε το για να επιτρέψετε την γνωστοποίηση της εκκίνησης όταν εκτελείται η εντολή από τον διαχειριστή αρχείων ή το μενού. Δεν υποστηρίζεται από όλες τις εφαρμογές."
+msgstr "Επιλέξτε το για να ενεργοποιήσετε την ειδοποίηση εκκίνησης όταν η εντολή εκτελείται από τον διαχειριστή αρχείων ή το μενού. Δεν υποστηρίζεται από όλες τις εφαρμογές."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
 #. avoid mnemonic conflicts
