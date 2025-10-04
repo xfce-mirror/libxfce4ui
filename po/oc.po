@@ -534,11 +534,11 @@ msgstr "Bas"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:37
 msgid "Left"
-msgstr "Alinhat a esquèrra"
+msgstr "Esquèrra"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:38
 msgid "Right"
-msgstr "Alinhat a drecha"
+msgstr "Dreita"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:40
 msgid "Cycle windows"
@@ -634,7 +634,7 @@ msgstr "Desplaçar la fenèstra cap a l’ecran d’equèrra"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:63
 msgid "Move window to right monitor"
-msgstr "Desplaçar la fenèstra cap a l’ecran de drecha"
+msgstr "Desplaçar la fenèstra cap a l’ecran de dreita"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:64
 msgid "Move window to upper monitor"
@@ -654,7 +654,7 @@ msgstr "Desplaçar la fenèstra cap a l'espaci de trabalh a esquèrra"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:68
 msgid "Move window to right workspace"
-msgstr "Desplaçar la fenèstra cap a l'espaci de trabalh a drecha"
+msgstr "Desplaçar la fenèstra cap a l'espaci de trabalh a dreita"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:69
 msgid "Move window to previous workspace"
@@ -714,35 +714,35 @@ msgstr "Desplaçar la fenèstra cap a l'espaci de trabalh 12"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:83
 msgid "Tile window to the top"
-msgstr "Agençar la fenèstra en mosaïca cap amont"
+msgstr "Agençar la fenèstra en mosaïc cap amont"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:84
 msgid "Tile window to the bottom"
-msgstr "Agençar la fenèstra en mosaïca cap amont"
+msgstr "Agençar la fenèstra en mosaïc cap amont"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:85
 msgid "Tile window to the left"
-msgstr "Agençar la fenèstra en mosaïca cap a esquèrra"
+msgstr "Agençar la fenèstra en mosaïc cap a esquèrra"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:86
 msgid "Tile window to the right"
-msgstr "Agençar la fenèstra en mosaïca cap a drecha"
+msgstr "Agençar la fenèstra en mosaïc cap a dreita"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:87
 msgid "Tile window to the top-left"
-msgstr "Agençar la fenèstra en mosaïca cap amont a esquèrra"
+msgstr "Agençar la fenèstra en mosaïc cap amont a esquèrra"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:88
 msgid "Tile window to the top-right"
-msgstr "Agençar la fenèstra en mosaïca cap amont a drecha"
+msgstr "Agençar la fenèstra en mosaïc cap amont a dreita"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:89
 msgid "Tile window to the bottom-left"
-msgstr "Agençar la fenèstra en mosaïca cap aval a esquèrra"
+msgstr "Agençar la fenèstra en mosaïc cap aval a esquèrra"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:90
 msgid "Tile window to the bottom-right"
-msgstr "Agençar la fenèstra en mosaïca cap aval a drecha"
+msgstr "Agençar la fenèstra en mosaïc cap aval a dreita"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:91
 msgid "Show desktop"
@@ -762,7 +762,7 @@ msgstr "Espaci de trabalh a esquèrra"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:95
 msgid "Right workspace"
-msgstr "Espaci de trabalh a drecha"
+msgstr "Espaci de trabalh a dreita"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:96
 msgid "Previous workspace"
@@ -951,7 +951,7 @@ msgstr "Mercé a totes los qu'an ajuda a rendre aqueste logicial disponible !"
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
-msgstr "Los dreches d'autor de Xfce 4 apartenon a Olivier Fourdan (fourdan@xfce.org). Los diferents components son protegits per copyright per lors autors respectius."
+msgstr "Los dreits d'autor de Xfce 4 apartenon a Olivier Fourdan (fourdan@xfce.org). Los diferents components son protegits per copyright per lors autors respectius."
 
 #: xfce4-about/main.c:366
 msgid ""
@@ -982,7 +982,7 @@ msgstr "Incapable d'inicializar GTK+."
 #: xfce4-about/main.c:536 xfce-desktop-item-edit/main.c:202
 #: xfce-open/main.c:762
 msgid "The Xfce development team. All rights reserved."
-msgstr "L'equipa de desvolopament Xfce. Totes los dreches reservats."
+msgstr "L'equipa de desvolopament Xfce. Totes los dreits reservats."
 
 #: xfce4-about/main.c:537 xfce-desktop-item-edit/main.c:210
 #: xfce-open/main.c:771
@@ -1144,11 +1144,11 @@ msgstr "[FICHIÈR|DORSIÈR]"
 
 #: xfce-desktop-item-edit/main.c:200 xfce-open/main.c:760
 msgid "os-cillation e.K. All rights reserved."
-msgstr "os-cillation e.K. Totes los dreches reservats."
+msgstr "os-cillation e.K. Totes los dreits reservats."
 
 #: xfce-desktop-item-edit/main.c:204 xfce-open/main.c:764
 msgid "Written by Benedikt Meurer <benny@xfce.org>."
-msgstr "Escrich per Benedikt Meurer <benny@xfce.org>."
+msgstr "Escrit per Benedikt Meurer <benny@xfce.org>."
 
 #: xfce-desktop-item-edit/main.c:205 xfce-open/main.c:766
 #, c-format
@@ -1321,7 +1321,7 @@ msgstr "       xfce-open --launch TIPE [PARAMÈTREs...]"
 
 #: xfce-open/main.c:221
 msgid "  -?, --help                          Print this help message and exit"
-msgstr "  -?, --help                          Afichar aqueste message d'ajuda e quitar"
+msgstr "  -?, --help                          Afichar aqueste messatge d'ajuda e quitar"
 
 #: xfce-open/main.c:222
 msgid ""
