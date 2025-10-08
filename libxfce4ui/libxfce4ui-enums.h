@@ -105,6 +105,48 @@ typedef enum
   XFCE_ICON_VIEW_LAYOUT_COLS
 } XfceIconViewLayoutMode;
 
+/**
+ * XfceItemListModelFlags:
+ * @XFCE_ITEM_LIST_MODEL_REORDERABLE  : Responsible for the ability to change the order of items.
+ * @XFCE_ITEM_LIST_MODEL_EDITABLE     : Responsible for the ability to call the item editing dialog.
+ * @XFCE_ITEM_LIST_MODEL_FILLABLE     : Responsible for the ability to remove and add items.
+ *
+ * Specifies the model's capabilities
+ *
+ * Since: 4.21.2
+ **/
+typedef enum
+{
+  XFCE_ITEM_LIST_MODEL_REORDERABLE = 1 << 0,
+  XFCE_ITEM_LIST_MODEL_EDITABLE = 1 << 1,
+  XFCE_ITEM_LIST_MODEL_FILLABLE = 1 << 2,
+} XfceItemListModelFlags;
+
+/**
+ * XfceItemListModelColumn:
+ * @XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVE    : boolean
+ * @XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVABLE : boolean
+ * @XFCE_ITEM_LIST_MODEL_COLUMN_ICON      : #GIcon
+ * @XFCE_ITEM_LIST_MODEL_COLUMN_NAME      : string, markup
+ * @XFCE_ITEM_LIST_MODEL_COLUMN_TOOLTIP   : string
+ * @XFCE_ITEM_LIST_MODEL_COLUMN_EDITABLE  : boolean
+ * @XFCE_ITEM_LIST_MODEL_COLUMN_REMOVABLE : boolean
+ * @XFCE_ITEM_LIST_MODEL_N_COLUMNS        : Total number of columns
+ *
+ * Since: 4.21.2
+ **/
+typedef enum
+{
+  XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVE,
+  XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVABLE,
+  XFCE_ITEM_LIST_MODEL_COLUMN_ICON,
+  XFCE_ITEM_LIST_MODEL_COLUMN_NAME,
+  XFCE_ITEM_LIST_MODEL_COLUMN_TOOLTIP,
+  XFCE_ITEM_LIST_MODEL_COLUMN_EDITABLE,
+  XFCE_ITEM_LIST_MODEL_COLUMN_REMOVABLE,
+  XFCE_ITEM_LIST_MODEL_N_COLUMNS,
+} XfceItemListModelColumn;
+
 G_END_DECLS
 
 #endif /* __LIBXFCE4UI_ENUMS_H__ */
