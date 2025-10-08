@@ -468,6 +468,7 @@ xfce_item_list_model_get_n_items (XfceItemListModel *model)
 
 /**
  * xfce_item_list_model_get_item_value:
+ * @value: (out) (transfer none): an empty #GValue to set
  *
  * Since: 4.21.2
  **/
