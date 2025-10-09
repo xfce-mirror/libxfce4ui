@@ -256,7 +256,7 @@ xfce_item_list_model_tree_get_iter (GtkTreeModel *tree_model,
 static gint
 xfce_item_list_model_tree_get_n_columns (GtkTreeModel *tree_model)
 {
-  return XFCE_ITEM_LIST_MODEL_N_COLUMNS;
+  return XFCE_ITEM_LIST_MODEL_COLUMN_USER;
 }
 
 
@@ -482,7 +482,7 @@ xfce_item_list_model_get_item_value (XfceItemListModel *model,
 
   _libxfce4ui_return_if_fail (XFCE_IS_ITEM_LIST_MODEL (model));
   _libxfce4ui_return_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model));
-  _libxfce4ui_return_if_fail (column >= 0 && column < XFCE_ITEM_LIST_MODEL_N_COLUMNS);
+  _libxfce4ui_return_if_fail (column >= 0 && column < gtk_tree_model_get_n_columns (GTK_TREE_MODEL (model)));
   klass = XFCE_ITEM_LIST_MODEL_GET_CLASS (model);
   _libxfce4ui_return_if_fail (klass->get_item_value != NULL);
   g_value_init (value, gtk_tree_model_get_column_type (GTK_TREE_MODEL (model), column));
@@ -651,6 +651,25 @@ xfce_item_list_model_remove (XfceItemListModel *model,
     {
       return FALSE;
     }
+}
+
+
+
+/**
+ * xfce_item_list_model_reset:
+ *
+ * Since: 4.21.2
+ **/
+void
+xfce_item_list_model_reset (XfceItemListModel *model)
+{
+  XfceItemListModelClass *klass;
+
+  _libxfce4ui_return_if_fail (XFCE_IS_ITEM_LIST_MODEL (model));
+  klass = XFCE_ITEM_LIST_MODEL_GET_CLASS (model);
+  _libxfce4ui_return_if_fail (klass->reset != NULL);
+  klass->reset (model);
+  xfce_item_list_model_changed (model);
 }
 
 

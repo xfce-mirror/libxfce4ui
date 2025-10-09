@@ -73,6 +73,8 @@ struct _XfceItemListModelClass
 
   gboolean (*remove) (XfceItemListModel *model,
                       gint index);
+
+  void (*reset) (XfceItemListModel *model);
 };
 
 XfceItemListModelFlags
@@ -107,6 +109,9 @@ xfce_item_list_model_add (XfceItemListModel *model);
 gboolean
 xfce_item_list_model_remove (XfceItemListModel *model,
                              gint index);
+
+void
+xfce_item_list_model_reset (XfceItemListModel *model);
 
 void
 xfce_item_list_model_set_index (XfceItemListModel *model,
