@@ -109,7 +109,9 @@ typedef enum
  * XfceItemListModelFlags:
  * @XFCE_ITEM_LIST_MODEL_REORDERABLE  : Responsible for the ability to change the order of items.
  * @XFCE_ITEM_LIST_MODEL_EDITABLE     : Responsible for the ability to call the item editing dialog.
- * @XFCE_ITEM_LIST_MODEL_FILLABLE     : Responsible for the ability to remove and add items.
+ * @XFCE_ITEM_LIST_MODEL_ADDABLE      : Responsible for the ability to add items.
+ * @XFCE_ITEM_LIST_MODEL_REMOVABLE    : Responsible for the ability to remove items.
+ * @XFCE_ITEM_LIST_MODEL_RESETTABLE   : Responsible for the ability to reset settings to default
  *
  * Specifies the model's capabilities
  *
@@ -119,7 +121,9 @@ typedef enum
 {
   XFCE_ITEM_LIST_MODEL_REORDERABLE = 1 << 0,
   XFCE_ITEM_LIST_MODEL_EDITABLE = 1 << 1,
-  XFCE_ITEM_LIST_MODEL_FILLABLE = 1 << 2,
+  XFCE_ITEM_LIST_MODEL_ADDABLE = 1 << 2,
+  XFCE_ITEM_LIST_MODEL_REMOVABLE = 1 << 3,
+  XFCE_ITEM_LIST_MODEL_RESETTABLE = 1 << 4,
 } XfceItemListModelFlags;
 
 /**
@@ -131,7 +135,7 @@ typedef enum
  * @XFCE_ITEM_LIST_MODEL_COLUMN_TOOLTIP   : string
  * @XFCE_ITEM_LIST_MODEL_COLUMN_EDITABLE  : boolean
  * @XFCE_ITEM_LIST_MODEL_COLUMN_REMOVABLE : boolean
- * @XFCE_ITEM_LIST_MODEL_N_COLUMNS        : Total number of columns
+ * @XFCE_ITEM_LIST_MODEL_COLUMN_USER      : If you need to add your own columns, then your first column should have this value
  *
  * Since: 4.21.2
  **/
@@ -144,7 +148,7 @@ typedef enum
   XFCE_ITEM_LIST_MODEL_COLUMN_TOOLTIP,
   XFCE_ITEM_LIST_MODEL_COLUMN_EDITABLE,
   XFCE_ITEM_LIST_MODEL_COLUMN_REMOVABLE,
-  XFCE_ITEM_LIST_MODEL_N_COLUMNS,
+  XFCE_ITEM_LIST_MODEL_COLUMN_USER,
 } XfceItemListModelColumn;
 
 G_END_DECLS

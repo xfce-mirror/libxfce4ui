@@ -50,6 +50,7 @@ struct _XfceItemListView
   GSimpleAction *edit_action;
   GSimpleAction *add_action;
   GSimpleAction *remove_action;
+  GSimpleAction *reset_action;
 };
 
 enum
@@ -105,6 +106,9 @@ xfce_item_list_view_add_item (XfceItemListView *view);
 
 static void
 xfce_item_list_view_remove_item (XfceItemListView *view);
+
+static void
+xfce_item_list_view_reset (XfceItemListView *view);
 
 static gboolean
 xfce_item_list_view_tree_pressed (XfceItemListView *view,
@@ -236,6 +240,10 @@ xfce_item_list_view_init (XfceItemListView *view)
   g_signal_connect_swapped (view->remove_action, "activate", G_CALLBACK (xfce_item_list_view_remove_item), view);
   g_action_map_add_action (G_ACTION_MAP (group), G_ACTION (view->remove_action));
 
+  view->reset_action = g_simple_action_new ("reset", NULL);
+  g_signal_connect_swapped (view->reset_action, "activate", G_CALLBACK (xfce_item_list_view_reset), view);
+  g_action_map_add_action (G_ACTION_MAP (group), G_ACTION (view->reset_action));
+
   gtk_widget_insert_action_group (GTK_WIDGET (view), "xfce", G_ACTION_GROUP (group));
 
   view->menu = g_menu_new ();
@@ -309,7 +317,8 @@ static void
 xfce_item_list_view_set_model (XfceItemListView *view,
                                XfceItemListModel *model)
 {
-  const char *actions[] = { "xfce.move-item-up", "xfce.move-item-down", "xfce.edit-item", "xfce.add-item", "xfce.remove-item" };
+  const char *actions[] = { "xfce.move-item-up", "xfce.move-item-down", "xfce.edit-item", "xfce.add-item",
+                            "xfce.remove-item", "xfce.reset" };
   gint n_items = g_menu_model_get_n_items (G_MENU_MODEL (view->menu));
   GVariant *action;
   GMenuItem *item;
@@ -379,16 +388,27 @@ xfce_item_list_view_set_model (XfceItemListView *view,
       g_menu_insert_item (view->menu, index++, item);
     }
 
-  if (flags & XFCE_ITEM_LIST_MODEL_FILLABLE)
+  if (flags & XFCE_ITEM_LIST_MODEL_ADDABLE)
     {
       item = g_menu_item_new (_("Add"), "xfce.add-item");
       g_menu_item_set_icon (item, g_themed_icon_new ("list-add-symbolic"));
       g_menu_item_set_attribute_value (item, XFCE_MENU_ATTRIBUTE_MNEMONIC, g_variant_new_string ("_Add"));
       g_menu_insert_item (view->menu, index++, item);
+    }
 
+  if (flags & XFCE_ITEM_LIST_MODEL_REMOVABLE)
+    {
       item = g_menu_item_new (_("Remove"), "xfce.remove-item");
       g_menu_item_set_icon (item, g_themed_icon_new ("list-remove-symbolic"));
       g_menu_item_set_attribute_value (item, XFCE_MENU_ATTRIBUTE_MNEMONIC, g_variant_new_string ("_Remove"));
+      g_menu_insert_item (view->menu, index++, item);
+    }
+
+  if (flags & XFCE_ITEM_LIST_MODEL_RESETTABLE)
+    {
+      item = g_menu_item_new (_("Reset to default"), "xfce.reset");
+      g_menu_item_set_icon (item, g_themed_icon_new ("document-revert-symbolic"));
+      g_menu_item_set_attribute_value (item, XFCE_MENU_ATTRIBUTE_MNEMONIC, g_variant_new_string ("Reset to de_fault"));
       g_menu_insert_item (view->menu, index++, item);
     }
 }
@@ -592,6 +612,15 @@ xfce_item_list_view_remove_item (XfceItemListView *view)
       xfce_item_list_model_remove (view->model, index);
     }
 }
+
+
+
+static void
+xfce_item_list_view_reset (XfceItemListView *view)
+{
+  xfce_item_list_model_reset (view->model);
+}
+
 
 
 static gboolean

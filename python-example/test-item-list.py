@@ -20,19 +20,13 @@ class ButtonsModel(Xfce.ItemListModel):
 
   def do_get_item_value(self, index, column):
     child = self.box.get_children()[index]
-    if column == Xfce.ItemListModelColumn.COLUMN_ACTIVE:
+    if column == Xfce.ItemListModelColumn.ACTIVE:
       return child.get_sensitive()
-    elif column == Xfce.ItemListModelColumn.COLUMN_ACTIVABLE:
+    elif column == Xfce.ItemListModelColumn.ACTIVABLE:
       return True
-    elif column == Xfce.ItemListModelColumn.COLUMN_NAME:
+    elif column == Xfce.ItemListModelColumn.NAME:
       return child.get_label()
-    elif column == Xfce.ItemListModelColumn.COLUMN_ICON:
-      return None
-    elif column == Xfce.ItemListModelColumn.COLUMN_TOOLTIP:
-      return None
-    elif column == Xfce.ItemListModelColumn.COLUMN_EDITABLE:
-      return True
-    elif column == Xfce.ItemListModelColumn.COLUMN_REMOVABLE:
+    elif column == Xfce.ItemListModelColumn.EDITABLE:
       return True
 
   def do_move(self, source_index, dest_index):
