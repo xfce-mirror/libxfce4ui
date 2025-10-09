@@ -228,6 +228,7 @@ xfce_cell_renderer_icon_new attr:G_GNUC_MALLOC attr:G_GNUC_WARN_UNUSED_RESULT
 
 # file:xfce-item-list-model
 xfce_item_list_model_get_type attr:G_GNUC_CONST
+xfce_item_list_model_get_list_column_type
 xfce_item_list_model_get_list_flags
 xfce_item_list_model_get_n_items
 xfce_item_list_model_get_item_value
