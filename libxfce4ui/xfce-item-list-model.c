@@ -50,6 +50,12 @@ struct _XfceItemListModelPrivate
 };
 
 
+static GType
+xfce_item_list_model_get_list_column_type_default (XfceItemListModel *model,
+                                                   gint column);
+
+static XfceItemListModelFlags
+xfce_item_list_model_get_list_flags_default (XfceItemListModel *model);
 
 static void
 xfce_item_list_model_tree_model_init (GtkTreeModelIface *iface);
@@ -144,6 +150,8 @@ G_DEFINE_TYPE_WITH_CODE (XfceItemListModel, xfce_item_list_model, G_TYPE_OBJECT,
 static void
 xfce_item_list_model_class_init (XfceItemListModelClass *klass)
 {
+  klass->get_list_column_type = xfce_item_list_model_get_list_column_type_default;
+  klass->get_list_flags = xfce_item_list_model_get_list_flags_default;
 }
 
 
@@ -155,6 +163,48 @@ xfce_item_list_model_init (XfceItemListModel *model)
 
   priv->iter_stamp = g_random_int ();
   priv->dnd_format = g_random_int ();
+}
+
+
+
+static GType
+xfce_item_list_model_get_list_column_type_default (XfceItemListModel *model,
+                                                   gint column)
+{
+  switch (column)
+    {
+    case XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVE:
+      return G_TYPE_BOOLEAN;
+
+    case XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVABLE:
+      return G_TYPE_BOOLEAN;
+
+    case XFCE_ITEM_LIST_MODEL_COLUMN_ICON:
+      return G_TYPE_ICON;
+
+    case XFCE_ITEM_LIST_MODEL_COLUMN_NAME:
+      return G_TYPE_STRING;
+
+    case XFCE_ITEM_LIST_MODEL_COLUMN_TOOLTIP:
+      return G_TYPE_STRING;
+
+    case XFCE_ITEM_LIST_MODEL_COLUMN_EDITABLE:
+      return G_TYPE_BOOLEAN;
+
+    case XFCE_ITEM_LIST_MODEL_COLUMN_REMOVABLE:
+      return G_TYPE_BOOLEAN;
+
+    default:
+      _libxfce4ui_assert_not_reached ();
+    }
+}
+
+
+
+static XfceItemListModelFlags
+xfce_item_list_model_get_list_flags_default (XfceItemListModel *model)
+{
+  return 0;
 }
 
 
@@ -200,32 +250,9 @@ static GType
 xfce_item_list_model_tree_get_column_type (GtkTreeModel *tree_model,
                                            gint tree_column)
 {
-  switch (tree_column)
-    {
-    case XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVE:
-      return G_TYPE_BOOLEAN;
+  XfceItemListModel *model = XFCE_ITEM_LIST_MODEL (tree_model);
 
-    case XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVABLE:
-      return G_TYPE_BOOLEAN;
-
-    case XFCE_ITEM_LIST_MODEL_COLUMN_ICON:
-      return G_TYPE_ICON;
-
-    case XFCE_ITEM_LIST_MODEL_COLUMN_NAME:
-      return G_TYPE_STRING;
-
-    case XFCE_ITEM_LIST_MODEL_COLUMN_TOOLTIP:
-      return G_TYPE_STRING;
-
-    case XFCE_ITEM_LIST_MODEL_COLUMN_EDITABLE:
-      return G_TYPE_BOOLEAN;
-
-    case XFCE_ITEM_LIST_MODEL_COLUMN_REMOVABLE:
-      return G_TYPE_BOOLEAN;
-
-    default:
-      _libxfce4ui_assert_not_reached ();
-    }
+  return xfce_item_list_model_get_list_column_type (model, tree_column);
 }
 
 
@@ -423,6 +450,25 @@ xfce_item_list_model_tree_row_drop_possible (GtkTreeDragDest *drag_dest,
 
   return gtk_selection_data_get_data_type (selection_data) == type
          && gtk_selection_data_get_format (selection_data) == priv->dnd_format;
+}
+
+
+
+/**
+ * xfce_item_list_model_get_list_column_type:
+ *
+ * Since: 4.21.2
+ **/
+GType
+xfce_item_list_model_get_list_column_type (XfceItemListModel *model,
+                                           gint column)
+{
+  XfceItemListModelClass *klass;
+
+  _libxfce4ui_return_val_if_fail (XFCE_IS_ITEM_LIST_MODEL (model), 0);
+  klass = XFCE_ITEM_LIST_MODEL_GET_CLASS (model);
+  _libxfce4ui_return_val_if_fail (klass->get_list_column_type != NULL, 0);
+  return klass->get_list_column_type (model, column);
 }
 
 
