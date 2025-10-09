@@ -40,8 +40,9 @@ G_DECLARE_DERIVABLE_TYPE (XfceItemListModel, xfce_item_list_model, XFCE, ITEM_LI
  * @move: Method must be implemented if the #XFCE_ITEM_LIST_MODEL_REORDERABLE flag is set
  * @set_activity: Method must be implemented if there is at least one item with column #XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVABLE that is TRUE
  * @edit: Method must be implemented if the #XFCE_ITEM_LIST_MODEL_EDITABLE flag is set
- * @add: Method must be implemented if the #XFCE_ITEM_LIST_MODEL_FILLABLE flag is set
- * @remove: Method must be implemented if the #XFCE_ITEM_LIST_MODEL_FILLABLE flag is set
+ * @add: Method must be implemented if the #XFCE_ITEM_LIST_MODEL_ADDABLE flag is set
+ * @remove: Method must be implemented if the #XFCE_ITEM_LIST_MODEL_REMOVABLE flag is set
+ * @reset: Method must be implemented if the #XFCE_ITEM_LIST_MODEL_RESETTABLE flag is set
  **/
 struct _XfceItemListModelClass
 {
