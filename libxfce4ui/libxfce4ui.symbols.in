@@ -10,6 +10,8 @@ xfce_icon_view_layout_mode_get_type
 xfce_sm_client_error_enum_get_type
 xfce_sm_client_restart_style_get_type
 xfce_sm_client_shutdown_hint_get_type
+xfce_item_list_model_flags_get_type
+xfce_item_list_model_column_get_type
 
 # file:xfce-dialogs
 xfce_dialog_show_help
@@ -223,3 +225,28 @@ xfce_tree_view_set_single_click_timeout
 # file:xfce-cell-renderer-icon
 xfce_cell_renderer_icon_get_type attr:G_GNUC_CONST
 xfce_cell_renderer_icon_new attr:G_GNUC_MALLOC attr:G_GNUC_WARN_UNUSED_RESULT
+
+# file:xfce-item-list-model
+xfce_item_list_model_get_type attr:G_GNUC_CONST
+xfce_item_list_model_get_list_column_type
+xfce_item_list_model_get_list_flags
+xfce_item_list_model_get_n_items
+xfce_item_list_model_get_item_value
+xfce_item_list_model_move
+xfce_item_list_model_set_activity
+xfce_item_list_model_edit
+xfce_item_list_model_add
+xfce_item_list_model_remove
+xfce_item_list_model_set_index
+xfce_item_list_model_get_index
+xfce_item_list_model_is_active
+xfce_item_list_model_is_activable
+xfce_item_list_model_is_editable
+xfce_item_list_model_is_removable
+xfce_item_list_model_changed
+
+# file:xfce-item-list-view
+xfce_item_list_view_get_type attr:G_GNUC_CONST
+xfce_item_list_view_new attr:G_GNUC_MALLOC
+xfce_item_list_view_get_menu
+xfce_item_list_view_get_tree_view
