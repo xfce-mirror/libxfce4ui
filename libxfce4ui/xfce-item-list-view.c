@@ -85,6 +85,14 @@ xfce_item_list_view_set_model (XfceItemListView *view,
 static void
 xfce_item_list_view_render_buttons (XfceItemListView *view);
 
+static gint
+xfce_item_list_view_get_index_by_path (XfceItemListView *view,
+                                       GtkTreePath *path);
+
+static gboolean
+xfce_item_list_view_get_selected_row (XfceItemListView *view,
+                                      GtkTreeIter *iter);
+
 static void
 xfce_item_list_view_update_actions (XfceItemListView *view);
 
