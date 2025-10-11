@@ -335,12 +335,14 @@ xfce_item_list_view_set_model (XfceItemListView *view,
 
   _libxfce4ui_return_if_fail (model == NULL || XFCE_IS_ITEM_LIST_MODEL (model));
 
+  /* Replace model */
   if (view->model != NULL)
     g_signal_handlers_disconnect_by_data (view->model, view);
 
   gtk_tree_view_set_model (GTK_TREE_VIEW (view->tree_view), GTK_TREE_MODEL (model));
   view->model = model;
 
+  /* Remove old standard menu items */
   for (i = 0; i < n_items; ++i)
     {
       for (j = 0; j < (int) G_N_ELEMENTS (actions); ++j)
@@ -355,6 +357,7 @@ xfce_item_list_view_set_model (XfceItemListView *view,
         }
     }
 
+  /* Signals */
   if (model != NULL)
     {
       g_signal_connect_swapped (model, "row-changed", G_CALLBACK (xfce_item_list_view_update_actions), view);
@@ -363,6 +366,7 @@ xfce_item_list_view_set_model (XfceItemListView *view,
       g_signal_connect_swapped (model, "rows-reordered", G_CALLBACK (xfce_item_list_view_update_actions), view);
     }
 
+  /* Creating menus and configuring widgets based on model capabilities */
   if (model != NULL)
     flags = xfce_item_list_model_get_list_flags (model);
   else
@@ -432,6 +436,7 @@ xfce_item_list_view_render_buttons (XfceItemListView *view)
   gint n_items = g_menu_model_get_n_items (G_MENU_MODEL (view->menu));
   gint i, n_vbuttons, n_hbuttons;
 
+  /* Removing old buttons */
   children = gtk_container_get_children (GTK_CONTAINER (view->vbuttons));
   for (l = children; l != NULL; l = l->next)
     gtk_container_remove (GTK_CONTAINER (view->vbuttons), GTK_WIDGET (l->data));
@@ -442,6 +447,7 @@ xfce_item_list_view_render_buttons (XfceItemListView *view)
     gtk_container_remove (GTK_CONTAINER (view->hbuttons), GTK_WIDGET (l->data));
   g_list_free (children);
 
+  /* Creating only the necessary buttons according to the menu model */
   n_vbuttons = 0;
   n_hbuttons = 0;
   for (i = 0; i < n_items; ++i)
@@ -498,6 +504,7 @@ xfce_item_list_view_render_buttons (XfceItemListView *view)
       g_clear_pointer (&tooltip, g_variant_unref);
     }
 
+  /* If the container does not have buttons, then it should be hidden */
   gtk_widget_set_visible (view->vbuttons, n_vbuttons > 0);
   gtk_widget_set_visible (view->hbuttons, n_hbuttons > 0);
 }
@@ -575,6 +582,7 @@ xfce_item_list_view_update_actions (XfceItemListView *view)
 
   if (multiple_mode)
     {
+      /* If all elements are removable, then make the "Remove" action enabled */
       rows = gtk_tree_selection_get_selected_rows (selection, NULL);
       all_removable = rows != NULL;
       for (l = g_list_last (rows); l != NULL; l = l->prev)
@@ -678,6 +686,7 @@ xfce_item_list_view_remove_item (XfceItemListView *view)
 
   if (multiple_mode)
     {
+      /* Start removing from the end to ensure correct indexes */
       rows = gtk_tree_selection_get_selected_rows (selection, NULL);
       for (l = g_list_last (rows); l != NULL; l = l->prev)
         {
