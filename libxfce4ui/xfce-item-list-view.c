@@ -135,8 +135,12 @@ static void
 xfce_item_list_view_reset (XfceItemListView *view);
 
 static gboolean
-xfce_item_list_view_tree_pressed (XfceItemListView *view,
-                                  GdkEventButton *event);
+xfce_item_list_view_tree_button_pressed (XfceItemListView *view,
+                                         GdkEventButton *event);
+
+static gboolean
+xfce_item_list_view_tree_key_released (XfceItemListView *view,
+                                       GdkEventKey *event);
 
 static void
 xfce_item_list_view_row_activate (XfceItemListView *view);
@@ -200,7 +204,8 @@ xfce_item_list_view_init (XfceItemListView *view)
   gtk_widget_show (scrwin);
 
   view->tree_view = gtk_tree_view_new ();
-  g_signal_connect_swapped (view->tree_view, "button-press-event", G_CALLBACK (xfce_item_list_view_tree_pressed), view);
+  g_signal_connect_swapped (view->tree_view, "button-press-event", G_CALLBACK (xfce_item_list_view_tree_button_pressed), view);
+  g_signal_connect_swapped (view->tree_view, "key-release-event", G_CALLBACK (xfce_item_list_view_tree_key_released), view);
   g_signal_connect_swapped (view->tree_view, "row-activated", G_CALLBACK (xfce_item_list_view_row_activate), view);
   gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (view->tree_view), FALSE);
   gtk_tree_view_set_search_column (GTK_TREE_VIEW (view->tree_view), XFCE_ITEM_LIST_MODEL_COLUMN_NAME);
@@ -738,8 +743,8 @@ xfce_item_list_view_reset (XfceItemListView *view)
 
 
 static gboolean
-xfce_item_list_view_tree_pressed (XfceItemListView *view,
-                                  GdkEventButton *event)
+xfce_item_list_view_tree_button_pressed (XfceItemListView *view,
+                                         GdkEventButton *event)
 {
   GtkWidget *context_menu;
 
@@ -753,6 +758,22 @@ xfce_item_list_view_tree_pressed (XfceItemListView *view,
 
   return FALSE;
 }
+
+
+
+static gboolean
+xfce_item_list_view_tree_key_released (XfceItemListView *view,
+                                       GdkEventKey *event)
+{
+  if (event->keyval == GDK_KEY_Delete)
+    {
+      if (g_action_get_enabled (G_ACTION (view->remove_action)))
+        g_action_activate (G_ACTION (view->remove_action), NULL);
+    }
+
+  return FALSE;
+}
+
 
 
 static void
