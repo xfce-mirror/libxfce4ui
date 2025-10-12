@@ -743,7 +743,7 @@ xfce_item_list_view_tree_pressed (XfceItemListView *view,
 {
   GtkWidget *context_menu;
 
-  if (event->button == GDK_BUTTON_SECONDARY)
+  if (event->button == GDK_BUTTON_SECONDARY && g_menu_model_get_n_items (G_MENU_MODEL (view->menu)) > 0)
     {
       context_menu = gtk_menu_new_from_model (G_MENU_MODEL (view->menu));
       gtk_menu_attach_to_widget (GTK_MENU (context_menu), view->tree_view, NULL);
