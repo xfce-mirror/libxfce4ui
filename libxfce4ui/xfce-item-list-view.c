@@ -421,9 +421,9 @@ xfce_item_list_view_set_model (XfceItemListView *view,
 
   if (flags & XFCE_ITEM_LIST_MODEL_RESETTABLE)
     {
-      item = g_menu_item_new (_("Reset to default"), "xfce.reset");
+      item = g_menu_item_new (_("Reset to defaults"), "xfce.reset");
       g_menu_item_set_icon (item, g_themed_icon_new ("document-revert-symbolic"));
-      g_menu_item_set_attribute_value (item, XFCE_MENU_ATTRIBUTE_MNEMONIC, g_variant_new_string ("Reset to de_fault"));
+      g_menu_item_set_attribute_value (item, XFCE_MENU_ATTRIBUTE_MNEMONIC, g_variant_new_string ("Reset to de_faults"));
       g_menu_insert_item (view->menu, index++, item);
     }
 }
