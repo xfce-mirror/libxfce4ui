@@ -46,6 +46,7 @@ struct _XfceItemListView
 
   GtkWidget *tree_view;
 
+  GtkWidget *vbox;
   GtkWidget *buttons_vbox;
   GtkWidget *buttons_hbox;
 
@@ -86,6 +87,16 @@ xfce_item_list_view_get_property (GObject *object,
 static void
 xfce_item_list_view_set_model (XfceItemListView *view,
                                XfceItemListModel *model);
+
+static void
+xfce_item_list_view_add_button (XfceItemListView *view,
+                                gboolean movement,
+                                const gchar *mnemonic,
+                                const gchar *label,
+                                const gchar *tooltip,
+                                GIcon *icon,
+                                const gchar *action,
+                                GVariant *target);
 
 static void
 xfce_item_list_view_recreate_buttons (XfceItemListView *view);
@@ -169,23 +180,23 @@ xfce_item_list_view_class_init (XfceItemListViewClass *klass)
 static void
 xfce_item_list_view_init (XfceItemListView *view)
 {
-  GtkWidget *vbox, *scrwin;
+  GtkWidget *scrwin;
   GtkTreeSelection *selection;
   GtkCellRenderer *renderer;
   GSimpleActionGroup *group;
 
   g_object_set (view, "orientation", GTK_ORIENTATION_HORIZONTAL, "spacing", 6, NULL);
 
-  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-  gtk_box_pack_start (GTK_BOX (view), vbox, TRUE, TRUE, 0);
-  gtk_widget_show (vbox);
+  view->vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
+  gtk_box_pack_start (GTK_BOX (view), view->vbox, TRUE, TRUE, 0);
+  gtk_widget_show (view->vbox);
 
   scrwin = gtk_scrolled_window_new (NULL, NULL);
   gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrwin), GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
   gtk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (scrwin), GTK_SHADOW_IN);
   gtk_widget_set_hexpand (scrwin, TRUE);
   gtk_widget_set_vexpand (scrwin, TRUE);
-  gtk_box_pack_start (GTK_BOX (vbox), scrwin, TRUE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (view->vbox), scrwin, TRUE, TRUE, 0);
   gtk_widget_show (scrwin);
 
   view->tree_view = gtk_tree_view_new ();
@@ -217,19 +228,6 @@ xfce_item_list_view_init (XfceItemListView *view)
                                                "markup", XFCE_ITEM_LIST_MODEL_COLUMN_NAME,
                                                "sensitive", XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVE,
                                                NULL);
-
-  view->buttons_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-  gtk_style_context_add_class (gtk_widget_get_style_context (view->buttons_vbox), GTK_STYLE_CLASS_LINKED);
-  gtk_box_pack_start (GTK_BOX (view), view->buttons_vbox, FALSE, FALSE, 0);
-  gtk_widget_set_vexpand (view->buttons_vbox, FALSE);
-  gtk_widget_show (view->buttons_vbox);
-
-  view->buttons_hbox = gtk_button_box_new (GTK_ORIENTATION_HORIZONTAL);
-  gtk_button_box_set_layout (GTK_BUTTON_BOX (view->buttons_hbox), GTK_BUTTONBOX_START);
-  gtk_style_context_add_class (gtk_widget_get_style_context (view->buttons_hbox), GTK_STYLE_CLASS_INLINE_TOOLBAR);
-  gtk_box_set_homogeneous (GTK_BOX (view->buttons_hbox), FALSE);
-  gtk_box_pack_start (GTK_BOX (vbox), view->buttons_hbox, FALSE, FALSE, 0);
-  gtk_widget_show (view->buttons_hbox);
 
   group = g_simple_action_group_new ();
 
@@ -433,28 +431,82 @@ xfce_item_list_view_set_model (XfceItemListView *view,
 
 
 static void
-xfce_item_list_view_recreate_buttons (XfceItemListView *view)
+xfce_item_list_view_add_button (XfceItemListView *view,
+                                gboolean movement,
+                                const gchar *mnemonic,
+                                const gchar *label,
+                                const gchar *tooltip,
+                                GIcon *icon,
+                                const gchar *action,
+                                GVariant *target)
 {
   GtkWidget *button, *image;
+
+  if (movement)
+    {
+      if (view->buttons_vbox == NULL)
+        {
+          view->buttons_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
+          gtk_style_context_add_class (gtk_widget_get_style_context (view->buttons_vbox), GTK_STYLE_CLASS_LINKED);
+          gtk_box_pack_start (GTK_BOX (view), view->buttons_vbox, FALSE, FALSE, 0);
+          gtk_widget_set_vexpand (view->buttons_vbox, FALSE);
+          gtk_widget_show (view->buttons_vbox);
+        }
+
+      button = gtk_button_new ();
+      gtk_box_pack_start (GTK_BOX (view->buttons_vbox), button, FALSE, FALSE, 0);
+    }
+  else
+    {
+      if (view->buttons_hbox == NULL)
+        {
+          view->buttons_hbox = gtk_button_box_new (GTK_ORIENTATION_HORIZONTAL);
+          gtk_button_box_set_layout (GTK_BUTTON_BOX (view->buttons_hbox), GTK_BUTTONBOX_START);
+          gtk_style_context_add_class (gtk_widget_get_style_context (view->buttons_hbox), GTK_STYLE_CLASS_INLINE_TOOLBAR);
+          gtk_box_set_homogeneous (GTK_BOX (view->buttons_hbox), FALSE);
+          gtk_box_pack_start (GTK_BOX (view->vbox), view->buttons_hbox, FALSE, FALSE, 0);
+          gtk_widget_show (view->buttons_hbox);
+        }
+
+      if (mnemonic != NULL)
+        button = gtk_button_new_with_mnemonic (mnemonic);
+      else
+        button = gtk_button_new_with_label (label);
+
+      gtk_box_pack_start (GTK_BOX (view->buttons_hbox), button, FALSE, FALSE, 0);
+      gtk_button_box_set_child_non_homogeneous (GTK_BUTTON_BOX (view->buttons_hbox), button, TRUE);
+    }
+
+  if (tooltip != NULL)
+    gtk_widget_set_tooltip_text (button, tooltip);
+
+  if (icon != NULL)
+    {
+      image = gtk_image_new_from_gicon (icon, GTK_ICON_SIZE_BUTTON);
+      gtk_button_set_always_show_image (GTK_BUTTON (button), TRUE);
+      gtk_button_set_image (GTK_BUTTON (button), image);
+      gtk_widget_show (image);
+    }
+
+  gtk_actionable_set_action_name (GTK_ACTIONABLE (button), action);
+  gtk_actionable_set_action_target_value (GTK_ACTIONABLE (button), target);
+  gtk_widget_show (button);
+}
+
+
+
+static void
+xfce_item_list_view_recreate_buttons (XfceItemListView *view)
+{
   GVariant *action, *target, *label, *icon, *mnemonic, *movement, *tooltip;
-  GList *children, *l;
   gint n_items = g_menu_model_get_n_items (G_MENU_MODEL (view->menu));
-  gint i, n_buttons_vbox, n_buttons_hbox;
+  gint i;
 
-  /* Removing old buttons */
-  children = gtk_container_get_children (GTK_CONTAINER (view->buttons_vbox));
-  for (l = children; l != NULL; l = l->next)
-    gtk_container_remove (GTK_CONTAINER (view->buttons_vbox), GTK_WIDGET (l->data));
-  g_list_free (children);
-
-  children = gtk_container_get_children (GTK_CONTAINER (view->buttons_hbox));
-  for (l = children; l != NULL; l = l->next)
-    gtk_container_remove (GTK_CONTAINER (view->buttons_hbox), GTK_WIDGET (l->data));
-  g_list_free (children);
+  /* Removing button containers, they will be created later if they are needed */
+  g_clear_pointer (&view->buttons_vbox, gtk_widget_destroy);
+  g_clear_pointer (&view->buttons_hbox, gtk_widget_destroy);
 
   /* Creating only the necessary buttons according to the menu model */
-  n_buttons_vbox = 0;
-  n_buttons_hbox = 0;
   for (i = 0; i < n_items; ++i)
     {
       action = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, G_MENU_ATTRIBUTE_ACTION, G_VARIANT_TYPE_STRING);
@@ -465,40 +517,14 @@ xfce_item_list_view_recreate_buttons (XfceItemListView *view)
       movement = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, XFCE_MENU_ATTRIBUTE_MOVEMENT, G_VARIANT_TYPE_BOOLEAN);
       tooltip = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, XFCE_MENU_ATTRIBUTE_TOOLTIP, G_VARIANT_TYPE_STRING);
 
-      if (movement != NULL && g_variant_get_boolean (movement))
-        {
-          ++n_buttons_vbox;
-
-          button = gtk_button_new ();
-          gtk_box_pack_start (GTK_BOX (view->buttons_vbox), button, FALSE, FALSE, 0);
-        }
-      else
-        {
-          ++n_buttons_hbox;
-
-          if (mnemonic != NULL)
-            button = gtk_button_new_with_mnemonic (g_variant_get_string (mnemonic, NULL));
-          else
-            button = gtk_button_new_with_label (g_variant_get_string (label, NULL));
-
-          gtk_box_pack_start (GTK_BOX (view->buttons_hbox), button, FALSE, FALSE, 0);
-          gtk_button_box_set_child_non_homogeneous (GTK_BUTTON_BOX (view->buttons_hbox), button, TRUE);
-        }
-
-      gtk_actionable_set_action_name (GTK_ACTIONABLE (button), g_variant_get_string (action, NULL));
-      gtk_actionable_set_action_target_value (GTK_ACTIONABLE (button), target);
-      gtk_widget_show (button);
-
-      if (icon != NULL)
-        {
-          image = gtk_image_new_from_gicon (g_icon_deserialize (icon), GTK_ICON_SIZE_BUTTON);
-          gtk_button_set_always_show_image (GTK_BUTTON (button), TRUE);
-          gtk_button_set_image (GTK_BUTTON (button), image);
-          gtk_widget_show (image);
-        }
-
-      if (tooltip != NULL)
-        gtk_widget_set_tooltip_text (button, g_variant_get_string (tooltip, NULL));
+      xfce_item_list_view_add_button (view,
+                                      movement != NULL ? g_variant_get_boolean (movement) : FALSE,
+                                      mnemonic != NULL ? g_variant_get_string (mnemonic, NULL) : NULL,
+                                      label != NULL ? g_variant_get_string (label, NULL) : NULL,
+                                      tooltip != NULL ? g_variant_get_string (tooltip, NULL) : NULL,
+                                      icon != NULL ? g_icon_deserialize (icon) : NULL,
+                                      action != NULL ? g_variant_get_string (action, NULL) : NULL,
+                                      target);
 
       g_clear_pointer (&action, g_variant_unref);
       g_clear_pointer (&target, g_variant_unref);
@@ -508,10 +534,6 @@ xfce_item_list_view_recreate_buttons (XfceItemListView *view)
       g_clear_pointer (&movement, g_variant_unref);
       g_clear_pointer (&tooltip, g_variant_unref);
     }
-
-  /* If the container does not have buttons, then it should be hidden */
-  gtk_widget_set_visible (view->buttons_vbox, n_buttons_vbox > 0);
-  gtk_widget_set_visible (view->buttons_hbox, n_buttons_hbox > 0);
 }
 
 
