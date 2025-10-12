@@ -41,18 +41,6 @@
 
 
 
-typedef struct _XfceItemListModelPrivate XfceItemListModelPrivate;
-
-struct _XfceItemListModelPrivate
-{
-  /* Randomly selected iter_stamp for debugging purposes, this protects against incorrectly initialized GtkTreeIter */
-  gint iter_stamp;
-
-  /* Randomly selected dnd_format to distinguish data from different objects */
-  gint dnd_format;
-};
-
-
 static GType
 xfce_item_list_model_get_list_column_type_default (XfceItemListModel *model,
                                                    gint column);
@@ -150,7 +138,6 @@ xfce_item_list_model_tree_row_drop_possible (GtkTreeDragDest *drag_dest,
 
 
 G_DEFINE_TYPE_WITH_CODE (XfceItemListModel, xfce_item_list_model, G_TYPE_OBJECT,
-                         G_ADD_PRIVATE (XfceItemListModel)
                          G_IMPLEMENT_INTERFACE (GTK_TYPE_TREE_MODEL, xfce_item_list_model_tree_model_init)
                          G_IMPLEMENT_INTERFACE (GTK_TYPE_TREE_DRAG_SOURCE, xfce_item_list_model_tree_drag_source_init)
                          G_IMPLEMENT_INTERFACE (GTK_TYPE_TREE_DRAG_DEST, xfce_item_list_model_tree_drag_dest_init))
@@ -169,10 +156,6 @@ xfce_item_list_model_class_init (XfceItemListModelClass *klass)
 static void
 xfce_item_list_model_init (XfceItemListModel *model)
 {
-  XfceItemListModelPrivate *priv = xfce_item_list_model_get_instance_private (model);
-
-  priv->iter_stamp = g_random_int ();
-  priv->dnd_format = g_random_int ();
 }
 
 
@@ -376,9 +359,10 @@ xfce_item_list_model_tree_iter_next (GtkTreeModel *tree_model,
 {
   XfceItemListModel *model = XFCE_ITEM_LIST_MODEL (tree_model);
   gint n_items = xfce_item_list_model_get_n_items (model);
-  gint index = xfce_item_list_model_get_index (model, iter);
+  /* The index may be out of date */
+  gint index = GPOINTER_TO_INT (iter->user_data);
 
-  if (index + 1 < n_items)
+  if (index >= 0 && index + 1 < n_items)
     {
       xfce_item_list_model_set_index (model, iter, index + 1);
       return TRUE;
@@ -420,7 +404,8 @@ xfce_item_list_model_tree_iter_previous (GtkTreeModel *tree_model,
 {
   XfceItemListModel *model = XFCE_ITEM_LIST_MODEL (tree_model);
   gint n_items = xfce_item_list_model_get_n_items (model);
-  gint index = xfce_item_list_model_get_index (model, iter);
+  /* The index may be out of date */
+  gint index = GPOINTER_TO_INT (iter->user_data);
 
   if (index > 0 && index - 1 < n_items)
     {
@@ -450,14 +435,7 @@ xfce_item_list_model_tree_drag_data_get (GtkTreeDragSource *drag_source,
                                          GtkTreePath *path,
                                          GtkSelectionData *selection_data)
 {
-  XfceItemListModel *model = XFCE_ITEM_LIST_MODEL (drag_source);
-  XfceItemListModelPrivate *priv = xfce_item_list_model_get_instance_private (model);
-  GdkAtom type = gdk_atom_intern (G_OBJECT_TYPE_NAME (drag_source), FALSE);
-  gchar *data = gtk_tree_path_to_string (path);
-
-  gtk_selection_data_set (selection_data, type, priv->dnd_format, (guchar *) data, strlen (data));
-  g_free (data);
-  return TRUE;
+  return gtk_tree_set_row_drag_data (selection_data, GTK_TREE_MODEL (drag_source), path);
 }
 
 
@@ -478,24 +456,11 @@ xfce_item_list_model_get_dnd_indexes (XfceItemListModel *model,
                                       gint *p_source_index,
                                       gint *p_dest_index)
 {
-  XfceItemListModelPrivate *priv = xfce_item_list_model_get_instance_private (model);
-  GdkAtom type = gdk_atom_intern (G_OBJECT_TYPE_NAME (model), FALSE);
-  const gchar *data = (const gchar *) gtk_selection_data_get_data (selection_data);
-  GtkTreePath *source;
+  GtkTreePath *source = NULL;
   gint source_index, dest_index;
   gint n_items = xfce_item_list_model_get_n_items (model);
 
-  if (gtk_selection_data_get_data_type (selection_data) != type)
-    return FALSE;
-
-  if (gtk_selection_data_get_format (selection_data) != priv->dnd_format)
-    return FALSE;
-
-  if (data == NULL)
-    return FALSE;
-
-  source = gtk_tree_path_new_from_string (data);
-  if (source == NULL || gtk_tree_path_get_depth (source) != 1)
+  if (!gtk_tree_get_row_drag_data (selection_data, NULL, &source) || source == NULL || gtk_tree_path_get_depth (source) != 1)
     {
       gtk_tree_path_free (source);
       return FALSE;
@@ -849,14 +814,10 @@ xfce_item_list_model_set_index (XfceItemListModel *model,
                                 GtkTreeIter *iter,
                                 gint index)
 {
-  XfceItemListModelPrivate *priv;
-
   _libxfce4ui_return_if_fail (XFCE_IS_ITEM_LIST_MODEL (model));
   _libxfce4ui_return_if_fail (iter != NULL);
   _libxfce4ui_return_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model));
 
-  priv = xfce_item_list_model_get_instance_private (model);
-  iter->stamp = priv->iter_stamp;
   iter->user_data = GINT_TO_POINTER (index);
 }
 
@@ -871,15 +832,11 @@ gint
 xfce_item_list_model_get_index (XfceItemListModel *model,
                                 GtkTreeIter *iter)
 {
-  XfceItemListModelPrivate *priv;
   gint index;
 
   _libxfce4ui_return_val_if_fail (XFCE_IS_ITEM_LIST_MODEL (model), -1);
 
-  priv = xfce_item_list_model_get_instance_private (model);
   index = GPOINTER_TO_INT (iter->user_data);
-
-  _libxfce4ui_return_val_if_fail (iter->stamp == priv->iter_stamp, -1);
   _libxfce4ui_return_val_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model), -1);
 
   return index;
