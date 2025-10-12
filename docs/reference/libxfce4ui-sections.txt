@@ -363,6 +363,9 @@ xfce_item_list_model_get_type
 <SECTION>
 <FILE>xfce-item-list-view</FILE>
 XfceItemListView
+XFCE_MENU_ATTRIBUTE_MNEMONIC
+XFCE_MENU_ATTRIBUTE_MOVEMENT
+XFCE_MENU_ATTRIBUTE_TOOLTIP
 xfce_item_list_view_new
 xfce_item_list_view_get_menu
 xfce_item_list_view_get_tree_view

@@ -107,11 +107,11 @@ typedef enum
 
 /**
  * XfceItemListModelFlags:
- * @XFCE_ITEM_LIST_MODEL_REORDERABLE  : Responsible for the ability to change the order of items.
- * @XFCE_ITEM_LIST_MODEL_EDITABLE     : Responsible for the ability to call the item editing dialog.
- * @XFCE_ITEM_LIST_MODEL_ADDABLE      : Responsible for the ability to add items.
- * @XFCE_ITEM_LIST_MODEL_REMOVABLE    : Responsible for the ability to remove items.
- * @XFCE_ITEM_LIST_MODEL_RESETTABLE   : Responsible for the ability to reset settings to default
+ * @XFCE_ITEM_LIST_MODEL_REORDERABLE  : The order of items can be changed.
+ * @XFCE_ITEM_LIST_MODEL_EDITABLE     : An edit dialog can be opened for each item.
+ * @XFCE_ITEM_LIST_MODEL_ADDABLE      : Items can be added.
+ * @XFCE_ITEM_LIST_MODEL_REMOVABLE    : Items can be removed.
+ * @XFCE_ITEM_LIST_MODEL_RESETTABLE   : A button "reset to default" will be offered.
  *
  * Specifies the model's capabilities
  *

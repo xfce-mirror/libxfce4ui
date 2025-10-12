@@ -29,8 +29,32 @@
 
 G_BEGIN_DECLS
 
+/**
+ * XFCE_MENU_ATTRIBUTE_MNEMONIC:
+ *
+ * Attribute with string type. The format is the same as gtk_button_new_with_mnemonic().
+ *
+ * Since: 4.21.2
+ **/
 #define XFCE_MENU_ATTRIBUTE_MNEMONIC "mnemonic"
+
+/**
+ * XFCE_MENU_ATTRIBUTE_MOVEMENT:
+ *
+ * Attribute with boolean type. If TRUE, then the menu item is responsible for changing the order of rows.
+ * Buttons with this attribute will appear on the right side of the #XfceItemListView widget.
+ *
+ * Since: 4.21.2
+ **/
 #define XFCE_MENU_ATTRIBUTE_MOVEMENT "movement"
+
+/**
+ * XFCE_MENU_ATTRIBUTE_TOOLTIP:
+ *
+ * Attribute with string type. The format is the same as gtk_widget_set_tooltip_text().
+ *
+ * Since: 4.21.2
+ **/
 #define XFCE_MENU_ATTRIBUTE_TOOLTIP "tooltip"
 
 #define XFCE_TYPE_ITEM_LIST_VIEW (xfce_item_list_view_get_type ())
