@@ -38,13 +38,18 @@ struct _XfceItemListView
 {
   GtkBoxClass __parent__;
 
+  /* Model used for TreeView display and modification */
   XfceItemListModel *model;
+
+  /* Menu model for buttons and context menu */
   GMenu *menu;
+
   GtkWidget *tree_view;
 
-  GtkWidget *vbuttons;
-  GtkWidget *hbuttons;
+  GtkWidget *buttons_vbox;
+  GtkWidget *buttons_hbox;
 
+  /* Standard actions */
   GSimpleAction *up_action;
   GSimpleAction *down_action;
   GSimpleAction *edit_action;
@@ -83,7 +88,7 @@ xfce_item_list_view_set_model (XfceItemListView *view,
                                XfceItemListModel *model);
 
 static void
-xfce_item_list_view_render_buttons (XfceItemListView *view);
+xfce_item_list_view_recreate_buttons (XfceItemListView *view);
 
 static gint
 xfce_item_list_view_get_index_by_path (XfceItemListView *view,
@@ -213,18 +218,18 @@ xfce_item_list_view_init (XfceItemListView *view)
                                                "sensitive", XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVE,
                                                NULL);
 
-  view->vbuttons = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-  gtk_style_context_add_class (gtk_widget_get_style_context (view->vbuttons), GTK_STYLE_CLASS_LINKED);
-  gtk_box_pack_start (GTK_BOX (view), view->vbuttons, FALSE, FALSE, 0);
-  gtk_widget_set_vexpand (view->vbuttons, FALSE);
-  gtk_widget_show (view->vbuttons);
+  view->buttons_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
+  gtk_style_context_add_class (gtk_widget_get_style_context (view->buttons_vbox), GTK_STYLE_CLASS_LINKED);
+  gtk_box_pack_start (GTK_BOX (view), view->buttons_vbox, FALSE, FALSE, 0);
+  gtk_widget_set_vexpand (view->buttons_vbox, FALSE);
+  gtk_widget_show (view->buttons_vbox);
 
-  view->hbuttons = gtk_button_box_new (GTK_ORIENTATION_HORIZONTAL);
-  gtk_button_box_set_layout (GTK_BUTTON_BOX (view->hbuttons), GTK_BUTTONBOX_START);
-  gtk_style_context_add_class (gtk_widget_get_style_context (view->hbuttons), GTK_STYLE_CLASS_INLINE_TOOLBAR);
-  gtk_box_set_homogeneous (GTK_BOX (view->hbuttons), FALSE);
-  gtk_box_pack_start (GTK_BOX (vbox), view->hbuttons, FALSE, FALSE, 0);
-  gtk_widget_show (view->hbuttons);
+  view->buttons_hbox = gtk_button_box_new (GTK_ORIENTATION_HORIZONTAL);
+  gtk_button_box_set_layout (GTK_BUTTON_BOX (view->buttons_hbox), GTK_BUTTONBOX_START);
+  gtk_style_context_add_class (gtk_widget_get_style_context (view->buttons_hbox), GTK_STYLE_CLASS_INLINE_TOOLBAR);
+  gtk_box_set_homogeneous (GTK_BOX (view->buttons_hbox), FALSE);
+  gtk_box_pack_start (GTK_BOX (vbox), view->buttons_hbox, FALSE, FALSE, 0);
+  gtk_widget_show (view->buttons_hbox);
 
   group = g_simple_action_group_new ();
 
@@ -255,7 +260,7 @@ xfce_item_list_view_init (XfceItemListView *view)
   gtk_widget_insert_action_group (GTK_WIDGET (view), "xfce", G_ACTION_GROUP (group));
 
   view->menu = g_menu_new ();
-  g_signal_connect_swapped (view->menu, "items-changed", G_CALLBACK (xfce_item_list_view_render_buttons), view);
+  g_signal_connect_swapped (view->menu, "items-changed", G_CALLBACK (xfce_item_list_view_recreate_buttons), view);
 }
 
 
@@ -428,28 +433,28 @@ xfce_item_list_view_set_model (XfceItemListView *view,
 
 
 static void
-xfce_item_list_view_render_buttons (XfceItemListView *view)
+xfce_item_list_view_recreate_buttons (XfceItemListView *view)
 {
   GtkWidget *button, *image;
   GVariant *action, *target, *label, *icon, *mnemonic, *movement, *tooltip;
   GList *children, *l;
   gint n_items = g_menu_model_get_n_items (G_MENU_MODEL (view->menu));
-  gint i, n_vbuttons, n_hbuttons;
+  gint i, n_buttons_vbox, n_buttons_hbox;
 
   /* Removing old buttons */
-  children = gtk_container_get_children (GTK_CONTAINER (view->vbuttons));
+  children = gtk_container_get_children (GTK_CONTAINER (view->buttons_vbox));
   for (l = children; l != NULL; l = l->next)
-    gtk_container_remove (GTK_CONTAINER (view->vbuttons), GTK_WIDGET (l->data));
+    gtk_container_remove (GTK_CONTAINER (view->buttons_vbox), GTK_WIDGET (l->data));
   g_list_free (children);
 
-  children = gtk_container_get_children (GTK_CONTAINER (view->hbuttons));
+  children = gtk_container_get_children (GTK_CONTAINER (view->buttons_hbox));
   for (l = children; l != NULL; l = l->next)
-    gtk_container_remove (GTK_CONTAINER (view->hbuttons), GTK_WIDGET (l->data));
+    gtk_container_remove (GTK_CONTAINER (view->buttons_hbox), GTK_WIDGET (l->data));
   g_list_free (children);
 
   /* Creating only the necessary buttons according to the menu model */
-  n_vbuttons = 0;
-  n_hbuttons = 0;
+  n_buttons_vbox = 0;
+  n_buttons_hbox = 0;
   for (i = 0; i < n_items; ++i)
     {
       action = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, G_MENU_ATTRIBUTE_ACTION, G_VARIANT_TYPE_STRING);
@@ -462,22 +467,22 @@ xfce_item_list_view_render_buttons (XfceItemListView *view)
 
       if (movement != NULL && g_variant_get_boolean (movement))
         {
-          ++n_vbuttons;
+          ++n_buttons_vbox;
 
           button = gtk_button_new ();
-          gtk_box_pack_start (GTK_BOX (view->vbuttons), button, FALSE, FALSE, 0);
+          gtk_box_pack_start (GTK_BOX (view->buttons_vbox), button, FALSE, FALSE, 0);
         }
       else
         {
-          ++n_hbuttons;
+          ++n_buttons_hbox;
 
           if (mnemonic != NULL)
             button = gtk_button_new_with_mnemonic (g_variant_get_string (mnemonic, NULL));
           else
             button = gtk_button_new_with_label (g_variant_get_string (label, NULL));
 
-          gtk_box_pack_start (GTK_BOX (view->hbuttons), button, FALSE, FALSE, 0);
-          gtk_button_box_set_child_non_homogeneous (GTK_BUTTON_BOX (view->hbuttons), button, TRUE);
+          gtk_box_pack_start (GTK_BOX (view->buttons_hbox), button, FALSE, FALSE, 0);
+          gtk_button_box_set_child_non_homogeneous (GTK_BUTTON_BOX (view->buttons_hbox), button, TRUE);
         }
 
       gtk_actionable_set_action_name (GTK_ACTIONABLE (button), g_variant_get_string (action, NULL));
@@ -505,8 +510,8 @@ xfce_item_list_view_render_buttons (XfceItemListView *view)
     }
 
   /* If the container does not have buttons, then it should be hidden */
-  gtk_widget_set_visible (view->vbuttons, n_vbuttons > 0);
-  gtk_widget_set_visible (view->hbuttons, n_hbuttons > 0);
+  gtk_widget_set_visible (view->buttons_vbox, n_buttons_vbox > 0);
+  gtk_widget_set_visible (view->buttons_hbox, n_buttons_hbox > 0);
 }
 
 
