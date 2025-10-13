@@ -508,6 +508,7 @@ static void
 xfce_item_list_view_recreate_buttons (XfceItemListView *view)
 {
   GVariant *action, *target, *label, *icon, *mnemonic, *movement, *tooltip;
+  GIcon *gicon;
   gint n_items = g_menu_model_get_n_items (G_MENU_MODEL (view->menu));
   gint i;
 
@@ -526,14 +527,16 @@ xfce_item_list_view_recreate_buttons (XfceItemListView *view)
       movement = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, XFCE_MENU_ATTRIBUTE_MOVEMENT, G_VARIANT_TYPE_BOOLEAN);
       tooltip = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, XFCE_MENU_ATTRIBUTE_TOOLTIP, G_VARIANT_TYPE_STRING);
 
+      gicon = icon != NULL ? g_icon_deserialize (icon) : NULL;
       xfce_item_list_view_add_button (view,
                                       movement != NULL ? g_variant_get_boolean (movement) : FALSE,
                                       mnemonic != NULL ? g_variant_get_string (mnemonic, NULL) : NULL,
                                       label != NULL ? g_variant_get_string (label, NULL) : NULL,
                                       tooltip != NULL ? g_variant_get_string (tooltip, NULL) : NULL,
-                                      icon != NULL ? g_icon_deserialize (icon) : NULL,
+                                      gicon,
                                       action != NULL ? g_variant_get_string (action, NULL) : NULL,
                                       target);
+      g_object_unref (gicon);
 
       g_clear_pointer (&action, g_variant_unref);
       g_clear_pointer (&target, g_variant_unref);
