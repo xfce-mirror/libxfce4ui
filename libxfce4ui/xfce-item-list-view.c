@@ -113,6 +113,10 @@ static void
 xfce_item_list_view_update_actions (XfceItemListView *view);
 
 static void
+xfce_item_list_view_move_item (XfceItemListView *view,
+                               gint direction);
+
+static void
 xfce_item_list_view_item_up (XfceItemListView *view);
 
 static void
@@ -631,17 +635,44 @@ xfce_item_list_view_update_actions (XfceItemListView *view)
 }
 
 
+
 static void
-xfce_item_list_view_item_up (XfceItemListView *view)
+xfce_item_list_view_move_item (XfceItemListView *view,
+                               gint direction)
 {
   GtkTreeIter iter;
-  gint index;
+  gint index, new_index;
+  GtkTreePath *path;
 
   if (xfce_item_list_view_get_selected_row (view, &iter))
     {
-      index = xfce_item_list_model_get_index (view->model, &iter);
-      xfce_item_list_model_move (view->model, index, index - 1);
+      if (direction > 0)
+        {
+          index = xfce_item_list_model_get_index (view->model, &iter);
+          new_index = index + 1;
+        }
+      else
+        {
+          index = xfce_item_list_model_get_index (view->model, &iter);
+          new_index = index - 1;
+        }
+
+      xfce_item_list_model_move (view->model, index, new_index);
+
+      /* make the new selected position visible if moved out of area */
+      path = gtk_tree_path_new_from_indices (new_index, -1);
+      gtk_tree_view_scroll_to_cell (GTK_TREE_VIEW (view->tree_view), path, NULL, FALSE, 0, 0);
+      gtk_tree_view_set_cursor (GTK_TREE_VIEW (view->tree_view), path, NULL, FALSE);
+      gtk_tree_path_free (path);
     }
+}
+
+
+
+static void
+xfce_item_list_view_item_up (XfceItemListView *view)
+{
+  xfce_item_list_view_move_item (view, -1);
 }
 
 
@@ -649,14 +680,7 @@ xfce_item_list_view_item_up (XfceItemListView *view)
 static void
 xfce_item_list_view_item_down (XfceItemListView *view)
 {
-  GtkTreeIter iter;
-  gint index;
-
-  if (xfce_item_list_view_get_selected_row (view, &iter))
-    {
-      index = xfce_item_list_model_get_index (view->model, &iter);
-      xfce_item_list_model_move (view->model, index, index + 1);
-    }
+  xfce_item_list_view_move_item (view, 1);
 }
 
 
