@@ -1,5 +1,5 @@
 /*-
- * Copyright (c) 2025 The XFCE Development Team
+ * Copyright (c) 2025 Dmitry Petrachkov <dmitry-petrachkov@outlook.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -25,7 +25,7 @@
 #define __XFCE_ITEM_LIST_MODEL_H__
 
 #include <gtk/gtk.h>
-#include <libxfce4ui/libxfce4ui-enums.h>
+#include "libxfce4ui-enums.h"
 
 G_BEGIN_DECLS
 

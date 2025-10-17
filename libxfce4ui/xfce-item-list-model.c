@@ -1,5 +1,5 @@
 /*-
- * Copyright (c) 2025 The XFCE Development Team
+ * Copyright (c) 2025 Dmitry Petrachkov <dmitry-petrachkov@outlook.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -188,7 +188,8 @@ xfce_item_list_model_get_list_column_type_default (XfceItemListModel *model,
       return G_TYPE_BOOLEAN;
 
     default:
-      _libxfce4ui_assert_not_reached ();
+      g_warn_if_reached ();
+      return G_TYPE_NONE;
     }
 }
 
@@ -197,7 +198,7 @@ xfce_item_list_model_get_list_column_type_default (XfceItemListModel *model,
 static XfceItemListModelFlags
 xfce_item_list_model_get_list_flags_default (XfceItemListModel *model)
 {
-  return 0;
+  return XFCE_ITEM_LIST_MODEL_NONE;
 }
 
 
@@ -264,13 +265,11 @@ xfce_item_list_model_tree_get_iter (GtkTreeModel *tree_model,
                                     GtkTreePath *path)
 {
   XfceItemListModel *model = XFCE_ITEM_LIST_MODEL (tree_model);
-  gint n_items = xfce_item_list_model_get_n_items (model);
-  gint index;
 
-  _libxfce4ui_return_val_if_fail (gtk_tree_path_get_depth (path) == 1, FALSE);
-  index = *gtk_tree_path_get_indices (path);
+  g_return_val_if_fail (gtk_tree_path_get_depth (path) == 1, FALSE);
+  gint index = *gtk_tree_path_get_indices (path);
 
-  if (index >= 0 && index < n_items)
+  if (index >= 0 && index < xfce_item_list_model_get_n_items (model))
     {
       xfce_item_list_model_set_index (model, iter, index);
       return TRUE;
@@ -296,9 +295,8 @@ xfce_item_list_model_tree_get_path (GtkTreeModel *tree_model,
                                     GtkTreeIter *iter)
 {
   XfceItemListModel *model = XFCE_ITEM_LIST_MODEL (tree_model);
-  gint index = xfce_item_list_model_get_index (model, iter);
 
-  return gtk_tree_path_new_from_indices (index, -1);
+  return gtk_tree_path_new_from_indices (xfce_item_list_model_get_index (model, iter), -1);
 }
 
 
@@ -310,9 +308,8 @@ xfce_item_list_model_tree_get_value (GtkTreeModel *tree_model,
                                      GValue *value)
 {
   XfceItemListModel *model = XFCE_ITEM_LIST_MODEL (tree_model);
-  gint index = xfce_item_list_model_get_index (model, iter);
 
-  xfce_item_list_model_get_item_value (model, index, column, value);
+  xfce_item_list_model_get_item_value (model, xfce_item_list_model_get_index (model, iter), column, value);
 }
 
 
@@ -323,10 +320,9 @@ xfce_item_list_model_tree_iter_children (GtkTreeModel *tree_model,
                                          GtkTreeIter *parent)
 {
   XfceItemListModel *model = XFCE_ITEM_LIST_MODEL (tree_model);
-  gint n_items = xfce_item_list_model_get_n_items (model);
 
   /* This is a list, so only the root element is supported */
-  if (parent == NULL && n_items > 0)
+  if (parent == NULL && xfce_item_list_model_get_n_items (model) > 0)
     {
       xfce_item_list_model_set_index (model, iter, 0);
       return TRUE;
@@ -358,11 +354,10 @@ xfce_item_list_model_tree_iter_next (GtkTreeModel *tree_model,
                                      GtkTreeIter *iter)
 {
   XfceItemListModel *model = XFCE_ITEM_LIST_MODEL (tree_model);
-  gint n_items = xfce_item_list_model_get_n_items (model);
   /* The index may be out of date */
   gint index = GPOINTER_TO_INT (iter->user_data);
 
-  if (index >= 0 && index + 1 < n_items)
+  if (index >= 0 && index + 1 < xfce_item_list_model_get_n_items (model))
     {
       xfce_item_list_model_set_index (model, iter, index + 1);
       return TRUE;
@@ -382,10 +377,9 @@ xfce_item_list_model_tree_iter_nth_child (GtkTreeModel *tree_model,
                                           gint n)
 {
   XfceItemListModel *model = XFCE_ITEM_LIST_MODEL (tree_model);
-  gint n_items = xfce_item_list_model_get_n_items (model);
 
   /* This is a list, so only the root element is supported */
-  if (parent == NULL && n >= 0 && n < n_items)
+  if (parent == NULL && n >= 0 && n < xfce_item_list_model_get_n_items (model))
     {
       xfce_item_list_model_set_index (model, iter, n);
       return TRUE;
@@ -403,11 +397,10 @@ xfce_item_list_model_tree_iter_previous (GtkTreeModel *tree_model,
                                          GtkTreeIter *iter)
 {
   XfceItemListModel *model = XFCE_ITEM_LIST_MODEL (tree_model);
-  gint n_items = xfce_item_list_model_get_n_items (model);
   /* The index may be out of date */
   gint index = GPOINTER_TO_INT (iter->user_data);
 
-  if (index > 0 && index - 1 < n_items)
+  if (index > 0 && index - 1 < xfce_item_list_model_get_n_items (model))
     {
       xfce_item_list_model_set_index (model, iter, index - 1);
       return TRUE;
@@ -457,21 +450,21 @@ xfce_item_list_model_get_dnd_indexes (XfceItemListModel *model,
                                       gint *p_dest_index)
 {
   GtkTreePath *source = NULL;
-  gint source_index, dest_index;
-  gint n_items = xfce_item_list_model_get_n_items (model);
 
-  if (!gtk_tree_get_row_drag_data (selection_data, NULL, &source) || source == NULL || gtk_tree_path_get_depth (source) != 1)
+  if (!gtk_tree_get_row_drag_data (selection_data, NULL, &source)
+      || source == NULL
+      || gtk_tree_path_get_depth (source) != 1)
     {
       gtk_tree_path_free (source);
       return FALSE;
     }
-  source_index = *gtk_tree_path_get_indices (source);
+  gint source_index = *gtk_tree_path_get_indices (source);
   gtk_tree_path_free (source);
 
   /* Even though it's a list, Gtk can pass a double-depth path if the insertion occurs between items */
   if (gtk_tree_path_get_depth (dest) != 1 && gtk_tree_path_get_depth (dest) != 2)
     return FALSE;
-  dest_index = *gtk_tree_path_get_indices (dest);
+  gint dest_index = *gtk_tree_path_get_indices (dest);
 
   /* Gtk assumes the source row has been removed */
   if (dest_index > source_index)
@@ -482,6 +475,7 @@ xfce_item_list_model_get_dnd_indexes (XfceItemListModel *model,
   if (p_dest_index != NULL)
     *p_dest_index = dest_index;
 
+  gint n_items = xfce_item_list_model_get_n_items (model);
   return (dest_index >= 0 && dest_index < n_items) && (source_index >= 0 && source_index < n_items);
 }
 
@@ -518,6 +512,10 @@ xfce_item_list_model_tree_row_drop_possible (GtkTreeDragDest *drag_dest,
 
 /**
  * xfce_item_list_model_get_list_column_type:
+ * @model: #XfceItemListModel
+ * @column: Columns from #XfceItemListModelColumn, or custom columns after #XFCE_ITEM_LIST_MODEL_COLUMN_USER
+ *
+ * Returns: Column type
  *
  * Since: 4.21.2
  **/
@@ -527,10 +525,10 @@ xfce_item_list_model_get_list_column_type (XfceItemListModel *model,
 {
   XfceItemListModelClass *klass;
 
-  _libxfce4ui_return_val_if_fail (XFCE_IS_ITEM_LIST_MODEL (model), 0);
+  g_return_val_if_fail (XFCE_IS_ITEM_LIST_MODEL (model), 0);
   klass = XFCE_ITEM_LIST_MODEL_GET_CLASS (model);
 
-  _libxfce4ui_return_val_if_fail (klass->get_list_column_type != NULL, 0);
+  g_return_val_if_fail (klass->get_list_column_type != NULL, 0);
   return klass->get_list_column_type (model, column);
 }
 
@@ -549,10 +547,10 @@ xfce_item_list_model_get_list_flags (XfceItemListModel *model)
 {
   XfceItemListModelClass *klass;
 
-  _libxfce4ui_return_val_if_fail (XFCE_IS_ITEM_LIST_MODEL (model), 0);
+  g_return_val_if_fail (XFCE_IS_ITEM_LIST_MODEL (model), 0);
   klass = XFCE_ITEM_LIST_MODEL_GET_CLASS (model);
 
-  _libxfce4ui_return_val_if_fail (klass->get_list_flags != NULL, 0);
+  g_return_val_if_fail (klass->get_list_flags != NULL, 0);
   return klass->get_list_flags (model);
 }
 
@@ -560,6 +558,9 @@ xfce_item_list_model_get_list_flags (XfceItemListModel *model)
 
 /**
  * xfce_item_list_model_get_n_items:
+ * @model: #XfceItemListModel
+ *
+ * Returns: Number of items
  *
  * Since: 4.21.2
  **/
@@ -568,10 +569,10 @@ xfce_item_list_model_get_n_items (XfceItemListModel *model)
 {
   XfceItemListModelClass *klass;
 
-  _libxfce4ui_return_val_if_fail (XFCE_IS_ITEM_LIST_MODEL (model), 0);
+  g_return_val_if_fail (XFCE_IS_ITEM_LIST_MODEL (model), 0);
   klass = XFCE_ITEM_LIST_MODEL_GET_CLASS (model);
 
-  _libxfce4ui_return_val_if_fail (klass->get_n_items != NULL, 0);
+  g_return_val_if_fail (klass->get_n_items != NULL, 0);
   return klass->get_n_items (model);
 }
 
@@ -579,6 +580,9 @@ xfce_item_list_model_get_n_items (XfceItemListModel *model)
 
 /**
  * xfce_item_list_model_get_item_value:
+ * @model: #XfceItemListModel
+ * @index: Item index
+ * @column: Columns from #XfceItemListModelColumn, or custom columns after #XFCE_ITEM_LIST_MODEL_COLUMN_USER
  * @value: (out) (transfer none): an empty #GValue to set
  *
  * Since: 4.21.2
@@ -591,21 +595,24 @@ xfce_item_list_model_get_item_value (XfceItemListModel *model,
 {
   XfceItemListModelClass *klass;
 
-  _libxfce4ui_return_if_fail (XFCE_IS_ITEM_LIST_MODEL (model));
-  _libxfce4ui_return_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model));
-  _libxfce4ui_return_if_fail (column >= 0 && (gint) column < gtk_tree_model_get_n_columns (GTK_TREE_MODEL (model)));
+  g_return_if_fail (XFCE_IS_ITEM_LIST_MODEL (model));
+  g_return_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model));
+  g_return_if_fail (column >= 0 && (gint) column < gtk_tree_model_get_n_columns (GTK_TREE_MODEL (model)));
 
   klass = XFCE_ITEM_LIST_MODEL_GET_CLASS (model);
-  _libxfce4ui_return_if_fail (klass->get_item_value != NULL);
+  g_return_if_fail (klass->get_item_value != NULL);
 
   g_value_init (value, gtk_tree_model_get_column_type (GTK_TREE_MODEL (model), column));
-  return klass->get_item_value (model, index, column, value);
+  klass->get_item_value (model, index, column, value);
 }
 
 
 
 /**
  * xfce_item_list_model_move:
+ * @model: #XfceItemListModel
+ * @source_index: Index where the item will be taken from
+ * @dest_index: Index where the item will be inserted
  *
  * Moves one item from the @source_index position to the @dest_index position
  *
@@ -617,24 +624,20 @@ xfce_item_list_model_move (XfceItemListModel *model,
                            gint dest_index)
 {
   XfceItemListModelClass *klass;
-  gint n_items;
-  gint *new_order;
-  GtkTreePath *tmp_path;
-  gint i, j;
 
-  _libxfce4ui_return_if_fail (XFCE_IS_ITEM_LIST_MODEL (model));
+  g_return_if_fail (XFCE_IS_ITEM_LIST_MODEL (model));
   klass = XFCE_ITEM_LIST_MODEL_GET_CLASS (model);
 
-  n_items = xfce_item_list_model_get_n_items (model);
-  _libxfce4ui_return_if_fail (source_index >= 0 && source_index < n_items);
-  _libxfce4ui_return_if_fail (dest_index >= 0 && dest_index < n_items);
+  gint n_items = xfce_item_list_model_get_n_items (model);
+  g_return_if_fail (source_index >= 0 && source_index < n_items);
+  g_return_if_fail (dest_index >= 0 && dest_index < n_items);
 
-  _libxfce4ui_return_if_fail (klass->move != NULL);
+  g_return_if_fail (klass->move != NULL);
   klass->move (model, source_index, dest_index);
 
   /* Signal for GtkTreeModel */
-  new_order = g_new (gint, n_items);
-  for (i = 0, j = 0; i < n_items; ++i)
+  gint *new_order = g_new (gint, n_items);
+  for (gint i = 0, j = 0; i < n_items; ++i)
     {
       /* This loop does the same thing as:
        * new_order = order.copy()
@@ -647,7 +650,7 @@ xfce_item_list_model_move (XfceItemListModel *model,
 
       new_order[i] = i == dest_index ? source_index : j++;
     }
-  tmp_path = gtk_tree_path_new ();
+  GtkTreePath *tmp_path = gtk_tree_path_new ();
   gtk_tree_model_rows_reordered_with_length (GTK_TREE_MODEL (model), tmp_path, NULL, new_order, n_items);
   gtk_tree_path_free (tmp_path);
   g_free (new_order);
@@ -657,6 +660,9 @@ xfce_item_list_model_move (XfceItemListModel *model,
 
 /**
  * xfce_item_list_model_set_activity:
+ * @model: #XfceItemListModel
+ * @index: Item index
+ * @value: Activity value
  *
  * Since: 4.21.2
  **/
@@ -666,18 +672,17 @@ xfce_item_list_model_set_activity (XfceItemListModel *model,
                                    gboolean value)
 {
   XfceItemListModelClass *klass;
-  GtkTreePath *path;
-  GtkTreeIter iter;
 
-  _libxfce4ui_return_if_fail (XFCE_IS_ITEM_LIST_MODEL (model));
-  _libxfce4ui_return_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model));
+  g_return_if_fail (XFCE_IS_ITEM_LIST_MODEL (model));
+  g_return_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model));
   klass = XFCE_ITEM_LIST_MODEL_GET_CLASS (model);
 
-  _libxfce4ui_return_if_fail (klass->set_activity != NULL);
+  g_return_if_fail (klass->set_activity != NULL);
   klass->set_activity (model, index, value);
 
   /* Signal for GtkTreeModel */
-  path = gtk_tree_path_new_from_indices (index, -1);
+  GtkTreePath *path = gtk_tree_path_new_from_indices (index, -1);
+  GtkTreeIter iter;
   xfce_item_list_model_set_index (model, &iter, index);
   gtk_tree_model_row_changed (GTK_TREE_MODEL (model), path, &iter);
   gtk_tree_path_free (path);
@@ -687,6 +692,8 @@ xfce_item_list_model_set_activity (XfceItemListModel *model,
 
 /**
  * xfce_item_list_model_edit:
+ * @model: #XfceItemListModel
+ * @index: Item index
  *
  * Since: 4.21.2
  **/
@@ -695,18 +702,17 @@ xfce_item_list_model_edit (XfceItemListModel *model,
                            gint index)
 {
   XfceItemListModelClass *klass;
-  GtkTreePath *path;
-  GtkTreeIter iter;
 
-  _libxfce4ui_return_if_fail (XFCE_IS_ITEM_LIST_MODEL (model));
-  _libxfce4ui_return_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model));
+  g_return_if_fail (XFCE_IS_ITEM_LIST_MODEL (model));
+  g_return_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model));
   klass = XFCE_ITEM_LIST_MODEL_GET_CLASS (model);
 
-  _libxfce4ui_return_if_fail (klass->edit != NULL);
+  g_return_if_fail (klass->edit != NULL);
   klass->edit (model, index);
 
   /* Signal for GtkTreeModel */
-  path = gtk_tree_path_new_from_indices (index, -1);
+  GtkTreePath *path = gtk_tree_path_new_from_indices (index, -1);
+  GtkTreeIter iter;
   xfce_item_list_model_set_index (model, &iter, index);
   gtk_tree_model_row_changed (GTK_TREE_MODEL (model), path, &iter);
   gtk_tree_path_free (path);
@@ -716,6 +722,9 @@ xfce_item_list_model_edit (XfceItemListModel *model,
 
 /**
  * xfce_item_list_model_add:
+ * @model: #XfceItemListModel
+ *
+ * Returns: If the item was inserted at the end, then returns TRUE
  *
  * Since: 4.21.2
  **/
@@ -723,20 +732,18 @@ gboolean
 xfce_item_list_model_add (XfceItemListModel *model)
 {
   XfceItemListModelClass *klass;
-  gint n_items;
-  GtkTreePath *path;
-  GtkTreeIter iter;
 
-  _libxfce4ui_return_val_if_fail (XFCE_IS_ITEM_LIST_MODEL (model), FALSE);
-  n_items = xfce_item_list_model_get_n_items (model);
+  g_return_val_if_fail (XFCE_IS_ITEM_LIST_MODEL (model), FALSE);
   klass = XFCE_ITEM_LIST_MODEL_GET_CLASS (model);
 
-  _libxfce4ui_return_val_if_fail (klass->add != NULL, FALSE);
+  g_return_val_if_fail (klass->add != NULL, FALSE);
+  gint new_index = xfce_item_list_model_get_n_items (model);
   if (klass->add (model))
     {
       /* Signal for GtkTreeModel */
-      path = gtk_tree_path_new_from_indices (n_items, -1);
-      xfce_item_list_model_set_index (model, &iter, n_items);
+      GtkTreePath *path = gtk_tree_path_new_from_indices (new_index, -1);
+      GtkTreeIter iter;
+      xfce_item_list_model_set_index (model, &iter, new_index);
       gtk_tree_model_row_inserted (GTK_TREE_MODEL (model), path, &iter);
       gtk_tree_path_free (path);
       return TRUE;
@@ -751,6 +758,10 @@ xfce_item_list_model_add (XfceItemListModel *model)
 
 /**
  * xfce_item_list_model_remove:
+ * @model: #XfceItemListModel
+ * @index: Item index
+ *
+ * Returns: If the item was removed then returns TRUE
  *
  * Since: 4.21.2
  **/
@@ -759,17 +770,16 @@ xfce_item_list_model_remove (XfceItemListModel *model,
                              gint index)
 {
   XfceItemListModelClass *klass;
-  GtkTreePath *path;
 
-  _libxfce4ui_return_val_if_fail (XFCE_IS_ITEM_LIST_MODEL (model), FALSE);
-  _libxfce4ui_return_val_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model), FALSE);
+  g_return_val_if_fail (XFCE_IS_ITEM_LIST_MODEL (model), FALSE);
+  g_return_val_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model), FALSE);
   klass = XFCE_ITEM_LIST_MODEL_GET_CLASS (model);
 
-  _libxfce4ui_return_val_if_fail (klass->remove != NULL, FALSE);
+  g_return_val_if_fail (klass->remove != NULL, FALSE);
   if (klass->remove (model, index))
     {
       /* Signal for GtkTreeModel */
-      path = gtk_tree_path_new_from_indices (index, -1);
+      GtkTreePath *path = gtk_tree_path_new_from_indices (index, -1);
       gtk_tree_model_row_deleted (GTK_TREE_MODEL (model), path);
       gtk_tree_path_free (path);
       return TRUE;
@@ -784,6 +794,7 @@ xfce_item_list_model_remove (XfceItemListModel *model,
 
 /**
  * xfce_item_list_model_reset:
+ * @model: #XfceItemListModel
  *
  * Since: 4.21.2
  **/
@@ -792,10 +803,10 @@ xfce_item_list_model_reset (XfceItemListModel *model)
 {
   XfceItemListModelClass *klass;
 
-  _libxfce4ui_return_if_fail (XFCE_IS_ITEM_LIST_MODEL (model));
+  g_return_if_fail (XFCE_IS_ITEM_LIST_MODEL (model));
   klass = XFCE_ITEM_LIST_MODEL_GET_CLASS (model);
 
-  _libxfce4ui_return_if_fail (klass->reset != NULL);
+  g_return_if_fail (klass->reset != NULL);
   klass->reset (model);
 
   /* Signal for GtkTreeModel */
@@ -806,6 +817,9 @@ xfce_item_list_model_reset (XfceItemListModel *model)
 
 /**
  * xfce_item_list_model_set_index:
+ * @model: #XfceItemListModel
+ * @iter: Iterator that will be set to the specified index
+ * @index: The index that will be set to the iterator
  *
  * Since: 4.21.2
  **/
@@ -814,9 +828,9 @@ xfce_item_list_model_set_index (XfceItemListModel *model,
                                 GtkTreeIter *iter,
                                 gint index)
 {
-  _libxfce4ui_return_if_fail (XFCE_IS_ITEM_LIST_MODEL (model));
-  _libxfce4ui_return_if_fail (iter != NULL);
-  _libxfce4ui_return_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model));
+  g_return_if_fail (XFCE_IS_ITEM_LIST_MODEL (model));
+  g_return_if_fail (iter != NULL);
+  g_return_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model));
 
   iter->user_data = GINT_TO_POINTER (index);
 }
@@ -825,6 +839,10 @@ xfce_item_list_model_set_index (XfceItemListModel *model,
 
 /**
  * xfce_item_list_model_get_index:
+ * @model: #XfceItemListModel
+ * @iter: Iterator from which the index will be retrieved
+ *
+ * Returns: Index extracted from iterator
  *
  * Since: 4.21.2
  **/
@@ -832,12 +850,10 @@ gint
 xfce_item_list_model_get_index (XfceItemListModel *model,
                                 GtkTreeIter *iter)
 {
-  gint index;
+  g_return_val_if_fail (XFCE_IS_ITEM_LIST_MODEL (model), -1);
 
-  _libxfce4ui_return_val_if_fail (XFCE_IS_ITEM_LIST_MODEL (model), -1);
-
-  index = GPOINTER_TO_INT (iter->user_data);
-  _libxfce4ui_return_val_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model), -1);
+  gint index = GPOINTER_TO_INT (iter->user_data);
+  g_return_val_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model), -1);
 
   return index;
 }
@@ -846,6 +862,10 @@ xfce_item_list_model_get_index (XfceItemListModel *model,
 
 /**
  * xfce_item_list_model_is_active:
+ * @model: #XfceItemListModel
+ * @index: Item index
+ *
+ * Returns: Item #XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVE column value
  *
  * Since: 4.21.2
  **/
@@ -853,11 +873,10 @@ gboolean
 xfce_item_list_model_is_active (XfceItemListModel *model,
                                 gint index)
 {
+  g_return_val_if_fail (XFCE_IS_ITEM_LIST_MODEL (model), FALSE);
+  g_return_val_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model), FALSE);
+
   GValue value = G_VALUE_INIT;
-
-  _libxfce4ui_return_val_if_fail (XFCE_IS_ITEM_LIST_MODEL (model), FALSE);
-  _libxfce4ui_return_val_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model), FALSE);
-
   xfce_item_list_model_get_item_value (model, index, XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVE, &value);
   return g_value_get_boolean (&value);
 }
@@ -866,6 +885,10 @@ xfce_item_list_model_is_active (XfceItemListModel *model,
 
 /**
  * xfce_item_list_model_is_activable:
+ * @model: #XfceItemListModel
+ * @index: Item index
+ *
+ * Returns: Item #XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVABLE column value
  *
  * Since: 4.21.2
  **/
@@ -873,11 +896,10 @@ gboolean
 xfce_item_list_model_is_activable (XfceItemListModel *model,
                                    gint index)
 {
+  g_return_val_if_fail (XFCE_IS_ITEM_LIST_MODEL (model), FALSE);
+  g_return_val_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model), FALSE);
+
   GValue value = G_VALUE_INIT;
-
-  _libxfce4ui_return_val_if_fail (XFCE_IS_ITEM_LIST_MODEL (model), FALSE);
-  _libxfce4ui_return_val_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model), FALSE);
-
   xfce_item_list_model_get_item_value (model, index, XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVABLE, &value);
   return g_value_get_boolean (&value);
 }
@@ -886,6 +908,10 @@ xfce_item_list_model_is_activable (XfceItemListModel *model,
 
 /**
  * xfce_item_list_model_is_editable:
+ * @model: #XfceItemListModel
+ * @index: Item index
+ *
+ * Returns: Item #XFCE_ITEM_LIST_MODEL_COLUMN_EDITABLE column value
  *
  * Since: 4.21.2
  **/
@@ -893,11 +919,10 @@ gboolean
 xfce_item_list_model_is_editable (XfceItemListModel *model,
                                   gint index)
 {
+  g_return_val_if_fail (XFCE_IS_ITEM_LIST_MODEL (model), FALSE);
+  g_return_val_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model), FALSE);
+
   GValue value = G_VALUE_INIT;
-
-  _libxfce4ui_return_val_if_fail (XFCE_IS_ITEM_LIST_MODEL (model), FALSE);
-  _libxfce4ui_return_val_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model), FALSE);
-
   xfce_item_list_model_get_item_value (model, index, XFCE_ITEM_LIST_MODEL_COLUMN_EDITABLE, &value);
   return g_value_get_boolean (&value);
 }
@@ -906,6 +931,10 @@ xfce_item_list_model_is_editable (XfceItemListModel *model,
 
 /**
  * xfce_item_list_model_is_removable:
+ * @model: #XfceItemListModel
+ * @index: Item index
+ *
+ * Returns: Item #XFCE_ITEM_LIST_MODEL_COLUMN_REMOVABLE column value
  *
  * Since: 4.21.2
  **/
@@ -913,11 +942,10 @@ gboolean
 xfce_item_list_model_is_removable (XfceItemListModel *model,
                                    gint index)
 {
+  g_return_val_if_fail (XFCE_IS_ITEM_LIST_MODEL (model), FALSE);
+  g_return_val_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model), FALSE);
+
   GValue value = G_VALUE_INIT;
-
-  _libxfce4ui_return_val_if_fail (XFCE_IS_ITEM_LIST_MODEL (model), FALSE);
-  _libxfce4ui_return_val_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model), FALSE);
-
   xfce_item_list_model_get_item_value (model, index, XFCE_ITEM_LIST_MODEL_COLUMN_REMOVABLE, &value);
   return g_value_get_boolean (&value);
 }
@@ -926,6 +954,7 @@ xfce_item_list_model_is_removable (XfceItemListModel *model,
 
 /**
  * xfce_item_list_model_changed:
+ * @model: #XfceItemListModel
  *
  * Makes #GtkTreeView think that all items have changed their value
  *
@@ -934,15 +963,12 @@ xfce_item_list_model_is_removable (XfceItemListModel *model,
 void
 xfce_item_list_model_changed (XfceItemListModel *model)
 {
-  GtkTreePath *path;
-  GtkTreeIter iter;
-  gint n_items, i;
-
-  _libxfce4ui_return_if_fail (XFCE_IS_ITEM_LIST_MODEL (model));
-  n_items = xfce_item_list_model_get_n_items (model);
-  for (i = 0; i < n_items; ++i)
+  g_return_if_fail (XFCE_IS_ITEM_LIST_MODEL (model));
+  gint n_items = xfce_item_list_model_get_n_items (model);
+  for (gint i = 0; i < n_items; ++i)
     {
-      path = gtk_tree_path_new_from_indices (i, -1);
+      GtkTreePath *path = gtk_tree_path_new_from_indices (i, -1);
+      GtkTreeIter iter;
       gtk_tree_model_get_iter (GTK_TREE_MODEL (model), &iter, path);
       gtk_tree_model_row_changed (GTK_TREE_MODEL (model), path, &iter);
       gtk_tree_path_free (path);
