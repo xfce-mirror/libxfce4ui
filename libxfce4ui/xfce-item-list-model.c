@@ -626,6 +626,7 @@ xfce_item_list_model_move (XfceItemListModel *model,
   XfceItemListModelClass *klass;
 
   g_return_if_fail (XFCE_IS_ITEM_LIST_MODEL (model));
+  g_return_if_fail (xfce_item_list_model_get_list_flags (model) & XFCE_ITEM_LIST_MODEL_REORDERABLE);
   klass = XFCE_ITEM_LIST_MODEL_GET_CLASS (model);
 
   gint n_items = xfce_item_list_model_get_n_items (model);
@@ -705,6 +706,7 @@ xfce_item_list_model_edit (XfceItemListModel *model,
 
   g_return_if_fail (XFCE_IS_ITEM_LIST_MODEL (model));
   g_return_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model));
+  g_return_if_fail (xfce_item_list_model_get_list_flags (model) & XFCE_ITEM_LIST_MODEL_EDITABLE);
   klass = XFCE_ITEM_LIST_MODEL_GET_CLASS (model);
 
   g_return_if_fail (klass->edit != NULL);
@@ -734,6 +736,7 @@ xfce_item_list_model_add (XfceItemListModel *model)
   XfceItemListModelClass *klass;
 
   g_return_val_if_fail (XFCE_IS_ITEM_LIST_MODEL (model), FALSE);
+  g_return_val_if_fail (xfce_item_list_model_get_list_flags (model) & XFCE_ITEM_LIST_MODEL_ADDABLE, FALSE);
   klass = XFCE_ITEM_LIST_MODEL_GET_CLASS (model);
 
   g_return_val_if_fail (klass->add != NULL, FALSE);
@@ -773,6 +776,7 @@ xfce_item_list_model_remove (XfceItemListModel *model,
 
   g_return_val_if_fail (XFCE_IS_ITEM_LIST_MODEL (model), FALSE);
   g_return_val_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model), FALSE);
+  g_return_val_if_fail (xfce_item_list_model_get_list_flags (model) & XFCE_ITEM_LIST_MODEL_REMOVABLE, FALSE);
   klass = XFCE_ITEM_LIST_MODEL_GET_CLASS (model);
 
   g_return_val_if_fail (klass->remove != NULL, FALSE);
@@ -804,6 +808,7 @@ xfce_item_list_model_reset (XfceItemListModel *model)
   XfceItemListModelClass *klass;
 
   g_return_if_fail (XFCE_IS_ITEM_LIST_MODEL (model));
+  g_return_if_fail (xfce_item_list_model_get_list_flags (model) & XFCE_ITEM_LIST_MODEL_RESETTABLE);
   klass = XFCE_ITEM_LIST_MODEL_GET_CLASS (model);
 
   g_return_if_fail (klass->reset != NULL);
@@ -921,6 +926,7 @@ xfce_item_list_model_is_editable (XfceItemListModel *model,
 {
   g_return_val_if_fail (XFCE_IS_ITEM_LIST_MODEL (model), FALSE);
   g_return_val_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model), FALSE);
+  g_return_val_if_fail (xfce_item_list_model_get_list_flags (model) & XFCE_ITEM_LIST_MODEL_EDITABLE, FALSE);
 
   GValue value = G_VALUE_INIT;
   xfce_item_list_model_get_item_value (model, index, XFCE_ITEM_LIST_MODEL_COLUMN_EDITABLE, &value);
@@ -944,6 +950,7 @@ xfce_item_list_model_is_removable (XfceItemListModel *model,
 {
   g_return_val_if_fail (XFCE_IS_ITEM_LIST_MODEL (model), FALSE);
   g_return_val_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model), FALSE);
+  g_return_val_if_fail (xfce_item_list_model_get_list_flags (model) & XFCE_ITEM_LIST_MODEL_REMOVABLE, FALSE);
 
   GValue value = G_VALUE_INIT;
   xfce_item_list_model_get_item_value (model, index, XFCE_ITEM_LIST_MODEL_COLUMN_REMOVABLE, &value);
