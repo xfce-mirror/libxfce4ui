@@ -614,6 +614,7 @@ xfce_item_list_view_update_actions (XfceItemListView *view)
               break;
             }
         }
+      g_list_free_full (rows, (GDestroyNotify) gtk_tree_path_free);
       g_simple_action_set_enabled (view->remove_action, all_removable);
     }
 }
