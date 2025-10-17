@@ -105,6 +105,54 @@ typedef enum
   XFCE_ICON_VIEW_LAYOUT_COLS
 } XfceIconViewLayoutMode;
 
+/**
+ * XfceItemListModelFlags:
+ * @XFCE_ITEM_LIST_MODEL_NONE         : No additional features.
+ * @XFCE_ITEM_LIST_MODEL_REORDERABLE  : The order of items can be changed.
+ * @XFCE_ITEM_LIST_MODEL_EDITABLE     : An edit dialog can be opened for each item.
+ * @XFCE_ITEM_LIST_MODEL_ADDABLE      : Items can be added.
+ * @XFCE_ITEM_LIST_MODEL_REMOVABLE    : Items can be removed.
+ * @XFCE_ITEM_LIST_MODEL_RESETTABLE   : A button "reset to default" will be offered.
+ *
+ * Specifies the model's capabilities
+ *
+ * Since: 4.21.2
+ **/
+typedef enum
+{
+  XFCE_ITEM_LIST_MODEL_NONE = 0,
+  XFCE_ITEM_LIST_MODEL_REORDERABLE = 1 << 0,
+  XFCE_ITEM_LIST_MODEL_EDITABLE = 1 << 1,
+  XFCE_ITEM_LIST_MODEL_ADDABLE = 1 << 2,
+  XFCE_ITEM_LIST_MODEL_REMOVABLE = 1 << 3,
+  XFCE_ITEM_LIST_MODEL_RESETTABLE = 1 << 4,
+} XfceItemListModelFlags;
+
+/**
+ * XfceItemListModelColumn:
+ * @XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVE    : boolean, required.
+ * @XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVABLE : boolean, required.
+ * @XFCE_ITEM_LIST_MODEL_COLUMN_ICON      : #GIcon, required.
+ * @XFCE_ITEM_LIST_MODEL_COLUMN_NAME      : string, markup, required.
+ * @XFCE_ITEM_LIST_MODEL_COLUMN_TOOLTIP   : string, required.
+ * @XFCE_ITEM_LIST_MODEL_COLUMN_EDITABLE  : boolean, required if the #XFCE_ITEM_LIST_MODEL_EDITABLE flag is set.
+ * @XFCE_ITEM_LIST_MODEL_COLUMN_REMOVABLE : boolean, required if the #XFCE_ITEM_LIST_MODEL_REMOVABLE flag is set.
+ * @XFCE_ITEM_LIST_MODEL_COLUMN_USER      : If you need to add your own columns, then your first column should have this value.
+ *
+ * Since: 4.21.2
+ **/
+typedef enum
+{
+  XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVE,
+  XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVABLE,
+  XFCE_ITEM_LIST_MODEL_COLUMN_ICON,
+  XFCE_ITEM_LIST_MODEL_COLUMN_NAME,
+  XFCE_ITEM_LIST_MODEL_COLUMN_TOOLTIP,
+  XFCE_ITEM_LIST_MODEL_COLUMN_EDITABLE,
+  XFCE_ITEM_LIST_MODEL_COLUMN_REMOVABLE,
+  XFCE_ITEM_LIST_MODEL_COLUMN_USER,
+} XfceItemListModelColumn;
+
 G_END_DECLS
 
 #endif /* __LIBXFCE4UI_ENUMS_H__ */
