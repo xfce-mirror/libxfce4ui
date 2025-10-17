@@ -704,7 +704,17 @@ xfce_item_list_view_edit_item (XfceItemListView *view)
 static void
 xfce_item_list_view_add_item (XfceItemListView *view)
 {
-  xfce_item_list_model_add (view->model);
+  if (xfce_item_list_model_add (view->model))
+    {
+      /* Move cursor to added element */
+      gint n_items = xfce_item_list_model_get_n_items (view->model);
+      if (n_items > 0)
+        {
+          GtkTreePath *path = gtk_tree_path_new_from_indices (n_items - 1, -1);
+          gtk_tree_view_set_cursor (GTK_TREE_VIEW (view->tree_view), path, NULL, FALSE);
+          gtk_tree_path_free (path);
+        }
+    }
 }
 
 
