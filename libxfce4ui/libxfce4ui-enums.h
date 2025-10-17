@@ -130,14 +130,14 @@ typedef enum
 
 /**
  * XfceItemListModelColumn:
- * @XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVE    : boolean
- * @XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVABLE : boolean
- * @XFCE_ITEM_LIST_MODEL_COLUMN_ICON      : #GIcon
- * @XFCE_ITEM_LIST_MODEL_COLUMN_NAME      : string, markup
- * @XFCE_ITEM_LIST_MODEL_COLUMN_TOOLTIP   : string
- * @XFCE_ITEM_LIST_MODEL_COLUMN_EDITABLE  : boolean
- * @XFCE_ITEM_LIST_MODEL_COLUMN_REMOVABLE : boolean
- * @XFCE_ITEM_LIST_MODEL_COLUMN_USER      : If you need to add your own columns, then your first column should have this value
+ * @XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVE    : boolean, required.
+ * @XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVABLE : boolean, required.
+ * @XFCE_ITEM_LIST_MODEL_COLUMN_ICON      : #GIcon, required.
+ * @XFCE_ITEM_LIST_MODEL_COLUMN_NAME      : string, markup, required.
+ * @XFCE_ITEM_LIST_MODEL_COLUMN_TOOLTIP   : string, required.
+ * @XFCE_ITEM_LIST_MODEL_COLUMN_EDITABLE  : boolean, required if the #XFCE_ITEM_LIST_MODEL_EDITABLE flag is set.
+ * @XFCE_ITEM_LIST_MODEL_COLUMN_REMOVABLE : boolean, required if the #XFCE_ITEM_LIST_MODEL_REMOVABLE flag is set.
+ * @XFCE_ITEM_LIST_MODEL_COLUMN_USER      : If you need to add your own columns, then your first column should have this value.
  *
  * Since: 4.21.2
  **/

@@ -926,11 +926,17 @@ xfce_item_list_model_is_editable (XfceItemListModel *model,
 {
   g_return_val_if_fail (XFCE_IS_ITEM_LIST_MODEL (model), FALSE);
   g_return_val_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model), FALSE);
-  g_return_val_if_fail (xfce_item_list_model_get_list_flags (model) & XFCE_ITEM_LIST_MODEL_EDITABLE, FALSE);
 
-  GValue value = G_VALUE_INIT;
-  xfce_item_list_model_get_item_value (model, index, XFCE_ITEM_LIST_MODEL_COLUMN_EDITABLE, &value);
-  return g_value_get_boolean (&value);
+  if (xfce_item_list_model_get_list_flags (model) & XFCE_ITEM_LIST_MODEL_EDITABLE)
+    {
+      GValue value = G_VALUE_INIT;
+      xfce_item_list_model_get_item_value (model, index, XFCE_ITEM_LIST_MODEL_COLUMN_EDITABLE, &value);
+      return g_value_get_boolean (&value);
+    }
+  else
+    {
+      return FALSE;
+    }
 }
 
 
@@ -950,11 +956,17 @@ xfce_item_list_model_is_removable (XfceItemListModel *model,
 {
   g_return_val_if_fail (XFCE_IS_ITEM_LIST_MODEL (model), FALSE);
   g_return_val_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model), FALSE);
-  g_return_val_if_fail (xfce_item_list_model_get_list_flags (model) & XFCE_ITEM_LIST_MODEL_REMOVABLE, FALSE);
 
-  GValue value = G_VALUE_INIT;
-  xfce_item_list_model_get_item_value (model, index, XFCE_ITEM_LIST_MODEL_COLUMN_REMOVABLE, &value);
-  return g_value_get_boolean (&value);
+  if (xfce_item_list_model_get_list_flags (model) & XFCE_ITEM_LIST_MODEL_REMOVABLE)
+    {
+      GValue value = G_VALUE_INIT;
+      xfce_item_list_model_get_item_value (model, index, XFCE_ITEM_LIST_MODEL_COLUMN_REMOVABLE, &value);
+      return g_value_get_boolean (&value);
+    }
+  else
+    {
+      return FALSE;
+    }
 }
 
 
