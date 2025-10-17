@@ -107,6 +107,7 @@ typedef enum
 
 /**
  * XfceItemListModelFlags:
+ * @XFCE_ITEM_LIST_MODEL_NONE         : No additional features.
  * @XFCE_ITEM_LIST_MODEL_REORDERABLE  : The order of items can be changed.
  * @XFCE_ITEM_LIST_MODEL_EDITABLE     : An edit dialog can be opened for each item.
  * @XFCE_ITEM_LIST_MODEL_ADDABLE      : Items can be added.
@@ -119,6 +120,7 @@ typedef enum
  **/
 typedef enum
 {
+  XFCE_ITEM_LIST_MODEL_NONE = 0,
   XFCE_ITEM_LIST_MODEL_REORDERABLE = 1 << 0,
   XFCE_ITEM_LIST_MODEL_EDITABLE = 1 << 1,
   XFCE_ITEM_LIST_MODEL_ADDABLE = 1 << 2,

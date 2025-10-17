@@ -1,5 +1,5 @@
 /*-
- * Copyright (c) 2025 The XFCE Development Team
+ * Copyright (c) 2025 Dmitry Petrachkov <dmitry-petrachkov@outlook.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -188,18 +188,13 @@ xfce_item_list_view_class_init (XfceItemListViewClass *klass)
 static void
 xfce_item_list_view_init (XfceItemListView *view)
 {
-  GtkWidget *scrwin;
-  GtkTreeSelection *selection;
-  GtkCellRenderer *renderer;
-  GSimpleActionGroup *group;
-
   g_object_set (view, "orientation", GTK_ORIENTATION_HORIZONTAL, "spacing", 6, NULL);
 
   view->vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
   gtk_box_pack_start (GTK_BOX (view), view->vbox, TRUE, TRUE, 0);
   gtk_widget_show (view->vbox);
 
-  scrwin = gtk_scrolled_window_new (NULL, NULL);
+  GtkWidget *scrwin = gtk_scrolled_window_new (NULL, NULL);
   gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrwin), GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
   gtk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (scrwin), GTK_SHADOW_IN);
   gtk_widget_set_hexpand (scrwin, TRUE);
@@ -217,28 +212,28 @@ xfce_item_list_view_init (XfceItemListView *view)
   gtk_container_add (GTK_CONTAINER (scrwin), view->tree_view);
   gtk_widget_show (view->tree_view);
 
-  selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (view->tree_view));
+  GtkTreeSelection *selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (view->tree_view));
   g_signal_connect_swapped (selection, "changed", G_CALLBACK (xfce_item_list_view_update_actions), view);
 
-  renderer = gtk_cell_renderer_toggle_new ();
-  g_signal_connect_swapped (G_OBJECT (renderer), "toggled", G_CALLBACK (xfce_item_list_view_toggle_item), view);
-  gtk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (view->tree_view), -1, "active", renderer,
+  GtkCellRenderer *renderer_active = gtk_cell_renderer_toggle_new ();
+  g_signal_connect_swapped (G_OBJECT (renderer_active), "toggled", G_CALLBACK (xfce_item_list_view_toggle_item), view);
+  gtk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (view->tree_view), -1, "active", renderer_active,
                                                "active", XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVE,
                                                "visible", XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVABLE,
                                                NULL);
 
-  renderer = gtk_cell_renderer_pixbuf_new ();
-  gtk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (view->tree_view), -1, "icon", renderer,
+  GtkCellRenderer *renderer_icon = gtk_cell_renderer_pixbuf_new ();
+  gtk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (view->tree_view), -1, "icon", renderer_icon,
                                                "gicon", XFCE_ITEM_LIST_MODEL_COLUMN_ICON,
                                                NULL);
 
-  renderer = gtk_cell_renderer_text_new ();
-  gtk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (view->tree_view), -1, "name", renderer,
+  GtkCellRenderer *renderer_name = gtk_cell_renderer_text_new ();
+  gtk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (view->tree_view), -1, "name", renderer_name,
                                                "markup", XFCE_ITEM_LIST_MODEL_COLUMN_NAME,
                                                "sensitive", XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVE,
                                                NULL);
 
-  group = g_simple_action_group_new ();
+  GSimpleActionGroup *group = g_simple_action_group_new ();
 
   view->up_action = g_simple_action_new ("move-item-up", NULL);
   g_signal_connect_swapped (view->up_action, "activate", G_CALLBACK (xfce_item_list_view_item_up), view);
@@ -337,15 +332,7 @@ static void
 xfce_item_list_view_set_model (XfceItemListView *view,
                                XfceItemListModel *model)
 {
-  const char *actions[] = { "xfce.move-item-up", "xfce.move-item-down", "xfce.edit-item", "xfce.add-item",
-                            "xfce.remove-item", "xfce.reset" };
-  gint n_items = g_menu_model_get_n_items (G_MENU_MODEL (view->menu));
-  GVariant *action;
-  GMenuItem *item;
-  XfceItemListModelFlags flags;
-  gint i, j, index;
-
-  _libxfce4ui_return_if_fail (model == NULL || XFCE_IS_ITEM_LIST_MODEL (model));
+  g_return_if_fail (model == NULL || XFCE_IS_ITEM_LIST_MODEL (model));
 
   /* Replace model */
   if (view->model != NULL)
@@ -355,11 +342,15 @@ xfce_item_list_view_set_model (XfceItemListView *view,
   view->model = model;
 
   /* Remove old standard menu items */
-  for (i = 0; i < n_items; ++i)
+  gint n_items = g_menu_model_get_n_items (G_MENU_MODEL (view->menu));
+  for (gint i = 0; i < n_items; ++i)
     {
-      for (j = 0; j < (int) G_N_ELEMENTS (actions); ++j)
+      const char *actions[] = { "xfce.move-item-up", "xfce.move-item-down", "xfce.edit-item",
+                                "xfce.add-item", "xfce.remove-item", "xfce.reset" };
+
+      for (gint j = 0; j < (int) G_N_ELEMENTS (actions); ++j)
         {
-          action = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, G_MENU_ATTRIBUTE_ACTION, G_VARIANT_TYPE_STRING);
+          GVariant *action = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, G_MENU_ATTRIBUTE_ACTION, G_VARIANT_TYPE_STRING);
           if (action != NULL && g_strcmp0 (g_variant_get_string (action, NULL), actions[j]) == 0)
             {
               g_menu_remove (view->menu, i);
@@ -379,25 +370,21 @@ xfce_item_list_view_set_model (XfceItemListView *view,
     }
 
   /* Creating menus and configuring widgets based on model capabilities */
-  if (model != NULL)
-    flags = xfce_item_list_model_get_list_flags (model);
-  else
-    flags = 0;
-
-  index = 0;
+  XfceItemListModelFlags flags = model != NULL ? xfce_item_list_model_get_list_flags (model) : XFCE_ITEM_LIST_MODEL_NONE;
+  gint index = 0;
   if (flags & XFCE_ITEM_LIST_MODEL_REORDERABLE)
     {
       gtk_tree_view_set_reorderable (GTK_TREE_VIEW (view->tree_view), TRUE);
 
-      item = g_menu_item_new (_("Move item up"), "xfce.move-item-up");
-      g_menu_item_set_icon (item, g_themed_icon_new ("go-up-symbolic"));
-      g_menu_item_set_attribute_value (item, XFCE_MENU_ATTRIBUTE_MOVEMENT, g_variant_new_boolean (TRUE));
-      g_menu_insert_item (view->menu, index++, item);
+      GMenuItem *item_up = g_menu_item_new (_("Move item up"), "xfce.move-item-up");
+      g_menu_item_set_icon (item_up, g_themed_icon_new ("go-up-symbolic"));
+      g_menu_item_set_attribute_value (item_up, XFCE_MENU_ATTRIBUTE_MOVEMENT, g_variant_new_boolean (TRUE));
+      g_menu_insert_item (view->menu, index++, item_up);
 
-      item = g_menu_item_new (_("Move item down"), "xfce.move-item-down");
-      g_menu_item_set_icon (item, g_themed_icon_new ("go-down-symbolic"));
-      g_menu_item_set_attribute_value (item, XFCE_MENU_ATTRIBUTE_MOVEMENT, g_variant_new_boolean (TRUE));
-      g_menu_insert_item (view->menu, index++, item);
+      GMenuItem *item_down = g_menu_item_new (_("Move item down"), "xfce.move-item-down");
+      g_menu_item_set_icon (item_down, g_themed_icon_new ("go-down-symbolic"));
+      g_menu_item_set_attribute_value (item_down, XFCE_MENU_ATTRIBUTE_MOVEMENT, g_variant_new_boolean (TRUE));
+      g_menu_insert_item (view->menu, index++, item_down);
     }
   else
     {
@@ -406,34 +393,34 @@ xfce_item_list_view_set_model (XfceItemListView *view,
 
   if (flags & XFCE_ITEM_LIST_MODEL_EDITABLE)
     {
-      item = g_menu_item_new (_("Edit"), "xfce.edit-item");
-      g_menu_item_set_icon (item, g_themed_icon_new ("document-edit-symbolic"));
-      g_menu_item_set_attribute_value (item, XFCE_MENU_ATTRIBUTE_MNEMONIC, g_variant_new_string ("_Edit"));
-      g_menu_insert_item (view->menu, index++, item);
+      GMenuItem *item_edit = g_menu_item_new (_("Edit"), "xfce.edit-item");
+      g_menu_item_set_icon (item_edit, g_themed_icon_new ("document-edit-symbolic"));
+      g_menu_item_set_attribute_value (item_edit, XFCE_MENU_ATTRIBUTE_MNEMONIC, g_variant_new_string ("_Edit"));
+      g_menu_insert_item (view->menu, index++, item_edit);
     }
 
   if (flags & XFCE_ITEM_LIST_MODEL_ADDABLE)
     {
-      item = g_menu_item_new (_("Add"), "xfce.add-item");
-      g_menu_item_set_icon (item, g_themed_icon_new ("list-add-symbolic"));
-      g_menu_item_set_attribute_value (item, XFCE_MENU_ATTRIBUTE_MNEMONIC, g_variant_new_string ("_Add"));
-      g_menu_insert_item (view->menu, index++, item);
+      GMenuItem *item_add = g_menu_item_new (_("Add"), "xfce.add-item");
+      g_menu_item_set_icon (item_add, g_themed_icon_new ("list-add-symbolic"));
+      g_menu_item_set_attribute_value (item_add, XFCE_MENU_ATTRIBUTE_MNEMONIC, g_variant_new_string ("_Add"));
+      g_menu_insert_item (view->menu, index++, item_add);
     }
 
   if (flags & XFCE_ITEM_LIST_MODEL_REMOVABLE)
     {
-      item = g_menu_item_new (_("Remove"), "xfce.remove-item");
-      g_menu_item_set_icon (item, g_themed_icon_new ("list-remove-symbolic"));
-      g_menu_item_set_attribute_value (item, XFCE_MENU_ATTRIBUTE_MNEMONIC, g_variant_new_string ("_Remove"));
-      g_menu_insert_item (view->menu, index++, item);
+      GMenuItem *item_remove = g_menu_item_new (_("Remove"), "xfce.remove-item");
+      g_menu_item_set_icon (item_remove, g_themed_icon_new ("list-remove-symbolic"));
+      g_menu_item_set_attribute_value (item_remove, XFCE_MENU_ATTRIBUTE_MNEMONIC, g_variant_new_string ("_Remove"));
+      g_menu_insert_item (view->menu, index++, item_remove);
     }
 
   if (flags & XFCE_ITEM_LIST_MODEL_RESETTABLE)
     {
-      item = g_menu_item_new (_("Reset to defaults"), "xfce.reset");
-      g_menu_item_set_icon (item, g_themed_icon_new ("document-revert-symbolic"));
-      g_menu_item_set_attribute_value (item, XFCE_MENU_ATTRIBUTE_MNEMONIC, g_variant_new_string ("Reset to de_faults"));
-      g_menu_insert_item (view->menu, index++, item);
+      GMenuItem *item_reset = g_menu_item_new (_("Reset to defaults"), "xfce.reset");
+      g_menu_item_set_icon (item_reset, g_themed_icon_new ("document-revert-symbolic"));
+      g_menu_item_set_attribute_value (item_reset, XFCE_MENU_ATTRIBUTE_MNEMONIC, g_variant_new_string ("Reset to de_faults"));
+      g_menu_insert_item (view->menu, index++, item_reset);
     }
 }
 
@@ -449,7 +436,7 @@ xfce_item_list_view_add_button (XfceItemListView *view,
                                 const gchar *action,
                                 GVariant *target)
 {
-  GtkWidget *button, *image;
+  GtkWidget *button = NULL;
 
   if (movement)
     {
@@ -491,7 +478,7 @@ xfce_item_list_view_add_button (XfceItemListView *view,
 
   if (icon != NULL)
     {
-      image = gtk_image_new_from_gicon (icon, GTK_ICON_SIZE_BUTTON);
+      GtkWidget *image = gtk_image_new_from_gicon (icon, GTK_ICON_SIZE_BUTTON);
       gtk_button_set_always_show_image (GTK_BUTTON (button), TRUE);
       gtk_button_set_image (GTK_BUTTON (button), image);
       gtk_widget_show (image);
@@ -507,27 +494,23 @@ xfce_item_list_view_add_button (XfceItemListView *view,
 static void
 xfce_item_list_view_recreate_buttons (XfceItemListView *view)
 {
-  GVariant *action, *target, *label, *icon, *mnemonic, *movement, *tooltip;
-  GIcon *gicon;
-  gint n_items = g_menu_model_get_n_items (G_MENU_MODEL (view->menu));
-  gint i;
-
   /* Removing button containers, they will be created later if they are needed */
   g_clear_pointer (&view->buttons_vbox, gtk_widget_destroy);
   g_clear_pointer (&view->buttons_hbox, gtk_widget_destroy);
 
   /* Creating only the necessary buttons according to the menu model */
-  for (i = 0; i < n_items; ++i)
+  gint n_items = g_menu_model_get_n_items (G_MENU_MODEL (view->menu));
+  for (gint i = 0; i < n_items; ++i)
     {
-      action = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, G_MENU_ATTRIBUTE_ACTION, G_VARIANT_TYPE_STRING);
-      target = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, G_MENU_ATTRIBUTE_TARGET, NULL);
-      label = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, G_MENU_ATTRIBUTE_LABEL, G_VARIANT_TYPE_STRING);
-      icon = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, G_MENU_ATTRIBUTE_ICON, NULL);
-      mnemonic = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, XFCE_MENU_ATTRIBUTE_MNEMONIC, G_VARIANT_TYPE_STRING);
-      movement = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, XFCE_MENU_ATTRIBUTE_MOVEMENT, G_VARIANT_TYPE_BOOLEAN);
-      tooltip = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, XFCE_MENU_ATTRIBUTE_TOOLTIP, G_VARIANT_TYPE_STRING);
+      GVariant *action = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, G_MENU_ATTRIBUTE_ACTION, G_VARIANT_TYPE_STRING);
+      GVariant *target = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, G_MENU_ATTRIBUTE_TARGET, NULL);
+      GVariant *label = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, G_MENU_ATTRIBUTE_LABEL, G_VARIANT_TYPE_STRING);
+      GVariant *icon = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, G_MENU_ATTRIBUTE_ICON, NULL);
+      GVariant *mnemonic = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, XFCE_MENU_ATTRIBUTE_MNEMONIC, G_VARIANT_TYPE_STRING);
+      GVariant *movement = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, XFCE_MENU_ATTRIBUTE_MOVEMENT, G_VARIANT_TYPE_BOOLEAN);
+      GVariant *tooltip = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, XFCE_MENU_ATTRIBUTE_TOOLTIP, G_VARIANT_TYPE_STRING);
 
-      gicon = icon != NULL ? g_icon_deserialize (icon) : NULL;
+      GIcon *gicon = icon != NULL ? g_icon_deserialize (icon) : NULL;
       xfce_item_list_view_add_button (view,
                                       movement != NULL ? g_variant_get_boolean (movement) : FALSE,
                                       mnemonic != NULL ? g_variant_get_string (mnemonic, NULL) : NULL,
@@ -568,23 +551,22 @@ xfce_item_list_view_get_selected_row (XfceItemListView *view,
 {
   GtkTreeSelection *selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (view->tree_view));
   gboolean multiple_mode = gtk_tree_selection_get_mode (selection) == GTK_SELECTION_MULTIPLE;
-  GList *rows;
-  gboolean status = FALSE;
+  gboolean selected = FALSE;
 
   if (!multiple_mode)
     {
-      status = gtk_tree_selection_get_selected (selection, NULL, iter);
+      selected = gtk_tree_selection_get_selected (selection, NULL, iter);
     }
   else
     {
-      rows = gtk_tree_selection_get_selected_rows (selection, NULL);
+      GList *rows = gtk_tree_selection_get_selected_rows (selection, NULL);
       if (g_list_length (rows) == 1)
-        status = gtk_tree_model_get_iter (GTK_TREE_MODEL (view->model), iter, rows->data);
+        selected = gtk_tree_model_get_iter (GTK_TREE_MODEL (view->model), iter, rows->data);
 
       g_list_free_full (rows, (GDestroyNotify) gtk_tree_path_free);
     }
 
-  return status;
+  return selected;
 }
 
 
@@ -594,20 +576,19 @@ xfce_item_list_view_update_actions (XfceItemListView *view)
 {
   GtkTreeSelection *selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (view->tree_view));
   gboolean multiple_mode = gtk_tree_selection_get_mode (selection) == GTK_SELECTION_MULTIPLE;
-  GtkTreeIter iter, tmp;
-  GList *rows, *l;
-  gint index;
-  gboolean all_removable;
+  GtkTreeIter iter;
 
   if (xfce_item_list_view_get_selected_row (view, &iter))
     {
+      GtkTreeIter tmp;
+
       tmp = iter;
       g_simple_action_set_enabled (view->up_action, gtk_tree_model_iter_previous (GTK_TREE_MODEL (view->model), &tmp));
 
       tmp = iter;
       g_simple_action_set_enabled (view->down_action, gtk_tree_model_iter_next (GTK_TREE_MODEL (view->model), &tmp));
 
-      index = xfce_item_list_model_get_index (view->model, &iter);
+      gint index = xfce_item_list_model_get_index (view->model, &iter);
       g_simple_action_set_enabled (view->edit_action, xfce_item_list_model_is_editable (view->model, index));
       g_simple_action_set_enabled (view->remove_action, xfce_item_list_model_is_removable (view->model, index));
     }
@@ -622,11 +603,11 @@ xfce_item_list_view_update_actions (XfceItemListView *view)
   if (multiple_mode)
     {
       /* If all elements are removable, then make the "Remove" action enabled */
-      rows = gtk_tree_selection_get_selected_rows (selection, NULL);
-      all_removable = rows != NULL;
-      for (l = g_list_last (rows); l != NULL; l = l->prev)
+      GList *rows = gtk_tree_selection_get_selected_rows (selection, NULL);
+      gboolean all_removable = rows != NULL;
+      for (GList *l = g_list_last (rows); l != NULL; l = l->prev)
         {
-          index = xfce_item_list_view_get_index_by_path (view, l->data);
+          gint index = xfce_item_list_view_get_index_by_path (view, l->data);
           if (!xfce_item_list_model_is_removable (view->model, index))
             {
               all_removable = FALSE;
@@ -644,11 +625,12 @@ xfce_item_list_view_move_item (XfceItemListView *view,
                                gint direction)
 {
   GtkTreeIter iter;
-  gint index, new_index;
-  GtkTreePath *path;
 
   if (xfce_item_list_view_get_selected_row (view, &iter))
     {
+      gint index = -1;
+      gint new_index = -1;
+
       if (direction > 0)
         {
           index = xfce_item_list_model_get_index (view->model, &iter);
@@ -663,7 +645,7 @@ xfce_item_list_view_move_item (XfceItemListView *view,
       xfce_item_list_model_move (view->model, index, new_index);
 
       /* make the new selected position visible if moved out of area */
-      path = gtk_tree_path_new_from_indices (new_index, -1);
+      GtkTreePath *path = gtk_tree_path_new_from_indices (new_index, -1);
       gtk_tree_view_scroll_to_cell (GTK_TREE_VIEW (view->tree_view), path, NULL, FALSE, 0, 0);
       gtk_tree_view_set_cursor (GTK_TREE_VIEW (view->tree_view), path, NULL, FALSE);
       gtk_tree_path_free (path);
@@ -694,11 +676,10 @@ xfce_item_list_view_toggle_item (XfceItemListView *view,
 {
   GtkTreePath *path = gtk_tree_path_new_from_string (path_string);
   GtkTreeIter iter;
-  gint index;
 
   if (gtk_tree_model_get_iter (GTK_TREE_MODEL (view->model), &iter, path))
     {
-      index = xfce_item_list_model_get_index (view->model, &iter);
+      gint index = xfce_item_list_model_get_index (view->model, &iter);
       xfce_item_list_model_set_activity (view->model, index, !xfce_item_list_model_is_active (view->model, index));
     }
 }
@@ -709,11 +690,10 @@ static void
 xfce_item_list_view_edit_item (XfceItemListView *view)
 {
   GtkTreeIter iter;
-  gint index;
 
   if (xfce_item_list_view_get_selected_row (view, &iter))
     {
-      index = xfce_item_list_model_get_index (view->model, &iter);
+      gint index = xfce_item_list_model_get_index (view->model, &iter);
       xfce_item_list_model_edit (view->model, index);
     }
 }
@@ -733,27 +713,19 @@ xfce_item_list_view_remove_item (XfceItemListView *view)
 {
   GtkTreeSelection *selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (view->tree_view));
   gboolean multiple_mode = gtk_tree_selection_get_mode (selection) == GTK_SELECTION_MULTIPLE;
-  GList *rows, *l;
   GtkTreeIter iter;
-  gint index;
 
   if (!multiple_mode && gtk_tree_selection_get_selected (selection, NULL, &iter))
-    {
-      index = xfce_item_list_model_get_index (view->model, &iter);
-      xfce_item_list_model_remove (view->model, index);
-    }
+    xfce_item_list_model_remove (view->model, xfce_item_list_model_get_index (view->model, &iter));
 
   if (multiple_mode)
     {
       /* Start removing from the end to ensure correct indexes */
-      rows = gtk_tree_selection_get_selected_rows (selection, NULL);
-      for (l = g_list_last (rows); l != NULL; l = l->prev)
+      GList *rows = gtk_tree_selection_get_selected_rows (selection, NULL);
+      for (GList *l = g_list_last (rows); l != NULL; l = l->prev)
         {
           if (gtk_tree_model_get_iter (GTK_TREE_MODEL (view->model), &iter, l->data))
-            {
-              index = xfce_item_list_model_get_index (view->model, &iter);
-              xfce_item_list_model_remove (view->model, index);
-            }
+            xfce_item_list_model_remove (view->model, xfce_item_list_model_get_index (view->model, &iter));
         }
       g_list_free_full (rows, (GDestroyNotify) gtk_tree_path_free);
     }
@@ -773,11 +745,9 @@ static gboolean
 xfce_item_list_view_tree_button_pressed (XfceItemListView *view,
                                          GdkEventButton *event)
 {
-  GtkWidget *context_menu;
-
   if (event->button == GDK_BUTTON_SECONDARY && g_menu_model_get_n_items (G_MENU_MODEL (view->menu)) > 0)
     {
-      context_menu = gtk_menu_new_from_model (G_MENU_MODEL (view->menu));
+      GtkWidget *context_menu = gtk_menu_new_from_model (G_MENU_MODEL (view->menu));
       gtk_menu_attach_to_widget (GTK_MENU (context_menu), view->tree_view, NULL);
       gtk_widget_show_all (context_menu);
       gtk_menu_popup_at_pointer (GTK_MENU (context_menu), (GdkEvent *) event);
@@ -814,6 +784,9 @@ xfce_item_list_view_row_activate (XfceItemListView *view)
 
 /**
  * xfce_item_list_view_new:
+ * @model: Model to display
+ *
+ * Returns: #XfceItemListView widget
  *
  * Since: 4.21.2
  **/
@@ -827,14 +800,18 @@ xfce_item_list_view_new (XfceItemListModel *model)
 
 /**
  * xfce_item_list_view_get_menu:
+ * @view: #XfceItemListView
+ *
+ * Returns a menu to which you can add your own items
  *
  * Returns: (transfer none): Model responsible for buttons and context menu
+ *
  * Since: 4.21.2
  **/
 GMenu *
 xfce_item_list_view_get_menu (XfceItemListView *view)
 {
-  _libxfce4ui_return_val_if_fail (XFCE_IS_ITEM_LIST_VIEW (view), NULL);
+  g_return_val_if_fail (XFCE_IS_ITEM_LIST_VIEW (view), NULL);
 
   return view->menu;
 }
@@ -843,14 +820,18 @@ xfce_item_list_view_get_menu (XfceItemListView *view)
 
 /**
  * xfce_item_list_view_get_tree_view:
+ * @view: #XfceItemListView
+ *
+ * Returns a #GtkTreeView to which you can add your own columns, or customize the selection mode
  *
  * Returns: (transfer none): Internal #GtkTreeView
+ *
  * Since: 4.21.2
  **/
 GtkWidget *
 xfce_item_list_view_get_tree_view (XfceItemListView *view)
 {
-  _libxfce4ui_return_val_if_fail (XFCE_IS_ITEM_LIST_VIEW (view), NULL);
+  g_return_val_if_fail (XFCE_IS_ITEM_LIST_VIEW (view), NULL);
 
   return view->tree_view;
 }
