@@ -590,7 +590,7 @@ xfce_item_list_model_get_n_items (XfceItemListModel *model)
 void
 xfce_item_list_model_get_item_value (XfceItemListModel *model,
                                      gint index,
-                                     XfceItemListModelColumn column,
+                                     gint column,
                                      GValue *value)
 {
   XfceItemListModelClass *klass;
