@@ -25,7 +25,6 @@
 #define __XFCE_ITEM_LIST_VIEW_H__
 
 #include <gtk/gtk.h>
-
 #include <libxfce4ui/xfce-item-list-model.h>
 
 G_BEGIN_DECLS

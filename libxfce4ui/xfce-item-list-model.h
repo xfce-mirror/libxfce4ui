@@ -25,7 +25,6 @@
 #define __XFCE_ITEM_LIST_MODEL_H__
 
 #include <gtk/gtk.h>
-
 #include <libxfce4ui/libxfce4ui-enums.h>
 
 G_BEGIN_DECLS
