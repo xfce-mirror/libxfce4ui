@@ -226,18 +226,27 @@ xfce_item_list_view_init (XfceItemListView *view)
 
   GtkCellRenderer *renderer_active = gtk_cell_renderer_toggle_new ();
   g_signal_connect_swapped (G_OBJECT (renderer_active), "toggled", G_CALLBACK (xfce_item_list_view_toggle_item), view);
-  gtk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (view->tree_view), -1, "active", renderer_active,
+  gtk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (view->tree_view),
+                                               XFCE_ITEM_LIST_VIEW_COLUMN_ACTIVE,
+                                               _("Active"),
+                                               renderer_active,
                                                "active", XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVE,
                                                "visible", XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVABLE,
                                                NULL);
 
   GtkCellRenderer *renderer_icon = gtk_cell_renderer_pixbuf_new ();
-  gtk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (view->tree_view), -1, "icon", renderer_icon,
+  gtk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (view->tree_view),
+                                               XFCE_ITEM_LIST_VIEW_COLUMN_ICON,
+                                               _("Icon"),
+                                               renderer_icon,
                                                "gicon", XFCE_ITEM_LIST_MODEL_COLUMN_ICON,
                                                NULL);
 
   GtkCellRenderer *renderer_name = gtk_cell_renderer_text_new ();
-  gtk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (view->tree_view), -1, "name", renderer_name,
+  gtk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (view->tree_view),
+                                               XFCE_ITEM_LIST_VIEW_COLUMN_NAME,
+                                               _("Name"),
+                                               renderer_name,
                                                "markup", XFCE_ITEM_LIST_MODEL_COLUMN_NAME,
                                                "sensitive", XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVE,
                                                NULL);

@@ -60,6 +60,22 @@ G_BEGIN_DECLS
 #define XFCE_TYPE_ITEM_LIST_VIEW (xfce_item_list_view_get_type ())
 G_DECLARE_FINAL_TYPE (XfceItemListView, xfce_item_list_view, XFCE, ITEM_LIST_VIEW, GtkBox)
 
+/**
+ * XfceItemListViewColumn:
+ *
+ * Indexes of standard columns attached to GtkTreeView. Using these indexes you can access the desired column to change
+ * its settings. You can add your own columns at the end, starting from the index #XFCE_ITEM_LIST_VIEW_COLUMN_USER.
+ *
+ * Since: 4.21.2
+ **/
+typedef enum
+{
+  XFCE_ITEM_LIST_VIEW_COLUMN_ACTIVE,
+  XFCE_ITEM_LIST_VIEW_COLUMN_ICON,
+  XFCE_ITEM_LIST_VIEW_COLUMN_NAME,
+  XFCE_ITEM_LIST_VIEW_COLUMN_USER,
+} XfceItemListViewColumn;
+
 GtkWidget *
 xfce_item_list_view_new (XfceItemListModel *model) G_GNUC_MALLOC;
 
