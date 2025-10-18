@@ -235,8 +235,6 @@ xfce_item_list_model_get_n_items
 xfce_item_list_model_get_item_value
 xfce_item_list_model_move
 xfce_item_list_model_set_activity
-xfce_item_list_model_edit
-xfce_item_list_model_add
 xfce_item_list_model_remove
 xfce_item_list_model_set_index
 xfce_item_list_model_get_index
@@ -249,5 +247,7 @@ xfce_item_list_model_changed
 # file:xfce-item-list-view
 xfce_item_list_view_get_type attr:G_GNUC_CONST
 xfce_item_list_view_new attr:G_GNUC_MALLOC
+xfce_item_list_view_get_model
+xfce_item_list_view_set_model
 xfce_item_list_view_get_menu
 xfce_item_list_view_get_tree_view

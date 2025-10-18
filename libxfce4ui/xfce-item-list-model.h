@@ -71,11 +71,6 @@ struct _XfceItemListModelClass
                         gint index,
                         gboolean value);
 
-  void (*edit) (XfceItemListModel *model,
-                gint index);
-
-  gboolean (*add) (XfceItemListModel *model);
-
   gboolean (*remove) (XfceItemListModel *model,
                       gint index);
 
@@ -107,10 +102,6 @@ void
 xfce_item_list_model_set_activity (XfceItemListModel *model,
                                    gint index,
                                    gboolean value);
-
-void
-xfce_item_list_model_edit (XfceItemListModel *model,
-                           gint index);
 
 gboolean
 xfce_item_list_model_add (XfceItemListModel *model);
