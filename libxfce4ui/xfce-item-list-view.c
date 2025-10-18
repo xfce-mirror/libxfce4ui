@@ -67,6 +67,15 @@ enum
   PROP_TREE_VIEW,
 };
 
+enum
+{
+  REMOVE_ITEMS,
+  RESET_ITEMS,
+  N_SIGNALS
+};
+
+static gint signals[N_SIGNALS];
+
 
 
 static void
@@ -190,6 +199,36 @@ xfce_item_list_view_class_init (XfceItemListViewClass *klass)
                                    g_param_spec_object ("tree-view", NULL, NULL,
                                                         GTK_TYPE_TREE_VIEW,
                                                         G_PARAM_READABLE | G_PARAM_STATIC_STRINGS));
+
+  /**
+   * XfceItemListView::remove-items:
+   * @view: #XfceItemListView
+   * @items: (array length=n_items) (element-type int) (in): Item indexes
+   * @n_items: Number of indexes
+   *
+   * Returns: %TRUE to stop other handlers from being invoked for the event. %FALSE to propagate the event further.
+   **/
+  signals[REMOVE_ITEMS] = g_signal_new ("remove-items",
+                                        G_TYPE_FROM_CLASS (object_class),
+                                        G_SIGNAL_RUN_LAST,
+                                        0,
+                                        NULL, NULL,
+                                        NULL,
+                                        G_TYPE_BOOLEAN, 2, G_TYPE_POINTER, G_TYPE_INT);
+
+  /**
+   * XfceItemListView::reset-items:
+   * @view: #XfceItemListView
+   *
+   * Returns: %TRUE to stop other handlers from being invoked for the event. %FALSE to propagate the event further.
+   **/
+  signals[RESET_ITEMS] = g_signal_new ("reset-items",
+                                       G_TYPE_FROM_CLASS (object_class),
+                                       G_SIGNAL_RUN_LAST,
+                                       0,
+                                       NULL, NULL,
+                                       NULL,
+                                       G_TYPE_BOOLEAN, 0);
 }
 
 
@@ -746,22 +785,40 @@ xfce_item_list_view_remove_item (XfceItemListView *view)
 {
   GtkTreeSelection *selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (view->tree_view));
   gboolean multiple_mode = gtk_tree_selection_get_mode (selection) == GTK_SELECTION_MULTIPLE;
-  GtkTreeIter iter;
-
-  if (!multiple_mode && gtk_tree_selection_get_selected (selection, NULL, &iter))
-    xfce_item_list_model_remove (view->model, xfce_item_list_model_get_index (view->model, &iter));
+  gint *indexes = NULL;
+  gint n_indexes = 0;
 
   if (multiple_mode)
     {
-      /* Start removing from the end to ensure correct indexes */
       GList *rows = gtk_tree_selection_get_selected_rows (selection, NULL);
+      indexes = g_new (gint, g_list_length (rows));
+      /* Reverse order to ensure correct indexes */
       for (GList *l = g_list_last (rows); l != NULL; l = l->prev)
         {
+          GtkTreeIter iter;
           if (gtk_tree_model_get_iter (GTK_TREE_MODEL (view->model), &iter, l->data))
-            xfce_item_list_model_remove (view->model, xfce_item_list_model_get_index (view->model, &iter));
+            indexes[n_indexes++] = xfce_item_list_model_get_index (view->model, &iter);
         }
       g_list_free_full (rows, (GDestroyNotify) gtk_tree_path_free);
     }
+  else
+    {
+      GtkTreeIter iter;
+      if (gtk_tree_selection_get_selected (selection, NULL, &iter))
+        {
+          indexes = g_new (gint, 1);
+          indexes[n_indexes] = xfce_item_list_model_get_index (view->model, &iter);
+        }
+    }
+
+  gboolean stop_propagation = FALSE;
+  g_signal_emit (view, signals[REMOVE_ITEMS], 0, indexes, n_indexes, &stop_propagation);
+  if (!stop_propagation)
+    {
+      for (gint i = 0; i < n_indexes; ++i)
+        xfce_item_list_model_remove (view->model, indexes[i]);
+    }
+  g_free (indexes);
 }
 
 
@@ -769,7 +826,11 @@ xfce_item_list_view_remove_item (XfceItemListView *view)
 static void
 xfce_item_list_view_reset (XfceItemListView *view)
 {
-  xfce_item_list_model_reset (view->model);
+  gboolean stop_propagation = FALSE;
+
+  g_signal_emit (view, signals[RESET_ITEMS], 0, &stop_propagation);
+  if (!stop_propagation)
+    xfce_item_list_model_reset (view->model);
 }
 
 
