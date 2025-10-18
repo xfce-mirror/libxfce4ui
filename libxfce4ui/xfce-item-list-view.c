@@ -807,7 +807,7 @@ xfce_item_list_view_remove_item (XfceItemListView *view)
       if (gtk_tree_selection_get_selected (selection, NULL, &iter))
         {
           indexes = g_new (gint, 1);
-          indexes[n_indexes] = xfce_item_list_model_get_index (view->model, &iter);
+          indexes[n_indexes++] = xfce_item_list_model_get_index (view->model, &iter);
         }
     }
 
