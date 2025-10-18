@@ -781,6 +781,17 @@ xfce_item_list_view_tree_button_pressed (XfceItemListView *view,
       gtk_menu_attach_to_widget (GTK_MENU (context_menu), view->tree_view, NULL);
       gtk_widget_show_all (context_menu);
       gtk_menu_popup_at_pointer (GTK_MENU (context_menu), (GdkEvent *) event);
+
+      /* If the click occurs on selected items, the event should be stopped, otherwise it will result in re-selecting one item */
+      GtkTreePath *path = NULL;
+      gboolean stop_propagation = FALSE;
+      if (gtk_tree_view_get_path_at_pos (GTK_TREE_VIEW (view->tree_view), event->x, event->y, &path, NULL, NULL, NULL))
+        {
+          GtkTreeSelection *selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (view->tree_view));
+          stop_propagation = gtk_tree_selection_path_is_selected (selection, path);
+        }
+      gtk_tree_path_free (path);
+      return stop_propagation;
     }
 
   return FALSE;
