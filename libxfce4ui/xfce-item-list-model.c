@@ -811,11 +811,29 @@ xfce_item_list_model_reset (XfceItemListModel *model)
   g_return_if_fail (xfce_item_list_model_get_list_flags (model) & XFCE_ITEM_LIST_MODEL_RESETTABLE);
   klass = XFCE_ITEM_LIST_MODEL_GET_CLASS (model);
 
+  gint prev_n_items = xfce_item_list_model_get_n_items (model);
+
   g_return_if_fail (klass->reset != NULL);
   klass->reset (model);
 
-  /* Signal for GtkTreeModel */
-  xfce_item_list_model_changed (model);
+  gint cur_n_items = xfce_item_list_model_get_n_items (model);
+
+  /* Signals for GtkTreeModel */
+  for (gint i = 0; i < prev_n_items; ++i)
+    {
+      GtkTreePath *path = gtk_tree_path_new_from_indices (0, -1);
+      gtk_tree_model_row_deleted (GTK_TREE_MODEL (model), path);
+      gtk_tree_path_free (path);
+    }
+
+  for (gint i = 0; i < cur_n_items; ++i)
+    {
+      GtkTreePath *path = gtk_tree_path_new_from_indices (i, -1);
+      GtkTreeIter iter;
+      xfce_item_list_model_set_index (model, &iter, i);
+      gtk_tree_model_row_inserted (GTK_TREE_MODEL (model), path, &iter);
+      gtk_tree_path_free (path);
+    }
 }
 
 
