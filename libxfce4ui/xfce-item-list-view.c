@@ -237,7 +237,7 @@ xfce_item_list_view_init (XfceItemListView *view)
   GtkCellRenderer *renderer_icon = gtk_cell_renderer_pixbuf_new ();
   gtk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (view->tree_view),
                                                XFCE_ITEM_LIST_VIEW_COLUMN_ICON,
-                                               _("Icon"),
+                                               NULL,
                                                renderer_icon,
                                                "gicon", XFCE_ITEM_LIST_MODEL_COLUMN_ICON,
                                                NULL);
