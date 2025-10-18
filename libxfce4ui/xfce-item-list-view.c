@@ -71,6 +71,8 @@ enum
 {
   REMOVE_ITEMS,
   RESET_ITEMS,
+  EDIT_ITEM,
+  ADD_ITEM,
   N_SIGNALS
 };
 
@@ -101,10 +103,6 @@ xfce_item_list_view_add_menu_item (XfceItemListView *view,
                                    const gchar *label,
                                    const gchar *icon_name,
                                    const gchar *action);
-
-static void
-xfce_item_list_view_set_model (XfceItemListView *view,
-                               XfceItemListModel *model);
 
 static void
 xfce_item_list_view_add_button (XfceItemListView *view,
@@ -199,6 +197,35 @@ xfce_item_list_view_class_init (XfceItemListViewClass *klass)
                                    g_param_spec_object ("tree-view", NULL, NULL,
                                                         GTK_TYPE_TREE_VIEW,
                                                         G_PARAM_READABLE | G_PARAM_STATIC_STRINGS));
+
+  /**
+   * XfceItemListView::edit-item:
+   * @view: #XfceItemListView
+   * @item: Item index
+   *
+   * Returns: %TRUE to stop other handlers from being invoked for the event. %FALSE to propagate the event further.
+   **/
+  signals[EDIT_ITEM] = g_signal_new ("edit-item",
+                                     G_TYPE_FROM_CLASS (object_class),
+                                     G_SIGNAL_RUN_LAST,
+                                     0,
+                                     NULL, NULL,
+                                     NULL,
+                                     G_TYPE_BOOLEAN, 1, G_TYPE_INT);
+
+  /**
+   * XfceItemListView::add-item:
+   * @view: #XfceItemListView
+   *
+   * Returns: %TRUE to stop other handlers from being invoked for the event. %FALSE to propagate the event further.
+   **/
+  signals[ADD_ITEM] = g_signal_new ("add-item",
+                                    G_TYPE_FROM_CLASS (object_class),
+                                    G_SIGNAL_RUN_LAST,
+                                    0,
+                                    NULL, NULL,
+                                    NULL,
+                                    G_TYPE_BOOLEAN, 0);
 
   /**
    * XfceItemListView::remove-items:
@@ -408,78 +435,6 @@ xfce_item_list_view_add_menu_item (XfceItemListView *view,
 
   g_menu_insert_item (view->menu, index, item);
   g_object_unref (item);
-}
-
-
-
-static void
-xfce_item_list_view_set_model (XfceItemListView *view,
-                               XfceItemListModel *model)
-{
-  g_return_if_fail (model == NULL || XFCE_IS_ITEM_LIST_MODEL (model));
-
-  /* Replace model */
-  if (view->model != NULL)
-    g_signal_handlers_disconnect_by_data (view->model, view);
-
-  gtk_tree_view_set_model (GTK_TREE_VIEW (view->tree_view), GTK_TREE_MODEL (model));
-  view->model = model;
-
-  /* Remove old standard menu items */
-  gint n_items = g_menu_model_get_n_items (G_MENU_MODEL (view->menu));
-  for (gint i = 0; i < n_items; ++i)
-    {
-      const char *actions[] = { "xfce.move-item-up", "xfce.move-item-down", "xfce.edit-item",
-                                "xfce.add-item", "xfce.remove-item", "xfce.reset" };
-
-      for (gint j = 0; j < (gint) G_N_ELEMENTS (actions); ++j)
-        {
-          GVariant *action = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, G_MENU_ATTRIBUTE_ACTION, G_VARIANT_TYPE_STRING);
-          if (action != NULL && g_strcmp0 (g_variant_get_string (action, NULL), actions[j]) == 0)
-            {
-              g_menu_remove (view->menu, i);
-              --i;
-            }
-          g_clear_pointer (&action, g_variant_unref);
-        }
-    }
-
-  /* Signals */
-  if (model != NULL)
-    {
-      g_signal_connect_swapped (model, "row-changed", G_CALLBACK (xfce_item_list_view_update_actions), view);
-      g_signal_connect_swapped (model, "row-deleted", G_CALLBACK (xfce_item_list_view_update_actions), view);
-      g_signal_connect_swapped (model, "row-inserted", G_CALLBACK (xfce_item_list_view_update_actions), view);
-      g_signal_connect_swapped (model, "rows-reordered", G_CALLBACK (xfce_item_list_view_update_actions), view);
-    }
-
-  /* Creating menus and configuring widgets based on model capabilities */
-  XfceItemListModelFlags flags = model != NULL ? xfce_item_list_model_get_list_flags (model) : XFCE_ITEM_LIST_MODEL_NONE;
-  gint index = 0;
-
-  if (flags & XFCE_ITEM_LIST_MODEL_REORDERABLE)
-    {
-      gtk_tree_view_set_reorderable (GTK_TREE_VIEW (view->tree_view), TRUE);
-
-      xfce_item_list_view_add_menu_item (view, index++, TRUE, NULL, _("Move item up"), "go-up-symbolic", "xfce.move-item-up");
-      xfce_item_list_view_add_menu_item (view, index++, TRUE, NULL, _("Move item down"), "go-down-symbolic", "xfce.move-item-down");
-    }
-  else
-    {
-      gtk_tree_view_set_reorderable (GTK_TREE_VIEW (view->tree_view), FALSE);
-    }
-
-  if (flags & XFCE_ITEM_LIST_MODEL_EDITABLE)
-    xfce_item_list_view_add_menu_item (view, index++, FALSE, _("_Edit"), _("Edit"), "document-edit-symbolic", "xfce.edit-item");
-
-  if (flags & XFCE_ITEM_LIST_MODEL_ADDABLE)
-    xfce_item_list_view_add_menu_item (view, index++, FALSE, _("_Add"), _("Add"), "list-add-symbolic", "xfce.add-item");
-
-  if (flags & XFCE_ITEM_LIST_MODEL_REMOVABLE)
-    xfce_item_list_view_add_menu_item (view, index++, FALSE, _("_Remove"), _("Remove"), "list-remove-symbolic", "xfce.remove-item");
-
-  if (flags & XFCE_ITEM_LIST_MODEL_RESETTABLE)
-    xfce_item_list_view_add_menu_item (view, index++, FALSE, _("Reset to de_faults"), _("Reset to defaults"), "document-revert-symbolic", "xfce.reset");
 }
 
 
@@ -756,7 +711,10 @@ xfce_item_list_view_edit_item (XfceItemListView *view)
   if (xfce_item_list_view_get_selected_row (view, &iter))
     {
       gint index = xfce_item_list_model_get_index (view->model, &iter);
-      xfce_item_list_model_edit (view->model, index);
+      gboolean stop_propagation = FALSE;
+      g_signal_emit (view, signals[EDIT_ITEM], 0, index, &stop_propagation);
+      if (!stop_propagation)
+        xfce_item_list_model_changed (view->model);
     }
 }
 
@@ -765,7 +723,10 @@ xfce_item_list_view_edit_item (XfceItemListView *view)
 static void
 xfce_item_list_view_add_item (XfceItemListView *view)
 {
-  if (xfce_item_list_model_add (view->model))
+  gboolean stop_propagation = FALSE;
+
+  g_signal_emit (view, signals[ADD_ITEM], 0, &stop_propagation);
+  if (!stop_propagation)
     {
       /* Move cursor to added element */
       gint n_items = xfce_item_list_model_get_n_items (view->model);
@@ -899,6 +860,103 @@ GtkWidget *
 xfce_item_list_view_new (XfceItemListModel *model)
 {
   return gtk_widget_new (XFCE_TYPE_ITEM_LIST_VIEW, "model", model, NULL);
+}
+
+
+
+/**
+ * xfce_item_list_view_get_model:
+ * @view: #XfceItemListView
+ *
+ * Returns: (transfer none): #XfceItemListModel
+ *
+ * Since: 4.21.2
+ **/
+XfceItemListModel *
+xfce_item_list_view_get_model (XfceItemListView *view)
+{
+  g_return_val_if_fail (XFCE_IS_ITEM_LIST_VIEW (view), NULL);
+
+  return view->model;
+}
+
+
+
+/**
+ * xfce_item_list_view_set_model:
+ * @view: #XfceItemListView
+ * @model: (nullable): #XfceItemListModel
+ *
+ * Since: 4.21.2
+ **/
+void
+xfce_item_list_view_set_model (XfceItemListView *view,
+                               XfceItemListModel *model)
+{
+  g_return_if_fail (model == NULL || XFCE_IS_ITEM_LIST_MODEL (model));
+
+  /* Replace model */
+  if (view->model != NULL)
+    g_signal_handlers_disconnect_by_data (view->model, view);
+
+  gtk_tree_view_set_model (GTK_TREE_VIEW (view->tree_view), GTK_TREE_MODEL (model));
+  view->model = model;
+
+  /* Remove old standard menu items */
+  gint n_items = g_menu_model_get_n_items (G_MENU_MODEL (view->menu));
+  for (gint i = 0; i < n_items; ++i)
+    {
+      const char *actions[] = { "xfce.move-item-up", "xfce.move-item-down", "xfce.edit-item",
+                                "xfce.add-item", "xfce.remove-item", "xfce.reset" };
+
+      for (gint j = 0; j < (gint) G_N_ELEMENTS (actions); ++j)
+        {
+          GVariant *action = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, G_MENU_ATTRIBUTE_ACTION, G_VARIANT_TYPE_STRING);
+          if (action != NULL && g_strcmp0 (g_variant_get_string (action, NULL), actions[j]) == 0)
+            {
+              g_menu_remove (view->menu, i);
+              --i;
+            }
+          g_clear_pointer (&action, g_variant_unref);
+        }
+    }
+
+  /* Signals */
+  if (model != NULL)
+    {
+      g_signal_connect_swapped (model, "row-changed", G_CALLBACK (xfce_item_list_view_update_actions), view);
+      g_signal_connect_swapped (model, "row-deleted", G_CALLBACK (xfce_item_list_view_update_actions), view);
+      g_signal_connect_swapped (model, "row-inserted", G_CALLBACK (xfce_item_list_view_update_actions), view);
+      g_signal_connect_swapped (model, "rows-reordered", G_CALLBACK (xfce_item_list_view_update_actions), view);
+    }
+
+  /* Creating menus and configuring widgets based on model capabilities */
+  XfceItemListModelFlags flags = model != NULL ? xfce_item_list_model_get_list_flags (model) : XFCE_ITEM_LIST_MODEL_NONE;
+  gint index = 0;
+
+  if (flags & XFCE_ITEM_LIST_MODEL_REORDERABLE)
+    {
+      gtk_tree_view_set_reorderable (GTK_TREE_VIEW (view->tree_view), TRUE);
+
+      xfce_item_list_view_add_menu_item (view, index++, TRUE, NULL, _("Move item up"), "go-up-symbolic", "xfce.move-item-up");
+      xfce_item_list_view_add_menu_item (view, index++, TRUE, NULL, _("Move item down"), "go-down-symbolic", "xfce.move-item-down");
+    }
+  else
+    {
+      gtk_tree_view_set_reorderable (GTK_TREE_VIEW (view->tree_view), FALSE);
+    }
+
+  if (flags & XFCE_ITEM_LIST_MODEL_EDITABLE)
+    xfce_item_list_view_add_menu_item (view, index++, FALSE, _("_Edit"), _("Edit"), "document-edit-symbolic", "xfce.edit-item");
+
+  if (flags & XFCE_ITEM_LIST_MODEL_ADDABLE)
+    xfce_item_list_view_add_menu_item (view, index++, FALSE, _("_Add"), _("Add"), "list-add-symbolic", "xfce.add-item");
+
+  if (flags & XFCE_ITEM_LIST_MODEL_REMOVABLE)
+    xfce_item_list_view_add_menu_item (view, index++, FALSE, _("_Remove"), _("Remove"), "list-remove-symbolic", "xfce.remove-item");
+
+  if (flags & XFCE_ITEM_LIST_MODEL_RESETTABLE)
+    xfce_item_list_view_add_menu_item (view, index++, FALSE, _("Reset to de_faults"), _("Reset to defaults"), "document-revert-symbolic", "xfce.reset");
 }
 
 

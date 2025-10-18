@@ -63,6 +63,13 @@ G_DECLARE_FINAL_TYPE (XfceItemListView, xfce_item_list_view, XFCE, ITEM_LIST_VIE
 GtkWidget *
 xfce_item_list_view_new (XfceItemListModel *model) G_GNUC_MALLOC;
 
+XfceItemListModel *
+xfce_item_list_view_get_model (XfceItemListView *view);
+
+void
+xfce_item_list_view_set_model (XfceItemListView *view,
+                               XfceItemListModel *model);
+
 GMenu *
 xfce_item_list_view_get_menu (XfceItemListView *view);
 
