@@ -12,6 +12,7 @@ xfce_sm_client_restart_style_get_type
 xfce_sm_client_shutdown_hint_get_type
 xfce_item_list_model_flags_get_type
 xfce_item_list_model_column_get_type
+xfce_item_list_view_column_get_type
 
 # file:xfce-dialogs
 xfce_dialog_show_help
