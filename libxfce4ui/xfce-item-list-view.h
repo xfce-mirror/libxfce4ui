@@ -26,7 +26,7 @@
 
 #include <gtk/gtk.h>
 
-#include "xfce-item-list-model.h"
+#include <libxfce4ui/xfce-item-list-model.h>
 
 G_BEGIN_DECLS
 

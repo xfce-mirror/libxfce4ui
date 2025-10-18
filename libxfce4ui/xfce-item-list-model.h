@@ -26,7 +26,7 @@
 
 #include <gtk/gtk.h>
 
-#include "libxfce4ui-enums.h"
+#include <libxfce4ui/libxfce4ui-enums.h>
 
 G_BEGIN_DECLS
 

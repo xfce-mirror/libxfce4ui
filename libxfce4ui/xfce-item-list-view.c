@@ -85,6 +85,15 @@ xfce_item_list_view_get_property (GObject *object,
                                   GParamSpec *pspec);
 
 static void
+xfce_item_list_view_add_menu_item (XfceItemListView *view,
+                                   gint index,
+                                   gboolean movement,
+                                   const gchar *mnemonic,
+                                   const gchar *label,
+                                   const gchar *icon_name,
+                                   const gchar *action);
+
+static void
 xfce_item_list_view_set_model (XfceItemListView *view,
                                XfceItemListModel *model);
 
@@ -329,6 +338,33 @@ xfce_item_list_view_get_property (GObject *object,
 
 
 static void
+xfce_item_list_view_add_menu_item (XfceItemListView *view,
+                                   gint index,
+                                   gboolean movement,
+                                   const gchar *mnemonic,
+                                   const gchar *label,
+                                   const gchar *icon_name,
+                                   const gchar *action)
+{
+  GMenuItem *item = g_menu_item_new (label, action);
+  GIcon *icon = g_themed_icon_new (icon_name);
+
+  g_menu_item_set_icon (item, icon);
+  g_object_unref (icon);
+
+  if (movement)
+    g_menu_item_set_attribute_value (item, XFCE_MENU_ATTRIBUTE_MOVEMENT, g_variant_new_boolean (movement));
+
+  if (mnemonic != NULL)
+    g_menu_item_set_attribute_value (item, XFCE_MENU_ATTRIBUTE_MNEMONIC, g_variant_new_string (mnemonic));
+
+  g_menu_insert_item (view->menu, index, item);
+  g_object_unref (item);
+}
+
+
+
+static void
 xfce_item_list_view_set_model (XfceItemListView *view,
                                XfceItemListModel *model)
 {
@@ -348,7 +384,7 @@ xfce_item_list_view_set_model (XfceItemListView *view,
       const char *actions[] = { "xfce.move-item-up", "xfce.move-item-down", "xfce.edit-item",
                                 "xfce.add-item", "xfce.remove-item", "xfce.reset" };
 
-      for (gint j = 0; j < (int) G_N_ELEMENTS (actions); ++j)
+      for (gint j = 0; j < (gint) G_N_ELEMENTS (actions); ++j)
         {
           GVariant *action = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, G_MENU_ATTRIBUTE_ACTION, G_VARIANT_TYPE_STRING);
           if (action != NULL && g_strcmp0 (g_variant_get_string (action, NULL), actions[j]) == 0)
@@ -372,19 +408,13 @@ xfce_item_list_view_set_model (XfceItemListView *view,
   /* Creating menus and configuring widgets based on model capabilities */
   XfceItemListModelFlags flags = model != NULL ? xfce_item_list_model_get_list_flags (model) : XFCE_ITEM_LIST_MODEL_NONE;
   gint index = 0;
+
   if (flags & XFCE_ITEM_LIST_MODEL_REORDERABLE)
     {
       gtk_tree_view_set_reorderable (GTK_TREE_VIEW (view->tree_view), TRUE);
 
-      GMenuItem *item_up = g_menu_item_new (_("Move item up"), "xfce.move-item-up");
-      g_menu_item_set_icon (item_up, g_themed_icon_new ("go-up-symbolic"));
-      g_menu_item_set_attribute_value (item_up, XFCE_MENU_ATTRIBUTE_MOVEMENT, g_variant_new_boolean (TRUE));
-      g_menu_insert_item (view->menu, index++, item_up);
-
-      GMenuItem *item_down = g_menu_item_new (_("Move item down"), "xfce.move-item-down");
-      g_menu_item_set_icon (item_down, g_themed_icon_new ("go-down-symbolic"));
-      g_menu_item_set_attribute_value (item_down, XFCE_MENU_ATTRIBUTE_MOVEMENT, g_variant_new_boolean (TRUE));
-      g_menu_insert_item (view->menu, index++, item_down);
+      xfce_item_list_view_add_menu_item (view, index++, TRUE, NULL, _("Move item up"), "go-up-symbolic", "xfce.move-item-up");
+      xfce_item_list_view_add_menu_item (view, index++, TRUE, NULL, _("Move item down"), "go-down-symbolic", "xfce.move-item-down");
     }
   else
     {
@@ -392,36 +422,16 @@ xfce_item_list_view_set_model (XfceItemListView *view,
     }
 
   if (flags & XFCE_ITEM_LIST_MODEL_EDITABLE)
-    {
-      GMenuItem *item_edit = g_menu_item_new (_("Edit"), "xfce.edit-item");
-      g_menu_item_set_icon (item_edit, g_themed_icon_new ("document-edit-symbolic"));
-      g_menu_item_set_attribute_value (item_edit, XFCE_MENU_ATTRIBUTE_MNEMONIC, g_variant_new_string ("_Edit"));
-      g_menu_insert_item (view->menu, index++, item_edit);
-    }
+    xfce_item_list_view_add_menu_item (view, index++, FALSE, _("_Edit"), _("Edit"), "document-edit-symbolic", "xfce.edit-item");
 
   if (flags & XFCE_ITEM_LIST_MODEL_ADDABLE)
-    {
-      GMenuItem *item_add = g_menu_item_new (_("Add"), "xfce.add-item");
-      g_menu_item_set_icon (item_add, g_themed_icon_new ("list-add-symbolic"));
-      g_menu_item_set_attribute_value (item_add, XFCE_MENU_ATTRIBUTE_MNEMONIC, g_variant_new_string ("_Add"));
-      g_menu_insert_item (view->menu, index++, item_add);
-    }
+    xfce_item_list_view_add_menu_item (view, index++, FALSE, _("_Add"), _("Add"), "list-add-symbolic", "xfce.add-item");
 
   if (flags & XFCE_ITEM_LIST_MODEL_REMOVABLE)
-    {
-      GMenuItem *item_remove = g_menu_item_new (_("Remove"), "xfce.remove-item");
-      g_menu_item_set_icon (item_remove, g_themed_icon_new ("list-remove-symbolic"));
-      g_menu_item_set_attribute_value (item_remove, XFCE_MENU_ATTRIBUTE_MNEMONIC, g_variant_new_string ("_Remove"));
-      g_menu_insert_item (view->menu, index++, item_remove);
-    }
+    xfce_item_list_view_add_menu_item (view, index++, FALSE, _("_Remove"), _("Remove"), "list-remove-symbolic", "xfce.remove-item");
 
   if (flags & XFCE_ITEM_LIST_MODEL_RESETTABLE)
-    {
-      GMenuItem *item_reset = g_menu_item_new (_("Reset to defaults"), "xfce.reset");
-      g_menu_item_set_icon (item_reset, g_themed_icon_new ("document-revert-symbolic"));
-      g_menu_item_set_attribute_value (item_reset, XFCE_MENU_ATTRIBUTE_MNEMONIC, g_variant_new_string ("Reset to de_faults"));
-      g_menu_insert_item (view->menu, index++, item_reset);
-    }
+    xfce_item_list_view_add_menu_item (view, index++, FALSE, _("Reset to de_faults"), _("Reset to defaults"), "document-revert-symbolic", "xfce.reset");
 }
 
 
@@ -797,7 +807,7 @@ xfce_item_list_view_row_activate (XfceItemListView *view)
  * xfce_item_list_view_new:
  * @model: Model to display
  *
- * Returns: #XfceItemListView widget
+ * Returns: (transfer full): #XfceItemListView widget
  *
  * Since: 4.21.2
  **/
