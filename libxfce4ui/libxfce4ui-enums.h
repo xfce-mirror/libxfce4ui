@@ -153,6 +153,26 @@ typedef enum
   XFCE_ITEM_LIST_MODEL_COLUMN_USER,
 } XfceItemListModelColumn;
 
+/**
+ * XfceItemListViewColumn:
+ * @XFCE_ITEM_LIST_VIEW_COLUMN_ACTIVE : GtkCellRendererToggle, linked to #XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVE.
+ * @XFCE_ITEM_LIST_VIEW_COLUMN_ICON   : GtkCellRendererPixbuf, linked to #XFCE_ITEM_LIST_MODEL_COLUMN_ICON.
+ * @XFCE_ITEM_LIST_VIEW_COLUMN_NAME   : GtkCellRendererText, linked to #XFCE_ITEM_LIST_MODEL_COLUMN_NAME.
+ * @XFCE_ITEM_LIST_VIEW_COLUMN_USER   : First index for your custom column.
+ *
+ * Indexes of standard columns attached to GtkTreeView. Using these indexes you can access the desired column to change
+ * its settings. You can add your own columns at the end, starting from the index #XFCE_ITEM_LIST_VIEW_COLUMN_USER.
+ *
+ * Since: 4.21.2
+ **/
+typedef enum
+{
+  XFCE_ITEM_LIST_VIEW_COLUMN_ACTIVE,
+  XFCE_ITEM_LIST_VIEW_COLUMN_ICON,
+  XFCE_ITEM_LIST_VIEW_COLUMN_NAME,
+  XFCE_ITEM_LIST_VIEW_COLUMN_USER,
+} XfceItemListViewColumn;
+
 G_END_DECLS
 
 #endif /* __LIBXFCE4UI_ENUMS_H__ */
