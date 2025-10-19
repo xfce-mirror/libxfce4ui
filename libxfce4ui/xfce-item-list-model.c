@@ -815,108 +815,55 @@ xfce_item_list_model_get_index (XfceItemListModel *model,
 
 
 
-/**
- * xfce_item_list_model_is_active:
- * @model: #XfceItemListModel
- * @index: Item index
- *
- * Returns: Item #XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVE column value
- *
- * Since: 4.21.2
- **/
 gboolean
-xfce_item_list_model_is_active (XfceItemListModel *model,
-                                gint index)
+xfce_item_list_model_test (XfceItemListModel *model,
+                           gint index,
+                           gint column)
 {
   g_return_val_if_fail (XFCE_IS_ITEM_LIST_MODEL (model), FALSE);
   g_return_val_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model), FALSE);
 
   GValue value = G_VALUE_INIT;
-  xfce_item_list_model_get_item_value (model, index, XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVE, &value);
+  xfce_item_list_model_get_item_value (model, index, column, &value);
   return g_value_get_boolean (&value);
 }
 
 
 
-/**
- * xfce_item_list_model_is_activable:
- * @model: #XfceItemListModel
- * @index: Item index
- *
- * Returns: Item #XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVABLE column value
- *
- * Since: 4.21.2
- **/
 gboolean
-xfce_item_list_model_is_activable (XfceItemListModel *model,
-                                   gint index)
+xfce_item_list_model_test_any (XfceItemListModel *model,
+                               const gint *indexes,
+                               gint n_indexes,
+                               gint column)
 {
   g_return_val_if_fail (XFCE_IS_ITEM_LIST_MODEL (model), FALSE);
-  g_return_val_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model), FALSE);
 
-  GValue value = G_VALUE_INIT;
-  xfce_item_list_model_get_item_value (model, index, XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVABLE, &value);
-  return g_value_get_boolean (&value);
+  for (gint i = 0; i < n_indexes; ++i)
+    {
+      if (xfce_item_list_model_test (model, indexes[i], column))
+        return TRUE;
+    }
+
+  return FALSE;
 }
 
 
 
-/**
- * xfce_item_list_model_is_editable:
- * @model: #XfceItemListModel
- * @index: Item index
- *
- * Returns: Item #XFCE_ITEM_LIST_MODEL_COLUMN_EDITABLE column value
- *
- * Since: 4.21.2
- **/
 gboolean
-xfce_item_list_model_is_editable (XfceItemListModel *model,
-                                  gint index)
+xfce_item_list_model_test_all (XfceItemListModel *model,
+                               const gint *indexes,
+                               gint n_indexes,
+                               gint column)
 {
   g_return_val_if_fail (XFCE_IS_ITEM_LIST_MODEL (model), FALSE);
-  g_return_val_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model), FALSE);
 
-  if (xfce_item_list_model_get_list_flags (model) & XFCE_ITEM_LIST_MODEL_EDITABLE)
+  for (gint i = 0; i < n_indexes; ++i)
     {
-      GValue value = G_VALUE_INIT;
-      xfce_item_list_model_get_item_value (model, index, XFCE_ITEM_LIST_MODEL_COLUMN_EDITABLE, &value);
-      return g_value_get_boolean (&value);
+      if (!xfce_item_list_model_test (model, indexes[i], column))
+        return FALSE;
     }
-  else
-    {
-      return FALSE;
-    }
-}
 
-
-
-/**
- * xfce_item_list_model_is_removable:
- * @model: #XfceItemListModel
- * @index: Item index
- *
- * Returns: Item #XFCE_ITEM_LIST_MODEL_COLUMN_REMOVABLE column value
- *
- * Since: 4.21.2
- **/
-gboolean
-xfce_item_list_model_is_removable (XfceItemListModel *model,
-                                   gint index)
-{
-  g_return_val_if_fail (XFCE_IS_ITEM_LIST_MODEL (model), FALSE);
-  g_return_val_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model), FALSE);
-
-  if (xfce_item_list_model_get_list_flags (model) & XFCE_ITEM_LIST_MODEL_REMOVABLE)
-    {
-      GValue value = G_VALUE_INIT;
-      xfce_item_list_model_get_item_value (model, index, XFCE_ITEM_LIST_MODEL_COLUMN_REMOVABLE, &value);
-      return g_value_get_boolean (&value);
-    }
-  else
-    {
-      return FALSE;
-    }
+  return TRUE;
 }
 
 

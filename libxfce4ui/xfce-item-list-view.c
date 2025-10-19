@@ -121,10 +121,6 @@ static gint
 xfce_item_list_view_get_index_by_path (XfceItemListView *view,
                                        GtkTreePath *path);
 
-static gboolean
-xfce_item_list_view_get_selected_row (XfceItemListView *view,
-                                      GtkTreeIter *iter);
-
 static void
 xfce_item_list_view_update_actions (XfceItemListView *view);
 
@@ -561,78 +557,17 @@ xfce_item_list_view_get_index_by_path (XfceItemListView *view,
 
 
 
-static gboolean
-xfce_item_list_view_get_selected_row (XfceItemListView *view,
-                                      GtkTreeIter *iter)
-{
-  GtkTreeSelection *selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (view->tree_view));
-  gboolean multiple_mode = gtk_tree_selection_get_mode (selection) == GTK_SELECTION_MULTIPLE;
-  gboolean selected = FALSE;
-
-  if (!multiple_mode)
-    {
-      selected = gtk_tree_selection_get_selected (selection, NULL, iter);
-    }
-  else
-    {
-      GList *rows = gtk_tree_selection_get_selected_rows (selection, NULL);
-      if (g_list_length (rows) == 1)
-        selected = gtk_tree_model_get_iter (GTK_TREE_MODEL (view->model), iter, rows->data);
-
-      g_list_free_full (rows, (GDestroyNotify) gtk_tree_path_free);
-    }
-
-  return selected;
-}
-
-
-
 static void
 xfce_item_list_view_update_actions (XfceItemListView *view)
 {
-  GtkTreeSelection *selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (view->tree_view));
-  gboolean multiple_mode = gtk_tree_selection_get_mode (selection) == GTK_SELECTION_MULTIPLE;
-  GtkTreeIter iter;
+  gint *sel_items = NULL;
+  gint n_sel_items = xfce_item_list_view_get_selected_items (view, &sel_items);
 
-  if (xfce_item_list_view_get_selected_row (view, &iter))
-    {
-      GtkTreeIter tmp;
-
-      tmp = iter;
-      g_simple_action_set_enabled (view->up_action, gtk_tree_model_iter_previous (GTK_TREE_MODEL (view->model), &tmp));
-
-      tmp = iter;
-      g_simple_action_set_enabled (view->down_action, gtk_tree_model_iter_next (GTK_TREE_MODEL (view->model), &tmp));
-
-      gint index = xfce_item_list_model_get_index (view->model, &iter);
-      g_simple_action_set_enabled (view->edit_action, xfce_item_list_model_is_editable (view->model, index));
-      g_simple_action_set_enabled (view->remove_action, xfce_item_list_model_is_removable (view->model, index));
-    }
-  else
-    {
-      g_simple_action_set_enabled (view->up_action, FALSE);
-      g_simple_action_set_enabled (view->down_action, FALSE);
-      g_simple_action_set_enabled (view->edit_action, FALSE);
-      g_simple_action_set_enabled (view->remove_action, FALSE);
-    }
-
-  if (multiple_mode)
-    {
-      /* If all elements are removable, then make the "Remove" action enabled */
-      GList *rows = gtk_tree_selection_get_selected_rows (selection, NULL);
-      gboolean all_removable = rows != NULL;
-      for (GList *l = g_list_last (rows); l != NULL; l = l->prev)
-        {
-          gint index = xfce_item_list_view_get_index_by_path (view, l->data);
-          if (!xfce_item_list_model_is_removable (view->model, index))
-            {
-              all_removable = FALSE;
-              break;
-            }
-        }
-      g_list_free_full (rows, (GDestroyNotify) gtk_tree_path_free);
-      g_simple_action_set_enabled (view->remove_action, all_removable);
-    }
+  g_simple_action_set_enabled (view->up_action, n_sel_items == 1 && sel_items[0] > 0);
+  g_simple_action_set_enabled (view->down_action, n_sel_items == 1 && sel_items[0] + 1 < xfce_item_list_model_get_n_items (view->model));
+  g_simple_action_set_enabled (view->edit_action, n_sel_items == 1 && xfce_item_list_model_test (view->model, sel_items[0], XFCE_ITEM_LIST_MODEL_COLUMN_EDITABLE));
+  g_simple_action_set_enabled (view->remove_action, n_sel_items > 0 && xfce_item_list_model_test_all (view->model, sel_items, n_sel_items, XFCE_ITEM_LIST_MODEL_COLUMN_REMOVABLE));
+  g_free (sel_items);
 }
 
 
@@ -641,25 +576,13 @@ static void
 xfce_item_list_view_move_item (XfceItemListView *view,
                                gint direction)
 {
-  GtkTreeIter iter;
+  gint *sel_items = NULL;
+  gint n_sel_items = xfce_item_list_view_get_selected_items (view, &sel_items);
 
-  if (xfce_item_list_view_get_selected_row (view, &iter))
+  if (n_sel_items == 1)
     {
-      gint index = -1;
-      gint new_index = -1;
-
-      if (direction > 0)
-        {
-          index = xfce_item_list_model_get_index (view->model, &iter);
-          new_index = index + 1;
-        }
-      else
-        {
-          index = xfce_item_list_model_get_index (view->model, &iter);
-          new_index = index - 1;
-        }
-
-      xfce_item_list_model_move (view->model, index, new_index);
+      gint new_index = direction > 0 ? sel_items[0] + 1 : sel_items[0] - 1;
+      xfce_item_list_model_move (view->model, sel_items[0], new_index);
 
       /* make the new selected position visible if moved out of area */
       GtkTreePath *path = gtk_tree_path_new_from_indices (new_index, -1);
@@ -667,6 +590,8 @@ xfce_item_list_view_move_item (XfceItemListView *view,
       gtk_tree_view_set_cursor (GTK_TREE_VIEW (view->tree_view), path, NULL, FALSE);
       gtk_tree_path_free (path);
     }
+
+  g_free (sel_items);
 }
 
 
@@ -697,7 +622,7 @@ xfce_item_list_view_toggle_item (XfceItemListView *view,
   if (gtk_tree_model_get_iter (GTK_TREE_MODEL (view->model), &iter, path))
     {
       gint index = xfce_item_list_model_get_index (view->model, &iter);
-      xfce_item_list_model_set_activity (view->model, index, !xfce_item_list_model_is_active (view->model, index));
+      xfce_item_list_model_set_activity (view->model, index, !xfce_item_list_model_test (view->model, index, XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVE));
     }
 }
 
@@ -706,13 +631,13 @@ xfce_item_list_view_toggle_item (XfceItemListView *view,
 static void
 xfce_item_list_view_edit_item (XfceItemListView *view)
 {
-  GtkTreeIter iter;
+  gint *sel_items = NULL;
+  gint n_sel_items = xfce_item_list_view_get_selected_items (view, &sel_items);
 
-  if (xfce_item_list_view_get_selected_row (view, &iter))
+  if (n_sel_items == 1)
     {
-      gint index = xfce_item_list_model_get_index (view->model, &iter);
       gboolean stop_propagation = FALSE;
-      g_signal_emit (view, signals[EDIT_ITEM], 0, index, &stop_propagation);
+      g_signal_emit (view, signals[EDIT_ITEM], 0, sel_items[0], &stop_propagation);
       if (!stop_propagation)
         xfce_item_list_model_changed (view->model);
     }
@@ -744,42 +669,17 @@ xfce_item_list_view_add_item (XfceItemListView *view)
 static void
 xfce_item_list_view_remove_item (XfceItemListView *view)
 {
-  GtkTreeSelection *selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (view->tree_view));
-  gboolean multiple_mode = gtk_tree_selection_get_mode (selection) == GTK_SELECTION_MULTIPLE;
-  gint *indexes = NULL;
-  gint n_indexes = 0;
-
-  if (multiple_mode)
-    {
-      GList *rows = gtk_tree_selection_get_selected_rows (selection, NULL);
-      indexes = g_new (gint, g_list_length (rows));
-      /* Reverse order to ensure correct indexes */
-      for (GList *l = g_list_last (rows); l != NULL; l = l->prev)
-        {
-          GtkTreeIter iter;
-          if (gtk_tree_model_get_iter (GTK_TREE_MODEL (view->model), &iter, l->data))
-            indexes[n_indexes++] = xfce_item_list_model_get_index (view->model, &iter);
-        }
-      g_list_free_full (rows, (GDestroyNotify) gtk_tree_path_free);
-    }
-  else
-    {
-      GtkTreeIter iter;
-      if (gtk_tree_selection_get_selected (selection, NULL, &iter))
-        {
-          indexes = g_new (gint, 1);
-          indexes[n_indexes++] = xfce_item_list_model_get_index (view->model, &iter);
-        }
-    }
+  gint *sel_items = NULL;
+  gint n_sel_items = xfce_item_list_view_get_selected_items (view, &sel_items);
 
   gboolean stop_propagation = FALSE;
-  g_signal_emit (view, signals[REMOVE_ITEMS], 0, indexes, n_indexes, &stop_propagation);
+  g_signal_emit (view, signals[REMOVE_ITEMS], 0, sel_items, n_sel_items, &stop_propagation);
   if (!stop_propagation)
     {
-      for (gint i = 0; i < n_indexes; ++i)
-        xfce_item_list_model_remove (view->model, indexes[i]);
+      for (gint i = n_sel_items - 1; i >= 0; --i)
+        xfce_item_list_model_remove (view->model, sel_items[i]);
     }
-  g_free (indexes);
+  g_free (sel_items);
 }
 
 
@@ -1001,6 +901,43 @@ xfce_item_list_view_get_tree_view (XfceItemListView *view)
   g_return_val_if_fail (XFCE_IS_ITEM_LIST_VIEW (view), NULL);
 
   return view->tree_view;
+}
+
+
+
+/**
+ * xfce_item_list_view_get_selected_items:
+ * @view: #XfceItemListView
+ * @items: (out) (nullable): Indexes of selected items
+ *
+ * Returns a #GtkTreeView to which you can add your own columns, or customize the selection mode
+ *
+ * Returns: Number of selected items
+ *
+ * Since: 4.21.2
+ **/
+gint
+xfce_item_list_view_get_selected_items (XfceItemListView *view,
+                                        gint **items)
+{
+  g_return_val_if_fail (XFCE_IS_ITEM_LIST_VIEW (view), 0);
+
+  GtkTreeSelection *selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (view->tree_view));
+  GList *rows = gtk_tree_selection_get_selected_rows (selection, NULL);
+  gint n_items = g_list_length (rows);
+
+  if (items != NULL)
+    {
+      *items = g_new (gint, n_items);
+
+      gint i = 0;
+      for (GList *l = rows; l != NULL; l = l->next, ++i)
+        (*items)[i] = xfce_item_list_view_get_index_by_path (view, l->data);
+    }
+
+  g_list_free_full (rows, (GDestroyNotify) gtk_tree_path_free);
+
+  return n_items;
 }
 
 
