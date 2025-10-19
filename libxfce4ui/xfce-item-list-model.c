@@ -862,6 +862,18 @@ xfce_item_list_model_get_index (XfceItemListModel *model,
 
 
 
+/**
+ * xfce_item_list_model_test:
+ * @model: #XfceItemListModel
+ * @index: Item index
+ * @column: Column with type boolean for test
+ *
+ * Returns %TRUE if the column value is %TRUE.
+ *
+ * Returns: %TRUE if test is successful
+ *
+ * Since: 4.21.2
+ **/
 gboolean
 xfce_item_list_model_test (XfceItemListModel *model,
                            gint index,
@@ -877,6 +889,19 @@ xfce_item_list_model_test (XfceItemListModel *model,
 
 
 
+/**
+ * xfce_item_list_model_test_any:
+ * @model: #XfceItemListModel
+ * @indexes: Item indexes
+ * @n_indexes: Number of indexes
+ * @column: Column with type boolean for test
+ *
+ * Returns %TRUE if there is at least one item with a column value of %TRUE.
+ *
+ * Returns: %TRUE if test is successful
+ *
+ * Since: 4.21.2
+ **/
 gboolean
 xfce_item_list_model_test_any (XfceItemListModel *model,
                                const gint *indexes,
@@ -896,6 +921,19 @@ xfce_item_list_model_test_any (XfceItemListModel *model,
 
 
 
+/**
+ * xfce_item_list_model_test_all:
+ * @model: #XfceItemListModel
+ * @indexes: Item indexes
+ * @n_indexes: Number of indexes
+ * @column: Column with type boolean for test
+ *
+ * Returns %TRUE if all columns of all items are %TRUE, or @n_indexes is 0.
+ *
+ * Returns: %TRUE if test is successful
+ *
+ * Since: 4.21.2
+ **/
 gboolean
 xfce_item_list_model_test_all (XfceItemListModel *model,
                                const gint *indexes,
