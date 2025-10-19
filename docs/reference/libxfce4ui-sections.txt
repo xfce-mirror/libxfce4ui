@@ -367,6 +367,7 @@ XfceItemListViewColumn
 XFCE_MENU_ATTRIBUTE_MNEMONIC
 XFCE_MENU_ATTRIBUTE_MOVEMENT
 XFCE_MENU_ATTRIBUTE_TOOLTIP
+XFCE_MENU_ATTRIBUTE_HIDE_IN_CONTEXT_MENU
 xfce_item_list_view_new
 xfce_item_list_view_get_menu
 xfce_item_list_view_get_tree_view
