@@ -599,10 +599,23 @@ xfce_item_list_model_get_item_value (XfceItemListModel *model,
   g_return_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model));
   g_return_if_fail (column >= 0 && (gint) column < gtk_tree_model_get_n_columns (GTK_TREE_MODEL (model)));
 
+  g_value_init (value, gtk_tree_model_get_column_type (GTK_TREE_MODEL (model), column));
+
+  switch (column)
+    {
+    case XFCE_ITEM_LIST_MODEL_COLUMN_EDITABLE:
+      if ((xfce_item_list_model_get_list_flags (model) & XFCE_ITEM_LIST_MODEL_EDITABLE) == 0)
+        return;
+      break;
+
+    case XFCE_ITEM_LIST_MODEL_COLUMN_REMOVABLE:
+      if ((xfce_item_list_model_get_list_flags (model) & XFCE_ITEM_LIST_MODEL_REMOVABLE) == 0)
+        return;
+      break;
+    }
+
   klass = XFCE_ITEM_LIST_MODEL_GET_CLASS (model);
   g_return_if_fail (klass->get_item_value != NULL);
-
-  g_value_init (value, gtk_tree_model_get_column_type (GTK_TREE_MODEL (model), column));
   klass->get_item_value (model, index, column, value);
 }
 
