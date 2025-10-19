@@ -710,24 +710,27 @@ static gboolean
 xfce_item_list_view_tree_button_pressed (XfceItemListView *view,
                                          GdkEventButton *event)
 {
-  if (event->button == GDK_BUTTON_SECONDARY && g_menu_model_get_n_items (G_MENU_MODEL (view->menu)) > 0)
+  if (event->button == GDK_BUTTON_SECONDARY)
     {
-      GMenu *menu_model = xfce_item_list_view_create_context_menu_model (view);
-      GtkWidget *context_menu = gtk_menu_new_from_model (G_MENU_MODEL (menu_model));
-      g_object_unref (menu_model);
-      gtk_menu_attach_to_widget (GTK_MENU (context_menu), view->tree_view, NULL);
-      gtk_widget_show_all (context_menu);
-      gtk_menu_popup_at_pointer (GTK_MENU (context_menu), (GdkEvent *) event);
-
-      /* If the click occurs on selected items, the event should be stopped, otherwise it will result in re-selecting one item */
-      GtkTreePath *path = NULL;
       gboolean stop_propagation = FALSE;
-      if (gtk_tree_view_get_path_at_pos (GTK_TREE_VIEW (view->tree_view), event->x, event->y, &path, NULL, NULL, NULL))
+      GMenu *menu_model = xfce_item_list_view_create_context_menu_model (view);
+      if (g_menu_model_get_n_items (G_MENU_MODEL (menu_model)) > 0)
         {
-          GtkTreeSelection *selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (view->tree_view));
-          stop_propagation = gtk_tree_selection_path_is_selected (selection, path);
+          GtkWidget *context_menu = gtk_menu_new_from_model (G_MENU_MODEL (menu_model));
+          gtk_menu_attach_to_widget (GTK_MENU (context_menu), view->tree_view, NULL);
+          gtk_widget_show_all (context_menu);
+          gtk_menu_popup_at_pointer (GTK_MENU (context_menu), (GdkEvent *) event);
+
+          /* If the click occurs on selected items, the event should be stopped, otherwise it will result in re-selecting one item */
+          GtkTreePath *path = NULL;
+          if (gtk_tree_view_get_path_at_pos (GTK_TREE_VIEW (view->tree_view), event->x, event->y, &path, NULL, NULL, NULL))
+            {
+              GtkTreeSelection *selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (view->tree_view));
+              stop_propagation = gtk_tree_selection_path_is_selected (selection, path);
+            }
+          gtk_tree_path_free (path);
         }
-      gtk_tree_path_free (path);
+      g_object_unref (menu_model);
       return stop_propagation;
     }
 
@@ -768,13 +771,15 @@ xfce_item_list_view_create_context_menu_model (XfceItemListView *view)
   gint n_items = g_menu_model_get_n_items (G_MENU_MODEL (view->menu));
   for (gint i = 0; i < n_items; ++i)
     {
+      GVariant *label = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, G_MENU_ATTRIBUTE_LABEL, G_VARIANT_TYPE_STRING);
       GVariant *hide_in_context_menu = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, XFCE_MENU_ATTRIBUTE_HIDE_IN_CONTEXT_MENU, G_VARIANT_TYPE_BOOLEAN);
-      if (hide_in_context_menu == NULL || !g_variant_get_boolean (hide_in_context_menu))
+      if (label != NULL && (hide_in_context_menu == NULL || !g_variant_get_boolean (hide_in_context_menu)))
         {
           GMenuItem *tmp_item = g_menu_item_new_from_model (G_MENU_MODEL (view->menu), i);
           g_menu_append_item (new_menu, tmp_item);
           g_object_unref (tmp_item);
         }
+      g_clear_pointer (&label, g_variant_unref);
       g_clear_pointer (&hide_in_context_menu, g_variant_unref);
     }
 
@@ -889,7 +894,7 @@ xfce_item_list_view_set_model (XfceItemListView *view,
     xfce_item_list_view_add_menu_item (view, index++, FALSE, FALSE, _("_Edit"), _("Edit"), "document-edit-symbolic", "xfce.edit-item");
 
   if (flags & XFCE_ITEM_LIST_MODEL_ADDABLE)
-    xfce_item_list_view_add_menu_item (view, index++, FALSE, FALSE, _("_Add"), _("Add"), "list-add-symbolic", "xfce.add-item");
+    xfce_item_list_view_add_menu_item (view, index++, FALSE, TRUE, _("_Add"), _("Add"), "list-add-symbolic", "xfce.add-item");
 
   if (flags & XFCE_ITEM_LIST_MODEL_REMOVABLE)
     xfce_item_list_view_add_menu_item (view, index++, FALSE, FALSE, _("_Remove"), _("Remove"), "list-remove-symbolic", "xfce.remove-item");
