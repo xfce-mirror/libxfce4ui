@@ -110,6 +110,7 @@ xfce_item_list_view_add_button (XfceItemListView *view,
                                 gboolean movement,
                                 const gchar *mnemonic,
                                 const gchar *label,
+                                gboolean hide_label,
                                 const gchar *tooltip,
                                 GIcon *icon,
                                 const gchar *action,
@@ -343,7 +344,7 @@ xfce_item_list_view_init (XfceItemListView *view)
   g_signal_connect_swapped (view->reset_action, "activate", G_CALLBACK (xfce_item_list_view_reset), view);
   g_action_map_add_action (G_ACTION_MAP (group), G_ACTION (view->reset_action));
 
-  gtk_widget_insert_action_group (GTK_WIDGET (view), "xfce", G_ACTION_GROUP (group));
+  gtk_widget_insert_action_group (GTK_WIDGET (view), "xfce-item-list-view", G_ACTION_GROUP (group));
 
   view->menu = g_menu_new ();
   g_signal_connect_swapped (view->menu, "items-changed", G_CALLBACK (xfce_item_list_view_recreate_buttons), view);
@@ -448,6 +449,7 @@ xfce_item_list_view_add_button (XfceItemListView *view,
                                 gboolean movement,
                                 const gchar *mnemonic,
                                 const gchar *label,
+                                gboolean hide_label,
                                 const gchar *tooltip,
                                 GIcon *icon,
                                 const gchar *action,
@@ -481,7 +483,9 @@ xfce_item_list_view_add_button (XfceItemListView *view,
           gtk_widget_show (view->buttons_hbox);
         }
 
-      if (mnemonic != NULL)
+      if (hide_label)
+        button = gtk_button_new ();
+      else if (mnemonic != NULL)
         button = gtk_button_new_with_mnemonic (mnemonic);
       else
         button = gtk_button_new_with_label (label);
@@ -522,6 +526,7 @@ xfce_item_list_view_recreate_buttons (XfceItemListView *view)
       GVariant *action = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, G_MENU_ATTRIBUTE_ACTION, G_VARIANT_TYPE_STRING);
       GVariant *target = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, G_MENU_ATTRIBUTE_TARGET, NULL);
       GVariant *label = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, G_MENU_ATTRIBUTE_LABEL, G_VARIANT_TYPE_STRING);
+      GVariant *hide_label = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, XFCE_MENU_ATTRIBUTE_HIDE_LABEL, G_VARIANT_TYPE_BOOLEAN);
       GVariant *icon = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, G_MENU_ATTRIBUTE_ICON, NULL);
       GVariant *mnemonic = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, XFCE_MENU_ATTRIBUTE_MNEMONIC, G_VARIANT_TYPE_STRING);
       GVariant *movement = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, XFCE_MENU_ATTRIBUTE_MOVEMENT, G_VARIANT_TYPE_BOOLEAN);
@@ -534,6 +539,7 @@ xfce_item_list_view_recreate_buttons (XfceItemListView *view)
                                           movement != NULL ? g_variant_get_boolean (movement) : FALSE,
                                           mnemonic != NULL ? g_variant_get_string (mnemonic, NULL) : NULL,
                                           label != NULL ? g_variant_get_string (label, NULL) : NULL,
+                                          hide_label != NULL ? g_variant_get_boolean (hide_label) : FALSE,
                                           tooltip != NULL ? g_variant_get_string (tooltip, NULL) : NULL,
                                           gicon,
                                           action != NULL ? g_variant_get_string (action, NULL) : NULL,
@@ -544,6 +550,7 @@ xfce_item_list_view_recreate_buttons (XfceItemListView *view)
       g_clear_pointer (&action, g_variant_unref);
       g_clear_pointer (&target, g_variant_unref);
       g_clear_pointer (&label, g_variant_unref);
+      g_clear_pointer (&hide_label, g_variant_unref);
       g_clear_pointer (&icon, g_variant_unref);
       g_clear_pointer (&mnemonic, g_variant_unref);
       g_clear_pointer (&movement, g_variant_unref);
@@ -849,7 +856,9 @@ xfce_item_list_view_set_model (XfceItemListView *view,
       if (action == NULL)
         continue;
 
-      const char *actions[] = { "xfce.move-item-up", "xfce.move-item-down", "xfce.add-item", "xfce.remove-item", "xfce.edit-item", "xfce.reset" };
+      const char *actions[] = { "xfce-item-list-view.move-item-up", "xfce-item-list-view.move-item-down",
+                                "xfce-item-list-view.add-item", "xfce-item-list-view.remove-item",
+                                "xfce-item-list-view.edit-item", "xfce-item-list-view.reset" };
 
       for (gint j = 0; j < (gint) G_N_ELEMENTS (actions); ++j)
         {
@@ -881,8 +890,8 @@ xfce_item_list_view_set_model (XfceItemListView *view,
     {
       gtk_tree_view_set_reorderable (GTK_TREE_VIEW (view->tree_view), TRUE);
 
-      xfce_item_list_view_add_menu_item (view, index++, TRUE, TRUE, NULL, _("Move item up"), "go-up-symbolic", "xfce.move-item-up");
-      xfce_item_list_view_add_menu_item (view, index++, TRUE, TRUE, NULL, _("Move item down"), "go-down-symbolic", "xfce.move-item-down");
+      xfce_item_list_view_add_menu_item (view, index++, TRUE, TRUE, NULL, _("Move item up"), "go-up-symbolic", "xfce-item-list-view.move-item-up");
+      xfce_item_list_view_add_menu_item (view, index++, TRUE, TRUE, NULL, _("Move item down"), "go-down-symbolic", "xfce-item-list-view.move-item-down");
     }
   else
     {
@@ -890,16 +899,16 @@ xfce_item_list_view_set_model (XfceItemListView *view,
     }
 
   if (flags & XFCE_ITEM_LIST_MODEL_ADDABLE)
-    xfce_item_list_view_add_menu_item (view, index++, FALSE, TRUE, _("_Add"), _("Add"), "list-add-symbolic", "xfce.add-item");
+    xfce_item_list_view_add_menu_item (view, index++, FALSE, TRUE, _("_Add"), _("Add"), "list-add-symbolic", "xfce-item-list-view.add-item");
 
   if (flags & XFCE_ITEM_LIST_MODEL_REMOVABLE)
-    xfce_item_list_view_add_menu_item (view, index++, FALSE, FALSE, _("_Remove"), _("Remove"), "list-remove-symbolic", "xfce.remove-item");
+    xfce_item_list_view_add_menu_item (view, index++, FALSE, FALSE, _("_Remove"), _("Remove"), "list-remove-symbolic", "xfce-item-list-view.remove-item");
 
   if (flags & XFCE_ITEM_LIST_MODEL_EDITABLE)
-    xfce_item_list_view_add_menu_item (view, index++, FALSE, FALSE, _("_Edit"), _("Edit"), "document-edit-symbolic", "xfce.edit-item");
+    xfce_item_list_view_add_menu_item (view, index++, FALSE, FALSE, _("_Edit"), _("Edit"), "document-edit-symbolic", "xfce-item-list-view.edit-item");
 
   if (flags & XFCE_ITEM_LIST_MODEL_RESETTABLE)
-    xfce_item_list_view_add_menu_item (view, index++, FALSE, TRUE, _("Reset to de_faults"), _("Reset to defaults"), "document-revert-symbolic", "xfce.reset");
+    xfce_item_list_view_add_menu_item (view, index++, FALSE, TRUE, _("Reset to de_faults"), _("Reset to defaults"), "document-revert-symbolic", "xfce-item-list-view.reset");
 }
 
 

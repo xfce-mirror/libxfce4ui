@@ -66,6 +66,15 @@ G_BEGIN_DECLS
  **/
 #define XFCE_MENU_ATTRIBUTE_HIDE_IN_CONTEXT_MENU "hide-in-context-menu"
 
+/**
+ * XFCE_MENU_ATTRIBUTE_HIDE_LABEL:
+ *
+ * Attribute with boolean type. If %TRUE, hides the label where possible.
+ *
+ * Since: 4.21.2
+ **/
+#define XFCE_MENU_ATTRIBUTE_HIDE_LABEL "hide-label"
+
 #define XFCE_TYPE_ITEM_LIST_VIEW (xfce_item_list_view_get_type ())
 G_DECLARE_FINAL_TYPE (XfceItemListView, xfce_item_list_view, XFCE, ITEM_LIST_VIEW, GtkBox)
 
