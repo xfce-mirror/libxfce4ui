@@ -17,6 +17,7 @@
  * MA 02110-1301 USA
  */
 
+#include "libxfce4ui-enum-types.h"
 #include "libxfce4ui-private.h"
 #include "xfce-item-list-model.h"
 #include "libxfce4ui-visibility.h"
@@ -35,11 +36,37 @@
  * shouldn't call signals from #GtkTreeModel from overridden methods. However, if you define your new methods in a
  * descendant class, then you must call the #GtkTreeView signals yourself.
  *
- * Not all virtual functions are required to be implemented, it depends on the value you return from
- * xfce_item_list_model_get_list_flags().
+ * Not all virtual functions need to be implemented, depending on the value of the #XfceItemListModel:list-flags property.
  **/
 
 
+
+typedef struct _XfceItemListModelPrivate XfceItemListModelPrivate;
+
+struct _XfceItemListModelPrivate
+{
+  XfceItemListModelFlags list_flags;
+};
+
+enum
+{
+  PROP_0,
+  PROP_LIST_FLAGS,
+};
+
+
+
+static void
+xfce_item_list_model_set_property (GObject *object,
+                                   guint prop_id,
+                                   const GValue *value,
+                                   GParamSpec *pspec);
+
+static void
+xfce_item_list_model_get_property (GObject *object,
+                                   guint prop_id,
+                                   GValue *value,
+                                   GParamSpec *pspec);
 
 static gint
 xfce_item_list_model_get_list_n_columns_default (XfceItemListModel *model);
@@ -47,9 +74,6 @@ xfce_item_list_model_get_list_n_columns_default (XfceItemListModel *model);
 static GType
 xfce_item_list_model_get_list_column_type_default (XfceItemListModel *model,
                                                    gint column);
-
-static XfceItemListModelFlags
-xfce_item_list_model_get_list_flags_default (XfceItemListModel *model);
 
 static void
 xfce_item_list_model_tree_model_init (GtkTreeModelIface *iface);
@@ -141,6 +165,7 @@ xfce_item_list_model_tree_row_drop_possible (GtkTreeDragDest *drag_dest,
 
 
 G_DEFINE_TYPE_WITH_CODE (XfceItemListModel, xfce_item_list_model, G_TYPE_OBJECT,
+                         G_ADD_PRIVATE (XfceItemListModel)
                          G_IMPLEMENT_INTERFACE (GTK_TYPE_TREE_MODEL, xfce_item_list_model_tree_model_init)
                          G_IMPLEMENT_INTERFACE (GTK_TYPE_TREE_DRAG_SOURCE, xfce_item_list_model_tree_drag_source_init)
                          G_IMPLEMENT_INTERFACE (GTK_TYPE_TREE_DRAG_DEST, xfce_item_list_model_tree_drag_dest_init))
@@ -150,9 +175,20 @@ G_DEFINE_TYPE_WITH_CODE (XfceItemListModel, xfce_item_list_model, G_TYPE_OBJECT,
 static void
 xfce_item_list_model_class_init (XfceItemListModelClass *klass)
 {
+  GObjectClass *object_class = G_OBJECT_CLASS (klass);
+
+  object_class->set_property = xfce_item_list_model_set_property;
+  object_class->get_property = xfce_item_list_model_get_property;
+
+  g_object_class_install_property (object_class,
+                                   PROP_LIST_FLAGS,
+                                   g_param_spec_flags ("list-flags", NULL, NULL,
+                                                       XFCE_TYPE_ITEM_LIST_MODEL_FLAGS,
+                                                       XFCE_ITEM_LIST_MODEL_NONE,
+                                                       G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
+
   klass->get_list_n_columns = xfce_item_list_model_get_list_n_columns_default;
   klass->get_list_column_type = xfce_item_list_model_get_list_column_type_default;
-  klass->get_list_flags = xfce_item_list_model_get_list_flags_default;
 }
 
 
@@ -160,6 +196,50 @@ xfce_item_list_model_class_init (XfceItemListModelClass *klass)
 static void
 xfce_item_list_model_init (XfceItemListModel *model)
 {
+}
+
+
+
+static void
+xfce_item_list_model_set_property (GObject *object,
+                                   guint prop_id,
+                                   const GValue *value,
+                                   GParamSpec *pspec)
+{
+  XfceItemListModel *model = XFCE_ITEM_LIST_MODEL (object);
+  XfceItemListModelPrivate *priv = xfce_item_list_model_get_instance_private (model);
+
+  switch (prop_id)
+    {
+    case PROP_LIST_FLAGS:
+      priv->list_flags = g_value_get_flags (value);
+      break;
+
+    default:
+      G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+    }
+}
+
+
+
+static void
+xfce_item_list_model_get_property (GObject *object,
+                                   guint prop_id,
+                                   GValue *value,
+                                   GParamSpec *pspec)
+{
+  XfceItemListModel *model = XFCE_ITEM_LIST_MODEL (object);
+  XfceItemListModelPrivate *priv = xfce_item_list_model_get_instance_private (model);
+
+  switch (prop_id)
+    {
+    case PROP_LIST_FLAGS:
+      g_value_set_flags (value, priv->list_flags);
+      break;
+
+    default:
+      G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+    }
 }
 
 
@@ -203,14 +283,6 @@ xfce_item_list_model_get_list_column_type_default (XfceItemListModel *model,
       g_warn_if_reached ();
       return G_TYPE_NONE;
     }
-}
-
-
-
-static XfceItemListModelFlags
-xfce_item_list_model_get_list_flags_default (XfceItemListModel *model)
-{
-  return XFCE_ITEM_LIST_MODEL_NONE;
 }
 
 
@@ -579,13 +651,11 @@ xfce_item_list_model_get_list_column_type (XfceItemListModel *model,
 XfceItemListModelFlags
 xfce_item_list_model_get_list_flags (XfceItemListModel *model)
 {
-  XfceItemListModelClass *klass;
-
   g_return_val_if_fail (XFCE_IS_ITEM_LIST_MODEL (model), 0);
-  klass = XFCE_ITEM_LIST_MODEL_GET_CLASS (model);
 
-  g_return_val_if_fail (klass->get_list_flags != NULL, 0);
-  return klass->get_list_flags (model);
+  XfceItemListModelFlags list_flags;
+  g_object_get (model, "list-flags", &list_flags, NULL);
+  return list_flags;
 }
 
 
