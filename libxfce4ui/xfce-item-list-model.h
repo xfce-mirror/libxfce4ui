@@ -34,6 +34,7 @@ G_DECLARE_DERIVABLE_TYPE (XfceItemListModel, xfce_item_list_model, XFCE, ITEM_LI
 
 /**
  * XfceItemListModelClass:
+ * @get_list_n_columns: You can override this method to add more columns
  * @get_list_column_type: You can override this method to add your own columns
  * @get_list_flags: Override this method to add the necessary capabilities
  * @get_n_items: Required for implementation
@@ -51,6 +52,8 @@ struct _XfceItemListModelClass
   GObjectClass __parent__;
 
   /*< public >*/
+  gint (*get_list_n_columns) (XfceItemListModel *model);
+
   GType (*get_list_column_type) (XfceItemListModel *model,
                                  gint column);
 
@@ -76,6 +79,9 @@ struct _XfceItemListModelClass
 
   void (*reset) (XfceItemListModel *model);
 };
+
+gint
+xfce_item_list_model_get_list_n_columns (XfceItemListModel *model);
 
 GType
 xfce_item_list_model_get_list_column_type (XfceItemListModel *model,

@@ -41,6 +41,9 @@
 
 
 
+static gint
+xfce_item_list_model_get_list_n_columns_default (XfceItemListModel *model);
+
 static GType
 xfce_item_list_model_get_list_column_type_default (XfceItemListModel *model,
                                                    gint column);
@@ -147,6 +150,7 @@ G_DEFINE_TYPE_WITH_CODE (XfceItemListModel, xfce_item_list_model, G_TYPE_OBJECT,
 static void
 xfce_item_list_model_class_init (XfceItemListModelClass *klass)
 {
+  klass->get_list_n_columns = xfce_item_list_model_get_list_n_columns_default;
   klass->get_list_column_type = xfce_item_list_model_get_list_column_type_default;
   klass->get_list_flags = xfce_item_list_model_get_list_flags_default;
 }
@@ -156,6 +160,14 @@ xfce_item_list_model_class_init (XfceItemListModelClass *klass)
 static void
 xfce_item_list_model_init (XfceItemListModel *model)
 {
+}
+
+
+
+static gint
+xfce_item_list_model_get_list_n_columns_default (XfceItemListModel *model)
+{
+  return XFCE_ITEM_LIST_MODEL_COLUMN_USER;
 }
 
 
@@ -285,7 +297,7 @@ xfce_item_list_model_tree_get_iter (GtkTreeModel *tree_model,
 static gint
 xfce_item_list_model_tree_get_n_columns (GtkTreeModel *tree_model)
 {
-  return XFCE_ITEM_LIST_MODEL_COLUMN_USER;
+  return xfce_item_list_model_get_list_n_columns (XFCE_ITEM_LIST_MODEL (tree_model));
 }
 
 
@@ -506,6 +518,28 @@ xfce_item_list_model_tree_row_drop_possible (GtkTreeDragDest *drag_dest,
   XfceItemListModel *model = XFCE_ITEM_LIST_MODEL (drag_dest);
 
   return xfce_item_list_model_get_dnd_indexes (model, dest, selection_data, NULL, NULL);
+}
+
+
+
+/**
+ * xfce_item_list_model_get_list_n_columns:
+ * @model: #XfceItemListModel
+ *
+ * Returns: Number of columns
+ *
+ * Since: 4.21.2
+ **/
+gint
+xfce_item_list_model_get_list_n_columns (XfceItemListModel *model)
+{
+  XfceItemListModelClass *klass;
+
+  g_return_val_if_fail (XFCE_IS_ITEM_LIST_MODEL (model), 0);
+  klass = XFCE_ITEM_LIST_MODEL_GET_CLASS (model);
+
+  g_return_val_if_fail (klass->get_list_n_columns != NULL, 0);
+  return klass->get_list_n_columns (model);
 }
 
 
