@@ -76,6 +76,10 @@ xfce_item_list_view_get_menu (XfceItemListView *view);
 GtkWidget *
 xfce_item_list_view_get_tree_view (XfceItemListView *view);
 
+gint
+xfce_item_list_view_get_selected_items (XfceItemListView *view,
+                                        gint **items);
+
 G_END_DECLS
 
 #endif /* !__XFCE_ITEM_LIST_VIEW_H__ */

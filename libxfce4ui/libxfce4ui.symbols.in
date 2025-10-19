@@ -238,10 +238,9 @@ xfce_item_list_model_set_activity
 xfce_item_list_model_remove
 xfce_item_list_model_set_index
 xfce_item_list_model_get_index
-xfce_item_list_model_is_active
-xfce_item_list_model_is_activable
-xfce_item_list_model_is_editable
-xfce_item_list_model_is_removable
+xfce_item_list_model_test
+xfce_item_list_model_test_any
+xfce_item_list_model_test_all
 xfce_item_list_model_changed
 
 # file:xfce-item-list-view

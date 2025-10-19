@@ -123,20 +123,21 @@ xfce_item_list_model_get_index (XfceItemListModel *model,
                                 GtkTreeIter *iter);
 
 gboolean
-xfce_item_list_model_is_active (XfceItemListModel *model,
-                                gint index);
+xfce_item_list_model_test (XfceItemListModel *model,
+                           gint index,
+                           gint column);
 
 gboolean
-xfce_item_list_model_is_activable (XfceItemListModel *model,
-                                   gint index);
+xfce_item_list_model_test_any (XfceItemListModel *model,
+                               const gint *indexes,
+                               gint n_indexes,
+                               gint column);
 
 gboolean
-xfce_item_list_model_is_editable (XfceItemListModel *model,
-                                  gint index);
-
-gboolean
-xfce_item_list_model_is_removable (XfceItemListModel *model,
-                                   gint index);
+xfce_item_list_model_test_all (XfceItemListModel *model,
+                               const gint *indexes,
+                               gint n_indexes,
+                               gint column);
 
 void
 xfce_item_list_model_changed (XfceItemListModel *model);
