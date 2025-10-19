@@ -524,7 +524,7 @@ xfce_item_list_view_recreate_buttons (XfceItemListView *view)
       GVariant *tooltip = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, XFCE_MENU_ATTRIBUTE_TOOLTIP, G_VARIANT_TYPE_STRING);
       GIcon *gicon = icon != NULL ? g_icon_deserialize (icon) : NULL;
 
-      if (action != NULL && label != NULL)
+      if (action != NULL)
         {
           xfce_item_list_view_add_button (view,
                                           movement != NULL ? g_variant_get_boolean (movement) : FALSE,
@@ -903,22 +903,26 @@ xfce_item_list_view_set_model (XfceItemListView *view,
   view->model = model;
 
   /* Remove old standard menu items */
-  gint n_items = g_menu_model_get_n_items (G_MENU_MODEL (view->menu));
-  for (gint i = 0; i < n_items; ++i)
+  for (gint i = 0; i < g_menu_model_get_n_items (G_MENU_MODEL (view->menu)); ++i)
     {
+      GVariant *action = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, G_MENU_ATTRIBUTE_ACTION, G_VARIANT_TYPE_STRING);
+      if (action == NULL)
+        continue;
+
       const char *actions[] = { "xfce.move-item-up", "xfce.move-item-down", "xfce.edit-item",
                                 "xfce.add-item", "xfce.remove-item", "xfce.reset" };
 
       for (gint j = 0; j < (gint) G_N_ELEMENTS (actions); ++j)
         {
-          GVariant *action = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, G_MENU_ATTRIBUTE_ACTION, G_VARIANT_TYPE_STRING);
-          if (action != NULL && g_strcmp0 (g_variant_get_string (action, NULL), actions[j]) == 0)
+          if (g_strcmp0 (g_variant_get_string (action, NULL), actions[j]) == 0)
             {
               g_menu_remove (view->menu, i);
               --i;
+              break;
             }
-          g_clear_pointer (&action, g_variant_unref);
         }
+
+      g_clear_pointer (&action, g_variant_unref);
     }
 
   /* Signals */
