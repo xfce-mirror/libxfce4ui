@@ -41,8 +41,9 @@ struct _XfceItemListView
   /* Model used for TreeView display and modification */
   XfceItemListModel *model;
 
-  /* Menu model for buttons and context menu */
+  /* Menu models for buttons and context menu */
   GMenu *menu;
+  GMenu *context_menu;
 
   GtkWidget *tree_view;
 
@@ -166,8 +167,8 @@ xfce_item_list_view_tree_key_released (XfceItemListView *view,
 static void
 xfce_item_list_view_row_activate (XfceItemListView *view);
 
-static GMenu *
-xfce_item_list_view_create_context_menu_model (XfceItemListView *view);
+static void
+xfce_item_list_view_recreate_context_menu (XfceItemListView *view);
 
 
 
@@ -352,6 +353,7 @@ xfce_item_list_view_init (XfceItemListView *view)
 
   view->menu = g_menu_new ();
   g_signal_connect_swapped (view->menu, "items-changed", G_CALLBACK (xfce_item_list_view_recreate_buttons), view);
+  g_signal_connect_swapped (view->menu, "items-changed", G_CALLBACK (xfce_item_list_view_recreate_context_menu), view);
 }
 
 
@@ -362,6 +364,7 @@ xfce_item_list_view_finalize (GObject *object)
   XfceItemListView *view = XFCE_ITEM_LIST_VIEW (object);
 
   g_clear_object (&view->menu);
+  g_clear_object (&view->context_menu);
 
   g_clear_object (&view->up_action);
   g_clear_object (&view->down_action);
@@ -369,7 +372,7 @@ xfce_item_list_view_finalize (GObject *object)
   g_clear_object (&view->remove_action);
   g_clear_object (&view->edit_action);
   g_clear_object (&view->reset_action);
-  
+
   G_OBJECT_CLASS (xfce_item_list_view_parent_class)->finalize (object);
 }
 
@@ -791,10 +794,9 @@ xfce_item_list_view_tree_button_pressed (XfceItemListView *view,
   if (event->button == GDK_BUTTON_SECONDARY)
     {
       gboolean stop_propagation = FALSE;
-      GMenu *menu_model = xfce_item_list_view_create_context_menu_model (view);
-      if (g_menu_model_get_n_items (G_MENU_MODEL (menu_model)) > 0)
+      if (view->context_menu != NULL && g_menu_model_get_n_items (G_MENU_MODEL (view->context_menu)) > 0)
         {
-          GtkWidget *context_menu = gtk_menu_new_from_model (G_MENU_MODEL (menu_model));
+          GtkWidget *context_menu = gtk_menu_new_from_model (G_MENU_MODEL (view->context_menu));
           gtk_menu_attach_to_widget (GTK_MENU (context_menu), view->tree_view, NULL);
           gtk_widget_show_all (context_menu);
           gtk_menu_popup_at_pointer (GTK_MENU (context_menu), (GdkEvent *) event);
@@ -808,7 +810,6 @@ xfce_item_list_view_tree_button_pressed (XfceItemListView *view,
             }
           gtk_tree_path_free (path);
         }
-      g_object_unref (menu_model);
       return stop_propagation;
     }
 
@@ -841,10 +842,11 @@ xfce_item_list_view_row_activate (XfceItemListView *view)
 
 
 
-static GMenu *
-xfce_item_list_view_create_context_menu_model (XfceItemListView *view)
+static void
+xfce_item_list_view_recreate_context_menu (XfceItemListView *view)
 {
-  GMenu *new_menu = g_menu_new ();
+  g_clear_object (&view->context_menu);
+  view->context_menu = g_menu_new ();
 
   gint n_items = g_menu_model_get_n_items (G_MENU_MODEL (view->menu));
   for (gint i = 0; i < n_items; ++i)
@@ -854,14 +856,12 @@ xfce_item_list_view_create_context_menu_model (XfceItemListView *view)
       if (label != NULL && (hide_in_context_menu == NULL || !g_variant_get_boolean (hide_in_context_menu)))
         {
           GMenuItem *tmp_item = g_menu_item_new_from_model (G_MENU_MODEL (view->menu), i);
-          g_menu_append_item (new_menu, tmp_item);
+          g_menu_append_item (view->context_menu, tmp_item);
           g_object_unref (tmp_item);
         }
       g_clear_pointer (&label, g_variant_unref);
       g_clear_pointer (&hide_in_context_menu, g_variant_unref);
     }
-
-  return new_menu;
 }
 
 
