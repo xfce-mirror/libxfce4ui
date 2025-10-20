@@ -348,6 +348,7 @@ xfce_item_list_view_init (XfceItemListView *view)
   g_action_map_add_action (G_ACTION_MAP (group), G_ACTION (view->reset_action));
 
   gtk_widget_insert_action_group (GTK_WIDGET (view), "xfce-item-list-view", G_ACTION_GROUP (group));
+  g_object_unref (group);
 
   view->menu = g_menu_new ();
   g_signal_connect_swapped (view->menu, "items-changed", G_CALLBACK (xfce_item_list_view_recreate_buttons), view);
@@ -361,6 +362,14 @@ xfce_item_list_view_finalize (GObject *object)
   XfceItemListView *view = XFCE_ITEM_LIST_VIEW (object);
 
   g_clear_object (&view->menu);
+
+  g_clear_object (&view->up_action);
+  g_clear_object (&view->down_action);
+  g_clear_object (&view->add_action);
+  g_clear_object (&view->remove_action);
+  g_clear_object (&view->edit_action);
+  g_clear_object (&view->reset_action);
+  
   G_OBJECT_CLASS (xfce_item_list_view_parent_class)->finalize (object);
 }
 
@@ -548,7 +557,6 @@ xfce_item_list_view_recreate_buttons (XfceItemListView *view)
                                           action != NULL ? g_variant_get_string (action, NULL) : NULL,
                                           target);
         }
-      g_object_unref (gicon);
 
       g_clear_pointer (&action, g_variant_unref);
       g_clear_pointer (&target, g_variant_unref);
@@ -558,6 +566,7 @@ xfce_item_list_view_recreate_buttons (XfceItemListView *view)
       g_clear_pointer (&mnemonic, g_variant_unref);
       g_clear_pointer (&movement, g_variant_unref);
       g_clear_pointer (&tooltip, g_variant_unref);
+      g_clear_object (&gicon);
     }
 }
 
