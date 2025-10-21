@@ -865,24 +865,7 @@ xfce_item_list_model_reset (XfceItemListModel *model)
   g_return_if_fail (klass->reset != NULL);
   klass->reset (model);
 
-  gint cur_n_items = xfce_item_list_model_get_n_items (model);
-
-  /* Signals for GtkTreeModel */
-  for (gint i = 0; i < prev_n_items; ++i)
-    {
-      GtkTreePath *path = gtk_tree_path_new_from_indices (0, -1);
-      gtk_tree_model_row_deleted (GTK_TREE_MODEL (model), path);
-      gtk_tree_path_free (path);
-    }
-
-  for (gint i = 0; i < cur_n_items; ++i)
-    {
-      GtkTreePath *path = gtk_tree_path_new_from_indices (i, -1);
-      GtkTreeIter iter;
-      xfce_item_list_model_set_index (model, &iter, i);
-      gtk_tree_model_row_inserted (GTK_TREE_MODEL (model), path, &iter);
-      gtk_tree_path_free (path);
-    }
+  xfce_item_list_model_reloaded (model, prev_n_items);
 }
 
 
@@ -1027,7 +1010,7 @@ xfce_item_list_model_test_all (XfceItemListModel *model,
  * xfce_item_list_model_changed:
  * @model: #XfceItemListModel
  *
- * Makes #GtkTreeView think that all items have changed their value
+ * Makes #GtkTreeView think that all items have changed their value.
  *
  * Since: 4.21.2
  **/
@@ -1044,6 +1027,43 @@ xfce_item_list_model_changed (XfceItemListModel *model)
       gtk_tree_model_row_changed (GTK_TREE_MODEL (model), path, &iter);
       gtk_tree_path_free (path);
     }
+}
+
+
+
+/**
+ * xfce_item_list_model_reloaded:
+ * @model: #XfceItemListModel
+ * @prev_n_items: Number of items in the model BEFORE reloading
+ *
+ * Synchronizes #GtkTreeView with the new state of the model after it has been reloaded.
+ *
+ * Since: 4.21.2
+ **/
+void
+xfce_item_list_model_reloaded (XfceItemListModel *model,
+                               gint prev_n_items)
+{
+  g_return_if_fail (XFCE_IS_ITEM_LIST_MODEL (model));
+  g_return_if_fail (prev_n_items >= 0);
+
+  gint cur_n_items = xfce_item_list_model_get_n_items (model);
+  for (gint i = prev_n_items - 1; i >= cur_n_items; --i)
+    {
+      GtkTreePath *path = gtk_tree_path_new_from_indices (i, -1);
+      gtk_tree_model_row_deleted (GTK_TREE_MODEL (model), path);
+      gtk_tree_path_free (path);
+    }
+
+  for (gint i = prev_n_items; i < cur_n_items; ++i)
+    {
+      GtkTreePath *path = gtk_tree_path_new_from_indices (i, -1);
+      GtkTreeIter iter;
+      xfce_item_list_model_set_index (XFCE_ITEM_LIST_MODEL (model), &iter, i);
+      gtk_tree_model_row_inserted (GTK_TREE_MODEL (model), path, &iter);
+      gtk_tree_path_free (path);
+    }
+  xfce_item_list_model_changed (XFCE_ITEM_LIST_MODEL (model));
 }
 
 
