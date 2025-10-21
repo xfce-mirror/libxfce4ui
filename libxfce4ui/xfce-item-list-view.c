@@ -321,6 +321,17 @@ xfce_item_list_view_init (XfceItemListView *view)
                                                "markup", XFCE_ITEM_LIST_MODEL_COLUMN_NAME,
                                                "sensitive", XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVE,
                                                NULL);
+  g_object_set_data (
+    G_OBJECT (gtk_tree_view_get_column (GTK_TREE_VIEW (view->tree_view), XFCE_ITEM_LIST_VIEW_COLUMN_ACTIVE)),
+    "renderer", renderer_active);
+
+  g_object_set_data (
+    G_OBJECT (gtk_tree_view_get_column (GTK_TREE_VIEW (view->tree_view), XFCE_ITEM_LIST_VIEW_COLUMN_ICON)),
+    "renderer", renderer_icon);
+
+  g_object_set_data (
+    G_OBJECT (gtk_tree_view_get_column (GTK_TREE_VIEW (view->tree_view), XFCE_ITEM_LIST_VIEW_COLUMN_NAME)),
+    "renderer", renderer_name);
 
   GSimpleActionGroup *group = g_simple_action_group_new ();
 
