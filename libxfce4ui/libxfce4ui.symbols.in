@@ -243,6 +243,7 @@ xfce_item_list_model_test
 xfce_item_list_model_test_any
 xfce_item_list_model_test_all
 xfce_item_list_model_changed
+xfce_item_list_model_reloaded
 
 # file:xfce-item-list-view
 xfce_item_list_view_get_type attr:G_GNUC_CONST

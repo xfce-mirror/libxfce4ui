@@ -355,6 +355,7 @@ xfce_item_list_model_test
 xfce_item_list_model_test_any
 xfce_item_list_model_test_all
 xfce_item_list_model_changed
+xfce_item_list_model_reloaded
 <SUBSECTION Standard>
 XFCE_TYPE_ITEM_LIST_MODEL
 xfce_item_list_model_get_type
