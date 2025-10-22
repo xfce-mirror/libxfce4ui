@@ -344,26 +344,32 @@ xfce_item_list_view_init (XfceItemListView *view)
   view->up_action = g_simple_action_new ("move-item-up", NULL);
   g_signal_connect_swapped (view->up_action, "activate", G_CALLBACK (xfce_item_list_view_item_up), view);
   g_action_map_add_action (G_ACTION_MAP (group), G_ACTION (view->up_action));
+  g_object_unref (view->up_action);
 
   view->down_action = g_simple_action_new ("move-item-down", NULL);
   g_signal_connect_swapped (view->down_action, "activate", G_CALLBACK (xfce_item_list_view_item_down), view);
   g_action_map_add_action (G_ACTION_MAP (group), G_ACTION (view->down_action));
+  g_object_unref (view->down_action);
 
   view->add_action = g_simple_action_new ("add-item", NULL);
   g_signal_connect_swapped (view->add_action, "activate", G_CALLBACK (xfce_item_list_view_add_item), view);
   g_action_map_add_action (G_ACTION_MAP (group), G_ACTION (view->add_action));
+  g_object_unref (view->add_action);
 
   view->remove_action = g_simple_action_new ("remove-item", NULL);
   g_signal_connect_swapped (view->remove_action, "activate", G_CALLBACK (xfce_item_list_view_remove_item), view);
   g_action_map_add_action (G_ACTION_MAP (group), G_ACTION (view->remove_action));
+  g_object_unref (view->remove_action);
 
   view->edit_action = g_simple_action_new ("edit-item", NULL);
   g_signal_connect_swapped (view->edit_action, "activate", G_CALLBACK (xfce_item_list_view_edit_item), view);
   g_action_map_add_action (G_ACTION_MAP (group), G_ACTION (view->edit_action));
+  g_object_unref (view->edit_action);
 
   view->reset_action = g_simple_action_new ("reset", NULL);
   g_signal_connect_swapped (view->reset_action, "activate", G_CALLBACK (xfce_item_list_view_reset), view);
   g_action_map_add_action (G_ACTION_MAP (group), G_ACTION (view->reset_action));
+  g_object_unref (view->reset_action);
 
   gtk_widget_insert_action_group (GTK_WIDGET (view), "xfce-item-list-view", G_ACTION_GROUP (group));
   g_object_unref (group);
@@ -382,13 +388,6 @@ xfce_item_list_view_finalize (GObject *object)
 
   g_clear_object (&view->menu);
   g_clear_object (&view->context_menu);
-
-  g_clear_object (&view->up_action);
-  g_clear_object (&view->down_action);
-  g_clear_object (&view->add_action);
-  g_clear_object (&view->remove_action);
-  g_clear_object (&view->edit_action);
-  g_clear_object (&view->reset_action);
 
   G_OBJECT_CLASS (xfce_item_list_view_parent_class)->finalize (object);
 }
