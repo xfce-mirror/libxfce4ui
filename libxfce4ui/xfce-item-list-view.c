@@ -58,6 +58,8 @@ struct _XfceItemListView
   GSimpleAction *remove_action;
   GSimpleAction *edit_action;
   GSimpleAction *reset_action;
+
+  gboolean label_visibility;
 };
 
 enum
@@ -66,6 +68,7 @@ enum
   PROP_MODEL,
   PROP_MENU,
   PROP_TREE_VIEW,
+  PROP_LABEL_VISIBILITY,
 };
 
 enum
@@ -109,7 +112,6 @@ static void
 xfce_item_list_view_add_button (XfceItemListView *view,
                                 gboolean movement,
                                 const gchar *label,
-                                gboolean hide_label,
                                 const gchar *tooltip,
                                 GIcon *icon,
                                 const gchar *action,
@@ -200,6 +202,12 @@ xfce_item_list_view_class_init (XfceItemListViewClass *klass)
                                    g_param_spec_object ("tree-view", NULL, NULL,
                                                         GTK_TYPE_TREE_VIEW,
                                                         G_PARAM_READABLE | G_PARAM_STATIC_STRINGS));
+
+  g_object_class_install_property (object_class,
+                                   PROP_LABEL_VISIBILITY,
+                                   g_param_spec_boolean ("label-visibility", NULL, NULL,
+                                                         FALSE,
+                                                         G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
 
   /**
    * XfceItemListView::edit-item:
@@ -401,6 +409,11 @@ xfce_item_list_view_set_property (GObject *object,
       xfce_item_list_view_set_model (view, g_value_get_object (value));
       break;
 
+    case PROP_LABEL_VISIBILITY:
+      view->label_visibility = g_value_get_boolean (value);
+      xfce_item_list_view_recreate_buttons (view);
+      break;
+
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
     }
@@ -428,6 +441,10 @@ xfce_item_list_view_get_property (GObject *object,
 
     case PROP_TREE_VIEW:
       g_value_set_object (value, view->tree_view);
+      break;
+
+    case PROP_LABEL_VISIBILITY:
+      g_value_set_boolean (value, view->label_visibility);
       break;
 
     default:
@@ -468,7 +485,6 @@ static void
 xfce_item_list_view_add_button (XfceItemListView *view,
                                 gboolean movement,
                                 const gchar *label,
-                                gboolean hide_label,
                                 const gchar *tooltip,
                                 GIcon *icon,
                                 const gchar *action,
@@ -502,10 +518,10 @@ xfce_item_list_view_add_button (XfceItemListView *view,
           gtk_widget_show (view->buttons_hbox);
         }
 
-      if (hide_label)
-        button = gtk_button_new ();
-      else
+      if (view->label_visibility)
         button = gtk_button_new_with_mnemonic (label);
+      else
+        button = gtk_button_new ();
 
       gtk_box_pack_start (GTK_BOX (view->buttons_hbox), button, FALSE, FALSE, 0);
       gtk_button_box_set_child_non_homogeneous (GTK_BUTTON_BOX (view->buttons_hbox), button, TRUE);
@@ -543,7 +559,6 @@ xfce_item_list_view_recreate_buttons (XfceItemListView *view)
       GVariant *action = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, G_MENU_ATTRIBUTE_ACTION, G_VARIANT_TYPE_STRING);
       GVariant *target = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, G_MENU_ATTRIBUTE_TARGET, NULL);
       GVariant *label = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, G_MENU_ATTRIBUTE_LABEL, G_VARIANT_TYPE_STRING);
-      GVariant *hide_label = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, XFCE_MENU_ATTRIBUTE_HIDE_LABEL, G_VARIANT_TYPE_BOOLEAN);
       GVariant *icon = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, G_MENU_ATTRIBUTE_ICON, NULL);
       GVariant *movement = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, XFCE_MENU_ATTRIBUTE_MOVEMENT, G_VARIANT_TYPE_BOOLEAN);
       GVariant *tooltip = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, XFCE_MENU_ATTRIBUTE_TOOLTIP, G_VARIANT_TYPE_STRING);
@@ -554,7 +569,6 @@ xfce_item_list_view_recreate_buttons (XfceItemListView *view)
           xfce_item_list_view_add_button (view,
                                           movement != NULL ? g_variant_get_boolean (movement) : FALSE,
                                           label != NULL ? g_variant_get_string (label, NULL) : NULL,
-                                          hide_label != NULL ? g_variant_get_boolean (hide_label) : FALSE,
                                           tooltip != NULL ? g_variant_get_string (tooltip, NULL) : NULL,
                                           gicon,
                                           action != NULL ? g_variant_get_string (action, NULL) : NULL,
@@ -564,7 +578,6 @@ xfce_item_list_view_recreate_buttons (XfceItemListView *view)
       g_clear_pointer (&action, g_variant_unref);
       g_clear_pointer (&target, g_variant_unref);
       g_clear_pointer (&label, g_variant_unref);
-      g_clear_pointer (&hide_label, g_variant_unref);
       g_clear_pointer (&icon, g_variant_unref);
       g_clear_pointer (&movement, g_variant_unref);
       g_clear_pointer (&tooltip, g_variant_unref);
@@ -971,6 +984,22 @@ xfce_item_list_view_get_tree_view (XfceItemListView *view)
   g_return_val_if_fail (XFCE_IS_ITEM_LIST_VIEW (view), NULL);
 
   return view->tree_view;
+}
+
+
+
+/**
+ * xfce_item_list_view_set_label_visibility:
+ * @view: #XfceItemListView
+ * @visibility: If %FALSE, then button labels will not be displayed
+ *
+ * Since: 4.21.2
+ **/
+void
+xfce_item_list_view_set_label_visibility (XfceItemListView *view,
+                                          gboolean visibility)
+{
+  g_object_set (view, "label-visibility", visibility, NULL);
 }
 
 

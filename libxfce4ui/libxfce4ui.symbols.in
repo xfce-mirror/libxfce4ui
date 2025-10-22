@@ -252,4 +252,5 @@ xfce_item_list_view_get_model
 xfce_item_list_view_set_model
 xfce_item_list_view_get_menu
 xfce_item_list_view_get_tree_view
+xfce_item_list_view_set_label_visibility
 xfce_item_list_view_get_selected_items
