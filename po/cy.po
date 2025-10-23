@@ -1190,7 +1190,7 @@ msgstr ""
 
 #: xfce-desktop-item-edit/xfce-die-command-entry.c:263
 msgid "_Open"
-msgstr ""
+msgstr "_Agor"
 
 #: xfce-desktop-item-edit/xfce-die-command-entry.c:269
 msgid "All Files"
