@@ -164,11 +164,11 @@ xfce_item_list_model_tree_row_drop_possible (GtkTreeDragDest *drag_dest,
 
 
 
-G_DEFINE_TYPE_WITH_CODE (XfceItemListModel, xfce_item_list_model, G_TYPE_OBJECT,
-                         G_ADD_PRIVATE (XfceItemListModel)
-                         G_IMPLEMENT_INTERFACE (GTK_TYPE_TREE_MODEL, xfce_item_list_model_tree_model_init)
-                         G_IMPLEMENT_INTERFACE (GTK_TYPE_TREE_DRAG_SOURCE, xfce_item_list_model_tree_drag_source_init)
-                         G_IMPLEMENT_INTERFACE (GTK_TYPE_TREE_DRAG_DEST, xfce_item_list_model_tree_drag_dest_init))
+G_DEFINE_ABSTRACT_TYPE_WITH_CODE (XfceItemListModel, xfce_item_list_model, G_TYPE_OBJECT,
+                                  G_ADD_PRIVATE (XfceItemListModel)
+                                  G_IMPLEMENT_INTERFACE (GTK_TYPE_TREE_MODEL, xfce_item_list_model_tree_model_init)
+                                  G_IMPLEMENT_INTERFACE (GTK_TYPE_TREE_DRAG_SOURCE, xfce_item_list_model_tree_drag_source_init)
+                                  G_IMPLEMENT_INTERFACE (GTK_TYPE_TREE_DRAG_DEST, xfce_item_list_model_tree_drag_dest_init))
 
 
 
