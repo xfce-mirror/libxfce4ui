@@ -24,26 +24,6 @@
 
 G_BEGIN_DECLS
 
-#ifndef NDEBUG
-#define _libxfce4ui_assert(expr) g_assert (expr)
-#define _libxfce4ui_assert_not_reached() g_assert_not_reached ()
-#define _libxfce4ui_return_if_fail(expr) g_return_if_fail (expr)
-#define _libxfce4ui_return_val_if_fail(expr, val) g_return_val_if_fail (expr, val)
-#else
-#define _libxfce4ui_assert(expr) \
-  G_STMT_START { (void) 0; } \
-  G_STMT_END
-#define _libxfce4ui_assert_not_reached() \
-  G_STMT_START { (void) 0; } \
-  G_STMT_END
-#define _libxfce4ui_return_if_fail(expr) \
-  G_STMT_START { (void) 0; } \
-  G_STMT_END
-#define _libxfce4ui_return_val_if_fail(expr, val) \
-  G_STMT_START { (void) 0; } \
-  G_STMT_END
-#endif
-
 G_GNUC_INTERNAL GdkPixbuf *
 xfce_gdk_pixbuf_colorize (const GdkPixbuf *source,
                           const GdkColor *color) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
