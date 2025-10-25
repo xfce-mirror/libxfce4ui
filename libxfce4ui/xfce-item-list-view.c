@@ -193,19 +193,19 @@ xfce_item_list_view_class_init (XfceItemListViewClass *klass)
 
   g_object_class_install_property (object_class,
                                    PROP_MODEL,
-                                   g_param_spec_object ("model", NULL, NULL,
+                                   g_param_spec_object ("model", "Model", "Internal XfceItemListViewModel",
                                                         XFCE_TYPE_ITEM_LIST_MODEL,
                                                         G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
 
   g_object_class_install_property (object_class,
                                    PROP_MENU,
-                                   g_param_spec_object ("menu", NULL, NULL,
+                                   g_param_spec_object ("menu", "Menu", "Internal GMenu",
                                                         G_TYPE_MENU,
                                                         G_PARAM_READABLE | G_PARAM_STATIC_STRINGS));
 
   g_object_class_install_property (object_class,
                                    PROP_TREE_VIEW,
-                                   g_param_spec_object ("tree-view", NULL, NULL,
+                                   g_param_spec_object ("tree-view", "Tree View", "Internal GtkTreeView",
                                                         GTK_TYPE_TREE_VIEW,
                                                         G_PARAM_READABLE | G_PARAM_STATIC_STRINGS));
 
@@ -218,7 +218,9 @@ xfce_item_list_view_class_init (XfceItemListViewClass *klass)
    **/
   g_object_class_install_property (object_class,
                                    PROP_LABEL_VISIBILITY,
-                                   g_param_spec_boolean ("label-visibility", NULL, NULL,
+                                   g_param_spec_boolean ("label-visibility",
+                                                         "Label visibility",
+                                                         "Responsible for the visibility of labels on buttons",
                                                          FALSE,
                                                          G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
 
