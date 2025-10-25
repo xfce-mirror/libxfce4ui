@@ -146,8 +146,7 @@ void
 xfce_item_list_model_changed (XfceItemListModel *model);
 
 void
-xfce_item_list_model_reloaded (XfceItemListModel *model,
-                               gint prev_n_items);
+xfce_item_list_model_reloaded (XfceItemListModel *model);
 
 G_END_DECLS
 

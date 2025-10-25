@@ -123,6 +123,9 @@ xfce_item_list_view_recreate_buttons (XfceItemListView *view);
 static void
 xfce_item_list_view_read_model_flags (XfceItemListView *view);
 
+static void
+xfce_item_list_view_model_reloaded (XfceItemListView *view);
+
 static gint
 xfce_item_list_view_get_index_by_path (XfceItemListView *view,
                                        GtkTreePath *path);
@@ -645,6 +648,17 @@ xfce_item_list_view_read_model_flags (XfceItemListView *view)
 
 
 
+static void
+xfce_item_list_view_model_reloaded (XfceItemListView *view)
+{
+  g_object_ref (view->model);
+  xfce_item_list_view_set_model (view, view->model);
+  g_object_unref (view->model);
+  g_object_notify (G_OBJECT (view), "model");
+}
+
+
+
 static gint
 xfce_item_list_view_get_index_by_path (XfceItemListView *view,
                                        GtkTreePath *path)
@@ -939,6 +953,7 @@ xfce_item_list_view_set_model (XfceItemListView *view,
       g_signal_connect_swapped (model, "row-inserted", G_CALLBACK (xfce_item_list_view_update_actions), view);
       g_signal_connect_swapped (model, "rows-reordered", G_CALLBACK (xfce_item_list_view_update_actions), view);
       g_signal_connect_swapped (model, "notify::list-flags", G_CALLBACK (xfce_item_list_view_read_model_flags), view);
+      g_signal_connect_swapped (model, "reloaded", G_CALLBACK (xfce_item_list_view_model_reloaded), view);
     }
 
   /* Menu, TreeView */

@@ -245,6 +245,14 @@ xfce_item_list_model_test_all
 xfce_item_list_model_changed
 xfce_item_list_model_reloaded
 
+# file:xfce-item-list-store
+xfce_item_list_store_get_type attr:G_GNUC_CONST
+xfce_item_list_store_new attr:G_GNUC_MALLOC
+xfce_item_list_store_clear
+xfce_item_list_store_insert
+xfce_item_list_store_set
+xfce_item_list_store_insert_with_values
+
 # file:xfce-item-list-view
 xfce_item_list_view_get_type attr:G_GNUC_CONST
 xfce_item_list_view_new attr:G_GNUC_MALLOC
