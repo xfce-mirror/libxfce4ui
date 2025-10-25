@@ -105,6 +105,7 @@ xfce_item_list_view_add_menu_item (XfceItemListView *view,
                                    gboolean movement,
                                    gboolean hide_in_context_menu,
                                    const gchar *label,
+                                   const gchar *tooltip,
                                    const gchar *icon_name,
                                    const gchar *action);
 
@@ -462,6 +463,7 @@ xfce_item_list_view_add_menu_item (XfceItemListView *view,
                                    gboolean movement,
                                    gboolean hide_in_context_menu,
                                    const gchar *label,
+                                   const gchar *tooltip,
                                    const gchar *icon_name,
                                    const gchar *action)
 {
@@ -476,6 +478,9 @@ xfce_item_list_view_add_menu_item (XfceItemListView *view,
 
   if (hide_in_context_menu)
     g_menu_item_set_attribute_value (item, XFCE_MENU_ATTRIBUTE_HIDE_IN_CONTEXT_MENU, g_variant_new_boolean (hide_in_context_menu));
+
+  if (tooltip != NULL)
+    g_menu_item_set_attribute_value (item, XFCE_MENU_ATTRIBUTE_TOOLTIP, g_variant_new_string (tooltip));
 
   g_menu_insert_item (view->menu, index, item);
   g_object_unref (item);
@@ -625,8 +630,14 @@ xfce_item_list_view_read_model_flags (XfceItemListView *view)
     {
       gtk_tree_view_set_reorderable (GTK_TREE_VIEW (view->tree_view), TRUE);
 
-      xfce_item_list_view_add_menu_item (view, index++, TRUE, FALSE, _("Move item _up"), "go-up-symbolic", "xfce-item-list-view.move-item-up");
-      xfce_item_list_view_add_menu_item (view, index++, TRUE, FALSE, _("Move item _down"), "go-down-symbolic", "xfce-item-list-view.move-item-down");
+      xfce_item_list_view_add_menu_item (view, index++, TRUE, FALSE,
+                                         _("Move _up"), _("Move currently selected item up by one row"),
+                                         "go-up-symbolic",
+                                         "xfce-item-list-view.move-item-up");
+      xfce_item_list_view_add_menu_item (view, index++, TRUE, FALSE,
+                                         _("Move _down"), _("Move currently selected item down by one row"),
+                                         "go-down-symbolic",
+                                         "xfce-item-list-view.move-item-down");
     }
   else
     {
@@ -634,16 +645,28 @@ xfce_item_list_view_read_model_flags (XfceItemListView *view)
     }
 
   if (flags & XFCE_ITEM_LIST_MODEL_ADDABLE)
-    xfce_item_list_view_add_menu_item (view, index++, FALSE, FALSE, _("_Add"), "list-add-symbolic", "xfce-item-list-view.add-item");
+    xfce_item_list_view_add_menu_item (view, index++, FALSE, FALSE,
+                                       _("_Add new item"), _("Add new item"),
+                                       "list-add-symbolic",
+                                       "xfce-item-list-view.add-item");
 
   if (flags & XFCE_ITEM_LIST_MODEL_REMOVABLE)
-    xfce_item_list_view_add_menu_item (view, index++, FALSE, FALSE, _("_Remove"), "list-remove-symbolic", "xfce-item-list-view.remove-item");
+    xfce_item_list_view_add_menu_item (view, index++, FALSE, FALSE,
+                                       _("_Remove"), _("Remove currently selected items"),
+                                       "list-remove-symbolic",
+                                       "xfce-item-list-view.remove-item");
 
   if (flags & XFCE_ITEM_LIST_MODEL_EDITABLE)
-    xfce_item_list_view_add_menu_item (view, index++, FALSE, FALSE, _("_Edit"), "document-edit-symbolic", "xfce-item-list-view.edit-item");
+    xfce_item_list_view_add_menu_item (view, index++, FALSE, FALSE,
+                                       _("_Edit"), _("Edit the currently selected item"),
+                                       "document-edit-symbolic",
+                                       "xfce-item-list-view.edit-item");
 
   if (flags & XFCE_ITEM_LIST_MODEL_RESETTABLE)
-    xfce_item_list_view_add_menu_item (view, index++, FALSE, TRUE, _("Reset to de_faults"), "document-revert-symbolic", "xfce-item-list-view.reset");
+    xfce_item_list_view_add_menu_item (view, index++, FALSE, TRUE,
+                                       _("Reset to de_faults"), _("Reset all items to default settings"),
+                                       "document-revert-symbolic",
+                                       "xfce-item-list-view.reset");
 }
 
 
