@@ -203,7 +203,7 @@ xfce_item_list_model_class_init (XfceItemListModelClass *klass)
    **/
   g_object_class_install_property (object_class,
                                    PROP_LIST_FLAGS,
-                                   g_param_spec_flags ("list-flags", NULL, NULL,
+                                   g_param_spec_flags ("list-flags", "List flags", "Model feature flags",
                                                        XFCE_TYPE_ITEM_LIST_MODEL_FLAGS,
                                                        XFCE_ITEM_LIST_MODEL_NONE,
                                                        G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));

@@ -107,9 +107,6 @@ xfce_item_list_model_set_activity (XfceItemListModel *model,
                                    gboolean value);
 
 gboolean
-xfce_item_list_model_add (XfceItemListModel *model);
-
-gboolean
 xfce_item_list_model_remove (XfceItemListModel *model,
                              gint index);
 
