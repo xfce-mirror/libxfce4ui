@@ -37,6 +37,8 @@
  * descendant class, then you must call the #GtkTreeView signals yourself.
  *
  * Not all virtual functions need to be implemented, depending on the value of the #XfceItemListModel:list-flags property.
+ *
+ * Since: 4.21.2
  **/
 
 
@@ -192,6 +194,13 @@ xfce_item_list_model_class_init (XfceItemListModelClass *klass)
   object_class->set_property = xfce_item_list_model_set_property;
   object_class->get_property = xfce_item_list_model_get_property;
 
+  /**
+   * XfceItemListModel:list-flags:
+   *
+   * Model feature flags, #XfceItemListView automatically responds to their changes.
+   *
+   * Since: 4.21.2
+   **/
   g_object_class_install_property (object_class,
                                    PROP_LIST_FLAGS,
                                    g_param_spec_flags ("list-flags", NULL, NULL,
