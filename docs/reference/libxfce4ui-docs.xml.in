@@ -53,6 +53,7 @@
     <xi:include href="xml/xfce-titled-dialog.xml"/>
     <xi:include href="xml/xfce-tree-view.xml"/>
     <xi:include href="xml/xfce-item-list-view.xml"/>
+    <xi:include href="xml/xfce-item-list-store.xml"/>
     <xi:include href="xml/xfce-item-list-model.xml"/>
   </part>
 

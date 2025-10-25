@@ -37,6 +37,7 @@
 #include <libxfce4ui/xfce-icon-chooser-dialog.h>
 #include <libxfce4ui/xfce-icon-view.h>
 #include <libxfce4ui/xfce-item-list-model.h>
+#include <libxfce4ui/xfce-item-list-store.h>
 #include <libxfce4ui/xfce-item-list-view.h>
 #include <libxfce4ui/xfce-notebook.h>
 #include <libxfce4ui/xfce-screensaver.h>

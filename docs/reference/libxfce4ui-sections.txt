@@ -361,6 +361,18 @@ XFCE_TYPE_ITEM_LIST_MODEL
 xfce_item_list_model_get_type
 </SECTION>
 
+<FILE>xfce-item-list-store</FILE>
+XfceItemListStore
+xfce_item_list_store_new
+xfce_item_list_store_clear
+xfce_item_list_store_insert
+xfce_item_list_store_set
+xfce_item_list_store_insert_with_values
+<SUBSECTION Standard>
+XFCE_TYPE_ITEM_LIST_STORE
+xfce_item_list_store_get_type
+</SECTION>
+
 <SECTION>
 <FILE>xfce-item-list-view</FILE>
 XfceItemListView

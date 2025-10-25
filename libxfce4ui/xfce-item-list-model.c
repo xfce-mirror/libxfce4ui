@@ -54,6 +54,18 @@ enum
   PROP_LIST_FLAGS,
 };
 
+enum
+{
+  BEFORE_MOVE_ITEM,
+  AFTER_MOVE_ITEM,
+  BEFORE_REMOVE_ITEM,
+  AFTER_REMOVE_ITEM,
+  RELOADED,
+  N_SIGNALS
+};
+
+static gint signals[N_SIGNALS];
+
 
 
 static void
@@ -186,6 +198,46 @@ xfce_item_list_model_class_init (XfceItemListModelClass *klass)
                                                        XFCE_TYPE_ITEM_LIST_MODEL_FLAGS,
                                                        XFCE_ITEM_LIST_MODEL_NONE,
                                                        G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
+
+  signals[BEFORE_MOVE_ITEM] = g_signal_new ("before-move-item",
+                                            G_TYPE_FROM_CLASS (object_class),
+                                            G_SIGNAL_RUN_LAST,
+                                            0,
+                                            NULL, NULL,
+                                            NULL,
+                                            G_TYPE_NONE, 2, G_TYPE_INT, G_TYPE_INT);
+
+  signals[AFTER_MOVE_ITEM] = g_signal_new ("after-move-item",
+                                           G_TYPE_FROM_CLASS (object_class),
+                                           G_SIGNAL_RUN_LAST,
+                                           0,
+                                           NULL, NULL,
+                                           NULL,
+                                           G_TYPE_NONE, 2, G_TYPE_INT, G_TYPE_INT);
+
+  signals[BEFORE_REMOVE_ITEM] = g_signal_new ("before-remove-item",
+                                              G_TYPE_FROM_CLASS (object_class),
+                                              G_SIGNAL_RUN_LAST,
+                                              0,
+                                              NULL, NULL,
+                                              NULL,
+                                              G_TYPE_NONE, 1, G_TYPE_INT);
+
+  signals[AFTER_REMOVE_ITEM] = g_signal_new ("after-remove-item",
+                                             G_TYPE_FROM_CLASS (object_class),
+                                             G_SIGNAL_RUN_LAST,
+                                             0,
+                                             NULL, NULL,
+                                             NULL,
+                                             G_TYPE_NONE, 1, G_TYPE_INT);
+
+  signals[RELOADED] = g_signal_new ("reloaded",
+                                    G_TYPE_FROM_CLASS (object_class),
+                                    G_SIGNAL_RUN_LAST,
+                                    0,
+                                    NULL, NULL,
+                                    NULL,
+                                    G_TYPE_NONE, 0);
 
   klass->get_list_n_columns = xfce_item_list_model_get_list_n_columns_default;
   klass->get_list_column_type = xfce_item_list_model_get_list_column_type_default;
@@ -750,6 +802,9 @@ xfce_item_list_model_move (XfceItemListModel *model,
   g_return_if_fail (source_index >= 0 && source_index < n_items);
   g_return_if_fail (dest_index >= 0 && dest_index < n_items);
 
+  /* Emit model signal */
+  g_signal_emit (model, signals[BEFORE_MOVE_ITEM], 0, source_index, dest_index);
+
   g_return_if_fail (klass->move != NULL);
   klass->move (model, source_index, dest_index);
 
@@ -772,6 +827,9 @@ xfce_item_list_model_move (XfceItemListModel *model,
   gtk_tree_model_rows_reordered_with_length (GTK_TREE_MODEL (model), tmp_path, NULL, new_order, n_items);
   gtk_tree_path_free (tmp_path);
   g_free (new_order);
+
+  /* Emit model signal */
+  g_signal_emit (model, signals[AFTER_MOVE_ITEM], 0, source_index, dest_index);
 }
 
 
@@ -828,6 +886,9 @@ xfce_item_list_model_remove (XfceItemListModel *model,
   g_return_val_if_fail (xfce_item_list_model_get_list_flags (model) & XFCE_ITEM_LIST_MODEL_REMOVABLE, FALSE);
   klass = XFCE_ITEM_LIST_MODEL_GET_CLASS (model);
 
+  /* Emit model signal */
+  g_signal_emit (model, signals[BEFORE_REMOVE_ITEM], 0, index);
+
   g_return_val_if_fail (klass->remove != NULL, FALSE);
   if (klass->remove (model, index))
     {
@@ -835,6 +896,10 @@ xfce_item_list_model_remove (XfceItemListModel *model,
       GtkTreePath *path = gtk_tree_path_new_from_indices (index, -1);
       gtk_tree_model_row_deleted (GTK_TREE_MODEL (model), path);
       gtk_tree_path_free (path);
+
+      /* Emit model signal */
+      g_signal_emit (model, signals[AFTER_REMOVE_ITEM], 0, index);
+
       return TRUE;
     }
   else
@@ -860,12 +925,10 @@ xfce_item_list_model_reset (XfceItemListModel *model)
   g_return_if_fail (xfce_item_list_model_get_list_flags (model) & XFCE_ITEM_LIST_MODEL_RESETTABLE);
   klass = XFCE_ITEM_LIST_MODEL_GET_CLASS (model);
 
-  gint prev_n_items = xfce_item_list_model_get_n_items (model);
-
   g_return_if_fail (klass->reset != NULL);
   klass->reset (model);
 
-  xfce_item_list_model_reloaded (model, prev_n_items);
+  xfce_item_list_model_reloaded (model);
 }
 
 
@@ -1034,36 +1097,15 @@ xfce_item_list_model_changed (XfceItemListModel *model)
 /**
  * xfce_item_list_model_reloaded:
  * @model: #XfceItemListModel
- * @prev_n_items: Number of items in the model BEFORE reloading
  *
  * Synchronizes #GtkTreeView with the new state of the model after it has been reloaded.
  *
  * Since: 4.21.2
  **/
 void
-xfce_item_list_model_reloaded (XfceItemListModel *model,
-                               gint prev_n_items)
+xfce_item_list_model_reloaded (XfceItemListModel *model)
 {
-  g_return_if_fail (XFCE_IS_ITEM_LIST_MODEL (model));
-  g_return_if_fail (prev_n_items >= 0);
-
-  gint cur_n_items = xfce_item_list_model_get_n_items (model);
-  for (gint i = prev_n_items - 1; i >= cur_n_items; --i)
-    {
-      GtkTreePath *path = gtk_tree_path_new_from_indices (i, -1);
-      gtk_tree_model_row_deleted (GTK_TREE_MODEL (model), path);
-      gtk_tree_path_free (path);
-    }
-
-  for (gint i = prev_n_items; i < cur_n_items; ++i)
-    {
-      GtkTreePath *path = gtk_tree_path_new_from_indices (i, -1);
-      GtkTreeIter iter;
-      xfce_item_list_model_set_index (XFCE_ITEM_LIST_MODEL (model), &iter, i);
-      gtk_tree_model_row_inserted (GTK_TREE_MODEL (model), path, &iter);
-      gtk_tree_path_free (path);
-    }
-  xfce_item_list_model_changed (XFCE_ITEM_LIST_MODEL (model));
+  g_signal_emit (model, signals[RELOADED], 0);
 }
 
 
