@@ -32,6 +32,8 @@
  *
  * This class copies the #GtkListStore interface, it also supports the #GtkTreeModel interface,
  * but is intended to be used as an #XfceItemListModel.
+ *
+ * Since: 4.21.2
  **/
 
 

@@ -30,6 +30,8 @@
  * @title: XfceItemListView
  * @short_description: #GtkTreeView with toolbar and ability to move elements
  * @include: libxfce4ui/libxfce4ui.h
+ *
+ * Since: 4.21.2
  **/
 
 
@@ -207,6 +209,13 @@ xfce_item_list_view_class_init (XfceItemListViewClass *klass)
                                                         GTK_TYPE_TREE_VIEW,
                                                         G_PARAM_READABLE | G_PARAM_STATIC_STRINGS));
 
+  /**
+   * XfceItemListView:label-visibility:
+   *
+   * If %FALSE, then the labels on the buttons will be hidden.
+   *
+   * Since: 4.21.2
+   **/
   g_object_class_install_property (object_class,
                                    PROP_LABEL_VISIBILITY,
                                    g_param_spec_boolean ("label-visibility", NULL, NULL,
@@ -219,6 +228,8 @@ xfce_item_list_view_class_init (XfceItemListViewClass *klass)
    * @item: Item index
    *
    * Returns: %TRUE to stop other handlers from being invoked for the event. %FALSE to propagate the event further.
+   *
+   * Since: 4.21.2
    **/
   signals[EDIT_ITEM] = g_signal_new ("edit-item",
                                      G_TYPE_FROM_CLASS (object_class),
@@ -233,6 +244,8 @@ xfce_item_list_view_class_init (XfceItemListViewClass *klass)
    * @view: #XfceItemListView
    *
    * Returns: %TRUE to stop other handlers from being invoked for the event. %FALSE to propagate the event further.
+   *
+   * Since: 4.21.2
    **/
   signals[ADD_ITEM] = g_signal_new ("add-item",
                                     G_TYPE_FROM_CLASS (object_class),
@@ -249,6 +262,8 @@ xfce_item_list_view_class_init (XfceItemListViewClass *klass)
    * @n_items: Number of indexes
    *
    * Returns: %TRUE to stop other handlers from being invoked for the event. %FALSE to propagate the event further.
+   *
+   * Since: 4.21.2
    **/
   signals[REMOVE_ITEMS] = g_signal_new ("remove-items",
                                         G_TYPE_FROM_CLASS (object_class),
@@ -263,6 +278,8 @@ xfce_item_list_view_class_init (XfceItemListViewClass *klass)
    * @view: #XfceItemListView
    *
    * Returns: %TRUE to stop other handlers from being invoked for the event. %FALSE to propagate the event further.
+   *
+   * Since: 4.21.2
    **/
   signals[RESET_ITEMS] = g_signal_new ("reset-items",
                                        G_TYPE_FROM_CLASS (object_class),
