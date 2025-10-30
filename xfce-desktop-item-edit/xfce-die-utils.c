@@ -28,6 +28,8 @@
 
 #include "xfce-die-utils.h"
 
+#define MAX_WIDTH 80
+
 
 
 /**
@@ -248,4 +250,16 @@ xfce_die_g_key_file_save (GKeyFile *key_file,
       g_object_unref (file);
       return NULL;
     }
+}
+
+
+
+gboolean
+xfce_die_set_width_chars (GBinding *binding,
+                          const GValue *src_value,
+                          GValue *dst_value,
+                          gpointer user_data)
+{
+  g_value_set_int (dst_value, (MIN (g_utf8_strlen (g_value_get_string (src_value), -1), MAX_WIDTH)));
+  return TRUE;
 }

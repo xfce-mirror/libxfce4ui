@@ -28,6 +28,7 @@
 
 #include "xfce-die-command-entry.h"
 #include "xfce-die-command-model.h"
+#include "xfce-die-utils.h"
 
 
 
@@ -145,6 +146,10 @@ xfce_die_command_entry_init (XfceDieCommandEntry *command_entry)
   g_object_bind_property (G_OBJECT (command_entry->entry), "text",
                           G_OBJECT (command_entry), "text",
                           G_BINDING_BIDIRECTIONAL | G_BINDING_SYNC_CREATE);
+  g_object_bind_property_full (command_entry->entry, "text", command_entry->entry, "width-chars",
+                               G_BINDING_SYNC_CREATE,
+                               xfce_die_set_width_chars, NULL,
+                               NULL, NULL);
   gtk_box_pack_start (GTK_BOX (command_entry), command_entry->entry, TRUE, TRUE, 0);
   gtk_widget_show (command_entry->entry);
 

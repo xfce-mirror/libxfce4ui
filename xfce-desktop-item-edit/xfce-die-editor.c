@@ -24,6 +24,7 @@
 #include "xfce-die-command-entry.h"
 #include "xfce-die-desktop-model.h"
 #include "xfce-die-editor.h"
+#include "xfce-die-utils.h"
 
 
 
@@ -308,6 +309,10 @@ xfce_die_editor_init (XfceDieEditor *editor)
   g_object_bind_property (G_OBJECT (editor), "name",
                           G_OBJECT (editor->name_entry), "text",
                           G_BINDING_BIDIRECTIONAL | G_BINDING_SYNC_CREATE);
+  g_object_bind_property_full (editor->name_entry, "text", editor->name_entry, "width-chars",
+                               G_BINDING_SYNC_CREATE,
+                               xfce_die_set_width_chars, NULL,
+                               NULL, NULL);
   gtk_grid_attach (GTK_GRID (editor), editor->name_entry, 1, row, 1, 1);
   g_object_set (editor->name_entry, "hexpand", TRUE, NULL);
   gtk_label_set_mnemonic_widget (GTK_LABEL (label), editor->name_entry);
@@ -327,6 +332,10 @@ xfce_die_editor_init (XfceDieEditor *editor)
   g_object_bind_property (G_OBJECT (editor), "comment",
                           G_OBJECT (entry), "text",
                           G_BINDING_BIDIRECTIONAL | G_BINDING_SYNC_CREATE);
+  g_object_bind_property_full (entry, "text", entry, "width-chars",
+                               G_BINDING_SYNC_CREATE,
+                               xfce_die_set_width_chars, NULL,
+                               NULL, NULL);
   gtk_grid_attach (GTK_GRID (editor), entry, 1, row, 1, 1);
   g_object_set (entry, "hexpand", TRUE, NULL);
   gtk_label_set_mnemonic_widget (GTK_LABEL (label), entry);
@@ -377,6 +386,10 @@ xfce_die_editor_init (XfceDieEditor *editor)
                                G_BINDING_SYNC_CREATE,
                                xfce_die_true_if_link, NULL,
                                NULL, NULL);
+  g_object_bind_property_full (entry, "text", entry, "width-chars",
+                               G_BINDING_SYNC_CREATE,
+                               xfce_die_set_width_chars, NULL,
+                               NULL, NULL);
   gtk_grid_attach (GTK_GRID (editor), entry, 1, row, 1, 1);
   g_object_set (entry, "hexpand", TRUE, NULL);
   gtk_label_set_mnemonic_widget (GTK_LABEL (label), entry);
@@ -406,6 +419,10 @@ xfce_die_editor_init (XfceDieEditor *editor)
   g_object_bind_property (G_OBJECT (editor), "path",
                           G_OBJECT (entry), "text",
                           G_BINDING_BIDIRECTIONAL | G_BINDING_SYNC_CREATE);
+  g_object_bind_property_full (entry, "text", entry, "width-chars",
+                               G_BINDING_SYNC_CREATE,
+                               xfce_die_set_width_chars, NULL,
+                               NULL, NULL);
   gtk_box_pack_start (GTK_BOX (box), entry, TRUE, TRUE, 0);
   gtk_label_set_mnemonic_widget (GTK_LABEL (label), entry);
   gtk_widget_show (entry);

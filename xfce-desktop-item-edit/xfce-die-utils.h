@@ -40,6 +40,12 @@ xfce_die_g_key_file_save (GKeyFile *key_file,
                           XfceDieEditorMode mode,
                           GError **error);
 
+gboolean
+xfce_die_set_width_chars (GBinding *binding,
+                          const GValue *src_value,
+                          GValue *dst_value,
+                          gpointer user_data);
+
 G_END_DECLS
 
 #endif /* !__XFCE_DIE_UTILS_H__ */
