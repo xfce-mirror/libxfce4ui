@@ -25,6 +25,8 @@
 #include "xfce-die-desktop-model.h"
 #include "xfce-die-editor.h"
 
+#define MAX_WIDTH 80
+
 
 
 /* Property identifiers */
@@ -82,6 +84,7 @@ struct _XfceDieEditor
   GtkGrid __parent__;
 
   GtkWidget *name_entry;
+  GList *entries;
   GtkWidget *icon_button;
   XfceDieEditorMode mode;
   gchar *name;
@@ -304,6 +307,7 @@ xfce_die_editor_init (XfceDieEditor *editor)
   gtk_widget_show (label);
 
   editor->name_entry = gtk_entry_new ();
+  editor->entries = g_list_prepend (editor->entries, editor->name_entry);
   gtk_entry_set_activates_default (GTK_ENTRY (editor->name_entry), TRUE);
   g_object_bind_property (G_OBJECT (editor), "name",
                           G_OBJECT (editor->name_entry), "text",
@@ -323,6 +327,7 @@ xfce_die_editor_init (XfceDieEditor *editor)
   gtk_widget_show (label);
 
   entry = gtk_entry_new ();
+  editor->entries = g_list_prepend (editor->entries, entry);
   gtk_entry_set_activates_default (GTK_ENTRY (entry), TRUE);
   g_object_bind_property (G_OBJECT (editor), "comment",
                           G_OBJECT (entry), "text",
@@ -345,6 +350,7 @@ xfce_die_editor_init (XfceDieEditor *editor)
   gtk_grid_attach (GTK_GRID (editor), label, 0, row, 1, 1);
 
   entry = xfce_die_command_entry_new ();
+  editor->entries = g_list_prepend (editor->entries, xfce_die_command_entry_get_text_entry (XFCE_DIE_COMMAND_ENTRY (entry)));
   g_object_bind_property (G_OBJECT (editor), "command",
                           G_OBJECT (entry), "text",
                           G_BINDING_BIDIRECTIONAL | G_BINDING_SYNC_CREATE);
@@ -369,6 +375,7 @@ xfce_die_editor_init (XfceDieEditor *editor)
   gtk_grid_attach (GTK_GRID (editor), label, 0, row, 1, 1);
 
   entry = gtk_entry_new ();
+  editor->entries = g_list_prepend (editor->entries, entry);
   gtk_entry_set_activates_default (GTK_ENTRY (entry), TRUE);
   g_object_bind_property (G_OBJECT (editor), "url",
                           G_OBJECT (entry), "text",
@@ -402,6 +409,7 @@ xfce_die_editor_init (XfceDieEditor *editor)
                                NULL, NULL);
 
   entry = gtk_entry_new ();
+  editor->entries = g_list_prepend (editor->entries, entry);
   gtk_entry_set_activates_default (GTK_ENTRY (entry), TRUE);
   g_object_bind_property (G_OBJECT (editor), "path",
                           G_OBJECT (entry), "text",
@@ -494,6 +502,7 @@ xfce_die_editor_finalize (GObject *object)
   XfceDieEditor *editor = XFCE_DIE_EDITOR (object);
 
   /* cleanup */
+  g_list_free (editor->entries);
   g_free (editor->command);
   g_free (editor->comment);
   g_free (editor->icon);
@@ -1389,4 +1398,30 @@ xfce_die_editor_set_terminal (XfceDieEditor *editor,
       /* notify listeners */
       g_object_notify (G_OBJECT (editor), "terminal");
     }
+}
+
+
+
+static gboolean
+unset_width_chars (gpointer entry)
+{
+  /* do not prevent the user from shrinking the dialog size */
+  gtk_entry_set_width_chars (entry, -1);
+  return FALSE;
+}
+
+static void
+set_width_chars (GtkEntry *entry)
+{
+  const gchar *text = gtk_entry_get_text (entry);
+  gtk_entry_set_width_chars (entry, MIN (g_utf8_strlen (text, -1), MAX_WIDTH));
+  g_idle_add (unset_width_chars, entry);
+}
+
+void
+xfce_die_editor_set_size_request (XfceDieEditor *editor)
+{
+  g_return_if_fail (XFCE_IS_DIE_EDITOR (editor));
+  for (GList *lp = editor->entries; lp != NULL; lp = lp->next)
+    set_width_chars (lp->data);
 }
