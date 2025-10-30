@@ -1085,7 +1085,7 @@ msgstr "Programmstarter anlegen"
 
 #: xfce-desktop-item-edit/main.c:57
 msgid "Create Link"
-msgstr "Verknüpfung anlegen"
+msgstr "Weblink anlegen"
 
 #: xfce-desktop-item-edit/main.c:57
 msgid "Create Directory"
@@ -1097,7 +1097,7 @@ msgstr "Programmstarter bearbeiten"
 
 #: xfce-desktop-item-edit/main.c:58
 msgid "Edit Link"
-msgstr "Verknüpfung bearbeiten"
+msgstr "Weblink bearbeiten"
 
 #: xfce-desktop-item-edit/main.c:58
 msgid "Edit Directory"
