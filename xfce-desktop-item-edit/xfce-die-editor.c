@@ -25,6 +25,8 @@
 #include "xfce-die-desktop-model.h"
 #include "xfce-die-editor.h"
 
+#define MAX_WIDTH 80
+
 
 
 /* Property identifiers */
@@ -82,6 +84,10 @@ struct _XfceDieEditor
   GtkGrid __parent__;
 
   GtkWidget *name_entry;
+  GtkWidget *comment_entry;
+  GtkWidget *command_entry;
+  GtkWidget *url_entry;
+  GtkWidget *path_entry;
   GtkWidget *icon_button;
   XfceDieEditorMode mode;
   gchar *name;
@@ -322,7 +328,7 @@ xfce_die_editor_init (XfceDieEditor *editor)
   gtk_grid_attach (GTK_GRID (editor), label, 0, row, 1, 1);
   gtk_widget_show (label);
 
-  entry = gtk_entry_new ();
+  editor->comment_entry = entry = gtk_entry_new ();
   gtk_entry_set_activates_default (GTK_ENTRY (entry), TRUE);
   g_object_bind_property (G_OBJECT (editor), "comment",
                           G_OBJECT (entry), "text",
@@ -344,7 +350,7 @@ xfce_die_editor_init (XfceDieEditor *editor)
                                NULL, NULL);
   gtk_grid_attach (GTK_GRID (editor), label, 0, row, 1, 1);
 
-  entry = xfce_die_command_entry_new ();
+  editor->command_entry = entry = xfce_die_command_entry_new ();
   g_object_bind_property (G_OBJECT (editor), "command",
                           G_OBJECT (entry), "text",
                           G_BINDING_BIDIRECTIONAL | G_BINDING_SYNC_CREATE);
@@ -368,7 +374,7 @@ xfce_die_editor_init (XfceDieEditor *editor)
                                NULL, NULL);
   gtk_grid_attach (GTK_GRID (editor), label, 0, row, 1, 1);
 
-  entry = gtk_entry_new ();
+  editor->url_entry = entry = gtk_entry_new ();
   gtk_entry_set_activates_default (GTK_ENTRY (entry), TRUE);
   g_object_bind_property (G_OBJECT (editor), "url",
                           G_OBJECT (entry), "text",
@@ -401,7 +407,7 @@ xfce_die_editor_init (XfceDieEditor *editor)
                                xfce_die_true_if_application, NULL,
                                NULL, NULL);
 
-  entry = gtk_entry_new ();
+  editor->path_entry = entry = gtk_entry_new ();
   gtk_entry_set_activates_default (GTK_ENTRY (entry), TRUE);
   g_object_bind_property (G_OBJECT (editor), "path",
                           G_OBJECT (entry), "text",
@@ -993,6 +999,8 @@ xfce_die_editor_set_name (XfceDieEditor *editor,
       /* apply the new name */
       g_free (editor->name);
       editor->name = g_strdup (name);
+      gtk_entry_set_width_chars (GTK_ENTRY (editor->name_entry),
+                                 MIN (g_utf8_strlen (editor->name, -1), MAX_WIDTH));
 
       /* notify listeners */
       g_object_notify (G_OBJECT (editor), "complete");
@@ -1039,6 +1047,8 @@ xfce_die_editor_set_comment (XfceDieEditor *editor,
       /* apply the new comment */
       g_free (editor->comment);
       editor->comment = g_strdup (comment);
+      gtk_entry_set_width_chars (GTK_ENTRY (editor->comment_entry),
+                                 MIN (g_utf8_strlen (editor->comment, -1), MAX_WIDTH));
 
       /* notify listeners */
       g_object_notify (G_OBJECT (editor), "comment");
@@ -1085,6 +1095,8 @@ xfce_die_editor_set_command (XfceDieEditor *editor,
       /* apply the new command */
       g_free (editor->command);
       editor->command = g_strdup (command);
+      gtk_entry_set_width_chars (GTK_ENTRY (xfce_die_command_entry_get_text_entry (XFCE_DIE_COMMAND_ENTRY (editor->command_entry))),
+                                 MIN (g_utf8_strlen (editor->command, -1), MAX_WIDTH));
 
       /* notify listeners */
       g_object_notify (G_OBJECT (editor), "complete");
@@ -1132,6 +1144,8 @@ xfce_die_editor_set_url (XfceDieEditor *editor,
       /* apply the new URL */
       g_free (editor->url);
       editor->url = g_strdup (url);
+      gtk_entry_set_width_chars (GTK_ENTRY (editor->url_entry),
+                                 MIN (g_utf8_strlen (editor->url, -1), MAX_WIDTH));
 
       /* notify listeners */
       g_object_notify (G_OBJECT (editor), "complete");
@@ -1179,6 +1193,8 @@ xfce_die_editor_set_path (XfceDieEditor *editor,
       /* apply the new URL */
       g_free (editor->path);
       editor->path = g_strdup (path);
+      gtk_entry_set_width_chars (GTK_ENTRY (editor->path_entry),
+                                 MIN (g_utf8_strlen (editor->path, -1), MAX_WIDTH));
 
       /* notify listeners */
       g_object_notify (G_OBJECT (editor), "path");

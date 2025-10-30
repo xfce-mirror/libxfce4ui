@@ -457,3 +457,12 @@ xfce_die_command_entry_set_text (XfceDieCommandEntry *command_entry,
   /* notify listeners */
   g_object_notify (G_OBJECT (command_entry), "text");
 }
+
+
+
+GtkWidget *
+xfce_die_command_entry_get_text_entry (XfceDieCommandEntry *command_entry)
+{
+  g_return_val_if_fail (XFCE_IS_DIE_COMMAND_ENTRY (command_entry), NULL);
+  return command_entry->entry;
+}
