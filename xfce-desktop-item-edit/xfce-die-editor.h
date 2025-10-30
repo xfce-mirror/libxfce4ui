@@ -45,31 +45,36 @@ const gchar *
 xfce_die_editor_get_name (XfceDieEditor *editor);
 void
 xfce_die_editor_set_name (XfceDieEditor *editor,
-                          const gchar *name);
+                          const gchar *name,
+                          gboolean resize);
 
 const gchar *
 xfce_die_editor_get_comment (XfceDieEditor *editor);
 void
 xfce_die_editor_set_comment (XfceDieEditor *editor,
-                             const gchar *comment);
+                             const gchar *comment,
+                             gboolean resize);
 
 const gchar *
 xfce_die_editor_get_command (XfceDieEditor *editor);
 void
 xfce_die_editor_set_command (XfceDieEditor *editor,
-                             const gchar *command);
+                             const gchar *command,
+                             gboolean resize);
 
 const gchar *
 xfce_die_editor_get_url (XfceDieEditor *editor);
 void
 xfce_die_editor_set_url (XfceDieEditor *editor,
-                         const gchar *url);
+                         const gchar *url,
+                         gboolean resize);
 
 const gchar *
 xfce_die_editor_get_path (XfceDieEditor *editor);
 void
 xfce_die_editor_set_path (XfceDieEditor *editor,
-                          const gchar *path);
+                          const gchar *path,
+                          gboolean resize);
 
 const gchar *
 xfce_die_editor_get_icon (XfceDieEditor *editor);

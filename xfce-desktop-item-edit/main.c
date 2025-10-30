@@ -372,13 +372,13 @@ main (int argc, char **argv)
   /* setup the name */
   value = g_key_file_get_locale_string (key_file, G_KEY_FILE_DESKTOP_GROUP,
                                         G_KEY_FILE_DESKTOP_KEY_NAME, NULL, NULL);
-  xfce_die_editor_set_name (XFCE_DIE_EDITOR (editor), (value != NULL) ? value : "");
+  xfce_die_editor_set_name (XFCE_DIE_EDITOR (editor), (value != NULL) ? value : "", TRUE);
   g_free (value);
 
   /* setup the comment */
   value = g_key_file_get_locale_string (key_file, G_KEY_FILE_DESKTOP_GROUP,
                                         G_KEY_FILE_DESKTOP_KEY_COMMENT, NULL, NULL);
-  xfce_die_editor_set_comment (XFCE_DIE_EDITOR (editor), (value != NULL) ? value : "");
+  xfce_die_editor_set_comment (XFCE_DIE_EDITOR (editor), (value != NULL) ? value : "", TRUE);
   g_free (value);
 
   /* setup the icon (automatically fixing broken icons) */
@@ -402,13 +402,13 @@ main (int argc, char **argv)
       /* setup the command but ignore escape sequences */
       value = g_key_file_get_value (key_file, G_KEY_FILE_DESKTOP_GROUP,
                                     G_KEY_FILE_DESKTOP_KEY_EXEC, NULL);
-      xfce_die_editor_set_command (XFCE_DIE_EDITOR (editor), (value != NULL) ? value : "");
+      xfce_die_editor_set_command (XFCE_DIE_EDITOR (editor), (value != NULL) ? value : "", TRUE);
       g_free (value);
 
       /* setup the working directory */
       value = g_key_file_get_string (key_file, G_KEY_FILE_DESKTOP_GROUP,
                                      G_KEY_FILE_DESKTOP_KEY_PATH, NULL);
-      xfce_die_editor_set_path (XFCE_DIE_EDITOR (editor), (value != NULL) ? value : "");
+      xfce_die_editor_set_path (XFCE_DIE_EDITOR (editor), (value != NULL) ? value : "", TRUE);
       g_free (value);
 
 
@@ -425,7 +425,7 @@ main (int argc, char **argv)
       /* setup the URL */
       value = g_key_file_get_string (key_file, G_KEY_FILE_DESKTOP_GROUP,
                                      G_KEY_FILE_DESKTOP_KEY_URL, NULL);
-      xfce_die_editor_set_url (XFCE_DIE_EDITOR (editor), (value != NULL) ? value : "");
+      xfce_die_editor_set_url (XFCE_DIE_EDITOR (editor), (value != NULL) ? value : "", TRUE);
       g_free (value);
       break;
 
