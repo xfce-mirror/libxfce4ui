@@ -959,6 +959,7 @@ xfce_item_list_model_set_index (XfceItemListModel *model,
   g_return_if_fail (iter != NULL);
   g_return_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model));
 
+  iter->stamp = 0;
   iter->user_data = GINT_TO_POINTER (index);
 }
 

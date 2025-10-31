@@ -196,6 +196,7 @@ xfce_item_list_store_item_free (XfceItemListStoreItem *item)
   for (gint i = 0; i < item->n_columns; ++i)
     g_value_reset (&item->columns[i]);
 
+  g_free (item->columns);
   g_free (item);
 }
 
@@ -325,6 +326,14 @@ xfce_item_list_store_set_va (XfceItemListStore *store,
             }
         }
     }
+
+  /* GtkTreeModel signal */
+  GtkTreePath *path = gtk_tree_path_new_from_indices (index, -1);
+  GtkTreeIter iter;
+
+  xfce_item_list_model_set_index (XFCE_ITEM_LIST_MODEL (store), &iter, index);
+  gtk_tree_model_row_changed (GTK_TREE_MODEL (store), path, &iter);
+  gtk_tree_path_free (path);
 }
 
 
