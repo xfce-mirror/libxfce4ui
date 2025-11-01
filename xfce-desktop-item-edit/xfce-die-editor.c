@@ -25,6 +25,8 @@
 #include "xfce-die-desktop-model.h"
 #include "xfce-die-editor.h"
 
+#define MAX_WIDTH 80
+
 
 
 /* Property identifiers */
@@ -82,6 +84,10 @@ struct _XfceDieEditor
   GtkGrid __parent__;
 
   GtkWidget *name_entry;
+  GtkWidget *comment_entry;
+  GtkWidget *command_entry;
+  GtkWidget *url_entry;
+  GtkWidget *path_entry;
   GtkWidget *icon_button;
   XfceDieEditorMode mode;
   gchar *name;
@@ -322,7 +328,7 @@ xfce_die_editor_init (XfceDieEditor *editor)
   gtk_grid_attach (GTK_GRID (editor), label, 0, row, 1, 1);
   gtk_widget_show (label);
 
-  entry = gtk_entry_new ();
+  editor->comment_entry = entry = gtk_entry_new ();
   gtk_entry_set_activates_default (GTK_ENTRY (entry), TRUE);
   g_object_bind_property (G_OBJECT (editor), "comment",
                           G_OBJECT (entry), "text",
@@ -344,7 +350,7 @@ xfce_die_editor_init (XfceDieEditor *editor)
                                NULL, NULL);
   gtk_grid_attach (GTK_GRID (editor), label, 0, row, 1, 1);
 
-  entry = xfce_die_command_entry_new ();
+  editor->command_entry = entry = xfce_die_command_entry_new ();
   g_object_bind_property (G_OBJECT (editor), "command",
                           G_OBJECT (entry), "text",
                           G_BINDING_BIDIRECTIONAL | G_BINDING_SYNC_CREATE);
@@ -368,7 +374,7 @@ xfce_die_editor_init (XfceDieEditor *editor)
                                NULL, NULL);
   gtk_grid_attach (GTK_GRID (editor), label, 0, row, 1, 1);
 
-  entry = gtk_entry_new ();
+  editor->url_entry = entry = gtk_entry_new ();
   gtk_entry_set_activates_default (GTK_ENTRY (entry), TRUE);
   g_object_bind_property (G_OBJECT (editor), "url",
                           G_OBJECT (entry), "text",
@@ -401,7 +407,7 @@ xfce_die_editor_init (XfceDieEditor *editor)
                                xfce_die_true_if_application, NULL,
                                NULL, NULL);
 
-  entry = gtk_entry_new ();
+  editor->path_entry = entry = gtk_entry_new ();
   gtk_entry_set_activates_default (GTK_ENTRY (entry), TRUE);
   g_object_bind_property (G_OBJECT (editor), "path",
                           G_OBJECT (entry), "text",
@@ -579,23 +585,23 @@ xfce_die_editor_set_property (GObject *object,
       break;
 
     case PROP_NAME:
-      xfce_die_editor_set_name (editor, g_value_get_string (value));
+      xfce_die_editor_set_name (editor, g_value_get_string (value), FALSE);
       break;
 
     case PROP_COMMENT:
-      xfce_die_editor_set_comment (editor, g_value_get_string (value));
+      xfce_die_editor_set_comment (editor, g_value_get_string (value), FALSE);
       break;
 
     case PROP_COMMAND:
-      xfce_die_editor_set_command (editor, g_value_get_string (value));
+      xfce_die_editor_set_command (editor, g_value_get_string (value), FALSE);
       break;
 
     case PROP_URL:
-      xfce_die_editor_set_url (editor, g_value_get_string (value));
+      xfce_die_editor_set_url (editor, g_value_get_string (value), FALSE);
       break;
 
     case PROP_PATH:
-      xfce_die_editor_set_path (editor, g_value_get_string (value));
+      xfce_die_editor_set_path (editor, g_value_get_string (value), FALSE);
       break;
 
     case PROP_ICON:
@@ -695,7 +701,7 @@ xfce_die_editor_path_clicked (GtkWidget *button,
     {
       /* remember the selected path from the chooser */
       path = gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (chooser));
-      xfce_die_editor_set_path (editor, path);
+      xfce_die_editor_set_path (editor, path, FALSE);
       g_free (path);
     }
 
@@ -734,13 +740,13 @@ xfce_die_editor_match_selected (GtkEntryCompletion *completion,
                       -1);
 
   /* apply the settings to the editor */
-  xfce_die_editor_set_name (editor, name);
-  xfce_die_editor_set_comment (editor, (comment != NULL) ? comment : "");
-  xfce_die_editor_set_command (editor, command);
+  xfce_die_editor_set_name (editor, name, FALSE);
+  xfce_die_editor_set_comment (editor, (comment != NULL) ? comment : "", FALSE);
+  xfce_die_editor_set_command (editor, command, FALSE);
   xfce_die_editor_set_icon (editor, (icon != NULL) ? icon : "");
   xfce_die_editor_set_snotify (editor, snotify);
   xfce_die_editor_set_terminal (editor, terminal);
-  xfce_die_editor_set_path (editor, "");
+  xfce_die_editor_set_path (editor, "", FALSE);
 
   /* cleanup */
   g_free (comment);
@@ -973,6 +979,24 @@ xfce_die_editor_get_name (XfceDieEditor *editor)
 
 
 
+static gboolean
+unset_width_chars (gpointer entry)
+{
+  /* do not prevent the user from shrinking the dialog size */
+  gtk_entry_set_width_chars (entry, -1);
+  return FALSE;
+}
+
+static void
+set_width_chars (GtkEntry *entry,
+                 const gchar *text)
+{
+  gtk_entry_set_width_chars (entry, MIN (g_utf8_strlen (text, -1), MAX_WIDTH));
+  g_idle_add (unset_width_chars, entry);
+}
+
+
+
 /**
  * xfce_die_editor_set_name:
  * @editor : an #XfceDieEditor.
@@ -982,7 +1006,8 @@ xfce_die_editor_get_name (XfceDieEditor *editor)
  **/
 void
 xfce_die_editor_set_name (XfceDieEditor *editor,
-                          const gchar *name)
+                          const gchar *name,
+                          gboolean resize)
 {
   g_return_if_fail (XFCE_IS_DIE_EDITOR (editor));
   g_return_if_fail (g_utf8_validate (name, -1, NULL));
@@ -993,6 +1018,8 @@ xfce_die_editor_set_name (XfceDieEditor *editor,
       /* apply the new name */
       g_free (editor->name);
       editor->name = g_strdup (name);
+      if (resize)
+        set_width_chars (GTK_ENTRY (editor->name_entry), editor->name);
 
       /* notify listeners */
       g_object_notify (G_OBJECT (editor), "complete");
@@ -1028,7 +1055,8 @@ xfce_die_editor_get_comment (XfceDieEditor *editor)
  **/
 void
 xfce_die_editor_set_comment (XfceDieEditor *editor,
-                             const gchar *comment)
+                             const gchar *comment,
+                             gboolean resize)
 {
   g_return_if_fail (XFCE_IS_DIE_EDITOR (editor));
   g_return_if_fail (g_utf8_validate (comment, -1, NULL));
@@ -1039,6 +1067,8 @@ xfce_die_editor_set_comment (XfceDieEditor *editor,
       /* apply the new comment */
       g_free (editor->comment);
       editor->comment = g_strdup (comment);
+      if (resize)
+        set_width_chars (GTK_ENTRY (editor->comment_entry), editor->comment);
 
       /* notify listeners */
       g_object_notify (G_OBJECT (editor), "comment");
@@ -1074,7 +1104,8 @@ xfce_die_editor_get_command (XfceDieEditor *editor)
  **/
 void
 xfce_die_editor_set_command (XfceDieEditor *editor,
-                             const gchar *command)
+                             const gchar *command,
+                             gboolean resize)
 {
   g_return_if_fail (XFCE_IS_DIE_EDITOR (editor));
   g_return_if_fail (g_utf8_validate (command, -1, NULL));
@@ -1085,6 +1116,9 @@ xfce_die_editor_set_command (XfceDieEditor *editor,
       /* apply the new command */
       g_free (editor->command);
       editor->command = g_strdup (command);
+      if (resize)
+        set_width_chars (GTK_ENTRY (xfce_die_command_entry_get_text_entry (XFCE_DIE_COMMAND_ENTRY (editor->command_entry))),
+                         editor->command);
 
       /* notify listeners */
       g_object_notify (G_OBJECT (editor), "complete");
@@ -1121,7 +1155,8 @@ xfce_die_editor_get_url (XfceDieEditor *editor)
  **/
 void
 xfce_die_editor_set_url (XfceDieEditor *editor,
-                         const gchar *url)
+                         const gchar *url,
+                         gboolean resize)
 {
   g_return_if_fail (XFCE_IS_DIE_EDITOR (editor));
   g_return_if_fail (g_utf8_validate (url, -1, NULL));
@@ -1132,6 +1167,8 @@ xfce_die_editor_set_url (XfceDieEditor *editor,
       /* apply the new URL */
       g_free (editor->url);
       editor->url = g_strdup (url);
+      if (resize)
+        set_width_chars (GTK_ENTRY (editor->url_entry), editor->url);
 
       /* notify listeners */
       g_object_notify (G_OBJECT (editor), "complete");
@@ -1168,7 +1205,8 @@ xfce_die_editor_get_path (XfceDieEditor *editor)
  **/
 void
 xfce_die_editor_set_path (XfceDieEditor *editor,
-                          const gchar *path)
+                          const gchar *path,
+                          gboolean resize)
 {
   g_return_if_fail (XFCE_IS_DIE_EDITOR (editor));
   g_return_if_fail (g_utf8_validate (path, -1, NULL));
@@ -1179,6 +1217,8 @@ xfce_die_editor_set_path (XfceDieEditor *editor,
       /* apply the new URL */
       g_free (editor->path);
       editor->path = g_strdup (path);
+      if (resize)
+        set_width_chars (GTK_ENTRY (editor->path_entry), editor->path);
 
       /* notify listeners */
       g_object_notify (G_OBJECT (editor), "path");
