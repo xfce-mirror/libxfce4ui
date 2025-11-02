@@ -811,6 +811,9 @@ xfce_item_list_model_move (XfceItemListModel *model,
   g_return_if_fail (source_index >= 0 && source_index < n_items);
   g_return_if_fail (dest_index >= 0 && dest_index < n_items);
 
+  if (source_index == dest_index)
+    return;
+
   /* Emit model signal */
   g_signal_emit (model, signals[BEFORE_MOVE_ITEM], 0, source_index, dest_index);
 
