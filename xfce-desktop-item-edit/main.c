@@ -438,6 +438,9 @@ main (int argc, char **argv)
       break;
     }
 
+  /* set initial size request from text entry contents */
+  xfce_die_editor_set_size_request (XFCE_DIE_EDITOR (editor));
+
     /* check if a parent window id was specified */
 #ifdef ENABLE_X11
   if (G_UNLIKELY (opt_xid != 0 && GDK_IS_X11_DISPLAY (gdk_display_get_default ())))
