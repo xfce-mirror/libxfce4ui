@@ -89,6 +89,9 @@ void
 xfce_die_editor_set_terminal (XfceDieEditor *editor,
                               gboolean terminal);
 
+void
+xfce_die_editor_set_size_request (XfceDieEditor *editor);
+
 G_END_DECLS
 
 #endif /* !__XFCE_DIE_EDITOR_H__ */

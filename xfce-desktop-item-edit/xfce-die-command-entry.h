@@ -34,6 +34,8 @@ xfce_die_command_entry_get_text (XfceDieCommandEntry *command_entry);
 void
 xfce_die_command_entry_set_text (XfceDieCommandEntry *command_entry,
                                  const gchar *text);
+GtkWidget *
+xfce_die_command_entry_get_text_entry (XfceDieCommandEntry *command_entry);
 
 G_END_DECLS
 
