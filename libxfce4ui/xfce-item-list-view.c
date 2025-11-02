@@ -780,6 +780,8 @@ xfce_item_list_view_toggle_item (XfceItemListView *view,
       gint index = xfce_item_list_model_get_index (view->model, &iter);
       xfce_item_list_model_set_activity (view->model, index, !xfce_item_list_model_test (view->model, index, XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVE));
     }
+
+  gtk_tree_path_free (path);
 }
 
 
