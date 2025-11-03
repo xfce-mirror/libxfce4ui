@@ -38,7 +38,7 @@
  *
  * Not all virtual functions need to be implemented, depending on the value of the #XfceItemListModel:list-flags property.
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 
 
@@ -199,7 +199,7 @@ xfce_item_list_model_class_init (XfceItemListModelClass *klass)
    *
    * Model feature flags, #XfceItemListView automatically responds to their changes.
    *
-   * Since: 4.21.2
+   * Since: 4.21.3
    **/
   g_object_class_install_property (object_class,
                                    PROP_LIST_FLAGS,
@@ -661,7 +661,7 @@ xfce_item_list_model_tree_row_drop_possible (GtkTreeDragDest *drag_dest,
  *
  * Returns: Number of columns
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 gint
 xfce_item_list_model_get_list_n_columns (XfceItemListModel *model)
@@ -684,7 +684,7 @@ xfce_item_list_model_get_list_n_columns (XfceItemListModel *model)
  *
  * Returns: Column type
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 GType
 xfce_item_list_model_get_list_column_type (XfceItemListModel *model,
@@ -707,7 +707,7 @@ xfce_item_list_model_get_list_column_type (XfceItemListModel *model,
  *
  * Returns: Supported model features
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 XfceItemListModelFlags
 xfce_item_list_model_get_list_flags (XfceItemListModel *model)
@@ -727,7 +727,7 @@ xfce_item_list_model_get_list_flags (XfceItemListModel *model)
  *
  * Returns: Number of items
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 gint
 xfce_item_list_model_get_n_items (XfceItemListModel *model)
@@ -750,7 +750,7 @@ xfce_item_list_model_get_n_items (XfceItemListModel *model)
  * @column: Columns from #XfceItemListModelColumn, or custom columns after #XFCE_ITEM_LIST_MODEL_COLUMN_USER
  * @value: (out) (transfer none): an empty #GValue to set
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 void
 xfce_item_list_model_get_item_value (XfceItemListModel *model,
@@ -794,7 +794,7 @@ xfce_item_list_model_get_item_value (XfceItemListModel *model,
  *
  * Moves one item from the @source_index position to the @dest_index position
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 void
 xfce_item_list_model_move (XfceItemListModel *model,
@@ -852,7 +852,7 @@ xfce_item_list_model_move (XfceItemListModel *model,
  * @index: Item index
  * @value: Activity value
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 void
 xfce_item_list_model_set_activity (XfceItemListModel *model,
@@ -885,7 +885,7 @@ xfce_item_list_model_set_activity (XfceItemListModel *model,
  *
  * Returns: If the item was removed then returns TRUE
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 gboolean
 xfce_item_list_model_remove (XfceItemListModel *model,
@@ -926,7 +926,7 @@ xfce_item_list_model_remove (XfceItemListModel *model,
  * xfce_item_list_model_reset:
  * @model: #XfceItemListModel
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 void
 xfce_item_list_model_reset (XfceItemListModel *model)
@@ -951,7 +951,7 @@ xfce_item_list_model_reset (XfceItemListModel *model)
  * @iter: Iterator that will be set to the specified index
  * @index: The index that will be set to the iterator
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 void
 xfce_item_list_model_set_index (XfceItemListModel *model,
@@ -975,7 +975,7 @@ xfce_item_list_model_set_index (XfceItemListModel *model,
  *
  * Returns: Index extracted from iterator
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 gint
 xfce_item_list_model_get_index (XfceItemListModel *model,
@@ -1001,7 +1001,7 @@ xfce_item_list_model_get_index (XfceItemListModel *model,
  *
  * Returns: %TRUE if test is successful
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 gboolean
 xfce_item_list_model_test (XfceItemListModel *model,
@@ -1029,7 +1029,7 @@ xfce_item_list_model_test (XfceItemListModel *model,
  *
  * Returns: %TRUE if test is successful
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 gboolean
 xfce_item_list_model_test_any (XfceItemListModel *model,
@@ -1061,7 +1061,7 @@ xfce_item_list_model_test_any (XfceItemListModel *model,
  *
  * Returns: %TRUE if test is successful
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 gboolean
 xfce_item_list_model_test_all (XfceItemListModel *model,
@@ -1088,7 +1088,7 @@ xfce_item_list_model_test_all (XfceItemListModel *model,
  *
  * Makes #GtkTreeView think that all items have changed their value.
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 void
 xfce_item_list_model_changed (XfceItemListModel *model)
@@ -1113,7 +1113,7 @@ xfce_item_list_model_changed (XfceItemListModel *model)
  *
  * Synchronizes #GtkTreeView with the new state of the model after it has been reloaded.
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 void
 xfce_item_list_model_reloaded (XfceItemListModel *model)

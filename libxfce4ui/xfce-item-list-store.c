@@ -33,7 +33,7 @@
  * This class copies the #GtkListStore interface, it also supports the #GtkTreeModel interface,
  * but is intended to be used as an #XfceItemListModel.
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 
 
@@ -345,7 +345,7 @@ xfce_item_list_store_set_va (XfceItemListStore *store,
  *
  * Returns: (transfer full): #XfceItemListStore
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 XfceItemListStore *
 xfce_item_list_store_new (gint n_columns,
@@ -381,7 +381,7 @@ xfce_item_list_store_new (gint n_columns,
  *
  * Removes all items.
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 void
 xfce_item_list_store_clear (XfceItemListStore *store)
@@ -405,7 +405,7 @@ xfce_item_list_store_clear (XfceItemListStore *store)
  *
  * Returns: The index at which the item was inserted
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 gint
 xfce_item_list_store_insert (XfceItemListStore *store,
@@ -440,7 +440,7 @@ xfce_item_list_store_insert (XfceItemListStore *store,
  *
  * Sets the value of the item's columns at a specific index; the column index must be -1 at the end.
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 void
 xfce_item_list_store_set (XfceItemListStore *store,
@@ -469,7 +469,7 @@ xfce_item_list_store_set (XfceItemListStore *store,
  *
  * Returns: The index at which the new item was inserted
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 gint
 xfce_item_list_store_insert_with_values (XfceItemListStore *store,

@@ -43,7 +43,7 @@ G_DECLARE_DERIVABLE_TYPE (XfceItemListModel, xfce_item_list_model, XFCE, ITEM_LI
  * @remove: Method must be implemented if the #XFCE_ITEM_LIST_MODEL_REMOVABLE flag is set
  * @reset: Method must be implemented if the #XFCE_ITEM_LIST_MODEL_RESETTABLE flag is set
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 struct _XfceItemListModelClass
 {

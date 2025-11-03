@@ -116,7 +116,7 @@ typedef enum
  *
  * Specifies the model's capabilities
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 typedef enum
 {
@@ -139,7 +139,7 @@ typedef enum
  * @XFCE_ITEM_LIST_MODEL_COLUMN_REMOVABLE : boolean, required if the #XFCE_ITEM_LIST_MODEL_REMOVABLE flag is set.
  * @XFCE_ITEM_LIST_MODEL_COLUMN_USER      : If you need to add your own columns, then your first column should have this value.
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 typedef enum
 {
@@ -163,7 +163,7 @@ typedef enum
  * Indexes of standard columns attached to GtkTreeView. Using these indexes you can access the desired column to change
  * its settings. You can add your own columns at the end, starting from the index #XFCE_ITEM_LIST_VIEW_COLUMN_USER.
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 typedef enum
 {

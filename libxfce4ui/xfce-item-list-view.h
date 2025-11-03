@@ -35,7 +35,7 @@ G_BEGIN_DECLS
  * Attribute with boolean type. If %TRUE, then the menu item is responsible for changing the order of rows.
  * Buttons with this attribute will appear on the right side of the #XfceItemListView widget.
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 #define XFCE_MENU_ATTRIBUTE_MOVEMENT "movement"
 
@@ -44,7 +44,7 @@ G_BEGIN_DECLS
  *
  * Attribute with string type. The format is the same as gtk_widget_set_tooltip_text().
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 #define XFCE_MENU_ATTRIBUTE_TOOLTIP "tooltip"
 
@@ -53,7 +53,7 @@ G_BEGIN_DECLS
  *
  * Attribute with boolean type. If %TRUE, the menu item will not appear in context menus.
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 #define XFCE_MENU_ATTRIBUTE_HIDE_IN_CONTEXT_MENU "hide-in-context-menu"
 

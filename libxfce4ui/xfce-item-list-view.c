@@ -31,7 +31,7 @@
  * @short_description: #GtkTreeView with toolbar and ability to move elements
  * @include: libxfce4ui/libxfce4ui.h
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 
 
@@ -214,7 +214,7 @@ xfce_item_list_view_class_init (XfceItemListViewClass *klass)
    *
    * If %FALSE, then the labels on the buttons will be hidden.
    *
-   * Since: 4.21.2
+   * Since: 4.21.3
    **/
   g_object_class_install_property (object_class,
                                    PROP_LABEL_VISIBILITY,
@@ -231,7 +231,7 @@ xfce_item_list_view_class_init (XfceItemListViewClass *klass)
    *
    * Returns: %TRUE to stop other handlers from being invoked for the event. %FALSE to propagate the event further.
    *
-   * Since: 4.21.2
+   * Since: 4.21.3
    **/
   signals[EDIT_ITEM] = g_signal_new ("edit-item",
                                      G_TYPE_FROM_CLASS (object_class),
@@ -247,7 +247,7 @@ xfce_item_list_view_class_init (XfceItemListViewClass *klass)
    *
    * Returns: %TRUE to stop other handlers from being invoked for the event. %FALSE to propagate the event further.
    *
-   * Since: 4.21.2
+   * Since: 4.21.3
    **/
   signals[ADD_ITEM] = g_signal_new ("add-item",
                                     G_TYPE_FROM_CLASS (object_class),
@@ -265,7 +265,7 @@ xfce_item_list_view_class_init (XfceItemListViewClass *klass)
    *
    * Returns: %TRUE to stop other handlers from being invoked for the event. %FALSE to propagate the event further.
    *
-   * Since: 4.21.2
+   * Since: 4.21.3
    **/
   signals[REMOVE_ITEMS] = g_signal_new ("remove-items",
                                         G_TYPE_FROM_CLASS (object_class),
@@ -281,7 +281,7 @@ xfce_item_list_view_class_init (XfceItemListViewClass *klass)
    *
    * Returns: %TRUE to stop other handlers from being invoked for the event. %FALSE to propagate the event further.
    *
-   * Since: 4.21.2
+   * Since: 4.21.3
    **/
   signals[RESET_ITEMS] = g_signal_new ("reset-items",
                                        G_TYPE_FROM_CLASS (object_class),
@@ -942,7 +942,7 @@ xfce_item_list_view_recreate_context_menu (XfceItemListView *view)
  *
  * Returns: (transfer full): #XfceItemListView widget
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 GtkWidget *
 xfce_item_list_view_new (XfceItemListModel *model)
@@ -958,7 +958,7 @@ xfce_item_list_view_new (XfceItemListModel *model)
  *
  * Returns: (transfer none): #XfceItemListModel
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 XfceItemListModel *
 xfce_item_list_view_get_model (XfceItemListView *view)
@@ -975,7 +975,7 @@ xfce_item_list_view_get_model (XfceItemListView *view)
  * @view: #XfceItemListView
  * @model: (nullable): #XfceItemListModel
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 void
 xfce_item_list_view_set_model (XfceItemListView *view,
@@ -1015,7 +1015,7 @@ xfce_item_list_view_set_model (XfceItemListView *view,
  *
  * Returns: (transfer none): Model responsible for buttons and context menu
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 GMenu *
 xfce_item_list_view_get_menu (XfceItemListView *view)
@@ -1035,7 +1035,7 @@ xfce_item_list_view_get_menu (XfceItemListView *view)
  *
  * Returns: (transfer none): Internal #GtkTreeView
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 GtkWidget *
 xfce_item_list_view_get_tree_view (XfceItemListView *view)
@@ -1052,7 +1052,7 @@ xfce_item_list_view_get_tree_view (XfceItemListView *view)
  * @view: #XfceItemListView
  * @visibility: If %FALSE, then button labels will not be displayed
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 void
 xfce_item_list_view_set_label_visibility (XfceItemListView *view,
@@ -1072,7 +1072,7 @@ xfce_item_list_view_set_label_visibility (XfceItemListView *view,
  *
  * Returns: Number of selected items
  *
- * Since: 4.21.2
+ * Since: 4.21.3
  **/
 gint
 xfce_item_list_view_get_selected_items (XfceItemListView *view,
