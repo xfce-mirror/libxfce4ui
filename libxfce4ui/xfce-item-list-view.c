@@ -840,6 +840,7 @@ xfce_item_list_view_edit_item (XfceItemListView *view)
       if (!stop_propagation)
         xfce_item_list_model_changed (view->model);
     }
+  g_free (sel_items);
 }
 
 
@@ -1090,6 +1091,8 @@ xfce_item_list_view_get_selected_items (XfceItemListView *view,
       gint i = 0;
       for (GList *l = rows; l != NULL; l = l->next, ++i)
         (*items)[i] = xfce_item_list_view_get_index_by_path (view, l->data);
+
+      g_assert (i == n_items);
     }
 
   g_list_free_full (rows, (GDestroyNotify) gtk_tree_path_free);
