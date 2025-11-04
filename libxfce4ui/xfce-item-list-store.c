@@ -55,6 +55,14 @@ struct _XfceItemListStore
   GList *items;
 };
 
+enum
+{
+  RESET,
+  N_SIGNALS,
+};
+
+static gint signals[N_SIGNALS];
+
 
 
 static void
@@ -105,6 +113,9 @@ xfce_item_list_store_set_va (XfceItemListStore *store,
                              gint index,
                              va_list arglist);
 
+static void
+xfce_item_list_store_reset (XfceItemListModel *model);
+
 
 G_DEFINE_TYPE (XfceItemListStore, xfce_item_list_store, XFCE_TYPE_ITEM_LIST_MODEL)
 
@@ -125,6 +136,23 @@ xfce_item_list_store_class_init (XfceItemListStoreClass *klass)
   model_class->move = xfce_item_list_store_move;
   model_class->set_activity = xfce_item_list_store_set_activity;
   model_class->remove = xfce_item_list_store_remove;
+  model_class->reset = xfce_item_list_store_reset;
+
+  /**
+   * XfceItemListStore::reset:
+   * @store: #XfceItemListStore
+   *
+   * The signal is raised when the #xfce_item_list_model_reset method is called.
+   *
+   * Since: 4.21.3
+   **/
+  signals[RESET] = g_signal_new ("reset",
+                                 G_TYPE_FROM_CLASS (object_class),
+                                 G_SIGNAL_RUN_LAST,
+                                 0,
+                                 NULL, NULL,
+                                 NULL,
+                                 G_TYPE_NONE, 0);
 }
 
 
@@ -334,6 +362,16 @@ xfce_item_list_store_set_va (XfceItemListStore *store,
   xfce_item_list_model_set_index (XFCE_ITEM_LIST_MODEL (store), &iter, index);
   gtk_tree_model_row_changed (GTK_TREE_MODEL (store), path, &iter);
   gtk_tree_path_free (path);
+}
+
+
+
+static void
+xfce_item_list_store_reset (XfceItemListModel *model)
+{
+  XfceItemListStore *store = XFCE_ITEM_LIST_STORE (model);
+
+  g_signal_emit (store, signals[RESET], 0);
 }
 
 
