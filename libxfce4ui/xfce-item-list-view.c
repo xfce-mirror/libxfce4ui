@@ -983,6 +983,9 @@ xfce_item_list_view_set_model (XfceItemListView *view,
 {
   g_return_if_fail (model == NULL || XFCE_IS_ITEM_LIST_MODEL (model));
 
+  XfceItemListModelFlags old_flags = view->model != NULL ? xfce_item_list_model_get_list_flags (view->model) : XFCE_ITEM_LIST_MODEL_NONE;
+  XfceItemListModelFlags new_flags = model != NULL ? xfce_item_list_model_get_list_flags (model) : XFCE_ITEM_LIST_MODEL_NONE;
+
   /* Replace model */
   if (view->model != NULL)
     g_signal_handlers_disconnect_by_data (view->model, view);
@@ -1002,7 +1005,8 @@ xfce_item_list_view_set_model (XfceItemListView *view,
     }
 
   /* Menu, TreeView */
-  xfce_item_list_view_read_model_flags (view);
+  if (old_flags != new_flags)
+    xfce_item_list_view_read_model_flags (view);
 }
 
 
