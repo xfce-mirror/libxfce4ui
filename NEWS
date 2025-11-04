@@ -1,3 +1,28 @@
+4.21.3 (2025-11-04)
+======
+- po: Add missing file to translate
+- build: Rename POTFILES.in to POTFILES
+- Add XfceItemListView, XfceItemListStore and XfceItemListModel
+- xfce-die: Require min dialog size based on text entry contents
+- Remove unused macro redefinitions
+- README.md: Add uninstall info
+- clipboard-manager: Use GtkClipboard iff image-only format is available
+- Fix error-path leaks in xfce-desktop-item-edit main
+- Update README after switchover to meson
+- Remove autotools build
+- Translation Updates:
+  Albanian, Amharic, Arabic, Armenian, Armenian (Armenia), Asturian,
+  Azerbaijani, Basque, Belarusian, Bulgarian, Catalan, Chinese (China),
+  Chinese (Hong Kong), Chinese (Taiwan), Croatian, Czech, Danish,
+  Dutch, Eastern Armenian, English (Australia), English (United
+  Kingdom), Esperanto, Estonian, Finnish, French, Galician, Georgian,
+  German, Greek, Hebrew, Hungarian, Icelandic, Indonesian, Interlingue,
+  Italian, Japanese, Kazakh, Korean, Lithuanian, Malay, Norwegian
+  Bokmål, Norwegian Nynorsk, Occitan (post 1500), Persian (Iran),
+  Polish, Portuguese, Portuguese (Brazil), Romanian, Russian, Serbian,
+  Slovak, Slovenian, Spanish, Swedish, Telugu, Thai, Turkish,
+  Ukrainian, Uyghur, Venetian, Welsh
+
 4.21.2 (2025-07-11)
 ======
 - Rewrite and simplify xfce_gtk_position_search_box()
