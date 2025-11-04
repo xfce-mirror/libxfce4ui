@@ -12,6 +12,7 @@ libxfce4ui/xfce-sm-client.c
 libxfce4ui/xfce-spawn.c
 libxfce4ui/xfce-filename-input.c
 libxfce4ui/xfce-titled-dialog.c
+libxfce4ui/xfce-item-list-view.c
 
 #
 # Libxfce4kbd-private sources
