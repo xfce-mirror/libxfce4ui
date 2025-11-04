@@ -857,7 +857,7 @@ msgstr "Gestiona la ubicació de les finestres a la pantalla."
 
 #: xfce4-about/main.c:194
 msgid "Panel"
-msgstr "Tauler"
+msgstr "Panell"
 
 #: xfce4-about/main.c:195
 msgid "Provides a home for window buttons, launchers, app menu and more."
@@ -1073,7 +1073,7 @@ msgstr "En aquest directori ja existeix un fitxer amb el nom «%s», no s'ha afe
 
 #: tests/test-ui.c:117
 msgid "Failed to migrate the old panel configuration"
-msgstr "Ha fallat la migració de la configuració antiga del tauler"
+msgstr "Ha fallat la migració de la configuració antiga del panell"
 
 #: tests/test-ui.c:167 tests/test-ui.c:192
 msgid "Customize settings stored by Xfconf"
