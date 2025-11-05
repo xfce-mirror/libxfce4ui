@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2025-07-18 10:54+0200\n"
+"POT-Creation-Date: 2025-11-05 00:45+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: Źmicier Turok <nashtlumach@gmail.com>, 2019\n"
 "Language-Team: Belarusian (http://app.transifex.com/xfce/libxfce4ui/language/be/)\n"
@@ -29,7 +29,7 @@ msgstr "Пра працоўнае асяроддзе Xfce"
 
 #. add the "Help" button
 #: libxfce4ui/resources/xfce4-about-dialog.glade:358
-#: xfce-desktop-item-edit/main.c:339
+#: xfce-desktop-item-edit/main.c:345
 msgid "_Help"
 msgstr "_Даведка"
 
@@ -167,10 +167,10 @@ msgstr ""
 #. add the "Cancel" button
 #: libxfce4ui/xfce-dialogs.c:268 libxfce4ui/xfce-dialogs.c:526
 #: libxfce4kbd-private/xfce-shortcut-dialog.c:252
-#: xfce-desktop-item-edit/main.c:345 xfce-desktop-item-edit/main.c:536
+#: xfce-desktop-item-edit/main.c:351 xfce-desktop-item-edit/main.c:545
 #: xfce-desktop-item-edit/xfce-die-command-entry.c:262
-#: xfce-desktop-item-edit/xfce-die-editor.c:639
-#: xfce-desktop-item-edit/xfce-die-editor.c:683
+#: xfce-desktop-item-edit/xfce-die-editor.c:648
+#: xfce-desktop-item-edit/xfce-die-editor.c:692
 msgid "_Cancel"
 msgstr "_Скасаваць"
 
@@ -391,6 +391,62 @@ msgstr "Падзяляльнік каталогаў непрыдатны ў на
 #: libxfce4ui/xfce-filename-input.c:232
 msgid "Filenames should not start or end with a space"
 msgstr "Назвы файлаў не могуць пачынацца ці заканчвацца прагалам"
+
+#: libxfce4ui/xfce-item-list-view.c:331
+msgid "Active"
+msgstr "Актыўна"
+
+#: libxfce4ui/xfce-item-list-view.c:348
+msgid "Name"
+msgstr "Назва"
+
+#: libxfce4ui/xfce-item-list-view.c:653
+msgid "Move _up"
+msgstr ""
+
+#: libxfce4ui/xfce-item-list-view.c:653
+msgid "Move currently selected item up by one row"
+msgstr "Перамясціць абраны элемент на адзін радок вышэй"
+
+#: libxfce4ui/xfce-item-list-view.c:657
+msgid "Move _down"
+msgstr ""
+
+#: libxfce4ui/xfce-item-list-view.c:657
+msgid "Move currently selected item down by one row"
+msgstr "Перамясціць абраны элемент на адзін радок ніжэй"
+
+#: libxfce4ui/xfce-item-list-view.c:668
+msgid "_Add new item"
+msgstr ""
+
+#: libxfce4ui/xfce-item-list-view.c:668
+msgid "Add new item"
+msgstr ""
+
+#: libxfce4ui/xfce-item-list-view.c:674
+msgid "_Remove"
+msgstr "_Выдаліць"
+
+#: libxfce4ui/xfce-item-list-view.c:674
+msgid "Remove currently selected items"
+msgstr ""
+
+#: libxfce4ui/xfce-item-list-view.c:680
+msgid "_Edit"
+msgstr "_Рэдагаванне"
+
+#: libxfce4ui/xfce-item-list-view.c:680
+msgid "Edit the currently selected item"
+msgstr "Рэдагаваць абраны элемент"
+
+#: libxfce4ui/xfce-item-list-view.c:686
+msgid "Reset to de_faults"
+msgstr ""
+
+#: libxfce4ui/xfce-item-list-view.c:686
+msgid "Reset all items to default settings"
+msgstr ""
 
 #: libxfce4kbd-private/xfce-shortcuts.c:44
 #, c-format
@@ -1160,25 +1216,25 @@ msgid ""
 msgstr "%s распаўсюджваецца без АНІЯКІХ ГАРАНТЫЙ,\nдазволена распаўсюджванне копій %s на ўмовах\nGNU Lesser General Public License, поўны тэкст ліцэнзіі\nзнаходзіцца ў пакунку зыходнага кода %s.\n\n"
 
 #. add the "Create"/"Save" button (as default)
-#: xfce-desktop-item-edit/main.c:349
+#: xfce-desktop-item-edit/main.c:355
 msgid "C_reate"
 msgstr "Ст_варыць"
 
-#: xfce-desktop-item-edit/main.c:349 xfce-desktop-item-edit/main.c:537
+#: xfce-desktop-item-edit/main.c:355 xfce-desktop-item-edit/main.c:546
 msgid "_Save"
 msgstr "_Захаваць"
 
 #. create failed, ask the user to specify a file name
-#: xfce-desktop-item-edit/main.c:534
+#: xfce-desktop-item-edit/main.c:543
 msgid "Choose filename"
 msgstr "Абраць назву файла"
 
-#: xfce-desktop-item-edit/main.c:660
+#: xfce-desktop-item-edit/main.c:669
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "Не атрымалася стварыць \"%s\"."
 
-#: xfce-desktop-item-edit/main.c:660
+#: xfce-desktop-item-edit/main.c:669
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "Не атрымалася захаваць \"%s\"."
@@ -1218,49 +1274,49 @@ msgstr "Скрыпты Shell"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
-#: xfce-desktop-item-edit/xfce-die-editor.c:300
+#: xfce-desktop-item-edit/xfce-die-editor.c:303
 msgid "_Name:"
 msgstr "_Назва:"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
-#: xfce-desktop-item-edit/xfce-die-editor.c:319
+#: xfce-desktop-item-edit/xfce-die-editor.c:323
 msgid "C_omment:"
 msgstr "Ка_ментар:"
 
 #. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
 #. conflicts
-#: xfce-desktop-item-edit/xfce-die-editor.c:338
+#: xfce-desktop-item-edit/xfce-die-editor.c:343
 msgid "Comm_and:"
 msgstr "За_гад:"
 
 #. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
 #. conflicts
-#: xfce-desktop-item-edit/xfce-die-editor.c:362
+#: xfce-desktop-item-edit/xfce-die-editor.c:368
 msgid "_URL:"
 msgstr "_URL:"
 
 #. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
 #. conflicts
-#: xfce-desktop-item-edit/xfce-die-editor.c:387
+#: xfce-desktop-item-edit/xfce-die-editor.c:394
 msgid "Working _Directory:"
 msgstr "Працоўны _каталог:"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
-#: xfce-desktop-item-edit/xfce-die-editor.c:425
+#: xfce-desktop-item-edit/xfce-die-editor.c:433
 msgid "_Icon:"
 msgstr "_Значок:"
 
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
 #. dialog if no icon selected
 #. setup a label to tell that no icon was selected
-#: xfce-desktop-item-edit/xfce-die-editor.c:439
-#: xfce-desktop-item-edit/xfce-die-editor.c:1293
+#: xfce-desktop-item-edit/xfce-die-editor.c:447
+#: xfce-desktop-item-edit/xfce-die-editor.c:1302
 msgid "No icon"
 msgstr "Значок адсутнічае"
 
-#: xfce-desktop-item-edit/xfce-die-editor.c:445
+#: xfce-desktop-item-edit/xfce-die-editor.c:453
 msgid "Options:"
 msgstr "Параметры:"
 
@@ -1268,11 +1324,11 @@ msgstr "Параметры:"
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#: xfce-desktop-item-edit/xfce-die-editor.c:457
+#: xfce-desktop-item-edit/xfce-die-editor.c:465
 msgid "Use _startup notification"
 msgstr "Выкарыстоўваць _апавяшчэнне пра запуск"
 
-#: xfce-desktop-item-edit/xfce-die-editor.c:458
+#: xfce-desktop-item-edit/xfce-die-editor.c:466
 msgid ""
 "Select this option to enable startup notification when the command is run "
 "from the file manager or the menu. Not every application supports startup "
@@ -1283,26 +1339,26 @@ msgstr "Абярыце параметр, каб уключыць інфарма�
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#: xfce-desktop-item-edit/xfce-die-editor.c:476
+#: xfce-desktop-item-edit/xfce-die-editor.c:484
 msgid "Run in _terminal"
 msgstr "Запускаць у _тэрмінале"
 
-#: xfce-desktop-item-edit/xfce-die-editor.c:477
+#: xfce-desktop-item-edit/xfce-die-editor.c:485
 msgid "Select this option to run the command in a terminal window."
 msgstr "Абярыце гэты параметр, каб выконваць загад у акне тэрмінала."
 
 #. allocate the icon chooser dialog
-#: xfce-desktop-item-edit/xfce-die-editor.c:638
+#: xfce-desktop-item-edit/xfce-die-editor.c:647
 msgid "Select an icon"
 msgstr "Абраць значок"
 
-#: xfce-desktop-item-edit/xfce-die-editor.c:640
-#: xfce-desktop-item-edit/xfce-die-editor.c:684
+#: xfce-desktop-item-edit/xfce-die-editor.c:649
+#: xfce-desktop-item-edit/xfce-die-editor.c:693
 msgid "_OK"
 msgstr "_Добра"
 
 #. allocate the file chooser dialog
-#: xfce-desktop-item-edit/xfce-die-editor.c:681
+#: xfce-desktop-item-edit/xfce-die-editor.c:690
 msgid "Select a working directory"
 msgstr "Абраць працоўны каталог"
 
