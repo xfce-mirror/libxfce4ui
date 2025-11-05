@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2025-07-18 10:54+0200\n"
+"POT-Creation-Date: 2025-11-05 00:45+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: Cédric Valmary <cvalmary@yahoo.fr>, 2013,2015-2016\n"
 "Language-Team: Occitan (post 1500) (http://app.transifex.com/xfce/libxfce4ui/language/oc/)\n"
@@ -30,7 +30,7 @@ msgstr "A prepaus de l'environament de burèu Xfce"
 
 #. add the "Help" button
 #: libxfce4ui/resources/xfce4-about-dialog.glade:358
-#: xfce-desktop-item-edit/main.c:339
+#: xfce-desktop-item-edit/main.c:345
 msgid "_Help"
 msgstr "_Ajuda"
 
@@ -168,10 +168,10 @@ msgstr "Legir lo manual"
 #. add the "Cancel" button
 #: libxfce4ui/xfce-dialogs.c:268 libxfce4ui/xfce-dialogs.c:526
 #: libxfce4kbd-private/xfce-shortcut-dialog.c:252
-#: xfce-desktop-item-edit/main.c:345 xfce-desktop-item-edit/main.c:536
+#: xfce-desktop-item-edit/main.c:351 xfce-desktop-item-edit/main.c:545
 #: xfce-desktop-item-edit/xfce-die-command-entry.c:262
-#: xfce-desktop-item-edit/xfce-die-editor.c:639
-#: xfce-desktop-item-edit/xfce-die-editor.c:683
+#: xfce-desktop-item-edit/xfce-die-editor.c:648
+#: xfce-desktop-item-edit/xfce-die-editor.c:692
 msgid "_Cancel"
 msgstr "_Anullar"
 
@@ -392,6 +392,62 @@ msgstr "Separador de repertòri illegal dins lo nom de fichièr"
 #: libxfce4ui/xfce-filename-input.c:232
 msgid "Filenames should not start or end with a space"
 msgstr "Los noms de fichièrs devon pas començar o acabar amb un espaci"
+
+#: libxfce4ui/xfce-item-list-view.c:331
+msgid "Active"
+msgstr "Activar"
+
+#: libxfce4ui/xfce-item-list-view.c:348
+msgid "Name"
+msgstr "Nom"
+
+#: libxfce4ui/xfce-item-list-view.c:653
+msgid "Move _up"
+msgstr ""
+
+#: libxfce4ui/xfce-item-list-view.c:653
+msgid "Move currently selected item up by one row"
+msgstr "Desplaçar l'element actualament seleccionat d'una linha cap amont"
+
+#: libxfce4ui/xfce-item-list-view.c:657
+msgid "Move _down"
+msgstr ""
+
+#: libxfce4ui/xfce-item-list-view.c:657
+msgid "Move currently selected item down by one row"
+msgstr "Desplaçar l’element seleccionat d'una linha cap aval"
+
+#: libxfce4ui/xfce-item-list-view.c:668
+msgid "_Add new item"
+msgstr ""
+
+#: libxfce4ui/xfce-item-list-view.c:668
+msgid "Add new item"
+msgstr ""
+
+#: libxfce4ui/xfce-item-list-view.c:674
+msgid "_Remove"
+msgstr "_Suprimir"
+
+#: libxfce4ui/xfce-item-list-view.c:674
+msgid "Remove currently selected items"
+msgstr ""
+
+#: libxfce4ui/xfce-item-list-view.c:680
+msgid "_Edit"
+msgstr "Edit_ar"
+
+#: libxfce4ui/xfce-item-list-view.c:680
+msgid "Edit the currently selected item"
+msgstr "Editar l'element actualament seleccionat"
+
+#: libxfce4ui/xfce-item-list-view.c:686
+msgid "Reset to de_faults"
+msgstr ""
+
+#: libxfce4ui/xfce-item-list-view.c:686
+msgid "Reset all items to default settings"
+msgstr ""
 
 #: libxfce4kbd-private/xfce-shortcuts.c:44
 #, c-format
@@ -1161,25 +1217,25 @@ msgid ""
 msgstr "%s es distribuit SENS CAP DE GARANTIDA,\npodètz redistribuir de còpias de %s jols tèrmes de\nla Licéncia Publica Generala Amendrís GNU que se\ntròba dins l'archiu de fonts %s.\n\n"
 
 #. add the "Create"/"Save" button (as default)
-#: xfce-desktop-item-edit/main.c:349
+#: xfce-desktop-item-edit/main.c:355
 msgid "C_reate"
 msgstr "C_rear"
 
-#: xfce-desktop-item-edit/main.c:349 xfce-desktop-item-edit/main.c:537
+#: xfce-desktop-item-edit/main.c:355 xfce-desktop-item-edit/main.c:546
 msgid "_Save"
 msgstr "_Enregistrar"
 
 #. create failed, ask the user to specify a file name
-#: xfce-desktop-item-edit/main.c:534
+#: xfce-desktop-item-edit/main.c:543
 msgid "Choose filename"
 msgstr "Causir un nom de fichièr"
 
-#: xfce-desktop-item-edit/main.c:660
+#: xfce-desktop-item-edit/main.c:669
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "Impossible de crear « %s »."
 
-#: xfce-desktop-item-edit/main.c:660
+#: xfce-desktop-item-edit/main.c:669
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "Impossible d'enregistrar « %s »."
@@ -1219,49 +1275,49 @@ msgstr "Escripts Shell"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
-#: xfce-desktop-item-edit/xfce-die-editor.c:300
+#: xfce-desktop-item-edit/xfce-die-editor.c:303
 msgid "_Name:"
 msgstr "_Nom :"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
-#: xfce-desktop-item-edit/xfce-die-editor.c:319
+#: xfce-desktop-item-edit/xfce-die-editor.c:323
 msgid "C_omment:"
 msgstr "C_omentari :"
 
 #. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
 #. conflicts
-#: xfce-desktop-item-edit/xfce-die-editor.c:338
+#: xfce-desktop-item-edit/xfce-die-editor.c:343
 msgid "Comm_and:"
 msgstr "Com_anda :"
 
 #. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
 #. conflicts
-#: xfce-desktop-item-edit/xfce-die-editor.c:362
+#: xfce-desktop-item-edit/xfce-die-editor.c:368
 msgid "_URL:"
 msgstr "_URL :"
 
 #. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
 #. conflicts
-#: xfce-desktop-item-edit/xfce-die-editor.c:387
+#: xfce-desktop-item-edit/xfce-die-editor.c:394
 msgid "Working _Directory:"
 msgstr "_Repertòri de trabalh :"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
-#: xfce-desktop-item-edit/xfce-die-editor.c:425
+#: xfce-desktop-item-edit/xfce-die-editor.c:433
 msgid "_Icon:"
 msgstr "_Icòna :"
 
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
 #. dialog if no icon selected
 #. setup a label to tell that no icon was selected
-#: xfce-desktop-item-edit/xfce-die-editor.c:439
-#: xfce-desktop-item-edit/xfce-die-editor.c:1293
+#: xfce-desktop-item-edit/xfce-die-editor.c:447
+#: xfce-desktop-item-edit/xfce-die-editor.c:1302
 msgid "No icon"
 msgstr "Pas d'icòna"
 
-#: xfce-desktop-item-edit/xfce-die-editor.c:445
+#: xfce-desktop-item-edit/xfce-die-editor.c:453
 msgid "Options:"
 msgstr "Options :"
 
@@ -1269,11 +1325,11 @@ msgstr "Options :"
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#: xfce-desktop-item-edit/xfce-die-editor.c:457
+#: xfce-desktop-item-edit/xfce-die-editor.c:465
 msgid "Use _startup notification"
 msgstr "Utili_zar la notificacion d'aviada"
 
-#: xfce-desktop-item-edit/xfce-die-editor.c:458
+#: xfce-desktop-item-edit/xfce-die-editor.c:466
 msgid ""
 "Select this option to enable startup notification when the command is run "
 "from the file manager or the menu. Not every application supports startup "
@@ -1284,26 +1340,26 @@ msgstr "Seleccionatz aquesta opcion per activar la notificacion d'aviada quand l
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#: xfce-desktop-item-edit/xfce-die-editor.c:476
+#: xfce-desktop-item-edit/xfce-die-editor.c:484
 msgid "Run in _terminal"
 msgstr "Executar dins _terminal"
 
-#: xfce-desktop-item-edit/xfce-die-editor.c:477
+#: xfce-desktop-item-edit/xfce-die-editor.c:485
 msgid "Select this option to run the command in a terminal window."
 msgstr "Seleccionar aquesta opcion per executar la comanda dins una fenèstra d'un terminal."
 
 #. allocate the icon chooser dialog
-#: xfce-desktop-item-edit/xfce-die-editor.c:638
+#: xfce-desktop-item-edit/xfce-die-editor.c:647
 msgid "Select an icon"
 msgstr "Seleccionar una icòna"
 
-#: xfce-desktop-item-edit/xfce-die-editor.c:640
-#: xfce-desktop-item-edit/xfce-die-editor.c:684
+#: xfce-desktop-item-edit/xfce-die-editor.c:649
+#: xfce-desktop-item-edit/xfce-die-editor.c:693
 msgid "_OK"
 msgstr "_D'acòrdi"
 
 #. allocate the file chooser dialog
-#: xfce-desktop-item-edit/xfce-die-editor.c:681
+#: xfce-desktop-item-edit/xfce-die-editor.c:690
 msgid "Select a working directory"
 msgstr "Seleccionatz un repertòri de trabalh"
 
