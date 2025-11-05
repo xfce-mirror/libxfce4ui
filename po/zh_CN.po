@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2025-07-18 10:54+0200\n"
+"POT-Creation-Date: 2025-11-05 00:45+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: 玉堂白鹤 <yjwork@qq.com>, 2015,2017,2019-2025\n"
 "Language-Team: Chinese (China) (http://app.transifex.com/xfce/libxfce4ui/language/zh_CN/)\n"
@@ -38,7 +38,7 @@ msgstr "关于 Xfce 桌面环境"
 
 #. add the "Help" button
 #: libxfce4ui/resources/xfce4-about-dialog.glade:358
-#: xfce-desktop-item-edit/main.c:339
+#: xfce-desktop-item-edit/main.c:345
 msgid "_Help"
 msgstr "帮助(_H)"
 
@@ -176,10 +176,10 @@ msgstr "阅读手册"
 #. add the "Cancel" button
 #: libxfce4ui/xfce-dialogs.c:268 libxfce4ui/xfce-dialogs.c:526
 #: libxfce4kbd-private/xfce-shortcut-dialog.c:252
-#: xfce-desktop-item-edit/main.c:345 xfce-desktop-item-edit/main.c:536
+#: xfce-desktop-item-edit/main.c:351 xfce-desktop-item-edit/main.c:545
 #: xfce-desktop-item-edit/xfce-die-command-entry.c:262
-#: xfce-desktop-item-edit/xfce-die-editor.c:639
-#: xfce-desktop-item-edit/xfce-die-editor.c:683
+#: xfce-desktop-item-edit/xfce-die-editor.c:648
+#: xfce-desktop-item-edit/xfce-die-editor.c:692
 msgid "_Cancel"
 msgstr "取消 (_C)"
 
@@ -400,6 +400,62 @@ msgstr "文件名中的目录分隔符非法"
 #: libxfce4ui/xfce-filename-input.c:232
 msgid "Filenames should not start or end with a space"
 msgstr "文件名不应以空格开头或结尾"
+
+#: libxfce4ui/xfce-item-list-view.c:331
+msgid "Active"
+msgstr "当前的"
+
+#: libxfce4ui/xfce-item-list-view.c:348
+msgid "Name"
+msgstr "名称"
+
+#: libxfce4ui/xfce-item-list-view.c:653
+msgid "Move _up"
+msgstr "上移(_U)"
+
+#: libxfce4ui/xfce-item-list-view.c:653
+msgid "Move currently selected item up by one row"
+msgstr "将当前选中的项目上移一行"
+
+#: libxfce4ui/xfce-item-list-view.c:657
+msgid "Move _down"
+msgstr "下移(_D)"
+
+#: libxfce4ui/xfce-item-list-view.c:657
+msgid "Move currently selected item down by one row"
+msgstr "将当前选中的项目下移一行"
+
+#: libxfce4ui/xfce-item-list-view.c:668
+msgid "_Add new item"
+msgstr "添加新项目(_A)"
+
+#: libxfce4ui/xfce-item-list-view.c:668
+msgid "Add new item"
+msgstr "添加新项目"
+
+#: libxfce4ui/xfce-item-list-view.c:674
+msgid "_Remove"
+msgstr "移除(_R)"
+
+#: libxfce4ui/xfce-item-list-view.c:674
+msgid "Remove currently selected items"
+msgstr "移除当前选中的项目"
+
+#: libxfce4ui/xfce-item-list-view.c:680
+msgid "_Edit"
+msgstr "编辑(_E)"
+
+#: libxfce4ui/xfce-item-list-view.c:680
+msgid "Edit the currently selected item"
+msgstr "编辑当前选中的项目"
+
+#: libxfce4ui/xfce-item-list-view.c:686
+msgid "Reset to de_faults"
+msgstr "重置为默认(_F)"
+
+#: libxfce4ui/xfce-item-list-view.c:686
+msgid "Reset all items to default settings"
+msgstr "重置所有项目为默认设置"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:44
 #, c-format
@@ -1169,25 +1225,25 @@ msgid ""
 msgstr "%s 绝对没有任何担保，\n您可以在 %s 源码软件包中找到 GNU 宽通用公共\n许可协议并以此方式重新发布 %s 的副本。\n\n"
 
 #. add the "Create"/"Save" button (as default)
-#: xfce-desktop-item-edit/main.c:349
+#: xfce-desktop-item-edit/main.c:355
 msgid "C_reate"
 msgstr "创建(_R)"
 
-#: xfce-desktop-item-edit/main.c:349 xfce-desktop-item-edit/main.c:537
+#: xfce-desktop-item-edit/main.c:355 xfce-desktop-item-edit/main.c:546
 msgid "_Save"
 msgstr "保存(_S)"
 
 #. create failed, ask the user to specify a file name
-#: xfce-desktop-item-edit/main.c:534
+#: xfce-desktop-item-edit/main.c:543
 msgid "Choose filename"
 msgstr "选择文件名"
 
-#: xfce-desktop-item-edit/main.c:660
+#: xfce-desktop-item-edit/main.c:669
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "无法创建 “%s”。"
 
-#: xfce-desktop-item-edit/main.c:660
+#: xfce-desktop-item-edit/main.c:669
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "无法保存 “%s”。"
@@ -1227,49 +1283,49 @@ msgstr "Shell 脚本"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
-#: xfce-desktop-item-edit/xfce-die-editor.c:300
+#: xfce-desktop-item-edit/xfce-die-editor.c:303
 msgid "_Name:"
 msgstr "名称(_N)："
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
-#: xfce-desktop-item-edit/xfce-die-editor.c:319
+#: xfce-desktop-item-edit/xfce-die-editor.c:323
 msgid "C_omment:"
 msgstr "注释(_O)："
 
 #. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
 #. conflicts
-#: xfce-desktop-item-edit/xfce-die-editor.c:338
+#: xfce-desktop-item-edit/xfce-die-editor.c:343
 msgid "Comm_and:"
 msgstr "命令(_A)："
 
 #. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
 #. conflicts
-#: xfce-desktop-item-edit/xfce-die-editor.c:362
+#: xfce-desktop-item-edit/xfce-die-editor.c:368
 msgid "_URL:"
 msgstr "URL链接(_U)："
 
 #. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
 #. conflicts
-#: xfce-desktop-item-edit/xfce-die-editor.c:387
+#: xfce-desktop-item-edit/xfce-die-editor.c:394
 msgid "Working _Directory:"
 msgstr "工作目录(_D)："
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
-#: xfce-desktop-item-edit/xfce-die-editor.c:425
+#: xfce-desktop-item-edit/xfce-die-editor.c:433
 msgid "_Icon:"
 msgstr "图标(_I)："
 
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
 #. dialog if no icon selected
 #. setup a label to tell that no icon was selected
-#: xfce-desktop-item-edit/xfce-die-editor.c:439
-#: xfce-desktop-item-edit/xfce-die-editor.c:1293
+#: xfce-desktop-item-edit/xfce-die-editor.c:447
+#: xfce-desktop-item-edit/xfce-die-editor.c:1302
 msgid "No icon"
 msgstr "无图标"
 
-#: xfce-desktop-item-edit/xfce-die-editor.c:445
+#: xfce-desktop-item-edit/xfce-die-editor.c:453
 msgid "Options:"
 msgstr "选项："
 
@@ -1277,11 +1333,11 @@ msgstr "选项："
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#: xfce-desktop-item-edit/xfce-die-editor.c:457
+#: xfce-desktop-item-edit/xfce-die-editor.c:465
 msgid "Use _startup notification"
 msgstr "使用启动通知(_S)"
 
-#: xfce-desktop-item-edit/xfce-die-editor.c:458
+#: xfce-desktop-item-edit/xfce-die-editor.c:466
 msgid ""
 "Select this option to enable startup notification when the command is run "
 "from the file manager or the menu. Not every application supports startup "
@@ -1292,26 +1348,26 @@ msgstr "选中此项后，从文件管理器或菜单中运行此命令时会启
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#: xfce-desktop-item-edit/xfce-die-editor.c:476
+#: xfce-desktop-item-edit/xfce-die-editor.c:484
 msgid "Run in _terminal"
 msgstr "在终端中运行(_T)"
 
-#: xfce-desktop-item-edit/xfce-die-editor.c:477
+#: xfce-desktop-item-edit/xfce-die-editor.c:485
 msgid "Select this option to run the command in a terminal window."
 msgstr "选中此项后，此命令会在终端窗口中运行。"
 
 #. allocate the icon chooser dialog
-#: xfce-desktop-item-edit/xfce-die-editor.c:638
+#: xfce-desktop-item-edit/xfce-die-editor.c:647
 msgid "Select an icon"
 msgstr "选择图标"
 
-#: xfce-desktop-item-edit/xfce-die-editor.c:640
-#: xfce-desktop-item-edit/xfce-die-editor.c:684
+#: xfce-desktop-item-edit/xfce-die-editor.c:649
+#: xfce-desktop-item-edit/xfce-die-editor.c:693
 msgid "_OK"
 msgstr "确定(_O)"
 
 #. allocate the file chooser dialog
-#: xfce-desktop-item-edit/xfce-die-editor.c:681
+#: xfce-desktop-item-edit/xfce-die-editor.c:690
 msgid "Select a working directory"
 msgstr "选择工作目录"
 
