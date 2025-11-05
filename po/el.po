@@ -7,7 +7,7 @@
 # Ápo. <apostolos.papadimitriu@gmail.com>, 2016
 # Ápo. <apostolos.papadimitriu@gmail.com>, 2017
 # ebal <ebalaskas@ebalaskas.gr>, 2009
-# Efstathios Iosifidis <iefstathios@gmail.com>, 2014-2015
+# Efstathios Iosifidis <eiosifidis@gmail.com>, 2014-2015
 # Efstathios Iosifidis <iosifidis@opensuse.org>, 2012
 # ebal <ebalaskas@ebalaskas.gr>, 2009
 # Ioannis LM, 2022
@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2025-07-18 10:54+0200\n"
+"POT-Creation-Date: 2025-11-05 00:45+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: Ioannis LM, 2022-2023,2025\n"
 "Language-Team: Greek (http://app.transifex.com/xfce/libxfce4ui/language/el/)\n"
@@ -37,7 +37,7 @@ msgstr "Περί του περιβάλλοντος εργασίας Xfce"
 
 #. add the "Help" button
 #: libxfce4ui/resources/xfce4-about-dialog.glade:358
-#: xfce-desktop-item-edit/main.c:339
+#: xfce-desktop-item-edit/main.c:345
 msgid "_Help"
 msgstr "_Βοήθεια"
 
@@ -175,10 +175,10 @@ msgstr "Ανάγνωση"
 #. add the "Cancel" button
 #: libxfce4ui/xfce-dialogs.c:268 libxfce4ui/xfce-dialogs.c:526
 #: libxfce4kbd-private/xfce-shortcut-dialog.c:252
-#: xfce-desktop-item-edit/main.c:345 xfce-desktop-item-edit/main.c:536
+#: xfce-desktop-item-edit/main.c:351 xfce-desktop-item-edit/main.c:545
 #: xfce-desktop-item-edit/xfce-die-command-entry.c:262
-#: xfce-desktop-item-edit/xfce-die-editor.c:639
-#: xfce-desktop-item-edit/xfce-die-editor.c:683
+#: xfce-desktop-item-edit/xfce-die-editor.c:648
+#: xfce-desktop-item-edit/xfce-die-editor.c:692
 msgid "_Cancel"
 msgstr "Άκ_υρο"
 
@@ -399,6 +399,62 @@ msgstr "Μη έγκυρος χαρακτήρας στο όνομα του αρχ
 #: libxfce4ui/xfce-filename-input.c:232
 msgid "Filenames should not start or end with a space"
 msgstr "Τα ονόματα των αρχείων δεν πρέπει να αρχίζουν ή να τελειώνουν με κενό χαρακτήρα"
+
+#: libxfce4ui/xfce-item-list-view.c:331
+msgid "Active"
+msgstr "Ενεργό"
+
+#: libxfce4ui/xfce-item-list-view.c:348
+msgid "Name"
+msgstr "Όνομα"
+
+#: libxfce4ui/xfce-item-list-view.c:653
+msgid "Move _up"
+msgstr ""
+
+#: libxfce4ui/xfce-item-list-view.c:653
+msgid "Move currently selected item up by one row"
+msgstr "Μετακίνηση του επιλεγμένου αντικειμένου μια γραμμή επάνω"
+
+#: libxfce4ui/xfce-item-list-view.c:657
+msgid "Move _down"
+msgstr ""
+
+#: libxfce4ui/xfce-item-list-view.c:657
+msgid "Move currently selected item down by one row"
+msgstr "Μετακίνηση του επιλεγμένου αντικειμένου μια γραμμή κάτω"
+
+#: libxfce4ui/xfce-item-list-view.c:668
+msgid "_Add new item"
+msgstr ""
+
+#: libxfce4ui/xfce-item-list-view.c:668
+msgid "Add new item"
+msgstr ""
+
+#: libxfce4ui/xfce-item-list-view.c:674
+msgid "_Remove"
+msgstr "_Αφαίρεση"
+
+#: libxfce4ui/xfce-item-list-view.c:674
+msgid "Remove currently selected items"
+msgstr ""
+
+#: libxfce4ui/xfce-item-list-view.c:680
+msgid "_Edit"
+msgstr "_Επεξεργασία"
+
+#: libxfce4ui/xfce-item-list-view.c:680
+msgid "Edit the currently selected item"
+msgstr "Επεξεργασία του επιλεγμένου αντικειμένου"
+
+#: libxfce4ui/xfce-item-list-view.c:686
+msgid "Reset to de_faults"
+msgstr ""
+
+#: libxfce4ui/xfce-item-list-view.c:686
+msgid "Reset all items to default settings"
+msgstr ""
 
 #: libxfce4kbd-private/xfce-shortcuts.c:44
 #, c-format
@@ -1168,25 +1224,25 @@ msgid ""
 msgstr "%s διανέμεται ΧΩΡΙΣ ΑΠΟΛΥΤΩΣ ΚΑΜΙΑ ΕΓΓΥΗΣΗ,\nΜπορείτε να αναδιανέμεται αντίγραφα του %s υπό τους όρους\nτης άδειας GNU Lesser General Public License η οποία βρίσκεται\nστο πακέτο με τον πηγαίο κώδικα του %s.\n\n"
 
 #. add the "Create"/"Save" button (as default)
-#: xfce-desktop-item-edit/main.c:349
+#: xfce-desktop-item-edit/main.c:355
 msgid "C_reate"
 msgstr "_Δημιουργία"
 
-#: xfce-desktop-item-edit/main.c:349 xfce-desktop-item-edit/main.c:537
+#: xfce-desktop-item-edit/main.c:355 xfce-desktop-item-edit/main.c:546
 msgid "_Save"
 msgstr "Απο_θήκευση"
 
 #. create failed, ask the user to specify a file name
-#: xfce-desktop-item-edit/main.c:534
+#: xfce-desktop-item-edit/main.c:543
 msgid "Choose filename"
 msgstr "Επιλέξτε όνομα αρχείου"
 
-#: xfce-desktop-item-edit/main.c:660
+#: xfce-desktop-item-edit/main.c:669
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "Απέτυχε η δημιουργία του \"%s\"."
 
-#: xfce-desktop-item-edit/main.c:660
+#: xfce-desktop-item-edit/main.c:669
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "Απέτυχε η αποθήκευση του \"%s\""
@@ -1226,49 +1282,49 @@ msgstr "Δέσμες ενεργειών κέλυφους"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
-#: xfce-desktop-item-edit/xfce-die-editor.c:300
+#: xfce-desktop-item-edit/xfce-die-editor.c:303
 msgid "_Name:"
 msgstr "Ό_νομα:"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
-#: xfce-desktop-item-edit/xfce-die-editor.c:319
+#: xfce-desktop-item-edit/xfce-die-editor.c:323
 msgid "C_omment:"
 msgstr "Σχόλι_ο:"
 
 #. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
 #. conflicts
-#: xfce-desktop-item-edit/xfce-die-editor.c:338
+#: xfce-desktop-item-edit/xfce-die-editor.c:343
 msgid "Comm_and:"
 msgstr "Εντο_λή:"
 
 #. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
 #. conflicts
-#: xfce-desktop-item-edit/xfce-die-editor.c:362
+#: xfce-desktop-item-edit/xfce-die-editor.c:368
 msgid "_URL:"
 msgstr "_Διεύθυνση:"
 
 #. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
 #. conflicts
-#: xfce-desktop-item-edit/xfce-die-editor.c:387
+#: xfce-desktop-item-edit/xfce-die-editor.c:394
 msgid "Working _Directory:"
 msgstr "Κατάλο_γος εργασίας:"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
-#: xfce-desktop-item-edit/xfce-die-editor.c:425
+#: xfce-desktop-item-edit/xfce-die-editor.c:433
 msgid "_Icon:"
 msgstr "Εικονί_διο:"
 
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
 #. dialog if no icon selected
 #. setup a label to tell that no icon was selected
-#: xfce-desktop-item-edit/xfce-die-editor.c:439
-#: xfce-desktop-item-edit/xfce-die-editor.c:1293
+#: xfce-desktop-item-edit/xfce-die-editor.c:447
+#: xfce-desktop-item-edit/xfce-die-editor.c:1302
 msgid "No icon"
 msgstr "Χωρίς εικονίδιο"
 
-#: xfce-desktop-item-edit/xfce-die-editor.c:445
+#: xfce-desktop-item-edit/xfce-die-editor.c:453
 msgid "Options:"
 msgstr "Επιλογές:"
 
@@ -1276,11 +1332,11 @@ msgstr "Επιλογές:"
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#: xfce-desktop-item-edit/xfce-die-editor.c:457
+#: xfce-desktop-item-edit/xfce-die-editor.c:465
 msgid "Use _startup notification"
 msgstr "Ειδοποίη_ση στην εκκίνηση"
 
-#: xfce-desktop-item-edit/xfce-die-editor.c:458
+#: xfce-desktop-item-edit/xfce-die-editor.c:466
 msgid ""
 "Select this option to enable startup notification when the command is run "
 "from the file manager or the menu. Not every application supports startup "
@@ -1291,26 +1347,26 @@ msgstr "Επιλέξτε το για να ενεργοποιήσετε την ε
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#: xfce-desktop-item-edit/xfce-die-editor.c:476
+#: xfce-desktop-item-edit/xfce-die-editor.c:484
 msgid "Run in _terminal"
 msgstr "Εκτέλεση σε τερματι_κό"
 
-#: xfce-desktop-item-edit/xfce-die-editor.c:477
+#: xfce-desktop-item-edit/xfce-die-editor.c:485
 msgid "Select this option to run the command in a terminal window."
 msgstr "Επιλέξτε το για την εκτέλεση της εντολής σε ένα παράθυρο τερματικού."
 
 #. allocate the icon chooser dialog
-#: xfce-desktop-item-edit/xfce-die-editor.c:638
+#: xfce-desktop-item-edit/xfce-die-editor.c:647
 msgid "Select an icon"
 msgstr "Επιλογή εικονιδίου"
 
-#: xfce-desktop-item-edit/xfce-die-editor.c:640
-#: xfce-desktop-item-edit/xfce-die-editor.c:684
+#: xfce-desktop-item-edit/xfce-die-editor.c:649
+#: xfce-desktop-item-edit/xfce-die-editor.c:693
 msgid "_OK"
 msgstr "_Εντάξει"
 
 #. allocate the file chooser dialog
-#: xfce-desktop-item-edit/xfce-die-editor.c:681
+#: xfce-desktop-item-edit/xfce-die-editor.c:690
 msgid "Select a working directory"
 msgstr "Επιλέξτε τον κατάλογο εργασίας"
 
