@@ -402,7 +402,7 @@ msgstr "名前"
 
 #: libxfce4ui/xfce-item-list-view.c:653
 msgid "Move _up"
-msgstr ""
+msgstr "上に移動(_U)"
 
 #: libxfce4ui/xfce-item-list-view.c:653
 msgid "Move currently selected item up by one row"
@@ -410,7 +410,7 @@ msgstr "現在選択されているアイテムを一つ上へ移動します"
 
 #: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move _down"
-msgstr ""
+msgstr "下に移動(_D)"
 
 #: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move currently selected item down by one row"
@@ -418,11 +418,11 @@ msgstr "現在選択されているアイテムを一つ下へ移動します"
 
 #: libxfce4ui/xfce-item-list-view.c:668
 msgid "_Add new item"
-msgstr ""
+msgstr "新しいアイテムを追加(_A)"
 
 #: libxfce4ui/xfce-item-list-view.c:668
 msgid "Add new item"
-msgstr ""
+msgstr "新しいアイテムを追加"
 
 #: libxfce4ui/xfce-item-list-view.c:674
 msgid "_Remove"
@@ -430,7 +430,7 @@ msgstr "削除(_R)"
 
 #: libxfce4ui/xfce-item-list-view.c:674
 msgid "Remove currently selected items"
-msgstr ""
+msgstr "現在選択されているアイテムを削除"
 
 #: libxfce4ui/xfce-item-list-view.c:680
 msgid "_Edit"
@@ -442,11 +442,11 @@ msgstr "現在選択されているアイテムを編集します"
 
 #: libxfce4ui/xfce-item-list-view.c:686
 msgid "Reset to de_faults"
-msgstr ""
+msgstr "デフォルトに戻す(_F)"
 
 #: libxfce4ui/xfce-item-list-view.c:686
 msgid "Reset all items to default settings"
-msgstr ""
+msgstr "すべてのアイテムをデフォルト設定に戻す"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:44
 #, c-format
