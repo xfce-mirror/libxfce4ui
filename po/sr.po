@@ -403,27 +403,27 @@ msgstr "Назив"
 
 #: libxfce4ui/xfce-item-list-view.c:653
 msgid "Move _up"
-msgstr ""
+msgstr "Помери навише"
 
 #: libxfce4ui/xfce-item-list-view.c:653
 msgid "Move currently selected item up by one row"
-msgstr "Помакни тренутно одабрану ставку један ред више"
+msgstr "Помакни тренутно означену ставку један ред више"
 
 #: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move _down"
-msgstr ""
+msgstr "Помери наниже"
 
 #: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move currently selected item down by one row"
-msgstr "Помери тренутно одабрану ставку један ред ниже"
+msgstr "Помери тренутно означену ставку један ред ниже"
 
 #: libxfce4ui/xfce-item-list-view.c:668
 msgid "_Add new item"
-msgstr ""
+msgstr "_Додај нову ставку"
 
 #: libxfce4ui/xfce-item-list-view.c:668
 msgid "Add new item"
-msgstr ""
+msgstr "Додај нову ставку"
 
 #: libxfce4ui/xfce-item-list-view.c:674
 msgid "_Remove"
@@ -431,7 +431,7 @@ msgstr "_Уклони"
 
 #: libxfce4ui/xfce-item-list-view.c:674
 msgid "Remove currently selected items"
-msgstr ""
+msgstr "Уклони тренутно означену ставку"
 
 #: libxfce4ui/xfce-item-list-view.c:680
 msgid "_Edit"
@@ -439,15 +439,15 @@ msgstr "_Уреди"
 
 #: libxfce4ui/xfce-item-list-view.c:680
 msgid "Edit the currently selected item"
-msgstr "Уредите тренутно изабрану ставку"
+msgstr "Уреди тренутно означену ставку"
 
 #: libxfce4ui/xfce-item-list-view.c:686
 msgid "Reset to de_faults"
-msgstr ""
+msgstr "Врати на подразумевано_"
 
 #: libxfce4ui/xfce-item-list-view.c:686
 msgid "Reset all items to default settings"
-msgstr ""
+msgstr "Врати све ставке у подразумевано стање"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:44
 #, c-format
