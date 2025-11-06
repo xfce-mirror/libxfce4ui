@@ -412,7 +412,7 @@ msgstr "Nom"
 
 #: libxfce4ui/xfce-item-list-view.c:653
 msgid "Move _up"
-msgstr ""
+msgstr "_Monter"
 
 #: libxfce4ui/xfce-item-list-view.c:653
 msgid "Move currently selected item up by one row"
@@ -420,7 +420,7 @@ msgstr "Déplacer l’élément sélectionné d’une ligne vers le haut"
 
 #: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move _down"
-msgstr ""
+msgstr "_Descendre"
 
 #: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move currently selected item down by one row"
@@ -428,11 +428,11 @@ msgstr "Déplacer l’élément sélectionné d’une ligne vers le bas"
 
 #: libxfce4ui/xfce-item-list-view.c:668
 msgid "_Add new item"
-msgstr ""
+msgstr "_Ajouter un nouvel élément"
 
 #: libxfce4ui/xfce-item-list-view.c:668
 msgid "Add new item"
-msgstr ""
+msgstr "Ajouter un nouvel élément"
 
 #: libxfce4ui/xfce-item-list-view.c:674
 msgid "_Remove"
@@ -440,7 +440,7 @@ msgstr "_Supprimer"
 
 #: libxfce4ui/xfce-item-list-view.c:674
 msgid "Remove currently selected items"
-msgstr ""
+msgstr "Supprimer les éléments actuellement sélectionnés"
 
 #: libxfce4ui/xfce-item-list-view.c:680
 msgid "_Edit"
@@ -452,11 +452,11 @@ msgstr "Modifier l’élément actuellement sélectionné"
 
 #: libxfce4ui/xfce-item-list-view.c:686
 msgid "Reset to de_faults"
-msgstr ""
+msgstr "Réinitialiser les paramètres par défaut"
 
 #: libxfce4ui/xfce-item-list-view.c:686
 msgid "Reset all items to default settings"
-msgstr ""
+msgstr "Réinitialiser tous les éléments aux paramètres par défaut"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:44
 #, c-format
@@ -1242,7 +1242,7 @@ msgstr "Choisir un nom de fichier"
 #: xfce-desktop-item-edit/main.c:669
 #, c-format
 msgid "Failed to create \"%s\"."
-msgstr "Impossible de créer « %s »."
+msgstr "Impossible de créer « %s »."
 
 #: xfce-desktop-item-edit/main.c:669
 #, c-format
@@ -1442,7 +1442,7 @@ msgstr "Impossible de lancer l’application favorite pour la catégorie « %s�
 #: xfce-open/main.c:713
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
-msgstr "Impossible de détecter le schéma URL de « %s »."
+msgstr "Impossible de détecter le schéma URL de « %s »."
 
 #: xfce-open/main.c:727
 msgid "Failed to open URI."
