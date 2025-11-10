@@ -350,6 +350,8 @@ xfce_item_list_view_init (XfceItemListView *view)
                                                "markup", XFCE_ITEM_LIST_MODEL_COLUMN_NAME,
                                                "sensitive", XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVE,
                                                NULL);
+  g_object_set (renderer_name, "ellipsize", PANGO_ELLIPSIZE_END, NULL);
+
   g_object_set_data (
     G_OBJECT (gtk_tree_view_get_column (GTK_TREE_VIEW (view->tree_view), XFCE_ITEM_LIST_VIEW_COLUMN_ACTIVE)),
     "renderer", renderer_active);
