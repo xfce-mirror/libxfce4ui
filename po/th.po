@@ -404,7 +404,7 @@ msgstr "ชื่อ"
 
 #: libxfce4ui/xfce-item-list-view.c:653
 msgid "Move _up"
-msgstr ""
+msgstr "เลื่อน_ขึ้น"
 
 #: libxfce4ui/xfce-item-list-view.c:653
 msgid "Move currently selected item up by one row"
@@ -412,7 +412,7 @@ msgstr "ย้ายรายการที่เลือกอยู่ขึ
 
 #: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move _down"
-msgstr ""
+msgstr "เลื่อน_ลง"
 
 #: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move currently selected item down by one row"
@@ -420,11 +420,11 @@ msgstr "เลื่อนรายการที่เลือกลงหน
 
 #: libxfce4ui/xfce-item-list-view.c:668
 msgid "_Add new item"
-msgstr ""
+msgstr "เ_พิ่มรายการใหม่"
 
 #: libxfce4ui/xfce-item-list-view.c:668
 msgid "Add new item"
-msgstr ""
+msgstr "เพิ่มรายการใหม่"
 
 #: libxfce4ui/xfce-item-list-view.c:674
 msgid "_Remove"
@@ -432,7 +432,7 @@ msgstr "ลบ_ออก"
 
 #: libxfce4ui/xfce-item-list-view.c:674
 msgid "Remove currently selected items"
-msgstr ""
+msgstr "ลบรายการที่เลือกอยู่"
 
 #: libxfce4ui/xfce-item-list-view.c:680
 msgid "_Edit"
@@ -444,11 +444,11 @@ msgstr "แก้ไขรายการที่เลือกอยู่"
 
 #: libxfce4ui/xfce-item-list-view.c:686
 msgid "Reset to de_faults"
-msgstr ""
+msgstr "_คืนค่าปริยาย"
 
 #: libxfce4ui/xfce-item-list-view.c:686
 msgid "Reset all items to default settings"
-msgstr ""
+msgstr "ล้างรายชื่อของรายการ พร้อมคืนค่าปริยายเหล่านั้น"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:44
 #, c-format
