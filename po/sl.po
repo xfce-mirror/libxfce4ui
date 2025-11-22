@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the libxfce4ui.master package.
 # 
 # Translators:
+# Dejweed, 2025
 # 8b03701f910565d01acaec9ce3f558ab_e9f0fee <b5b06e8f85fb8288fe43ad0bc2422d94_32848>, 2013,2017
 # Arnold Marko <arnold.marko@gmail.com>, 2019-2024
 # Kernc, 2014,2016
@@ -13,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2025-11-05 00:45+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Arnold Marko <arnold.marko@gmail.com>, 2019-2024\n"
+"Last-Translator: Dejweed, 2025\n"
 "Language-Team: Slovenian (http://app.transifex.com/xfce/libxfce4ui/language/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -404,7 +405,7 @@ msgstr "Ime"
 
 #: libxfce4ui/xfce-item-list-view.c:653
 msgid "Move _up"
-msgstr ""
+msgstr "Premakni _gor"
 
 #: libxfce4ui/xfce-item-list-view.c:653
 msgid "Move currently selected item up by one row"
@@ -412,7 +413,7 @@ msgstr "Premakni trenutno izbrani predmet eno vrstico višje"
 
 #: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move _down"
-msgstr ""
+msgstr "Premakni _dol"
 
 #: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move currently selected item down by one row"
@@ -420,11 +421,11 @@ msgstr "Premakni trenutno izbrani predmet eno vrstico nižje"
 
 #: libxfce4ui/xfce-item-list-view.c:668
 msgid "_Add new item"
-msgstr ""
+msgstr "Dodaj _nov predmet"
 
 #: libxfce4ui/xfce-item-list-view.c:668
 msgid "Add new item"
-msgstr ""
+msgstr "Dodaj nov predmet"
 
 #: libxfce4ui/xfce-item-list-view.c:674
 msgid "_Remove"
@@ -432,7 +433,7 @@ msgstr "Odst_rani"
 
 #: libxfce4ui/xfce-item-list-view.c:674
 msgid "Remove currently selected items"
-msgstr ""
+msgstr "Odstrani izbran predmet"
 
 #: libxfce4ui/xfce-item-list-view.c:680
 msgid "_Edit"
@@ -1320,7 +1321,7 @@ msgstr "Nobene ikone"
 
 #: xfce-desktop-item-edit/xfce-die-editor.c:453
 msgid "Options:"
-msgstr "Monosti:"
+msgstr "Možnosti:"
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
 #. avoid mnemonic conflicts
@@ -1328,7 +1329,7 @@ msgstr "Monosti:"
 #. and xfce4-panel.
 #: xfce-desktop-item-edit/xfce-die-editor.c:465
 msgid "Use _startup notification"
-msgstr "Obvestilo ob zagonu"
+msgstr "O_bvestilo ob zagonu"
 
 #: xfce-desktop-item-edit/xfce-die-editor.c:466
 msgid ""
@@ -1343,7 +1344,7 @@ msgstr "Izberite to možnosti, če želite vključiti obvestilo o zagonu, ko se 
 #. and xfce4-panel.
 #: xfce-desktop-item-edit/xfce-die-editor.c:484
 msgid "Run in _terminal"
-msgstr "Zaženi v terminalu"
+msgstr "Zaženi v _terminalu"
 
 #: xfce-desktop-item-edit/xfce-die-editor.c:485
 msgid "Select this option to run the command in a terminal window."
