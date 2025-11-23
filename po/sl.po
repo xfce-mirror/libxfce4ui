@@ -529,7 +529,7 @@ msgstr "Povrni privzeto bližnjico"
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:758
 #, c-format
 msgid "This keyboard shortcut is currently used by: '%s'"
-msgstr "To bližnjico na tipkovnici trenutno uporablja: '%s' "
+msgstr "To bližnjico na tipkovnici trenutno uporablja: '%s'"
 
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:671
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:761
@@ -973,7 +973,7 @@ msgstr "Nadzornik nastavitev"
 
 #: xfce4-about/main.c:223
 msgid "Stores your settings in a D-Bus-based configuration system."
-msgstr "Shrani nastavitve v konfiguracijski sistem, ki temelji na D-Bus-u"
+msgstr "Shrani nastavitve v konfiguracijski sistem, ki temelji na D-Bus-u."
 
 #: xfce4-about/main.c:226
 msgid "A Menu Library"
@@ -1099,16 +1099,16 @@ msgstr "Neznano"
 #. translators: This is the type of architecture for the OS
 #: xfce4-about/system-info.c:620
 msgid "64-bit (32-bit userspace)"
-msgstr "64 bitni (32 bitni uporabniški prostor)"
+msgstr "64-bitni (32-bitni uporabniški prostor)"
 
 #. translators: This is the type of architecture for the OS
 #: xfce4-about/system-info.c:623
 msgid "64-bit"
-msgstr "64 bitni"
+msgstr "64-bitni"
 
 #: xfce4-about/system-info.c:623
 msgid "32-bit"
-msgstr "32 bitni"
+msgstr "32-bitni"
 
 #. translators: This is the name of the OS, followed by the build ID, for
 #. * example:
@@ -1193,7 +1193,7 @@ msgstr "Po zaključku urejanja datoteke natisni končno shranjeni URI"
 
 #: xfce-desktop-item-edit/main.c:92
 msgid "Print version information and exit"
-msgstr "Natisni informacije o različici in izstopi"
+msgstr "Izpiši podatke o različici in končaj"
 
 #. initialize Gtk+
 #: xfce-desktop-item-edit/main.c:174
@@ -1371,15 +1371,15 @@ msgstr "Lokacija datoteke ni običajna datoteka ali imenik"
 
 #: xfce-open/main.c:218
 msgid "Usage: xfce-open [URLs...]"
-msgstr ""
+msgstr "Uporaba: xfce-open [URL-ji...]"
 
 #: xfce-open/main.c:219
 msgid "       xfce-open --launch TYPE [PARAMETERs...]"
-msgstr ""
+msgstr "         xfce-open --launch TIP [PARAMETRI...]"
 
 #: xfce-open/main.c:221
 msgid "  -?, --help                          Print this help message and exit"
-msgstr " \t\n\n-?, --help Izpiši sporočilo pomoči in zapri"
+msgstr "  -?, --help                          Izpiši sporočilo pomoči in zapri"
 
 #: xfce-open/main.c:222
 msgid ""
@@ -1391,13 +1391,13 @@ msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
-msgstr "--launch TIP [PARAMETERs...] Zaženi želeno aplikacijo\n TIP z izbranimi PARAMETERs, kjer je\n TIP ena izmed sledečih vrednosti."
+msgstr "  --launch TIP [PARAMETRI...]         Zaženi želeno aplikacijo TIPa\n                                      z izbranimi PARAMETRI, kjer je\n                                      TIP ena izmed sledečih vrednosti."
 
 #: xfce-open/main.c:228
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
-msgstr "--working-directory DIRECTORY Privzeti delovni imenik za aplikacije\n ob uporabi --launch opcije."
+msgstr "  --working-directory IMENIK          Privzeti delovni imenik za aplikacije\n                                      ob uporabi --launch opcije."
 
 #: xfce-open/main.c:231
 msgid "The following TYPEs are supported for the --launch command:"
