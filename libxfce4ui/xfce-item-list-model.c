@@ -64,8 +64,7 @@ enum
   AFTER_REMOVE_ITEM,
   BEFORE_RESET,
   AFTER_RESET,
-  BEFORE_SET_ACTIVITY,
-  AFTER_SET_ACTIVITY,
+  ACTIVITY_CHANGED,
   RELOADED,
   N_SIGNALS
 };
@@ -260,21 +259,13 @@ xfce_item_list_model_class_init (XfceItemListModelClass *klass)
                                        NULL,
                                        G_TYPE_NONE, 0);
 
-  signals[BEFORE_SET_ACTIVITY] = g_signal_new ("before-set-activity",
+  signals[ACTIVITY_CHANGED] = g_signal_new ("activity-changed",
                                                G_TYPE_FROM_CLASS (object_class),
                                                G_SIGNAL_RUN_LAST,
                                                0,
                                                NULL, NULL,
                                                NULL,
                                                G_TYPE_NONE, 2, G_TYPE_INT, G_TYPE_BOOLEAN);
-
-  signals[AFTER_SET_ACTIVITY] = g_signal_new ("after-set-activity",
-                                              G_TYPE_FROM_CLASS (object_class),
-                                              G_SIGNAL_RUN_LAST,
-                                              0,
-                                              NULL, NULL,
-                                              NULL,
-                                              G_TYPE_NONE, 2, G_TYPE_INT, G_TYPE_BOOLEAN);
 
   signals[RELOADED] = g_signal_new ("reloaded",
                                     G_TYPE_FROM_CLASS (object_class),
@@ -900,9 +891,6 @@ xfce_item_list_model_set_activity (XfceItemListModel *model,
   g_return_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model));
   klass = XFCE_ITEM_LIST_MODEL_GET_CLASS (model);
 
-  /* Emit model signal */
-  g_signal_emit (model, signals[BEFORE_SET_ACTIVITY], 0, index, value);
-
   g_return_if_fail (klass->set_activity != NULL);
   klass->set_activity (model, index, value);
 
@@ -914,7 +902,7 @@ xfce_item_list_model_set_activity (XfceItemListModel *model,
   gtk_tree_path_free (path);
 
   /* Emit model signal */
-  g_signal_emit (model, signals[AFTER_SET_ACTIVITY], 0, index, value);
+  g_signal_emit (model, signals[ACTIVITY_CHANGED], 0, index, value);
 }
 
 
