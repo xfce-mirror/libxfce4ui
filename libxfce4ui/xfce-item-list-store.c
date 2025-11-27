@@ -144,7 +144,7 @@ xfce_item_list_store_class_init (XfceItemListStoreClass *klass)
    *
    * The signal is raised when the #xfce_item_list_model_reset method is called.
    *
-   * Since: 4.21.3
+   * Since: 4.21.4
    **/
   signals[RESET] = g_signal_new ("reset",
                                  G_TYPE_FROM_CLASS (object_class),

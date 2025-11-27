@@ -243,6 +243,14 @@ xfce_item_list_model_class_init (XfceItemListModelClass *klass)
                                              NULL,
                                              G_TYPE_NONE, 1, G_TYPE_INT);
 
+  /**
+   * XfceItemListModel::before-reset:
+   * @model: model that received the signal
+   *
+   * This signal is emitted before a model reset is performed
+   *
+   * Since: 4.21.4
+   **/
   signals[BEFORE_RESET] = g_signal_new ("before-reset",
                                         G_TYPE_FROM_CLASS (object_class),
                                         G_SIGNAL_RUN_LAST,
@@ -251,6 +259,14 @@ xfce_item_list_model_class_init (XfceItemListModelClass *klass)
                                         NULL,
                                         G_TYPE_NONE, 0);
 
+  /**
+   * XfceItemListModel::after-reset:
+   * @model: model that received the signal
+   *
+   * This signal is emitted after a model reset is performed
+   *
+   * Since: 4.21.4
+   **/
   signals[AFTER_RESET] = g_signal_new ("after-reset",
                                        G_TYPE_FROM_CLASS (object_class),
                                        G_SIGNAL_RUN_LAST,
@@ -259,13 +275,23 @@ xfce_item_list_model_class_init (XfceItemListModelClass *klass)
                                        NULL,
                                        G_TYPE_NONE, 0);
 
+  /**
+   * XfceItemListModel::activity-changed:
+   * @model: model that received the signal
+   * @index: index of the item for which the activity is changing
+   * @state: new activity state
+   *
+   * This signal is emitted when the value of the #XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVE column is set
+   *
+   * Since: 4.21.4
+   **/
   signals[ACTIVITY_CHANGED] = g_signal_new ("activity-changed",
-                                               G_TYPE_FROM_CLASS (object_class),
-                                               G_SIGNAL_RUN_LAST,
-                                               0,
-                                               NULL, NULL,
-                                               NULL,
-                                               G_TYPE_NONE, 2, G_TYPE_INT, G_TYPE_BOOLEAN);
+                                            G_TYPE_FROM_CLASS (object_class),
+                                            G_SIGNAL_RUN_LAST,
+                                            0,
+                                            NULL, NULL,
+                                            NULL,
+                                            G_TYPE_NONE, 2, G_TYPE_INT, G_TYPE_BOOLEAN);
 
   signals[RELOADED] = g_signal_new ("reloaded",
                                     G_TYPE_FROM_CLASS (object_class),
