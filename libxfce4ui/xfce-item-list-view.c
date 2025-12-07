@@ -590,9 +590,10 @@ xfce_item_list_view_recreate_buttons (XfceItemListView *view)
       GVariant *icon = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, G_MENU_ATTRIBUTE_ICON, NULL);
       GVariant *movement = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, XFCE_MENU_ATTRIBUTE_MOVEMENT, G_VARIANT_TYPE_BOOLEAN);
       GVariant *tooltip = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, XFCE_MENU_ATTRIBUTE_TOOLTIP, G_VARIANT_TYPE_STRING);
+      GVariant *hide_in_buttons = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, XFCE_MENU_ATTRIBUTE_HIDE_IN_BUTTONS, G_VARIANT_TYPE_BOOLEAN);
       GIcon *gicon = icon != NULL ? g_icon_deserialize (icon) : NULL;
 
-      if (action != NULL)
+      if (action != NULL && (hide_in_buttons == NULL || !g_variant_get_boolean (hide_in_buttons)))
         {
           xfce_item_list_view_add_button (view,
                                           movement != NULL ? g_variant_get_boolean (movement) : FALSE,
@@ -609,6 +610,7 @@ xfce_item_list_view_recreate_buttons (XfceItemListView *view)
       g_clear_pointer (&icon, g_variant_unref);
       g_clear_pointer (&movement, g_variant_unref);
       g_clear_pointer (&tooltip, g_variant_unref);
+      g_clear_pointer (&hide_in_buttons, g_variant_unref);
       g_clear_object (&gicon);
     }
 }
