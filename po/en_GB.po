@@ -403,7 +403,7 @@ msgstr "Name"
 
 #: libxfce4ui/xfce-item-list-view.c:653
 msgid "Move _up"
-msgstr ""
+msgstr "Move _up"
 
 #: libxfce4ui/xfce-item-list-view.c:653
 msgid "Move currently selected item up by one row"
@@ -411,7 +411,7 @@ msgstr "Move currently selected item up by one row"
 
 #: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move _down"
-msgstr ""
+msgstr "Move _down"
 
 #: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move currently selected item down by one row"
@@ -419,11 +419,11 @@ msgstr "Move currently selected item down by one row"
 
 #: libxfce4ui/xfce-item-list-view.c:668
 msgid "_Add new item"
-msgstr ""
+msgstr "_Add new item"
 
 #: libxfce4ui/xfce-item-list-view.c:668
 msgid "Add new item"
-msgstr ""
+msgstr "Add new item"
 
 #: libxfce4ui/xfce-item-list-view.c:674
 msgid "_Remove"
@@ -431,7 +431,7 @@ msgstr "_Remove"
 
 #: libxfce4ui/xfce-item-list-view.c:674
 msgid "Remove currently selected items"
-msgstr ""
+msgstr "Remove currently selected items"
 
 #: libxfce4ui/xfce-item-list-view.c:680
 msgid "_Edit"
@@ -443,11 +443,11 @@ msgstr "Edit the currently selected item"
 
 #: libxfce4ui/xfce-item-list-view.c:686
 msgid "Reset to de_faults"
-msgstr ""
+msgstr "Reset to de_faults"
 
 #: libxfce4ui/xfce-item-list-view.c:686
 msgid "Reset all items to default settings"
-msgstr ""
+msgstr "Reset all items to default settings"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:44
 #, c-format
