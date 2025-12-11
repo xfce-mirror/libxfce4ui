@@ -57,6 +57,15 @@ G_BEGIN_DECLS
  **/
 #define XFCE_MENU_ATTRIBUTE_HIDE_IN_CONTEXT_MENU "hide-in-context-menu"
 
+/**
+ * XFCE_MENU_ATTRIBUTE_HIDE_IN_BUTTONS:
+ *
+ * Boolean type attribute. If %TRUE, the menu item will not appear as a button.
+ *
+ * Since: 4.21.4
+ **/
+#define XFCE_MENU_ATTRIBUTE_HIDE_IN_BUTTONS "hide-in-buttons"
+
 #define XFCE_TYPE_ITEM_LIST_VIEW (xfce_item_list_view_get_type ())
 G_DECLARE_FINAL_TYPE (XfceItemListView, xfce_item_list_view, XFCE, ITEM_LIST_VIEW, GtkBox)
 
