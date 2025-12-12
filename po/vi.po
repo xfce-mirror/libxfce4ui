@@ -1,840 +1,995 @@
-# Vietnamese translations of the libxfce4ui package.
-# Copyright (C) The Xfce development team.
-# This file is distributed under the same license as the
-# libxfce4ui package.
-# Vinh <kureikain@gmail.com>, 2012.
-#
-# , fuzzy
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the libxfce4ui.xfce-4-20 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Nick Schermer <nick@xfce.org>, 2025
+# Cas Pascal <casboi86@gmail.com>, 2025
+# Duy Truong Nguyen <truongap.ars@gmail.com>, 2025
+# Xfce Bot <transifex@xfce.org>, 2025
+# Loc Huynh, 2025
+# 
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: libxfce4ui\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-28 09:06+0100\n"
-"PO-Revision-Date: 2011-12-31 04:47+0800\n"
-"Last-Translator: Vinh Nguyen <kureikain@gmail.com>\n"
-"Language-Team: Vi (Vietnamese)\n"
-"Language: Vi (Vietnamese)\n"
+"Project-Id-Version: libxfce4ui.xfce-4-20\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2025-03-19 12:46+0100\n"
+"PO-Revision-Date: 2025-03-19 10:24+0000\n"
+"Last-Translator: Loc Huynh, 2025\n"
+"Language-Team: Vietnamese (https://app.transifex.com/xfce/teams/16840/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: vi\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../libxfce4ui/xfce-dialogs.c:98
+#: libxfce4ui/xfce-dialogs.c:109
 msgid "Failed to open web browser for online documentation"
-msgstr ""
+msgstr "Không mở được trình duyệt web để xem tài liệu trực tuyến"
 
-#: ../libxfce4ui/xfce-dialogs.c:213
+#: libxfce4ui/xfce-dialogs.c:265
 #, c-format
 msgid "Do you want to read the %s manual online?"
-msgstr ""
+msgstr "Bạn có muốn đọc tài liệu hướng dẫn %s trực tuyến không?"
 
-#: ../libxfce4ui/xfce-dialogs.c:215
+#: libxfce4ui/xfce-dialogs.c:267
 msgid "Do you want to read the manual online?"
-msgstr ""
+msgstr "Bạn có muốn đọc tài liệu hướng dẫn trực tuyến không?"
 
-#: ../libxfce4ui/xfce-dialogs.c:218
-msgid "Online Documentation"
-msgstr ""
-
-#: ../libxfce4ui/xfce-dialogs.c:221
+#: libxfce4ui/xfce-dialogs.c:269
 msgid ""
-"You will be redirected to the documentation website where the help pages are "
-"maintained and translated."
+"You will be redirected to the documentation website where the help pages are"
+" maintained and translated."
 msgstr ""
+"Bạn sẽ được chuyển hướng tới trang web tài liệu nơi các trang trợ giúp được "
+"duy trì và dịch."
 
-#: ../libxfce4ui/xfce-dialogs.c:225
+#: libxfce4ui/xfce-dialogs.c:271
+msgid "Read the manual"
+msgstr "Đọc tài liệu hướng dẫn"
+
+#. Create cancel button
+#: libxfce4ui/xfce-dialogs.c:273 libxfce4ui/xfce-dialogs.c:531
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:255
+msgid "_Cancel"
+msgstr "_Huỷ bỏ"
+
+#: libxfce4ui/xfce-dialogs.c:274
 msgid "_Read Online"
-msgstr ""
+msgstr "Đọ_c trực tuyến"
 
-#: ../libxfce4ui/xfce-dialogs.c:237
+#: libxfce4ui/xfce-dialogs.c:283
 msgid "_Always go directly to the online documentation"
+msgstr "_Luôn mở trực tiếp tài liệu trực tuyến"
+
+#: libxfce4ui/xfce-dialogs.c:332 libxfce4ui/xfce-dialogs.c:367
+#: libxfce4ui/xfce-dialogs.c:403
+msgid "Close"
+msgstr "Đóng"
+
+#: libxfce4ui/xfce-dialogs.c:450
+msgid "No"
+msgstr "Không"
+
+#: libxfce4ui/xfce-dialogs.c:452
+msgid "Yes"
+msgstr "Có"
+
+#: libxfce4ui/xfce-dialogs.c:456 libxfce4kbd-private/xfce-shortcuts-xfwm4.c:42
+msgid "Cancel"
+msgstr "Hủy bỏ"
+
+#: libxfce4ui/xfce-dialogs.c:515
+msgid "Close window with multiple tabs?"
+msgstr "Đóng cửa sổ có nhiều thẻ?"
+
+#: libxfce4ui/xfce-dialogs.c:517
+msgid ""
+"This window has multiple tabs open. Closing this window will also close all "
+"its tabs."
 msgstr ""
+"Cửa sổ này đang mở nhiều thẻ. Việc đóng cửa sổ sẽ đồng thời đóng tất cả các "
+"thẻ."
 
-#: ../libxfce4ui/xfce-dialogs.c:281
-msgid "Information"
-msgstr "Thông tin"
+#: libxfce4ui/xfce-dialogs.c:520
+#, c-format
+msgid ""
+"This window has %d tabs open. Closing this window will also close all its "
+"tabs."
+msgstr ""
+"Cửa sổ này đang mở %d thẻ. Việc đóng cửa sổ sẽ đồng thời đóng tất cả các "
+"thẻ."
 
-#: ../libxfce4ui/xfce-dialogs.c:314
+#: libxfce4ui/xfce-dialogs.c:527
 msgid "Warning"
-msgstr ""
+msgstr "Cảnh báo"
 
-#: ../libxfce4ui/xfce-dialogs.c:348
-msgid "Error"
-msgstr "Lỗi"
+#: libxfce4ui/xfce-dialogs.c:532
+msgid "Close T_ab"
+msgstr "Đóng _thẻ"
 
-#: ../libxfce4ui/xfce-dialogs.c:399
-msgid "Question"
-msgstr "Câu hỏi"
+#: libxfce4ui/xfce-dialogs.c:533
+msgid "Close _Window"
+msgstr "Đóng _cửa sổ"
 
-#: ../libxfce4ui/xfce-sm-client.c:1403
+#: libxfce4ui/xfce-dialogs.c:538
+msgid "Do _not ask me again"
+msgstr "Đừng hỏi lại nữa"
+
+#: libxfce4ui/xfce-sm-client.c:1507
 msgid "Session management client ID"
-msgstr ""
+msgstr "ID client quản lý phiên"
 
-#: ../libxfce4ui/xfce-sm-client.c:1403
+#: libxfce4ui/xfce-sm-client.c:1507
 msgid "ID"
 msgstr "ID"
 
-#: ../libxfce4ui/xfce-sm-client.c:1404
+#: libxfce4ui/xfce-sm-client.c:1508
 msgid "Disable session management"
 msgstr "Vô hiệu hóa việc quản lý session"
 
-#: ../libxfce4ui/xfce-sm-client.c:1414
+#: libxfce4ui/xfce-sm-client.c:1518
 msgid "Session management options"
 msgstr "Tùy chọn quản lý session"
 
-#: ../libxfce4ui/xfce-sm-client.c:1415
+#: libxfce4ui/xfce-sm-client.c:1518
 msgid "Show session management options"
 msgstr "Hiện các tùy chọn quản lý session"
 
-#: ../libxfce4ui/xfce-sm-client.c:1591
+#: libxfce4ui/xfce-sm-client.c:1692
 #, c-format
 msgid "Failed to connect to the session manager: %s"
 msgstr "Không kết nối được với trình quản lý session: %s"
 
-#: ../libxfce4ui/xfce-sm-client.c:1598
-#, c-format
+#: libxfce4ui/xfce-sm-client.c:1701
 msgid "Session manager did not return a valid client id"
 msgstr "Trình quản lý phiên làm việc không trả lại một định danh khách hợp lệ"
 
 #. print warning for user
-#: ../libxfce4ui/xfce-spawn.c:413
+#: libxfce4ui/xfce-spawn.c:387
 #, c-format
 msgid ""
-"Working directory \"%s\" does not exist. It won't be used when spawning \"%s"
-"\"."
+"Working directory \"%s\" does not exist. It won't be used when spawning "
+"\"%s\"."
 msgstr ""
 "Thư mục làm việc \"%s\" không tồn tại. Nó sẽ không thể được dùng khi phân "
 "tách \"%s\"."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:53
-#, fuzzy, c-format
-msgid ""
-"This shortcut is already being used for the action '%s'. Which action do you "
-"want to use?"
-msgstr ""
-"Phím tắt đã được dùng!\n"
-"Bạn chắc chắn muốn dùng nó?"
+#. retrieve the error and warning messages
+#: libxfce4ui/xfce-filename-input.c:238
+msgid "Filename is too long"
+msgstr "Tên tệp quá dài"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
-#: ../libxfce4kbd-private/xfce-shortcuts.c:57
-#: ../libxfce4kbd-private/xfce-shortcuts.c:60
-#: ../libxfce4kbd-private/xfce-shortcuts.c:63
+#: libxfce4ui/xfce-filename-input.c:239
+msgid "Directory separator illegal in file name"
+msgstr "Ký tự phân cách thư mục không hợp lệ trong tên tệp"
+
+#: libxfce4ui/xfce-filename-input.c:240
+msgid "Filenames should not start or end with a space"
+msgstr "Tên tệp không được bắt đầu hoặc kết thúc bằng dấu cách"
+
+#: libxfce4kbd-private/xfce-shortcuts.c:47
+#, c-format
+msgid ""
+"This shortcut is already being used for the action '%s'. Which action do you"
+" want to use?"
+msgstr ""
+"Phím tắt này đã được dùng cho hành động '%s'. Bạn muốn gán cho hành động "
+"nào?"
+
+#: libxfce4kbd-private/xfce-shortcuts.c:48
+#: libxfce4kbd-private/xfce-shortcuts.c:51
+#: libxfce4kbd-private/xfce-shortcuts.c:54
+#: libxfce4kbd-private/xfce-shortcuts.c:57
 #, c-format
 msgid "Use '%s'"
 msgstr "Sử dụng '%s'"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:54
-#: ../libxfce4kbd-private/xfce-shortcuts.c:57
-#: ../libxfce4kbd-private/xfce-shortcuts.c:60
-#: ../libxfce4kbd-private/xfce-shortcuts.c:63
+#: libxfce4kbd-private/xfce-shortcuts.c:48
+#: libxfce4kbd-private/xfce-shortcuts.c:51
+#: libxfce4kbd-private/xfce-shortcuts.c:54
+#: libxfce4kbd-private/xfce-shortcuts.c:57
 #, c-format
 msgid "Keep '%s'"
 msgstr "Giữ '%s'"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:56
-#: ../libxfce4kbd-private/xfce-shortcuts.c:59
-#, fuzzy, c-format
+#: libxfce4kbd-private/xfce-shortcuts.c:50
+#: libxfce4kbd-private/xfce-shortcuts.c:53
+#, c-format
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
 msgstr ""
-"Phím tắt đã được dùng!\n"
-"Bạn chắc chắn muốn dùng nó?"
+"Lối tắt này đã được sử dụng cho lệnh '%s'. Bạn muốn sử dụng cho cái nào? "
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:62
-#, fuzzy, c-format
+#: libxfce4kbd-private/xfce-shortcuts.c:56
+#, c-format
 msgid ""
 "This shortcut is already being used by the action '%s'. Which action do you "
 "want to use?"
 msgstr ""
-"Phím tắt đã được dùng!\n"
-"Bạn chắc chắn muốn dùng nó?"
+"Phím tắt này đã được dùng bởi hành động '%s'. Bạn muốn gán cho hành động "
+"nào?"
 
-#. This shortcut already exists in the provider, we don't want it twice
-#. Warn the user
-#: ../libxfce4kbd-private/xfce-shortcuts.c:110
+#: libxfce4kbd-private/xfce-shortcuts.c:108
 msgid "Please use another key combination."
-msgstr ""
+msgstr "Vui lòng dùng tổ hợp phím khác."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:111
+#: libxfce4kbd-private/xfce-shortcuts.c:108
 #, c-format
 msgid "%s already triggers this action."
-msgstr ""
+msgstr "%s đã kích hoạt hành động này."
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:116
+#: libxfce4kbd-private/xfce-shortcuts.c:113
 #, c-format
 msgid "Conflicting actions for %s"
-msgstr ""
+msgstr "Xung đột hành động cho %s"
 
-#: ../libxfce4kbd-private/xfce-shortcuts.c:189
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts.c:173
 msgid "This shortcut is already being used for something else."
-msgstr ""
-"Phím tắt đã được dùng!\n"
-"Bạn chắc chắn muốn dùng nó?"
+msgstr "Phím tắt này đã được dùng cho mục đích khác."
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:209
-#, fuzzy
-msgid "Window Manager Action Shortcut"
-msgstr "Thiết lập trình quản lí cửa sổ Xfce 4"
+#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:91
+#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:128
+msgid "Shortcuts Editor"
+msgstr "Trình chỉnh sửa phím tắt"
 
-#. TRANSLATORS: this string will be used to create an explanation for
-#. * the user in a following string
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:212
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:226
-#, fuzzy
-msgid "action"
-msgstr "Hoạt động"
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:493
+msgid "The current shortcut. Click to edit..."
+msgstr "Phím tắt hiện tại. Nhấp để chỉnh sửa…"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:216
-#, fuzzy
-msgid "Command Shortcut"
-msgstr "Soạn phím tắt"
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:505
+msgid "Clear the shortcut"
+msgstr "Xóa phím tắt"
 
-#. TRANSLATORS: this string will be used to create an explanation for
-#. * the user in a following string
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:219
-#, fuzzy
-msgid "command"
-msgstr "Lệnh"
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:517
+msgid "Restore the default shortcut"
+msgstr "Khôi phục phím tắt mặc định"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:223
-#, fuzzy
-msgid "Shortcut"
-msgstr "Không có phím nóng"
-
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:267
+#. skip leading slash
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:671
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:761
 #, c-format
-msgid "Press now the keyboard keys you want to use to trigger the %s '%s'."
-msgstr ""
+msgid "This keyboard shortcut is currently used by: '%s'"
+msgstr "Phím tắt này hiện đang được sử dụng bởi: '%s'"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:291
-#, fuzzy
-msgid "Shortcut:"
-msgstr "Không có phím nóng"
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:674
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:764
+msgid "Keyboard shortcut already in use"
+msgstr "Phím tắt đã được sử dụng "
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:296
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:475
-msgid "No keys pressed yet, proceed."
-msgstr ""
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:218
+msgid "Window Manager Action Shortcut"
+msgstr "Phím tắt hành động trình quản lý cửa sổ"
 
-#: ../libxfce4kbd-private/xfce-shortcut-dialog.c:378
+#. TRANSLATORS: this string will be used to create an explanation for
+#. * the user in a following string
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:221
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:237
+msgid "action"
+msgstr "hành động"
+
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:226
+msgid "Command Shortcut"
+msgstr "Lệnh tắt:"
+
+#. TRANSLATORS: this string will be used to create an explanation for
+#. * the user in a following string
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:229
+msgid "command"
+msgstr "lệnh"
+
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:234
+msgid "Shortcut"
+msgstr "Lối tắt"
+
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:249
+msgid "Clear"
+msgstr "Xoá"
+
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:272
+#, c-format
+msgid "Press keyboard keys to trigger the %s '%s'."
+msgstr "Nhấn phím để gán cho %s '%s'."
+
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:294
+msgid "Please press a key"
+msgstr "Vui lòng nhấn một phím"
+
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:350
 msgid "Could not grab the keyboard."
 msgstr "Không thể bắt tín hiệu bàn phím."
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:33
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:37
 msgid "Window operations menu"
-msgstr ""
+msgstr "Menu thao tác cửa sổ"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:34
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:38
 msgid "Up"
-msgstr ""
+msgstr "Trên"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:35
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:39
 msgid "Down"
-msgstr ""
+msgstr "Dưới"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:36
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:40
 msgid "Left"
 msgstr "Trái"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:37
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:41
 msgid "Right"
 msgstr "Phải"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:38
-msgid "Cancel"
-msgstr ""
-
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:39
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:43
 msgid "Cycle windows"
 msgstr "Chuyển quanh các cửa sổ"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:40
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:44
 msgid "Cycle windows (Reverse)"
-msgstr "Chuyển quanh các cửa sổ"
+msgstr "Chuyển vòng cửa sổ (ngược lại)"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:41
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:45
 msgid "Switch window for same application"
-msgstr "Di chuyển cửa sổ sang vùng làm việc %d"
+msgstr "Chuyển cửa sổ cùng ứng dụng"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:42
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:46
 msgid "Switch application"
-msgstr "Ứng dụng không rõ!"
+msgstr "Chuyển ứng dụng"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:43
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:47
 msgid "Close window"
 msgstr "Đóng cửa sổ"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:44
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:48
 msgid "Maximize window horizontally"
 msgstr "Phóng to cửa sổ theo chiều ngang"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:45
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:49
 msgid "Maximize window vertically"
 msgstr "Phóng to cửa sổ theo chiều dọc"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:46
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:50
 msgid "Maximize window"
 msgstr "Phóng to cửa sổ"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:47
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:51
 msgid "Hide window"
 msgstr "Ẩn cửa sổ"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:48
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:52
 msgid "Move window"
-msgstr "Di chuyển cửa sổ lên"
+msgstr "Di chuyển cửa sổ"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:49
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:53
 msgid "Resize window"
-msgstr "Thay đổi kích thước cửa sổ lên trên"
+msgstr "Thay đổi kích thước cửa sổ"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:50
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:54
 msgid "Shade window"
 msgstr "Che cửa sổ"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:51
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:55
 msgid "Stick window"
 msgstr "Dán cửa sổ"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:52
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:56
 msgid "Raise window"
 msgstr "Nâng cửa sổ"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:53
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:57
 msgid "Lower window"
 msgstr "Hạ cửa sổ"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:54
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:58
 msgid "Raise or lower window"
-msgstr "Nâng cửa sổ"
+msgstr "Đưa lên hoặc hạ cửa sổ"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:55
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:59
 msgid "Fill window"
-msgstr "Ẩn cửa sổ"
+msgstr "Lấp đầy cửa sổ"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:56
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:60
 msgid "Fill window horizontally"
-msgstr "Phóng to cửa sổ theo chiều ngang"
+msgstr "Lấp đầy cửa sổ ngang"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:57
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:61
 msgid "Fill window vertically"
-msgstr "Phóng to cửa sổ theo chiều dọc"
+msgstr "Lấp đầy cửa sổ dọc"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:58
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:62
 msgid "Toggle above"
-msgstr ""
+msgstr "Bật/tắt luôn trên cùng"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:59
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:63
 msgid "Toggle fullscreen"
 msgstr "Tăt/bật toàn màn hình"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:60
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:64
+msgid "Move window to lower monitor"
+msgstr "Chuyển cửa sổ xuống màn hình dưới"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:65
+msgid "Move window to left monitor"
+msgstr "Chuyển cửa sổ sang màn hình trái"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:66
+msgid "Move window to right monitor"
+msgstr "Chuyển cửa sổ sang màn hình phải"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:67
+msgid "Move window to upper monitor"
+msgstr "Chuyển cửa sổ lên màn hình trên"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:68
 msgid "Move window to upper workspace"
 msgstr "Di chuyển cửa sổ sang vùng làm việc ở trên"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:61
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:69
 msgid "Move window to bottom workspace"
 msgstr "Di chuyển cửa sổ sang vùng làm việc ở dưới"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:62
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:70
 msgid "Move window to left workspace"
 msgstr "Di chuyển cửa sổ sang vùng làm việc bên trái"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:63
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:71
 msgid "Move window to right workspace"
 msgstr "Di chuyển cửa sổ sang vùng làm việc bên phải"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:64
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:72
 msgid "Move window to previous workspace"
 msgstr "Di chuyển cửa sổ sang vùng làm việc trước"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:65
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:73
 msgid "Move window to next workspace"
 msgstr "Di chuyển cửa sổ sang vùng làm việc kế"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:66
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:74
 msgid "Move window to workspace 1"
-msgstr "Di chuyển cửa sổ sang vùng làm việc %d"
+msgstr "Chuyển cửa sổ sang vùng làm việc 1"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:67
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:75
 msgid "Move window to workspace 2"
-msgstr "Di chuyển cửa sổ sang vùng làm việc %d"
+msgstr "Chuyển cửa sổ sang vùng làm việc 2"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:68
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:76
 msgid "Move window to workspace 3"
-msgstr "Di chuyển cửa sổ sang vùng làm việc %d"
+msgstr "Chuyển cửa sổ sang vùng làm việc 3"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:69
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:77
 msgid "Move window to workspace 4"
-msgstr "Di chuyển cửa sổ sang vùng làm việc %d"
+msgstr "Chuyển cửa sổ sang vùng làm việc 4"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:70
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:78
 msgid "Move window to workspace 5"
-msgstr "Di chuyển cửa sổ sang vùng làm việc %d"
+msgstr "Chuyển cửa sổ sang vùng làm việc 5"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:71
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:79
 msgid "Move window to workspace 6"
-msgstr "Di chuyển cửa sổ sang vùng làm việc %d"
+msgstr "Chuyển cửa sổ sang vùng làm việc 6"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:72
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:80
 msgid "Move window to workspace 7"
-msgstr "Di chuyển cửa sổ sang vùng làm việc %d"
+msgstr "Chuyển cửa sổ sang vùng làm việc 7"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:73
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:81
 msgid "Move window to workspace 8"
-msgstr "Di chuyển cửa sổ sang vùng làm việc %d"
+msgstr "Chuyển cửa sổ sang vùng làm việc 8"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:74
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:82
 msgid "Move window to workspace 9"
-msgstr "Di chuyển cửa sổ sang vùng làm việc %d"
+msgstr "Chuyển cửa sổ sang vùng làm việc 9"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:75
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:83
 msgid "Move window to workspace 10"
-msgstr "Di chuyển cửa sổ sang vùng làm việc %d"
+msgstr "Chuyển cửa sổ sang vùng làm việc 10"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:76
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:84
 msgid "Move window to workspace 11"
-msgstr "Di chuyển cửa sổ sang vùng làm việc %d"
+msgstr "Chuyển cửa sổ sang vùng làm việc 11"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:77
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:85
 msgid "Move window to workspace 12"
-msgstr "Di chuyển cửa sổ sang vùng làm việc %d"
+msgstr "Chuyển cửa sổ sang vùng làm việc 12"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:78
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:86
 msgid "Tile window to the top"
-msgstr "Di chuyển cửa sổ sang vùng làm việc bên trái"
+msgstr "Dán cửa sổ lên trên"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:79
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:87
 msgid "Tile window to the bottom"
-msgstr "Di chuyển cửa sổ sang vùng làm việc ở dưới"
+msgstr "Dán cửa sổ xuống dưới"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:80
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:88
 msgid "Tile window to the left"
-msgstr "Thay đổi kích thước cửa sổ sang trái"
+msgstr "Dán cửa sổ sang trái"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:81
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:89
 msgid "Tile window to the right"
-msgstr "Thay đổi kích thước cửa sổ sang phải"
+msgstr "Dán cửa sổ sang phải"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:82
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:90
+msgid "Tile window to the top-left"
+msgstr "Dán cửa sổ góc trên-trái"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:91
+msgid "Tile window to the top-right"
+msgstr "Dán cửa sổ góc trên-phải"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:92
+msgid "Tile window to the bottom-left"
+msgstr "Dán cửa sổ góc dưới-trái"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:93
+msgid "Tile window to the bottom-right"
+msgstr "Dán cửa sổ góc dưới-phải"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:94
 msgid "Show desktop"
 msgstr "Hiện ảnh nền"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:83
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:95
 msgid "Upper workspace"
 msgstr "Vùng làm việc trên"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:84
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:96
 msgid "Bottom workspace"
 msgstr "Vùng làm việc dưới"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:85
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:97
 msgid "Left workspace"
 msgstr "Vùng làm việc bên trái"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:86
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:98
 msgid "Right workspace"
 msgstr "Vùng làm việc bên phải"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:87
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:99
 msgid "Previous workspace"
 msgstr "Vùng làm việc trước"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:88
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:100
 msgid "Next workspace"
 msgstr "Vùng làm việc tiếp theo"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:89
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:101
 msgid "Workspace 1"
-msgstr "Vùng làm việc %i"
+msgstr "Vùng làm việc 1"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:90
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:102
 msgid "Workspace 2"
-msgstr "Vùng làm việc %d"
+msgstr "Vùng làm việc 2"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:91
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:103
 msgid "Workspace 3"
-msgstr "Vùng làm việc %i"
+msgstr "Vùng làm việc 3"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:92
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:104
 msgid "Workspace 4"
-msgstr "Vùng làm việc %i"
+msgstr "Vùng làm việc 4"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:93
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:105
 msgid "Workspace 5"
-msgstr "Vùng làm việc %i"
+msgstr "Vùng làm việc 5"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:94
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:106
 msgid "Workspace 6"
-msgstr "Vùng làm việc %i"
+msgstr "Vùng làm việc 6"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:95
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:107
 msgid "Workspace 7"
-msgstr "Vùng làm việc %i"
+msgstr "Vùng làm việc 7"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:96
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:108
 msgid "Workspace 8"
-msgstr "Vùng làm việc %i"
+msgstr "Vùng làm việc 8"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:97
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:109
 msgid "Workspace 9"
-msgstr "Vùng làm việc %i"
+msgstr "Vùng làm việc 9"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:98
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:110
 msgid "Workspace 10"
-msgstr "Vùng làm việc %d"
+msgstr "Vùng làm việc 10"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:99
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:111
 msgid "Workspace 11"
-msgstr "Vùng làm việc %i"
+msgstr "Vùng làm việc 11"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:100
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:112
 msgid "Workspace 12"
-msgstr "Vùng làm việc %d"
+msgstr "Vùng làm việc 12"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:101
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:113
 msgid "Add workspace"
 msgstr "Thêm vùng làm việc"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:102
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:114
 msgid "Add adjacent workspace"
-msgstr "Thêm vùng làm việc"
+msgstr "Thêm vùng làm việc kế bên"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:103
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:115
 msgid "Delete last workspace"
-msgstr "Xoá vùng làm việc"
+msgstr "Xóa vùng làm việc cuối"
 
-#: ../libxfce4kbd-private/xfwm4-shortcut-values.h:104
-#, fuzzy
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:116
 msgid "Delete active workspace"
-msgstr "Xoá vùng làm việc"
+msgstr "Xóa vùng làm việc hiện tại"
 
-#: ../glade/libxfce4ui.xml.in.h:1
-#, fuzzy
-msgid "Titled Dialog"
-msgstr "Phông tiêu đề"
-
-#: ../glade/libxfce4ui.xml.in.h:2
-#, fuzzy
-msgid "Subtitle"
-msgstr "Tiêu đề"
-
-#: ../glade/libxfce4ui.xml.in.h:3
-#, fuzzy
-msgid "Xfce 4 Widgets"
-msgstr "Thiết lập trình quản lí cửa sổ Xfce 4"
-
-#: ../xfce4-about/main.c:52
+#: xfce4-about/main.c:64
 msgid "Version information"
-msgstr ""
+msgstr "Thông tin phiên bản"
 
-#: ../xfce4-about/main.c:70
+#: xfce4-about/main.c:174
+msgid "GPUs"
+msgstr "Card đồ họa"
+
+#: xfce4-about/main.c:191
 msgid "Window Manager"
 msgstr "Trình quản lí cửa sổ"
 
-#: ../xfce4-about/main.c:71
-#, fuzzy
+#: xfce4-about/main.c:192
 msgid "Handles the placement of windows on the screen."
-msgstr "Hiển thị nội dung cửa sổ khi thay đổi kích thước"
+msgstr "Quản lý vị trí cửa sổ trên màn hình."
 
-#: ../xfce4-about/main.c:74
+#: xfce4-about/main.c:195
 msgid "Panel"
-msgstr ""
+msgstr "Bảng"
 
-#: ../xfce4-about/main.c:75
-msgid ""
-"Program launchers, window buttons, applications menu, workspace switcher and "
-"more."
+#: xfce4-about/main.c:196
+msgid "Provides a home for window buttons, launchers, app menu and more."
 msgstr ""
-"Trình khởi động chương trình, các nútm, trình đơn ứng dụng, thanh chuyển "
-"không gian làm việc và nhiều hơn thế nữa."
+"Cung cấp chỗ chứa nút cửa sổ, bộ khởi chạy, menu ứng dụng và nhiều hơn."
 
-#: ../xfce4-about/main.c:79
-#, fuzzy
+#: xfce4-about/main.c:199
 msgid "Desktop Manager"
-msgstr "Trình quản lí cửa sổ"
+msgstr "Trình quản lý màn hình nền"
 
-#: ../xfce4-about/main.c:80
-msgid ""
-"Sets the background color or image with optional application menu or icons "
-"for minimized applications or launchers, devices and folders."
-msgstr ""
+#: xfce4-about/main.c:200
+msgid "Sets desktop backgrounds, handles icons and more."
+msgstr "Thiết lập hình nền, quản lý biểu tượng và nhiều hơn."
 
-#: ../xfce4-about/main.c:84
-#, fuzzy
-msgid "File Manager "
-msgstr "Trình quản lí cửa sổ"
+#: xfce4-about/main.c:203
+msgid "File Manager"
+msgstr "Trình quản lí tập tin"
 
-#: ../xfce4-about/main.c:85
-msgid ""
-"A modern file manager for the Unix/Linux desktop, aiming to be easy-to-use "
-"and fast."
-msgstr ""
-"Một chương trình quản lý tập tin hiện đại cho Linux/Unix, hướn đển dễ sử "
-"dụng và tốc độ"
+#: xfce4-about/main.c:204
+msgid "Manages your files in a modern, easy-to-use and fast way."
+msgstr "Quản lý tệp của bạn theo cách hiện đại, dễ dùng và nhanh chóng."
 
-#: ../xfce4-about/main.c:89
-#, fuzzy
+#: xfce4-about/main.c:207
+msgid "Volume Manager"
+msgstr "Trình quản lý âm lượng"
+
+#: xfce4-about/main.c:208
+msgid "Manages removable drives and media for Thunar."
+msgstr "Quản lý ổ đĩa tháo rời và thiết bị lưu trữ cho Thunar."
+
+#: xfce4-about/main.c:211
 msgid "Session Manager"
-msgstr "Trình quản lí cửa sổ"
+msgstr "Trình quản lý phiên làm việc"
 
-#: ../xfce4-about/main.c:90
+#: xfce4-about/main.c:212
 msgid ""
-"Restores your session on startup and allows you to shutdown the computer "
-"from Xfce."
+"Saves and restores your session, handles startup, autostart and shutdown."
 msgstr ""
-"Khôi phục phiên làm việc lúc khởi động và cho phép bạn tắt máy tính trong "
-"Xfce."
+"Lưu và khôi phục phiên làm việc, xử lý khởi động, tự động chạy và tắt máy."
 
-#: ../xfce4-about/main.c:94
-msgid "Setting System"
-msgstr "Thiết lập hệ thống"
+#: xfce4-about/main.c:215
+msgid "Settings Manager"
+msgstr "Trình quản lý cài đặt"
 
-#: ../xfce4-about/main.c:95
-msgid ""
-"Configuration system to control various aspects of the desktop like "
-"appearance, display, keyboard and mouse settings."
-msgstr ""
+#: xfce4-about/main.c:216
+msgid "Configures appearance, display, keyboard and mouse settings."
+msgstr "Cấu hình thức, màn hình, bàn phím và chuột."
 
-#: ../xfce4-about/main.c:99
+#: xfce4-about/main.c:219
 msgid "Application Finder"
 msgstr "Trình tìm kiếm ứng dụng"
 
-#: ../xfce4-about/main.c:100
-msgid ""
-"Shows the applications installed on your system in categories, so you can "
-"quickly find and launch them."
-msgstr ""
+#: xfce4-about/main.c:220
+msgid "Quickly finds and launches applications installed on your system."
+msgstr "Tìm và chạy nhanh các ứng dụng đã cài trên hệ thống."
 
-#: ../xfce4-about/main.c:104
+#: xfce4-about/main.c:223
 msgid "Settings Daemon"
-msgstr ""
+msgstr "Dịch vụ cài đặt"
 
-#: ../xfce4-about/main.c:105
-msgid "D-Bus-based configuration storage system."
-msgstr ""
+#: xfce4-about/main.c:224
+msgid "Stores your settings in a D-Bus-based configuration system."
+msgstr "Lưu trữ các cài đặt của bạn trong hệ thống cấu hình dựa trên D-Bus."
 
-#: ../xfce4-about/main.c:112
-msgid ""
-"Xfce is a collection of programs that together provide a full-featured "
-"desktop environment. The following programs are part of the Xfce core:"
-msgstr ""
+#: xfce4-about/main.c:227
+msgid "A Menu Library"
+msgstr "Thư viện menu"
 
-#: ../xfce4-about/main.c:136
-msgid ""
-"Xfce is also a development platform providing several libraries, that help "
-"programmers create applications that fit in well with the desktop "
-"environment."
-msgstr ""
+#: xfce4-about/main.c:228
+msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
+msgstr "Cung cấp menu tuân thủ chuẩn freedesktop.org dựa trên GLib và GIO."
 
-#: ../xfce4-about/main.c:142
-msgid ""
-"Xfce components are licensed under free or open source licences; GPL or BSDL "
-"for applications and LGPL or BSDL for libraries. Look at the documentation, "
-"the source code or the Xfce website (http://www.xfce.org) for more "
-"information."
-msgstr ""
+#: xfce4-about/main.c:231
+msgid "Thumbnails Service"
+msgstr "Dịch vụ hình thu nhỏ"
 
-#: ../xfce4-about/main.c:149
-msgid "Thank you for your interest in Xfce."
-msgstr "Cảm ơn cho sự ủng hộ của bạn đối với Xfce"
+#: xfce4-about/main.c:232
+msgid "Implements the thumbnail management D-Bus specification."
+msgstr "Cung cấp dịch vụ quản lý hình thu nhỏ theo chuẩn D-Bus."
 
-#: ../xfce4-about/main.c:153
-msgid "The Xfce Development Team"
-msgstr "Nhóm phát triển Xfce"
+#: xfce4-about/main.c:285
+msgid "Please see <https://www.xfce.org/about/credits>"
+msgstr "Vui lòng xem <https://www.xfce.org/about/credits>"
 
-#: ../xfce4-about/main.c:262
+#: xfce4-about/main.c:339
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
-"on <http://bugzilla.xfce.org> ."
+"on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 msgstr ""
-"Nếu bạn biết bất cứ lỗi nào khoogn có trong danh sách này; đừng ngần ngại để "
-"báo cáo lỗi trên <http://bugzilla.xfce.org> ."
+"Nếu bạn thấy thiếu ai trong danh sách này, đừng ngần ngại báo lỗi tại\n"
+"<https://gitlab.xfce.org/xfce/libxfce4ui/-/issues>."
 
-#: ../xfce4-about/main.c:266
+#: xfce4-about/main.c:344
 msgid "Thanks to all who helped making this software available!"
-msgstr ""
+msgstr "Cảm ơn tất cả những người đã góp phần tạo nên phần mềm này!"
 
-#: ../xfce4-about/main.c:283
+#: xfce4-about/main.c:361
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
 msgstr ""
+"Xfce 4 thuộc bản quyền của Olivier Fourdan (fourdan@xfce.org). Các thành "
+"phần khác thuộc bản quyền của các tác giả tương ứng."
 
-#: ../xfce4-about/main.c:288
+#: xfce4-about/main.c:367
 msgid ""
-"The libxfce4ui, libxfcegui4, libxfce4util, thunar-vfs and exo packages are "
-"distributed under the terms of the GNU Library General Public License as "
-"published by the Free Software Foundation; either version 2 of the License, "
-"or (at your option) any later version."
+"The libxfce4ui, libxfce4util and exo packages are distributed under the "
+"terms of the GNU Library General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version."
 msgstr ""
 
-#: ../xfce4-about/main.c:295
+#: xfce4-about/main.c:375
 msgid ""
-"The packages thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-"
-"settings, xfce-utils, xfconf, xfdesktop and xfwm4 are distributed under the "
-"terms of the GNU General Public License as published by the Free Software "
+"The packages thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
+"xfce4-settings, xfconf, xfdesktop and xfwm4 are distributed under the terms "
+"of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
 msgstr ""
-"Các gói thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, "
-"xfce-utils, xfconf, xfdesktop and xfwm4 được phân phối dưới các quy định của "
-"GNU General Public License khi được xuất bản bởi Tổ chức phần mềm tự do hoặc "
-"là phiên bản 2 của giấy phép, hoặc (tùy bạn) bất cứ phiên bản nào sau này."
+"Các gói thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings,"
+" xfconf, xfdesktop và xfwm4 được phát hành theo Giấy phép Công cộng GNU do "
+"Tổ chức Phần mềm Tự do công bố; phiên bản 2 hoặc (tùy chọn) các phiên bản "
+"mới hơn."
 
-#: ../xfce4-about/main.c:442
+#: xfce4-about/main.c:522
 #, c-format
 msgid "Type '%s --help' for usage information."
 msgstr "Gõ '%s --help' để xem hướng dẫn sử dụng"
 
-#: ../xfce4-about/main.c:448
+#: xfce4-about/main.c:528
 msgid "Unable to initialize GTK+."
 msgstr "Không thể khởi tạo GTK+"
 
-#: ../xfce4-about/main.c:457
+#: xfce4-about/main.c:537
 msgid "The Xfce development team. All rights reserved."
 msgstr "Nhóm phát triển Xfce. Tất cả các quyền được bảo lưu"
 
-#: ../xfce4-about/main.c:458
+#: xfce4-about/main.c:538
 #, c-format
 msgid "Please report bugs to <%s>."
-msgstr ""
+msgstr "Hãy thống báo lỗi đến <%s>"
 
-#. I18N: date/time the translators list was updated
-#: ../xfce4-about/main.c:461
-#, c-format
-msgid "Translators list from %s."
-msgstr ""
-
-#: ../xfce4-about/main.c:471
+#: xfce4-about/main.c:548
 msgid "Failed to load interface"
 msgstr "Thất bại nạp giao diện"
-
-#. I18N: first %s will be replaced by the version, second by
-#. * the name of the distribution (--with-vendor-info=NAME)
-#: ../xfce4-about/main.c:485
-#, c-format
-msgid "Version %s, distributed by %s"
-msgstr "Phiên bản %s, được phân phối bởi %s"
-
-#. I18N: %s will be replaced by the Xfce version number
-#: ../xfce4-about/main.c:489
-#, fuzzy, c-format
-msgid "Version %s"
-msgstr "%s (trên %s)"
 
 #. { N_("Project Lead"),
 #. xfce_contributors_lead
 #. },
-#: ../xfce4-about/contributors.h:121
+#: xfce4-about/contributors.h:142
 msgid "Core developers"
 msgstr "Các nhà phát triển lõi phần mềm"
 
-#: ../xfce4-about/contributors.h:124
+#: xfce4-about/contributors.h:144
 msgid "Active contributors"
-msgstr ""
+msgstr "Người đóng góp tích cực"
 
-#: ../xfce4-about/contributors.h:127
+#: xfce4-about/contributors.h:146
 msgid "Servers maintained by"
 msgstr "Máy chủ được quản lý bởi"
 
-#: ../xfce4-about/contributors.h:130
-msgid "Goodies supervision"
-msgstr ""
-
-#: ../xfce4-about/contributors.h:133
+#: xfce4-about/contributors.h:148
 msgid "Translations supervision"
 msgstr "Quản lý dich"
 
-#: ../xfce4-about/contributors.h:136
-#, fuzzy
+#: xfce4-about/contributors.h:150
+msgid "Documentation supervision"
+msgstr "Giám sát tài liệu"
+
+#: xfce4-about/contributors.h:152
 msgid "Translators"
-msgstr "Trong suốt"
+msgstr "Người dịch"
 
-#: ../xfce4-about/contributors.h:139
-#, fuzzy
+#: xfce4-about/contributors.h:154
 msgid "Previous contributors"
-msgstr "Vùng làm việc trước"
+msgstr "Những nhà phát triển trước"
 
-#: ../xfce4-about/xfce4-about.desktop.in.h:1
+#: xfce4-about/xfce4-about.desktop.in:11
 msgid "About Xfce"
 msgstr "Thông tin về XFCE"
 
-#: ../xfce4-about/xfce4-about.desktop.in.h:2
+#: xfce4-about/xfce4-about.desktop.in:12
 msgid "Information about the Xfce Desktop Environment"
 msgstr "Thông tin về môi trường màn hình Xfce"
 
-#: ../xfce4-about/xfce4-about-dialog.glade.h:1
-msgid "About the Xfce Desktop Environment"
-msgstr "Thông tin môi trường màn hình Xfce"
-
-#: ../xfce4-about/xfce4-about-dialog.glade.h:2
-msgid "About"
-msgstr "Thông tin"
-
-#: ../xfce4-about/xfce4-about-dialog.glade.h:3
-msgid "Credits"
-msgstr "Công trạng"
-
-#: ../xfce4-about/xfce4-about-dialog.glade.h:4
-msgid "GPL"
-msgstr "GPL"
-
-#: ../xfce4-about/xfce4-about-dialog.glade.h:5
-msgid "LGPL"
-msgstr "LGPL"
-
-#: ../xfce4-about/xfce4-about-dialog.glade.h:6
-msgid "BSD"
-msgstr "BSD"
-
-#: ../xfce4-about/xfce4-about-dialog.glade.h:7
-msgid "Copyright"
-msgstr "Bản quyền"
-
-#: ../xfce4-about/xfce4-about-dialog.glade.h:8
+#: xfce4-about/xfce4-about-dialog.glade:116
 msgid "License"
 msgstr "Giáy phép"
 
-msgid "Keep the other one"
-msgstr "Giữ lại cái kia"
+#: xfce4-about/xfce4-about-dialog.glade:340
+msgid "About the Xfce Desktop Environment"
+msgstr "Thông tin môi trường màn hình Xfce"
+
+#: xfce4-about/xfce4-about-dialog.glade:358
+msgid "_Help"
+msgstr "Trợ giúp "
+
+#: xfce4-about/xfce4-about-dialog.glade:374
+msgid "_Close"
+msgstr "Đóng"
+
+#: xfce4-about/xfce4-about-dialog.glade:437
+msgid "Device"
+msgstr "Thiết bị"
+
+#: xfce4-about/xfce4-about-dialog.glade:449
+#: xfce4-about/xfce4-about-dialog.glade:474
+#: xfce4-about/xfce4-about-dialog.glade:499
+#: xfce4-about/xfce4-about-dialog.glade:524
+#: xfce4-about/xfce4-about-dialog.glade:551
+#: xfce4-about/xfce4-about-dialog.glade:576
+#: xfce4-about/xfce4-about-dialog.glade:601
+#: xfce4-about/xfce4-about-dialog.glade:626
+#: xfce4-about/xfce4-about-dialog.glade:653
+#: xfce4-about/xfce4-about-dialog.glade:678
+#: xfce4-about/xfce4-about-dialog.glade:703
+msgid "label"
+msgstr "nhãn"
+
+#: xfce4-about/xfce4-about-dialog.glade:462
+msgid "OS Name"
+msgstr "Tên hệ điều hành"
+
+#: xfce4-about/xfce4-about-dialog.glade:487
+msgid "OS Type"
+msgstr "Loại hệ điều hành"
+
+#: xfce4-about/xfce4-about-dialog.glade:512
+msgid "Distributor"
+msgstr "Nhà phân phối"
+
+#: xfce4-about/xfce4-about-dialog.glade:538
+msgid "Xfce Version"
+msgstr "Phiên bản Xfce"
+
+#: xfce4-about/xfce4-about-dialog.glade:564
+msgid "GTK Version"
+msgstr "Phiên bản GTK"
+
+#: xfce4-about/xfce4-about-dialog.glade:589
+msgid "Kernel Version"
+msgstr "Phiên bản kernel"
+
+#: xfce4-about/xfce4-about-dialog.glade:614
+msgid "Windowing System"
+msgstr "Hệ thống cửa sổ"
+
+#: xfce4-about/xfce4-about-dialog.glade:640
+msgid "CPU"
+msgstr "CPU"
+
+#: xfce4-about/xfce4-about-dialog.glade:666
+msgid "Memory"
+msgstr "Bộ nhớ"
+
+#: xfce4-about/xfce4-about-dialog.glade:691
+msgid "GPU"
+msgstr "GPU"
+
+#: xfce4-about/xfce4-about-dialog.glade:724
+msgid "System"
+msgstr "Hệ thống"
+
+#: xfce4-about/xfce4-about-dialog.glade:766
+msgid ""
+"Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
+"The following programs are part of the Xfce core:"
+msgstr ""
+"Xfce là tập hợp các chương trình cùng nhau cung cấp một môi trường desktop đầy đủ tính năng.\n"
+"Các chương trình sau thuộc lõi Xfce:"
+
+#: xfce4-about/xfce4-about-dialog.glade:804
+msgid ""
+"Xfce is also a development platform providing several libraries that help programmers create applications that fit in well with the desktop environment.\n"
+"\n"
+"Xfce components are licensed under free or open source licences; GPL or BSDL for applications and LGPL or BSDL for libraries. Look at the documentation, the source code or the Xfce website (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) for more information.\n"
+"\n"
+"Thank you for your interest in Xfce.\n"
+"\n"
+"\t- The Xfce Development Team"
+msgstr ""
+"Xfce còn là một nền tảng phát triển cung cấp nhiều thư viện giúp lập trình viên tạo ứng dụng hòa hợp tốt với môi trường desktop.\n"
+"\n"
+"Các thành phần Xfce được cấp phép theo giấy phép mã nguồn mở hoặc tự do; GPL hoặc BSDL cho ứng dụng và LGPL hoặc BSDL cho thư viện. Xem tài liệu, mã nguồn hoặc trang web Xfce (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) để biết thêm thông tin.\n"
+"\n"
+"Cảm ơn bạn đã quan tâm tới Xfce.\n"
+"\n"
+"\t- Nhóm phát triển Xfce"
+
+#: xfce4-about/xfce4-about-dialog.glade:834
+msgid "About"
+msgstr "Thông tin"
+
+#: xfce4-about/xfce4-about-dialog.glade:868
+msgid "Credits"
+msgstr "Công trạng"
+
+#: xfce4-about/xfce4-about-dialog.glade:947
+msgid "GPL"
+msgstr "GPL"
+
+#: xfce4-about/xfce4-about-dialog.glade:960
+msgid "LGPL"
+msgstr "LGPL"
+
+#: xfce4-about/xfce4-about-dialog.glade:973
+msgid "BSD"
+msgstr "BSD"
+
+#: xfce4-about/xfce4-about-dialog.glade:1003
+msgid "Copyright"
+msgstr "Bản quyền"
+
+#: xfce4-about/system-info.c:499 xfce4-about/system-info.c:521
+#: xfce4-about/system-info.c:640 xfce4-about/system-info.c:689
+msgid "Unknown"
+msgstr "Không rõ"
+
+#. translators: This is the type of architecture for the OS
+#: xfce4-about/system-info.c:624
+msgid "64-bit (32-bit userspace)"
+msgstr "64-bit (không gian người dùng 32-bit)"
+
+#. translators: This is the type of architecture for the OS
+#: xfce4-about/system-info.c:627
+msgid "64-bit"
+msgstr "64-bit"
+
+#: xfce4-about/system-info.c:627
+msgid "32-bit"
+msgstr "32-bit"
+
+#. translators: This is the name of the OS, followed by the build ID, for
+#. * example:
+#. * "Fedora 25 (Workstation Edition); Build ID: xyz" or
+#. * "Ubuntu 16.04 LTS; Build ID: jki"
+#: xfce4-about/system-info.c:697
+#, c-format
+msgid "%s; Build ID: %s"
+msgstr "%s; ID bản dựng: %s"
+
+#: tests/test-ui.c:110
+#, c-format
+msgid ""
+"A file named \"%s\" already exists in this directory, the file hasn't been "
+"added."
+msgstr "Tệp tên \"%s\" đã tồn tại trong thư mục này, tệp không được thêm."
+
+#: tests/test-ui.c:121
+msgid "Failed to migrate the old panel configuration"
+msgstr "Chuyển đổi cấu hình bảng cũ thất bại"
+
+#: tests/test-ui.c:171 tests/test-ui.c:196
+msgid "Customize settings stored by Xfconf"
+msgstr "Tùy biến cài đặt được lưu bởi Xfconf"
