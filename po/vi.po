@@ -628,7 +628,7 @@ msgstr "Tiêu đề"
 
 #: ../glade/libxfce4ui-2.xml.in.h:3
 msgid "Xfce 4 Widgets"
-msgstr ""
+msgstr "Tiện ích Xfce 4"
 
 #: ../xfce4-about/main.c:58
 msgid "Version information"
@@ -760,6 +760,10 @@ msgid ""
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
 msgstr ""
+"Các gói libxfce4ui, libxfce4util và exo được phân phối theo các điều khoản "
+"của GNU Library General Public License do Free Software Foundation; phiên "
+"bản 2 của Giấy phép hoặc (tùy theo lựa chọn của bạn) bất kỳ phiên bản nào "
+"mới hơn."
 
 #: ../xfce4-about/main.c:345
 msgid ""
