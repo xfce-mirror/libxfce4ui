@@ -406,7 +406,7 @@ msgstr "Nome"
 
 #: libxfce4ui/xfce-item-list-view.c:653
 msgid "Move _up"
-msgstr ""
+msgstr "Sposta _su"
 
 #: libxfce4ui/xfce-item-list-view.c:653
 msgid "Move currently selected item up by one row"
@@ -414,7 +414,7 @@ msgstr "Sposta l'elemento selezionato una riga sopra"
 
 #: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move _down"
-msgstr ""
+msgstr "Sposta _giù"
 
 #: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move currently selected item down by one row"
@@ -422,11 +422,11 @@ msgstr "Sposta l'elemento selezionato una riga sotto"
 
 #: libxfce4ui/xfce-item-list-view.c:668
 msgid "_Add new item"
-msgstr ""
+msgstr "_Aggiungi un nuovo elemento"
 
 #: libxfce4ui/xfce-item-list-view.c:668
 msgid "Add new item"
-msgstr ""
+msgstr "Aggiungi un nuovo elemento"
 
 #: libxfce4ui/xfce-item-list-view.c:674
 msgid "_Remove"
@@ -434,7 +434,7 @@ msgstr "_Rimuovi"
 
 #: libxfce4ui/xfce-item-list-view.c:674
 msgid "Remove currently selected items"
-msgstr ""
+msgstr "Rimuovi gli elementi selezionati"
 
 #: libxfce4ui/xfce-item-list-view.c:680
 msgid "_Edit"
@@ -446,11 +446,11 @@ msgstr "Modifica l'elemento selezionato"
 
 #: libxfce4ui/xfce-item-list-view.c:686
 msgid "Reset to de_faults"
-msgstr ""
+msgstr "Ripristina prede_finiti"
 
 #: libxfce4ui/xfce-item-list-view.c:686
 msgid "Reset all items to default settings"
-msgstr ""
+msgstr "Ripristina tutti gli elementi alle impostazioni predefinite"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:44
 #, c-format
