@@ -604,6 +604,14 @@ msgstr "Cycle windows"
 msgid "Cycle windows (Reverse)"
 msgstr "Cycle windows (Reverse)"
 
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:40
+msgid "Cycle workspace windows"
+msgstr "Cycle workspace windows"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:41
+msgid "Cycle workspace windows (Reverse)"
+msgstr "Cycle workspace windows (Reverse)"
+
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:42
 msgid "Switch window for same application"
 msgstr "Switch window for same application"
