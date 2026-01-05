@@ -606,6 +606,14 @@ msgstr "Selaa ikkunoita"
 msgid "Cycle windows (Reverse)"
 msgstr "Selaa ikkunoita (takaperin)"
 
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:40
+msgid "Cycle workspace windows"
+msgstr "Selaa ikkunoita"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:41
+msgid "Cycle workspace windows (Reverse)"
+msgstr "Selaa ikkunoita (takaperin)"
+
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:42
 msgid "Switch window for same application"
 msgstr "Vaihda saman sovelluksen ikkunaa"
