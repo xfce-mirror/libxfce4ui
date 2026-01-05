@@ -608,11 +608,11 @@ msgstr "Fenster durchwechseln (Rückwärts)"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:40
 msgid "Cycle workspace windows"
-msgstr "Fenster an dem Arbeitsfläche durchwechseln"
+msgstr "Fenster auf der Arbeitsfläche durchwechseln"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:41
 msgid "Cycle workspace windows (Reverse)"
-msgstr "Fenster an dem Arbeitsfläche durchwechseln (Rückwärts)"
+msgstr "Fenster auf der Arbeitsfläche durchwechseln (Rückwärts)"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:42
 msgid "Switch window for same application"
