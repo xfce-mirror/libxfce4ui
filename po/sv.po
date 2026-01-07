@@ -5,7 +5,7 @@
 # Translators:
 # Daniel Nylander <po@danielnylander.se>, 2008-2009
 # Luna Jernberg <droidbittin@gmail.com>, 2020-2023
-# Luna Jernberg <droidbittin@gmail.com>, 2024-2025
+# Luna Jernberg <droidbittin@gmail.com>, 2024-2026
 # Påvel Nicklasson <pavel2@frimix.se>, 2015,2018
 # Påvel Nicklasson<pavel@frimix.se>, 2015
 msgid ""
@@ -14,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2025-11-05 00:45+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Luna Jernberg <droidbittin@gmail.com>, 2024-2025\n"
+"Last-Translator: Luna Jernberg <droidbittin@gmail.com>, 2024-2026\n"
 "Language-Team: Swedish (http://app.transifex.com/xfce/libxfce4ui/language/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -405,7 +405,7 @@ msgstr "Namn"
 
 #: libxfce4ui/xfce-item-list-view.c:653
 msgid "Move _up"
-msgstr ""
+msgstr "Flytta _uppåt"
 
 #: libxfce4ui/xfce-item-list-view.c:653
 msgid "Move currently selected item up by one row"
@@ -413,7 +413,7 @@ msgstr "Flytta markerat post en rad upp"
 
 #: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move _down"
-msgstr ""
+msgstr "Flytta _nedåt"
 
 #: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move currently selected item down by one row"
@@ -421,11 +421,11 @@ msgstr "Flytta ner det valda objektet en rad"
 
 #: libxfce4ui/xfce-item-list-view.c:668
 msgid "_Add new item"
-msgstr ""
+msgstr "_Lägg till nytt objekt"
 
 #: libxfce4ui/xfce-item-list-view.c:668
 msgid "Add new item"
-msgstr ""
+msgstr "Lägg till nytt objekt"
 
 #: libxfce4ui/xfce-item-list-view.c:674
 msgid "_Remove"
@@ -433,7 +433,7 @@ msgstr "Ta bo_rt"
 
 #: libxfce4ui/xfce-item-list-view.c:674
 msgid "Remove currently selected items"
-msgstr ""
+msgstr "Ta bort nuvarande valda objekt"
 
 #: libxfce4ui/xfce-item-list-view.c:680
 msgid "_Edit"
@@ -445,11 +445,11 @@ msgstr "Redigera det valda objektet"
 
 #: libxfce4ui/xfce-item-list-view.c:686
 msgid "Reset to de_faults"
-msgstr ""
+msgstr "Återställ till st_andard"
 
 #: libxfce4ui/xfce-item-list-view.c:686
 msgid "Reset all items to default settings"
-msgstr ""
+msgstr "Återställ alla objekt till standard inställningar"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:44
 #, c-format
@@ -1416,7 +1416,7 @@ msgid ""
 "  ImageViewer      - The preferred Image Viewer.\n"
 "  AudioPlayer      - The preferred Audio Player.\n"
 "  VideoPlayer      - The preferred Video Player."
-msgstr ""
+msgstr "  WebBrowser       - Den föredragna webbläsaren.  MailReader       - Den föredragna e-postklienten.  FileManager      - Den föredragna filhanteraren.  TerminalEmulator - Den föredragna terminalemulatorn.TextEditor - Den föredragna textredigeraren.ImageViewer - Den föredragna bildvisaren. AudioPlayer - Den föredragna ljudspelaren.VideoPlayer - Den föredragna videospelaren."
 
 #: xfce-open/main.c:247
 msgid ""
