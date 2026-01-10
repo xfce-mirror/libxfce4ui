@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the libxfce4ui.master package.
 # 
 # Translators:
-# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2009,2015-2017,2019-2022,2024
+# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2009,2015-2017,2019-2022,2024,2026
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2025-11-05 00:45+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2009,2015-2017,2019-2022,2024\n"
+"Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2009,2015-2017,2019-2022,2024,2026\n"
 "Language-Team: Kazakh (http://app.transifex.com/xfce/libxfce4ui/language/kk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -401,7 +401,7 @@ msgstr "Аты"
 
 #: libxfce4ui/xfce-item-list-view.c:653
 msgid "Move _up"
-msgstr ""
+msgstr "Ж_оғары жылжыту"
 
 #: libxfce4ui/xfce-item-list-view.c:653
 msgid "Move currently selected item up by one row"
@@ -409,7 +409,7 @@ msgstr "Таңдаулы тұрған элементті төмен жылжыт
 
 #: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move _down"
-msgstr ""
+msgstr "Тө_мен жылжыту"
 
 #: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move currently selected item down by one row"
@@ -417,11 +417,11 @@ msgstr "Таңдалған нәрсені бір жолға жоғары жыл�
 
 #: libxfce4ui/xfce-item-list-view.c:668
 msgid "_Add new item"
-msgstr ""
+msgstr "Ж_аңа элементті қосу"
 
 #: libxfce4ui/xfce-item-list-view.c:668
 msgid "Add new item"
-msgstr ""
+msgstr "Жаңа элементті қосу"
 
 #: libxfce4ui/xfce-item-list-view.c:674
 msgid "_Remove"
@@ -429,7 +429,7 @@ msgstr "Өші_ру"
 
 #: libxfce4ui/xfce-item-list-view.c:674
 msgid "Remove currently selected items"
-msgstr ""
+msgstr "Ағымдағы таңдалған элементті өшіру"
 
 #: libxfce4ui/xfce-item-list-view.c:680
 msgid "_Edit"
@@ -441,11 +441,11 @@ msgstr "Ағымдағы таңдаулы тұрған элементті бап
 
 #: libxfce4ui/xfce-item-list-view.c:686
 msgid "Reset to de_faults"
-msgstr ""
+msgstr "Баст_апқы түріне келтіру"
 
 #: libxfce4ui/xfce-item-list-view.c:686
 msgid "Reset all items to default settings"
-msgstr ""
+msgstr "Барлық элементтерді бастапқы мәндеріне тастайды"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:44
 #, c-format
@@ -1013,7 +1013,7 @@ msgid ""
 "the GNU Library General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
+msgstr "libxfce4ui және libxfce4util дестелері Free Software Foundation жариялаған GNU Library General Public License аясында таратылады; нұсқасы 2 немесе (таңдауыңызша) одан кейін шыққан кез-келгені."
 
 #: xfce4-about/main.c:374
 msgid ""
@@ -1367,11 +1367,11 @@ msgstr "Файл орналасуы кәдімгі файл не бума еме
 
 #: xfce-open/main.c:218
 msgid "Usage: xfce-open [URLs...]"
-msgstr ""
+msgstr "Қолданылуы: xfce-open [URL-дер...]"
 
 #: xfce-open/main.c:219
 msgid "       xfce-open --launch TYPE [PARAMETERs...]"
-msgstr ""
+msgstr "       xfce-open --launch ТҮРІ [ПАРАМЕТРЛЕР...]"
 
 #: xfce-open/main.c:221
 msgid "  -?, --help                          Print this help message and exit"
@@ -1412,7 +1412,7 @@ msgid ""
 "  ImageViewer      - The preferred Image Viewer.\n"
 "  AudioPlayer      - The preferred Audio Player.\n"
 "  VideoPlayer      - The preferred Video Player."
-msgstr ""
+msgstr "WebBrowser — таңдаулы веб-браузер.\nMailReader — таңдаулы пошта клиенті.\nFileManager — таңдаулы файл менеджері.\nTerminalEmulator — таңдаулы терминал эмуляторы.\nTextEditor — таңдаулы мәтіндік редактор.\nImageViewer — таңдаулы кескіндерді қарау құралы.\nAudioPlayer — таңдаулы аудио ойнатқыш.\nVideoPlayer — таңдаулы бейне ойнатқыш."
 
 #: xfce-open/main.c:247
 msgid ""
@@ -1421,7 +1421,7 @@ msgid ""
 "option, you can select which preferred application you want to run, and\n"
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
-msgstr ""
+msgstr "Егер сіз --launch опциясын көрсетпесеңіз, xfce-open көрсетілген URL-ды\nсәйкес URL өндеуіштермен ашады. Немесе, --launch опциясы көрсетілсе,\nжөнелтілетін таңдамалы қолданбаны таңдай аласыз, және қосымша\nпараметрлерді көрсете аласыз (мыс. терминал эмуляторы үшін терминалда\nорындалатын командалық жол болуы мүмкін)."
 
 #: xfce-open/main.c:422
 #, c-format
