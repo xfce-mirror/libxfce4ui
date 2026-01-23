@@ -62,6 +62,9 @@ enum
   AFTER_MOVE_ITEM,
   BEFORE_REMOVE_ITEM,
   AFTER_REMOVE_ITEM,
+  BEFORE_RESET,
+  AFTER_RESET,
+  ACTIVITY_CHANGED,
   RELOADED,
   N_SIGNALS
 };
@@ -239,6 +242,56 @@ xfce_item_list_model_class_init (XfceItemListModelClass *klass)
                                              NULL, NULL,
                                              NULL,
                                              G_TYPE_NONE, 1, G_TYPE_INT);
+
+  /**
+   * XfceItemListModel::before-reset:
+   * @model: model that received the signal
+   *
+   * This signal is emitted before a model reset is performed
+   *
+   * Since: 4.21.4
+   **/
+  signals[BEFORE_RESET] = g_signal_new ("before-reset",
+                                        G_TYPE_FROM_CLASS (object_class),
+                                        G_SIGNAL_RUN_LAST,
+                                        0,
+                                        NULL, NULL,
+                                        NULL,
+                                        G_TYPE_NONE, 0);
+
+  /**
+   * XfceItemListModel::after-reset:
+   * @model: model that received the signal
+   *
+   * This signal is emitted after a model reset is performed
+   *
+   * Since: 4.21.4
+   **/
+  signals[AFTER_RESET] = g_signal_new ("after-reset",
+                                       G_TYPE_FROM_CLASS (object_class),
+                                       G_SIGNAL_RUN_LAST,
+                                       0,
+                                       NULL, NULL,
+                                       NULL,
+                                       G_TYPE_NONE, 0);
+
+  /**
+   * XfceItemListModel::activity-changed:
+   * @model: model that received the signal
+   * @index: index of the item for which the activity is changing
+   * @state: new activity state
+   *
+   * This signal is emitted when the value of the #XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVE column is set
+   *
+   * Since: 4.21.4
+   **/
+  signals[ACTIVITY_CHANGED] = g_signal_new ("activity-changed",
+                                            G_TYPE_FROM_CLASS (object_class),
+                                            G_SIGNAL_RUN_LAST,
+                                            0,
+                                            NULL, NULL,
+                                            NULL,
+                                            G_TYPE_NONE, 2, G_TYPE_INT, G_TYPE_BOOLEAN);
 
   signals[RELOADED] = g_signal_new ("reloaded",
                                     G_TYPE_FROM_CLASS (object_class),
@@ -804,7 +857,6 @@ xfce_item_list_model_move (XfceItemListModel *model,
   XfceItemListModelClass *klass;
 
   g_return_if_fail (XFCE_IS_ITEM_LIST_MODEL (model));
-  g_return_if_fail (xfce_item_list_model_get_list_flags (model) & XFCE_ITEM_LIST_MODEL_REORDERABLE);
   klass = XFCE_ITEM_LIST_MODEL_GET_CLASS (model);
 
   gint n_items = xfce_item_list_model_get_n_items (model);
@@ -874,6 +926,9 @@ xfce_item_list_model_set_activity (XfceItemListModel *model,
   xfce_item_list_model_set_index (model, &iter, index);
   gtk_tree_model_row_changed (GTK_TREE_MODEL (model), path, &iter);
   gtk_tree_path_free (path);
+
+  /* Emit model signal */
+  g_signal_emit (model, signals[ACTIVITY_CHANGED], 0, index, value);
 }
 
 
@@ -895,7 +950,6 @@ xfce_item_list_model_remove (XfceItemListModel *model,
 
   g_return_val_if_fail (XFCE_IS_ITEM_LIST_MODEL (model), FALSE);
   g_return_val_if_fail (index >= 0 && index < xfce_item_list_model_get_n_items (model), FALSE);
-  g_return_val_if_fail (xfce_item_list_model_get_list_flags (model) & XFCE_ITEM_LIST_MODEL_REMOVABLE, FALSE);
   klass = XFCE_ITEM_LIST_MODEL_GET_CLASS (model);
 
   /* Emit model signal */
@@ -934,13 +988,18 @@ xfce_item_list_model_reset (XfceItemListModel *model)
   XfceItemListModelClass *klass;
 
   g_return_if_fail (XFCE_IS_ITEM_LIST_MODEL (model));
-  g_return_if_fail (xfce_item_list_model_get_list_flags (model) & XFCE_ITEM_LIST_MODEL_RESETTABLE);
   klass = XFCE_ITEM_LIST_MODEL_GET_CLASS (model);
+
+  /* Emit model signal */
+  g_signal_emit (model, signals[BEFORE_RESET], 0);
 
   g_return_if_fail (klass->reset != NULL);
   klass->reset (model);
 
   xfce_item_list_model_reloaded (model);
+
+  /* Emit model signal */
+  g_signal_emit (model, signals[AFTER_RESET], 0);
 }
 
 
