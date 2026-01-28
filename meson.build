@@ -33,7 +33,6 @@ dependency_versions = {
   'libgtop': '>= 2.24.0',
   'epoxy': '>= 1.2',
   'gudev': '>= 232',
-  'glade': '>= 3.5.0',
   'gir': '>= 1.72.0',
 }
 
@@ -116,24 +115,6 @@ if libgtop.found()
 else
   epoxy = dependency('', required: false)
   gudev = dependency('', required: false)
-endif
-
-glade = dependency('gladeui-2.0', version: dependency_versions['glade'], required: get_option('glade'))
-if glade.found()
-  glade_catalogdir = get_option('glade-catalogdir')
-  if glade_catalogdir == ''
-    glade_catalogdir = glade.get_variable(pkgconfig: 'catalogdir')
-  endif
-
-  glade_moduledir = get_option('glade-moduledir')
-  if glade_moduledir == ''
-    glade_moduledir = glade.get_variable(pkgconfig: 'moduledir')
-  endif
-
-  glade_pixmapdir = get_option('glade-pixmapdir')
-  if glade_pixmapdir == ''
-    glade_pixmapdir = glade.get_variable(pkgconfig: 'pixmapdir')
-  endif
 endif
 
 gir = dependency('gobject-introspection-1.0', version: dependency_versions['gir'], required: get_option('introspection'))
@@ -319,7 +300,6 @@ xfce_revision_h = vcs_tag(
 
 subdir('libxfce4ui')
 subdir('docs' / 'reference')
-subdir('glade')
 subdir('icons')
 subdir('libxfce4kbd-private')
 subdir('po')
