@@ -83,34 +83,6 @@ option(
 )
 
 option(
-  'glade',
-  type: 'feature',
-  value: 'auto',
-  description: 'Generate files for libxfce4ui integration in Glade interface designer',
-)
-
-option(
-  'glade-catalogdir',
-  type: 'string',
-  value: '',
-  description: 'Specify where to install Glade catalog files (default: autodetect, requires glade)',
-)
-
-option(
-  'glade-moduledir',
-  type: 'string',
-  value: '',
-  description: 'Specify where to install Glade modules (default: autodetect, requires glade)',
-)
-
-option(
-  'glade-pixmapdir',
-  type: 'string',
-  value: '',
-  description: 'Specify where to install Glade pixmaps (default: autodetect, requires glade)',
-)
-
-option(
   'vendor-info',
   type: 'string',
   value: '',
