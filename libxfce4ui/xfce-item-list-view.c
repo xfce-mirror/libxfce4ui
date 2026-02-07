@@ -350,6 +350,8 @@ xfce_item_list_view_init (XfceItemListView *view)
                                                "markup", XFCE_ITEM_LIST_MODEL_COLUMN_NAME,
                                                "sensitive", XFCE_ITEM_LIST_MODEL_COLUMN_ACTIVE,
                                                NULL);
+  g_object_set (renderer_name, "ellipsize", PANGO_ELLIPSIZE_END, NULL);
+
   g_object_set_data (
     G_OBJECT (gtk_tree_view_get_column (GTK_TREE_VIEW (view->tree_view), XFCE_ITEM_LIST_VIEW_COLUMN_ACTIVE)),
     "renderer", renderer_active);
@@ -588,9 +590,10 @@ xfce_item_list_view_recreate_buttons (XfceItemListView *view)
       GVariant *icon = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, G_MENU_ATTRIBUTE_ICON, NULL);
       GVariant *movement = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, XFCE_MENU_ATTRIBUTE_MOVEMENT, G_VARIANT_TYPE_BOOLEAN);
       GVariant *tooltip = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, XFCE_MENU_ATTRIBUTE_TOOLTIP, G_VARIANT_TYPE_STRING);
+      GVariant *hide_in_buttons = g_menu_model_get_item_attribute_value (G_MENU_MODEL (view->menu), i, XFCE_MENU_ATTRIBUTE_HIDE_IN_BUTTONS, G_VARIANT_TYPE_BOOLEAN);
       GIcon *gicon = icon != NULL ? g_icon_deserialize (icon) : NULL;
 
-      if (action != NULL)
+      if (action != NULL && (hide_in_buttons == NULL || !g_variant_get_boolean (hide_in_buttons)))
         {
           xfce_item_list_view_add_button (view,
                                           movement != NULL ? g_variant_get_boolean (movement) : FALSE,
@@ -607,6 +610,7 @@ xfce_item_list_view_recreate_buttons (XfceItemListView *view)
       g_clear_pointer (&icon, g_variant_unref);
       g_clear_pointer (&movement, g_variant_unref);
       g_clear_pointer (&tooltip, g_variant_unref);
+      g_clear_pointer (&hide_in_buttons, g_variant_unref);
       g_clear_object (&gicon);
     }
 }
@@ -983,6 +987,9 @@ xfce_item_list_view_set_model (XfceItemListView *view,
 {
   g_return_if_fail (model == NULL || XFCE_IS_ITEM_LIST_MODEL (model));
 
+  XfceItemListModelFlags old_flags = view->model != NULL ? xfce_item_list_model_get_list_flags (view->model) : XFCE_ITEM_LIST_MODEL_NONE;
+  XfceItemListModelFlags new_flags = model != NULL ? xfce_item_list_model_get_list_flags (model) : XFCE_ITEM_LIST_MODEL_NONE;
+
   /* Replace model */
   if (view->model != NULL)
     g_signal_handlers_disconnect_by_data (view->model, view);
@@ -1002,7 +1009,8 @@ xfce_item_list_view_set_model (XfceItemListView *view,
     }
 
   /* Menu, TreeView */
-  xfce_item_list_view_read_model_flags (view);
+  if (old_flags != new_flags)
+    xfce_item_list_view_read_model_flags (view);
 }
 
 
