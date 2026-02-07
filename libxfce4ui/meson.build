@@ -260,6 +260,17 @@ if get_option('introspection')
       sources: libxfce4ui_gir[0],
     )
   endif
+
+  if generate_cambalache
+    custom_target(
+        'libxfce4ui-2.xml',
+        input: libxfce4ui_gir[0],
+        output: 'libxfce4ui-2.xml',
+        command: [cambalache_catalog_gen, '--gir', '@INPUT@', '--output', '@OUTPUT@'],
+        install: true,
+        install_dir: get_option('datadir') / 'cambalache' / 'catalogs'
+    )
+  endif
 endif
 
 libxfce4ui_dep = declare_dependency(
