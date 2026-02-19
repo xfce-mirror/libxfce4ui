@@ -5,7 +5,7 @@
 # Translators:
 # Aleksandr P, 2015
 # Aleksandr P, 2010
-# Andrei Stepanov, 2022-2023,2025
+# Andrei Stepanov, 2022-2023,2025-2026
 # Artem Zolochevskiy <artem.zolochevskiy@gmail.com>, 2011
 # AlexanderFilev, 2021
 # Denis Koryavov <dkoryavov@yandex.ru>, 2010
@@ -23,7 +23,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2025-11-05 00:45+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Andrei Stepanov, 2022-2023,2025\n"
+"Last-Translator: Andrei Stepanov, 2022-2023,2025-2026\n"
 "Language-Team: Russian (http://app.transifex.com/xfce/libxfce4ui/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -93,7 +93,7 @@ msgstr "Версия Ядра"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:614
 msgid "Windowing System"
-msgstr ""
+msgstr "Оконная система"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:640
 msgid "CPU"
@@ -414,7 +414,7 @@ msgstr "Имя"
 
 #: libxfce4ui/xfce-item-list-view.c:653
 msgid "Move _up"
-msgstr ""
+msgstr "Переместить _вверх"
 
 #: libxfce4ui/xfce-item-list-view.c:653
 msgid "Move currently selected item up by one row"
@@ -422,7 +422,7 @@ msgstr "Переместить выбранный элемент на одну �
 
 #: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move _down"
-msgstr ""
+msgstr "Переместить в_низ"
 
 #: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move currently selected item down by one row"
@@ -442,7 +442,7 @@ msgstr "_Удалить"
 
 #: libxfce4ui/xfce-item-list-view.c:674
 msgid "Remove currently selected items"
-msgstr ""
+msgstr "Удалить текущие выбранные элементы"
 
 #: libxfce4ui/xfce-item-list-view.c:680
 msgid "_Edit"
@@ -454,11 +454,11 @@ msgstr "Редактировать выбранный элемент"
 
 #: libxfce4ui/xfce-item-list-view.c:686
 msgid "Reset to de_faults"
-msgstr ""
+msgstr "Сбросить н_астройки"
 
 #: libxfce4ui/xfce-item-list-view.c:686
 msgid "Reset all items to default settings"
-msgstr ""
+msgstr "Сбросить все настройки по умолчанию"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:44
 #, c-format
@@ -1026,7 +1026,7 @@ msgid ""
 "the GNU Library General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
+msgstr "Пакеты libxfce4ui и libxfce4util распространяются в соответствии с условиями общественной лицензии GNU Library General Public License, опубликованной Free Software Foundation; либо версии 2 лицензии, либо (по вашему выбору) любой более поздней версии."
 
 #: xfce4-about/main.c:374
 msgid ""
@@ -1380,11 +1380,11 @@ msgstr "Путь не указывает на файл или папку"
 
 #: xfce-open/main.c:218
 msgid "Usage: xfce-open [URLs...]"
-msgstr ""
+msgstr "Использование: xfce-open [URL-адреса...]"
 
 #: xfce-open/main.c:219
 msgid "       xfce-open --launch TYPE [PARAMETERs...]"
-msgstr ""
+msgstr "       xfce-open --launch TYPE [ПАРАМЕТРы...]"
 
 #: xfce-open/main.c:221
 msgid "  -?, --help                          Print this help message and exit"
