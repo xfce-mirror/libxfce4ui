@@ -30,7 +30,7 @@ libxfce4ui_headers = libxfce4ui_enum_headers + [
 
 # do not add this header to GI sources, it creates unsolvable conflicts with other
 # libs whose identifier prefix is Xfce, e.g. libxfce4util and libxfce4panel
-configure_file(
+libxfce4ui_config_h = configure_file(
   configuration: configuration_data({
     'LIBXFCE4UI_VERSION_MAJOR': version_parts[0],
     'LIBXFCE4UI_VERSION_MINOR': version_parts[1],
@@ -95,6 +95,29 @@ libxfce4ui_sources += gnome.genmarshal(
   install_header: false,
 )
 
+libxfce4ui_enums = []
+libxfce4ui_enums += gnome.mkenums(
+  'libxfce4ui-enum-types.h',
+  install_header: true,
+  install_dir: libxfce4ui_install_dir,
+  sources: libxfce4ui_enum_headers,
+  fhead: '#if !defined(_LIBXFCE4UI_INSIDE_LIBXFCE4UI_H) && !defined(LIBXFCE4UI_COMPILATION)\n#error "Only <libxfce4ui/libxfce4ui.h> can be included directly, this file is not part of the public API."\n#endif\n\n#ifndef __LIBXFCE4UI_ENUM_TYPES_H__\n#define __LIBXFCE4UI_ENUM_TYPES_H__\n#include <glib-object.h>\n\nG_BEGIN_DECLS\n\n',
+  fprod: '/* enumerations from "@filename@" */\n\n',
+  vhead: 'GType @enum_name@_get_type(void) G_GNUC_CONST;\n#define XFCE_TYPE_@ENUMSHORT@ (@enum_name@_get_type())\n\n',
+  ftail: 'G_END_DECLS\n\n#endif /* !__LIBXFCE4UI_ENUM_TYPES_H__ */',
+)
+libxfce4ui_enums += gnome.mkenums(
+  'libxfce4ui-enum-types.c',
+  install_header: false,
+  sources: libxfce4ui_enum_headers,
+  fhead: '#include "libxfce4ui-enums.h"\n#include "xfce-gtk-extensions.h"\n#include "libxfce4ui-enum-types.h"\n#include "libxfce4ui-visibility.h"\n\n',
+  fprod: '/* enumerations from "@filename@" */\n\n',
+  vhead: 'GType\n@enum_name@_get_type(void)\n{\n    static GType type = 0;\n\n    if(!type) {\n        static const G@Type@Value values[] = {',
+  vprod: '            { @VALUENAME@, "@VALUENAME@", "@valuenick@" },',
+  vtail: '            { 0, NULL, NULL }\n\t};\n\ttype = g_@type@_register_static("@EnumName@", values);\n    }\n\n    return type;\n}\n\n',
+  ftail: '\n#define __LIBXFCE4UI_ENUM_TYPES_C__\n#include "libxfce4ui-visibility.c"\n',
+)
+
 if enable_x11
   libxfce4ui_sed_script = '/@BEGIN_X11_HEADERS@/d; /@END_X11_HEADERS@/d;'
   symbols_sed_script = '/@BEGIN_X11_SYMBOLS@/d; /@END_X11_SYMBOLS@/d;'
@@ -115,6 +138,12 @@ libxfce4ui_h = custom_target(
   output: 'libxfce4ui.h',
   command: [sed, libxfce4ui_sed_script, '@INPUT@'],
   capture: true,
+  depends: [
+    libxfce4ui_enums,
+  ],
+  depend_files: [
+    libxfce4ui_config_h,
+  ],
   install: true,
   install_dir: libxfce4ui_install_dir,
 )
@@ -146,29 +175,6 @@ libxfce4ui_resources_c = gnome.compile_resources(
   ],
   export: false,
   install: false,
-)
-
-libxfce4ui_enums = []
-libxfce4ui_enums += gnome.mkenums(
-  'libxfce4ui-enum-types.h',
-  install_header: true,
-  install_dir: libxfce4ui_install_dir,
-  sources: libxfce4ui_enum_headers,
-  fhead: '#if !defined(_LIBXFCE4UI_INSIDE_LIBXFCE4UI_H) && !defined(LIBXFCE4UI_COMPILATION)\n#error "Only <libxfce4ui/libxfce4ui.h> can be included directly, this file is not part of the public API."\n#endif\n\n#ifndef __LIBXFCE4UI_ENUM_TYPES_H__\n#define __LIBXFCE4UI_ENUM_TYPES_H__\n#include <glib-object.h>\n\nG_BEGIN_DECLS\n\n',
-  fprod: '/* enumerations from "@filename@" */\n\n',
-  vhead: 'GType @enum_name@_get_type(void) G_GNUC_CONST;\n#define XFCE_TYPE_@ENUMSHORT@ (@enum_name@_get_type())\n\n',
-  ftail: 'G_END_DECLS\n\n#endif /* !__LIBXFCE4UI_ENUM_TYPES_H__ */',
-)
-libxfce4ui_enums += gnome.mkenums(
-  'libxfce4ui-enum-types.c',
-  install_header: false,
-  sources: libxfce4ui_enum_headers,
-  fhead: '#include "libxfce4ui-enums.h"\n#include "xfce-gtk-extensions.h"\n#include "libxfce4ui-enum-types.h"\n#include "libxfce4ui-visibility.h"\n\n',
-  fprod: '/* enumerations from "@filename@" */\n\n',
-  vhead: 'GType\n@enum_name@_get_type(void)\n{\n    static GType type = 0;\n\n    if(!type) {\n        static const G@Type@Value values[] = {',
-  vprod: '            { @VALUENAME@, "@VALUENAME@", "@valuenick@" },',
-  vtail: '            { 0, NULL, NULL }\n\t};\n\ttype = g_@type@_register_static("@EnumName@", values);\n    }\n\n    return type;\n}\n\n',
-  ftail: '\n#define __LIBXFCE4UI_ENUM_TYPES_C__\n#include "libxfce4ui-visibility.c"\n',
 )
 
 libxfce4ui_deps = [
