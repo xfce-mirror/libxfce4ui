@@ -126,4 +126,54 @@ if get_option('keyboard-library')
     'xfce4-keyboard-shortcuts.xml',
     install_dir: get_option('prefix') / get_option('sysconfdir') / 'xdg' / 'xfce4' / 'xfconf' / 'xfce-perchannel-xml'
   )
+
+  if get_option('introspection')
+    libxfce4kbd_gir = gnome.generate_gir(
+      libxfce4kbd,
+      sources: libxfce4kbd_sources + libxfce4kbd_headers,
+      namespace: 'Libxfce4kbdprivate',
+      nsversion: '@0@.0'.format(libxfce4kbd_version_api),
+      identifier_prefix: 'Xfce',
+      symbol_prefix: [
+        'xfce',
+      ],
+      export_packages: libxfce4kbd_pkgname,
+      includes: [
+        'GLib-2.0',
+        'GObject-2.0',
+        'Gio-2.0',
+        'Gtk-3.0',
+        'Libxfce4util-1.0',
+        'Libxfce4ui-2.0',
+      ],
+      header: [
+        'libxfce4kbd-private/xfce-shortcut-dialog.h',
+        'libxfce4kbd-private/xfce-shortcuts-editor-dialog.h',
+        'libxfce4kbd-private/xfce-shortcuts-editor.h',
+        'libxfce4kbd-private/xfce-shortcuts-grabber.h',
+        'libxfce4kbd-private/xfce-shortcuts.h',
+        'libxfce4kbd-private/xfce-shortcuts-provider.h',
+        'libxfce4kbd-private/xfce-shortcuts-xfwm4.h',
+      ],
+      install: true,
+      extra_args: [
+        '-DLIBXFCE4UI_COMPILATION=1',
+      ],
+    )
+
+    if generate_vala
+      gnome.generate_vapi(
+        libxfce4kbd_pkgname,
+        install: true,
+        packages: [
+          'glib-2.0',
+          'gobject-2.0',
+          'gio-2.0',
+          'gtk+-3.0',
+          'libxfce4util-1.0',
+        ],
+        sources: libxfce4kbd_gir[0],
+      )
+    endif
+  endif
 endif
