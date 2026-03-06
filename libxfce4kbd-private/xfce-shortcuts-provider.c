@@ -86,6 +86,7 @@ struct _XfceShortcutsProviderContext
 
 
 
+G_DEFINE_BOXED_TYPE (XfceShortcut, xfce_shortcut, xfce_shortcut_copy, xfce_shortcut_free)
 G_DEFINE_TYPE_WITH_PRIVATE (XfceShortcutsProvider, xfce_shortcuts_provider, G_TYPE_OBJECT)
 
 
@@ -323,6 +324,12 @@ xfce_shortcuts_provider_property_changed (XfconfChannel *channel,
 
 
 
+/**
+ * xfce_shortcuts_provider_new:
+ *
+ * Returns: (transfer full): A new #XfceShortcutsProvider, which should be
+ * freed with g_object_unref() when no longer needed.
+ */
 XfceShortcutsProvider *
 xfce_shortcuts_provider_new (const gchar *name)
 {
@@ -331,6 +338,13 @@ xfce_shortcuts_provider_new (const gchar *name)
 
 
 
+/**
+ * xfce_shortcuts_provider_get_providers:
+ *
+ * Returns: (element-type XfceShortcutsProvider) (transfer full): A #GList of
+ * #XfceShortcutsProvider items, which should be freed with
+ * xfce_shortcuts_provider_free_providers() when no longer needed.
+ */
 GList *
 xfce_shortcuts_provider_get_providers (void)
 {
@@ -354,6 +368,10 @@ xfce_shortcuts_provider_get_providers (void)
 
 
 
+/**
+ * xfce_shortcuts_provider_free_providers:
+ * @providers: (element-type XfceShortcutsProvider):
+ */
 void
 xfce_shortcuts_provider_free_providers (GList *providers)
 {
@@ -518,6 +536,14 @@ _xfce_shortcuts_provider_get_shortcut (const gchar *property,
 
 
 
+/**
+ * xfce_shortcuts_provider_get_shortcuts:
+ * @provider:
+ *
+ * Returns: (element-type XfceShortcut) (transfer full): A #GList of
+ * #XfceShortcut items, which should be freed with xfce_shortcuts_free() when
+ * no longer needed.
+ */
 GList *
 xfce_shortcuts_provider_get_shortcuts (XfceShortcutsProvider *provider)
 {
@@ -547,6 +573,14 @@ xfce_shortcuts_provider_get_shortcuts (XfceShortcutsProvider *provider)
 
 
 
+/**
+ * xfce_shortcuts_provider_get_shortcut:
+ * @provider:
+ * @shortcut:
+ *
+ * Returns: (transfer full): A newly-allocated #XfceShortcut, which should be
+ * freed with xfce_shortcut_free() when no longer needed.
+ */
 XfceShortcut *
 xfce_shortcuts_provider_get_shortcut (XfceShortcutsProvider *provider,
                                       const gchar *shortcut)
@@ -690,6 +724,10 @@ xfce_shortcuts_provider_reset_shortcut (XfceShortcutsProvider *provider,
 
 
 
+/**
+ * xfce_shortcuts_free:
+ * @shortcuts: (element-type XfceShortcut):
+ */
 void
 xfce_shortcuts_free (GList *shortcuts)
 {
@@ -699,6 +737,32 @@ xfce_shortcuts_free (GList *shortcuts)
 
 
 
+/**
+ * xfce_shortcut_copy:
+ * @shortcut: (not nullable) (transfer none):
+ *
+ * Returns: (transfer full): A newly-allocated #XfceShortcut, which should be
+ * freed with xfce_shortcut_free() when no longer needed.
+ *
+ * Since: 4.12.4
+ */
+XfceShortcut *
+xfce_shortcut_copy (XfceShortcut *shortcut)
+{
+  XfceShortcut *copy = g_slice_new0 (XfceShortcut);
+  copy->property_name = g_strdup (shortcut->property_name);
+  copy->shortcut = g_strdup (shortcut->shortcut);
+  copy->command = g_strdup (shortcut->command);
+  copy->snotify = shortcut->snotify;
+  return copy;
+}
+
+
+
+/**
+ * xfce_shortcut_free:
+ * @shortcut: (transfer full):
+ */
 void
 xfce_shortcut_free (XfceShortcut *shortcut)
 {
