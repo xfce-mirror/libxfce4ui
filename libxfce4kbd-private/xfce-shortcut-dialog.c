@@ -77,7 +77,7 @@ G_DEFINE_TYPE (XfceShortcutDialog, xfce_shortcut_dialog, XFCE_TYPE_TITLED_DIALOG
 
 
 
-/**
+/*
  * Taken from GTK+ (_gtk_marshal_BOOLEAN__SRING). Credits go out to the
  * GTK+ devs for this.
  */
