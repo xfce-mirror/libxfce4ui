@@ -61,6 +61,7 @@ struct _XfceClipboardManager
   GBytes *bytes;
   gboolean is_image_available;
   GdkEventOwnerChange *current_event;
+  GdkAtom krita_atom;
 
   Window requestor;
   Atom property;
@@ -1211,7 +1212,7 @@ owner_change (GtkClipboard *clipboard,
       if (!WAIT_CANCELLED)
         {
           /*
-           * This piece of code concerns the copying "real" images, to fix issues such as #105. If there's
+           * This piece of code concerns the copying of "real" images, to fix issues such as #105. If there's
            * text and image data, we're probably in a case like copying formulas in LibreOffice (#112, #135),
            * so best leave it to the X11 code. On the other hand, if we wanted to use this code in this case
            * too, we'd also have to test the text data changes below, to refeed the clipboard when only these
@@ -1220,6 +1221,20 @@ owner_change (GtkClipboard *clipboard,
           manager->is_image_available = gtk_targets_include_image (targets, n_targets, FALSE)
                                         && !gtk_targets_include_text (targets, n_targets)
                                         && !gtk_targets_include_uri (targets, n_targets);
+
+          /* exception, for lack of a better option: see https://gitlab.xfce.org/xfce/libxfce4ui/-/issues/141 */
+          if (manager->is_image_available)
+            {
+              for (gint n = 0; n < n_targets; n++)
+                {
+                  if (manager->krita_atom == targets[n])
+                    {
+                      manager->is_image_available = FALSE;
+                      break;
+                    }
+                }
+            }
+
           if (manager->is_image_available)
             {
               GdkPixbuf *image = gtk_clipboard_wait_for_image (clipboard);
@@ -1305,6 +1320,7 @@ xfce_clipboard_manager_new (gboolean replace)
       return NULL;
     }
 
+  manager->krita_atom = gdk_atom_intern_static_string ("application/x-krita-node-internal-pointer");
   g_signal_connect (gtk_clipboard_get (GDK_SELECTION_CLIPBOARD), "owner-change", G_CALLBACK (owner_change), manager);
 
   return manager;
