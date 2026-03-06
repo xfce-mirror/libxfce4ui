@@ -140,6 +140,12 @@ xfce_shortcuts_xfwm4_get_feature_name (const gchar *feature)
   return NULL;
 }
 
+/**
+ * xfce_shortcuts_xfwm4_get_feature_list:
+ *
+ * Returns: (element-type utf8) (transfer container): A newly-allocated
+ * #GList, which should be freed with g_list_free() when no longer needed.
+ */
 GList *
 xfce_shortcuts_xfwm4_get_feature_list (void)
 {
