@@ -38,8 +38,12 @@ typedef struct _XfceShortcutsProvider XfceShortcutsProvider;
 #define XFCE_IS_SHORTCUTS_PROVIDER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), XFCE_TYPE_SHORTCUTS_PROVIDER)
 #define XFCE_SHORTCUTS_PROVIDER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), XFCE_TYPE_SHORTCUTS_PROVIDER, XfceShortcutsProviderClass))
 
+#define XFCE_TYPE_SHORTCUT (xfce_shortcut_get_type ())
+
 GType
 xfce_shortcuts_provider_get_type (void) G_GNUC_CONST;
+GType
+xfce_shortcut_get_type (void) G_GNUC_CONST;
 
 XfceShortcutsProvider *
 xfce_shortcuts_provider_new (const gchar *name) G_GNUC_MALLOC;
@@ -74,6 +78,8 @@ xfce_shortcuts_provider_reset_shortcut (XfceShortcutsProvider *provider,
 
 void
 xfce_shortcuts_free (GList *shortcuts);
+XfceShortcut *
+xfce_shortcut_copy (XfceShortcut *shortcut);
 void
 xfce_shortcut_free (XfceShortcut *shortcut);
 
@@ -91,6 +97,13 @@ struct _XfceShortcutsProvider
   XfceShortcutsProviderPrivate *priv;
 };
 
+/**
+ * XfceShortcut:
+ * @property_name:
+ * @shortcut:
+ * @command:
+ * @snotify:
+ */
 struct _XfceShortcut
 {
   gchar *property_name;
