@@ -42,7 +42,9 @@ xfce_shortcuts_provider_has_shortcut
 xfce_shortcuts_provider_set_shortcut
 xfce_shortcuts_provider_reset_shortcut
 xfce_shortcuts_free
+xfce_shortcut_copy
 xfce_shortcut_free
+xfce_shortcut_get_type attr:G_GNUC_CONST
 
 # file:xfce-shortcuts-xfwm4
 xfce_shortcuts_xfwm4_get_feature_name
