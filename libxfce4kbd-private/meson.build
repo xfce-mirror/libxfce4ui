@@ -144,7 +144,7 @@ if get_option('keyboard-library')
         'Gio-2.0',
         'Gtk-3.0',
         'Libxfce4util-1.0',
-        'Libxfce4ui-2.0',
+        libxfce4ui_gir[0],
       ],
       header: [
         'libxfce4kbd-private' / 'xfce-shortcut-dialog.h',
