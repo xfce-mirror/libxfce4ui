@@ -157,20 +157,5 @@ if get_option('keyboard-library')
       ],
       install: true,
     )
-
-    if generate_vala
-      gnome.generate_vapi(
-        libxfce4kbd_pkgname,
-        install: true,
-        packages: [
-          'glib-2.0',
-          'gobject-2.0',
-          'gio-2.0',
-          'gtk+-3.0',
-          'libxfce4util-1.0',
-        ],
-        sources: libxfce4kbd_gir[0],
-      )
-    endif
   endif
 endif
