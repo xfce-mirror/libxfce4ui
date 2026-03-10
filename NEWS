@@ -1,3 +1,8 @@
+4.21.7 (2026-03-09)
+======
+- Don't generate vala bindings for libxfce4kbd-private
+
+
 4.21.6 (2026-03-09)
 ======
 - Fix gir dependencies for libxfce4kbd-private
