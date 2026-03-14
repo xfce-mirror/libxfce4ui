@@ -295,7 +295,12 @@ xfce_spawn_process (GdkScreen *screen,
       if (startup_notify == TRUE)
         {
           /* 'sn_display_new' crashes when used via wayland, so no startup notification support here */
-          g_warning_once ("startup notification not supported for wayland sessions");
+          static gsize once = 0;
+          if (g_once_init_enter (&once))
+            {
+              g_message ("startup notification not supported for wayland sessions");
+              g_once_init_leave (&once, 1);
+            }
           startup_notify = FALSE;
         }
     }
