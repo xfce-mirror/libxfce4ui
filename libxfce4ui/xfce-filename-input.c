@@ -228,7 +228,7 @@ xfce_filename_input_init (XfceFilenameInput *filename_input)
 
   /* retrieve the error and warning messages */
   filename_input->too_long_mssg = _("Filename is too long");
-  filename_input->sep_illegal_mssg = _("Directory separator illegal in file name");
+  filename_input->sep_illegal_mssg = _("Directory separator illegal in filename");
   filename_input->whitespace_mssg = _("Filenames should not start or end with a space");
 
   /* allow reverting the filename with ctrl + z */
