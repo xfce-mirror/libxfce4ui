@@ -102,7 +102,7 @@ libxfce4ui_enums += gnome.mkenums(
   install_dir: libxfce4ui_install_dir,
   sources: libxfce4ui_enum_headers,
   fhead: '#if !defined(_LIBXFCE4UI_INSIDE_LIBXFCE4UI_H) && !defined(LIBXFCE4UI_COMPILATION)\n#error "Only <libxfce4ui/libxfce4ui.h> can be included directly, this file is not part of the public API."\n#endif\n\n#ifndef __LIBXFCE4UI_ENUM_TYPES_H__\n#define __LIBXFCE4UI_ENUM_TYPES_H__\n#include <glib-object.h>\n\nG_BEGIN_DECLS\n\n',
-  fprod: '/* enumerations from "@filename@" */\n\n',
+  fprod: '/* enumerations from "@basename@" */\n\n',
   vhead: 'GType @enum_name@_get_type(void) G_GNUC_CONST;\n#define XFCE_TYPE_@ENUMSHORT@ (@enum_name@_get_type())\n\n',
   ftail: 'G_END_DECLS\n\n#endif /* !__LIBXFCE4UI_ENUM_TYPES_H__ */',
 )
@@ -111,7 +111,7 @@ libxfce4ui_enums += gnome.mkenums(
   install_header: false,
   sources: libxfce4ui_enum_headers,
   fhead: '#include "libxfce4ui-enums.h"\n#include "xfce-gtk-extensions.h"\n#include "libxfce4ui-enum-types.h"\n#include "libxfce4ui-visibility.h"\n\n',
-  fprod: '/* enumerations from "@filename@" */\n\n',
+  fprod: '/* enumerations from "@basename@" */\n\n',
   vhead: 'GType\n@enum_name@_get_type(void)\n{\n    static GType type = 0;\n\n    if(!type) {\n        static const G@Type@Value values[] = {',
   vprod: '            { @VALUENAME@, "@VALUENAME@", "@valuenick@" },',
   vtail: '            { 0, NULL, NULL }\n\t};\n\ttype = g_@type@_register_static("@EnumName@", values);\n    }\n\n    return type;\n}\n\n',
