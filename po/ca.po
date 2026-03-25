@@ -5,7 +5,7 @@
 # Translators:
 # Carles Muñoz Gorriz <carlesmu@internautas.org>, 2013
 # Carles Muñoz Gorriz <carlesmu@internautas.org>, 2013
-# Davidmp <medipas@gmail.com>, 2015,2025
+# Davidmp <medipas@gmail.com>, 2015,2025-2026
 # Oscar Perez <oscarpc@gmail.com>, 2023
 # Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2017-2020
 # Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2016
@@ -13,9 +13,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2025-11-05 00:45+0100\n"
+"POT-Creation-Date: 2026-03-16 00:45+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Davidmp <medipas@gmail.com>, 2015,2025\n"
+"Last-Translator: Davidmp <medipas@gmail.com>, 2015,2025-2026\n"
 "Language-Team: Catalan (http://app.transifex.com/xfce/libxfce4ui/language/ca/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -376,7 +376,7 @@ msgid "Session manager did not return a valid client id"
 msgstr "El gestor de sessions no ha retornat un id. vàlid de client"
 
 #. print warning for user
-#: libxfce4ui/xfce-spawn.c:383
+#: libxfce4ui/xfce-spawn.c:388
 #, c-format
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
@@ -389,8 +389,8 @@ msgid "Filename is too long"
 msgstr "El nom de fitxer és massa llarg"
 
 #: libxfce4ui/xfce-filename-input.c:231
-msgid "Directory separator illegal in file name"
-msgstr "Separador de directoris no permès al nom del fitxer"
+msgid "Directory separator illegal in filename"
+msgstr "Separador de directoris il·legal al nom de fitxer"
 
 #: libxfce4ui/xfce-filename-input.c:232
 msgid "Filenames should not start or end with a space"
@@ -404,51 +404,51 @@ msgstr "Actiu"
 msgid "Name"
 msgstr "Nom"
 
-#: libxfce4ui/xfce-item-list-view.c:653
+#: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move _up"
 msgstr "Mou am_unt"
 
-#: libxfce4ui/xfce-item-list-view.c:653
+#: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move currently selected item up by one row"
 msgstr "Mou l'element seleccionat a una fila superior"
 
-#: libxfce4ui/xfce-item-list-view.c:657
+#: libxfce4ui/xfce-item-list-view.c:661
 msgid "Move _down"
 msgstr "Mou a_vall"
 
-#: libxfce4ui/xfce-item-list-view.c:657
+#: libxfce4ui/xfce-item-list-view.c:661
 msgid "Move currently selected item down by one row"
 msgstr "Mou l'element seleccionat a una fila inferior"
 
-#: libxfce4ui/xfce-item-list-view.c:668
+#: libxfce4ui/xfce-item-list-view.c:672
 msgid "_Add new item"
 msgstr "_Afegeix-hi un element nou"
 
-#: libxfce4ui/xfce-item-list-view.c:668
+#: libxfce4ui/xfce-item-list-view.c:672
 msgid "Add new item"
 msgstr "Afegeix-hi un element nou"
 
-#: libxfce4ui/xfce-item-list-view.c:674
+#: libxfce4ui/xfce-item-list-view.c:678
 msgid "_Remove"
 msgstr "_Suprimeix"
 
-#: libxfce4ui/xfce-item-list-view.c:674
+#: libxfce4ui/xfce-item-list-view.c:678
 msgid "Remove currently selected items"
 msgstr "Suprimeix els elements seleccionats"
 
-#: libxfce4ui/xfce-item-list-view.c:680
+#: libxfce4ui/xfce-item-list-view.c:684
 msgid "_Edit"
 msgstr "_Edita"
 
-#: libxfce4ui/xfce-item-list-view.c:680
+#: libxfce4ui/xfce-item-list-view.c:684
 msgid "Edit the currently selected item"
 msgstr "Edita l'element seleccionat"
 
-#: libxfce4ui/xfce-item-list-view.c:686
+#: libxfce4ui/xfce-item-list-view.c:690
 msgid "Reset to de_faults"
 msgstr "Restableix els valors per de_fecte"
 
-#: libxfce4ui/xfce-item-list-view.c:686
+#: libxfce4ui/xfce-item-list-view.c:690
 msgid "Reset all items to default settings"
 msgstr "Restableix tots els elements a la configuració per defecte"
 
