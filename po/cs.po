@@ -6,16 +6,16 @@
 # Alois Nešpor <info@aloisnespor.info>, 2013
 # Martin Polák, 2022
 # Martin Šiška <martin-siska@email.cz>, 2024
-# Michal Várady <miko.vaji@gmail.com>, 2014-2017,2019-2022,2024-2025
+# Michal Várady <miko.vaji@gmail.com>, 2014-2017,2019-2022,2024-2026
 # Pavel Borecki <pavel.borecki@gmail.com>, 2018
 # Pavel Pernička <pernicka.pa@gmail.com>, 2019
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2025-11-05 00:45+0100\n"
+"POT-Creation-Date: 2026-03-16 00:45+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Michal Várady <miko.vaji@gmail.com>, 2014-2017,2019-2022,2024-2025\n"
+"Last-Translator: Michal Várady <miko.vaji@gmail.com>, 2014-2017,2019-2022,2024-2026\n"
 "Language-Team: Czech (http://app.transifex.com/xfce/libxfce4ui/language/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -376,7 +376,7 @@ msgid "Session manager did not return a valid client id"
 msgstr "Správce relace nevrátil platný identifikátor klienta"
 
 #. print warning for user
-#: libxfce4ui/xfce-spawn.c:383
+#: libxfce4ui/xfce-spawn.c:388
 #, c-format
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
@@ -389,7 +389,7 @@ msgid "Filename is too long"
 msgstr "Název souboru je příliš dlouhý"
 
 #: libxfce4ui/xfce-filename-input.c:231
-msgid "Directory separator illegal in file name"
+msgid "Directory separator illegal in filename"
 msgstr "Oddělovač adresářů není v názvu souboru povolen"
 
 #: libxfce4ui/xfce-filename-input.c:232
@@ -404,53 +404,53 @@ msgstr "Aktivní"
 msgid "Name"
 msgstr "Název"
 
-#: libxfce4ui/xfce-item-list-view.c:653
+#: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move _up"
-msgstr ""
+msgstr "Pos_unout nahoru"
 
-#: libxfce4ui/xfce-item-list-view.c:653
+#: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move currently selected item up by one row"
 msgstr "Přesunout aktuálně vybranou položku nahoru o jeden řádek"
 
-#: libxfce4ui/xfce-item-list-view.c:657
+#: libxfce4ui/xfce-item-list-view.c:661
 msgid "Move _down"
-msgstr ""
+msgstr "Posu_nout dolů"
 
-#: libxfce4ui/xfce-item-list-view.c:657
+#: libxfce4ui/xfce-item-list-view.c:661
 msgid "Move currently selected item down by one row"
 msgstr "Přesunout aktuálně vybranou položku dolů o jeden řádek"
 
-#: libxfce4ui/xfce-item-list-view.c:668
+#: libxfce4ui/xfce-item-list-view.c:672
 msgid "_Add new item"
-msgstr ""
+msgstr "_Přidat novou položku"
 
-#: libxfce4ui/xfce-item-list-view.c:668
+#: libxfce4ui/xfce-item-list-view.c:672
 msgid "Add new item"
-msgstr ""
+msgstr "Přidat novou položku"
 
-#: libxfce4ui/xfce-item-list-view.c:674
+#: libxfce4ui/xfce-item-list-view.c:678
 msgid "_Remove"
 msgstr "_Odebrat"
 
-#: libxfce4ui/xfce-item-list-view.c:674
+#: libxfce4ui/xfce-item-list-view.c:678
 msgid "Remove currently selected items"
-msgstr ""
+msgstr "Odebrat aktuálně označené položky"
 
-#: libxfce4ui/xfce-item-list-view.c:680
+#: libxfce4ui/xfce-item-list-view.c:684
 msgid "_Edit"
 msgstr "_Upravit"
 
-#: libxfce4ui/xfce-item-list-view.c:680
+#: libxfce4ui/xfce-item-list-view.c:684
 msgid "Edit the currently selected item"
 msgstr "Upravit aktuálně vybranou položku"
 
-#: libxfce4ui/xfce-item-list-view.c:686
+#: libxfce4ui/xfce-item-list-view.c:690
 msgid "Reset to de_faults"
-msgstr ""
+msgstr "Obnovit _výchozí"
 
-#: libxfce4ui/xfce-item-list-view.c:686
+#: libxfce4ui/xfce-item-list-view.c:690
 msgid "Reset all items to default settings"
-msgstr ""
+msgstr "Obnoví všechny položky na výchozí nastavení"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:44
 #, c-format
