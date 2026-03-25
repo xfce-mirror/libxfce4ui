@@ -3,15 +3,16 @@
 # This file is distributed under the same license as the libxfce4ui.master package.
 # 
 # Translators:
+# Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2026
 # ზურაბი დავითაშვილი <zurabi@tuta.io>, 2020
 # ზურაბი დავითაშვილი <zurabi@tuta.io>, 2020
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2025-11-05 00:45+0100\n"
+"POT-Creation-Date: 2026-03-16 00:45+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: ზურაბი დავითაშვილი <zurabi@tuta.io>, 2020\n"
+"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2026\n"
 "Language-Team: Georgian (http://app.transifex.com/xfce/libxfce4ui/language/ka/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -372,7 +373,7 @@ msgid "Session manager did not return a valid client id"
 msgstr "სესიების მმართველმა სწორი კლიენტის id არ დააბრუნა"
 
 #. print warning for user
-#: libxfce4ui/xfce-spawn.c:383
+#: libxfce4ui/xfce-spawn.c:388
 #, c-format
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
@@ -385,8 +386,8 @@ msgid "Filename is too long"
 msgstr "ფაილის სახელი ძალიან გრძელია"
 
 #: libxfce4ui/xfce-filename-input.c:231
-msgid "Directory separator illegal in file name"
-msgstr "საქაღალდის გამყოფი დაუშვებელია ფაილის სახელში"
+msgid "Directory separator illegal in filename"
+msgstr ""
 
 #: libxfce4ui/xfce-filename-input.c:232
 msgid "Filenames should not start or end with a space"
@@ -400,53 +401,53 @@ msgstr "აქტიური"
 msgid "Name"
 msgstr "სახელი"
 
-#: libxfce4ui/xfce-item-list-view.c:653
+#: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move _up"
-msgstr ""
+msgstr "_აწევა"
 
-#: libxfce4ui/xfce-item-list-view.c:653
+#: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move currently selected item up by one row"
 msgstr "მონიშნული ელემენტის აწევა ერთი მწკრივით"
 
-#: libxfce4ui/xfce-item-list-view.c:657
+#: libxfce4ui/xfce-item-list-view.c:661
 msgid "Move _down"
-msgstr ""
+msgstr "_ჩამოწევა"
 
-#: libxfce4ui/xfce-item-list-view.c:657
+#: libxfce4ui/xfce-item-list-view.c:661
 msgid "Move currently selected item down by one row"
 msgstr "მონიშნული ელემენტის ჩამოწევა ერთი მწკრივით"
 
-#: libxfce4ui/xfce-item-list-view.c:668
+#: libxfce4ui/xfce-item-list-view.c:672
 msgid "_Add new item"
-msgstr ""
+msgstr "_ახალი ელემენტის დამატება"
 
-#: libxfce4ui/xfce-item-list-view.c:668
+#: libxfce4ui/xfce-item-list-view.c:672
 msgid "Add new item"
-msgstr ""
+msgstr "ახალი ელემენტის დამატება"
 
-#: libxfce4ui/xfce-item-list-view.c:674
+#: libxfce4ui/xfce-item-list-view.c:678
 msgid "_Remove"
 msgstr "_წაშლა"
 
-#: libxfce4ui/xfce-item-list-view.c:674
+#: libxfce4ui/xfce-item-list-view.c:678
 msgid "Remove currently selected items"
-msgstr ""
+msgstr "ამჟამად მონიშნული ელემენტების წაშლა"
 
-#: libxfce4ui/xfce-item-list-view.c:680
+#: libxfce4ui/xfce-item-list-view.c:684
 msgid "_Edit"
 msgstr "_ჩასწორება"
 
-#: libxfce4ui/xfce-item-list-view.c:680
+#: libxfce4ui/xfce-item-list-view.c:684
 msgid "Edit the currently selected item"
 msgstr "ამჟამად არჩეული საგნის რედაქტირება"
 
-#: libxfce4ui/xfce-item-list-view.c:686
+#: libxfce4ui/xfce-item-list-view.c:690
 msgid "Reset to de_faults"
-msgstr ""
+msgstr "ნაგულისხმევზე _ჩამოყრა"
 
-#: libxfce4ui/xfce-item-list-view.c:686
+#: libxfce4ui/xfce-item-list-view.c:690
 msgid "Reset all items to default settings"
-msgstr ""
+msgstr "ყველა ელემენტის ნაგულისხმევ პარამეტრებზე ჩამოყრა"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:44
 #, c-format
@@ -1413,7 +1414,7 @@ msgid ""
 "  ImageViewer      - The preferred Image Viewer.\n"
 "  AudioPlayer      - The preferred Audio Player.\n"
 "  VideoPlayer      - The preferred Video Player."
-msgstr ""
+msgstr "  WebBrowser       - რჩეული ბრაუზერი.\n  MailReader       - რჩეული ელფოსტის პროგრამა.\n  FileManager      - რჩეული ფაილების მმართველი.\n  TerminalEmulator - რჩეული ტერმინალის ემულატორი.\n TextEditor - რჩეული ტექსტური რედაქტორი.\nImageViewer - რჩეული სურათების დამთვალიერებელი\nAudioPlayer - რჩეული მუსიკის დამკვრელი.\nVideoPlayer - რჩეული ვიდეოების დამკვრელი."
 
 #: xfce-open/main.c:247
 msgid ""
