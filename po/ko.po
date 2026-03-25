@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2025-11-05 00:45+0100\n"
+"POT-Creation-Date: 2026-03-16 00:45+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>, 2013-2017,2019-2023,2026\n"
 "Language-Team: Korean (http://app.transifex.com/xfce/libxfce4ui/language/ko/)\n"
@@ -374,7 +374,7 @@ msgid "Session manager did not return a valid client id"
 msgstr "세션 관리자에서 올바른 클라이언트 ID를 반환하지 않았습니다"
 
 #. print warning for user
-#: libxfce4ui/xfce-spawn.c:383
+#: libxfce4ui/xfce-spawn.c:388
 #, c-format
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
@@ -387,7 +387,7 @@ msgid "Filename is too long"
 msgstr "파일 이름이 너무 깁니다"
 
 #: libxfce4ui/xfce-filename-input.c:231
-msgid "Directory separator illegal in file name"
+msgid "Directory separator illegal in filename"
 msgstr "파일 이름의 디렉터리 구분 문자가 잘못되었습니다"
 
 #: libxfce4ui/xfce-filename-input.c:232
@@ -402,51 +402,51 @@ msgstr "활성"
 msgid "Name"
 msgstr "이름"
 
-#: libxfce4ui/xfce-item-list-view.c:653
+#: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move _up"
 msgstr "위로 이동(_U)"
 
-#: libxfce4ui/xfce-item-list-view.c:653
+#: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move currently selected item up by one row"
 msgstr "현재 선택한 목록을 한 줄 위로 옮기기"
 
-#: libxfce4ui/xfce-item-list-view.c:657
+#: libxfce4ui/xfce-item-list-view.c:661
 msgid "Move _down"
 msgstr "아래로 이동(_D)"
 
-#: libxfce4ui/xfce-item-list-view.c:657
+#: libxfce4ui/xfce-item-list-view.c:661
 msgid "Move currently selected item down by one row"
 msgstr "현재 선택한 항목을 아랫 줄로 이동"
 
-#: libxfce4ui/xfce-item-list-view.c:668
+#: libxfce4ui/xfce-item-list-view.c:672
 msgid "_Add new item"
 msgstr "새 항목 추가(_A)"
 
-#: libxfce4ui/xfce-item-list-view.c:668
+#: libxfce4ui/xfce-item-list-view.c:672
 msgid "Add new item"
 msgstr "새 항목 추가"
 
-#: libxfce4ui/xfce-item-list-view.c:674
+#: libxfce4ui/xfce-item-list-view.c:678
 msgid "_Remove"
 msgstr "제거(_R)"
 
-#: libxfce4ui/xfce-item-list-view.c:674
+#: libxfce4ui/xfce-item-list-view.c:678
 msgid "Remove currently selected items"
 msgstr "현재 선택한 항목 제거"
 
-#: libxfce4ui/xfce-item-list-view.c:680
+#: libxfce4ui/xfce-item-list-view.c:684
 msgid "_Edit"
 msgstr "편집(_E)"
 
-#: libxfce4ui/xfce-item-list-view.c:680
+#: libxfce4ui/xfce-item-list-view.c:684
 msgid "Edit the currently selected item"
 msgstr "현재 선택한 항목 편집"
 
-#: libxfce4ui/xfce-item-list-view.c:686
+#: libxfce4ui/xfce-item-list-view.c:690
 msgid "Reset to de_faults"
 msgstr "기본값으로 초가회(_F)"
 
-#: libxfce4ui/xfce-item-list-view.c:686
+#: libxfce4ui/xfce-item-list-view.c:690
 msgid "Reset all items to default settings"
 msgstr "모든 항목을 기본 설정으로 초기화합니다"
 
