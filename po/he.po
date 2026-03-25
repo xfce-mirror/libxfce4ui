@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2025-11-05 00:45+0100\n"
+"POT-Creation-Date: 2026-03-16 00:45+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: Elishai Eliyahu <elishai@mailfence.com>, 2020,2022,2024-2025\n"
 "Language-Team: Hebrew (http://app.transifex.com/xfce/libxfce4ui/language/he/)\n"
@@ -379,7 +379,7 @@ msgid "Session manager did not return a valid client id"
 msgstr "מנהל הסשן לא השיב זהות לקוח תקפה"
 
 #. print warning for user
-#: libxfce4ui/xfce-spawn.c:383
+#: libxfce4ui/xfce-spawn.c:388
 #, c-format
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
@@ -392,8 +392,8 @@ msgid "Filename is too long"
 msgstr "שם קובץ יותר מדי ארוך"
 
 #: libxfce4ui/xfce-filename-input.c:231
-msgid "Directory separator illegal in file name"
-msgstr "מפריד ספריה לא חוקי בשם קובץ"
+msgid "Directory separator illegal in filename"
+msgstr ""
 
 #: libxfce4ui/xfce-filename-input.c:232
 msgid "Filenames should not start or end with a space"
@@ -407,51 +407,51 @@ msgstr "פעיל"
 msgid "Name"
 msgstr "שם"
 
-#: libxfce4ui/xfce-item-list-view.c:653
+#: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move _up"
 msgstr ""
 
-#: libxfce4ui/xfce-item-list-view.c:653
+#: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move currently selected item up by one row"
 msgstr "הזז פריט נבחר נוכחי מעלה בשורה אחת"
 
-#: libxfce4ui/xfce-item-list-view.c:657
+#: libxfce4ui/xfce-item-list-view.c:661
 msgid "Move _down"
 msgstr ""
 
-#: libxfce4ui/xfce-item-list-view.c:657
+#: libxfce4ui/xfce-item-list-view.c:661
 msgid "Move currently selected item down by one row"
 msgstr "הזז פריט נבחר נוכחי מטה בשורה אחת"
 
-#: libxfce4ui/xfce-item-list-view.c:668
+#: libxfce4ui/xfce-item-list-view.c:672
 msgid "_Add new item"
 msgstr ""
 
-#: libxfce4ui/xfce-item-list-view.c:668
+#: libxfce4ui/xfce-item-list-view.c:672
 msgid "Add new item"
 msgstr ""
 
-#: libxfce4ui/xfce-item-list-view.c:674
+#: libxfce4ui/xfce-item-list-view.c:678
 msgid "_Remove"
 msgstr "_הסר"
 
-#: libxfce4ui/xfce-item-list-view.c:674
+#: libxfce4ui/xfce-item-list-view.c:678
 msgid "Remove currently selected items"
 msgstr ""
 
-#: libxfce4ui/xfce-item-list-view.c:680
+#: libxfce4ui/xfce-item-list-view.c:684
 msgid "_Edit"
 msgstr "ע_ריכה"
 
-#: libxfce4ui/xfce-item-list-view.c:680
+#: libxfce4ui/xfce-item-list-view.c:684
 msgid "Edit the currently selected item"
 msgstr "ערוך את הפריט הנבחר הנוכחי"
 
-#: libxfce4ui/xfce-item-list-view.c:686
+#: libxfce4ui/xfce-item-list-view.c:690
 msgid "Reset to de_faults"
 msgstr ""
 
-#: libxfce4ui/xfce-item-list-view.c:686
+#: libxfce4ui/xfce-item-list-view.c:690
 msgid "Reset all items to default settings"
 msgstr ""
 
