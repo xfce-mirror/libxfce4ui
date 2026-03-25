@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2025-11-05 00:45+0100\n"
+"POT-Creation-Date: 2026-03-16 00:45+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: Besnik Bleta <besnik@programeshqip.org>, 2020-2025\n"
 "Language-Team: Albanian (http://app.transifex.com/xfce/libxfce4ui/language/sq/)\n"
@@ -373,7 +373,7 @@ msgid "Session manager did not return a valid client id"
 msgstr "Përgjegjësi i sesioneve s’u përgjigj me një ID klienti të vlefshme"
 
 #. print warning for user
-#: libxfce4ui/xfce-spawn.c:383
+#: libxfce4ui/xfce-spawn.c:388
 #, c-format
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
@@ -386,8 +386,8 @@ msgid "Filename is too long"
 msgstr "Emri i kartelës është shumë i gjatë"
 
 #: libxfce4ui/xfce-filename-input.c:231
-msgid "Directory separator illegal in file name"
-msgstr "Ndarës i paligjshëm drejtorie te emër kartele"
+msgid "Directory separator illegal in filename"
+msgstr ""
 
 #: libxfce4ui/xfce-filename-input.c:232
 msgid "Filenames should not start or end with a space"
@@ -401,51 +401,51 @@ msgstr "Aktiv"
 msgid "Name"
 msgstr "Emër"
 
-#: libxfce4ui/xfce-item-list-view.c:653
+#: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move _up"
 msgstr "Ngjite _sipër"
 
-#: libxfce4ui/xfce-item-list-view.c:653
+#: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move currently selected item up by one row"
 msgstr "Ngjite një rresht më sipër elementin e tanishëm të përzgjedhur"
 
-#: libxfce4ui/xfce-item-list-view.c:657
+#: libxfce4ui/xfce-item-list-view.c:661
 msgid "Move _down"
 msgstr "Ule _poshtë"
 
-#: libxfce4ui/xfce-item-list-view.c:657
+#: libxfce4ui/xfce-item-list-view.c:661
 msgid "Move currently selected item down by one row"
 msgstr "Zbrite objektin e tanishëm të përzgjedhur një rresht më poshtë"
 
-#: libxfce4ui/xfce-item-list-view.c:668
+#: libxfce4ui/xfce-item-list-view.c:672
 msgid "_Add new item"
 msgstr "_Shtoni objekt të ri"
 
-#: libxfce4ui/xfce-item-list-view.c:668
+#: libxfce4ui/xfce-item-list-view.c:672
 msgid "Add new item"
 msgstr "Shtoni objekt të ri"
 
-#: libxfce4ui/xfce-item-list-view.c:674
+#: libxfce4ui/xfce-item-list-view.c:678
 msgid "_Remove"
 msgstr "_Hiqe"
 
-#: libxfce4ui/xfce-item-list-view.c:674
+#: libxfce4ui/xfce-item-list-view.c:678
 msgid "Remove currently selected items"
 msgstr "Hiq objektet e përzgjedhur tani"
 
-#: libxfce4ui/xfce-item-list-view.c:680
+#: libxfce4ui/xfce-item-list-view.c:684
 msgid "_Edit"
 msgstr "_Përpunim"
 
-#: libxfce4ui/xfce-item-list-view.c:680
+#: libxfce4ui/xfce-item-list-view.c:684
 msgid "Edit the currently selected item"
 msgstr "Përpunoni elementin e përzgjedhur tani"
 
-#: libxfce4ui/xfce-item-list-view.c:686
+#: libxfce4ui/xfce-item-list-view.c:690
 msgid "Reset to de_faults"
 msgstr "Riktheji te parazgje_dhjet"
 
-#: libxfce4ui/xfce-item-list-view.c:686
+#: libxfce4ui/xfce-item-list-view.c:690
 msgid "Reset all items to default settings"
 msgstr "Riktheji krejt objektet te rregullimet parazgjedhje"
 
