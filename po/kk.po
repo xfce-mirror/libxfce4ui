@@ -385,7 +385,7 @@ msgstr "Файл аты тым ұзын"
 
 #: libxfce4ui/xfce-filename-input.c:231
 msgid "Directory separator illegal in filename"
-msgstr ""
+msgstr "Файл атында бумалар ажыратқышы жарамсыз"
 
 #: libxfce4ui/xfce-filename-input.c:232
 msgid "Filenames should not start or end with a space"
