@@ -237,6 +237,11 @@ xfce_icon_view_get_item_at_pos (XfceIconView *icon_view,
                                 gint y,
                                 GtkTreePath **path,
                                 GtkCellRenderer **cell);
+gboolean
+xfce_icon_view_get_cell_area (XfceIconView *icon_view,
+                              GtkTreePath *path,
+                              GtkCellRenderer *cell,
+                              GdkRectangle *cell_area);
 
 gboolean
 xfce_icon_view_get_visible_range (XfceIconView *icon_view,
