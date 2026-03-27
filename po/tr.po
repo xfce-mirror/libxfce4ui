@@ -6,7 +6,7 @@
 # Ayhan YALÇINSOY <ayhanyalcinsoy@gmail.com>, 2010
 # Butterfly <gokhanlnx@gmail.com>, 2020
 # 0d1bdb3b9a0d4e8f77bc854af8bf3dfc_e6913f4, 2019
-# Demiray Muhterem <mdemiray@msn.com>, 2019-2022
+# Demiray Muhterem <mdemiray@msn.com>, 2019-2022,2026
 # Emin Tufan Çetin <etcetin@gmail.com>, 2020,2022
 # Emin Tufan Çetin <etcetin@gmail.com>, 2020
 # Gökmen Görgen <gkmngrgn@gmail.com>, 2008
@@ -24,7 +24,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2026-03-16 00:45+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: 3909d6133b383976bde86621da215840_711025d, 2025\n"
+"Last-Translator: Demiray Muhterem <mdemiray@msn.com>, 2019-2022,2026\n"
 "Language-Team: Turkish (http://app.transifex.com/xfce/libxfce4ui/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -399,7 +399,7 @@ msgstr "Dosya adı çok uzun"
 
 #: libxfce4ui/xfce-filename-input.c:231
 msgid "Directory separator illegal in filename"
-msgstr ""
+msgstr "Dosya adında dizin ayırıcısı kullanılamaz"
 
 #: libxfce4ui/xfce-filename-input.c:232
 msgid "Filenames should not start or end with a space"
@@ -415,7 +415,7 @@ msgstr "Ad"
 
 #: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move _up"
-msgstr ""
+msgstr "Yukarı _taşı"
 
 #: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move currently selected item up by one row"
@@ -423,7 +423,7 @@ msgstr "Seçili ögeyi bir satır yukarı taşı"
 
 #: libxfce4ui/xfce-item-list-view.c:661
 msgid "Move _down"
-msgstr ""
+msgstr "Aşağı _taşı"
 
 #: libxfce4ui/xfce-item-list-view.c:661
 msgid "Move currently selected item down by one row"
@@ -431,11 +431,11 @@ msgstr "Seçili ögeyi bir satır aşağı taşı"
 
 #: libxfce4ui/xfce-item-list-view.c:672
 msgid "_Add new item"
-msgstr ""
+msgstr "Yeni öğe _ekle"
 
 #: libxfce4ui/xfce-item-list-view.c:672
 msgid "Add new item"
-msgstr ""
+msgstr "Yeni öğe ekle"
 
 #: libxfce4ui/xfce-item-list-view.c:678
 msgid "_Remove"
@@ -443,7 +443,7 @@ msgstr "_Kaldır"
 
 #: libxfce4ui/xfce-item-list-view.c:678
 msgid "Remove currently selected items"
-msgstr ""
+msgstr "Şu anda seçili öğeleri kaldır"
 
 #: libxfce4ui/xfce-item-list-view.c:684
 msgid "_Edit"
@@ -455,11 +455,11 @@ msgstr "Seçili ögeyi düzenle"
 
 #: libxfce4ui/xfce-item-list-view.c:690
 msgid "Reset to de_faults"
-msgstr ""
+msgstr "Varsayılanlara sı_fırla"
 
 #: libxfce4ui/xfce-item-list-view.c:690
 msgid "Reset all items to default settings"
-msgstr ""
+msgstr "Tüm öğeleri varsayılan ayarlara sıfırla"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:44
 #, c-format
@@ -1426,7 +1426,7 @@ msgid ""
 "  ImageViewer      - The preferred Image Viewer.\n"
 "  AudioPlayer      - The preferred Audio Player.\n"
 "  VideoPlayer      - The preferred Video Player."
-msgstr ""
+msgstr "WebTarayıcı      - Tercih edilen Web Tarayıcısı.\nE-postaOkuyucu      - Tercih edilen E-posta Okuyucu.\nDosyaYöneticisi      - Tercih edilen Dosya Yöneticisi.\nUçbirimEmülatörü      - Tercih edilen Uçbirim Emülatörü.\nMetinEditörü      - Tercih edilen Metin Editörü.\nGörüntüGösterici      - Tercih edilen Görüntü Gösterici.\nSesOynatıcı      - Tercih edilen Ses Oynatıcı.\nVideoOynatıcı      - Tercih edilen Video Oynatıcı."
 
 #: xfce-open/main.c:247
 msgid ""
