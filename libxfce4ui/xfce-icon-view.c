@@ -5578,7 +5578,7 @@ xfce_icon_view_get_item_at_pos (XfceIconView *icon_view,
  * @icon_view: A #XfceIconView.
  * @path: The path of the item.
  * @cell: The cell renderer, or %NULL.
- * @cell_area: Return location for the cell area.
+ * @cell_area: (out): Return location for the cell area.
  *
  * Fills the @cell_area rectangle with the size and position of the cell
  * specified by @path and @cell, relative to the icon window coordinates.
@@ -5586,7 +5586,7 @@ xfce_icon_view_get_item_at_pos (XfceIconView *icon_view,
  *
  * Returns: %TRUE if the area was successfully retrieved, %FALSE otherwise.
  *
- * Since: 4.21.0
+ * Since: 4.21.8
  **/
 gboolean
 xfce_icon_view_get_cell_area (XfceIconView *icon_view,
