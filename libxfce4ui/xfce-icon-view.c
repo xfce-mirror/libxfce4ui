@@ -341,7 +341,7 @@ xfce_icon_view_get_item_at_coords (XfceIconView *icon_view,
                                    gboolean only_in_cell,
                                    XfceIconViewCellInfo **cell_at_pos);
 static void
-xfce_icon_view_get_cell_area (XfceIconView *icon_view,
+xfce_icon_view_get_cell_rect (XfceIconView *icon_view,
                               XfceIconViewItem *item,
                               XfceIconViewCellInfo *cell_info,
                               GdkRectangle *cell_area);
@@ -556,7 +556,7 @@ struct _XfceIconViewItem
    * box[i] is the actual area occupied by cell i,
    * before, after are used to calculate the cell
    * area relative to the box.
-   * See xfce_icon_view_get_cell_area().
+   * See xfce_icon_view_get_cell_rect().
    */
   gint n_cells;
   GdkRectangle *box;
@@ -2294,7 +2294,7 @@ xfce_icon_view_item_activate_cell (XfceIconView *icon_view,
 
   if (G_UNLIKELY (visible && mode == GTK_CELL_RENDERER_MODE_ACTIVATABLE))
     {
-      xfce_icon_view_get_cell_area (icon_view, item, info, &cell_area);
+      xfce_icon_view_get_cell_rect (icon_view, item, info, &cell_area);
 
       path = gtk_tree_path_new_from_indices (g_sequence_iter_get_position (item->item_iter), -1);
       path_string = gtk_tree_path_to_string (path);
@@ -2387,7 +2387,7 @@ xfce_icon_view_start_editing (XfceIconView *icon_view,
       XFCE_ICON_VIEW_SET_FLAG (icon_view, XFCE_ICON_VIEW_DRAW_KEYFOCUS);
 
       /* determine the cell area */
-      xfce_icon_view_get_cell_area (icon_view, item, info, &cell_area);
+      xfce_icon_view_get_cell_rect (icon_view, item, info, &cell_area);
 
       /* determine the tree path */
       path = gtk_tree_path_new_from_indices (g_sequence_iter_get_position (item->item_iter), -1);
@@ -3660,7 +3660,7 @@ xfce_icon_view_layout (XfceIconView *icon_view)
 
 
 static void
-xfce_icon_view_get_cell_area (XfceIconView *icon_view,
+xfce_icon_view_get_cell_rect (XfceIconView *icon_view,
                               XfceIconViewItem *item,
                               XfceIconViewCellInfo *info,
                               GdkRectangle *cell_area)
@@ -3944,7 +3944,7 @@ xfce_icon_view_paint_item (XfceIconView *icon_view,
 
       cairo_save (cr);
 
-      xfce_icon_view_get_cell_area (icon_view, item, info, &cell_area);
+      xfce_icon_view_get_cell_rect (icon_view, item, info, &cell_area);
 
       cell_area.x = x - item->area.x + cell_area.x;
       cell_area.y = y - item->area.y + cell_area.y;
@@ -5569,6 +5569,63 @@ xfce_icon_view_get_item_at_pos (XfceIconView *icon_view,
     *cell = (info != NULL) ? info->cell : NULL;
 
   return (item != NULL);
+}
+
+
+
+/**
+ * xfce_icon_view_get_cell_area:
+ * @icon_view: A #XfceIconView.
+ * @path: The path of the item.
+ * @cell: The cell renderer, or %NULL.
+ * @cell_area: (out): Return location for the cell area.
+ *
+ * Fills the @cell_area rectangle with the size and position of the cell
+ * specified by @path and @cell, relative to the icon window coordinates.
+ * If @cell is %NULL, the main cell area is used.
+ *
+ * Returns: %TRUE if the area was successfully retrieved, %FALSE otherwise.
+ *
+ * Since: 4.21.8
+ **/
+gboolean
+xfce_icon_view_get_cell_area (XfceIconView *icon_view,
+                              GtkTreePath *path,
+                              GtkCellRenderer *cell,
+                              GdkRectangle *cell_area)
+{
+  XfceIconViewPrivate *priv = get_instance_private (icon_view);
+  XfceIconViewItem *item;
+  XfceIconViewCellInfo *info;
+  GSequenceIter *iter;
+
+  g_return_val_if_fail (XFCE_IS_ICON_VIEW (icon_view), FALSE);
+  g_return_val_if_fail (path != NULL, FALSE);
+  g_return_val_if_fail (gtk_tree_path_get_depth (path) > 0, FALSE);
+  g_return_val_if_fail (cell_area != NULL, FALSE);
+
+  iter = g_sequence_get_iter_at_pos (priv->items, gtk_tree_path_get_indices (path)[0]);
+  if (g_sequence_iter_is_end (iter))
+    return FALSE;
+
+  item = g_sequence_get (iter);
+  if (G_UNLIKELY (item == NULL))
+    return FALSE;
+
+  if (cell != NULL)
+    {
+      info = xfce_icon_view_get_cell_info (icon_view, cell);
+      if (G_UNLIKELY (info == NULL))
+        return FALSE;
+
+      xfce_icon_view_get_cell_rect (icon_view, item, info, cell_area);
+    }
+  else
+    {
+      *cell_area = item->area;
+    }
+
+  return TRUE;
 }
 
 
