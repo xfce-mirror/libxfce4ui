@@ -398,7 +398,7 @@ msgstr "Имя файла слишком длинное"
 
 #: libxfce4ui/xfce-filename-input.c:231
 msgid "Directory separator illegal in filename"
-msgstr ""
+msgstr "Разделитель каталогов запрещён в имени файла"
 
 #: libxfce4ui/xfce-filename-input.c:232
 msgid "Filenames should not start or end with a space"
@@ -1425,7 +1425,7 @@ msgid ""
 "  ImageViewer      - The preferred Image Viewer.\n"
 "  AudioPlayer      - The preferred Audio Player.\n"
 "  VideoPlayer      - The preferred Video Player."
-msgstr ""
+msgstr "  WebBrowser       - Предпочитаемый веб-браузер..\n  MailReader       - Предпочитаемая почтовая программа.\n  FileManager      - Предпочитаемый файловый менеджер.\n  TerminalEmulator - Предпочитаемый эмулятор терминала.\n  TextEditor       - Предпочитаемый текстовый редактор.\n  ImageViewer      - Предпочитаемая программа просмотра изображений.\n  AudioPlayer      - Предпочитаемый аудиопроигрыватель.\n  VideoPlayer      - Предпочитаемый видеопроигрыватель."
 
 #: xfce-open/main.c:247
 msgid ""
@@ -1434,7 +1434,7 @@ msgid ""
 "option, you can select which preferred application you want to run, and\n"
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
-msgstr ""
+msgstr "Если вы не укажете параметр --launch, xfce-open откроет все указанные адреса\nURL-адреса с помощью установленных для них обработчиков. Если вы укажете параметр\n--launch, то вы сможете выбрать приложения, которые должны быть запущены, и\nпередать дополнительные параметры этим приложениям (например, вы можете\nпередать эмулятору терминала команду, которая должна быть запущена в\nкомандной строке)."
 
 #: xfce-open/main.c:422
 #, c-format
