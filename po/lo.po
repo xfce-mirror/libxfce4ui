@@ -1,0 +1,1437 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the libxfce4ui.master package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Libxfce4ui\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2026-03-16 00:45+0100\n"
+"PO-Revision-Date: 2013-07-02 20:33+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Lao (http://app.transifex.com/xfce/libxfce4ui/language/lo/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: lo\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:116
+msgid "License"
+msgstr "ໃບອະນຸຍາດ"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:340
+msgid "About the Xfce Desktop Environment"
+msgstr "ກ່ຽວກັບ ສະພາບແວດລ້ອມເດັສທັອບ Xfce"
+
+#. add the "Help" button
+#: libxfce4ui/resources/xfce4-about-dialog.glade:358
+#: xfce-desktop-item-edit/main.c:345
+msgid "_Help"
+msgstr "_ຊ່ວຍເຫຼືອ"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:374
+msgid "_Close"
+msgstr "_ປິດ"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:437
+msgid "Device"
+msgstr "ອຸປະກອນ"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:449
+#: libxfce4ui/resources/xfce4-about-dialog.glade:474
+#: libxfce4ui/resources/xfce4-about-dialog.glade:499
+#: libxfce4ui/resources/xfce4-about-dialog.glade:524
+#: libxfce4ui/resources/xfce4-about-dialog.glade:551
+#: libxfce4ui/resources/xfce4-about-dialog.glade:576
+#: libxfce4ui/resources/xfce4-about-dialog.glade:601
+#: libxfce4ui/resources/xfce4-about-dialog.glade:626
+#: libxfce4ui/resources/xfce4-about-dialog.glade:653
+#: libxfce4ui/resources/xfce4-about-dialog.glade:678
+#: libxfce4ui/resources/xfce4-about-dialog.glade:703
+msgid "label"
+msgstr "ປ້າຍຊື່"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:462
+msgid "OS Name"
+msgstr "ຊື່ລະບົບປະຕິບັດການ"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:487
+msgid "OS Type"
+msgstr "ປະເພດລະບົບປະຕິບັດການ"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:512
+msgid "Distributor"
+msgstr "ຜູ້ຈໍາໜ່າຍ"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:538
+msgid "Xfce Version"
+msgstr "ເວີຊັນ Xfce"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:564
+msgid "GTK Version"
+msgstr "ເວີຊັນ GTK"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:589
+msgid "Kernel Version"
+msgstr "ເວີຊັນ ເຄີເນີລ"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:614
+msgid "Windowing System"
+msgstr "ລະບົບຈັດການໜ້າຕ່າງ"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:640
+msgid "CPU"
+msgstr "ຊີພີຢູ (CPU)"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:666
+msgid "Memory"
+msgstr "ໜ່ວຍຄວາມຈຳ"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:691
+msgid "GPU"
+msgstr "ຈີພີຢູ (GPU)"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:724
+msgid "System"
+msgstr "ລະບົບ"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:766
+msgid ""
+"Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
+"The following programs are part of the Xfce core:"
+msgstr "Xfce ແມ່ນຊຸດຂອງໂປຣແກຣມທີ່ເຮັດວຽກຮ່ວມກັນເພື່ອໃຫ້ເປັນສະພາບແວດລ້ອມເດັສທັອບທີ່ມີຄຸນສົມບັດຄົບຖ້ວນ.\nໂປຣແກຣມຕໍ່ໄປນີ້ແມ່ນສ່ວນໜຶ່ງຂອງຫຼັກການ Xfce:"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:804
+msgid ""
+"Xfce is also a development platform providing several libraries that help programmers create applications that fit in well with the desktop environment.\n"
+"\n"
+"Xfce components are licensed under free or open source licences; GPL or BSDL for applications and LGPL or BSDL for libraries. Look at the documentation, the source code or the Xfce website (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>) for more information.\n"
+"\n"
+"Thank you for your interest in Xfce.\n"
+"\n"
+"\t- The Xfce Development Team"
+msgstr "Xfce ຍັງເປັນແພລດຟອມສໍາລັບການພັດທະນາ ໂດຍມີໄລບຣາຣີຫຼາຍຢ່າງທີ່ຊ່ວຍໃຫ້ນັກຂຽນໂປຣແກຣມສ້າງແອັບພລິເຄຊັນທີ່ເຂົ້າກັນໄດ້ດີກັບສະພາບແວດລ້ອມເດັສທັອບ.\n\nສ່ວນປະກອບຂອງ Xfce ແມ່ນໄດ້ຮັບອະນຸຍາດພາຍໃຕ້ໃບອະນຸຍາດແບບຟຣີ ຫຼື ໂອເພນຊອດ; GPL ຫຼື BSDL ສໍາລັບແອັບພລິເຄຊັນ ແລະ LGPL ຫຼື BSDL ສໍາລັບໄລບຣາຣີ. ເບິ່ງຂໍ້ມູນເພີ່ມເຕີມໄດ້ທີ່ເອກະສານ, ຊອດໂຄ້ດ ຫຼື ເວັບໄຊ Xfce (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>).\n\nຂອບໃຈທີ່ທ່ານໃຫ້ຄວາມສົນໃຈໃນ Xfce.\n\n\t- ທີມງານພັດທະນາ Xfce"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:834
+msgid "About"
+msgstr "ກ່ຽວກັບ"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:868
+msgid "Credits"
+msgstr "ຜູ້ມີສ່ວນຮ່ວມ"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:947
+msgid "GPL"
+msgstr "GPL"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:960
+msgid "LGPL"
+msgstr "LGPL"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:973
+msgid "BSD"
+msgstr "BSD"
+
+#: libxfce4ui/resources/xfce4-about-dialog.glade:1003
+msgid "Copyright"
+msgstr "ລິຂະສິດ"
+
+#: libxfce4ui/xfce-dialogs.c:104
+msgid "Failed to open web browser for online documentation"
+msgstr "ບໍ່ສາມາດເປີດເວັບບຣາວເຊີເພື່ອເບິ່ງເອກະສານອອນລາຍໄດ້"
+
+#: libxfce4ui/xfce-dialogs.c:260
+#, c-format
+msgid "Do you want to read the %s manual online?"
+msgstr "ທ່ານຕ້ອງການອ່ານຄູ່ມືຂອງ %s ແບບອອນລາຍບໍ່?"
+
+#: libxfce4ui/xfce-dialogs.c:262
+msgid "Do you want to read the manual online?"
+msgstr "ທ່ານຕ້ອງການອ່ານຄູ່ມືແບບອອນລາຍບໍ່?"
+
+#: libxfce4ui/xfce-dialogs.c:264
+msgid ""
+"You will be redirected to the documentation website where the help pages are"
+" maintained and translated."
+msgstr "ທ່ານຈະຖືກສົ່ງໄປຫາເວັບໄຊເອກະສານ ເຊິ່ງເປັນບ່ອນທີ່ໜ້າຊ່ວຍເຫຼືອຖືກເບິ່ງແຍງ ແລະ ແປພາສາ."
+
+#: libxfce4ui/xfce-dialogs.c:266
+msgid "Read the manual"
+msgstr "ອ່ານຄູ່ມື"
+
+#. Create cancel button
+#. add the "Cancel" button
+#: libxfce4ui/xfce-dialogs.c:268 libxfce4ui/xfce-dialogs.c:526
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:252
+#: xfce-desktop-item-edit/main.c:351 xfce-desktop-item-edit/main.c:545
+#: xfce-desktop-item-edit/xfce-die-command-entry.c:262
+#: xfce-desktop-item-edit/xfce-die-editor.c:648
+#: xfce-desktop-item-edit/xfce-die-editor.c:692
+msgid "_Cancel"
+msgstr "_ຍົກເລີກ"
+
+#: libxfce4ui/xfce-dialogs.c:269
+msgid "_Read Online"
+msgstr "_ອ່ານອອນລາຍ"
+
+#: libxfce4ui/xfce-dialogs.c:278
+msgid "_Always go directly to the online documentation"
+msgstr "_ໄປຫາເອກະສານອອນລາຍໂດຍກົງສະເໝີ"
+
+#: libxfce4ui/xfce-dialogs.c:327 libxfce4ui/xfce-dialogs.c:362
+#: libxfce4ui/xfce-dialogs.c:398
+msgid "Close"
+msgstr "ປິດ"
+
+#: libxfce4ui/xfce-dialogs.c:445
+msgid "No"
+msgstr "ບໍ່"
+
+#: libxfce4ui/xfce-dialogs.c:447
+msgid "Yes"
+msgstr "ແມ່ນ"
+
+#: libxfce4ui/xfce-dialogs.c:451 libxfce4kbd-private/xfce-shortcuts-xfwm4.c:39
+msgid "Cancel"
+msgstr "ຍົກເລີກ"
+
+#: libxfce4ui/xfce-dialogs.c:510
+msgid "Close window with multiple tabs?"
+msgstr "ປິດໜ້າຕ່າງທີ່ມີຫຼາຍແຖບບໍ່?"
+
+#: libxfce4ui/xfce-dialogs.c:512
+msgid ""
+"This window has multiple tabs open. Closing this window will also close all "
+"its tabs."
+msgstr "ໜ້າຕ່າງນີ້ມີຫຼາຍແຖບທີ່ເປີດຢູ່. ການປິດໜ້າຕ່າງນີ້ຈະເຮັດໃຫ້ແຖບທັງໝົດຖືກປິດໄປນຳ."
+
+#: libxfce4ui/xfce-dialogs.c:515
+#, c-format
+msgid ""
+"This window has %d tabs open. Closing this window will also close all its "
+"tabs."
+msgstr "ໜ້າຕ່າງນີ້ມີ %d ແຖບທີ່ເປີດຢູ່. ການປິດໜ້າຕ່າງນີ້ຈະເຮັດໃຫ້ແຖບທັງໝົດຖືກປິດໄປນຳ."
+
+#: libxfce4ui/xfce-dialogs.c:522
+msgid "Warning"
+msgstr "ຄຳເຕືອນ"
+
+#: libxfce4ui/xfce-dialogs.c:527
+msgid "Close T_ab"
+msgstr "ປິດແ_ຖບ"
+
+#: libxfce4ui/xfce-dialogs.c:528
+msgid "Close _Window"
+msgstr "ປິດ_ໜ້າຕ່າງ"
+
+#: libxfce4ui/xfce-dialogs.c:533
+msgid "Do _not ask me again"
+msgstr "_ບໍ່ຕ້ອງຖາມຂ້ອຍອີກ"
+
+#: libxfce4ui/xfce-gdk-pixbuf-extensions.c:786
+#, c-format
+msgid "Failed to open file \"%s\": %s"
+msgstr "ບໍ່ສາມາດເປີດໄຟລ໌ \"%s\" ໄດ້: %s"
+
+#: libxfce4ui/xfce-gdk-pixbuf-extensions.c:859
+#, c-format
+msgid "Failed to read file \"%s\": %s"
+msgstr "ບໍ່ສາມາດອ່ານໄຟລ໌ \"%s\" ໄດ້: %s"
+
+#: libxfce4ui/xfce-gdk-pixbuf-extensions.c:906
+#, c-format
+msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr "ບໍ່ສາມາດໂຫຼດຮູບພາບ \"%s\" ໄດ້: ບໍ່ຮູ້ສາເຫດ, ໄຟລ໌ຮູບພາບອາດຈະເສຍຫາຍ"
+
+#: libxfce4ui/xfce-gtk-extensions.c:1321
+#, c-format
+msgid "Failed to open \"%s\"."
+msgstr "ບໍ່ສາມາດເປີດ \"%s\" ໄດ້."
+
+#. XFCE_ICON_CHOOSER_CONTEXT_ACTIONS
+#: libxfce4ui/xfce-icon-chooser-dialog.c:119
+msgid "Action Icons"
+msgstr "ໄອຄອນການກະທຳ"
+
+#. XFCE_ICON_CHOOSER_CONTEXT_ANIMATIONS
+#: libxfce4ui/xfce-icon-chooser-dialog.c:121
+msgid "Animations"
+msgstr "ພາບເຄື່ອນໄຫວ"
+
+#. XFCE_ICON_CHOOSER_CONTEXT_APPLICATIONS
+#: libxfce4ui/xfce-icon-chooser-dialog.c:123
+msgid "Application Icons"
+msgstr "ໄອຄອນແອັບພລິເຄຊັນ"
+
+#. XFCE_ICON_CHOOSER_CONTEXT_CATEGORIES
+#: libxfce4ui/xfce-icon-chooser-dialog.c:125
+msgid "Menu Icons"
+msgstr "ໄອຄອນເມນູ"
+
+#. XFCE_ICON_CHOOSER_CONTEXT_DEVICES
+#: libxfce4ui/xfce-icon-chooser-dialog.c:127
+msgid "Device Icons"
+msgstr "ໄອຄອນອຸປະກອນ"
+
+#. XFCE_ICON_CHOOSER_CONTEXT_EMBLEMS
+#: libxfce4ui/xfce-icon-chooser-dialog.c:129
+msgid "Emblems"
+msgstr "ສັນຍະລັກ"
+
+#. XFCE_ICON_CHOOSER_CONTEXT_EMOTES
+#: libxfce4ui/xfce-icon-chooser-dialog.c:131
+msgid "Emoticons"
+msgstr "ຮູບສະແດງອາລົມ"
+
+#. XFCE_ICON_CHOOSER_CONTEXT_MIME_TYPES
+#: libxfce4ui/xfce-icon-chooser-dialog.c:133
+msgid "File Type Icons"
+msgstr "ໄອຄອນປະເພດໄຟລ໌"
+
+#. XFCE_ICON_CHOOSER_CONTEXT_PLACES
+#: libxfce4ui/xfce-icon-chooser-dialog.c:135
+msgid "Location Icons"
+msgstr "ໄອຄອນສະຖານທີ່"
+
+#. XFCE_ICON_CHOOSER_CONTEXT_STATUS
+#: libxfce4ui/xfce-icon-chooser-dialog.c:137
+msgid "Status Icons"
+msgstr "ໄອຄອນສະຖານະ"
+
+#. XFCE_ICON_CHOOSER_CONTEXT_STOCK
+#: libxfce4ui/xfce-icon-chooser-dialog.c:139
+msgid "Stock Icons"
+msgstr "ໄອຄອນທີ່ມີໃຫ້"
+
+#. XFCE_ICON_CHOOSER_CONTEXT_OTHER
+#: libxfce4ui/xfce-icon-chooser-dialog.c:141
+msgid "Uncategorized Icons"
+msgstr "ໄອຄອນທີ່ບໍ່ມີໝວດໝູ່"
+
+#. XFCE_ICON_CHOOSER_CONTEXT_ALL
+#: libxfce4ui/xfce-icon-chooser-dialog.c:145
+msgid "All Icons"
+msgstr "ໄອຄອນທັງໝົດ"
+
+#. XFCE_ICON_CHOOSER_CONTEXT_FILE
+#: libxfce4ui/xfce-icon-chooser-dialog.c:149
+#: libxfce4ui/xfce-icon-chooser-dialog.c:296
+msgid "Image Files"
+msgstr "ໄຟລ໌ຮູບພາບ"
+
+#. XFCE_ICON_CHOOSER_CONTEXT_NO_ICON
+#: libxfce4ui/xfce-icon-chooser-dialog.c:153
+msgid "No Icon"
+msgstr "ບໍ່ມີໄອຄອນ"
+
+#. setup the context combo box
+#: libxfce4ui/xfce-icon-chooser-dialog.c:221
+msgid "Select _icon from:"
+msgstr "ເລືອກ_ໄອຄອນຈາກ:"
+
+#. search filter
+#: libxfce4ui/xfce-icon-chooser-dialog.c:237
+msgid "_Search icon:"
+msgstr "_ຄົ້ນຫາໄອຄອນ:"
+
+#: libxfce4ui/xfce-icon-chooser-dialog.c:249
+msgid "Clear search field"
+msgstr "ລຶບຊ່ອງຄົ້ນຫາ"
+
+#: libxfce4ui/xfce-sm-client.c:1503
+msgid "Session management client ID"
+msgstr "ໄອດີໄຄລເອັນການຈັດການວາລະ"
+
+#: libxfce4ui/xfce-sm-client.c:1503
+msgid "ID"
+msgstr "ໄອດີ"
+
+#: libxfce4ui/xfce-sm-client.c:1504
+msgid "Disable session management"
+msgstr "ປິດການຈັດການວາລະ"
+
+#: libxfce4ui/xfce-sm-client.c:1514
+msgid "Session management options"
+msgstr "ຕົວເລືອກການຈັດການວາລະ"
+
+#: libxfce4ui/xfce-sm-client.c:1514
+msgid "Show session management options"
+msgstr "ສະແດງຕົວເລືອກການຈັດການວາລະ"
+
+#: libxfce4ui/xfce-sm-client.c:1688
+#, c-format
+msgid "Failed to connect to the session manager: %s"
+msgstr "ບໍ່ສາມາດເຊື່ອມຕໍ່ກັບຕົວຈັດການວາລະໄດ້: %s"
+
+#: libxfce4ui/xfce-sm-client.c:1697
+msgid "Session manager did not return a valid client id"
+msgstr "ຕົວຈັດການວາລະບໍ່ໄດ້ສົ່ງຄືນໄອດີໄຄລເອັນທີ່ຖືກຕ້ອງ"
+
+#. print warning for user
+#: libxfce4ui/xfce-spawn.c:388
+#, c-format
+msgid ""
+"Working directory \"%s\" does not exist. It won't be used when spawning "
+"\"%s\"."
+msgstr "ບໍ່ມີໂຟນເດີເຮັດວຽກ \"%s\" ຢູ່. ມັນຈະບໍ່ຖືກນໍາໃຊ້ເມື່ອເປີດ \"%s\"."
+
+#. retrieve the error and warning messages
+#: libxfce4ui/xfce-filename-input.c:230
+msgid "Filename is too long"
+msgstr "ຊື່ໄຟລ໌ຍາວເກີນໄປ"
+
+#: libxfce4ui/xfce-filename-input.c:231
+msgid "Directory separator illegal in filename"
+msgstr "ເຄື່ອງໝາຍແຍກໂຟນເດີບໍ່ສາມາດໃຊ້ໃນຊື່ໄຟລ໌ໄດ້"
+
+#: libxfce4ui/xfce-filename-input.c:232
+msgid "Filenames should not start or end with a space"
+msgstr "ຊື່ໄຟລ໌ບໍ່ຄວນເລີ່ມຕົ້ນ ຫຼື ລົງທ້າຍດ້ວຍຍະຫວ່າງ"
+
+#: libxfce4ui/xfce-item-list-view.c:331
+msgid "Active"
+msgstr "ໃຊ້ງານຢູ່"
+
+#: libxfce4ui/xfce-item-list-view.c:348
+msgid "Name"
+msgstr "ຊື່"
+
+#: libxfce4ui/xfce-item-list-view.c:657
+msgid "Move _up"
+msgstr "ຍ້າຍ_ຂຶ້ນ"
+
+#: libxfce4ui/xfce-item-list-view.c:657
+msgid "Move currently selected item up by one row"
+msgstr "ຍ້າຍລາຍການທີ່ເລືອກຂຶ້ນເທິງໜຶ່ງແຖວ"
+
+#: libxfce4ui/xfce-item-list-view.c:661
+msgid "Move _down"
+msgstr "ຍ້າຍ_ລົງ"
+
+#: libxfce4ui/xfce-item-list-view.c:661
+msgid "Move currently selected item down by one row"
+msgstr "ຍ້າຍລາຍການທີ່ເລືອກລົງລຸ່ມໜຶ່ງແຖວ"
+
+#: libxfce4ui/xfce-item-list-view.c:672
+msgid "_Add new item"
+msgstr "_ເພີ່ມລາຍການໃໝ່"
+
+#: libxfce4ui/xfce-item-list-view.c:672
+msgid "Add new item"
+msgstr "ເພີ່ມລາຍການໃໝ່"
+
+#: libxfce4ui/xfce-item-list-view.c:678
+msgid "_Remove"
+msgstr "_ລຶບອອກ"
+
+#: libxfce4ui/xfce-item-list-view.c:678
+msgid "Remove currently selected items"
+msgstr "ລຶບລາຍການທີ່ເລືອກອອກ"
+
+#: libxfce4ui/xfce-item-list-view.c:684
+msgid "_Edit"
+msgstr "_ແກ້ໄຂ"
+
+#: libxfce4ui/xfce-item-list-view.c:684
+msgid "Edit the currently selected item"
+msgstr "ແກ້ໄຂລາຍການທີ່ເລືອກຢູ່"
+
+#: libxfce4ui/xfce-item-list-view.c:690
+msgid "Reset to de_faults"
+msgstr "ຕັ້ງຄ່າຄືນເປັນ_ຄ່າເລີ່ມຕົ້ນ"
+
+#: libxfce4ui/xfce-item-list-view.c:690
+msgid "Reset all items to default settings"
+msgstr "ຕັ້ງຄ່າລາຍການທັງໝົດຄືນເປັນຄ່າເລີ່ມຕົ້ນ"
+
+#: libxfce4kbd-private/xfce-shortcuts.c:44
+#, c-format
+msgid ""
+"This shortcut is already being used for the action '%s'. Which action do you"
+" want to use?"
+msgstr "ຄີລັດນີ້ຖືກໃຊ້ໄປແລ້ວສໍາລັບການກະທຳ '%s'. ທ່ານຕ້ອງການໃຊ້ສໍາລັບການກະທຳໃດ?"
+
+#: libxfce4kbd-private/xfce-shortcuts.c:45
+#: libxfce4kbd-private/xfce-shortcuts.c:48
+#: libxfce4kbd-private/xfce-shortcuts.c:51
+#: libxfce4kbd-private/xfce-shortcuts.c:54
+#, c-format
+msgid "Use '%s'"
+msgstr "ໃຊ້ '%s'"
+
+#: libxfce4kbd-private/xfce-shortcuts.c:45
+#: libxfce4kbd-private/xfce-shortcuts.c:48
+#: libxfce4kbd-private/xfce-shortcuts.c:51
+#: libxfce4kbd-private/xfce-shortcuts.c:54
+#, c-format
+msgid "Keep '%s'"
+msgstr "ຮັກສາ '%s' ໄວ້"
+
+#: libxfce4kbd-private/xfce-shortcuts.c:47
+#: libxfce4kbd-private/xfce-shortcuts.c:50
+#, c-format
+msgid ""
+"This shortcut is already being used for the command '%s'. Which action do "
+"you want to use?"
+msgstr "ຄີລັດນີ້ຖືກໃຊ້ໄປແລ້ວສໍາລັບຄໍາສັ່ງ '%s'. ທ່ານຕ້ອງການໃຊ້ສໍາລັບການກະທຳໃດ?"
+
+#: libxfce4kbd-private/xfce-shortcuts.c:53
+#, c-format
+msgid ""
+"This shortcut is already being used by the action '%s'. Which action do you "
+"want to use?"
+msgstr "ຄີລັດນີ້ຖືກໃຊ້ໄປແລ້ວໂດຍການກະທຳ '%s'. ທ່ານຕ້ອງການໃຊ້ສໍາລັບການກະທຳໃດ?"
+
+#: libxfce4kbd-private/xfce-shortcuts.c:105
+msgid "Please use another key combination."
+msgstr "ກະລຸນາໃຊ້ປຸ່ມປະສົມອື່ນ."
+
+#: libxfce4kbd-private/xfce-shortcuts.c:105
+#, c-format
+msgid "%s already triggers this action."
+msgstr "%s ໄດ້ໃຊ້ສໍາລັບການກະທຳນີ້ຢູ່ແລ້ວ."
+
+#: libxfce4kbd-private/xfce-shortcuts.c:110
+#, c-format
+msgid "Conflicting actions for %s"
+msgstr "ການກະທຳທີ່ຂັດແຍ້ງກັນສໍາລັບ %s"
+
+#: libxfce4kbd-private/xfce-shortcuts.c:170
+msgid "This shortcut is already being used for something else."
+msgstr "ຄີລັດນີ້ຖືກໃຊ້ສໍາລັບຢ່າງອື່ນຢູ່ແລ້ວ."
+
+#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:88
+#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:125
+msgid "Shortcuts Editor"
+msgstr "ຕົວແກ້ໄຂຄີລັດ"
+
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:490
+msgid "The current shortcut. Click to edit..."
+msgstr "ຄີລັດປັດຈຸບັນ. ຄລິກເພື່ອແກ້ໄຂ..."
+
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:502
+msgid "Clear the shortcut"
+msgstr "ລ້າງຄີລັດ"
+
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:514
+msgid "Restore the default shortcut"
+msgstr "ຄືນຄ່າຄີລັດເລີ່ມຕົ້ນ"
+
+#. skip leading slash
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:668
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:758
+#, c-format
+msgid "This keyboard shortcut is currently used by: '%s'"
+msgstr "ຄີລັດຄີບອດນີ້ຖືກໃຊ້ໂດຍ: '%s'"
+
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:671
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:761
+msgid "Keyboard shortcut already in use"
+msgstr "ຄີລັດຄີບອດຖືກໃຊ້ຢູ່ແລ້ວ"
+
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:215
+msgid "Window Manager Action Shortcut"
+msgstr "ຄີລັດການກະທຳຂອງຕົວຈັດການໜ້າຕ່າງ"
+
+#. TRANSLATORS: this string will be used to create an explanation for
+#. * the user in a following string
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:218
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:234
+msgid "action"
+msgstr "ການກະທຳ"
+
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:223
+msgid "Command Shortcut"
+msgstr "ຄີລັດຄໍາສັ່ງ"
+
+#. TRANSLATORS: this string will be used to create an explanation for
+#. * the user in a following string
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:226
+msgid "command"
+msgstr "ຄໍາສັ່ງ"
+
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:231
+msgid "Shortcut"
+msgstr "ຄີລັດ"
+
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:246
+msgid "Clear"
+msgstr "ລ້າງ"
+
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:269
+#, c-format
+msgid "Press keyboard keys to trigger the %s '%s'."
+msgstr "ກົດປຸ່ມຄີບອດເພື່ອໃຊ້ງານ %s '%s'."
+
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:291
+msgid "Please press a key"
+msgstr "ກະລຸນາກົດປຸ່ມ"
+
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:347
+msgid "Could not grab the keyboard."
+msgstr "ບໍ່ສາມາດຄວບຄຸມຄີບອດໄດ້."
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:34
+msgid "Window operations menu"
+msgstr "ເມນູການຈັດການໜ້າຕ່າງ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:35
+msgid "Up"
+msgstr "ຂຶ້ນ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:36
+msgid "Down"
+msgstr "ລົງ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:37
+msgid "Left"
+msgstr "ຊ້າຍ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:38
+msgid "Right"
+msgstr "ຂວາ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:40
+msgid "Cycle windows"
+msgstr "ວົນຮອບໜ້າຕ່າງ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:41
+msgid "Cycle windows (Reverse)"
+msgstr "ວົນຮອບໜ້າຕ່າງ (ຍ້ອນກັບ)"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:42
+msgid "Switch window for same application"
+msgstr "ສະຫຼັບໜ້າຕ່າງໃນແອັບພລິເຄຊັນດຽວກັນ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:43
+msgid "Switch application"
+msgstr "ສະຫຼັບແອັບພລິເຄຊັນ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:44
+msgid "Close window"
+msgstr "ປິດໜ້າຕ່າງ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:45
+msgid "Maximize window horizontally"
+msgstr "ຂະຫຍາຍໜ້າຕ່າງເຕັມລວງນອນ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:46
+msgid "Maximize window vertically"
+msgstr "ຂະຫຍາຍໜ້າຕ່າງເຕັມລວງຕັ້ງ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:47
+msgid "Maximize window"
+msgstr "ຂະຫຍາຍໜ້າຕ່າງ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:48
+msgid "Hide window"
+msgstr "ເຊື່ອງໜ້າຕ່າງ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:49
+msgid "Move window"
+msgstr "ຍ້າຍໜ້າຕ່າງ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:50
+msgid "Resize window"
+msgstr "ປັບຂະໜາດໜ້າຕ່າງ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:51
+msgid "Shade window"
+msgstr "ມ້ວນໜ້າຕ່າງຂຶ້ນ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:52
+msgid "Stick window"
+msgstr "ຕິດໜ້າຕ່າງ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:53
+msgid "Raise window"
+msgstr "ເອົາໜ້າຕ່າງຂຶ້ນໜ້າ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:54
+msgid "Lower window"
+msgstr "ເອົາໜ້າຕ່າງລົງຫຼັງ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:55
+msgid "Raise or lower window"
+msgstr "ເອົາໜ້າຕ່າງຂຶ້ນ ຫຼື ລົງ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:56
+msgid "Fill window"
+msgstr "ຂະຫຍາຍເຕັມພື້ນທີ່"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:57
+msgid "Fill window horizontally"
+msgstr "ຂະຫຍາຍເຕັມລວງນອນ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:58
+msgid "Fill window vertically"
+msgstr "ຂະຫຍາຍເຕັມລວງຕັ້ງ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:59
+msgid "Toggle above"
+msgstr "ສະຫຼັບໄວ້ທາງເທິງ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:60
+msgid "Toggle fullscreen"
+msgstr "ສະຫຼັບເຕັມຈໍ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:61
+msgid "Move window to lower monitor"
+msgstr "ຍ້າຍໜ້າຕ່າງໄປຈໍລຸ່ມ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:62
+msgid "Move window to left monitor"
+msgstr "ຍ້າຍໜ້າຕ່າງໄປຈໍຊ້າຍ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:63
+msgid "Move window to right monitor"
+msgstr "ຍ້າຍໜ້າຕ່າງໄປຈໍຂວາ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:64
+msgid "Move window to upper monitor"
+msgstr "ຍ້າຍໜ້າຕ່າງໄປຈໍເທິງ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:65
+msgid "Move window to upper workspace"
+msgstr "ຍ້າຍໜ້າຕ່າງໄປພື້ນທີ່ເຮັດວຽກເທິງ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:66
+msgid "Move window to bottom workspace"
+msgstr "ຍ້າຍໜ້າຕ່າງໄປພື້ນທີ່ເຮັດວຽກລຸ່ມ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:67
+msgid "Move window to left workspace"
+msgstr "ຍ້າຍໜ້າຕ່າງໄປພື້ນທີ່ເຮັດວຽກຊ້າຍ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:68
+msgid "Move window to right workspace"
+msgstr "ຍ້າຍໜ້າຕ່າງໄປພື້ນທີ່ເຮັດວຽກຂວາ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:69
+msgid "Move window to previous workspace"
+msgstr "ຍ້າຍໜ້າຕ່າງໄປພື້ນທີ່ເຮັດວຽກກ່ອນໜ້າ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:70
+msgid "Move window to next workspace"
+msgstr "ຍ້າຍໜ້າຕ່າງໄປພື້ນທີ່ເຮັດວຽກຖັດໄປ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:71
+msgid "Move window to workspace 1"
+msgstr "ຍ້າຍໜ້າຕ່າງໄປພື້ນທີ່ເຮັດວຽກ 1"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:72
+msgid "Move window to workspace 2"
+msgstr "ຍ້າຍໜ້າຕ່າງໄປພື້ນທີ່ເຮັດວຽກ 2"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:73
+msgid "Move window to workspace 3"
+msgstr "ຍ້າຍໜ້າຕ່າງໄປພື້ນທີ່ເຮັດວຽກ 3"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:74
+msgid "Move window to workspace 4"
+msgstr "ຍ້າຍໜ້າຕ່າງໄປພື້ນທີ່ເຮັດວຽກ 4"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:75
+msgid "Move window to workspace 5"
+msgstr "ຍ້າຍໜ້າຕ່າງໄປພື້ນທີ່ເຮັດວຽກ 5"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:76
+msgid "Move window to workspace 6"
+msgstr "ຍ້າຍໜ້າຕ່າງໄປພື້ນທີ່ເຮັດວຽກ 6"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:77
+msgid "Move window to workspace 7"
+msgstr "ຍ້າຍໜ້າຕ່າງໄປພື້ນທີ່ເຮັດວຽກ 7"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:78
+msgid "Move window to workspace 8"
+msgstr "ຍ້າຍໜ້າຕ່າງໄປພື້ນທີ່ເຮັດວຽກ 8"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:79
+msgid "Move window to workspace 9"
+msgstr "ຍ້າຍໜ້າຕ່າງໄປພື້ນທີ່ເຮັດວຽກ 9"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:80
+msgid "Move window to workspace 10"
+msgstr "ຍ້າຍໜ້າຕ່າງໄປພື້ນທີ່ເຮັດວຽກ 10"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:81
+msgid "Move window to workspace 11"
+msgstr "ຍ້າຍໜ້າຕ່າງໄປພື້ນທີ່ເຮັດວຽກ 11"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:82
+msgid "Move window to workspace 12"
+msgstr "ຍ້າຍໜ້າຕ່າງໄປພື້ນທີ່ເຮັດວຽກ 12"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:83
+msgid "Tile window to the top"
+msgstr "ຈັດໜ້າຕ່າງໄວ້ເທິງ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:84
+msgid "Tile window to the bottom"
+msgstr "ຈັດໜ້າຕ່າງໄວ້ລຸ່ມ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:85
+msgid "Tile window to the left"
+msgstr "ຈັດໜ້າຕ່າງໄວ້ຊ້າຍ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:86
+msgid "Tile window to the right"
+msgstr "ຈັດໜ້າຕ່າງໄວ້ຂວາ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:87
+msgid "Tile window to the top-left"
+msgstr "ຈັດໜ້າຕ່າງໄວ້ເທິງ-ຊ້າຍ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:88
+msgid "Tile window to the top-right"
+msgstr "ຈັດໜ້າຕ່າງໄວ້ເທິງ-ຂວາ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:89
+msgid "Tile window to the bottom-left"
+msgstr "ຈັດໜ້າຕ່າງໄວ້ລຸ່ມ-ຊ້າຍ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:90
+msgid "Tile window to the bottom-right"
+msgstr "ຈັດໜ້າຕ່າງໄວ້ລຸ່ມ-ຂວາ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:91
+msgid "Show desktop"
+msgstr "ສະແດງເດັສທັອບ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:92
+msgid "Upper workspace"
+msgstr "ພື້ນທີ່ເຮັດວຽກເທິງ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:93
+msgid "Bottom workspace"
+msgstr "ພື້ນທີ່ເຮັດວຽກລຸ່ມ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:94
+msgid "Left workspace"
+msgstr "ພື້ນທີ່ເຮັດວຽກຊ້າຍ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:95
+msgid "Right workspace"
+msgstr "ພື້ນທີ່ເຮັດວຽກຂວາ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:96
+msgid "Previous workspace"
+msgstr "ພື້ນທີ່ເຮັດວຽກກ່ອນໜ້າ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:97
+msgid "Next workspace"
+msgstr "ພື້ນທີ່ເຮັດວຽກຖັດໄປ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:98
+msgid "Workspace 1"
+msgstr "ພື້ນທີ່ເຮັດວຽກ 1"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:99
+msgid "Workspace 2"
+msgstr "ພື້ນທີ່ເຮັດວຽກ 2"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:100
+msgid "Workspace 3"
+msgstr "ພື້ນທີ່ເຮັດວຽກ 3"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:101
+msgid "Workspace 4"
+msgstr "ພື້ນທີ່ເຮັດວຽກ 4"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:102
+msgid "Workspace 5"
+msgstr "ພື້ນທີ່ເຮັດວຽກ 5"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:103
+msgid "Workspace 6"
+msgstr "ພື້ນທີ່ເຮັດວຽກ 6"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:104
+msgid "Workspace 7"
+msgstr "ພື້ນທີ່ເຮັດວຽກ 7"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:105
+msgid "Workspace 8"
+msgstr "ພື້ນທີ່ເຮັດວຽກ 8"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:106
+msgid "Workspace 9"
+msgstr "ພື້ນທີ່ເຮັດວຽກ 9"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:107
+msgid "Workspace 10"
+msgstr "ພື້ນທີ່ເຮັດວຽກ 10"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:108
+msgid "Workspace 11"
+msgstr "ພື້ນທີ່ເຮັດວຽກ 11"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:109
+msgid "Workspace 12"
+msgstr "ພື້ນທີ່ເຮັດວຽກ 12"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:110
+msgid "Add workspace"
+msgstr "ເພີ່ມພື້ນທີ່ເຮັດວຽກ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:111
+msgid "Add adjacent workspace"
+msgstr "ເພີ່ມພື້ນທີ່ເຮັດວຽກຕິດກັນ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:112
+msgid "Delete last workspace"
+msgstr "ລຶບພື້ນທີ່ເຮັດວຽກສຸດທ້າຍ"
+
+#: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:113
+msgid "Delete active workspace"
+msgstr "ລຶບພື້ນທີ່ເຮັດວຽກທີ່ກຳລັງໃຊ້"
+
+#: xfce4-about/main.c:63
+msgid "Version information"
+msgstr "ຂໍ້ມູນເວີຊັນ"
+
+#: xfce4-about/main.c:173
+msgid "GPUs"
+msgstr "ຈີພີຢູ (GPUs)"
+
+#: xfce4-about/main.c:190
+msgid "Window Manager"
+msgstr "ຕົວຈັດການໜ້າຕ່າງ"
+
+#: xfce4-about/main.c:191
+msgid "Handles the placement of windows on the screen."
+msgstr "ຈັດການການວາງໜ້າຕ່າງເທິງໜ້າຈໍ."
+
+#: xfce4-about/main.c:194
+msgid "Panel"
+msgstr "ແຜງ"
+
+#: xfce4-about/main.c:195
+msgid "Provides a home for window buttons, launchers, app menu and more."
+msgstr "ສະໜອງບ່ອນວາງປຸ່ມໜ້າຕ່າງ, ຕົວເປີດໂປຣແກຣມ, ເມນູແອັບ ແລະ ອື່ນໆ."
+
+#: xfce4-about/main.c:198
+msgid "Desktop Manager"
+msgstr "ຕົວຈັດການເດັສທັອບ"
+
+#: xfce4-about/main.c:199
+msgid "Sets desktop backgrounds, handles icons and more."
+msgstr "ຕັ້ງຄ່າພື້ນຫຼັງເດັສທັອບ, ຈັດການໄອຄອນ ແລະ ອື່ນໆ."
+
+#: xfce4-about/main.c:202
+msgid "File Manager"
+msgstr "ຕົວຈັດການໄຟລ໌"
+
+#: xfce4-about/main.c:203
+msgid "Manages your files in a modern, easy-to-use and fast way."
+msgstr "ຈັດການໄຟລ໌ຂອງທ່ານໃນຮູບແບບທີ່ທັນສະໄໝ, ໃຊ້ງ່າຍ ແລະ ໄວ."
+
+#: xfce4-about/main.c:206
+msgid "Volume Manager"
+msgstr "ຕົວຈັດການຄວາມຈຳ"
+
+#: xfce4-about/main.c:207
+msgid "Manages removable drives and media for Thunar."
+msgstr "ຈັດການໄດຣຟ໌ ແລະ ສື່ທີ່ຖອດອອກໄດ້ສໍາລັບ Thunar."
+
+#: xfce4-about/main.c:210
+msgid "Session Manager"
+msgstr "ຕົວຈັດການວາລະ"
+
+#: xfce4-about/main.c:211
+msgid ""
+"Saves and restores your session, handles startup, autostart and shutdown."
+msgstr "ບັນທຶກ ແລະ ກູ້ຄືນວາລະຂອງທ່ານ, ຈັດການການເລີ່ມຕົ້ນ, ການເປີດອັດຕະໂນມັດ ແລະ ການປິດລະບົບ."
+
+#: xfce4-about/main.c:214
+msgid "Settings Manager"
+msgstr "ຕົວຈັດການການຕັ້ງຄ່າ"
+
+#: xfce4-about/main.c:215
+msgid "Configures appearance, display, keyboard and mouse settings."
+msgstr "ຕັ້ງຄ່າຮູບລັກສະນະ, ການສະແດງຜົນ, ຄີບອດ ແລະ ເມົາສ໌."
+
+#: xfce4-about/main.c:218
+msgid "Application Finder"
+msgstr "ຕົວຄົ້ນຫາແອັບພລິເຄຊັນ"
+
+#: xfce4-about/main.c:219
+msgid "Quickly finds and launches applications installed on your system."
+msgstr "ຄົ້ນຫາ ແລະ ເປີດແອັບພລິເຄຊັນທີ່ຕິດຕັ້ງໃນລະບົບຂອງທ່ານຢ່າງວ່ອງໄວ."
+
+#: xfce4-about/main.c:222
+msgid "Settings Daemon"
+msgstr "ດີມອນການຕັ້ງຄ່າ"
+
+#: xfce4-about/main.c:223
+msgid "Stores your settings in a D-Bus-based configuration system."
+msgstr "ເກັບການຕັ້ງຄ່າຂອງທ່ານໄວ້ໃນລະບົບການຕັ້ງຄ່າທີ່ໃຊ້ D-Bus."
+
+#: xfce4-about/main.c:226
+msgid "A Menu Library"
+msgstr "ໄລບຣາຣີເມນູ"
+
+#: xfce4-about/main.c:227
+msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
+msgstr "ເຮັດວຽກຕາມມາດຕະຖານເມນູຂອງ freedesktop.org ໂດຍອີງໃສ່ GLib ແລະ GIO."
+
+#: xfce4-about/main.c:230
+msgid "Thumbnails Service"
+msgstr "ບໍລິການຮູບຕົວຢ່າງ"
+
+#: xfce4-about/main.c:231
+msgid "Implements the thumbnail management D-Bus specification."
+msgstr "ເຮັດວຽກຕາມຂໍ້ກຳນົດ D-Bus ສໍາລັບການຈັດການຮູບຕົວຢ່າງ."
+
+#: xfce4-about/main.c:284
+msgid "Please see <https://www.xfce.org/about/credits>"
+msgstr "ກະລຸນາເບິ່ງທີ່ <https://www.xfce.org/about/credits>"
+
+#: xfce4-about/main.c:338
+msgid ""
+"If you know of anyone missing from this list; don't hesitate and file a bug "
+"on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
+msgstr "ຖ້າທ່ານຮູ້ວ່າໃຜທີ່ຕົກຫຼົ່ນຈາກລາຍຊື່ນີ້; ຢ່າລັງເລທີ່ຈະແຈ້ງບັນຫາໄດ້ທີ່ <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
+
+#: xfce4-about/main.c:343
+msgid "Thanks to all who helped making this software available!"
+msgstr "ຂອບໃຈທຸກຄົນທີ່ຊ່ວຍເຮັດໃຫ້ຊອບແວນີ້ພ້ອມໃຊ້ງານ!"
+
+#: xfce4-about/main.c:360
+msgid ""
+"Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
+"components are copyrighted by their respective authors."
+msgstr "Xfce 4 ແມ່ນລິຂະສິດຂອງ Olivier Fourdan (fourdan@xfce.org). ສ່ວນປະກອບຕ່າງໆ ແມ່ນມີລິຂະສິດໂດຍຜູ້ຂຽນແຕ່ລະທ່ານ."
+
+#: xfce4-about/main.c:366
+msgid ""
+"The libxfce4ui and libxfce4util packages are distributed under the terms of "
+"the GNU Library General Public License as published by the Free Software "
+"Foundation; either version 2 of the License, or (at your option) any later "
+"version."
+msgstr "ແພັກເກດ libxfce4ui ແລະ libxfce4util ຖືກເຜີຍແຜ່ພາຍໃຕ້ເງື່ອນໄຂຂອງ GNU Library General Public License ທີ່ຈັດພິມໂດຍ Free Software Foundation; ບໍ່ວ່າຈະເປັນເວີຊັນ 2 ຂອງໃບອະນຸຍາດ ຫຼື ເວີຊັນຫຼັງຈາກນັ້ນ."
+
+#: xfce4-about/main.c:374
+msgid ""
+"The packages thunar, xfce4-appfinder, xfce4-panel, xfce4-session, "
+"xfce4-settings, xfconf, xfdesktop and xfwm4 are distributed under the terms "
+"of the GNU General Public License as published by the Free Software "
+"Foundation; either version 2 of the License, or (at your option) any later "
+"version."
+msgstr "ແພັກເກດ thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop ແລະ xfwm4 ຖືກເຜີຍແຜ່ພາຍໃຕ້ເງື່ອນໄຂຂອງ GNU General Public License ທີ່ຈັດພິມໂດຍ Free Software Foundation; ບໍ່ວ່າຈະເປັນເວີຊັນ 2 ຂອງໃບອະນຸຍາດ ຫຼື ເວີຊັນຫຼັງຈາກນັ້ນ."
+
+#: xfce4-about/main.c:521
+#, c-format
+msgid "Type '%s --help' for usage information."
+msgstr "ພິມ '%s --help' ສໍາລັບຂໍ້ມູນການນໍາໃຊ້."
+
+#: xfce4-about/main.c:527
+msgid "Unable to initialize GTK+."
+msgstr "ບໍ່ສາມາດເລີ່ມຕົ້ນ GTK+ ໄດ້."
+
+#: xfce4-about/main.c:536 xfce-desktop-item-edit/main.c:202
+#: xfce-open/main.c:762
+msgid "The Xfce development team. All rights reserved."
+msgstr "ທີມງານພັດທະນາ Xfce. ສະຫງວນລິຂະສິດທັງໝົດ."
+
+#: xfce4-about/main.c:537 xfce-desktop-item-edit/main.c:210
+#: xfce-open/main.c:771
+#, c-format
+msgid "Please report bugs to <%s>."
+msgstr "ກະລຸນາລາຍງານຂໍ້ຜິດພາດໄປທີ່ <%s>."
+
+#: xfce4-about/main.c:546
+msgid "Failed to load interface"
+msgstr "ໂຫຼດອິນເຕີເຟດບໍ່ສໍາເລັດ"
+
+#. { N_("Project Lead"),
+#. xfce_contributors_lead
+#. },
+#: xfce4-about/contributors.h:142
+msgid "Core developers"
+msgstr "ນັກພັດທະນາຫຼັກ"
+
+#: xfce4-about/contributors.h:144
+msgid "Active contributors"
+msgstr "ຜູ້ມີສ່ວນຮ່ວມໃນປັດຈຸບັນ"
+
+#: xfce4-about/contributors.h:146
+msgid "Servers maintained by"
+msgstr "ເຊີເວີຖືກເບິ່ງແຍງໂດຍ"
+
+#: xfce4-about/contributors.h:148
+msgid "Translations supervision"
+msgstr "ການເບິ່ງແຍງການແປພາສາ"
+
+#: xfce4-about/contributors.h:150
+msgid "Documentation supervision"
+msgstr "ການເບິ່ງແຍງເອກະສານ"
+
+#: xfce4-about/contributors.h:152
+msgid "Translators"
+msgstr "ນັກແປພາສາ"
+
+#: xfce4-about/contributors.h:154
+msgid "Previous contributors"
+msgstr "ຜູ້ມີສ່ວນຮ່ວມໃນອະດີດ"
+
+#: xfce4-about/xfce4-about.desktop.in:11
+msgid "About Xfce"
+msgstr "ກ່ຽວກັບ Xfce"
+
+#: xfce4-about/xfce4-about.desktop.in:12
+msgid "Information about the Xfce Desktop Environment"
+msgstr "ຂໍ້ມູນກ່ຽວກັບສະພາບແວດລ້ອມເດັສທັອບ Xfce"
+
+#: xfce4-about/system-info.c:495 xfce4-about/system-info.c:517
+#: xfce4-about/system-info.c:636 xfce4-about/system-info.c:685
+msgid "Unknown"
+msgstr "ບໍ່ຮູ້ຈັກ"
+
+#. translators: This is the type of architecture for the OS
+#: xfce4-about/system-info.c:620
+msgid "64-bit (32-bit userspace)"
+msgstr "64-ບິດ (32-ບິດ userspace)"
+
+#. translators: This is the type of architecture for the OS
+#: xfce4-about/system-info.c:623
+msgid "64-bit"
+msgstr "64-ບິດ"
+
+#: xfce4-about/system-info.c:623
+msgid "32-bit"
+msgstr "32-ບິດ"
+
+#. translators: This is the name of the OS, followed by the build ID, for
+#. * example:
+#. * "Fedora 25 (Workstation Edition); Build ID: xyz" or
+#. * "Ubuntu 16.04 LTS; Build ID: jki"
+#: xfce4-about/system-info.c:693
+#, c-format
+msgid "%s; Build ID: %s"
+msgstr "%s; ບິລໄອດີ (Build ID): %s"
+
+#: tests/test-ui.c:106
+#, c-format
+msgid ""
+"A file named \"%s\" already exists in this directory, the file hasn't been "
+"added."
+msgstr "ມີໄຟລ໌ຊື່ \"%s\" ຢູ່ແລ້ວໃນໂຟນເດີນີ້, ໄຟລ໌ຈຶ່ງບໍ່ໄດ້ຖືກເພີ່ມ."
+
+#: tests/test-ui.c:117
+msgid "Failed to migrate the old panel configuration"
+msgstr "ຍ້າຍການຕັ້ງຄ່າແຜງເກົ່າບໍ່ສໍາເລັດ"
+
+#: tests/test-ui.c:167 tests/test-ui.c:192
+msgid "Customize settings stored by Xfconf"
+msgstr "ປັບແຕ່ງການຕັ້ງຄ່າທີ່ເກັບໄວ້ໂດຍ Xfconf"
+
+#. --- constants ---
+#: xfce-desktop-item-edit/main.c:57
+msgid "Create Launcher"
+msgstr "ສ້າງຕົວເປີດໂປຣແກຣມ"
+
+#: xfce-desktop-item-edit/main.c:57
+msgid "Create Link"
+msgstr "ສ້າງລິ້ງ"
+
+#: xfce-desktop-item-edit/main.c:57
+msgid "Create Directory"
+msgstr "ສ້າງໂຟນເດີ"
+
+#: xfce-desktop-item-edit/main.c:58
+msgid "Edit Launcher"
+msgstr "ແກ້ໄຂຕົວເປີດໂປຣແກຣມ"
+
+#: xfce-desktop-item-edit/main.c:58
+msgid "Edit Link"
+msgstr "ແກ້ໄຂລິ້ງ"
+
+#: xfce-desktop-item-edit/main.c:58
+msgid "Edit Directory"
+msgstr "ແກ້ໄຂໂຟນເດີ"
+
+#: xfce-desktop-item-edit/main.c:84
+msgid "Create a new desktop file in the given directory"
+msgstr "ສ້າງໄຟລ໌ເດັສທັອບໃໝ່ໃນໂຟນເດີທີ່ກຳນົດ"
+
+#: xfce-desktop-item-edit/main.c:85
+msgid "Type of desktop file to create (Application or Link)"
+msgstr "ປະເພດຂອງໄຟລ໌ເດັສທັອບທີ່ຈະສ້າງ (ແອັບພລິເຄຊັນ ຫຼື ລິ້ງ)"
+
+#: xfce-desktop-item-edit/main.c:86
+msgid "Preset name when creating a desktop file"
+msgstr "ກຳນົດຊື່ໄວ້ລ່ວງໜ້າເມື່ອສ້າງໄຟລ໌ເດັສທັອບ"
+
+#: xfce-desktop-item-edit/main.c:87
+msgid "Preset comment when creating a desktop file"
+msgstr "ກຳນົດຄຳອະທິບາຍໄວ້ລ່ວງໜ້າເມື່ອສ້າງໄຟລ໌ເດັສທັອບ"
+
+#: xfce-desktop-item-edit/main.c:88
+msgid "Preset command when creating a launcher"
+msgstr "ກຳນົດຄຳສັ່ງໄວ້ລ່ວງໜ້າເມື່ອສ້າງຕົວເປີດໂປຣແກຣມ"
+
+#: xfce-desktop-item-edit/main.c:89
+msgid "Preset URL when creating a link"
+msgstr "ກຳນົດ URL ໄວ້ລ່ວງໜ້າເມື່ອສ້າງລິ້ງ"
+
+#: xfce-desktop-item-edit/main.c:90
+msgid "Preset icon when creating a desktop file"
+msgstr "ກຳນົດໄອຄອນໄວ້ລ່ວງໜ້າເມື່ອສ້າງໄຟລ໌ເດັສທັອບ"
+
+#: xfce-desktop-item-edit/main.c:91
+msgid "Print the final saved URI after creating or editing the file"
+msgstr "ສະແດງ URI ທີ່ບັນທຶກແລ້ວຫຼັງຈາກສ້າງ ຫຼື ແກ້ໄຂໄຟລ໌"
+
+#: xfce-desktop-item-edit/main.c:92
+msgid "Print version information and exit"
+msgstr "ພິມຂໍ້ມູນເວີຊັນ ແລະ ອອກ"
+
+#. initialize Gtk+
+#: xfce-desktop-item-edit/main.c:174
+msgid "[FILE|FOLDER]"
+msgstr "[ໄຟລ໌|ໂຟນເດີ]"
+
+#: xfce-desktop-item-edit/main.c:200 xfce-open/main.c:760
+msgid "os-cillation e.K. All rights reserved."
+msgstr "os-cillation e.K. ສະຫງວນລິຂະສິດທັງໝົດ."
+
+#: xfce-desktop-item-edit/main.c:204 xfce-open/main.c:764
+msgid "Written by Benedikt Meurer <benny@xfce.org>."
+msgstr "ຂຽນໂດຍ Benedikt Meurer <benny@xfce.org>."
+
+#: xfce-desktop-item-edit/main.c:205 xfce-open/main.c:766
+#, c-format
+msgid ""
+"%s comes with ABSOLUTELY NO WARRANTY,\n"
+"You may redistribute copies of %s under the terms of\n"
+"the GNU Lesser General Public License which can be found in the\n"
+"%s source package.\n"
+"\n"
+msgstr "%s ບໍ່ມີການຮັບປະກັນໃດໆ,\nທ່ານສາມາດແຈກຢາຍສໍາເນົາຂອງ %s ພາຍໃຕ້ເງື່ອນໄຂຂອງ\nGNU Lesser General Public License ເຊິ່ງສາມາດເບິ່ງໄດ້ໃນ\nຊອດແພັກເກດຂອງ %s.\n\n"
+
+#. add the "Create"/"Save" button (as default)
+#: xfce-desktop-item-edit/main.c:355
+msgid "C_reate"
+msgstr "_ສ້າງ"
+
+#: xfce-desktop-item-edit/main.c:355 xfce-desktop-item-edit/main.c:546
+msgid "_Save"
+msgstr "_ບັນທຶກ"
+
+#. create failed, ask the user to specify a file name
+#: xfce-desktop-item-edit/main.c:543
+msgid "Choose filename"
+msgstr "ເລືອກຊື່ໄຟລ໌"
+
+#: xfce-desktop-item-edit/main.c:669
+#, c-format
+msgid "Failed to create \"%s\"."
+msgstr "ສ້າງ \"%s\" ບໍ່ສໍາເລັດ."
+
+#: xfce-desktop-item-edit/main.c:669
+#, c-format
+msgid "Failed to save \"%s\"."
+msgstr "ບັນທຶກ \"%s\" ບໍ່ສໍາເລັດ."
+
+#. allocate the file chooser
+#: xfce-desktop-item-edit/xfce-die-command-entry.c:260
+msgid "Select an Application"
+msgstr "ເລືອກແອັບພລິເຄຊັນ"
+
+#: xfce-desktop-item-edit/xfce-die-command-entry.c:263
+msgid "_Open"
+msgstr "_ເປີດ"
+
+#: xfce-desktop-item-edit/xfce-die-command-entry.c:269
+msgid "All Files"
+msgstr "ໄຟລ໌ທັງໝົດ"
+
+#: xfce-desktop-item-edit/xfce-die-command-entry.c:274
+msgid "Executable Files"
+msgstr "ໄຟລ໌ທີ່ສາມາດເຮັດວຽກໄດ້"
+
+#: xfce-desktop-item-edit/xfce-die-command-entry.c:289
+msgid "Perl Scripts"
+msgstr "ສະຄຣິບ Perl"
+
+#: xfce-desktop-item-edit/xfce-die-command-entry.c:295
+msgid "Python Scripts"
+msgstr "ສະຄຣິບ Python"
+
+#: xfce-desktop-item-edit/xfce-die-command-entry.c:301
+msgid "Ruby Scripts"
+msgstr "ສະຄຣິບ Ruby"
+
+#: xfce-desktop-item-edit/xfce-die-command-entry.c:307
+msgid "Shell Scripts"
+msgstr "ສະຄຣິບ Shell"
+
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
+#: xfce-desktop-item-edit/xfce-die-editor.c:303
+msgid "_Name:"
+msgstr "_ຊື່:"
+
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
+#: xfce-desktop-item-edit/xfce-die-editor.c:323
+msgid "C_omment:"
+msgstr "_ຄຳອະທິບາຍ:"
+
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
+#. conflicts
+#: xfce-desktop-item-edit/xfce-die-editor.c:343
+msgid "Comm_and:"
+msgstr "_ຄຳສັ່ງ:"
+
+#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
+#. conflicts
+#: xfce-desktop-item-edit/xfce-die-editor.c:368
+msgid "_URL:"
+msgstr "_URL:"
+
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
+#. conflicts
+#: xfce-desktop-item-edit/xfce-die-editor.c:394
+msgid "Working _Directory:"
+msgstr "ໂ_ຟນເດີເຮັດວຽກ:"
+
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
+#: xfce-desktop-item-edit/xfce-die-editor.c:433
+msgid "_Icon:"
+msgstr "_ໄອຄອນ:"
+
+#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
+#. dialog if no icon selected
+#. setup a label to tell that no icon was selected
+#: xfce-desktop-item-edit/xfce-die-editor.c:447
+#: xfce-desktop-item-edit/xfce-die-editor.c:1302
+msgid "No icon"
+msgstr "ບໍ່ມີໄອຄອນ"
+
+#: xfce-desktop-item-edit/xfce-die-editor.c:453
+msgid "Options:"
+msgstr "ຕົວເລືອກ:"
+
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
+#. avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar
+#. and xfce4-panel.
+#: xfce-desktop-item-edit/xfce-die-editor.c:465
+msgid "Use _startup notification"
+msgstr "ໃຊ້ການແຈ້ງເຕືອນເມື່ອ_ເລີ່ມຕົ້ນ"
+
+#: xfce-desktop-item-edit/xfce-die-editor.c:466
+msgid ""
+"Select this option to enable startup notification when the command is run "
+"from the file manager or the menu. Not every application supports startup "
+"notification."
+msgstr "ເລືອກຕົວເລືອກນີ້ເພື່ອເປີດການແຈ້ງເຕືອນເມື່ອເລີ່ມຕົ້ນ ເມື່ອຄຳສັ່ງຖືກຮັນຈາກຕົວຈັດການໄຟລ໌ ຫຼື ເມນູ. ບໍ່ແມ່ນທຸກແອັບພລິເຄຊັນທີ່ຈະຮອງຮັບການແຈ້ງເຕືອນນີ້."
+
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
+#. avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar
+#. and xfce4-panel.
+#: xfce-desktop-item-edit/xfce-die-editor.c:484
+msgid "Run in _terminal"
+msgstr "ຮັນໃນ_ເທີມີນໍລ"
+
+#: xfce-desktop-item-edit/xfce-die-editor.c:485
+msgid "Select this option to run the command in a terminal window."
+msgstr "ເລືອກຕົວເລືອກນີ້ເພື່ອຮັນຄຳສັ່ງໃນໜ້າຕ່າງເທີມີນໍລ."
+
+#. allocate the icon chooser dialog
+#: xfce-desktop-item-edit/xfce-die-editor.c:647
+msgid "Select an icon"
+msgstr "ເລືອກໄອຄອນ"
+
+#: xfce-desktop-item-edit/xfce-die-editor.c:649
+#: xfce-desktop-item-edit/xfce-die-editor.c:693
+msgid "_OK"
+msgstr "_ຕົກລົງ"
+
+#. allocate the file chooser dialog
+#: xfce-desktop-item-edit/xfce-die-editor.c:690
+msgid "Select a working directory"
+msgstr "ເລືອກໂຟນເດີເຮັດວຽກ"
+
+#: xfce-desktop-item-edit/xfce-die-utils.c:210
+msgid "File location is not a regular file or directory"
+msgstr "ສະຖານທີ່ໄຟລ໌ບໍ່ແມ່ນໄຟລ໌ ຫຼື ໂຟນເດີປົກກະຕິ"
+
+#: xfce-open/main.c:218
+msgid "Usage: xfce-open [URLs...]"
+msgstr "ການນໍາໃຊ້: xfce-open [URLs...]"
+
+#: xfce-open/main.c:219
+msgid "       xfce-open --launch TYPE [PARAMETERs...]"
+msgstr "       xfce-open --launch ປະເພດ [ພາລາມິເຕີ...]"
+
+#: xfce-open/main.c:221
+msgid "  -?, --help                          Print this help message and exit"
+msgstr "  -?, --help                          ສະແດງຂໍ້ຄວາມຊ່ວຍເຫຼືອນີ້ ແລະ ອອກ"
+
+#: xfce-open/main.c:222
+msgid ""
+"  -V, --version                       Print version information and exit"
+msgstr "  -V, --version                       ສະແດງຂໍ້ມູນເວີຊັນ ແລະ ອອກ"
+
+#: xfce-open/main.c:224
+msgid ""
+"  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
+"                                      TYPE with the optional PARAMETERs, where\n"
+"                                      TYPE is one of the following values."
+msgstr "  --launch ປະເພດ [ພາລາມິເຕີ...]       ເປີດແອັບພລິເຄຊັນທີ່ຕ້ອງການຂອງ\n                                      ປະເພດ ນັ້ນພ້ອມກັບພາລາມິເຕີເສີມ, ໂດຍທີ່\n                                      ປະເພດ ແມ່ນໜຶ່ງໃນຄ່າຕໍ່ໄປນີ້."
+
+#: xfce-open/main.c:228
+msgid ""
+"  --working-directory DIRECTORY       Default working directory for applications\n"
+"                                      when using the --launch option."
+msgstr "  --working-directory ໂຟນເດີ           ໂຟນເດີເຮັດວຽກເລີ່ມຕົ້ນສໍາລັບແອັບພລິເຄຊັນ\n                                      ເມື່ອໃຊ້ຕົວເລືອກ --launch."
+
+#: xfce-open/main.c:231
+msgid "The following TYPEs are supported for the --launch command:"
+msgstr "ປະເພດ (TYPE) ຕໍ່ໄປນີ້ແມ່ນຮອງຮັບສໍາລັບຄຳສັ່ງ --launch:"
+
+#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
+#. TerminalEmulator),
+#. * since the xfce4-mime-helper utility will not accept localized TYPEs.
+#: xfce-open/main.c:237
+msgid ""
+"  WebBrowser       - The preferred Web Browser.\n"
+"  MailReader       - The preferred Mail Reader.\n"
+"  FileManager      - The preferred File Manager.\n"
+"  TerminalEmulator - The preferred Terminal Emulator.\n"
+"  TextEditor       - The preferred Text Editor.\n"
+"  ImageViewer      - The preferred Image Viewer.\n"
+"  AudioPlayer      - The preferred Audio Player.\n"
+"  VideoPlayer      - The preferred Video Player."
+msgstr "  WebBrowser       - ເວັບບຣາວເຊີທີ່ຕ້ອງການ.\n  MailReader       - ຕົວອ່ານເມລທີ່ຕ້ອງການ.\n  FileManager      - ຕົວຈັດການໄຟລ໌ທີ່ຕ້ອງການ.\n  TerminalEmulator - ຕົວຈຳລອງເທີມີນໍລທີ່ຕ້ອງການ.\n  TextEditor       - ຕົວແກ້ໄຂຂໍ້ຄວາມທີ່ຕ້ອງການ.\n  ImageViewer      - ຕົວເບິ່ງຮູບພາບທີ່ຕ້ອງການ.\n  AudioPlayer      - ຕົວຫຼິ້ນສຽງທີ່ຕ້ອງການ.\n  VideoPlayer      - ຕົວຫຼິ້ນວິດີໂອທີ່ຕ້ອງການ."
+
+#: xfce-open/main.c:247
+msgid ""
+"If you don't specify the --launch option, xfce-open will open all specified\n"
+"URLs with their preferred URL handlers. Else, if you specify the --launch\n"
+"option, you can select which preferred application you want to run, and\n"
+"pass additional parameters to the application (i.e. for TerminalEmulator\n"
+"you can pass the command line that should be run in the terminal)."
+msgstr "ຖ້າທ່ານບໍ່ລະບຸຕົວເລືອກ --launch, xfce-open ຈະເປີດທຸກ URLs ທີ່ລະບຸ\nດ້ວຍຕົວຈັດການ URL ທີ່ກ່ຽວຂ້ອງ. ແຕ່ຖ້າທ່ານລະບຸຕົວເລືອກ --launch,\nທ່ານສາມາດເລືອກແອັບພລິເຄຊັນທີ່ຕ້ອງການຮັນ ແລະ ສົ່ງພາລາມິເຕີເພີ່ມເຕີມ\nໃຫ້ກັບແອັບພລິເຄຊັນ (ເຊັ່ນ: ສໍາລັບ TerminalEmulator ທ່ານສາມາດສົ່ງຄຳສັ່ງ\nທີ່ຈະໃຫ້ຮັນໃນເທີມີນໍລໄດ້)."
+
+#: xfce-open/main.c:422
+#, c-format
+msgid "Failed to launch preferred application for category \"%s\"."
+msgstr "ເປີດແອັບພລິເຄຊັນທີ່ຕ້ອງການສໍາລັບໝວດໝູ່ \"%s\" ບໍ່ສໍາເລັດ."
+
+#: xfce-open/main.c:713
+#, c-format
+msgid "Unable to detect the URI-scheme of \"%s\"."
+msgstr "ບໍ່ສາມາດກວດສອບ URI-scheme ຂອງ \"%s\" ໄດ້."
+
+#: xfce-open/main.c:727
+msgid "Failed to open URI."
+msgstr "ເປີດ URI ບໍ່ສໍາເລັດ."
