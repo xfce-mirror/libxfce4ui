@@ -1290,6 +1290,7 @@ xfce_die_editor_set_icon (XfceDieEditor *editor,
           /* setup an image for the icon */
           image = gtk_image_new_from_surface (surface);
           gtk_container_add (GTK_CONTAINER (editor->icon_button), image);
+          gtk_widget_set_tooltip_text (image, icon);
           gtk_widget_show (image);
 
           /* release the pixbuf */
