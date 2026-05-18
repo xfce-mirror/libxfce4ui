@@ -172,6 +172,8 @@ xfce_shortcuts_provider_constructed (GObject *object)
 
   if (!xfce_shortcuts_provider_is_custom (provider))
     xfce_shortcuts_provider_reset_to_defaults (provider);
+
+  (*G_OBJECT_CLASS (xfce_shortcuts_provider_parent_class)->constructed) (object);
 }
 
 
