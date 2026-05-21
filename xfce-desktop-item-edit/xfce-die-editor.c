@@ -1248,6 +1248,9 @@ xfce_die_editor_set_icon (XfceDieEditor *editor,
       /* notify listeners */
       g_object_notify (G_OBJECT (editor), "icon");
 
+      /* update the tooltip */
+      gtk_widget_set_tooltip_text (editor->icon_button, icon);
+
       /* drop the previous icon button child */
       if (gtk_bin_get_child (GTK_BIN (editor->icon_button)) != NULL)
         gtk_widget_destroy (gtk_bin_get_child (GTK_BIN (editor->icon_button)));
@@ -1290,7 +1293,6 @@ xfce_die_editor_set_icon (XfceDieEditor *editor,
           /* setup an image for the icon */
           image = gtk_image_new_from_surface (surface);
           gtk_container_add (GTK_CONTAINER (editor->icon_button), image);
-          gtk_widget_set_tooltip_text (image, icon);
           gtk_widget_show (image);
 
           /* release the pixbuf */
@@ -1299,8 +1301,11 @@ xfce_die_editor_set_icon (XfceDieEditor *editor,
         }
       else
         {
-          /* setup a label to tell that no icon was selected */
-          label = gtk_label_new (_("No icon"));
+          /* setup a label to tell that no icon was selected / no icon was found */
+          if (icon == NULL)
+            label = gtk_label_new (_("No icon"));
+          else
+            label = gtk_label_new (_("Icon not found"));
           gtk_container_add (GTK_CONTAINER (editor->icon_button), label);
           gtk_widget_show (label);
         }
