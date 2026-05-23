@@ -4,15 +4,15 @@
 # 
 # Translators:
 # Besnik Bleta <besnik@programeshqip.org>, 2019-2020
-# Besnik Bleta <besnik@programeshqip.org>, 2020-2025
+# Besnik Bleta <besnik@programeshqip.org>, 2020-2026
 # Besnik Bleta <besnik@programeshqip.org>, 2019-2020
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2026-03-16 00:45+0100\n"
+"POT-Creation-Date: 2026-05-22 12:45+0200\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Besnik Bleta <besnik@programeshqip.org>, 2020-2025\n"
+"Last-Translator: Besnik Bleta <besnik@programeshqip.org>, 2020-2026\n"
 "Language-Team: Albanian (http://app.transifex.com/xfce/libxfce4ui/language/sq/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -387,7 +387,7 @@ msgstr "Emri i kartelës është shumë i gjatë"
 
 #: libxfce4ui/xfce-filename-input.c:231
 msgid "Directory separator illegal in filename"
-msgstr ""
+msgstr "Ndarës drejtorish, i paligjshëm në emër kartelash"
 
 #: libxfce4ui/xfce-filename-input.c:232
 msgid "Filenames should not start or end with a space"
@@ -1311,9 +1311,8 @@ msgstr "_Ikonë:"
 
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
 #. dialog if no icon selected
-#. setup a label to tell that no icon was selected
 #: xfce-desktop-item-edit/xfce-die-editor.c:447
-#: xfce-desktop-item-edit/xfce-die-editor.c:1302
+#: xfce-desktop-item-edit/xfce-die-editor.c:1306
 msgid "No icon"
 msgstr "Pa ikonë"
 
@@ -1362,6 +1361,10 @@ msgstr "_OK"
 #: xfce-desktop-item-edit/xfce-die-editor.c:690
 msgid "Select a working directory"
 msgstr "Përzgjidhni një drejtori pune"
+
+#: xfce-desktop-item-edit/xfce-die-editor.c:1308
+msgid "Icon not found"
+msgstr "S’u gjet ikonë"
 
 #: xfce-desktop-item-edit/xfce-die-utils.c:210
 msgid "File location is not a regular file or directory"
