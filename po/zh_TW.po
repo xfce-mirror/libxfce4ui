@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2026-03-16 00:45+0100\n"
+"POT-Creation-Date: 2026-05-22 12:45+0200\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: 黃柏諺 <s8321414@gmail.com>, 2019-2026\n"
 "Language-Team: Chinese (Taiwan) (http://app.transifex.com/xfce/libxfce4ui/language/zh_TW/)\n"
@@ -1312,9 +1312,8 @@ msgstr "圖示(_I)："
 
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
 #. dialog if no icon selected
-#. setup a label to tell that no icon was selected
 #: xfce-desktop-item-edit/xfce-die-editor.c:447
-#: xfce-desktop-item-edit/xfce-die-editor.c:1302
+#: xfce-desktop-item-edit/xfce-die-editor.c:1306
 msgid "No icon"
 msgstr "無圖示"
 
@@ -1363,6 +1362,10 @@ msgstr "確定(_O)"
 #: xfce-desktop-item-edit/xfce-die-editor.c:690
 msgid "Select a working directory"
 msgstr "選取工作目錄"
+
+#: xfce-desktop-item-edit/xfce-die-editor.c:1308
+msgid "Icon not found"
+msgstr "找不到圖示"
 
 #: xfce-desktop-item-edit/xfce-die-utils.c:210
 msgid "File location is not a regular file or directory"
