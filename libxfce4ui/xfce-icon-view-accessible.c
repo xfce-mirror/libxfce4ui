@@ -39,7 +39,6 @@ struct _XfceIconViewItemAccessible
   XfceIconViewItem *item;
   GtkWidget *widget;
   AtkStateSet *state_set;
-  gchar *text;
   GtkTextBuffer *text_buffer;
 
   gchar *action_descriptions[LAST_ACTION];
