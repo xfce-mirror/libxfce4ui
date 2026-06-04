@@ -138,7 +138,6 @@ xfce_die_g_key_file_save (GKeyFile *key_file,
   gchar *filename, *data;
   gsize length;
   gboolean result;
-  guint n;
   gboolean desktop_suffix;
   const gchar *suffix;
 
@@ -185,7 +184,7 @@ xfce_die_g_key_file_save (GKeyFile *key_file,
               /* create a unique filename */
               filename = g_strconcat (name, suffix, NULL);
               file = g_file_get_child_for_display_name (base, filename, error);
-              for (n = 0; file != NULL && g_file_query_exists (file, NULL); n++)
+              for (gint n = 0; file != NULL && g_file_query_exists (file, NULL); n++)
                 {
                   /* release the previous name */
                   g_free (filename);
