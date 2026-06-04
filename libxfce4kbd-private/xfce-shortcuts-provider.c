@@ -80,7 +80,6 @@ struct _XfceShortcutsProviderContext
 {
   XfceShortcutsProvider *provider;
   GList *list;
-  const gchar *base_property;
   GHashTable *properties;
 };
 

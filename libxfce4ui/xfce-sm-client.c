@@ -138,7 +138,6 @@ struct _XfceSMClient
   IceConn ice_connection;
 #endif
 
-  XfceSMClientState state;
   XfceSMClientRestartStyle restart_style;
 
   guint8 priority;
@@ -146,13 +145,10 @@ struct _XfceSMClient
   gchar *client_id;
 
   gchar *current_directory;
-  gchar *program;
   gchar **clone_command;
   gchar **restart_command;
 
-  guint32 resumed : 1,
-    needs_save_state : 1,
-    shutdown_cancelled : 1;
+  guint32 resumed : 1;
 
   gint argc;
   gchar **argv;
