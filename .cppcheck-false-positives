@@ -1,0 +1,17 @@
+unknownMacro:libxfce4ui/xfce-icon-view.c:3075
+knownConditionTrueFalse:xfce4-about/system-info.c:516
+knownConditionTrueFalse:xfce4-about/system-info.c:480
+knownConditionTrueFalse:libxfce4kbd-private/xfce-shortcuts-grabber.c:369
+nullPointerRedundantCheck:xfce-open/main.c:707
+nullPointerRedundantCheck:xfce-open/main.c:519
+nullPointer:xfce-open/main.c:415
+unreadVariable:libxfce4ui/xfce-spawn.c:304
+allocaCalled:libxfce4ui/xfce-gdk-pixbuf-extensions.c:838
+varFuncNullUB:libxfce4ui/xfce-dialogs.c:270
+varFuncNullUB:libxfce4ui/xfce-dialogs.c:328
+varFuncNullUB:libxfce4ui/xfce-dialogs.c:363
+varFuncNullUB:libxfce4ui/xfce-dialogs.c:399
+varFuncNullUB:libxfce4ui/xfce-dialogs.c:459
+varFuncNullUB:libxfce4ui/xfce-dialogs.c:526
+varFuncNullUB:libxfce4ui/xfce-dialogs.c:527
+varFuncNullUB:libxfce4ui/xfce-dialogs.c:528

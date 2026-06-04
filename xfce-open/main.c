@@ -531,8 +531,7 @@ xfce_open_uri (const gchar *uri,
                   executable = g_app_info_get_executable (app_info);
                   g_debug ("default executable=%s", executable);
 
-                  if (executable == NULL
-                      || strcmp (executable, "xfce-open") != 0)
+                  if (g_strcmp0 (executable, "xfce-open") != 0)
                     {
                       /* launch it */
                       retval = xfce_g_app_info_launch_uri (app_info, uri, NULL, &err);

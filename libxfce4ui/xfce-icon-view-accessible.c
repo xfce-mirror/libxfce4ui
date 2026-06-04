@@ -39,7 +39,6 @@ struct _XfceIconViewItemAccessible
   XfceIconViewItem *item;
   GtkWidget *widget;
   AtkStateSet *state_set;
-  gchar *text;
   GtkTextBuffer *text_buffer;
 
   gchar *action_descriptions[LAST_ACTION];
@@ -1754,7 +1753,6 @@ xfce_icon_view_accessible_ref_accessible_at_point (AtkComponent *component,
   XfceIconView *icon_view;
   XfceIconViewItem *item;
   gint x_pos, y_pos;
-  gint idx;
 
   widget = gtk_accessible_get_widget (GTK_ACCESSIBLE (component));
   if (widget == NULL)
@@ -1764,9 +1762,11 @@ xfce_icon_view_accessible_ref_accessible_at_point (AtkComponent *component,
   icon_view = XFCE_ICON_VIEW (widget);
   atk_component_get_extents (component, &x_pos, &y_pos, NULL, NULL, coord_type);
   item = xfce_icon_view_get_item_at_coords (icon_view, x - x_pos, y - y_pos, TRUE, NULL);
-  idx = g_sequence_iter_get_position (item->item_iter);
-  if (item)
-    return xfce_icon_view_accessible_ref_child (ATK_OBJECT (component), idx);
+  if (item != NULL)
+    {
+      gint idx = g_sequence_iter_get_position (item->item_iter);
+      return xfce_icon_view_accessible_ref_child (ATK_OBJECT (component), idx);
+    }
 
   return NULL;
 }

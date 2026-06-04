@@ -588,12 +588,12 @@ xfce_gtk_get_action_entry_by_id (const XfceGtkActionEntry *action_entries,
                                  guint n_action_entries,
                                  guint id)
 {
-  for (size_t i = 0; i < n_action_entries; i++)
+  for (guint i = 0; i < n_action_entries; i++)
     {
       if (action_entries[i].id == id)
         return &(action_entries[i]);
     }
-  g_warning ("There is no action with the id '%i'.", id);
+  g_warning ("There is no action with the id '%u'.", id);
   return NULL;
 }
 
