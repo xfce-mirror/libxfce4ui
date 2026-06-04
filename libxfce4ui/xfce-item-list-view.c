@@ -600,7 +600,7 @@ xfce_item_list_view_recreate_buttons (XfceItemListView *view)
                                           label != NULL ? g_variant_get_string (label, NULL) : NULL,
                                           tooltip != NULL ? g_variant_get_string (tooltip, NULL) : NULL,
                                           gicon,
-                                          action != NULL ? g_variant_get_string (action, NULL) : NULL,
+                                          g_variant_get_string (action, NULL),
                                           target);
         }
 

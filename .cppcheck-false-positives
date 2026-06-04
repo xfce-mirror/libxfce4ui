@@ -1,1 +1,4 @@
 unknownMacro:libxfce4ui/xfce-icon-view.c:3075
+knownConditionTrueFalse:xfce4-about/system-info.c:516
+knownConditionTrueFalse:xfce4-about/system-info.c:480
+knownConditionTrueFalse:libxfce4kbd-private/xfce-shortcuts-grabber.c:369
