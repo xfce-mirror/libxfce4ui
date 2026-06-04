@@ -5,3 +5,4 @@ knownConditionTrueFalse:libxfce4kbd-private/xfce-shortcuts-grabber.c:369
 nullPointerRedundantCheck:xfce-open/main.c:707
 nullPointerRedundantCheck:xfce-open/main.c:519
 nullPointer:xfce-open/main.c:415
+unreadVariable:libxfce4ui/xfce-spawn.c:304
