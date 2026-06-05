@@ -14,3 +14,4 @@ varFuncNullUB:libxfce4ui/xfce-dialogs.c:459
 varFuncNullUB:libxfce4ui/xfce-dialogs.c:526
 varFuncNullUB:libxfce4ui/xfce-dialogs.c:527
 varFuncNullUB:libxfce4ui/xfce-dialogs.c:528
+memleak:libxfce4ui/xfce-icon-view.c:8977
