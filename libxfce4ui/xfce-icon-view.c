@@ -3070,13 +3070,21 @@ xfce_icon_view_set_adjustments (XfceIconView *icon_view,
   gboolean need_adjust = FALSE;
 
   if (hadj)
-    g_return_if_fail (GTK_IS_ADJUSTMENT (hadj));
+    {
+      g_return_if_fail (GTK_IS_ADJUSTMENT (hadj));
+    }
   else
-    hadj = GTK_ADJUSTMENT (gtk_adjustment_new (0.0, 0.0, 0.0, 0.0, 0.0, 0.0));
+    {
+      hadj = GTK_ADJUSTMENT (gtk_adjustment_new (0.0, 0.0, 0.0, 0.0, 0.0, 0.0));
+    }
   if (vadj)
-    g_return_if_fail (GTK_IS_ADJUSTMENT (vadj));
+    {
+      g_return_if_fail (GTK_IS_ADJUSTMENT (vadj));
+    }
   else
-    vadj = GTK_ADJUSTMENT (gtk_adjustment_new (0.0, 0.0, 0.0, 0.0, 0.0, 0.0));
+    {
+      vadj = GTK_ADJUSTMENT (gtk_adjustment_new (0.0, 0.0, 0.0, 0.0, 0.0, 0.0));
+    }
 
   if (priv->hadjustment && (priv->hadjustment != hadj))
     {
