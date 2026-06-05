@@ -3276,7 +3276,7 @@ xfce_icon_view_layout_single_row (XfceIconView *icon_view,
   XfceIconViewItem *item;
   gboolean rtl;
   GSequenceIter *last_item;
-  GSequenceIter *iter = first_item;
+  GSequenceIter *iter;
   gint *max_width;
   gint *max_height;
   gint focus_width;
@@ -3372,7 +3372,7 @@ xfce_icon_view_layout_single_col (XfceIconView *icon_view,
 {
   XfceIconViewPrivate *priv = get_instance_private (icon_view);
   XfceIconViewItem *item;
-  GSequenceIter *iter = first_item;
+  GSequenceIter *iter;
   GSequenceIter *last_item;
   gint *max_width;
   gint *max_height;
