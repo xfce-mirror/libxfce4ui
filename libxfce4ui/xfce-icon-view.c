@@ -4583,7 +4583,7 @@ find_item_page_up_down (XfceIconView *icon_view,
             break;
 
           /* if we found an item which matches the correct column */
-          if (prev != iter && XFCE_ICON_VIEW_ITEM (g_sequence_get (prev))->col == col)
+          if (XFCE_ICON_VIEW_ITEM (g_sequence_get (prev))->col == col)
             {
               /* found an item which is far enough up .. lets use our previous column match */
               if (XFCE_ICON_VIEW_ITEM (g_sequence_get (prev))->area.y < y)
