@@ -3070,13 +3070,21 @@ xfce_icon_view_set_adjustments (XfceIconView *icon_view,
   gboolean need_adjust = FALSE;
 
   if (hadj)
-    g_return_if_fail (GTK_IS_ADJUSTMENT (hadj));
+    {
+      g_return_if_fail (GTK_IS_ADJUSTMENT (hadj));
+    }
   else
-    hadj = GTK_ADJUSTMENT (gtk_adjustment_new (0.0, 0.0, 0.0, 0.0, 0.0, 0.0));
+    {
+      hadj = GTK_ADJUSTMENT (gtk_adjustment_new (0.0, 0.0, 0.0, 0.0, 0.0, 0.0));
+    }
   if (vadj)
-    g_return_if_fail (GTK_IS_ADJUSTMENT (vadj));
+    {
+      g_return_if_fail (GTK_IS_ADJUSTMENT (vadj));
+    }
   else
-    vadj = GTK_ADJUSTMENT (gtk_adjustment_new (0.0, 0.0, 0.0, 0.0, 0.0, 0.0));
+    {
+      vadj = GTK_ADJUSTMENT (gtk_adjustment_new (0.0, 0.0, 0.0, 0.0, 0.0, 0.0));
+    }
 
   if (priv->hadjustment && (priv->hadjustment != hadj))
     {
@@ -3268,7 +3276,7 @@ xfce_icon_view_layout_single_row (XfceIconView *icon_view,
   XfceIconViewItem *item;
   gboolean rtl;
   GSequenceIter *last_item;
-  GSequenceIter *iter = first_item;
+  GSequenceIter *iter;
   gint *max_width;
   gint *max_height;
   gint focus_width;
@@ -3364,7 +3372,7 @@ xfce_icon_view_layout_single_col (XfceIconView *icon_view,
 {
   XfceIconViewPrivate *priv = get_instance_private (icon_view);
   XfceIconViewItem *item;
-  GSequenceIter *iter = first_item;
+  GSequenceIter *iter;
   GSequenceIter *last_item;
   gint *max_width;
   gint *max_height;
@@ -4575,7 +4583,7 @@ find_item_page_up_down (XfceIconView *icon_view,
             break;
 
           /* if we found an item which matches the correct column */
-          if (prev != iter && XFCE_ICON_VIEW_ITEM (g_sequence_get (prev))->col == col)
+          if (XFCE_ICON_VIEW_ITEM (g_sequence_get (prev))->col == col)
             {
               /* found an item which is far enough up .. lets use our previous column match */
               if (XFCE_ICON_VIEW_ITEM (g_sequence_get (prev))->area.y < y)

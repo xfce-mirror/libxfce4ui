@@ -1,4 +1,3 @@
-unknownMacro:libxfce4ui/xfce-icon-view.c:3075
 knownConditionTrueFalse:xfce4-about/system-info.c:516
 knownConditionTrueFalse:xfce4-about/system-info.c:480
 knownConditionTrueFalse:libxfce4kbd-private/xfce-shortcuts-grabber.c:369
@@ -15,3 +14,4 @@ varFuncNullUB:libxfce4ui/xfce-dialogs.c:459
 varFuncNullUB:libxfce4ui/xfce-dialogs.c:526
 varFuncNullUB:libxfce4ui/xfce-dialogs.c:527
 varFuncNullUB:libxfce4ui/xfce-dialogs.c:528
+memleak:libxfce4ui/xfce-icon-view.c:8977
