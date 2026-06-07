@@ -716,8 +716,7 @@ convert_clipboard (XfceClipboardManager *manager,
 
       if (type != XA_ATOM_PAIR || nitems == 0)
         {
-          if (multiple)
-            g_free (multiple);
+          g_free (multiple);
           return;
         }
 
