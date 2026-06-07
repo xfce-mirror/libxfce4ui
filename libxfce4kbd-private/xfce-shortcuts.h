@@ -25,7 +25,7 @@
 
 G_BEGIN_DECLS
 
-gboolean
+gint
 xfce_shortcut_conflict_dialog (GtkWindow *parent,
                                const gchar *owner,
                                const gchar *other,
