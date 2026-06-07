@@ -110,7 +110,7 @@ static Atom XA_TIMESTAMP = None;
 
 
 
-G_DEFINE_TYPE (XfceClipboardManager, xfce_clipboard_manager, G_TYPE_OBJECT)
+G_DEFINE_FINAL_TYPE (XfceClipboardManager, xfce_clipboard_manager, G_TYPE_OBJECT)
 
 
 
@@ -174,24 +174,13 @@ xfce_clipboard_manager_finalize (GObject *object)
       manager->window = None;
     }
 
-  if (manager->conversions != NULL)
-    {
-      g_slist_free_full (manager->conversions, (GDestroyNotify) conversion_free);
-      manager->conversions = NULL;
-    }
-
-  if (manager->contents != NULL)
-    {
-      g_slist_free_full (manager->contents, (GDestroyNotify) target_data_unref);
-      manager->contents = NULL;
-    }
+  g_clear_slist (&manager->conversions, (GDestroyNotify) conversion_free);
+  g_clear_slist (&manager->contents, (GDestroyNotify) target_data_unref);
 
   if (manager->image != NULL)
     {
-      g_object_unref (manager->image);
-      g_bytes_unref (manager->bytes);
-      manager->image = NULL;
-      manager->bytes = NULL;
+      g_clear_object (&manager->image);
+      g_clear_pointer (&manager->bytes, g_bytes_unref);
     }
 
   if (manager->start_idle_id != 0)
@@ -727,8 +716,7 @@ convert_clipboard (XfceClipboardManager *manager,
 
       if (type != XA_ATOM_PAIR || nitems == 0)
         {
-          if (multiple)
-            g_free (multiple);
+          g_free (multiple);
           return;
         }
 
@@ -808,9 +796,7 @@ clipboard_manager_process_event (XfceClipboardManager *manager,
     case DestroyNotify:
       if (xev->xdestroywindow.window == manager->requestor)
         {
-          g_slist_free_full (manager->contents, (GDestroyNotify) target_data_unref);
-          manager->contents = NULL;
-
+          g_clear_slist (&manager->contents, (GDestroyNotify) target_data_unref);
           clipboard_manager_watch_cb (manager,
                                       manager->requestor,
                                       False,
@@ -840,9 +826,7 @@ clipboard_manager_process_event (XfceClipboardManager *manager,
           /* We lost the manager selection */
           if (manager->contents)
             {
-              g_slist_free_full (manager->contents, (GDestroyNotify) target_data_unref);
-              manager->contents = NULL;
-
+              g_clear_slist (&manager->contents, (GDestroyNotify) target_data_unref);
               XSetSelectionOwner (manager->display,
                                   XA_CLIPBOARD,
                                   None, manager->time);
@@ -853,8 +837,7 @@ clipboard_manager_process_event (XfceClipboardManager *manager,
       if (xev->xselectionclear.selection == XA_CLIPBOARD)
         {
           /* We lost the clipboard selection */
-          g_slist_free_full (manager->contents, (GDestroyNotify) target_data_unref);
-          manager->contents = NULL;
+          g_clear_slist (&manager->contents, (GDestroyNotify) target_data_unref);
           clipboard_manager_watch_cb (manager,
                                       manager->requestor,
                                       False,
@@ -1286,10 +1269,8 @@ owner_change (GtkClipboard *clipboard,
             }
           else if (manager->image != NULL)
             {
-              g_object_unref (manager->image);
-              g_bytes_unref (manager->bytes);
-              manager->image = NULL;
-              manager->bytes = NULL;
+              g_clear_object (&manager->image);
+              g_clear_pointer (&manager->bytes, g_bytes_unref);
             }
         }
 

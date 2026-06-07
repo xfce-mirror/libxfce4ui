@@ -932,12 +932,7 @@ xfce_icon_view_item_accessible_finalize (GObject *object)
     g_free (item->action_descriptions[i]);
 
   g_free (item->image_description);
-
-  if (item->action_idle_handler)
-    {
-      g_source_remove (item->action_idle_handler);
-      item->action_idle_handler = 0;
-    }
+  g_clear_handle_id (&item->action_idle_handler, g_source_remove);
 
   G_OBJECT_CLASS (accessible_item_parent_class)->finalize (object);
 }
@@ -1242,7 +1237,7 @@ xfce_icon_view_accessible_traverse_items (XfceIconViewAccessible *view,
           info = (XfceIconViewItemAccessibleInfo *) items->data;
           item = XFCE_ICON_VIEW_ITEM_ACCESSIBLE (info->item);
 
-          if (act_on_item == FALSE && list == items)
+          if (!act_on_item && list == items)
             act_on_item = TRUE;
 
           if (act_on_item)
@@ -1570,8 +1565,7 @@ xfce_icon_view_accessible_clear_cache (XfceIconViewAccessiblePrivate *priv)
       g_free (items->data);
       items = items->next;
     }
-  g_list_free (priv->items);
-  priv->items = NULL;
+  g_clear_list (&priv->items, NULL);
 }
 
 static void

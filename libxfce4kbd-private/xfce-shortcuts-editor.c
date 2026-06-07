@@ -90,14 +90,9 @@ free_data (gpointer data,
 
 
 
-struct _XfceShortcutsEditorClass
-{
-  GtkVBoxClass __parent__;
-};
-
 struct _XfceShortcutsEditor
 {
-  GtkVBox __parent__;
+  GtkBox __parent__;
 
   XfceShortcutsEditorSection *arrays;
   size_t arrays_count;
@@ -111,7 +106,7 @@ struct _XfceShortcutsEditor
 
 
 
-G_DEFINE_TYPE (XfceShortcutsEditor, xfce_shortcuts_editor, GTK_TYPE_BOX)
+G_DEFINE_FINAL_TYPE (XfceShortcutsEditor, xfce_shortcuts_editor, GTK_TYPE_BOX)
 
 
 
@@ -750,7 +745,7 @@ xfce_shortcuts_editor_shortcut_reset_clicked (GtkWidget *widget,
   g_clear_pointer (&info.paths_with_overlap_allowed, g_hash_table_destroy);
 
   /* an empty default accelerator is always available */
-  if (g_strcmp0 (data->entry->default_accelerator, "") != 0 && info.in_use == TRUE)
+  if (g_strcmp0 (data->entry->default_accelerator, "") != 0 && info.in_use)
     {
       command = g_strrstr (info.other_path, "/");
       command = command == NULL ? info.other_path : command + 1; /* skip leading slash */

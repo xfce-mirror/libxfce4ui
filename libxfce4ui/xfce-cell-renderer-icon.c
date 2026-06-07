@@ -110,7 +110,7 @@ struct _XfceCellRendererIcon
 
 
 
-G_DEFINE_TYPE (XfceCellRendererIcon, xfce_cell_renderer_icon, GTK_TYPE_CELL_RENDERER)
+G_DEFINE_FINAL_TYPE (XfceCellRendererIcon, xfce_cell_renderer_icon, GTK_TYPE_CELL_RENDERER)
 
 
 

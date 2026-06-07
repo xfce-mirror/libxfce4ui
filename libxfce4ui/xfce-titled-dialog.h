@@ -38,6 +38,7 @@ typedef struct _XfceTitledDialog XfceTitledDialog;
 #define XFCE_IS_TITLED_DIALOG(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), XFCE_TYPE_TITLED_DIALOG))
 #define XFCE_IS_TITLED_DIALOG_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), XFCE_TYPE_TITLED_DIALOG))
 #define XFCE_TITLED_DIALOG_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), XFCE_TYPE_TITLED_DIALOG, XfceTitledDialogClass))
+G_DEFINE_AUTOPTR_CLEANUP_FUNC (XfceTitledDialog, g_object_unref)
 
 struct _XfceTitledDialogClass
 {

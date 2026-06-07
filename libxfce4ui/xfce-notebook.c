@@ -58,7 +58,7 @@ struct _XfceNotebook
 
 
 
-G_DEFINE_TYPE (XfceNotebook, xfce_notebook, GTK_TYPE_NOTEBOOK)
+G_DEFINE_FINAL_TYPE (XfceNotebook, xfce_notebook, GTK_TYPE_NOTEBOOK)
 
 static void
 xfce_notebook_class_init (XfceNotebookClass *klass)

@@ -81,7 +81,7 @@ remove_auto_online (GtkButton *button,
                                   "dialogs to appear. Do you want to do this?",
                                   "Remove auto-online in rc file? (Gtk3)");
 
-  if (response == FALSE)
+  if (!response)
     return;
 
   rc = xfce_rc_config_open (XFCE_RESOURCE_CONFIG, "xfce4/help.rc", FALSE);

@@ -1683,6 +1683,14 @@ xfce_icon_view_set_property (GObject *object,
       xfce_icon_view_set_layout_mode (icon_view, g_value_get_enum (value));
       break;
 
+    case PROP_TEXT_COLUMN:
+      priv->text_column = g_value_get_int (value);
+      break;
+
+    case PROP_MARKUP_COLUMN:
+      priv->markup_column = g_value_get_int (value);
+      break;
+
     case PROP_HADJUSTMENT:
       xfce_icon_view_set_adjustments (icon_view, g_value_get_object (value), priv->vadjustment);
       break;
@@ -2343,8 +2351,7 @@ xfce_icon_view_remove_widget (GtkCellEditable *editable,
 
   if (G_LIKELY (priv->edited_item != NULL))
     {
-      item = priv->edited_item;
-      priv->edited_item = NULL;
+      item = g_steal_pointer (&priv->edited_item);
       priv->editable = NULL;
 
       for (GList *lp = priv->cell_list; lp != NULL; lp = lp->next)
@@ -2440,8 +2447,7 @@ xfce_icon_view_stop_editing (XfceIconView *icon_view,
    * Please read that again if you intend to modify anything here.
    */
 
-  item = priv->edited_item;
-  priv->edited_item = NULL;
+  item = g_steal_pointer (&priv->edited_item);
 
   for (GList *lp = priv->cell_list; lp != NULL; lp = lp->next)
     {
@@ -5208,12 +5214,9 @@ xfce_icon_view_set_cell_data (XfceIconView *icon_view,
 static void
 free_cell_attributes (XfceIconViewCellInfo *info)
 {
-  GSList *lp;
-
-  for (lp = info->attributes; lp != NULL && lp->next != NULL; lp = lp->next->next)
+  for (GSList *lp = info->attributes; lp != NULL && lp->next != NULL; lp = lp->next->next)
     g_free (lp->data);
-  g_slist_free (info->attributes);
-  info->attributes = NULL;
+  g_clear_slist (&info->attributes, NULL);
 }
 
 
@@ -5315,8 +5318,7 @@ xfce_icon_view_cell_layout_clear (GtkCellLayout *layout)
   XfceIconView *icon_view = XFCE_ICON_VIEW (layout);
   XfceIconViewPrivate *priv = get_instance_private (icon_view);
 
-  g_list_free_full (priv->cell_list, (GDestroyNotify) free_cell_info);
-  priv->cell_list = NULL;
+  g_clear_list (&priv->cell_list, (GDestroyNotify) free_cell_info);
   priv->n_cells = 0;
 
   xfce_icon_view_invalidate_sizes (icon_view);
@@ -5339,8 +5341,7 @@ xfce_icon_view_cell_layout_set_cell_data_func (GtkCellLayout *layout,
     {
       if (G_UNLIKELY (info->destroy != NULL))
         {
-          notify = info->destroy;
-          info->destroy = NULL;
+          notify = g_steal_pointer (&info->destroy);
           (*notify) (info->func_data);
         }
 
@@ -7270,13 +7271,7 @@ static void
 remove_scroll_timeout (XfceIconView *icon_view)
 {
   XfceIconViewPrivate *priv = get_instance_private (icon_view);
-
-  if (priv->scroll_timeout_id != 0)
-    {
-      g_source_remove (priv->scroll_timeout_id);
-
-      priv->scroll_timeout_id = 0;
-    }
+  g_clear_handle_id (&priv->scroll_timeout_id, g_source_remove);
 }
 
 

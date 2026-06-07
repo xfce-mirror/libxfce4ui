@@ -37,6 +37,7 @@ typedef struct _XfceFilenameInput XfceFilenameInput;
 #define XFCE_FILENAME_INPUT_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), XFCE_TYPE_FILENAME_INPUT, XfceFilenameInputClass))
 #define XFCE_IS_FILENAME_INPUT_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), XFCE_TYPE_FILENAME_INPUT))
 #define XFCE_FILENAME_INPUT_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), XFCE_TYPE_FILENAME_INPUT, XfceFilenameInputClass))
+G_DEFINE_AUTOPTR_CLEANUP_FUNC (XfceFilenameInput, g_object_unref)
 
 GType
 xfce_filename_input_get_type (void) G_GNUC_CONST;

@@ -35,6 +35,7 @@ typedef struct _XfceShortcutsGrabber XfceShortcutsGrabber;
 #define XFCE_IS_SHORTCUTS_GRABBER(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), XFCE_TYPE_SHORTCUTS_GRABBER))
 #define XFCE_IS_SHORTCUTS_GRABBER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), XFCE_TYPE_SHORTCUTS_GRABBER)
 #define XFCE_SHORTCUTS_GRABBER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), XFCE_TYPE_SHORTCUTS_GRABBER, XfceShortcutsGrabberClass))
+G_DEFINE_AUTOPTR_CLEANUP_FUNC (XfceShortcutsGrabber, g_object_unref)
 
 GType
 xfce_shortcuts_grabber_get_type (void) G_GNUC_CONST;

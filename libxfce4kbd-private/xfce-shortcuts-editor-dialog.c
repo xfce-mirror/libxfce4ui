@@ -21,8 +21,6 @@
 #include <gdk/gdkkeysyms.h>
 #include <libxfce4util/libxfce4util.h>
 
-#include "libxfce4ui/libxfce4ui.h"
-
 #include "xfce-shortcut-dialog.h"
 #include "xfce-shortcuts-editor-dialog.h"
 #include "xfce-shortcuts-editor.h"
@@ -31,11 +29,6 @@
 
 
 
-struct _XfceShortcutsEditorDialogClass
-{
-  XfceTitledDialogClass __parent__;
-};
-
 struct _XfceShortcutsEditorDialog
 {
   XfceTitledDialog __parent__;
@@ -43,7 +36,7 @@ struct _XfceShortcutsEditorDialog
 
 
 
-G_DEFINE_TYPE (XfceShortcutsEditorDialog, xfce_shortcuts_editor_dialog, XFCE_TYPE_TITLED_DIALOG)
+G_DEFINE_FINAL_TYPE (XfceShortcutsEditorDialog, xfce_shortcuts_editor_dialog, XFCE_TYPE_TITLED_DIALOG)
 
 
 

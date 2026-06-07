@@ -196,7 +196,7 @@ enum
 
 enum
 {
-  PROP0 = 0,
+  PROP_0 = 0,
   PROP_RESUMED,
   PROP_RESTART_STYLE,
   PROP_PRIORITY,
@@ -563,7 +563,7 @@ xfce_sm_client_constructor (GType type,
       XfceSMClient *sm_client = XFCE_SM_CLIENT (obj);
 
       if (sm_client->client_id
-          && strcmp (sm_client->client_id, desktop_autostart_id))
+          && strcmp (sm_client->client_id, desktop_autostart_id) != 0)
         {
           g_warning ("SM client ID specified on command line (%s) is "
                      "different from ID specified by $DESKTOP_AUTOSTART_ID "
@@ -588,10 +588,8 @@ xfce_sm_client_finalize (GObject *obj)
   sm_client_singleton = NULL;
 
   startup_options.argc = 0;
-  g_strfreev (startup_options.argv);
-  startup_options.argv = NULL;
-  g_free (startup_options.client_id);
-  startup_options.client_id = NULL;
+  g_clear_pointer (&startup_options.argv, g_strfreev);
+  g_clear_pointer (&startup_options.client_id, g_free);
   startup_options.sm_disable = FALSE;
 
 #ifdef ENABLE_LIBSM
@@ -646,7 +644,7 @@ static void
 xfce_sm_client_set_client_id (XfceSMClient *sm_client,
                               const gchar *client_id)
 {
-  if (!g_strcmp0 (sm_client->client_id, client_id))
+  if (g_strcmp0 (sm_client->client_id, client_id) == 0)
     return;
 
   g_free (sm_client->client_id);
@@ -710,7 +708,7 @@ xfce_sm_client_parse_argv (XfceSMClient *sm_client)
         }
       else
         {
-          if (!strcmp (argv[i], "--sm-client-disable"))
+          if (strcmp (argv[i], "--sm-client-disable") == 0)
             startup_options.sm_disable = TRUE;
 
           if (clone_command)
@@ -751,8 +749,7 @@ xfce_sm_client_parse_argv (XfceSMClient *sm_client)
   g_free (clone_command);
 
   sm_client->argc = 0;
-  g_strfreev (sm_client->argv);
-  sm_client->argv = NULL;
+  g_clear_pointer (&sm_client->argv, g_strfreev);
 }
 
 #ifdef ENABLE_LIBSM
@@ -1348,7 +1345,7 @@ xfce_sm_client_set_property_from_command (XfceSMClient *sm_client,
           /* if the client IDs don't match, we need to replace it, and
            * we'll do it in the same form (either 2 arg, or 1 arg with
            * the '=' separator) to avoid shifting the array around */
-          if (strcmp (cur_client_id, sm_client->client_id))
+          if (strcmp (cur_client_id, sm_client->client_id) != 0)
             {
               if (cur_client_id == command[argc + 1])
                 {
@@ -1699,7 +1696,7 @@ xfce_sm_client_connect (XfceSMClient *sm_client,
     }
 
   if (sm_client->client_id
-      && !strcmp (sm_client->client_id, given_client_id))
+      && strcmp (sm_client->client_id, given_client_id) == 0)
     {
       xfce_sm_client_set_state (sm_client, XFCE_SM_CLIENT_STATE_IDLE);
       sm_client->resumed = TRUE;
@@ -1896,7 +1893,7 @@ xfce_sm_client_set_desktop_file (XfceSMClient *sm_client,
   g_return_if_fail (XFCE_IS_SM_CLIENT (sm_client));
   g_return_if_fail (desktop_file);
 
-  if (!g_strcmp0 (sm_client->desktop_file, desktop_file))
+  if (g_strcmp0 (sm_client->desktop_file, desktop_file) == 0)
     return;
 
   if (!g_path_is_absolute (desktop_file))
@@ -2135,7 +2132,7 @@ xfce_sm_client_set_current_directory (XfceSMClient *sm_client,
   g_return_if_fail (XFCE_IS_SM_CLIENT (sm_client));
   g_return_if_fail (current_directory && current_directory[0]);
 
-  if (!g_strcmp0 (sm_client->current_directory, current_directory))
+  if (g_strcmp0 (sm_client->current_directory, current_directory) == 0)
     return;
 
   g_free (sm_client->current_directory);
@@ -2167,10 +2164,7 @@ copy_command (gchar **command,
               gchar **value)
 {
   if (command != value)
-    {
-      g_strfreev (command);
-      command = NULL;
-    }
+    g_clear_pointer (&command, g_strfreev);
 
   if (value)
     command = g_strdupv (value);

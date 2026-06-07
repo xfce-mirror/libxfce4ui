@@ -104,7 +104,7 @@ static DbusScreensaver dbus_screensavers[] = {
 
 
 
-G_DEFINE_TYPE (XfceScreensaver, xfce_screensaver, G_TYPE_OBJECT)
+G_DEFINE_FINAL_TYPE (XfceScreensaver, xfce_screensaver, G_TYPE_OBJECT)
 
 
 
@@ -118,19 +118,13 @@ xfce_screensaver_class_init (XfceScreensaverClass *klass)
   object_class->constructed = xfce_screensaver_constructed;
   object_class->finalize = xfce_screensaver_finalize;
 
-#define XFCE_PARAM_FLAGS (G_PARAM_READWRITE \
-                          | G_PARAM_CONSTRUCT \
-                          | G_PARAM_STATIC_NAME \
-                          | G_PARAM_STATIC_NICK \
-                          | G_PARAM_STATIC_BLURB)
-
   g_object_class_install_property (object_class, PROP_HEARTBEAT_COMMAND,
                                    g_param_spec_string ("heartbeat-command",
                                                         "heartbeat-command",
                                                         "Inhibit the screensaver from activating, "
                                                         "e.g. xscreensaver-command --deactivate",
                                                         NULL,
-                                                        XFCE_PARAM_FLAGS));
+                                                        G_PARAM_READWRITE | G_PARAM_CONSTRUCT | G_PARAM_STATIC_STRINGS));
 
   g_object_class_install_property (object_class, PROP_LOCK_COMMAND,
                                    g_param_spec_string ("lock-command",
@@ -138,15 +132,14 @@ xfce_screensaver_class_init (XfceScreensaverClass *klass)
                                                         "Lock the desktop, e.g. "
                                                         "xscreensaver-command --lock",
                                                         NULL,
-                                                        XFCE_PARAM_FLAGS));
+                                                        G_PARAM_READWRITE | G_PARAM_CONSTRUCT | G_PARAM_STATIC_STRINGS));
 
   g_object_class_install_property (object_class, PROP_LOCK_ON_SLEEP,
                                    g_param_spec_boolean ("lock-on-sleep",
                                                          "lock-on-sleep",
                                                          "Whether to lock before suspend/hibernate",
                                                          FALSE,
-                                                         XFCE_PARAM_FLAGS));
-#undef XFCE_PARAM_FLAGS
+                                                         G_PARAM_READWRITE | G_PARAM_CONSTRUCT | G_PARAM_STATIC_STRINGS));
 }
 
 
@@ -169,11 +162,7 @@ name_owner_changed (GDBusProxy *proxy,
                 {
                   saver->screensaver_type = SCREENSAVER_TYPE_OTHER;
                   saver->cookie = 0;
-                  if (saver->screensaver_id != 0)
-                    {
-                      g_source_remove (saver->screensaver_id);
-                      saver->screensaver_id = 0;
-                    }
+                  g_clear_handle_id (&saver->screensaver_id, g_source_remove);
                 }
             }
           else
@@ -284,8 +273,7 @@ xfce_screensaver_set_property (GObject *object,
   switch (property_id)
     {
     case PROP_HEARTBEAT_COMMAND:
-      g_free (saver->heartbeat_command);
-      saver->heartbeat_command = NULL;
+      g_clear_pointer (&saver->heartbeat_command, g_free);
       str_value = g_value_get_string (value);
       if (!xfce_str_is_empty (str_value))
         saver->heartbeat_command = g_strdup (str_value);
@@ -293,8 +281,7 @@ xfce_screensaver_set_property (GObject *object,
       break;
 
     case PROP_LOCK_COMMAND:
-      g_free (saver->lock_command);
-      saver->lock_command = NULL;
+      g_clear_pointer (&saver->lock_command, g_free);
       str_value = g_value_get_string (value);
       if (!xfce_str_is_empty (str_value))
         saver->lock_command = g_strdup (str_value);
@@ -369,26 +356,13 @@ xfce_screensaver_finalize (GObject *object)
 {
   XfceScreensaver *saver = XFCE_SCREENSAVER (object);
 
-  if (saver->screensaver_id != 0)
-    {
-      g_source_remove (saver->screensaver_id);
-      saver->screensaver_id = 0;
-    }
+  g_clear_handle_id (&saver->screensaver_id, g_source_remove);
 
   for (guint i = 0; i < SCREENSAVER_TYPE_OTHER; i++)
     g_clear_object (&saver->proxies[i]);
 
-  if (saver->heartbeat_command)
-    {
-      g_free (saver->heartbeat_command);
-      saver->heartbeat_command = NULL;
-    }
-
-  if (saver->lock_command)
-    {
-      g_free (saver->lock_command);
-      saver->lock_command = NULL;
-    }
+  g_clear_pointer (&saver->heartbeat_command, g_free);
+  g_clear_pointer (&saver->lock_command, g_free);
 
   if (saver->xfconf_initialized)
     xfconf_shutdown ();
@@ -520,11 +494,7 @@ xfce_screensaver_inhibit (XfceScreensaver *saver,
     case SCREENSAVER_TYPE_CINNAMON:
     case SCREENSAVER_TYPE_OTHER:
       /* remove any existing keepalive */
-      if (saver->screensaver_id != 0)
-        {
-          g_source_remove (saver->screensaver_id);
-          saver->screensaver_id = 0;
-        }
+      g_clear_handle_id (&saver->screensaver_id, g_source_remove);
 
       if (inhibit)
         {

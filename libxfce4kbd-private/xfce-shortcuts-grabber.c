@@ -457,10 +457,7 @@ _xfce_shortcuts_grabber_grab (XfceShortcutsGrabber *grabber,
     }
 
   if (*n_keys == 0)
-    {
-      g_free (*keys);
-      *keys = NULL;
-    }
+    g_clear_pointer (keys, g_free);
 }
 
 
@@ -626,8 +623,7 @@ xfce_shortcuts_grabber_ungrab (XfceShortcutsGrabber *grabber,
         }
     }
 
-  g_free (key->keys);
-  key->keys = NULL;
+  g_clear_pointer (&key->keys, g_free);
   key->n_keys = 0;
   key->non_virtual_modifiers = 0;
   key->numlock_modifier = 0;

@@ -56,7 +56,7 @@ struct _XfceThumbnailPreview
 
 
 
-G_DEFINE_TYPE (XfceThumbnailPreview, xfce_thumbnail_preview, GTK_TYPE_FRAME)
+G_DEFINE_FINAL_TYPE (XfceThumbnailPreview, xfce_thumbnail_preview, GTK_TYPE_FRAME)
 
 
 

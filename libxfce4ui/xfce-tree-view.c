@@ -130,7 +130,7 @@ struct _XfceTreeView
 
 
 
-G_DEFINE_TYPE (XfceTreeView, xfce_tree_view, GTK_TYPE_TREE_VIEW)
+G_DEFINE_FINAL_TYPE (XfceTreeView, xfce_tree_view, GTK_TYPE_TREE_VIEW)
 
 
 

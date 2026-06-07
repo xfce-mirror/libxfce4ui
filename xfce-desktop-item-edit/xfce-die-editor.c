@@ -99,7 +99,7 @@ struct _XfceDieEditor
 
 
 
-G_DEFINE_TYPE (XfceDieEditor, xfce_die_editor, GTK_TYPE_GRID)
+G_DEFINE_FINAL_TYPE (XfceDieEditor, xfce_die_editor, GTK_TYPE_GRID)
 
 
 

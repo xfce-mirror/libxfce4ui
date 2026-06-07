@@ -275,7 +275,7 @@ xfce_open_launch_desktop_file (const gchar *arg)
     return FALSE;
 
   /* Only execute local .desktop files to prevent execution of malicious launchers from  foreign locations */
-  if (g_file_has_uri_scheme (gfile, "file") == FALSE)
+  if (!g_file_has_uri_scheme (gfile, "file"))
     {
       char *uri = g_file_get_uri (gfile);
       g_warning ("Execution of remote .desktop file '%s' was skipped due to security concerns.", uri);

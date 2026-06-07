@@ -74,7 +74,7 @@ struct _XfceDieCommandEntry
 
 
 
-G_DEFINE_TYPE (XfceDieCommandEntry, xfce_die_command_entry, GTK_TYPE_BOX)
+G_DEFINE_FINAL_TYPE (XfceDieCommandEntry, xfce_die_command_entry, GTK_TYPE_BOX)
 
 
 

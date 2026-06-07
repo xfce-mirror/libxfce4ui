@@ -209,16 +209,14 @@ xfce_filename_input_class_init (XfceFilenameInputClass *klass)
 static void
 xfce_filename_input_init (XfceFilenameInput *filename_input)
 {
-  GError *err = NULL;
-
   /* by default there is no maximum length for the filename and no original filename */
   filename_input->max_text_length = -1;
   filename_input->original_filename = NULL;
 
   /* compile the regular expressions used to check the input */
   /* the pattern for whitespace_regex matches if the text starts or ends with whitespace */
-  filename_input->whitespace_regex = g_regex_new ("^\\s|\\s$", 0, 0, &err);
-  filename_input->dir_sep_regex = g_regex_new (G_DIR_SEPARATOR_S, 0, 0, &err);
+  filename_input->whitespace_regex = g_regex_new ("^\\s|\\s$", 0, 0, NULL);
+  filename_input->dir_sep_regex = g_regex_new (G_DIR_SEPARATOR_S, 0, 0, NULL);
 
   /* set up the GtkEntry for the input */
   filename_input->entry = GTK_ENTRY (gtk_entry_new ());
