@@ -129,9 +129,9 @@ static const gchar CONTEXT_NAMES[][13] = {
 
 
 
-G_DEFINE_TYPE_WITH_CODE (XfceIconChooserModel, xfce_icon_chooser_model, G_TYPE_OBJECT,
-                         G_IMPLEMENT_INTERFACE (GTK_TYPE_TREE_MODEL,
-                                                xfce_icon_chooser_model_tree_model_init))
+G_DEFINE_FINAL_TYPE_WITH_CODE (XfceIconChooserModel, xfce_icon_chooser_model, G_TYPE_OBJECT,
+                               G_IMPLEMENT_INTERFACE (GTK_TYPE_TREE_MODEL,
+                                                      xfce_icon_chooser_model_tree_model_init))
 
 
 

@@ -104,7 +104,7 @@ static DbusScreensaver dbus_screensavers[] = {
 
 
 
-G_DEFINE_TYPE (XfceScreensaver, xfce_screensaver, G_TYPE_OBJECT)
+G_DEFINE_FINAL_TYPE (XfceScreensaver, xfce_screensaver, G_TYPE_OBJECT)
 
 
 

@@ -155,7 +155,7 @@ static const gchar CONTEXT_TITLES[][80] = {
 
 
 
-G_DEFINE_TYPE (XfceIconChooserDialog, xfce_icon_chooser_dialog, GTK_TYPE_DIALOG)
+G_DEFINE_FINAL_TYPE (XfceIconChooserDialog, xfce_icon_chooser_dialog, GTK_TYPE_DIALOG)
 
 
 

@@ -117,7 +117,7 @@ static void
 xfce_item_list_store_reset (XfceItemListModel *model);
 
 
-G_DEFINE_TYPE (XfceItemListStore, xfce_item_list_store, XFCE_TYPE_ITEM_LIST_MODEL)
+G_DEFINE_FINAL_TYPE (XfceItemListStore, xfce_item_list_store, XFCE_TYPE_ITEM_LIST_MODEL)
 
 
 

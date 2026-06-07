@@ -106,8 +106,8 @@ static guint command_model_signals[LAST_SIGNAL];
 
 
 
-G_DEFINE_TYPE_WITH_CODE (XfceDieCommandModel, xfce_die_command_model, G_TYPE_OBJECT,
-                         G_IMPLEMENT_INTERFACE (GTK_TYPE_TREE_MODEL, xfce_die_command_model_tree_model_init))
+G_DEFINE_FINAL_TYPE_WITH_CODE (XfceDieCommandModel, xfce_die_command_model, G_TYPE_OBJECT,
+                               G_IMPLEMENT_INTERFACE (GTK_TYPE_TREE_MODEL, xfce_die_command_model_tree_model_init))
 
 
 

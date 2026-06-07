@@ -110,7 +110,7 @@ static Atom XA_TIMESTAMP = None;
 
 
 
-G_DEFINE_TYPE (XfceClipboardManager, xfce_clipboard_manager, G_TYPE_OBJECT)
+G_DEFINE_FINAL_TYPE (XfceClipboardManager, xfce_clipboard_manager, G_TYPE_OBJECT)
 
 
 
