@@ -26,15 +26,8 @@
 
 G_BEGIN_DECLS
 
-typedef struct _XfceShortcutsEditorClass XfceShortcutsEditorClass;
-typedef struct _XfceShortcutsEditor XfceShortcutsEditor;
-
 #define XFCE_TYPE_SHORTCUTS_EDITOR (xfce_shortcuts_editor_get_type ())
-#define XFCE_SHORTCUTS_EDITOR(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), XFCE_TYPE_SHORTCUTS_EDITOR, XfceShortcutsEditor))
-#define XFCE_SHORTCUTS_EDITOR_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), XFCE_TYPE_SHORTCUTS_EDITOR, XfceShortcutsEditorClass))
-#define XFCE_IS_SHORTCUTS_EDITOR(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), XFCE_TYPE_SHORTCUTS_EDITOR))
-#define XFCE_IS_SHORTCUTS_EDITOR_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), XFCE_TYPE_SHORTCUTS_EDITOR))
-#define XFCE_SHORTCUTS_EDITOR_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), XFCE_TYPE_SHORTCUTS_EDITOR, XfceShortcutsEditorClass))
+G_DECLARE_FINAL_TYPE (XfceShortcutsEditor, xfce_shortcuts_editor, XFCE, SHORTCUTS_EDITOR, GtkBox)
 
 typedef struct
 {
@@ -42,9 +35,6 @@ typedef struct
   XfceGtkActionEntry *entries;
   size_t size;
 } XfceShortcutsEditorSection;
-
-GType
-xfce_shortcuts_editor_get_type (void) G_GNUC_CONST;
 
 GtkWidget *
 xfce_shortcuts_editor_new (int argument_count,

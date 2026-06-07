@@ -34,6 +34,7 @@ typedef struct _XfceShortcutDialog XfceShortcutDialog;
 #define XFCE_IS_SHORTCUT_DIALOG(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), XFCE_TYPE_SHORTCUT_DIALOG))
 #define XFCE_IS_SHORTCUT_DIALOG_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), XFCE_TYPE_SHORTCUT_DIALOG))
 #define XFCE_SHORTCUT_DIALOG_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), XFCE_TYPE_SHORTCUT_DIALOG, XfceShortcutDialogClass))
+G_DEFINE_AUTOPTR_CLEANUP_FUNC (XfceShortcutDialog, g_object_unref)
 
 GType
 xfce_shortcut_dialog_get_type (void) G_GNUC_CONST;

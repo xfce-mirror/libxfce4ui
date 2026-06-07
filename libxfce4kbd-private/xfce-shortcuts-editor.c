@@ -90,14 +90,9 @@ free_data (gpointer data,
 
 
 
-struct _XfceShortcutsEditorClass
-{
-  GtkVBoxClass __parent__;
-};
-
 struct _XfceShortcutsEditor
 {
-  GtkVBox __parent__;
+  GtkBox __parent__;
 
   XfceShortcutsEditorSection *arrays;
   size_t arrays_count;
@@ -111,7 +106,7 @@ struct _XfceShortcutsEditor
 
 
 
-G_DEFINE_TYPE (XfceShortcutsEditor, xfce_shortcuts_editor, GTK_TYPE_BOX)
+G_DEFINE_FINAL_TYPE (XfceShortcutsEditor, xfce_shortcuts_editor, GTK_TYPE_BOX)
 
 
 

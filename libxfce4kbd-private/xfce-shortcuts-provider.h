@@ -37,6 +37,7 @@ typedef struct _XfceShortcutsProvider XfceShortcutsProvider;
 #define XFCE_IS_SHORTCUTS_PROVIDER(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), XFCE_TYPE_SHORTCUTS_PROVIDER))
 #define XFCE_IS_SHORTCUTS_PROVIDER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), XFCE_TYPE_SHORTCUTS_PROVIDER)
 #define XFCE_SHORTCUTS_PROVIDER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), XFCE_TYPE_SHORTCUTS_PROVIDER, XfceShortcutsProviderClass))
+G_DEFINE_AUTOPTR_CLEANUP_FUNC (XfceShortcutsProvider, g_object_unref)
 
 #define XFCE_TYPE_SHORTCUT (xfce_shortcut_get_type ())
 
@@ -82,6 +83,7 @@ XfceShortcut *
 xfce_shortcut_copy (XfceShortcut *shortcut);
 void
 xfce_shortcut_free (XfceShortcut *shortcut);
+G_DEFINE_AUTOPTR_CLEANUP_FUNC (XfceShortcut, xfce_shortcut_free)
 
 
 
