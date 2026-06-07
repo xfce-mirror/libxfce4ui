@@ -5208,12 +5208,9 @@ xfce_icon_view_set_cell_data (XfceIconView *icon_view,
 static void
 free_cell_attributes (XfceIconViewCellInfo *info)
 {
-  GSList *lp;
-
-  for (lp = info->attributes; lp != NULL && lp->next != NULL; lp = lp->next->next)
+  for (GSList *lp = info->attributes; lp != NULL && lp->next != NULL; lp = lp->next->next)
     g_free (lp->data);
-  g_slist_free (info->attributes);
-  info->attributes = NULL;
+  g_clear_slist (&info->attributes, NULL);
 }
 
 
@@ -5315,8 +5312,7 @@ xfce_icon_view_cell_layout_clear (GtkCellLayout *layout)
   XfceIconView *icon_view = XFCE_ICON_VIEW (layout);
   XfceIconViewPrivate *priv = get_instance_private (icon_view);
 
-  g_list_free_full (priv->cell_list, (GDestroyNotify) free_cell_info);
-  priv->cell_list = NULL;
+  g_clear_list (&priv->cell_list, (GDestroyNotify) free_cell_info);
   priv->n_cells = 0;
 
   xfce_icon_view_invalidate_sizes (icon_view);
@@ -7270,13 +7266,7 @@ static void
 remove_scroll_timeout (XfceIconView *icon_view)
 {
   XfceIconViewPrivate *priv = get_instance_private (icon_view);
-
-  if (priv->scroll_timeout_id != 0)
-    {
-      g_source_remove (priv->scroll_timeout_id);
-
-      priv->scroll_timeout_id = 0;
-    }
+  g_clear_handle_id (&priv->scroll_timeout_id, g_source_remove);
 }
 
 

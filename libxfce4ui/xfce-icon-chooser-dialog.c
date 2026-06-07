@@ -315,11 +315,7 @@ xfce_icon_chooser_dialog_finalize (GObject *object)
 {
   XfceIconChooserDialog *dialog = XFCE_ICON_CHOOSER_DIALOG (object);
 
-  if (dialog->filter_entry_timeout_source_id != 0)
-    {
-      g_source_remove (dialog->filter_entry_timeout_source_id);
-      dialog->filter_entry_timeout_source_id = 0;
-    }
+  g_clear_handle_id (&dialog->filter_entry_timeout_source_id, g_source_remove);
   g_free (dialog->casefolded_text);
 
   G_OBJECT_CLASS (xfce_icon_chooser_dialog_parent_class)->finalize (object);
@@ -536,10 +532,7 @@ xfce_icon_chooser_dialog_entry_changed_delay (GtkEntry *entry,
                                               XfceIconChooserDialog *dialog)
 {
   if (dialog->filter_entry_timeout_source_id != 0)
-    {
-      g_source_remove (dialog->filter_entry_timeout_source_id);
-      dialog->filter_entry_timeout_source_id = 0;
-    }
+    g_source_remove (dialog->filter_entry_timeout_source_id);
 
   dialog->filter_entry_timeout_source_id = g_timeout_add (FILTER_ENTRY_DELAY,
                                                           xfce_icon_chooser_dialog_entry_changed,
@@ -556,8 +549,7 @@ xfce_icon_chooser_dialog_entry_changed (gpointer user_data)
   gchar *normalized;
   GtkTreeModel *model;
 
-  g_free (dialog->casefolded_text);
-  dialog->casefolded_text = NULL;
+  g_clear_pointer (&dialog->casefolded_text, g_free);
 
   text = gtk_entry_get_text (GTK_ENTRY (dialog->filter_entry));
   if (!xfce_str_is_empty (text))
@@ -711,8 +703,7 @@ xfce_icon_chooser_dialog_get_icon (XfceIconChooserDialog *dialog)
       if (icon != NULL && gdk_pixbuf_get_file_info (icon, NULL, NULL) == NULL)
         {
           /* whatever the user selected, it's not an icon that we support */
-          g_free (icon);
-          icon = NULL;
+          g_clear_pointer (&icon, g_free);
         }
     }
   else

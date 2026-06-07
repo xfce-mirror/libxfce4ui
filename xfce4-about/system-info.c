@@ -427,8 +427,7 @@ get_gpu_info (guint *num_gpus)
           strip = strip && !g_str_has_prefix (renderer_lc, "softpipe");
           strip = strip && !g_str_has_prefix (renderer_lc, "swr");
           strip = strip && !g_str_has_prefix (renderer_lc, "zink");
-          g_free (renderer_lc);
-          renderer_lc = NULL;
+          g_clear_pointer (&renderer_lc, g_free);
 
           if (strip)
             {
@@ -509,8 +508,7 @@ get_gpu_info (guint *num_gpus)
       if (num_gpus)
         *num_gpus = g_list_length (gpus);
 
-      g_list_free_full (gpus, free_gpu_info);
-      gpus = NULL;
+      g_clear_list (&gpus, free_gpu_info);
     }
 
   if (!result)

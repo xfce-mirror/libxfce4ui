@@ -169,11 +169,7 @@ name_owner_changed (GDBusProxy *proxy,
                 {
                   saver->screensaver_type = SCREENSAVER_TYPE_OTHER;
                   saver->cookie = 0;
-                  if (saver->screensaver_id != 0)
-                    {
-                      g_source_remove (saver->screensaver_id);
-                      saver->screensaver_id = 0;
-                    }
+                  g_clear_handle_id (&saver->screensaver_id, g_source_remove);
                 }
             }
           else
@@ -284,8 +280,7 @@ xfce_screensaver_set_property (GObject *object,
   switch (property_id)
     {
     case PROP_HEARTBEAT_COMMAND:
-      g_free (saver->heartbeat_command);
-      saver->heartbeat_command = NULL;
+      g_clear_pointer (&saver->heartbeat_command, g_free);
       str_value = g_value_get_string (value);
       if (!xfce_str_is_empty (str_value))
         saver->heartbeat_command = g_strdup (str_value);
@@ -293,8 +288,7 @@ xfce_screensaver_set_property (GObject *object,
       break;
 
     case PROP_LOCK_COMMAND:
-      g_free (saver->lock_command);
-      saver->lock_command = NULL;
+      g_clear_pointer (&saver->lock_command, g_free);
       str_value = g_value_get_string (value);
       if (!xfce_str_is_empty (str_value))
         saver->lock_command = g_strdup (str_value);
@@ -369,26 +363,13 @@ xfce_screensaver_finalize (GObject *object)
 {
   XfceScreensaver *saver = XFCE_SCREENSAVER (object);
 
-  if (saver->screensaver_id != 0)
-    {
-      g_source_remove (saver->screensaver_id);
-      saver->screensaver_id = 0;
-    }
+  g_clear_handle_id (&saver->screensaver_id, g_source_remove);
 
   for (guint i = 0; i < SCREENSAVER_TYPE_OTHER; i++)
     g_clear_object (&saver->proxies[i]);
 
-  if (saver->heartbeat_command)
-    {
-      g_free (saver->heartbeat_command);
-      saver->heartbeat_command = NULL;
-    }
-
-  if (saver->lock_command)
-    {
-      g_free (saver->lock_command);
-      saver->lock_command = NULL;
-    }
+  g_clear_pointer (&saver->heartbeat_command, g_free);
+  g_clear_pointer (&saver->lock_command, g_free);
 
   if (saver->xfconf_initialized)
     xfconf_shutdown ();
@@ -520,11 +501,7 @@ xfce_screensaver_inhibit (XfceScreensaver *saver,
     case SCREENSAVER_TYPE_CINNAMON:
     case SCREENSAVER_TYPE_OTHER:
       /* remove any existing keepalive */
-      if (saver->screensaver_id != 0)
-        {
-          g_source_remove (saver->screensaver_id);
-          saver->screensaver_id = 0;
-        }
+      g_clear_handle_id (&saver->screensaver_id, g_source_remove);
 
       if (inhibit)
         {

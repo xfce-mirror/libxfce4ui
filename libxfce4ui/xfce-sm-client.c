@@ -588,10 +588,8 @@ xfce_sm_client_finalize (GObject *obj)
   sm_client_singleton = NULL;
 
   startup_options.argc = 0;
-  g_strfreev (startup_options.argv);
-  startup_options.argv = NULL;
-  g_free (startup_options.client_id);
-  startup_options.client_id = NULL;
+  g_clear_pointer (&startup_options.argv, g_strfreev);
+  g_clear_pointer (&startup_options.client_id, g_free);
   startup_options.sm_disable = FALSE;
 
 #ifdef ENABLE_LIBSM
@@ -751,8 +749,7 @@ xfce_sm_client_parse_argv (XfceSMClient *sm_client)
   g_free (clone_command);
 
   sm_client->argc = 0;
-  g_strfreev (sm_client->argv);
-  sm_client->argv = NULL;
+  g_clear_pointer (&sm_client->argv, g_strfreev);
 }
 
 #ifdef ENABLE_LIBSM
@@ -2167,10 +2164,7 @@ copy_command (gchar **command,
               gchar **value)
 {
   if (command != value)
-    {
-      g_strfreev (command);
-      command = NULL;
-    }
+    g_clear_pointer (&command, g_strfreev);
 
   if (value)
     command = g_strdupv (value);
