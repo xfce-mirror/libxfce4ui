@@ -118,19 +118,13 @@ xfce_screensaver_class_init (XfceScreensaverClass *klass)
   object_class->constructed = xfce_screensaver_constructed;
   object_class->finalize = xfce_screensaver_finalize;
 
-#define XFCE_PARAM_FLAGS (G_PARAM_READWRITE \
-                          | G_PARAM_CONSTRUCT \
-                          | G_PARAM_STATIC_NAME \
-                          | G_PARAM_STATIC_NICK \
-                          | G_PARAM_STATIC_BLURB)
-
   g_object_class_install_property (object_class, PROP_HEARTBEAT_COMMAND,
                                    g_param_spec_string ("heartbeat-command",
                                                         "heartbeat-command",
                                                         "Inhibit the screensaver from activating, "
                                                         "e.g. xscreensaver-command --deactivate",
                                                         NULL,
-                                                        XFCE_PARAM_FLAGS));
+                                                        G_PARAM_READWRITE | G_PARAM_CONSTRUCT | G_PARAM_STATIC_STRINGS));
 
   g_object_class_install_property (object_class, PROP_LOCK_COMMAND,
                                    g_param_spec_string ("lock-command",
@@ -138,15 +132,14 @@ xfce_screensaver_class_init (XfceScreensaverClass *klass)
                                                         "Lock the desktop, e.g. "
                                                         "xscreensaver-command --lock",
                                                         NULL,
-                                                        XFCE_PARAM_FLAGS));
+                                                        G_PARAM_READWRITE | G_PARAM_CONSTRUCT | G_PARAM_STATIC_STRINGS));
 
   g_object_class_install_property (object_class, PROP_LOCK_ON_SLEEP,
                                    g_param_spec_boolean ("lock-on-sleep",
                                                          "lock-on-sleep",
                                                          "Whether to lock before suspend/hibernate",
                                                          FALSE,
-                                                         XFCE_PARAM_FLAGS));
-#undef XFCE_PARAM_FLAGS
+                                                         G_PARAM_READWRITE | G_PARAM_CONSTRUCT | G_PARAM_STATIC_STRINGS));
 }
 
 
