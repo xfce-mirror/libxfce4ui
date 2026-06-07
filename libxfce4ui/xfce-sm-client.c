@@ -196,7 +196,7 @@ enum
 
 enum
 {
-  PROP0 = 0,
+  PROP_0 = 0,
   PROP_RESUMED,
   PROP_RESTART_STYLE,
   PROP_PRIORITY,

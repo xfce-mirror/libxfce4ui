@@ -1683,6 +1683,14 @@ xfce_icon_view_set_property (GObject *object,
       xfce_icon_view_set_layout_mode (icon_view, g_value_get_enum (value));
       break;
 
+    case PROP_TEXT_COLUMN:
+      priv->text_column = g_value_get_int (value);
+      break;
+
+    case PROP_MARKUP_COLUMN:
+      priv->markup_column = g_value_get_int (value);
+      break;
+
     case PROP_HADJUSTMENT:
       xfce_icon_view_set_adjustments (icon_view, g_value_get_object (value), priv->vadjustment);
       break;
