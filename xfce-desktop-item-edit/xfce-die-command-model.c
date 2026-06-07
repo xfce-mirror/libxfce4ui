@@ -391,16 +391,14 @@ xfce_die_command_model_collect_idle (gpointer user_data)
   g_return_val_if_fail (command_model->items == NULL, FALSE);
 
   /* move the collected items "online" */
-  command_model->items = command_model->collect_items;
-  command_model->collect_items = NULL;
+  command_model->items = g_steal_pointer (&command_model->collect_items);
 
   /* emit notifications for all new items */
   path = gtk_tree_path_new_first ();
   for (lp = command_model->items; lp != NULL; lp = lp->next)
     {
       /* remember the next item */
-      np = lp->next;
-      lp->next = NULL;
+      np = g_steal_pointer (&lp->next);
 
       /* generate the iterator */
       iter.stamp = command_model->stamp;

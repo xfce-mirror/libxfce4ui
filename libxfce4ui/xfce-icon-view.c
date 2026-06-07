@@ -2343,8 +2343,7 @@ xfce_icon_view_remove_widget (GtkCellEditable *editable,
 
   if (G_LIKELY (priv->edited_item != NULL))
     {
-      item = priv->edited_item;
-      priv->edited_item = NULL;
+      item = g_steal_pointer (&priv->edited_item);
       priv->editable = NULL;
 
       for (GList *lp = priv->cell_list; lp != NULL; lp = lp->next)
@@ -2440,8 +2439,7 @@ xfce_icon_view_stop_editing (XfceIconView *icon_view,
    * Please read that again if you intend to modify anything here.
    */
 
-  item = priv->edited_item;
-  priv->edited_item = NULL;
+  item = g_steal_pointer (&priv->edited_item);
 
   for (GList *lp = priv->cell_list; lp != NULL; lp = lp->next)
     {
@@ -5335,8 +5333,7 @@ xfce_icon_view_cell_layout_set_cell_data_func (GtkCellLayout *layout,
     {
       if (G_UNLIKELY (info->destroy != NULL))
         {
-          notify = info->destroy;
-          info->destroy = NULL;
+          notify = g_steal_pointer (&info->destroy);
           (*notify) (info->func_data);
         }
 

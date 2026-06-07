@@ -437,16 +437,14 @@ xfce_die_desktop_model_collect_idle (gpointer user_data)
   g_return_val_if_fail (desktop_model->items == NULL, FALSE);
 
   /* move the collected items "online" */
-  desktop_model->items = desktop_model->collect_items;
-  desktop_model->collect_items = NULL;
+  desktop_model->items = g_steal_pointer (&desktop_model->collect_items);
 
   /* emit notifications for all new items */
   path = gtk_tree_path_new_first ();
   for (lp = desktop_model->items; lp != NULL; lp = lp->next)
     {
       /* remember the next item */
-      np = lp->next;
-      lp->next = NULL;
+      np = g_steal_pointer (&lp->next);
 
       /* generate the iterator */
       iter.stamp = desktop_model->stamp;
