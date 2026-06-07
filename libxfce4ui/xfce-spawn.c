@@ -292,7 +292,7 @@ xfce_spawn_process (GdkScreen *screen,
 
   if (!WINDOWING_IS_X11 ())
     {
-      if (startup_notify == TRUE)
+      if (startup_notify)
         {
           /* 'sn_display_new' crashes when used via wayland, so no startup notification support here */
           static gsize once = 0;
@@ -467,7 +467,7 @@ _xfce_spawn_command_line (GdkScreen *screen,
   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
   g_return_val_if_fail (command_line != NULL, FALSE);
 
-  if (in_terminal == FALSE)
+  if (!in_terminal)
     {
       /* parse the command, retrun false with error when this fails */
       if (G_UNLIKELY (!g_shell_parse_argv (command_line, NULL, &argv, error)))

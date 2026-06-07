@@ -750,7 +750,7 @@ xfce_shortcuts_editor_shortcut_reset_clicked (GtkWidget *widget,
   g_clear_pointer (&info.paths_with_overlap_allowed, g_hash_table_destroy);
 
   /* an empty default accelerator is always available */
-  if (g_strcmp0 (data->entry->default_accelerator, "") != 0 && info.in_use == TRUE)
+  if (g_strcmp0 (data->entry->default_accelerator, "") != 0 && info.in_use)
     {
       command = g_strrstr (info.other_path, "/");
       command = command == NULL ? info.other_path : command + 1; /* skip leading slash */

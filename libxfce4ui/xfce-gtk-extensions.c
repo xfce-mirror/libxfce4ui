@@ -491,7 +491,7 @@ xfce_gtk_accel_map_add_entries (const XfceGtkActionEntry *action_entries,
         continue;
 
       /* If the accel path was not loaded to the acel_map via file, we add the default key for it to the accel_map */
-      if (gtk_accel_map_lookup_entry (action_entries[i].accel_path, &key) == FALSE)
+      if (!gtk_accel_map_lookup_entry (action_entries[i].accel_path, &key))
         {
           gtk_accelerator_parse (action_entries[i].default_accelerator, &key.accel_key, &key.accel_mods);
           gtk_accel_map_add_entry (action_entries[i].accel_path, key.accel_key, key.accel_mods);
@@ -563,7 +563,7 @@ xfce_gtk_accel_group_disconnect_action_entries (GtkAccelGroup *accel_group,
         continue;
       if (action_entries[i].callback != NULL)
         {
-          if (gtk_accel_map_lookup_entry (action_entries[i].accel_path, &key) == TRUE)
+          if (gtk_accel_map_lookup_entry (action_entries[i].accel_path, &key))
             gtk_accel_group_disconnect_key (accel_group, key.accel_key, key.accel_mods);
         }
     }

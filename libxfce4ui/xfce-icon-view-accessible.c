@@ -1242,7 +1242,7 @@ xfce_icon_view_accessible_traverse_items (XfceIconViewAccessible *view,
           info = (XfceIconViewItemAccessibleInfo *) items->data;
           item = XFCE_ICON_VIEW_ITEM_ACCESSIBLE (info->item);
 
-          if (act_on_item == FALSE && list == items)
+          if (!act_on_item && list == items)
             act_on_item = TRUE;
 
           if (act_on_item)
