@@ -457,7 +457,7 @@ msgstr "Obnoví všechny položky na výchozí nastavení"
 msgid ""
 "This shortcut is already being used for the action '%s'. Which action do you"
 " want to use?"
-msgstr "Tuto klávesovou zkratku již používá akce %s. Kterou akci chcete použít?"
+msgstr "Tuto klávesovou zkratku již používá akce „%s“. Kterou akci chcete použít?"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:45
 #: libxfce4kbd-private/xfce-shortcuts.c:48
@@ -481,14 +481,14 @@ msgstr "Ponechat „%s“"
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr "Tuto klávesovou zkratku již používá příkaz %s. Kterou akci chcete použít?"
+msgstr "Tuto klávesovou zkratku již používá příkaz „%s“. Kterou akci chcete použít?"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:53
 #, c-format
 msgid ""
 "This shortcut is already being used by the action '%s'. Which action do you "
 "want to use?"
-msgstr "Tuto klávesovou zkratku již používá akce %s. Kterou akci chcete použít?"
+msgstr "Tuto klávesovou zkratku již používá akce „%s“. Kterou akci chcete použít?"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:105
 msgid "Please use another key combination."
@@ -530,7 +530,7 @@ msgstr "Obnovit výchozí klávesovou zkratku"
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:758
 #, c-format
 msgid "This keyboard shortcut is currently used by: '%s'"
-msgstr "Tuto klávesovou zkratku už používá %s"
+msgstr "Tuto klávesovou zkratku už používá „%s“"
 
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:671
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:761
@@ -950,7 +950,7 @@ msgstr "Správce relace"
 #: xfce4-about/main.c:211
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
-msgstr "Ukládá a obnovuje vaše relace, spravuje spouštění, automatické spouštění a vypínání."
+msgstr "Ukládá a obnovuje vaši relaci, spravuje spouštění, automatické spouštění a vypínání."
 
 #: xfce4-about/main.c:214
 msgid "Settings Manager"
@@ -982,7 +982,7 @@ msgstr "Knihovna nabídky"
 
 #: xfce4-about/main.c:227
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
-msgstr "Implementuje nabídku splňující požadavky freedesktop.org založenou na knihovnách GLib a GIO."
+msgstr "Implementuje nabídku založenou na knihovnách GLib a GIO, která splňuje požadavky freedesktop.org."
 
 #: xfce4-about/main.c:230
 msgid "Thumbnails Service"
@@ -1018,7 +1018,7 @@ msgid ""
 "the GNU Library General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr "Balíčky libxfce4ui a libxfce4util jsou distribuovány pod podmínkami licence GNU Library General Public License publikované organizací Free Software Foundation; ve verzi 2 této licence, buď verze 2 této licence, nebo podle vašeho uvážení kterékoli pozdější verze."
+msgstr "Balíčky libxfce4ui a libxfce4util jsou distribuovány pod podmínkami licence GNU Library General Public License publikované organizací Free Software Foundation; buď verze 2 této licence, nebo podle vašeho uvážení kterékoli pozdější verze."
 
 #: xfce4-about/main.c:374
 msgid ""
@@ -1027,7 +1027,7 @@ msgid ""
 "of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr "Balíčky thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop a xfwm4 jsou distribuovány pod podmínkami licence GNU General Public License publikované organizací Free Software Foundation; ve verzi 2 této licence, buď verze 2 této licence, nebo podle vašeho uvážení kterékoli pozdější verze."
+msgstr "Balíčky thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop a xfwm4 jsou distribuovány pod podmínkami licence GNU General Public License publikované organizací Free Software Foundation; buď verze 2 této licence, nebo podle vašeho uvážení kterékoli pozdější verze."
 
 #: xfce4-about/main.c:521
 #, c-format
@@ -1125,7 +1125,7 @@ msgstr "%s; ID sestavení: %s"
 msgid ""
 "A file named \"%s\" already exists in this directory, the file hasn't been "
 "added."
-msgstr "Soubor %s v tomto adresáři již existuje, proto nebyl přidán."
+msgstr "Soubor „%s v tomto adresáři již existuje, proto nebyl přidán."
 
 #: tests/test-ui.c:117
 msgid "Failed to migrate the old panel configuration"
@@ -1371,11 +1371,11 @@ msgstr "Ikona nebyla nalezena"
 
 #: xfce-desktop-item-edit/xfce-die-utils.c:210
 msgid "File location is not a regular file or directory"
-msgstr "Umístění souboru není platným souborem nebo adresářem"
+msgstr "Umístění souboru není běžným souborem ani adresářem"
 
 #: xfce-open/main.c:218
 msgid "Usage: xfce-open [URLs...]"
-msgstr "Použití: xfce-open [AdresyURL...]"
+msgstr "Použití: xfce-open [ADRESY_URL...]"
 
 #: xfce-open/main.c:219
 msgid "       xfce-open --launch TYPE [PARAMETERs...]"
