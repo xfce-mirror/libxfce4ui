@@ -1,3 +1,51 @@
+4.21.8 (2026-06-08)
+======
+- gobject-linter: Fix inconsistent_function_signature
+- gobject-linter: Fix unnecessary_null_check
+- gobject-linter: Fix g_error_leak
+- gobject-linter: Fix g_param_spec_static_strings
+- gobject-linter: Fix property_switch_exhaustiveness
+- gobject-linter: Fix strcmp_explicit_comparison
+- gobject-linter: Fix missing_autoptr_cleanup
+- gobject-linter: Fix use_g_steal_pointer
+- gobject-linter: Fix matching_declare_define
+- gobject-linter: Fix use_clear_functions
+- Do not compare gboolean to TRUE or FALSE
+- cppcheck: Fix memleak
+- cppcheck: Fix knownConditionTrueFalse
+- cppcheck: Fix redundantInitialization
+- cppcheck: Fix unknownMacro
+- gcc-analyzer: Update false positive file after gcc version bump
+- cppcheck: Fix varFuncNullUB
+- cppcheck: Fix unusedStructMember
+- cppcheck: Fix unreadVariable
+- cppcheck: Fix invalidPrintfArgType_sint
+- cppcheck: Fix nullPointer
+- cppcheck: Fix nullPointerRedundantCheck
+- cppcheck: Fix knownConditionTrueFalse
+- cppcheck: Fix unknownMacro
+- scan-build: Update false positive file after clang version bump
+- die-editor: Improve Info for unknown icons (#145)
+- Add missing chain up to parent class
+- die-editor: show icon name in the tooltip (#145)
+- shortcuts: Replace Ctrl+Alt+{D,L} with Super+{D,L}
+- I18n: Update po/LINGUAS list
+- Expose method 'xfce_icon_view_get_cell_area'
+- docs: Add missing symbol
+- build: Do not display full path in generated headers
+- Wording "file name" --> "filename" (#142)
+- Downgrade the "no startup notification on Wayland" warning to message
+- Translation Updates:
+  Albanian, Arabic, Asturian, Azerbaijani, Basque, Belarusian,
+  Bulgarian, Catalan, Chinese (China), Chinese (Hong Kong), Chinese
+  (Taiwan), Czech, Danish, Dutch, Eastern Armenian, English (United
+  Kingdom), Esperanto, Estonian, Finnish, French, Galician, Georgian,
+  German, Greek, Hebrew, Hungarian, Indonesian, Interlingue, Italian,
+  Japanese, Kazakh, Korean, Lao, Lithuanian, Norwegian Bokmål, Occitan
+  (post 1500), Persian (Iran), Polish, Portuguese, Portuguese (Brazil),
+  Romanian, Russian, Serbian, Slovak, Slovenian, Spanish, Swedish,
+  Thai, Turkish, Ukrainian, Uyghur, Venetian, Vietnamese, Welsh
+
 4.21.7 (2026-03-09)
 ======
 - Don't generate vala bindings for libxfce4kbd-private
