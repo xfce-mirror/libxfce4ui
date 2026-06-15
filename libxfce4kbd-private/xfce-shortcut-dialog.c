@@ -21,6 +21,10 @@
 #include <gdk/gdkkeysyms.h>
 #include <libxfce4util/libxfce4util.h>
 
+#ifdef ENABLE_WAYLAND
+#include <gdk/gdkwayland.h>
+#endif
+
 #include "libxfce4ui/libxfce4ui.h"
 
 #include "xfce-shortcut-dialog.h"
@@ -401,6 +405,19 @@ xfce_shortcut_dialog_key_pressed (XfceShortcutDialog *dialog,
    * as a modifier key (see bug #8744). */
   if ((modifiers & GDK_SHIFT_MASK) && (consumed & GDK_SHIFT_MASK))
     consumed &= ~GDK_SHIFT_MASK;
+
+#ifdef ENABLE_WAYLAND
+  if (GDK_IS_WAYLAND_DISPLAY (gtk_widget_get_display (GTK_WIDGET (dialog))))
+    {
+      /* Due to a gdk-wayland bug
+       * (https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/9918), Super also
+       * needs to be removed from the consumed bits in order to be recognized
+       * by us as a valid modifier.
+       */
+      if ((modifiers & GDK_SUPER_MASK) && (consumed & GDK_SUPER_MASK))
+        consumed &= ~GDK_SUPER_MASK;
+    }
+#endif
 
   modifiers &= ~consumed;
   modifiers &= mod_mask;
