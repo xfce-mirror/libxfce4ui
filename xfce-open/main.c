@@ -654,10 +654,8 @@ main (gint argc, gchar **argv)
               if (i > 1)
                 join = g_string_append_c (join, ' ');
 
-              /* only quote arguments with spaces if there are multiple
-               * arguments to be merged, this is a bit of magic to make
-               * common cares work property, see sample above with xfrun4 */
-              if (argc > 2 && strchr (argv[i], ' ') != NULL)
+              /* only quote arguments with spaces */
+              if (strchr (argv[i], ' ') != NULL)
                 xfce_g_string_append_quoted (join, argv[i]);
               else
                 g_string_append (join, argv[i]);
