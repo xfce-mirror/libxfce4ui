@@ -59,7 +59,7 @@
 /**
  * For testing this code, the following commands should work:
  *
- * xfce-open --launch WebBrowser https://xfce.org (bug #5461).
+ * xfce-open --launch WebBrowser https://xfce.org
  * xfce-open https://xfce.org
  * xfce-open --launch TerminalEmulator ./script.sh 'something with a space' 'nospace' (bug #5132).
  * xfce-open --launch TerminalEmulator './script with spaces.sh'
