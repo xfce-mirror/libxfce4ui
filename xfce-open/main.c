@@ -60,14 +60,10 @@
  * For testing this code, the following commands should work:
  *
  * xfce-open --launch WebBrowser https://xfce.org (bug #5461).
- * xfce-open --launch WebBrowser https://xfce.org gitlab.xfce.org 'http://www.google.com/search?q=what is a space' 'https://wiki.xfce.org'
  * xfce-open https://xfce.org
  * xfce-open --launch TerminalEmulator ./script.sh 'something with a space' 'nospace' (bug #5132).
+ * xfce-open --launch TerminalEmulator './script with spaces.sh'
  * xfce-open --launch TerminalEmulator ssh -l username some.host.com
- *
- * xfterm4 -e ssh -l username some.host.com (bug #5301, this generates line below)
- *   xfce-open --launch TerminalEmulator 'ssh -l username some.host.com'
- *
  * xfce-open /some/path/to/a/file.desktop
  * xfce-open somerelativefile
  **/
