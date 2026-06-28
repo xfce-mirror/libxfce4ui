@@ -63,6 +63,8 @@
  * xfce-open https://xfce.org
  * xfce-open --launch TerminalEmulator ./script.sh 'something with a space' 'nospace'
  * xfce-open --launch TerminalEmulator './script with spaces.sh'
+ * xfce-open --launch TerminalEmulator './script.sh' "unbalanced ' quote"
+ * xfce-open --launch TerminalEmulator './test unbalanced " quote.sh'
  * xfce-open --launch TerminalEmulator ssh -l username some.host.com
  * xfce-open /some/path/to/a/file.desktop
  * xfce-open somerelativefile
@@ -650,11 +652,7 @@ main (gint argc, gchar **argv)
               if (i > 1)
                 join = g_string_append_c (join, ' ');
 
-              /* only quote arguments with spaces */
-              if (strchr (argv[i], ' ') != NULL)
-                xfce_g_string_append_quoted (join, argv[i]);
-              else
-                g_string_append (join, argv[i]);
+              xfce_g_string_append_quoted (join, argv[i]);
             }
           parameter = g_string_free (join, FALSE);
         }
