@@ -42,9 +42,9 @@ G_DEFINE_AUTOPTR_CLEANUP_FUNC (XfceShortcutsProvider, g_object_unref)
 #define XFCE_TYPE_SHORTCUT (xfce_shortcut_get_type ())
 
 GType
-xfce_shortcuts_provider_get_type (void) G_GNUC_CONST;
+xfce_shortcuts_provider_get_type (void);
 GType
-xfce_shortcut_get_type (void) G_GNUC_CONST;
+xfce_shortcut_get_type (void);
 
 XfceShortcutsProvider *
 xfce_shortcuts_provider_new (const gchar *name) G_GNUC_MALLOC;

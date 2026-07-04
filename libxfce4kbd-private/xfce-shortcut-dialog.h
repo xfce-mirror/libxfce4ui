@@ -37,7 +37,7 @@ typedef struct _XfceShortcutDialog XfceShortcutDialog;
 G_DEFINE_AUTOPTR_CLEANUP_FUNC (XfceShortcutDialog, g_object_unref)
 
 GType
-xfce_shortcut_dialog_get_type (void) G_GNUC_CONST;
+xfce_shortcut_dialog_get_type (void);
 
 GtkWidget *
 xfce_shortcut_dialog_new (const gchar *provider,

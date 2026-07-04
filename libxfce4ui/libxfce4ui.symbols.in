@@ -124,7 +124,7 @@ xfce_screensaver_inhibit
 xfce_screensaver_lock
 
 # file:xfce-titled-dialog
-xfce_titled_dialog_get_type attr:G_GNUC_CONST
+xfce_titled_dialog_get_type
 xfce_titled_dialog_new attr:G_GNUC_MALLOC
 xfce_titled_dialog_new_with_buttons attr:G_GNUC_MALLOC
 xfce_titled_dialog_new_with_mixed_buttons attr:G_GNUC_MALLOC
@@ -140,13 +140,13 @@ xfce_execute_preferred_application
 xfce_execute_terminal_shell
 
 # file:xfce-icon-chooser-dialog
-xfce_icon_chooser_dialog_get_type attr:G_GNUC_CONST
+xfce_icon_chooser_dialog_get_type
 xfce_icon_chooser_dialog_new attr:G_GNUC_MALLOC attr:G_GNUC_NULL_TERMINATED attr:G_GNUC_WARN_UNUSED_RESULT;
 xfce_icon_chooser_dialog_get_icon attr:G_GNUC_MALLOC attr:G_GNUC_WARN_UNUSED_RESULT
 xfce_icon_chooser_dialog_set_icon
 
 # file:xfce-icon-view
-xfce_icon_view_get_type attr:G_GNUC_CONST
+xfce_icon_view_get_type
 xfce_icon_view_new
 xfce_icon_view_new_with_model
 xfce_icon_view_get_model
@@ -213,11 +213,11 @@ xfce_icon_view_get_search_position_func
 xfce_icon_view_set_search_position_func
 
 # file:xfce-notebook
-xfce_notebook_get_type attr:G_GNUC_CONST
+xfce_notebook_get_type
 xfce_notebook_new attr:G_GNUC_MALLOC
 
 # file:xfce-tree-view
-xfce_tree_view_get_type attr:G_GNUC_CONST
+xfce_tree_view_get_type
 xfce_tree_view_new attr:G_GNUC_MALLOC
 xfce_tree_view_get_single_click
 xfce_tree_view_set_single_click
@@ -225,11 +225,11 @@ xfce_tree_view_get_single_click_timeout
 xfce_tree_view_set_single_click_timeout
 
 # file:xfce-cell-renderer-icon
-xfce_cell_renderer_icon_get_type attr:G_GNUC_CONST
+xfce_cell_renderer_icon_get_type
 xfce_cell_renderer_icon_new attr:G_GNUC_MALLOC attr:G_GNUC_WARN_UNUSED_RESULT
 
 # file:xfce-item-list-model
-xfce_item_list_model_get_type attr:G_GNUC_CONST
+xfce_item_list_model_get_type
 xfce_item_list_model_get_list_n_columns
 xfce_item_list_model_get_list_column_type
 xfce_item_list_model_get_list_flags
@@ -247,7 +247,7 @@ xfce_item_list_model_changed
 xfce_item_list_model_reloaded
 
 # file:xfce-item-list-store
-xfce_item_list_store_get_type attr:G_GNUC_CONST
+xfce_item_list_store_get_type
 xfce_item_list_store_new attr:G_GNUC_MALLOC
 xfce_item_list_store_clear
 xfce_item_list_store_insert
@@ -255,7 +255,7 @@ xfce_item_list_store_set
 xfce_item_list_store_insert_with_values
 
 # file:xfce-item-list-view
-xfce_item_list_view_get_type attr:G_GNUC_CONST
+xfce_item_list_view_get_type
 xfce_item_list_view_new attr:G_GNUC_MALLOC
 xfce_item_list_view_get_model
 xfce_item_list_view_set_model

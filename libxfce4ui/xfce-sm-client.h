@@ -49,7 +49,7 @@ typedef struct _XfceSMClient XfceSMClient;
 G_DEFINE_AUTOPTR_CLEANUP_FUNC (XfceSMClient, g_object_unref)
 
 GType
-xfce_sm_client_get_type (void) G_GNUC_CONST;
+xfce_sm_client_get_type (void);
 
 GQuark
 xfce_sm_client_error_quark (void);

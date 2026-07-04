@@ -67,7 +67,7 @@ struct _XfceTitledDialog
 };
 
 GType
-xfce_titled_dialog_get_type (void) G_GNUC_CONST;
+xfce_titled_dialog_get_type (void);
 
 GtkWidget *
 xfce_titled_dialog_new (void) G_GNUC_MALLOC;

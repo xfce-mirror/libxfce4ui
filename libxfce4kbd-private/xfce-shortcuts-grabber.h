@@ -38,7 +38,7 @@ typedef struct _XfceShortcutsGrabber XfceShortcutsGrabber;
 G_DEFINE_AUTOPTR_CLEANUP_FUNC (XfceShortcutsGrabber, g_object_unref)
 
 GType
-xfce_shortcuts_grabber_get_type (void) G_GNUC_CONST;
+xfce_shortcuts_grabber_get_type (void);
 
 XfceShortcutsGrabber *
 xfce_shortcuts_grabber_new (void) G_GNUC_MALLOC;

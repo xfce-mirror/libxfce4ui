@@ -43,7 +43,7 @@ typedef enum
 } XfceDieEditorMode;
 
 GType
-xfce_die_editor_mode_get_type (void) G_GNUC_CONST;
+xfce_die_editor_mode_get_type (void);
 
 G_END_DECLS
 

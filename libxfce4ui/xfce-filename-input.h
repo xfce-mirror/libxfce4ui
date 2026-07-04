@@ -40,7 +40,7 @@ typedef struct _XfceFilenameInput XfceFilenameInput;
 G_DEFINE_AUTOPTR_CLEANUP_FUNC (XfceFilenameInput, g_object_unref)
 
 GType
-xfce_filename_input_get_type (void) G_GNUC_CONST;
+xfce_filename_input_get_type (void);
 
 const gchar *
 xfce_filename_input_get_text (XfceFilenameInput *filename_input);

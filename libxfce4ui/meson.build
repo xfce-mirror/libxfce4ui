@@ -103,7 +103,7 @@ libxfce4ui_enums += gnome.mkenums(
   sources: libxfce4ui_enum_headers,
   fhead: '#if !defined(_LIBXFCE4UI_INSIDE_LIBXFCE4UI_H) && !defined(LIBXFCE4UI_COMPILATION)\n#error "Only <libxfce4ui/libxfce4ui.h> can be included directly, this file is not part of the public API."\n#endif\n\n#ifndef __LIBXFCE4UI_ENUM_TYPES_H__\n#define __LIBXFCE4UI_ENUM_TYPES_H__\n#include <glib-object.h>\n\nG_BEGIN_DECLS\n\n',
   fprod: '/* enumerations from "@basename@" */\n\n',
-  vhead: 'GType @enum_name@_get_type(void) G_GNUC_CONST;\n#define XFCE_TYPE_@ENUMSHORT@ (@enum_name@_get_type())\n\n',
+  vhead: 'GType @enum_name@_get_type(void);\n#define XFCE_TYPE_@ENUMSHORT@ (@enum_name@_get_type())\n\n',
   ftail: 'G_END_DECLS\n\n#endif /* !__LIBXFCE4UI_ENUM_TYPES_H__ */',
 )
 libxfce4ui_enums += gnome.mkenums(
