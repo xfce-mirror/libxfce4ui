@@ -39,7 +39,7 @@ typedef struct _XfceShortcutsProvider XfceShortcutsProvider;
 #define XFCE_SHORTCUTS_PROVIDER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), XFCE_TYPE_SHORTCUTS_PROVIDER, XfceShortcutsProviderClass))
 
 GType
-xfce_shortcuts_provider_get_type (void) G_GNUC_CONST;
+xfce_shortcuts_provider_get_type (void);
 
 XfceShortcutsProvider *
 xfce_shortcuts_provider_new (const gchar *name) G_GNUC_MALLOC;

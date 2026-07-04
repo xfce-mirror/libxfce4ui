@@ -36,7 +36,7 @@ typedef struct _XfceShortcutDialog XfceShortcutDialog;
 #define XFCE_SHORTCUT_DIALOG_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), XFCE_TYPE_SHORTCUT_DIALOG, XfceShortcutDialogClass))
 
 GType
-xfce_shortcut_dialog_get_type (void) G_GNUC_CONST;
+xfce_shortcut_dialog_get_type (void);
 
 GtkWidget *
 xfce_shortcut_dialog_new (const gchar *provider,

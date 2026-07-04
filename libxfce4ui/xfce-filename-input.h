@@ -39,7 +39,7 @@ typedef struct _XfceFilenameInput XfceFilenameInput;
 #define XFCE_FILENAME_INPUT_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), XFCE_TYPE_FILENAME_INPUT, XfceFilenameInputClass))
 
 GType
-xfce_filename_input_get_type (void) G_GNUC_CONST;
+xfce_filename_input_get_type (void);
 
 const gchar *
 xfce_filename_input_get_text (XfceFilenameInput *filename_input);

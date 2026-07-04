@@ -190,7 +190,7 @@ xfce_screensaver_lock
 /* xfce-titled-dialog functions */
 #if IN_HEADER(__XFCE_TITLED_DIALOG_H__)
 #if IN_SOURCE(__XFCE_TITLED_DIALOG_C__)
-xfce_titled_dialog_get_type G_GNUC_CONST
+xfce_titled_dialog_get_type
 xfce_titled_dialog_new G_GNUC_MALLOC
 xfce_titled_dialog_new_with_buttons G_GNUC_MALLOC
 xfce_titled_dialog_new_with_mixed_buttons G_GNUC_MALLOC

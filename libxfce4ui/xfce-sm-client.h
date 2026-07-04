@@ -48,7 +48,7 @@ G_BEGIN_DECLS
 typedef struct _XfceSMClient XfceSMClient;
 
 GType
-xfce_sm_client_get_type (void) G_GNUC_CONST;
+xfce_sm_client_get_type (void);
 
 GQuark
 xfce_sm_client_error_quark (void);

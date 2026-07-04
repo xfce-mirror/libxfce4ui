@@ -37,7 +37,7 @@ typedef struct _XfceShortcutsGrabber XfceShortcutsGrabber;
 #define XFCE_SHORTCUTS_GRABBER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), XFCE_TYPE_SHORTCUTS_GRABBER, XfceShortcutsGrabberClass))
 
 GType
-xfce_shortcuts_grabber_get_type (void) G_GNUC_CONST;
+xfce_shortcuts_grabber_get_type (void);
 
 XfceShortcutsGrabber *
 xfce_shortcuts_grabber_new (void) G_GNUC_MALLOC;

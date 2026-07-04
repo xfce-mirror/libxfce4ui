@@ -229,7 +229,7 @@ stamp-libxfce4ui-enum-types.h: $(libxfce4ui_enum_headers) Makefile
 	$(AM_V_GEN) ( cd $(srcdir) && glib-mkenums \
 		--fhead "#ifndef __LIBXFCE4UI_ENUM_TYPES_H__\n#define __LIBXFCE4UI_ENUM_TYPES_H__\n\nG_BEGIN_DECLS\n\n" \
 		--fprod "/* enumerations from \"@filename@\" */\n\n" \
-		--vhead "GType @enum_name@_get_type(void) G_GNUC_CONST;\n#define XFCE_TYPE_@ENUMSHORT@ (@enum_name@_get_type())\n\n" \
+		--vhead "GType @enum_name@_get_type(void);\n#define XFCE_TYPE_@ENUMSHORT@ (@enum_name@_get_type())\n\n" \
 		--ftail "G_END_DECLS\n\n#endif /* !__LIBXFCE4UI_ENUM_TYPES_H__ */" \
 		$(libxfce4ui_enum_headers) ) >xgen-leth
 	cmp -s xgen-leth libxfce4ui-enum-types.h || cp xgen-leth libxfce4ui-enum-types.h

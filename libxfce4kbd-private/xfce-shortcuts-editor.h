@@ -44,7 +44,7 @@ typedef struct
 } XfceShortcutsEditorSection;
 
 GType
-xfce_shortcuts_editor_get_type (void) G_GNUC_CONST;
+xfce_shortcuts_editor_get_type (void);
 
 GtkWidget *
 xfce_shortcuts_editor_new (int argument_count,

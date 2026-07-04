@@ -36,7 +36,7 @@ typedef struct _XfceShortcutsEditorDialog XfceShortcutsEditorDialog;
 #define XFCE_SHORTCUTS_EDITOR_DIALOG_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), XFCE_TYPE_SHORTCUTS_EDITOR_DIALOG, XfceShortcutsEditorDialogClass))
 
 GType
-xfce_shortcuts_editor_dialog_get_type (void) G_GNUC_CONST;
+xfce_shortcuts_editor_dialog_get_type (void);
 
 GtkWidget *
 xfce_shortcuts_editor_dialog_new (int argument_count,
