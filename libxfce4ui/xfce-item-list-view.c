@@ -414,6 +414,12 @@ xfce_item_list_view_finalize (GObject *object)
   g_clear_object (&view->menu);
   g_clear_object (&view->context_menu);
 
+  if (view->model != NULL)
+    {
+      g_signal_handlers_disconnect_by_data (view->model, view);
+      g_clear_object (&view->model);
+    }
+
   G_OBJECT_CLASS (xfce_item_list_view_parent_class)->finalize (object);
 }
 
@@ -990,9 +996,15 @@ xfce_item_list_view_set_model (XfceItemListView *view,
   XfceItemListModelFlags old_flags = view->model != NULL ? xfce_item_list_model_get_list_flags (view->model) : XFCE_ITEM_LIST_MODEL_NONE;
   XfceItemListModelFlags new_flags = model != NULL ? xfce_item_list_model_get_list_flags (model) : XFCE_ITEM_LIST_MODEL_NONE;
 
+  if (model != NULL)
+    g_object_ref (model);
+
   /* Replace model */
   if (view->model != NULL)
-    g_signal_handlers_disconnect_by_data (view->model, view);
+    {
+      g_signal_handlers_disconnect_by_data (view->model, view);
+      g_object_unref (view->model);
+    }
 
   gtk_tree_view_set_model (GTK_TREE_VIEW (view->tree_view), GTK_TREE_MODEL (model));
   view->model = model;
