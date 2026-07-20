@@ -414,6 +414,12 @@ xfce_item_list_view_finalize (GObject *object)
   g_clear_object (&view->menu);
   g_clear_object (&view->context_menu);
 
+  if (view->model != NULL)
+    {
+      g_signal_handlers_disconnect_by_data (view->model, view);
+      g_clear_object (&view->model);
+    }
+
   G_OBJECT_CLASS (xfce_item_list_view_parent_class)->finalize (object);
 }
 
@@ -992,7 +998,10 @@ xfce_item_list_view_set_model (XfceItemListView *view,
 
   /* Replace model */
   if (view->model != NULL)
-    g_signal_handlers_disconnect_by_data (view->model, view);
+    {
+      g_signal_handlers_disconnect_by_data (view->model, view);
+      g_object_unref (view->model);
+    }
 
   gtk_tree_view_set_model (GTK_TREE_VIEW (view->tree_view), GTK_TREE_MODEL (model));
   view->model = model;
@@ -1000,6 +1009,8 @@ xfce_item_list_view_set_model (XfceItemListView *view,
   /* Signals */
   if (model != NULL)
     {
+      g_object_ref (model);
+
       g_signal_connect_swapped (model, "row-changed", G_CALLBACK (xfce_item_list_view_update_actions), view);
       g_signal_connect_swapped (model, "row-deleted", G_CALLBACK (xfce_item_list_view_update_actions), view);
       g_signal_connect_swapped (model, "row-inserted", G_CALLBACK (xfce_item_list_view_update_actions), view);
