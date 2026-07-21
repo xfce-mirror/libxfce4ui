@@ -209,6 +209,12 @@ xfce_item_list_view_class_init (XfceItemListViewClass *klass)
                                                         GTK_TYPE_TREE_VIEW,
                                                         G_PARAM_READABLE | G_PARAM_STATIC_STRINGS));
 
+  /* make sure to use the translations from libxfce4ui */
+  bindtextdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR);
+#ifdef HAVE_BIND_TEXTDOMAIN_CODESET
+  bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
+#endif
+
   /**
    * XfceItemListView:label-visibility:
    *
