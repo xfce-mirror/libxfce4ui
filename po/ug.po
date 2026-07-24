@@ -3,16 +3,16 @@
 # This file is distributed under the same license as the libxfce4ui.master package.
 # 
 # Translators:
-# Abduqadir Abliz <sahranbay@gmail.com>, 2013
+# Abduqadir Abliz <sahranbay@gmail.com>, 2013,2026
 # Abduqadir Abliz <sahranbay@gmail.com>, 2013
 # Gheyret Kenji <gheyret@yahoo.com>, 2013,2020-2021
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2026-03-16 00:45+0100\n"
+"POT-Creation-Date: 2026-05-22 12:45+0200\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>, 2013\n"
+"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>, 2013,2026\n"
 "Language-Team: Uyghur (http://app.transifex.com/xfce/libxfce4ui/language/ug/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -286,7 +286,7 @@ msgstr "كاكار"
 #. XFCE_ICON_CHOOSER_CONTEXT_EMOTES
 #: libxfce4ui/xfce-icon-chooser-dialog.c:131
 msgid "Emoticons"
-msgstr "چىراي ئىپادىلىرى"
+msgstr "چىراي ئىپادىسى"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_MIME_TYPES
 #: libxfce4ui/xfce-icon-chooser-dialog.c:133
@@ -387,7 +387,7 @@ msgstr "ھۆججەت ئىسمى بەك ئۇزۇن"
 
 #: libxfce4ui/xfce-filename-input.c:231
 msgid "Directory separator illegal in filename"
-msgstr ""
+msgstr "ھۆججەت ئىسمىدىكى مۇندەرىجە ئايرىغۇچ قانۇنسىز"
 
 #: libxfce4ui/xfce-filename-input.c:232
 msgid "Filenames should not start or end with a space"
@@ -403,7 +403,7 @@ msgstr "ئاتى"
 
 #: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move _up"
-msgstr ""
+msgstr "ئۈستىگە(_U)"
 
 #: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move currently selected item up by one row"
@@ -411,7 +411,7 @@ msgstr "ھازىرقى تاللانغان تۈرنى بىر قۇر ئۈستىگ�
 
 #: libxfce4ui/xfce-item-list-view.c:661
 msgid "Move _down"
-msgstr ""
+msgstr "ئاستىغا(_N)"
 
 #: libxfce4ui/xfce-item-list-view.c:661
 msgid "Move currently selected item down by one row"
@@ -419,11 +419,11 @@ msgstr "ھازىرقى تاللانغان تۈرنى بىر قۇر ئاستىغ�
 
 #: libxfce4ui/xfce-item-list-view.c:672
 msgid "_Add new item"
-msgstr ""
+msgstr "يېڭى تۈر قوش(_A)"
 
 #: libxfce4ui/xfce-item-list-view.c:672
 msgid "Add new item"
-msgstr ""
+msgstr "يېڭى تۈر قوش"
 
 #: libxfce4ui/xfce-item-list-view.c:678
 msgid "_Remove"
@@ -431,7 +431,7 @@ msgstr "چىقىرىۋەت(_R)"
 
 #: libxfce4ui/xfce-item-list-view.c:678
 msgid "Remove currently selected items"
-msgstr ""
+msgstr "ھازىرقى تاللانغان تۇرنى چىقىرىۋېتىدۇ"
 
 #: libxfce4ui/xfce-item-list-view.c:684
 msgid "_Edit"
@@ -443,11 +443,11 @@ msgstr "ھازىرقى تاللانغان تۈرنى تەھرىرلەيدۇ"
 
 #: libxfce4ui/xfce-item-list-view.c:690
 msgid "Reset to de_faults"
-msgstr ""
+msgstr "كۆڭۈلدىكىگە قايتۇر(_F)"
 
 #: libxfce4ui/xfce-item-list-view.c:690
 msgid "Reset all items to default settings"
-msgstr ""
+msgstr "ھەممە تۈرنى كۆڭۈلدىكى تەڭشەككە ئەسلىگە قايتۇرىدۇ"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:44
 #, c-format
@@ -1311,9 +1311,8 @@ msgstr "سىنبەلگە(_I):"
 
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
 #. dialog if no icon selected
-#. setup a label to tell that no icon was selected
 #: xfce-desktop-item-edit/xfce-die-editor.c:447
-#: xfce-desktop-item-edit/xfce-die-editor.c:1302
+#: xfce-desktop-item-edit/xfce-die-editor.c:1306
 msgid "No icon"
 msgstr "سىنبەلگە يوق"
 
@@ -1362,6 +1361,10 @@ msgstr "تامام"
 #: xfce-desktop-item-edit/xfce-die-editor.c:690
 msgid "Select a working directory"
 msgstr "خىزمەت مۇندەرىجىسى تاللىنىدۇ"
+
+#: xfce-desktop-item-edit/xfce-die-editor.c:1308
+msgid "Icon not found"
+msgstr "سىنبەلگە تېپىلمىدى"
 
 #: xfce-desktop-item-edit/xfce-die-utils.c:210
 msgid "File location is not a regular file or directory"
