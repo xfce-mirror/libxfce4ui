@@ -7,15 +7,15 @@
 # 785411ef824cced88d3e197f5af1b61a_da6a977 <e5fae5b35c0c625157d991b31e113de3_956341>, 2021
 # menom menom, 2025
 # Robert Hartl <hartl.robert@gmail.com>, 2009
-# Slavko <linux@slavino.sk>, 2014-2015,2023,2025
+# Slavko <linux@slavino.sk>, 2014-2015,2023,2025-2026
 # 7dcd6f74323fe8d9c477949ff8fcbb1c_c427b63 <3fcd202e3dfab15fda15b8e88e54d449_7173>, 2011-2012
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2026-03-16 00:45+0100\n"
+"POT-Creation-Date: 2026-05-22 12:45+0200\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: menom menom, 2025\n"
+"Last-Translator: Slavko <linux@slavino.sk>, 2014-2015,2023,2025-2026\n"
 "Language-Team: Slovak (http://app.transifex.com/xfce/libxfce4ui/language/sk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -390,7 +390,7 @@ msgstr "Názov súboru je príliš dlhý"
 
 #: libxfce4ui/xfce-filename-input.c:231
 msgid "Directory separator illegal in filename"
-msgstr ""
+msgstr "Neplatný oddeľovač adresárov v mene súboru"
 
 #: libxfce4ui/xfce-filename-input.c:232
 msgid "Filenames should not start or end with a space"
@@ -406,7 +406,7 @@ msgstr "Názov"
 
 #: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move _up"
-msgstr ""
+msgstr "Posunúť _vyššie"
 
 #: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move currently selected item up by one row"
@@ -414,7 +414,7 @@ msgstr "Presunúť aktuálne vybranú položku o jeden riadok vyššie"
 
 #: libxfce4ui/xfce-item-list-view.c:661
 msgid "Move _down"
-msgstr ""
+msgstr "Posunúť _nižšie"
 
 #: libxfce4ui/xfce-item-list-view.c:661
 msgid "Move currently selected item down by one row"
@@ -422,11 +422,11 @@ msgstr "Presunúť práve vybranú položku o jeden riadok dole"
 
 #: libxfce4ui/xfce-item-list-view.c:672
 msgid "_Add new item"
-msgstr ""
+msgstr "_Pridať novú položku"
 
 #: libxfce4ui/xfce-item-list-view.c:672
 msgid "Add new item"
-msgstr ""
+msgstr "Pridať novú pložku"
 
 #: libxfce4ui/xfce-item-list-view.c:678
 msgid "_Remove"
@@ -434,7 +434,7 @@ msgstr "Odstrániť"
 
 #: libxfce4ui/xfce-item-list-view.c:678
 msgid "Remove currently selected items"
-msgstr ""
+msgstr "Odstrániť zvolené položky"
 
 #: libxfce4ui/xfce-item-list-view.c:684
 msgid "_Edit"
@@ -446,11 +446,11 @@ msgstr "Upraviť aktuálne vybranú položku"
 
 #: libxfce4ui/xfce-item-list-view.c:690
 msgid "Reset to de_faults"
-msgstr ""
+msgstr "Resetovať na pred_volené nastavenia"
 
 #: libxfce4ui/xfce-item-list-view.c:690
 msgid "Reset all items to default settings"
-msgstr ""
+msgstr "Resetuje všetky položky na predvolené nastavenia"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:44
 #, c-format
@@ -1314,9 +1314,8 @@ msgstr "_Ikona"
 
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
 #. dialog if no icon selected
-#. setup a label to tell that no icon was selected
 #: xfce-desktop-item-edit/xfce-die-editor.c:447
-#: xfce-desktop-item-edit/xfce-die-editor.c:1302
+#: xfce-desktop-item-edit/xfce-die-editor.c:1306
 msgid "No icon"
 msgstr "Žiadna ikona"
 
@@ -1365,6 +1364,10 @@ msgstr "_OK"
 #: xfce-desktop-item-edit/xfce-die-editor.c:690
 msgid "Select a working directory"
 msgstr "Vyberte pracovný adresár"
+
+#: xfce-desktop-item-edit/xfce-die-editor.c:1308
+msgid "Icon not found"
+msgstr "Ikona nenájdená"
 
 #: xfce-desktop-item-edit/xfce-die-utils.c:210
 msgid "File location is not a regular file or directory"
