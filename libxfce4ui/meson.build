@@ -186,6 +186,9 @@ libxfce4ui_deps = [
   x11_deps,
   libm,
 ]
+if need_libintl
+  libxfce4ui_deps += libintl
+endif
 
 libxfce4ui_so_version = '0'
 libxfce4ui_version = '@0@.0.0'.format(libxfce4ui_so_version)
