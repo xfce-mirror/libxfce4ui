@@ -21,6 +21,10 @@
 #include <gdk/gdkkeysyms.h>
 #include <libxfce4util/libxfce4util.h>
 
+#ifdef ENABLE_X11
+#include <gdk/gdkx.h>
+#endif
+
 #ifdef ENABLE_WAYLAND
 #include <gdk/gdkwayland.h>
 #endif
@@ -316,6 +320,8 @@ xfce_shortcut_dialog_run (XfceShortcutDialog *dialog,
   GdkDisplay *display;
   GdkSeat *seat;
   gint response = GTK_RESPONSE_CANCEL;
+  GdkWindow *grab_window = NULL;
+  GdkSeatGrabPrepareFunc prepare_func = NULL;
 
   g_return_val_if_fail (XFCE_IS_SHORTCUT_DIALOG (dialog), GTK_RESPONSE_CANCEL);
 
@@ -325,12 +331,33 @@ xfce_shortcut_dialog_run (XfceShortcutDialog *dialog,
   display = gtk_widget_get_display (GTK_WIDGET (dialog));
   seat = gdk_display_get_default_seat (display);
 
+#ifdef ENABLE_X11
+  if (GDK_IS_X11_DISPLAY (display))
+    {
+      // On X11, if we try to put the grab on the dialog, it will fail, because
+      // it hasn't been mapped by the window manager, so instead try the parent
+      // window, and if there is no parent, use the root window.
+      grab_window = parent != NULL ? gtk_widget_get_window (parent)
+                                   : gdk_screen_get_root_window (gdk_display_get_default_screen (display));
+      prepare_func = xfce_shortcut_dialog_prepare_grab;
+    }
+#endif
+
+#ifdef ENABLE_WAYLAND
+  if (GDK_IS_WAYLAND_DISPLAY (display))
+    {
+      // On Wayland, we need to put the grab on the dialog's surface, or the
+      // compositor's keyboard shortcuts inhibitor will target the parent,
+      // and become inactive when the dialog gets focused.
+      gtk_widget_show (GTK_WIDGET (dialog));
+      grab_window = gtk_widget_get_window (GTK_WIDGET (dialog));
+    }
+#endif
+
   /* Take control on the keyboard */
-  if (gdk_seat_grab (seat,
-                     parent != NULL ? gtk_widget_get_window (parent)
-                                    : gdk_screen_get_root_window (gdk_display_get_default_screen (display)),
+  if (gdk_seat_grab (seat, grab_window,
                      GDK_SEAT_CAPABILITY_KEYBOARD, TRUE, NULL, NULL,
-                     xfce_shortcut_dialog_prepare_grab, NULL)
+                     prepare_func, NULL)
       == GDK_GRAB_SUCCESS)
     {
       /* Run the dialog and wait for the user to enter a valid shortcut */
