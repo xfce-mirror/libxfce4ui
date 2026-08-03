@@ -34,6 +34,11 @@
 
 #include <gdk/gdkkeysyms.h>
 #include <libxfce4util/libxfce4util.h>
+#include <xfconf/xfconf.h>
+
+#ifdef ENABLE_X11
+#include <gdk/gdkx.h>
+#endif
 
 #ifdef ENABLE_WAYLAND
 #include <gdk/gdkwayland.h>
@@ -80,14 +85,6 @@ xfce_titled_dialog_close (GtkDialog *dialog);
 static void
 xfce_titled_dialog_update_window (XfceTitledDialog *titled_dialog);
 
-static void
-xfce_titled_dialog_disable_header (XfceTitledDialog *titled_dialog);
-#ifdef ENABLE_WAYLAND
-static void
-xfce_titled_dialog_use_header_setting_changed (GtkSettings *settings,
-                                               GParamSpec *pspec,
-                                               XfceTitledDialog *titled_dialog);
-#endif
 
 
 struct _XfceTitledDialogPrivate
@@ -169,39 +166,46 @@ xfce_titled_dialog_constructor (GType type,
 static void
 xfce_titled_dialog_init (XfceTitledDialog *titled_dialog)
 {
-  GtkSettings *settings;
-
   /* connect the private data */
   titled_dialog->priv = xfce_titled_dialog_get_instance_private (titled_dialog);
 
-  settings = gtk_settings_get_default ();
-  g_object_get (settings, "gtk-dialogs-use-header", &titled_dialog->priv->use_header, NULL);
-
-#ifdef ENABLE_WAYLAND
-  // On Wayland, the default is TRUE, and GTK loads our GtkSettings sync module
-  // too late, so we won't see if the user prefers SSDs here.  Because of how
-  // GtkDialog and GtkWindow work, we have the ability to flip things from TRUE
-  // to FALSE exactly once without messing up GTK internals.  (We can't flip
-  // FALSE to TRUE, so we can't just keep changing back and forth.)
-  if (titled_dialog->priv->use_header && GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
-    g_signal_connect (settings, "notify::gtk-dialogs-use-header", G_CALLBACK (xfce_titled_dialog_use_header_setting_changed), titled_dialog);
+#ifdef ENABLE_X11
+  if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+    {
+      GtkSettings *settings = gtk_settings_get_default ();
+      g_object_get (settings, "gtk-dialogs-use-header", &titled_dialog->priv->use_header, NULL);
+    }
 #endif
 
-  g_object_set (G_OBJECT (titled_dialog), "use-header-bar", titled_dialog->priv->use_header, NULL);
+#ifdef ENABLE_WAYLAND
+  if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
+    {
+      // The most common use case for XfceTitledDialog is settings dialogs,
+      // which are usually created in main(), before gtk_main() runs.  On
+      // Wayland, our gtk/xfconf settings sync module does not load early
+      // enough to set GtkSettings:gtk-dialogs-use-header, and switching
+      // GtkDialog:use-header after contruction is not feasible.  So read it
+      // directly from xfconf here.
+      if (xfconf_init (NULL))
+        {
+          XfconfChannel *xsettings = xfconf_channel_get ("xsettings");
+          titled_dialog->priv->use_header = xfconf_channel_get_bool (xsettings, "/Gtk/DialogsUseHeader", FALSE);
+          xfconf_shutdown ();
+        }
+    }
+#endif
 
   G_GNUC_BEGIN_IGNORE_DEPRECATIONS
   titled_dialog->priv->action_area = gtk_dialog_get_action_area (GTK_DIALOG (titled_dialog));
   G_GNUC_END_IGNORE_DEPRECATIONS
+
+  g_object_set (G_OBJECT (titled_dialog), "use-header-bar", titled_dialog->priv->use_header, NULL);
 
   if (titled_dialog->priv->use_header)
     {
       /* Get the headerbar of the dialog */
       titled_dialog->priv->headerbar = gtk_dialog_get_header_bar (GTK_DIALOG (titled_dialog));
       g_return_if_fail (GTK_IS_HEADER_BAR (titled_dialog->priv->headerbar));
-
-      // Take a reference on the headerbar, because if we remove it later (on
-      // Wayland), we don't want GtkDialog to have a dangling pointer to it.
-      g_object_ref (titled_dialog->priv->headerbar);
 
       /* Don't reserve vertical space for subtitles */
       gtk_header_bar_set_has_subtitle (GTK_HEADER_BAR (titled_dialog->priv->headerbar), FALSE);
@@ -211,7 +215,33 @@ xfce_titled_dialog_init (XfceTitledDialog *titled_dialog)
       g_signal_connect (G_OBJECT (titled_dialog), "notify::window", G_CALLBACK (xfce_titled_dialog_update_window), NULL);
     }
   else
-    xfce_titled_dialog_disable_header (titled_dialog);
+    {
+      GtkWidget *vbox, *widget, *content_area;
+
+      /* remove the main dialog box from the window */
+      content_area = gtk_dialog_get_content_area (GTK_DIALOG (titled_dialog));
+      g_object_ref (G_OBJECT (content_area));
+      gtk_container_remove (GTK_CONTAINER (titled_dialog), content_area);
+
+      vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
+      gtk_container_add (GTK_CONTAINER (titled_dialog), vbox);
+      gtk_widget_show (vbox);
+
+      widget = titled_dialog->priv->subtitle_label = gtk_label_new (NULL);
+      gtk_box_pack_start (GTK_BOX (vbox), widget, FALSE, FALSE, 0);
+      gtk_widget_set_no_show_all (widget, TRUE);
+      gtk_style_context_add_class (gtk_widget_get_style_context (widget), "xfce-titled-dialog-subtitle");
+      gtk_widget_set_margin_start (widget, 8);
+      gtk_widget_set_margin_end (widget, 8);
+
+      widget = titled_dialog->priv->subtitle_separator = gtk_separator_new (GTK_ORIENTATION_HORIZONTAL);
+      gtk_box_pack_start (GTK_BOX (vbox), widget, FALSE, FALSE, 0);
+      gtk_widget_set_no_show_all (widget, TRUE);
+      gtk_style_context_add_class (gtk_widget_get_style_context (widget), "xfce-titled-dialog-separator");
+
+      gtk_box_pack_start (GTK_BOX (vbox), content_area, TRUE, TRUE, 0);
+      g_object_unref (G_OBJECT (content_area));
+    }
 }
 
 
@@ -272,14 +302,8 @@ xfce_titled_dialog_finalize (GObject *object)
 {
   XfceTitledDialog *titled_dialog = XFCE_TITLED_DIALOG (object);
 
-  GtkSettings *settings = gtk_settings_get_default ();
-  g_signal_handlers_disconnect_by_data (settings, titled_dialog);
-
   /* release the subtitle */
   g_free (titled_dialog->priv->subtitle);
-
-  if (titled_dialog->priv->headerbar != NULL)
-    g_object_unref (titled_dialog->priv->headerbar);
 
   (*G_OBJECT_CLASS (xfce_titled_dialog_parent_class)->finalize) (object);
 }
@@ -346,85 +370,6 @@ xfce_titled_dialog_close (GtkDialog *dialog)
       gdk_event_free (event);
     }
 }
-
-
-
-static void
-xfce_titled_dialog_disable_header (XfceTitledDialog *titled_dialog)
-{
-  if (titled_dialog->priv->headerbar != NULL)
-    {
-      GtkWidget *widget = GTK_WIDGET (titled_dialog);
-
-      // If we don't unrealize before unsetting the titlebar, GtkWindow will
-      // throw a warning.
-      gboolean was_realized = gtk_widget_get_realized (widget);
-      gboolean was_mapped = gtk_widget_get_mapped (widget);
-      gboolean was_shown = gtk_widget_get_visible (widget);
-
-      if (was_shown)
-        gtk_widget_hide (widget);
-      if (was_mapped)
-        gtk_widget_unmap (widget);
-      if (was_realized)
-        gtk_widget_unrealize (widget);
-
-      gtk_window_set_titlebar (GTK_WINDOW (titled_dialog), NULL);
-
-      if (was_shown)
-        gtk_widget_show (widget);
-      else if (was_mapped)
-        gtk_widget_map (widget);
-      else if (was_realized)
-        gtk_widget_realize (widget);
-    }
-
-  /* remove the main dialog box from the window */
-  GtkWidget *content_area = gtk_dialog_get_content_area (GTK_DIALOG (titled_dialog));
-  g_object_ref (G_OBJECT (content_area));
-  gtk_container_remove (GTK_CONTAINER (titled_dialog), content_area);
-
-  GtkWidget *vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-  gtk_container_add (GTK_CONTAINER (titled_dialog), vbox);
-  gtk_widget_show (vbox);
-
-  GtkWidget *widget = titled_dialog->priv->subtitle_label = gtk_label_new (NULL);
-  gtk_box_pack_start (GTK_BOX (vbox), widget, FALSE, FALSE, 0);
-  gtk_widget_set_no_show_all (widget, TRUE);
-  gtk_style_context_add_class (gtk_widget_get_style_context (widget), "xfce-titled-dialog-subtitle");
-  gtk_widget_set_margin_start (widget, 8);
-  gtk_widget_set_margin_end (widget, 8);
-
-  widget = titled_dialog->priv->subtitle_separator = gtk_separator_new (GTK_ORIENTATION_HORIZONTAL);
-  gtk_box_pack_start (GTK_BOX (vbox), widget, FALSE, FALSE, 0);
-  gtk_widget_set_no_show_all (widget, TRUE);
-  gtk_style_context_add_class (gtk_widget_get_style_context (widget), "xfce-titled-dialog-separator");
-
-  gtk_box_pack_start (GTK_BOX (vbox), content_area, TRUE, TRUE, 0);
-  g_object_unref (G_OBJECT (content_area));
-}
-
-
-
-#ifdef ENABLE_WAYLAND
-static void
-xfce_titled_dialog_use_header_setting_changed (GtkSettings *settings,
-                                               GParamSpec *pspec,
-                                               XfceTitledDialog *titled_dialog)
-{
-  gboolean use_header = FALSE;
-  g_object_get (settings, "gtk-dialogs-use-header", &use_header, NULL);
-
-  if (!use_header && titled_dialog->priv->use_header != use_header)
-    {
-      titled_dialog->priv->use_header = use_header;
-      xfce_titled_dialog_disable_header (titled_dialog);
-
-      // We got our single shot to change from TRUE to FALSE, so unregister the handler.
-      g_signal_handlers_disconnect_by_func (settings, xfce_titled_dialog_use_header_setting_changed, titled_dialog);
-    }
-}
-#endif
 
 
 
