@@ -10,6 +10,7 @@
 # Gábor P., 2017,2019-2020
 # gyeben <gyonkibendeguz@gmail.com>, 2016
 # gyeben <gyonkibendeguz@gmail.com>, 2016
+# max mint, 2026
 # Robert Huszar, 2022
 # Robert Huszar, 2022
 # Sándor Zelenák <nem11nator at gmail dot com>, 2011
@@ -19,9 +20,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2026-03-16 00:45+0100\n"
+"POT-Creation-Date: 2026-05-22 12:45+0200\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Csani10, 2025\n"
+"Last-Translator: max mint, 2026\n"
 "Language-Team: Hungarian (http://app.transifex.com/xfce/libxfce4ui/language/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -396,7 +397,7 @@ msgstr "Túl hosszú fájlnév"
 
 #: libxfce4ui/xfce-filename-input.c:231
 msgid "Directory separator illegal in filename"
-msgstr ""
+msgstr "A könyvtárelválasztó nem használható a fájlnévben"
 
 #: libxfce4ui/xfce-filename-input.c:232
 msgid "Filenames should not start or end with a space"
@@ -412,7 +413,7 @@ msgstr "Név"
 
 #: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move _up"
-msgstr ""
+msgstr "Mozgatás _fel"
 
 #: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move currently selected item up by one row"
@@ -420,7 +421,7 @@ msgstr "A kiválasztott elem mozgatása egy sorral feljebb"
 
 #: libxfce4ui/xfce-item-list-view.c:661
 msgid "Move _down"
-msgstr ""
+msgstr "Mozgatás _le"
 
 #: libxfce4ui/xfce-item-list-view.c:661
 msgid "Move currently selected item down by one row"
@@ -428,11 +429,11 @@ msgstr "A kiválasztott elem mozgatása egy sorral lejjebb"
 
 #: libxfce4ui/xfce-item-list-view.c:672
 msgid "_Add new item"
-msgstr ""
+msgstr "Új elem hozzá_adása"
 
 #: libxfce4ui/xfce-item-list-view.c:672
 msgid "Add new item"
-msgstr ""
+msgstr "Új elem hozzáadása"
 
 #: libxfce4ui/xfce-item-list-view.c:678
 msgid "_Remove"
@@ -440,7 +441,7 @@ msgstr "_Eltávolítás"
 
 #: libxfce4ui/xfce-item-list-view.c:678
 msgid "Remove currently selected items"
-msgstr ""
+msgstr "A kijelölt elemek eltávolítása"
 
 #: libxfce4ui/xfce-item-list-view.c:684
 msgid "_Edit"
@@ -452,11 +453,11 @@ msgstr "A kiválasztott elem szerkesztése"
 
 #: libxfce4ui/xfce-item-list-view.c:690
 msgid "Reset to de_faults"
-msgstr ""
+msgstr "Visszaállítás az _alapértelmezésekre"
 
 #: libxfce4ui/xfce-item-list-view.c:690
 msgid "Reset all items to default settings"
-msgstr ""
+msgstr "Az összes elem visszaállítása alapértelmezett beállításokra"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:44
 #, c-format
@@ -1320,9 +1321,8 @@ msgstr "_Ikon:"
 
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
 #. dialog if no icon selected
-#. setup a label to tell that no icon was selected
 #: xfce-desktop-item-edit/xfce-die-editor.c:447
-#: xfce-desktop-item-edit/xfce-die-editor.c:1302
+#: xfce-desktop-item-edit/xfce-die-editor.c:1306
 msgid "No icon"
 msgstr "Nincs ikon"
 
@@ -1371,6 +1371,10 @@ msgstr "_OK"
 #: xfce-desktop-item-edit/xfce-die-editor.c:690
 msgid "Select a working directory"
 msgstr "Válasszon munkakönyvtárat"
+
+#: xfce-desktop-item-edit/xfce-die-editor.c:1308
+msgid "Icon not found"
+msgstr "Az ikon nem található"
 
 #: xfce-desktop-item-edit/xfce-die-utils.c:210
 msgid "File location is not a regular file or directory"
@@ -1423,7 +1427,7 @@ msgid ""
 "  ImageViewer      - The preferred Image Viewer.\n"
 "  AudioPlayer      - The preferred Audio Player.\n"
 "  VideoPlayer      - The preferred Video Player."
-msgstr ""
+msgstr "WebBrowser - A preferált webböngésző.\nMailReader - A preferált levelezőprogram.\nFileManager - A preferált fájlkezelő.\nTerminalEmulator - A preferált terminálemulátor.\nTextEditor - A preferált szövegszerkesztő.\nImageViewer - A preferált képnézegető.\nAudioPlayer - A preferált hanglejátszó.\nVideoPlayer - A preferált videolejátszó."
 
 #: xfce-open/main.c:247
 msgid ""
