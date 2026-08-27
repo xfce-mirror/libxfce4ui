@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2025-11-05 00:45+0100\n"
+"POT-Creation-Date: 2026-05-22 12:45+0200\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: Noumaan <y.noumaan@gmail.com>, 2009\n"
 "Language-Team: Urdu (Pakistan) (http://app.transifex.com/xfce/libxfce4ui/language/ur_PK/)\n"
@@ -117,7 +117,7 @@ msgstr ""
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:834
 msgid "About"
-msgstr ""
+msgstr "بابت"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:868
 msgid "Credits"
@@ -371,7 +371,7 @@ msgid "Session manager did not return a valid client id"
 msgstr ""
 
 #. print warning for user
-#: libxfce4ui/xfce-spawn.c:383
+#: libxfce4ui/xfce-spawn.c:388
 #, c-format
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
@@ -384,7 +384,7 @@ msgid "Filename is too long"
 msgstr ""
 
 #: libxfce4ui/xfce-filename-input.c:231
-msgid "Directory separator illegal in file name"
+msgid "Directory separator illegal in filename"
 msgstr ""
 
 #: libxfce4ui/xfce-filename-input.c:232
@@ -399,51 +399,51 @@ msgstr "فعال"
 msgid "Name"
 msgstr "نام"
 
-#: libxfce4ui/xfce-item-list-view.c:653
+#: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move _up"
 msgstr ""
 
-#: libxfce4ui/xfce-item-list-view.c:653
+#: libxfce4ui/xfce-item-list-view.c:657
 msgid "Move currently selected item up by one row"
 msgstr ""
 
-#: libxfce4ui/xfce-item-list-view.c:657
+#: libxfce4ui/xfce-item-list-view.c:661
 msgid "Move _down"
 msgstr ""
 
-#: libxfce4ui/xfce-item-list-view.c:657
+#: libxfce4ui/xfce-item-list-view.c:661
 msgid "Move currently selected item down by one row"
 msgstr ""
 
-#: libxfce4ui/xfce-item-list-view.c:668
+#: libxfce4ui/xfce-item-list-view.c:672
 msgid "_Add new item"
 msgstr ""
 
-#: libxfce4ui/xfce-item-list-view.c:668
+#: libxfce4ui/xfce-item-list-view.c:672
 msgid "Add new item"
 msgstr ""
 
-#: libxfce4ui/xfce-item-list-view.c:674
+#: libxfce4ui/xfce-item-list-view.c:678
 msgid "_Remove"
-msgstr ""
+msgstr "_ہٹائیں"
 
-#: libxfce4ui/xfce-item-list-view.c:674
+#: libxfce4ui/xfce-item-list-view.c:678
 msgid "Remove currently selected items"
 msgstr ""
 
-#: libxfce4ui/xfce-item-list-view.c:680
+#: libxfce4ui/xfce-item-list-view.c:684
 msgid "_Edit"
 msgstr "_تدوین"
 
-#: libxfce4ui/xfce-item-list-view.c:680
+#: libxfce4ui/xfce-item-list-view.c:684
 msgid "Edit the currently selected item"
 msgstr ""
 
-#: libxfce4ui/xfce-item-list-view.c:686
+#: libxfce4ui/xfce-item-list-view.c:690
 msgid "Reset to de_faults"
 msgstr ""
 
-#: libxfce4ui/xfce-item-list-view.c:686
+#: libxfce4ui/xfce-item-list-view.c:690
 msgid "Reset all items to default settings"
 msgstr ""
 
@@ -908,7 +908,7 @@ msgstr ""
 
 #: xfce4-about/main.c:194
 msgid "Panel"
-msgstr ""
+msgstr "پینل"
 
 #: xfce4-about/main.c:195
 msgid "Provides a home for window buttons, launchers, app menu and more."
@@ -1309,9 +1309,8 @@ msgstr "آئ_کن:"
 
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
 #. dialog if no icon selected
-#. setup a label to tell that no icon was selected
 #: xfce-desktop-item-edit/xfce-die-editor.c:447
-#: xfce-desktop-item-edit/xfce-die-editor.c:1302
+#: xfce-desktop-item-edit/xfce-die-editor.c:1306
 msgid "No icon"
 msgstr "بلا آئکن"
 
@@ -1359,6 +1358,10 @@ msgstr ""
 #. allocate the file chooser dialog
 #: xfce-desktop-item-edit/xfce-die-editor.c:690
 msgid "Select a working directory"
+msgstr ""
+
+#: xfce-desktop-item-edit/xfce-die-editor.c:1308
+msgid "Icon not found"
 msgstr ""
 
 #: xfce-desktop-item-edit/xfce-die-utils.c:210
