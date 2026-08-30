@@ -87,6 +87,10 @@ xfce_filename_input_get_entry
 xfce_filename_input_sensitise_widget
 xfce_filename_input_desensitise_widget
 
+# file:xfce-clipboard-manager-client
+xfce_clipboard_manager_supports_persistence
+xfce_clipboard_manager_store
+
 @BEGIN_X11_SYMBOLS@
 # file:xfce-clipboard-manager
 xfce_clipboard_manager_get_type
@@ -116,6 +120,13 @@ xfce_sm_client_get_restart_command
 xfce_sm_client_set_current_directory
 xfce_sm_client_get_current_directory
 @END_X11_SYMBOLS@
+
+@BEGIN_WAYLAND_SYMBOLS@
+# file:xfce-clipboard-manager-wayland
+xfce_clipboard_manager_wayland_get_type
+xfce_clipboard_manager_wayland_new
+xfce_clipboard_manager_wayland_store
+@END_WAYLAND_SYMBOLS@
 
 # file:xfce-screensaver
 xfce_screensaver_get_type
