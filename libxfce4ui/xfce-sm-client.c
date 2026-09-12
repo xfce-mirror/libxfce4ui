@@ -21,9 +21,14 @@
 /**
  * SECTION:xfce-sm-client
  * @title: XfceSMClient
- * @short_description: Session management client
+ * @short_description: Session management client (deprecated)
  * @stability: Stable
  * @include: libxfce4ui/libxfce4ui.h
+ * @see_also: #XfceSessionClient
+ *
+ * #XfceSMClient is deprecated, and should not be used in new code.  Instead,
+ * use #XfceSessionClient from <code>libxfce4session-client</code>, which
+ * supports both X11 and Wayland.
  *
  * #XfceSMClient is a session management client that speaks the X Session
  * Management Protocol (XSMP).  It's designed to be easy to use and hide some
@@ -99,6 +104,8 @@ typedef enum
  * @XFCE_SM_CLIENT_PRIORITY_LOWEST: The lowest possible priority value.
  *
  * Some sample priority values for use with xfce_sm_client_set_priority().
+ *
+ * Deprecated: 4.21.10: use XfceSessionClient from libxfce4session-client
  **/
 
 /**
@@ -111,6 +118,8 @@ typedef enum
  *
  * An enumeration describing how the session manager should restart
  * the application.
+ *
+ * Deprecated: 4.21.10: use XfceSessionClient from libxfce4session-client
  **/
 
 /**
@@ -122,12 +131,16 @@ typedef enum
  *
  * Hints to the session manager what kind of shutdown the session manager
  * should perform.
+ *
+ * Deprecated: 4.21.10: use XfceSessionClient from libxfce4session-client
  **/
 
 /**
  * XfceSMClient:
  *
  * An opaque struct with only private fields.
+ *
+ * Deprecated: 4.21.10: use XfceSessionClient from libxfce4session-client
  **/
 struct _XfceSMClient
 {
@@ -1490,6 +1503,8 @@ xfce_sm_client_error_quark (void)
  * or similar.
  *
  * Returns: A new #GOptionGroup
+ *
+ * Deprecated: 4.21.10: use XfceSessionClient from libxfce4session-client
  **/
 GOptionGroup *
 xfce_sm_client_get_option_group (gint argc,
@@ -1530,6 +1545,8 @@ xfce_sm_client_get_option_group (gint argc,
  *
  * Returns: A new #XfceSMClient instance -transfer full- on the first call only,
  * other calls to this function are transfer none
+ *
+ * Deprecated: 4.21.10: use XfceSessionClient from libxfce4session-client
  **/
 XfceSMClient *
 xfce_sm_client_get (void)
@@ -1560,6 +1577,8 @@ xfce_sm_client_get (void)
  * and xfce_sm_client_get() instead.
  *
  * Returns: (transfer full): A new #XfceSMClient instance
+ *
+ * Deprecated: 4.21.10: use XfceSessionClient from libxfce4session-client
  **/
 XfceSMClient *
 xfce_sm_client_get_with_argv (gint argc,
@@ -1597,6 +1616,8 @@ xfce_sm_client_get_with_argv (gint argc,
  * xfce_sm_client_get_option_group() and xfce_sm_client_get() instead.
  *
  * Returns: (transfer full): A new #XfceSMClient instance
+ *
+ * Deprecated: 4.21.10: use XfceSessionClient from libxfce4session-client
  **/
 XfceSMClient *
 xfce_sm_client_get_full (XfceSMClientRestartStyle restart_style,
