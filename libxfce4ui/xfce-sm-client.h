@@ -56,16 +56,19 @@ xfce_sm_client_error_quark (void);
 
 GOptionGroup *
 xfce_sm_client_get_option_group (gint argc,
-                                 gchar **argv);
+                                 gchar **argv)
+  G_GNUC_DEPRECATED_FOR (xfce_session_client_get_option_group ());
 
 XfceSMClient *
-xfce_sm_client_get (void);
+xfce_sm_client_get (void)
+  G_GNUC_DEPRECATED_FOR (xfce_session_client_new ());
 
 XfceSMClient *
 xfce_sm_client_get_with_argv (gint argc,
                               gchar **argv,
                               XfceSMClientRestartStyle restart_style,
-                              guchar priority);
+                              guchar priority)
+  G_GNUC_DEPRECATED_FOR (xfce_session_client_new_with_argv ());
 
 XfceSMClient *
 xfce_sm_client_get_full (XfceSMClientRestartStyle restart_style,
@@ -73,7 +76,8 @@ xfce_sm_client_get_full (XfceSMClientRestartStyle restart_style,
                          const gchar *resumed_client_id,
                          const gchar *current_directory,
                          const gchar **restart_command,
-                         const gchar *desktop_file);
+                         const gchar *desktop_file)
+  G_GNUC_DEPRECATED_FOR (xfce_session_client_new_full ());
 
 gboolean
 xfce_sm_client_connect (XfceSMClient *sm_client,
