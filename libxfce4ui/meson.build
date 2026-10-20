@@ -10,6 +10,7 @@ libxfce4ui_enum_headers = [
 
 libxfce4ui_headers = libxfce4ui_enum_headers + [
   'xfce-cell-renderer-icon.h',
+  'xfce-clipboard-manager-client.h',
   'xfce-dialogs.h',
   'xfce-execute.h',
   'xfce-filename-input.h',
@@ -49,9 +50,16 @@ libxfce4ui_headers += [
 ]
 endif
 
+if enable_wayland
+libxfce4ui_headers += [
+  'xfce-clipboard-manager-wayland.h',
+]
+endif
+
 libxfce4ui_sources_gir = [
   'libxfce4ui-config.c',
   'xfce-cell-renderer-icon.c',
+  'xfce-clipboard-manager-client.c',
   'xfce-dialogs.c',
   'xfce-execute.c',
   'xfce-filename-input.c',
@@ -74,6 +82,12 @@ if enable_x11
 libxfce4ui_sources_gir += [
   'xfce-clipboard-manager.c',
   'xfce-sm-client.c',
+]
+endif
+
+if enable_wayland
+libxfce4ui_sources_gir += [
+  'xfce-clipboard-manager-wayland.c',
 ]
 endif
 
@@ -165,6 +179,10 @@ libxfce4ui_sources += configure_file(
   command: [xdt_gen_visibility, '--kind=source', '@INPUT@', '@OUTPUT@'],
 )
 
+if enable_wayland
+  libxfce4ui_sources += wayland_protocols_generated_sources
+endif
+
 libxfce4ui_resources_c = gnome.compile_resources(
   'libxfce4ui-resources',
   'resources' / 'libxfce4ui.gresource.xml',
@@ -182,6 +200,7 @@ libxfce4ui_deps = [
   gtk,
   gdk_pixbuf,
   libxfce4util,
+  wayland_deps,
   xfconf,
   x11_deps,
   libm,
