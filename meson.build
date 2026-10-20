@@ -125,6 +125,12 @@ if get_option('vala').enabled()
 endif
 generate_vala = not get_option('vala').disabled() and vapigen.found()
 
+cambalache_catalog_gen = find_program('cmb-catalog-gen', required: get_option('cambalache'))
+if get_option('cambalache').enabled()
+  assert(get_option('introspection'), 'Building Cambalache catalog requires building GObject introspection data')
+endif
+generate_cambalache = not get_option('cambalache').disabled() and cambalache_catalog_gen.found()
+
 gnu_symbol_visibility = 'default'
 if get_option('visibility')
   gnu_symbol_visibility = 'hidden'
