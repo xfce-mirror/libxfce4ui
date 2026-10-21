@@ -289,7 +289,6 @@ xfce_spawn_process (GdkScreen *screen,
   SnLauncherContext *sn_launcher = NULL;
   SnDisplay *sn_display = NULL;
   gint sn_workspace;
-  const gchar *startup_id;
   const gchar *prgname;
 #endif
 
@@ -321,11 +320,12 @@ xfce_spawn_process (GdkScreen *screen,
     envp = (gchar **) environ;
   for (n = 0; envp[n] != NULL; ++n)
     ;
-  cenvp = g_new0 (gchar *, n + 3);
+  cenvp = g_new0 (gchar *, n + 4);
 
   for (n_cenvp = n = 0; envp[n] != NULL; ++n)
     {
       if (!g_str_has_prefix (envp[n], "DESKTOP_STARTUP_ID=")
+          && !g_str_has_prefix (envp[n], "XDG_ACTIVATION_TOKEN=")
           && (!WINDOWING_IS_X11 () || !g_str_has_prefix (envp[n], "DISPLAY="))
           && (!WINDOWING_IS_WAYLAND () || !g_str_has_prefix (envp[n], "WAYLAND_DISPLAY=")))
         cenvp[n_cenvp++] = g_strdup (envp[n]);
@@ -381,10 +381,32 @@ xfce_spawn_process (GdkScreen *screen,
                 }
 
               /* add the real startup id to the child environment */
-              startup_id = sn_launcher_context_get_startup_id (sn_launcher);
+              const gchar *startup_id = sn_launcher_context_get_startup_id (sn_launcher);
               if (G_LIKELY (startup_id != NULL))
                 cenvp[n_cenvp++] = g_strconcat ("DESKTOP_STARTUP_ID=", startup_id, NULL);
             }
+        }
+    }
+#endif
+
+#ifdef ENABLE_WAYLAND
+  if (WINDOWING_IS_WAYLAND ())
+    {
+      /* GdkAppLaunchContext is the only thing that can properly request an
+       * xdg_activation token (because getting the last input serial is private
+       * to GDK). */
+      GdkAppLaunchContext *ctx = gdk_display_get_app_launch_context (gdk_screen_get_display (screen));
+      gdk_app_launch_context_set_screen (ctx, screen);
+      gdk_app_launch_context_set_timestamp (ctx, startup_timestamp);
+
+      gchar *startup_id = g_app_launch_context_get_startup_notify_id (G_APP_LAUNCH_CONTEXT (ctx), NULL, NULL);
+      g_object_unref (ctx);
+
+      if (G_LIKELY (startup_id != NULL))
+        {
+          cenvp[n_cenvp++] = g_strconcat ("DESKTOP_STARTUP_ID=", startup_id, NULL);
+          cenvp[n_cenvp++] = g_strconcat ("XDG_ACTIVATION_TOKEN=", startup_id, NULL);
+          g_free (startup_id);
         }
     }
 #endif
