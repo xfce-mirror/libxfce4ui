@@ -1,6 +1,8 @@
 knownConditionTrueFalse:xfce4-about/system-info.c:516
 knownConditionTrueFalse:xfce4-about/system-info.c:480
 knownConditionTrueFalse:libxfce4kbd-private/xfce-shortcuts-grabber.c:369
+knownConditionTrueFalse:libxfce4ui/xfce-spawn.c:338
+multiCondition:libxfce4ui/xfce-spawn.c:333
 nullPointerRedundantCheck:xfce-open/main.c:707
 nullPointerRedundantCheck:xfce-open/main.c:519
 nullPointer:xfce-open/main.c:415

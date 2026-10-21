@@ -49,6 +49,13 @@
 #define WINDOWING_IS_X11() FALSE
 #endif
 
+#ifdef ENABLE_WAYLAND
+#include <gdk/gdkwayland.h>
+#define WINDOWING_IS_WAYLAND() GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ())
+#else
+#define WINDOWING_IS_WAYLAND() FALSE
+#endif
+
 #include <glib/gstdio.h>
 #include <libxfce4util/libxfce4util.h>
 
@@ -318,19 +325,28 @@ xfce_spawn_process (GdkScreen *screen,
 
   for (n_cenvp = n = 0; envp[n] != NULL; ++n)
     {
-      if (strncmp (envp[n], "DESKTOP_STARTUP_ID=", 19) != 0
-          && (!WINDOWING_IS_X11 () || strncmp (envp[n], "DISPLAY=", 8) != 0))
+      if (!g_str_has_prefix (envp[n], "DESKTOP_STARTUP_ID=")
+          && (!WINDOWING_IS_X11 () || !g_str_has_prefix (envp[n], "DISPLAY="))
+          && (!WINDOWING_IS_WAYLAND () || !g_str_has_prefix (envp[n], "WAYLAND_DISPLAY=")))
         cenvp[n_cenvp++] = g_strdup (envp[n]);
     }
 
+  const gchar *display_env_name;
   if (WINDOWING_IS_X11 ())
+    display_env_name = "DISPLAY";
+  else if (WINDOWING_IS_WAYLAND ())
+    display_env_name = "WAYLAND_DISPLAY";
+  else
+    display_env_name = NULL;
+
+  if (display_env_name != NULL)
     {
       /* add the real display name for the screen */
       G_GNUC_BEGIN_IGNORE_DEPRECATIONS
       /* TODO: Move xfwm_make_display_name to libxfce4ui */
       display_name = gdk_screen_make_display_name (screen);
       G_GNUC_END_IGNORE_DEPRECATIONS
-      cenvp[n_cenvp++] = g_strconcat ("DISPLAY=", display_name, NULL);
+      cenvp[n_cenvp++] = g_strconcat (display_env_name, "=", display_name, NULL);
       g_free (display_name);
     }
 
