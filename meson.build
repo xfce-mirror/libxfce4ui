@@ -28,7 +28,6 @@ dependency_versions = {
   'libx11': '>= 1.6.7',
   'libice': '>= 1.0.10',
   'libsm': '>= 1.2.3',
-  'libstartup-notif': '>= 0.4',
 
   'libgtop': '>= 2.24.0',
   'epoxy': '>= 1.2',
@@ -73,12 +72,6 @@ if enable_x11
       feature_cflags += '-DENABLE_LIBSM=1'
       x11_deps += [libsm, libice]
     endif
-  endif
-
-  libstartup_notif = dependency('libstartup-notification-1.0', version: dependency_versions['libstartup-notif'], required: get_option('startup-notification'))
-  if libstartup_notif.found()
-    feature_cflags += '-DHAVE_LIBSTARTUP_NOTIFICATION=1'
-    x11_deps += libstartup_notif
   endif
 endif
 
