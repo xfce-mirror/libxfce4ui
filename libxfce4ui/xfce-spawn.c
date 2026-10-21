@@ -336,7 +336,7 @@ xfce_spawn_process (GdkScreen *screen,
 
 #ifdef HAVE_LIBSTARTUP_NOTIFICATION
   /* initialize the sn launcher context */
-  if (G_LIKELY (startup_notify))
+  if (G_LIKELY (startup_notify) && WINDOWING_IS_X11 ())
     {
       G_GNUC_BEGIN_IGNORE_DEPRECATIONS
       sn_display = sn_display_new (GDK_SCREEN_XDISPLAY (screen),
