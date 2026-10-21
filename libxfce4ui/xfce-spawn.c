@@ -276,9 +276,6 @@ xfce_spawn_process (GdkScreen *screen,
                     gboolean child_process)
 {
   gboolean succeed;
-  gchar **cenvp;
-  guint n;
-  guint n_cenvp;
   gchar *display_name;
   GPid pid;
   XfceSpawnData *spawn_data;
@@ -315,17 +312,16 @@ xfce_spawn_process (GdkScreen *screen,
   /* setup the child environment (stripping $DESKTOP_STARTUP_ID and $DISPLAY) */
   if (G_LIKELY (envp == NULL))
     envp = (gchar **) environ;
-  for (n = 0; envp[n] != NULL; ++n)
-    ;
-  cenvp = g_new0 (gchar *, n + 4);
 
-  for (n_cenvp = n = 0; envp[n] != NULL; ++n)
+  GStrvBuilder *cenvp_builder = g_strv_builder_new ();
+
+  for (gsize i = 0; envp[i] != NULL; ++i)
     {
-      if (!g_str_has_prefix (envp[n], "DESKTOP_STARTUP_ID=")
-          && !g_str_has_prefix (envp[n], "XDG_ACTIVATION_TOKEN=")
-          && (!WINDOWING_IS_X11 () || !g_str_has_prefix (envp[n], "DISPLAY="))
-          && (!WINDOWING_IS_WAYLAND () || !g_str_has_prefix (envp[n], "WAYLAND_DISPLAY=")))
-        cenvp[n_cenvp++] = g_strdup (envp[n]);
+      if (!g_str_has_prefix (envp[i], "DESKTOP_STARTUP_ID=")
+          && !g_str_has_prefix (envp[i], "XDG_ACTIVATION_TOKEN=")
+          && (!WINDOWING_IS_X11 () || !g_str_has_prefix (envp[i], "DISPLAY="))
+          && (!WINDOWING_IS_WAYLAND () || !g_str_has_prefix (envp[i], "WAYLAND_DISPLAY=")))
+        g_strv_builder_add (cenvp_builder, envp[i]);
     }
 
   const gchar *display_env_name;
@@ -343,7 +339,7 @@ xfce_spawn_process (GdkScreen *screen,
       /* TODO: Move xfwm_make_display_name to libxfce4ui */
       display_name = gdk_screen_make_display_name (screen);
       G_GNUC_END_IGNORE_DEPRECATIONS
-      cenvp[n_cenvp++] = g_strconcat (display_env_name, "=", display_name, NULL);
+      g_strv_builder_take (cenvp_builder, g_strconcat (display_env_name, "=", display_name, NULL));
       g_free (display_name);
     }
 
@@ -380,7 +376,7 @@ xfce_spawn_process (GdkScreen *screen,
               /* add the real startup id to the child environment */
               const gchar *startup_id = sn_launcher_context_get_startup_id (sn_launcher);
               if (G_LIKELY (startup_id != NULL))
-                cenvp[n_cenvp++] = g_strconcat ("DESKTOP_STARTUP_ID=", startup_id, NULL);
+                g_strv_builder_take (cenvp_builder, g_strconcat ("DESKTOP_STARTUP_ID=", startup_id, NULL));
             }
         }
     }
@@ -401,8 +397,8 @@ xfce_spawn_process (GdkScreen *screen,
 
       if (G_LIKELY (startup_id != NULL))
         {
-          cenvp[n_cenvp++] = g_strconcat ("DESKTOP_STARTUP_ID=", startup_id, NULL);
-          cenvp[n_cenvp++] = g_strconcat ("XDG_ACTIVATION_TOKEN=", startup_id, NULL);
+          g_strv_builder_take (cenvp_builder, g_strconcat ("DESKTOP_STARTUP_ID=", startup_id, NULL));
+          g_strv_builder_take (cenvp_builder, g_strconcat ("XDG_ACTIVATION_TOKEN=", startup_id, NULL));
           g_free (startup_id);
         }
     }
@@ -425,6 +421,9 @@ xfce_spawn_process (GdkScreen *screen,
                   working_directory, *argv);
       working_directory = NULL;
     }
+
+  gchar **cenvp = g_strv_builder_end (cenvp_builder);
+  g_strv_builder_unref (cenvp_builder);
 
   /* try to spawn the new process */
   succeed = g_spawn_async (working_directory, argv, cenvp, flags,
