@@ -36,9 +36,6 @@
 #endif
 
 #ifdef ENABLE_X11
-#ifdef HAVE_LIBSTARTUP_NOTIFICATION
-#include <libsn/sn.h>
-#endif
 #include <X11/Xatom.h>
 #include <gdk/gdkx.h>
 #define WINDOWING_IS_X11() GDK_IS_X11_DISPLAY (gdk_display_get_default ())
@@ -76,59 +73,11 @@ extern gchar **environ;
 
 typedef struct
 {
-#ifdef HAVE_LIBSTARTUP_NOTIFICATION
-  /* startup notification data */
-  SnLauncherContext *sn_launcher;
-  guint timeout_id;
-#endif
-
   /* child watch data */
   guint watch_id;
   GPid pid;
   GClosure *closure;
 } XfceSpawnData;
-
-
-
-#ifdef HAVE_LIBSTARTUP_NOTIFICATION
-static gboolean
-xfce_spawn_startup_timeout (gpointer user_data)
-{
-  /* timeout reached, lets stop the startup notification */
-  return FALSE;
-}
-
-
-
-static void
-xfce_spawn_startup_timeout_destroy (gpointer user_data)
-{
-  XfceSpawnData *spawn_data = user_data;
-  GPid pid;
-
-  spawn_data->timeout_id = 0;
-
-  if (G_LIKELY (spawn_data->sn_launcher != NULL))
-    {
-      /* abort the startup notification */
-      sn_launcher_context_complete (spawn_data->sn_launcher);
-      sn_launcher_context_unref (spawn_data->sn_launcher);
-      spawn_data->sn_launcher = NULL;
-    }
-
-  /* if there is no closure to watch the child, also stop
-   * the child watch */
-  if (G_LIKELY (spawn_data->closure == NULL
-                && spawn_data->watch_id != 0))
-    {
-      pid = spawn_data->pid;
-      g_source_remove (spawn_data->watch_id);
-      g_child_watch_add (pid,
-                         (GChildWatchFunc) (void (*) (void)) g_spawn_close_pid,
-                         NULL);
-    }
-}
-#endif
 
 
 
@@ -170,11 +119,6 @@ xfce_spawn_startup_watch_destroy (gpointer user_data)
 
   spawn_data->watch_id = 0;
 
-#ifdef HAVE_LIBSTARTUP_NOTIFICATION
-  if (spawn_data->timeout_id != 0)
-    g_source_remove (spawn_data->timeout_id);
-#endif
-
   if (G_UNLIKELY (spawn_data->closure != NULL))
     {
       g_closure_invalidate (spawn_data->closure);
@@ -186,10 +130,13 @@ xfce_spawn_startup_watch_destroy (gpointer user_data)
 
 
 
-#ifdef HAVE_LIBSTARTUP_NOTIFICATION
 static gint
 xfce_spawn_get_active_workspace_number (GdkScreen *screen)
 {
+#ifdef ENABLE_X11
+  if (!WINDOWING_IS_X11 ())
+    return 0;
+
   GdkWindow *root;
   gulong bytes_after_ret = 0;
   gulong nitems_ret = 0;
@@ -242,8 +189,10 @@ xfce_spawn_get_active_workspace_number (GdkScreen *screen)
   gdk_x11_display_error_trap_pop_ignored (display);
 
   return ws_num;
-}
+#else
+  return 0;
 #endif
+}
 
 
 
@@ -279,12 +228,6 @@ xfce_spawn_process (GdkScreen *screen,
   gchar *display_name;
   GPid pid;
   XfceSpawnData *spawn_data;
-#ifdef HAVE_LIBSTARTUP_NOTIFICATION
-  SnLauncherContext *sn_launcher = NULL;
-  SnDisplay *sn_display = NULL;
-  gint sn_workspace;
-  const gchar *prgname;
-#endif
 
   g_return_val_if_fail (screen == NULL || GDK_IS_SCREEN (screen), FALSE);
   g_return_val_if_fail ((flags & G_SPAWN_DO_NOT_REAP_CHILD) == 0, FALSE);
@@ -343,69 +286,61 @@ xfce_spawn_process (GdkScreen *screen,
       g_free (display_name);
     }
 
-#ifdef HAVE_LIBSTARTUP_NOTIFICATION
-  /* initialize the sn launcher context */
-  if (G_LIKELY (startup_notify))
+  if (G_LIKELY (startup_notify) || WINDOWING_IS_WAYLAND ())
     {
-      G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-      sn_display = sn_display_new (GDK_SCREEN_XDISPLAY (screen),
-                                   (SnDisplayErrorTrapPush) (void (*) (void)) gdk_error_trap_push,
-                                   (SnDisplayErrorTrapPop) (void (*) (void)) gdk_error_trap_pop);
-      G_GNUC_END_IGNORE_DEPRECATIONS
+      /* We unconditionally set this up for Wayland, because the app launch
+       * context will set up an xdg_activation token for us, which we'll want
+       * regardless. */
 
-      if (G_LIKELY (sn_display != NULL))
+      GAppInfo *app_info = NULL;
+      if (WINDOWING_IS_X11 ())
         {
-          sn_launcher = sn_launcher_context_new (sn_display, GDK_SCREEN_XNUMBER (screen));
-          if (G_LIKELY (sn_launcher != NULL))
-            {
-              /* initiate the sn launcher context */
-              sn_workspace = xfce_spawn_get_active_workspace_number (screen);
-              sn_launcher_context_set_workspace (sn_launcher, sn_workspace);
-              sn_launcher_context_set_binary_name (sn_launcher, argv[0]);
-              sn_launcher_context_set_icon_name (sn_launcher,
-                                                 startup_icon_name != NULL ? startup_icon_name : "applications-other");
-
-              if (G_LIKELY (!sn_launcher_context_get_initiated (sn_launcher)))
-                {
-                  prgname = g_get_prgname ();
-                  sn_launcher_context_initiate (sn_launcher,
-                                                prgname != NULL ? prgname : "unknown", argv[0],
-                                                startup_timestamp);
-                }
-
-              /* add the real startup id to the child environment */
-              const gchar *startup_id = sn_launcher_context_get_startup_id (sn_launcher);
-              if (G_LIKELY (startup_id != NULL))
-                g_strv_builder_take (cenvp_builder, g_strconcat ("DESKTOP_STARTUP_ID=", startup_id, NULL));
-            }
+          /* We don't use the GAppInfo, but tring to build the startup ID will
+           * print critical warnings on X11 without it.  (It's ignored on
+           * Wayland.) */
+          app_info = g_app_info_create_from_commandline (argv[0],
+                                                         NULL,
+                                                         startup_notify
+                                                           ? G_APP_INFO_CREATE_SUPPORTS_STARTUP_NOTIFICATION
+                                                           : G_APP_INFO_CREATE_NONE,
+                                                         NULL);
         }
-    }
-#endif
 
-#ifdef ENABLE_WAYLAND
-  if (WINDOWING_IS_WAYLAND ())
-    {
-      /* GdkAppLaunchContext is the only thing that can properly request an
-       * xdg_activation token (because getting the last input serial is private
-       * to GDK). */
-      GdkAppLaunchContext *ctx = gdk_display_get_app_launch_context (gdk_screen_get_display (screen));
-      gdk_app_launch_context_set_screen (ctx, screen);
-      gdk_app_launch_context_set_timestamp (ctx, startup_timestamp);
-
-      gchar *startup_id = g_app_launch_context_get_startup_notify_id (G_APP_LAUNCH_CONTEXT (ctx), NULL, NULL);
-      g_object_unref (ctx);
-
-      if (G_LIKELY (startup_id != NULL))
+      if (app_info != NULL || WINDOWING_IS_WAYLAND ())
         {
-          g_strv_builder_take (cenvp_builder, g_strconcat ("DESKTOP_STARTUP_ID=", startup_id, NULL));
-          g_strv_builder_take (cenvp_builder, g_strconcat ("XDG_ACTIVATION_TOKEN=", startup_id, NULL));
+          GdkAppLaunchContext *launch_ctx = gdk_display_get_app_launch_context (gdk_screen_get_display (screen));
+          gdk_app_launch_context_set_screen (launch_ctx, screen);
+          gdk_app_launch_context_set_timestamp (launch_ctx, startup_timestamp);
+          gdk_app_launch_context_set_icon_name (launch_ctx,
+                                                startup_icon_name != NULL
+                                                  ? startup_icon_name
+                                                  : "applications-other");
+          gdk_app_launch_context_set_desktop (launch_ctx, xfce_spawn_get_active_workspace_number (screen));
+
+          gchar *startup_id = g_app_launch_context_get_startup_notify_id (G_APP_LAUNCH_CONTEXT (launch_ctx), app_info, NULL);
+          if (G_LIKELY (startup_id != NULL))
+            {
+              g_strv_builder_take (cenvp_builder, g_strconcat ("DESKTOP_STARTUP_ID=", startup_id, NULL));
+              if (WINDOWING_IS_WAYLAND ())
+                g_strv_builder_take (cenvp_builder, g_strconcat ("XDG_ACTIVATION_TOKEN=", startup_id, NULL));
+            }
+
+          g_object_unref (launch_ctx);
           g_free (startup_id);
         }
-    }
-#endif
+      else if (app_info == NULL && WINDOWING_IS_X11 ())
+        {
+          g_message ("Failed to create GAppInfo for '%s'; startup notification will be unavailable for this launch", argv[0]);
+        }
 
-  /* watch the child process */
-  flags |= G_SPAWN_DO_NOT_REAP_CHILD;
+      g_clear_object (&app_info);
+    }
+
+  if (child_watch_closure != NULL)
+    {
+      /* watch the child process if the caller provided a closure */
+      flags |= G_SPAWN_DO_NOT_REAP_CHILD;
+    }
 
   /* test if the working directory exists */
   if (working_directory == NULL || *working_directory == '\0')
@@ -432,7 +367,7 @@ xfce_spawn_process (GdkScreen *screen,
 
   g_strfreev (cenvp);
 
-  if (G_LIKELY (succeed))
+  if (G_LIKELY (succeed) && child_watch_closure != NULL)
     {
       /* setup data to watch the child */
       spawn_data = g_slice_new0 (XfceSpawnData);
@@ -447,39 +382,7 @@ xfce_spawn_process (GdkScreen *screen,
                                                      xfce_spawn_startup_watch,
                                                      spawn_data,
                                                      xfce_spawn_startup_watch_destroy);
-
-#ifdef HAVE_LIBSTARTUP_NOTIFICATION
-      if (G_LIKELY (sn_launcher != NULL))
-        {
-          /* start a timeout to stop the startup notification sequence after
-           * about XFCE_SPAWN_STARTUP_TIMEOUT seconds, to handle applications that do not
-           * properly implement startup notify */
-          spawn_data->sn_launcher = sn_launcher;
-          spawn_data->timeout_id = g_timeout_add_seconds_full (G_PRIORITY_LOW,
-                                                               XFCE_SPAWN_STARTUP_TIMEOUT,
-                                                               xfce_spawn_startup_timeout,
-                                                               spawn_data,
-                                                               xfce_spawn_startup_timeout_destroy);
-        }
-#endif
     }
-  else
-    {
-#ifdef HAVE_LIBSTARTUP_NOTIFICATION
-      if (G_LIKELY (sn_launcher != NULL))
-        {
-          /* abort the startup notification sequence */
-          sn_launcher_context_complete (sn_launcher);
-          sn_launcher_context_unref (sn_launcher);
-        }
-#endif
-    }
-
-#ifdef HAVE_LIBSTARTUP_NOTIFICATION
-  /* release the sn display */
-  if (G_LIKELY (sn_display != NULL))
-    sn_display_unref (sn_display);
-#endif
 
   return succeed;
 }
