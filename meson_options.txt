@@ -55,13 +55,6 @@ option(
 )
 
 option(
-  'startup-notification',
-  type: 'feature',
-  value: 'auto',
-  description: 'Startup notification support (X11 only)',
-)
-
-option(
   'libgtop',
   type: 'feature',
   value: 'auto',
