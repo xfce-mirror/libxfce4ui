@@ -120,9 +120,11 @@ xfce_clipboard_manager_handle_store (XfceDbusClipboardManager *skeleton,
                                      GDBusMethodInvocation *invocation,
                                      XfceClipboardManager *manager)
 {
-  gboolean success;
+  XfceClipboardManagerClass *klass = XFCE_CLIPBOARD_MANAGER_GET_CLASS (manager);
+  gboolean success = TRUE;
 
-  success = xfce_clipboard_manager_persist (manager);
+  if (klass->persist != NULL)
+    success = klass->persist (manager);
 
   xfce_dbus_clipboard_manager_complete_store (skeleton, invocation, success);
 
@@ -212,34 +214,6 @@ xfce_clipboard_manager_register_dbus_object (XfceClipboardManager *manager,
                                                  XFCE_CLIPBOARD_MANAGER_DBUS_NAME,
                                                  G_BUS_NAME_OWNER_FLAGS_NONE,
                                                  NULL, NULL, NULL, NULL);
-
-  return TRUE;
-}
-
-
-
-/**
- * xfce_clipboard_manager_persist:
- * @manager: an #XfceClipboardManager
- *
- * Persists the current clipboard data. On Wayland, reads from the
- * active offer and becomes selection owner. On X11, this is a no-op
- * since the ICCCM protocol handles persistence via SAVE_TARGETS.
- *
- * Return value: %TRUE on success.
- *
- * Since: 4.21.10
- **/
-gboolean
-xfce_clipboard_manager_persist (XfceClipboardManager *manager)
-{
-  XfceClipboardManagerClass *klass;
-
-  g_return_val_if_fail (XFCE_IS_CLIPBOARD_MANAGER (manager), FALSE);
-
-  klass = XFCE_CLIPBOARD_MANAGER_GET_CLASS (manager);
-  if (klass->persist != NULL)
-    return klass->persist (manager);
 
   return TRUE;
 }

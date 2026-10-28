@@ -90,7 +90,6 @@ xfce_filename_input_desensitise_widget
 # file:xfce-clipboard-manager
 xfce_clipboard_manager_get_type
 xfce_clipboard_manager_new
-xfce_clipboard_manager_persist
 xfce_clipboard_manager_register_dbus_object
 
 # file:xfce-clipboard-manager-client
