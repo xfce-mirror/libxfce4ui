@@ -23,16 +23,10 @@
  *
  */
 
-/**
- * SECTION:xfce-clipboard-manager-x11
- * @title: XfceClipboardManager
- * @short_description: X11 clipboard manager
- * @stability: Stable
- * @include: libxfce4ui/libxfce4ui.h
- *
+/*
  * X11 clipboard manager which ensures persistence in the sense of
  * gdk_display_supports_clipboard_persistence().
- **/
+ */
 
 #include <X11/Xatom.h>
 #include <X11/Xlib.h>
@@ -40,11 +34,10 @@
 #include <gtk/gtk.h>
 
 #include "xfce-clipboard-manager-x11.h"
-#include "libxfce4ui-visibility.h"
 
-struct _XfceClipboardManager
+struct _XfceClipboardManagerX11
 {
-  GObject __parent__;
+  XfceClipboardManager __parent__;
 
   guint start_idle_id;
   Display *display;
@@ -79,9 +72,9 @@ typedef struct
 } IncrConversion;
 
 static void
-xfce_clipboard_manager_finalize (GObject *object);
+xfce_clipboard_manager_x11_finalize (GObject *object);
 static void
-clipboard_manager_watch_cb (XfceClipboardManager *manager,
+clipboard_manager_watch_cb (XfceClipboardManagerX11 *manager,
                             Window window,
                             Bool is_start,
                             long mask,
@@ -105,20 +98,32 @@ static Atom XA_TIMESTAMP = None;
 
 
 
-G_DEFINE_FINAL_TYPE (XfceClipboardManager, xfce_clipboard_manager, G_TYPE_OBJECT)
+G_DEFINE_FINAL_TYPE (XfceClipboardManagerX11, xfce_clipboard_manager_x11, XFCE_TYPE_CLIPBOARD_MANAGER)
+
+
+
+static gboolean
+xfce_clipboard_manager_x11_store (XfceClipboardManager *manager)
+{
+  /* X11 persistence is handled automatically via the ICCCM SAVE_TARGETS
+   * protocol. Nothing to do here. */
+  return TRUE;
+}
 
 
 
 static void
-xfce_clipboard_manager_class_init (XfceClipboardManagerClass *klass)
+xfce_clipboard_manager_x11_class_init (XfceClipboardManagerX11Class *klass)
 {
   GObjectClass *object_class = G_OBJECT_CLASS (klass);
+  XfceClipboardManagerClass *manager_class = XFCE_CLIPBOARD_MANAGER_CLASS (klass);
 
-  object_class->finalize = xfce_clipboard_manager_finalize;
+  object_class->finalize = xfce_clipboard_manager_x11_finalize;
+  manager_class->persist = xfce_clipboard_manager_x11_store;
 }
 
 static void
-xfce_clipboard_manager_init (XfceClipboardManager *manager)
+xfce_clipboard_manager_x11_init (XfceClipboardManagerX11 *manager)
 {
   manager->display = GDK_DISPLAY_XDISPLAY (gdk_display_get_default ());
 }
@@ -154,9 +159,9 @@ conversion_free (IncrConversion *rdata)
 }
 
 static void
-xfce_clipboard_manager_finalize (GObject *object)
+xfce_clipboard_manager_x11_finalize (GObject *object)
 {
-  XfceClipboardManager *manager = XFCE_CLIPBOARD_MANAGER (object);
+  XfceClipboardManagerX11 *manager = XFCE_CLIPBOARD_MANAGER_X11 (object);
 
   if (manager->window != None)
     {
@@ -175,11 +180,11 @@ xfce_clipboard_manager_finalize (GObject *object)
   if (manager->start_idle_id != 0)
     g_source_remove (manager->start_idle_id);
 
-  G_OBJECT_CLASS (xfce_clipboard_manager_parent_class)->finalize (object);
+  G_OBJECT_CLASS (xfce_clipboard_manager_x11_parent_class)->finalize (object);
 }
 
 static void
-send_selection_notify (XfceClipboardManager *manager,
+send_selection_notify (XfceClipboardManagerX11 *manager,
                        Bool success)
 {
   XSelectionEvent notify;
@@ -210,7 +215,7 @@ send_selection_notify (XfceClipboardManager *manager,
 }
 
 static void
-finish_selection_request (XfceClipboardManager *manager,
+finish_selection_request (XfceClipboardManagerX11 *manager,
                           XEvent *xev,
                           Bool success)
 {
@@ -257,7 +262,7 @@ clipboard_bytes_per_item (int format)
 }
 
 static void
-save_targets (XfceClipboardManager *manager,
+save_targets (XfceClipboardManagerX11 *manager,
               Atom *targets,
               int nitems)
 {
@@ -327,7 +332,7 @@ find_conversion_requestor (IncrConversion *rdata,
 
 static void
 get_property (TargetData *tdata,
-              XfceClipboardManager *manager)
+              XfceClipboardManagerX11 *manager)
 {
   Atom type;
   gint format;
@@ -369,7 +374,7 @@ get_property (TargetData *tdata,
 }
 
 static Bool
-receive_incrementally (XfceClipboardManager *manager,
+receive_incrementally (XfceClipboardManagerX11 *manager,
                        XEvent *xev)
 {
   GSList *list;
@@ -436,7 +441,7 @@ receive_incrementally (XfceClipboardManager *manager,
 }
 
 static Bool
-send_incrementally (XfceClipboardManager *manager,
+send_incrementally (XfceClipboardManagerX11 *manager,
                     XEvent *xev)
 {
   GSList *list;
@@ -480,7 +485,7 @@ send_incrementally (XfceClipboardManager *manager,
 }
 
 static void
-convert_clipboard_manager (XfceClipboardManager *manager,
+convert_clipboard_manager (XfceClipboardManagerX11 *manager,
                            XEvent *xev)
 {
   Atom type = None;
@@ -582,7 +587,7 @@ convert_clipboard_manager (XfceClipboardManager *manager,
 
 static void
 convert_clipboard_target (IncrConversion *rdata,
-                          XfceClipboardManager *manager)
+                          XfceClipboardManagerX11 *manager)
 {
   TargetData *tdata;
   Atom *targets;
@@ -673,7 +678,7 @@ convert_clipboard_target (IncrConversion *rdata,
 
 static void
 collect_incremental (IncrConversion *rdata,
-                     XfceClipboardManager *manager)
+                     XfceClipboardManagerX11 *manager)
 {
   if (rdata->offset >= 0)
     manager->conversions = g_slist_prepend (manager->conversions, rdata);
@@ -682,7 +687,7 @@ collect_incremental (IncrConversion *rdata,
 }
 
 static void
-convert_clipboard (XfceClipboardManager *manager,
+convert_clipboard (XfceClipboardManagerX11 *manager,
                    XEvent *xev)
 {
   GSList *list;
@@ -767,7 +772,7 @@ convert_clipboard (XfceClipboardManager *manager,
 }
 
 static Bool
-clipboard_manager_process_event (XfceClipboardManager *manager,
+clipboard_manager_process_event (XfceClipboardManagerX11 *manager,
                                  XEvent *xev)
 {
   Atom type;
@@ -925,7 +930,7 @@ clipboard_manager_process_event (XfceClipboardManager *manager,
 static GdkFilterReturn
 clipboard_manager_event_filter (GdkXEvent *xevent,
                                 GdkEvent *event,
-                                XfceClipboardManager *manager)
+                                XfceClipboardManagerX11 *manager)
 {
   if (clipboard_manager_process_event (manager, (XEvent *) xevent))
     {
@@ -938,7 +943,7 @@ clipboard_manager_event_filter (GdkXEvent *xevent,
 }
 
 static void
-clipboard_manager_watch_cb (XfceClipboardManager *manager,
+clipboard_manager_watch_cb (XfceClipboardManagerX11 *manager,
                             Window window,
                             Bool is_start,
                             long mask,
@@ -1045,7 +1050,7 @@ get_server_time (Display *xdisplay,
 }
 
 static gboolean
-clipboard_manager_start (XfceClipboardManager *manager,
+clipboard_manager_start (XfceClipboardManagerX11 *manager,
                          gboolean replace)
 {
   XClientMessageEvent xev;
@@ -1122,19 +1127,13 @@ clipboard_manager_start (XfceClipboardManager *manager,
 
 
 
-/**
- * xfce_clipboard_manager_new: (constructor)
- * @replace: whether or not to replace an existing clipboard manager
- *
- * Return value: (nullable) (transfer full): A new #XfceClipboardManager instance
- * or %NULL if @replace is %FALSE and a clipboard manager is already running.
- *
- * Since: 4.19.5
- **/
-XfceClipboardManager *
-xfce_clipboard_manager_new (gboolean replace)
+/*
+ * Returns NULL if @replace is FALSE and a clipboard manager is already running.
+ */
+XfceClipboardManagerX11 *
+xfce_clipboard_manager_x11_new (gboolean replace)
 {
-  XfceClipboardManager *manager = g_object_new (XFCE_TYPE_CLIPBOARD_MANAGER, NULL);
+  XfceClipboardManagerX11 *manager = g_object_new (XFCE_TYPE_CLIPBOARD_MANAGER_X11, NULL);
   if (!clipboard_manager_start (manager, replace))
     {
       g_object_unref (manager);
@@ -1143,6 +1142,3 @@ xfce_clipboard_manager_new (gboolean replace)
 
   return manager;
 }
-
-#define __XFCE_CLIPBOARD_MANAGER_X11_C__
-#include "libxfce4ui-visibility.c"

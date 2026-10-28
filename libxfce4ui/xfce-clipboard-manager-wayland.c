@@ -17,17 +17,11 @@
  * MA 02110-1301 USA
  */
 
-/**
- * SECTION:xfce-clipboard-manager-wayland
- * @title: XfceClipboardManagerWayland
- * @short_description: Wayland clipboard manager
- * @stability: Stable
- * @include: libxfce4ui/libxfce4ui.h
- *
+/*
  * Wayland clipboard manager using the ext-data-control-v1 protocol.
  * Tracks the current selection source and, on explicit Store() request,
  * reads and caches its data, then re-serves it as the new selection owner.
- **/
+ */
 
 #include <errno.h>
 #include <fcntl.h>
@@ -41,7 +35,6 @@
 
 #include "ext-data-control-v1-client.h"
 #include "xfce-clipboard-manager-wayland.h"
-#include "libxfce4ui-visibility.h"
 
 
 
@@ -55,7 +48,7 @@ typedef struct
 
 struct _XfceClipboardManagerWayland
 {
-  GObject __parent__;
+  XfceClipboardManager __parent__;
 
   struct wl_display *wl_display;
   struct wl_registry *wl_registry;
@@ -75,6 +68,8 @@ struct _XfceClipboardManagerWayland
 
 
 static void xfce_clipboard_manager_wayland_finalize (GObject *object);
+
+static gboolean xfce_clipboard_manager_wayland_persist (XfceClipboardManager *manager);
 
 static void registry_global (void *data, struct wl_registry *registry,
                              uint32_t id, const char *interface, uint32_t version);
@@ -120,7 +115,7 @@ static const struct ext_data_control_source_v1_listener source_listener = {
 
 
 
-G_DEFINE_FINAL_TYPE (XfceClipboardManagerWayland, xfce_clipboard_manager_wayland, G_TYPE_OBJECT)
+G_DEFINE_FINAL_TYPE (XfceClipboardManagerWayland, xfce_clipboard_manager_wayland, XFCE_TYPE_CLIPBOARD_MANAGER)
 
 
 
@@ -128,7 +123,10 @@ static void
 xfce_clipboard_manager_wayland_class_init (XfceClipboardManagerWaylandClass *klass)
 {
   GObjectClass *object_class = G_OBJECT_CLASS (klass);
+  XfceClipboardManagerClass *manager_class = XFCE_CLIPBOARD_MANAGER_CLASS (klass);
+
   object_class->finalize = xfce_clipboard_manager_wayland_finalize;
+  manager_class->persist = xfce_clipboard_manager_wayland_persist;
 }
 
 
@@ -633,17 +631,11 @@ source_cancelled (void *data,
 
 
 
-/**
- * xfce_clipboard_manager_wayland_new:
- *
+/*
  * Creates a new Wayland clipboard manager that uses the
  * ext-data-control-v1 protocol to persist clipboard data.
- *
- * Return value: (nullable) (transfer full): A new #XfceClipboardManagerWayland
- * instance or %NULL if the protocol is not available.
- *
- * Since: 4.21.10
- **/
+ * Returns NULL if the protocol is not available.
+ */
 XfceClipboardManagerWayland *
 xfce_clipboard_manager_wayland_new (void)
 {
@@ -683,22 +675,15 @@ xfce_clipboard_manager_wayland_new (void)
 
 
 
-/**
- * xfce_clipboard_manager_wayland_store:
- * @manager: an #XfceClipboardManagerWayland
- *
- * Explicitly reads and caches the current clipboard selection, then
- * sets this manager as the new selection source to persist the data.
- * Called by the D-Bus Store() handler in clipboard manager, e.g. xfsettingsd.
- *
- * Return value: %TRUE if data was successfully cached and ownership taken.
- *
- * Since: 4.21.10
- **/
-gboolean
-xfce_clipboard_manager_wayland_store (XfceClipboardManagerWayland *manager)
+/*
+ * Reads and caches the current clipboard selection, then sets this
+ * manager as the new selection source to persist the data.
+ * Returns TRUE if data was successfully cached and ownership taken.
+ */
+static gboolean
+xfce_clipboard_manager_wayland_persist (XfceClipboardManager *clipboard_manager)
 {
-  g_return_val_if_fail (XFCE_IS_CLIPBOARD_MANAGER_WAYLAND (manager), FALSE);
+  XfceClipboardManagerWayland *manager = XFCE_CLIPBOARD_MANAGER_WAYLAND (clipboard_manager);
 
   /* Ensure active_offer reflects the latest selection event */
   wl_display_roundtrip (manager->wl_display);
@@ -716,8 +701,3 @@ xfce_clipboard_manager_wayland_store (XfceClipboardManagerWayland *manager)
   become_selection_owner (manager);
   return TRUE;
 }
-
-
-
-#define __XFCE_CLIPBOARD_MANAGER_WAYLAND_C__
-#include "libxfce4ui-visibility.c"

@@ -24,18 +24,15 @@
 #ifndef __XFCE_CLIPBOARD_MANAGER_WAYLAND_H__
 #define __XFCE_CLIPBOARD_MANAGER_WAYLAND_H__
 
-#include <glib-object.h>
+#include <libxfce4ui/xfce-clipboard-manager.h>
 
 G_BEGIN_DECLS
 
 #define XFCE_TYPE_CLIPBOARD_MANAGER_WAYLAND (xfce_clipboard_manager_wayland_get_type ())
-G_DECLARE_FINAL_TYPE (XfceClipboardManagerWayland, xfce_clipboard_manager_wayland, XFCE, CLIPBOARD_MANAGER_WAYLAND, GObject)
+G_DECLARE_FINAL_TYPE (XfceClipboardManagerWayland, xfce_clipboard_manager_wayland, XFCE, CLIPBOARD_MANAGER_WAYLAND, XfceClipboardManager)
 
 XfceClipboardManagerWayland *
 xfce_clipboard_manager_wayland_new (void);
-
-gboolean
-xfce_clipboard_manager_wayland_store (XfceClipboardManagerWayland *manager);
 
 G_END_DECLS
 

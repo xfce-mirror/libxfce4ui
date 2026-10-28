@@ -14,13 +14,14 @@ if get_option('gtk-doc')
 
   ignored_headers = [
     'libxfce4ui-visibility.h',
+    'xfce-clipboard-manager-wayland.h',
+    'xfce-clipboard-manager-x11.h',
     'xfce-icon-chooser-model.h',
     'xfce-thumbnail-preview.h',
     'xfce-thumbnail.h',
   ]
   if not enable_x11
     ignored_headers += [
-      'xfce-clipboard-manager-x11.h',
       'xfce-sm-client.h',
     ]
   endif

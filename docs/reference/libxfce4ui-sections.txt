@@ -120,12 +120,25 @@ xfce_titled_dialog_get_type
 </SECTION>
 
 <SECTION>
-<FILE>xfce-clipboard-manager-x11</FILE>
+<FILE>xfce-clipboard-manager</FILE>
 XfceClipboardManager
+XfceClipboardManagerClass
 xfce_clipboard_manager_new
+xfce_clipboard_manager_persist
 <SUBSECTION Standard>
 XFCE_TYPE_CLIPBOARD_MANAGER
+XFCE_CLIPBOARD_MANAGER
+XFCE_CLIPBOARD_MANAGER_CLASS
+XFCE_IS_CLIPBOARD_MANAGER
+XFCE_IS_CLIPBOARD_MANAGER_CLASS
+XFCE_CLIPBOARD_MANAGER_GET_CLASS
 xfce_clipboard_manager_get_type
+</SECTION>
+
+<SECTION>
+<FILE>xfce-clipboard-manager-client</FILE>
+xfce_clipboard_manager_supports_persistence
+xfce_clipboard_manager_store
 </SECTION>
 
 <SECTION>

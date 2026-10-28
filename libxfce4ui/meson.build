@@ -10,6 +10,7 @@ libxfce4ui_enum_headers = [
 
 libxfce4ui_headers = libxfce4ui_enum_headers + [
   'xfce-cell-renderer-icon.h',
+  'xfce-clipboard-manager.h',
   'xfce-clipboard-manager-client.h',
   'xfce-dialogs.h',
   'xfce-execute.h',
@@ -45,20 +46,14 @@ libxfce4ui_config_h = configure_file(
 
 if enable_x11
 libxfce4ui_headers += [
-  'xfce-clipboard-manager-x11.h',
   'xfce-sm-client.h',
-]
-endif
-
-if enable_wayland
-libxfce4ui_headers += [
-  'xfce-clipboard-manager-wayland.h',
 ]
 endif
 
 libxfce4ui_sources_gir = [
   'libxfce4ui-config.c',
   'xfce-cell-renderer-icon.c',
+  'xfce-clipboard-manager.c',
   'xfce-clipboard-manager-client.c',
   'xfce-dialogs.c',
   'xfce-execute.c',
@@ -80,14 +75,7 @@ libxfce4ui_sources_gir = [
 
 if enable_x11
 libxfce4ui_sources_gir += [
-  'xfce-clipboard-manager-x11.c',
   'xfce-sm-client.c',
-]
-endif
-
-if enable_wayland
-libxfce4ui_sources_gir += [
-  'xfce-clipboard-manager-wayland.c',
 ]
 endif
 
@@ -100,6 +88,20 @@ libxfce4ui_sources = libxfce4ui_sources_gir + [
   'xfce-thumbnail.c',
   'xfce-thumbnail.h',
 ]
+
+if enable_x11
+libxfce4ui_sources += [
+  'xfce-clipboard-manager-x11.c',
+  'xfce-clipboard-manager-x11.h',
+]
+endif
+
+if enable_wayland
+libxfce4ui_sources += [
+  'xfce-clipboard-manager-wayland.c',
+  'xfce-clipboard-manager-wayland.h',
+]
+endif
 
 libxfce4ui_sources += gnome.genmarshal(
   'libxfce4ui-marshal',
