@@ -41,13 +41,13 @@
 #endif
 
 #include "xfce-clipboard-manager-client.h"
+#include "xfce-clipboard-manager-dbus.h"
+#include "libxfce4ui-private.h"
 #include "libxfce4ui-visibility.h"
 
 
 
-#define CLIPBOARD_DBUS_NAME      "org.xfce.SettingsDaemon"
-#define CLIPBOARD_DBUS_PATH      "/org/xfce/ClipboardManager"
-#define CLIPBOARD_DBUS_INTERFACE "org.xfce.ClipboardManager"
+#define CLIPBOARD_DBUS_NAME "org.xfce.SettingsDaemon"
 
 
 
@@ -67,16 +67,10 @@ clipboard_store_cb (GObject *source,
                     gpointer user_data)
 {
   StoreData *data = user_data;
-  GVariant *result;
   GError *error = NULL;
 
-  result = g_dbus_connection_call_finish (G_DBUS_CONNECTION (source), res, &error);
-  if (result != NULL)
-    {
-      g_variant_get (result, "(b)", &data->success);
-      g_variant_unref (result);
-    }
-  else
+  if (!xfce_dbus_clipboard_manager_call_store_finish (XFCE_DBUS_CLIPBOARD_MANAGER (source),
+                                                      &data->success, res, &error))
     {
       g_warning ("Clipboard store failed: %s", error->message);
       g_error_free (error);
@@ -190,14 +184,21 @@ xfce_clipboard_manager_store (void)
 #ifdef ENABLE_WAYLAND
   if (GDK_IS_WAYLAND_DISPLAY (display))
     {
-      GDBusConnection *conn;
+      XfceDbusClipboardManager *proxy;
       GError *error = NULL;
       StoreData data = { .loop = NULL, .success = FALSE };
 
-      conn = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, &error);
-      if (G_UNLIKELY (error))
+      proxy = xfce_dbus_clipboard_manager_proxy_new_for_bus_sync (G_BUS_TYPE_SESSION,
+                                                                  G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES
+                                                                    | G_DBUS_PROXY_FLAGS_DO_NOT_CONNECT_SIGNALS
+                                                                    | G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START,
+                                                                  CLIPBOARD_DBUS_NAME,
+                                                                  XFCE_CLIPBOARD_MANAGER_DBUS_PATH,
+                                                                  NULL,
+                                                                  &error);
+      if (proxy == NULL)
         {
-          g_warning ("Failed to connect to session bus: %s", error->message);
+          g_warning ("Failed to connect to clipboard manager: %s", error->message);
           g_error_free (error);
           return FALSE;
         }
@@ -206,22 +207,12 @@ xfce_clipboard_manager_store (void)
        * event processing, deadlocking the clipboard data transfer */
       data.loop = g_main_loop_new (NULL, FALSE);
 
-      g_dbus_connection_call (conn,
-                              CLIPBOARD_DBUS_NAME,
-                              CLIPBOARD_DBUS_PATH,
-                              CLIPBOARD_DBUS_INTERFACE,
-                              "Store",
-                              NULL,
-                              G_VARIANT_TYPE ("(b)"),
-                              G_DBUS_CALL_FLAGS_NONE,
-                              10000,
-                              NULL,
-                              clipboard_store_cb,
-                              &data);
+      g_dbus_proxy_set_default_timeout (G_DBUS_PROXY (proxy), 10000);
+      xfce_dbus_clipboard_manager_call_store (proxy, NULL, clipboard_store_cb, &data);
 
       g_main_loop_run (data.loop);
       g_main_loop_unref (data.loop);
-      g_object_unref (conn);
+      g_object_unref (proxy);
       return data.success;
     }
 #endif

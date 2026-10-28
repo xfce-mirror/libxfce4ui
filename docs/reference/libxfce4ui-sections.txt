@@ -125,6 +125,7 @@ XfceClipboardManager
 XfceClipboardManagerClass
 xfce_clipboard_manager_new
 xfce_clipboard_manager_persist
+xfce_clipboard_manager_register_dbus_object
 <SUBSECTION Standard>
 XFCE_TYPE_CLIPBOARD_MANAGER
 XFCE_CLIPBOARD_MANAGER

@@ -24,7 +24,7 @@
 #ifndef __XFCE_CLIPBOARD_MANAGER_H__
 #define __XFCE_CLIPBOARD_MANAGER_H__
 
-#include <glib-object.h>
+#include <gio/gio.h>
 
 G_BEGIN_DECLS
 
@@ -54,6 +54,11 @@ xfce_clipboard_manager_new (gboolean replace);
 
 gboolean
 xfce_clipboard_manager_persist (XfceClipboardManager *manager);
+
+gboolean
+xfce_clipboard_manager_register_dbus_object (XfceClipboardManager *manager,
+                                             GDBusConnection *connection,
+                                             GError **error);
 
 G_END_DECLS
 

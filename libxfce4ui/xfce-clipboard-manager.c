@@ -42,7 +42,24 @@
 #endif
 
 #include "xfce-clipboard-manager.h"
+#include "xfce-clipboard-manager-dbus.h"
+#include "libxfce4ui-private.h"
 #include "libxfce4ui-visibility.h"
+
+
+
+typedef struct
+{
+  XfceDbusClipboardManager *skeleton;
+  guint owner_id;
+} XfceClipboardManagerPrivate;
+
+static void
+xfce_clipboard_manager_dispose (GObject *object);
+static gboolean
+xfce_clipboard_manager_handle_store (XfceDbusClipboardManager *skeleton,
+                                     GDBusMethodInvocation *invocation,
+                                     XfceClipboardManager *manager);
 
 
 
@@ -54,13 +71,16 @@
  *
  * Since: 4.19.5
  **/
-G_DEFINE_ABSTRACT_TYPE (XfceClipboardManager, xfce_clipboard_manager, G_TYPE_OBJECT)
+G_DEFINE_ABSTRACT_TYPE_WITH_PRIVATE (XfceClipboardManager, xfce_clipboard_manager, G_TYPE_OBJECT)
 
 
 
 static void
 xfce_clipboard_manager_class_init (XfceClipboardManagerClass *klass)
 {
+  GObjectClass *object_class = G_OBJECT_CLASS (klass);
+
+  object_class->dispose = xfce_clipboard_manager_dispose;
 }
 
 
@@ -68,6 +88,45 @@ xfce_clipboard_manager_class_init (XfceClipboardManagerClass *klass)
 static void
 xfce_clipboard_manager_init (XfceClipboardManager *manager)
 {
+}
+
+
+
+static void
+xfce_clipboard_manager_dispose (GObject *object)
+{
+  XfceClipboardManagerPrivate *priv = xfce_clipboard_manager_get_instance_private (XFCE_CLIPBOARD_MANAGER (object));
+
+  if (priv->skeleton != NULL)
+    {
+      g_signal_handlers_disconnect_by_data (priv->skeleton, object);
+      g_dbus_interface_skeleton_unexport (G_DBUS_INTERFACE_SKELETON (priv->skeleton));
+      g_clear_object (&priv->skeleton);
+    }
+
+  if (priv->owner_id != 0)
+    {
+      g_bus_unown_name (priv->owner_id);
+      priv->owner_id = 0;
+    }
+
+  G_OBJECT_CLASS (xfce_clipboard_manager_parent_class)->dispose (object);
+}
+
+
+
+static gboolean
+xfce_clipboard_manager_handle_store (XfceDbusClipboardManager *skeleton,
+                                     GDBusMethodInvocation *invocation,
+                                     XfceClipboardManager *manager)
+{
+  gboolean success;
+
+  success = xfce_clipboard_manager_persist (manager);
+
+  xfce_dbus_clipboard_manager_complete_store (skeleton, invocation, success);
+
+  return TRUE;
 }
 
 
@@ -100,6 +159,61 @@ xfce_clipboard_manager_new (gboolean replace)
 #endif
 
   return NULL;
+}
+
+
+
+/**
+ * xfce_clipboard_manager_register_dbus_object:
+ * @manager: an #XfceClipboardManager
+ * @connection: a #GDBusConnection
+ * @error: return location for a #GError, or %NULL
+ *
+ * Registers the org.xfce.ClipboardManager interface for @manager on
+ * @connection and requests the org.xfce.ClipboardManager bus name, so
+ * that clients can request clipboard persistence with
+ * xfce_clipboard_manager_store(). If the name is already owned, e.g. by
+ * another instance, the request is queued until it is released. The
+ * object and the name are released when @manager is disposed.
+ *
+ * Return value: %TRUE on success, %FALSE if @error is set.
+ *
+ * Since: 4.21.10
+ **/
+gboolean
+xfce_clipboard_manager_register_dbus_object (XfceClipboardManager *manager,
+                                             GDBusConnection *connection,
+                                             GError **error)
+{
+  XfceClipboardManagerPrivate *priv;
+  XfceDbusClipboardManager *skeleton;
+
+  g_return_val_if_fail (XFCE_IS_CLIPBOARD_MANAGER (manager), FALSE);
+  g_return_val_if_fail (G_IS_DBUS_CONNECTION (connection), FALSE);
+  g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
+
+  priv = xfce_clipboard_manager_get_instance_private (manager);
+  g_return_val_if_fail (priv->skeleton == NULL, FALSE);
+
+  skeleton = xfce_dbus_clipboard_manager_skeleton_new ();
+  g_signal_connect (skeleton, "handle-store", G_CALLBACK (xfce_clipboard_manager_handle_store), manager);
+
+  if (!g_dbus_interface_skeleton_export (G_DBUS_INTERFACE_SKELETON (skeleton),
+                                         connection,
+                                         XFCE_CLIPBOARD_MANAGER_DBUS_PATH,
+                                         error))
+    {
+      g_object_unref (skeleton);
+      return FALSE;
+    }
+
+  priv->skeleton = skeleton;
+  priv->owner_id = g_bus_own_name_on_connection (connection,
+                                                 XFCE_CLIPBOARD_MANAGER_DBUS_NAME,
+                                                 G_BUS_NAME_OWNER_FLAGS_NONE,
+                                                 NULL, NULL, NULL, NULL);
+
+  return TRUE;
 }
 
 

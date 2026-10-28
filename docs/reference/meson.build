@@ -13,7 +13,9 @@ if get_option('gtk-doc')
   )
 
   ignored_headers = [
+    'libxfce4ui-private.h',
     'libxfce4ui-visibility.h',
+    'xfce-clipboard-manager-dbus.h',
     'xfce-clipboard-manager-wayland.h',
     'xfce-clipboard-manager-x11.h',
     'xfce-icon-chooser-model.h',

@@ -103,6 +103,14 @@ libxfce4ui_sources += [
 ]
 endif
 
+libxfce4ui_sources += gnome.gdbus_codegen(
+  'xfce-clipboard-manager-dbus',
+  sources: 'xfce-clipboard-manager-dbus.xml',
+  interface_prefix: 'org.xfce.',
+  namespace: 'XfceDbus',
+  install_header: false,
+)
+
 libxfce4ui_sources += gnome.genmarshal(
   'libxfce4ui-marshal',
   sources: 'libxfce4ui-marshal.list',
