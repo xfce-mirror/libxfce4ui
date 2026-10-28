@@ -45,7 +45,7 @@ libxfce4ui_config_h = configure_file(
 
 if enable_x11
 libxfce4ui_headers += [
-  'xfce-clipboard-manager.h',
+  'xfce-clipboard-manager-x11.h',
   'xfce-sm-client.h',
 ]
 endif
@@ -80,7 +80,7 @@ libxfce4ui_sources_gir = [
 
 if enable_x11
 libxfce4ui_sources_gir += [
-  'xfce-clipboard-manager.c',
+  'xfce-clipboard-manager-x11.c',
   'xfce-sm-client.c',
 ]
 endif

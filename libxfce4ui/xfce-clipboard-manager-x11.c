@@ -24,7 +24,7 @@
  */
 
 /**
- * SECTION:xfce-clipboard-manager
+ * SECTION:xfce-clipboard-manager-x11
  * @title: XfceClipboardManager
  * @short_description: X11 clipboard manager
  * @stability: Stable
@@ -39,7 +39,7 @@
 #include <gdk/gdkx.h>
 #include <gtk/gtk.h>
 
-#include "xfce-clipboard-manager.h"
+#include "xfce-clipboard-manager-x11.h"
 #include "libxfce4ui-visibility.h"
 
 struct _XfceClipboardManager
@@ -1144,5 +1144,5 @@ xfce_clipboard_manager_new (gboolean replace)
   return manager;
 }
 
-#define __XFCE_CLIPBOARD_MANAGER_C__
+#define __XFCE_CLIPBOARD_MANAGER_X11_C__
 #include "libxfce4ui-visibility.c"

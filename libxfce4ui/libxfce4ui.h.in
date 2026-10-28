@@ -46,7 +46,7 @@
 #include <libxfce4ui/xfce-tree-view.h>
 #include <libxfce4ui/xfce-clipboard-manager-client.h>
 @BEGIN_X11_HEADERS@
-#include <libxfce4ui/xfce-clipboard-manager.h>
+#include <libxfce4ui/xfce-clipboard-manager-x11.h>
 #include <libxfce4ui/xfce-sm-client.h>
 @END_X11_HEADERS@
 @BEGIN_WAYLAND_HEADERS@

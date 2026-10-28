@@ -120,7 +120,7 @@ xfce_titled_dialog_get_type
 </SECTION>
 
 <SECTION>
-<FILE>xfce-clipboard-manager</FILE>
+<FILE>xfce-clipboard-manager-x11</FILE>
 XfceClipboardManager
 xfce_clipboard_manager_new
 <SUBSECTION Standard>

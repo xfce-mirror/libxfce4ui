@@ -92,7 +92,7 @@ xfce_clipboard_manager_supports_persistence
 xfce_clipboard_manager_store
 
 @BEGIN_X11_SYMBOLS@
-# file:xfce-clipboard-manager
+# file:xfce-clipboard-manager-x11
 xfce_clipboard_manager_get_type
 xfce_clipboard_manager_new
 
