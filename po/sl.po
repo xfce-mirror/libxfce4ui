@@ -8,8 +8,8 @@
 # 8b03701f910565d01acaec9ce3f558ab_e9f0fee <b5b06e8f85fb8288fe43ad0bc2422d94_32848>, 2013,2017
 # Arnold Marko <arnold.marko@gmail.com>, 2019-2024
 # Kernc, 2014,2016-2017
-# Kernc, 2014,2016
-# Kernc, 2017
+# K, 2014,2016
+# K, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
@@ -516,7 +516,7 @@ msgstr "Urejevalnik bližnjic"
 
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:490
 msgid "The current shortcut. Click to edit..."
-msgstr "Trenutna bližnjica. Klikni za urejanje..."
+msgstr "Trenutna bližnjica. Klikni za urejanje ..."
 
 #: libxfce4kbd-private/xfce-shortcuts-editor.c:502
 msgid "Clear the shortcut"
@@ -547,7 +547,7 @@ msgstr "Bližnjica dejanja upravljalnika oken"
 #: libxfce4kbd-private/xfce-shortcut-dialog.c:218
 #: libxfce4kbd-private/xfce-shortcut-dialog.c:234
 msgid "action"
-msgstr "dejanje"
+msgstr "dejanja"
 
 #: libxfce4kbd-private/xfce-shortcut-dialog.c:223
 msgid "Command Shortcut"
@@ -557,7 +557,7 @@ msgstr "Bližnjica ukaza"
 #. * the user in a following string
 #: libxfce4kbd-private/xfce-shortcut-dialog.c:226
 msgid "command"
-msgstr "ukaz"
+msgstr "ukaza"
 
 #: libxfce4kbd-private/xfce-shortcut-dialog.c:231
 msgid "Shortcut"
@@ -1376,11 +1376,11 @@ msgstr "Lokacija datoteke ni običajna datoteka ali imenik"
 
 #: xfce-open/main.c:218
 msgid "Usage: xfce-open [URLs...]"
-msgstr "Uporaba: xfce-open [URL-ji...]"
+msgstr "Uporaba: xfce-open [URL-ji ...]"
 
 #: xfce-open/main.c:219
 msgid "       xfce-open --launch TYPE [PARAMETERs...]"
-msgstr "         xfce-open --launch TIP [PARAMETRI...]"
+msgstr "         xfce-open --launch TIP [PARAMETRI ...]"
 
 #: xfce-open/main.c:221
 msgid "  -?, --help                          Print this help message and exit"
@@ -1396,7 +1396,7 @@ msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
-msgstr "  --launch TIP [PARAMETRI...]         Zaženi želeno aplikacijo TIPa\n                                      z izbranimi PARAMETRI, kjer je\n                                      TIP ena izmed sledečih vrednosti."
+msgstr "  --launch TIP [PARAMETRI ...]        Zaženi želeno aplikacijo TIPa\n                                      z izbranimi PARAMETRI, kjer je\n                                      TIP ena izmed sledečih vrednosti."
 
 #: xfce-open/main.c:228
 msgid ""
