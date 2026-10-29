@@ -47,10 +47,6 @@
 
 
 
-#define CLIPBOARD_DBUS_NAME "org.xfce.SettingsDaemon"
-
-
-
 #ifdef ENABLE_WAYLAND
 
 typedef struct
@@ -88,8 +84,9 @@ clipboard_store_cb (GObject *source,
  * Checks whether clipboard persistence is available in the current session.
  *
  * On X11, delegates to gdk_display_supports_clipboard_persistence().
- * On Wayland, checks whether the org.xfce.ClipboardManager D-Bus interface
- * has an owner (i.e. xfsettingsd is running with clipboard support enabled).
+ * On Wayland, checks whether the org.xfce.ClipboardManager D-Bus name has
+ * an owner, i.e. a clipboard manager such as the one in xfsettingsd is
+ * running.
  *
  * Return value: %TRUE if clipboard persistence is available.
  *
@@ -126,7 +123,7 @@ xfce_clipboard_manager_supports_persistence (void)
                                             "/org/freedesktop/DBus",
                                             "org.freedesktop.DBus",
                                             "NameHasOwner",
-                                            g_variant_new ("(s)", CLIPBOARD_DBUS_NAME),
+                                            g_variant_new ("(s)", XFCE_CLIPBOARD_MANAGER_DBUS_NAME),
                                             G_VARIANT_TYPE ("(b)"),
                                             G_DBUS_CALL_FLAGS_NONE,
                                             1000,
@@ -192,7 +189,7 @@ xfce_clipboard_manager_store (void)
                                                                   G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES
                                                                     | G_DBUS_PROXY_FLAGS_DO_NOT_CONNECT_SIGNALS
                                                                     | G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START,
-                                                                  CLIPBOARD_DBUS_NAME,
+                                                                  XFCE_CLIPBOARD_MANAGER_DBUS_NAME,
                                                                   XFCE_CLIPBOARD_MANAGER_DBUS_PATH,
                                                                   NULL,
                                                                   &error);
