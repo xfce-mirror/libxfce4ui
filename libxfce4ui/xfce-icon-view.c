@@ -611,6 +611,12 @@ typedef struct _XfceIconViewPrivate
 
   XfceIconViewItem *last_single_clicked;
 
+  /* Position in priv->items of the item hit by the most recent left button
+   * press, or -1.  A following GDK_2BUTTON_PRESS activates this item, which
+   * matters when the press scrolled the item into view and thus moved it out
+   * from under the (unmoved) pointer. */
+  gint double_click_index;
+
   GList *cell_list;
   gint n_cells;
 
@@ -1391,6 +1397,7 @@ xfce_icon_view_init (XfceIconView *icon_view)
   priv->pressed_button = -1;
   priv->press_start_x = -1;
   priv->press_start_y = -1;
+  priv->double_click_index = -1;
   priv->text_column = -1;
   priv->markup_column = -1;
   priv->pixbuf_column = -1;
@@ -2483,6 +2490,7 @@ xfce_icon_view_button_press_event (GtkWidget *widget,
   XfceIconViewItem *item;
   XfceIconView *icon_view;
   GtkTreePath *path;
+  GSequenceIter *iter;
   gboolean dirty = FALSE;
   gint cursor_cell;
 
@@ -2512,6 +2520,13 @@ xfce_icon_view_button_press_event (GtkWidget *widget,
             cursor_cell = g_list_index (priv->cell_list, info);
           else
             cursor_cell = -1;
+
+          /* Remember the clicked item before scrolling it (fully) into view: that
+           * scroll may move the item out from under a pointer that does not move,
+           * and the GDK_2BUTTON_PRESS that completes a double-click is reported at
+           * the unchanged pointer position (see the GDK_2BUTTON_PRESS branch below).
+           */
+          priv->double_click_index = g_sequence_iter_get_position (item->item_iter);
 
           xfce_icon_view_scroll_to_item (icon_view, item);
 
@@ -2584,6 +2599,10 @@ xfce_icon_view_button_press_event (GtkWidget *widget,
           /* cancel the current editing, if it exists */
           xfce_icon_view_stop_editing (icon_view, TRUE);
 
+          /* the press did not hit an item, so a double-click here must not
+           * activate an item remembered from an earlier press */
+          priv->double_click_index = -1;
+
           if (priv->selection_mode != GTK_SELECTION_BROWSE
               && !(event->state & (GDK_CONTROL_MASK | GDK_SHIFT_MASK)))
             {
@@ -2603,6 +2622,23 @@ xfce_icon_view_button_press_event (GtkWidget *widget,
                                                     event->x, event->y,
                                                     TRUE,
                                                     NULL);
+
+          /* The press that started this double-click may have scrolled the item
+           * fully into view (see xfce_icon_view_scroll_to_item() in the
+           * GDK_BUTTON_PRESS branch above), moving it - and its cells - out from
+           * under a pointer that did not move.  As this event is reported at the
+           * unchanged pointer position, the hit test above can then come up empty
+           * even though the first click did hit an item; in that case fall back to
+           * the item the double-click started on.
+           */
+          if (item == NULL && priv->double_click_index >= 0)
+            {
+              iter = g_sequence_get_iter_at_pos (priv->items,
+                                                 priv->double_click_index);
+              if (!g_sequence_iter_is_end (iter))
+                item = g_sequence_get (iter);
+            }
+
           if (G_LIKELY (item != NULL))
             {
               path = gtk_tree_path_new_from_indices (g_sequence_iter_get_position (item->item_iter), -1);
@@ -5938,6 +5974,7 @@ xfce_icon_view_set_model (XfceIconView *icon_view,
       priv->cursor_item = NULL;
       priv->prelit_item = NULL;
       priv->last_single_clicked = NULL;
+      priv->double_click_index = -1;
       priv->width = 0;
       priv->height = 0;
 
