@@ -918,7 +918,7 @@ msgstr "Pano"
 
 #: xfce4-about/main.c:195
 msgid "Provides a home for window buttons, launchers, app menu and more."
-msgstr "Predstavlja dom za gumbe oken, zaganjalnike, menike apliakcij in več."
+msgstr "Predstavlja dom za gumbe oken, zaganjalnike, menije programov in več."
 
 #: xfce4-about/main.c:198
 msgid "Desktop Manager"
@@ -934,11 +934,11 @@ msgstr "Upravljalnik datotek"
 
 #: xfce4-about/main.c:203
 msgid "Manages your files in a modern, easy-to-use and fast way."
-msgstr "Upravljanje z datotkami na moderen, enostaven in hiter način."
+msgstr "Upravlja z datotekami na moderen, enostaven in hiter način."
 
 #: xfce4-about/main.c:206
 msgid "Volume Manager"
-msgstr "Upravljalnik pogona"
+msgstr "Upravljalnik nosilcev"
 
 #: xfce4-about/main.c:207
 msgid "Manages removable drives and media for Thunar."
@@ -951,7 +951,7 @@ msgstr "Upravljalnik seje"
 #: xfce4-about/main.c:211
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
-msgstr "Shrani in obnovi seanso, skrbi za zagon, samodejni zagon in ustavljanje sistema."
+msgstr "Shrani in obnovi sejo, skrbi za zagon, samodejni zagon in zaustavitev sistema."
 
 #: xfce4-about/main.c:214
 msgid "Settings Manager"
@@ -959,7 +959,7 @@ msgstr "Nastavitve"
 
 #: xfce4-about/main.c:215
 msgid "Configures appearance, display, keyboard and mouse settings."
-msgstr "Nastavljanje videza, zaslona, tipkovnice in in miške."
+msgstr "Nastavlja videz, zaslon, tipkovnico in miško."
 
 #: xfce4-about/main.c:218
 msgid "Application Finder"
@@ -983,7 +983,7 @@ msgstr "Knjižnica menijev"
 
 #: xfce4-about/main.c:227
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
-msgstr "Implementria freedesktop.org skladen meni, ki temelji na GLib in GIO."
+msgstr "Implementira meni, ki je skladen s freedesktop.org, temelji na GLib in GIO."
 
 #: xfce4-about/main.c:230
 msgid "Thumbnails Service"
@@ -1218,7 +1218,7 @@ msgid ""
 "the GNU Lesser General Public License which can be found in the\n"
 "%s source package.\n"
 "\n"
-msgstr "%s je na uporabo BREZ KAKRŠNEKOLI GARANCIJE,\nkopije %s lahko razpeujete pod pogoji\nGNU Lesser General Public License, ki jih lahko najdete v\nizvornem paketu %s.\n\n"
+msgstr "%s je na uporabo BREZ KAKRŠNEKOLI GARANCIJE,\nkopije %s lahko širite pod pogoji\nGNU Lesser General Public License, ki jih lahko najdete v\nizvornem paketu %s.\n\n"
 
 #. add the "Create"/"Save" button (as default)
 #: xfce-desktop-item-edit/main.c:355
