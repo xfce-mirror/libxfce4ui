@@ -1538,7 +1538,7 @@ xfce_icon_view_accessible_connect_model_signals (XfceIconView *icon_view)
   obj = G_OBJECT (get_instance_private (icon_view)->model);
   g_signal_connect_data (obj, "row-changed",
                          (GCallback) xfce_icon_view_accessible_model_row_changed,
-                         icon_view, NULL, 0);
+                         icon_view, NULL, G_CONNECT_DEFAULT);
   g_signal_connect_data (obj, "row-inserted",
                          (GCallback) xfce_icon_view_accessible_model_row_inserted,
                          icon_view, NULL, G_CONNECT_AFTER);
