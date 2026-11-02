@@ -1402,12 +1402,11 @@ xfce_die_editor_set_terminal (XfceDieEditor *editor,
 
 
 
-static gboolean
+static void
 unset_width_chars (gpointer entry)
 {
   /* do not prevent the user from shrinking the dialog size */
   gtk_entry_set_width_chars (entry, -1);
-  return FALSE;
 }
 
 static void
@@ -1417,7 +1416,7 @@ set_width_chars (GtkEntry *entry)
   gtk_entry_set_width_chars (entry, MIN (g_utf8_strlen (text, -1), MAX_WIDTH));
 
   /* wait until dialog is shown and size request is applied before removing it */
-  g_idle_add (unset_width_chars, entry);
+  g_idle_add_once (unset_width_chars, entry);
 }
 
 void
