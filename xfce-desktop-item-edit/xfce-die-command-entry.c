@@ -448,11 +448,8 @@ xfce_die_command_entry_set_text (XfceDieCommandEntry *command_entry,
   g_return_if_fail (XFCE_IS_DIE_COMMAND_ENTRY (command_entry));
   g_return_if_fail (g_utf8_validate (text, -1, NULL));
 
-  /* release the previous text */
-  g_free (command_entry->text);
-
   /* apply the new text */
-  command_entry->text = g_strdup (text);
+  g_set_str (&command_entry->text, text);
 
   /* notify listeners */
   g_object_notify (G_OBJECT (command_entry), "text");

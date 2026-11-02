@@ -1000,8 +1000,7 @@ xfce_die_editor_set_name (XfceDieEditor *editor,
   if (g_strcmp0 (editor->name, name) != 0)
     {
       /* apply the new name */
-      g_free (editor->name);
-      editor->name = g_strdup (name);
+      g_set_str (&editor->name, name);
 
       /* notify listeners */
       g_object_notify (G_OBJECT (editor), "complete");
@@ -1046,8 +1045,7 @@ xfce_die_editor_set_comment (XfceDieEditor *editor,
   if (g_strcmp0 (editor->comment, comment) != 0)
     {
       /* apply the new comment */
-      g_free (editor->comment);
-      editor->comment = g_strdup (comment);
+      g_set_str (&editor->comment, comment);
 
       /* notify listeners */
       g_object_notify (G_OBJECT (editor), "comment");
@@ -1092,8 +1090,7 @@ xfce_die_editor_set_command (XfceDieEditor *editor,
   if (g_strcmp0 (editor->command, command) != 0)
     {
       /* apply the new command */
-      g_free (editor->command);
-      editor->command = g_strdup (command);
+      g_set_str (&editor->command, command);
 
       /* notify listeners */
       g_object_notify (G_OBJECT (editor), "complete");
@@ -1139,8 +1136,7 @@ xfce_die_editor_set_url (XfceDieEditor *editor,
   if (g_strcmp0 (editor->url, url) != 0)
     {
       /* apply the new URL */
-      g_free (editor->url);
-      editor->url = g_strdup (url);
+      g_set_str (&editor->url, url);
 
       /* notify listeners */
       g_object_notify (G_OBJECT (editor), "complete");
@@ -1186,8 +1182,7 @@ xfce_die_editor_set_path (XfceDieEditor *editor,
   if (g_strcmp0 (editor->path, path) != 0)
     {
       /* apply the new URL */
-      g_free (editor->path);
-      editor->path = g_strdup (path);
+      g_set_str (&editor->path, path);
 
       /* notify listeners */
       g_object_notify (G_OBJECT (editor), "path");
@@ -1242,8 +1237,7 @@ xfce_die_editor_set_icon (XfceDieEditor *editor,
   if (g_strcmp0 (editor->icon, icon) != 0)
     {
       /* apply the new icon */
-      g_free (editor->icon);
-      editor->icon = g_strdup (icon);
+      g_set_str (&editor->icon, icon);
 
       /* notify listeners */
       g_object_notify (G_OBJECT (editor), "icon");

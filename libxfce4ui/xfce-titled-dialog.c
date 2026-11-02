@@ -782,11 +782,8 @@ xfce_titled_dialog_set_subtitle (XfceTitledDialog *titled_dialog,
   g_return_if_fail (XFCE_IS_TITLED_DIALOG (titled_dialog));
   g_return_if_fail (subtitle == NULL || g_utf8_validate (subtitle, -1, NULL));
 
-  /* release the previous subtitle */
-  g_free (titled_dialog->priv->subtitle);
-
   /* activate the new subtitle */
-  titled_dialog->priv->subtitle = g_strdup (subtitle);
+  g_set_str (&titled_dialog->priv->subtitle, subtitle);
 
   if (titled_dialog->priv->use_header)
     {
