@@ -368,8 +368,7 @@ xfce_shortcut_dialog_run (XfceShortcutDialog *dialog,
       /* Clear shortcut if requested by the user */
       if (G_UNLIKELY (response == GTK_RESPONSE_NO))
         {
-          g_free (dialog->shortcut);
-          dialog->shortcut = g_strdup ("");
+          g_set_str (&dialog->shortcut, "");
         }
 
       /* Release keyboard */

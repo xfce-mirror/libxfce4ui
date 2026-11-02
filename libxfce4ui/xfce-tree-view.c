@@ -605,11 +605,7 @@ xfce_tree_view_leave_notify_event (GtkWidget *widget,
     g_source_remove (tree_view->single_click_timeout_id);
 
   /* release and reset the hover path (if any) */
-  if (tree_view->hover_path != NULL)
-    {
-      gtk_tree_path_free (tree_view->hover_path);
-      tree_view->hover_path = NULL;
-    }
+  g_clear_pointer (&tree_view->hover_path, gtk_tree_path_free);
 
   /* reset the cursor for the tree view internal window */
   if (gtk_widget_get_realized (GTK_WIDGET (tree_view)))
@@ -651,11 +647,7 @@ xfce_tree_view_move_cursor (GtkTreeView *view,
     g_source_remove (tree_view->single_click_timeout_id);
 
   /* release and reset the hover path (if any) */
-  if (tree_view->hover_path != NULL)
-    {
-      gtk_tree_path_free (tree_view->hover_path);
-      tree_view->hover_path = NULL;
-    }
+  g_clear_pointer (&tree_view->hover_path, gtk_tree_path_free);
 
   /* reset the cursor for the tree view internal window */
   if (gtk_widget_get_realized (GTK_WIDGET (tree_view)))

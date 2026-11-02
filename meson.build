@@ -20,19 +20,18 @@ i18n = import('i18n')
 
 dependency_versions = {
   'glib': '>= 2.80.0',
-  'gtk': '>= 3.24.0',
-  'gdk-pixbuf': '>= 2.42.8',
-  'libxfce4util': '>= 4.17.2',
-  'xfconf': '>= 4.12.0',
+  'gtk': '>= 3.24.41',
+  'gdk-pixbuf': '>= 2.42.10',
+  'xfce4': '>= 4.20.0',
 
-  'libx11': '>= 1.6.7',
+  'libx11': '>= 1.8.7',
   'libice': '>= 1.0.10',
   'libsm': '>= 1.2.3',
 
-  'libgtop': '>= 2.24.0',
-  'epoxy': '>= 1.2',
-  'gudev': '>= 232',
-  'gir': '>= 1.72.0',
+  'libgtop': '>= 2.41.3',
+  'epoxy': '>= 1.5.10',
+  'gudev': '>= 238',
+  'gir': '>= 1.80.1',
 }
 
 glib = dependency('glib-2.0', version: dependency_versions['glib'])
@@ -41,8 +40,8 @@ gio_unix = dependency('gio-unix-2.0', version: dependency_versions['glib'])
 gthread = dependency('gthread-2.0', version: dependency_versions['glib'])
 gtk = dependency('gtk+-3.0', version: dependency_versions['gtk'])
 gdk_pixbuf = dependency('gdk-pixbuf-2.0', version: dependency_versions['gdk-pixbuf'])
-libxfce4util = dependency('libxfce4util-1.0', version: dependency_versions['libxfce4util'])
-xfconf = dependency('libxfconf-0', version: dependency_versions['xfconf'])
+libxfce4util = dependency('libxfce4util-1.0', version: dependency_versions['xfce4'])
+xfconf = dependency('libxfconf-0', version: dependency_versions['xfce4'])
 
 xdt_gen_visibility = find_program('xdt-gen-visibility', required: true)
 sed = find_program('sed', required: true)

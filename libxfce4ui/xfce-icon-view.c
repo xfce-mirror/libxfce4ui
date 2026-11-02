@@ -1448,11 +1448,7 @@ xfce_icon_view_dispose (GObject *object)
   xfce_icon_view_set_drag_dest_item (icon_view, NULL, XFCE_ICON_VIEW_NO_DROP);
 
   /* drop the scroll to path (if any) */
-  if (G_UNLIKELY (priv->scroll_to_path != NULL))
-    {
-      gtk_tree_row_reference_free (priv->scroll_to_path);
-      priv->scroll_to_path = NULL;
-    }
+  g_clear_pointer (&priv->scroll_to_path, gtk_tree_row_reference_free);
 
   /* reset the model (also stops any active editing) */
   xfce_icon_view_set_model (icon_view, NULL);
@@ -1779,8 +1775,7 @@ xfce_icon_view_unrealize (GtkWidget *widget)
 
   /* drop the icons window */
   gdk_window_set_user_data (priv->bin_window, NULL);
-  gdk_window_destroy (priv->bin_window);
-  priv->bin_window = NULL;
+  g_clear_pointer (&priv->bin_window, gdk_window_destroy);
 
   /* let GtkWidget destroy children and widget->window */
   if (GTK_WIDGET_CLASS (xfce_icon_view_parent_class)->unrealize)
@@ -1969,8 +1964,7 @@ xfce_icon_view_draw (GtkWidget *widget,
     {
       /* grab the path from the reference and invalidate the reference */
       path = gtk_tree_row_reference_get_path (priv->scroll_to_path);
-      gtk_tree_row_reference_free (priv->scroll_to_path);
-      priv->scroll_to_path = NULL;
+      g_clear_pointer (&priv->scroll_to_path, gtk_tree_row_reference_free);
 
       /* check if the reference was still valid */
       if (G_LIKELY (path != NULL))
@@ -5953,11 +5947,7 @@ xfce_icon_view_set_model (XfceIconView *icon_view,
   /* be sure to drop any previous scroll_to_path reference,
    * as it points to the old (no longer valid) model.
    */
-  if (G_UNLIKELY (priv->scroll_to_path != NULL))
-    {
-      gtk_tree_row_reference_free (priv->scroll_to_path);
-      priv->scroll_to_path = NULL;
-    }
+  g_clear_pointer (&priv->scroll_to_path, gtk_tree_row_reference_free);
 
   /* activate the new model */
   priv->model = model;
@@ -8044,8 +8034,7 @@ xfce_icon_view_set_drag_dest_item (XfceIconView *icon_view,
     {
       /* determine and reset the previous path */
       previous_path = gtk_tree_row_reference_get_path (priv->dest_item);
-      gtk_tree_row_reference_free (priv->dest_item);
-      priv->dest_item = NULL;
+      g_clear_pointer (&priv->dest_item, gtk_tree_row_reference_free);
 
       /* check if the path is still valid */
       if (G_LIKELY (previous_path != NULL))

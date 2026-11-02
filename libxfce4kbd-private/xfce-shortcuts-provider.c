@@ -231,8 +231,7 @@ xfce_shortcuts_provider_set_property (GObject *object,
   switch (prop_id)
     {
     case PROP_NAME:
-      g_free (provider->priv->name);
-      provider->priv->name = g_strdup (g_value_get_string (value));
+      g_set_str (&provider->priv->name, g_value_get_string (value));
       g_object_notify (object, "name");
       break;
     default:

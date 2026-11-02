@@ -490,7 +490,7 @@ xfce_shortcuts_editor_create_contents (XfceShortcutsEditor *editor)
           data->editor = editor;
           data->entry = editor->arrays[array_idx].entries + entry_idx;
           data->section_index = array_idx;
-          g_signal_connect_data (G_OBJECT (shortcut_button), "clicked", G_CALLBACK (xfce_shortcuts_editor_shortcut_clicked), data, free_data, 0);
+          g_signal_connect_data (G_OBJECT (shortcut_button), "clicked", G_CALLBACK (xfce_shortcuts_editor_shortcut_clicked), data, free_data, G_CONNECT_DEFAULT);
 
           /* clear button */
           clear_button = gtk_button_new_from_icon_name ("edit-clear", GTK_ICON_SIZE_BUTTON);
@@ -502,7 +502,7 @@ xfce_shortcuts_editor_create_contents (XfceShortcutsEditor *editor)
           clear_data->shortcut_button = shortcut_button;
           clear_data->entry = editor->arrays[array_idx].entries + entry_idx;
           clear_data->section_index = array_idx;
-          g_signal_connect_data (G_OBJECT (clear_button), "clicked", G_CALLBACK (xfce_shortcuts_editor_shortcut_clear_clicked), clear_data, free_data, 0);
+          g_signal_connect_data (G_OBJECT (clear_button), "clicked", G_CALLBACK (xfce_shortcuts_editor_shortcut_clear_clicked), clear_data, free_data, G_CONNECT_DEFAULT);
 
           /* reset button */
           reset_button = gtk_button_new_from_icon_name ("edit-undo", GTK_ICON_SIZE_BUTTON);
@@ -514,7 +514,7 @@ xfce_shortcuts_editor_create_contents (XfceShortcutsEditor *editor)
           reset_data->shortcut_button = shortcut_button;
           reset_data->entry = editor->arrays[array_idx].entries + entry_idx;
           reset_data->section_index = array_idx;
-          g_signal_connect_data (G_OBJECT (reset_button), "clicked", G_CALLBACK (xfce_shortcuts_editor_shortcut_reset_clicked), reset_data, free_data, 0);
+          g_signal_connect_data (G_OBJECT (reset_button), "clicked", G_CALLBACK (xfce_shortcuts_editor_shortcut_reset_clicked), reset_data, free_data, G_CONNECT_DEFAULT);
 
           row++;
         }

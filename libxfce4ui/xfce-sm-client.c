@@ -660,8 +660,7 @@ xfce_sm_client_set_client_id (XfceSMClient *sm_client,
   if (g_strcmp0 (sm_client->client_id, client_id) == 0)
     return;
 
-  g_free (sm_client->client_id);
-  sm_client->client_id = g_strdup (client_id);
+  g_set_str (&sm_client->client_id, client_id);
 
   gdk_x11_set_sm_client_id (sm_client->client_id);
 
@@ -706,14 +705,14 @@ xfce_sm_client_parse_argv (XfceSMClient *sm_client)
 
   for (i = 0; i < argc; ++i)
     {
-      if (!strncmp (argv[i], SM_ID_ARG, strlen (SM_ID_ARG)))
+      if (strncmp (argv[i], SM_ID_ARG, strlen (SM_ID_ARG)) == 0)
         {
           if (argv[i][strlen (SM_ID_ARG)] == '=')
             client_id = &(argv[i][strlen (SM_ID_ARG) + 1]);
           else
             client_id = argv[++i];
         }
-      else if (!strncmp (argv[i], DPY_ARG, strlen (DPY_ARG)))
+      else if (strncmp (argv[i], DPY_ARG, strlen (DPY_ARG)) == 0)
         {
           got_display = TRUE;
           if (argv[i][strlen (DPY_ARG)] != '=')
@@ -1344,7 +1343,7 @@ xfce_sm_client_set_property_from_command (XfceSMClient *sm_client,
   for (argc = 0; command[argc]; ++argc)
     {
       if (alter_sm_id == SM_ARG_APPEND
-          && !strncmp (command[argc], SM_ID_ARG, strlen (SM_ID_ARG)))
+          && strncmp (command[argc], SM_ID_ARG, strlen (SM_ID_ARG)) == 0)
         {
           /* if we have SM_ID_ARG in the command, we still have to
            * make sure the command contains the *correct* client ID */
@@ -1385,7 +1384,7 @@ xfce_sm_client_set_property_from_command (XfceSMClient *sm_client,
   while (*command)
     {
       if (alter_sm_id == SM_ARG_REMOVE
-          && !strncmp (*command, SM_ID_ARG, strlen (SM_ID_ARG)))
+          && strncmp (*command, SM_ID_ARG, strlen (SM_ID_ARG)) == 0)
         {
           if ((*command)[strlen (SM_ID_ARG)] != '=' && *(command + 1))
             {
@@ -1955,8 +1954,7 @@ xfce_sm_client_set_desktop_file (XfceSMClient *sm_client,
       goto out;
     }
 
-  g_free (sm_client->desktop_file);
-  sm_client->desktop_file = g_strdup (desktop_file);
+  g_set_str (&sm_client->desktop_file, desktop_file);
 
   xfce_rc_set_group (rcfile, "Desktop Entry");
 
@@ -2173,8 +2171,7 @@ xfce_sm_client_set_current_directory (XfceSMClient *sm_client,
   if (g_strcmp0 (sm_client->current_directory, current_directory) == 0)
     return;
 
-  g_free (sm_client->current_directory);
-  sm_client->current_directory = g_strdup (current_directory);
+  g_set_str (&sm_client->current_directory, current_directory);
 
 #ifdef ENABLE_LIBSM
   if (sm_client->session_connection)

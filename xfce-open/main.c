@@ -654,7 +654,7 @@ main (gint argc, gchar **argv)
 
               xfce_g_string_append_quoted (join, argv[i]);
             }
-          parameter = g_string_free (join, FALSE);
+          parameter = g_string_free_and_steal (join);
         }
       else
         {

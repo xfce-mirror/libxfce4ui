@@ -81,8 +81,7 @@ xfce_thumbnail_load (const gchar *thumbnail_path,
         {
           /* the thumbnail is invalid */
           g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_NOENT, "%s", g_strerror (ENOENT));
-          g_object_unref (G_OBJECT (thumbnail));
-          thumbnail = NULL;
+          g_clear_object (&thumbnail);
         }
     }
 

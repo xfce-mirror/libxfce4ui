@@ -617,11 +617,8 @@ xfce_die_desktop_item_new_from_file (const gchar *file)
               /* strip the "Xfce 4 " prefix from the names */
               if (strncmp (desktop_item->name, "Xfce 4 ", 7) == 0)
                 {
-                  /* release the full name */
-                  g_free (desktop_item->name);
-
                   /* use the short name */
-                  desktop_item->name = g_strdup (name + 7);
+                  g_set_str (&desktop_item->name, name + 7);
                 }
 
               /* check if startup notification is supported */

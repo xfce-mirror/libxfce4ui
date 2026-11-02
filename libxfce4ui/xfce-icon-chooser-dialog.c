@@ -82,7 +82,7 @@ xfce_icon_chooser_dialog_combo_changed (GtkWidget *combo,
 static void
 xfce_icon_chooser_dialog_entry_changed_delay (GtkEntry *entry,
                                               XfceIconChooserDialog *dialog);
-static gboolean
+static void
 xfce_icon_chooser_dialog_entry_changed (gpointer user_data);
 static void
 xfce_icon_chooser_dialog_entry_clear (GtkEntry *entry,
@@ -534,14 +534,14 @@ xfce_icon_chooser_dialog_entry_changed_delay (GtkEntry *entry,
   if (dialog->filter_entry_timeout_source_id != 0)
     g_source_remove (dialog->filter_entry_timeout_source_id);
 
-  dialog->filter_entry_timeout_source_id = g_timeout_add (FILTER_ENTRY_DELAY,
-                                                          xfce_icon_chooser_dialog_entry_changed,
-                                                          dialog);
+  dialog->filter_entry_timeout_source_id = g_timeout_add_once (FILTER_ENTRY_DELAY,
+                                                               xfce_icon_chooser_dialog_entry_changed,
+                                                               dialog);
 }
 
 
 
-static gboolean
+static void
 xfce_icon_chooser_dialog_entry_changed (gpointer user_data)
 {
   XfceIconChooserDialog *dialog = XFCE_ICON_CHOOSER_DIALOG (user_data);
@@ -569,8 +569,6 @@ xfce_icon_chooser_dialog_entry_changed (gpointer user_data)
     gtk_tree_model_filter_refilter (GTK_TREE_MODEL_FILTER (model));
 
   dialog->filter_entry_timeout_source_id = 0;
-
-  return FALSE;
 }
 
 
