@@ -72,13 +72,11 @@ if get_option('keyboard-library')
   libxfce4kbd_deps = [
     glib,
     gtk,
+    libintl,
     libxfce4util,
     xfconf,
     x11_deps,
   ]
-  if need_libintl
-    libxfce4kbd_deps += libintl
-  endif
 
   libxfce4kbd_so_version = '0'
   libxfce4kbd_version = '@0@.0.0'.format(libxfce4kbd_so_version)
