@@ -53,11 +53,6 @@ struct _XfceClipboardManager
 
   GSList *contents;
   GSList *conversions;
-  GdkPixbuf *image;
-  GBytes *bytes;
-  gboolean is_image_available;
-  GdkEventOwnerChange *current_event;
-  GdkAtom krita_atom;
 
   Window requestor;
   Atom property;
@@ -176,12 +171,6 @@ xfce_clipboard_manager_finalize (GObject *object)
 
   g_clear_slist (&manager->conversions, (GDestroyNotify) conversion_free);
   g_clear_slist (&manager->contents, (GDestroyNotify) target_data_unref);
-
-  if (manager->image != NULL)
-    {
-      g_clear_object (&manager->image);
-      g_clear_pointer (&manager->bytes, g_bytes_unref);
-    }
 
   if (manager->start_idle_id != 0)
     g_source_remove (manager->start_idle_id);
@@ -788,9 +777,6 @@ clipboard_manager_process_event (XfceClipboardManager *manager,
   Atom *targets = NULL;
   GSList *tmp;
 
-  if (manager->is_image_available)
-    return False;
-
   switch (xev->xany.type)
     {
     case DestroyNotify:
@@ -1134,149 +1120,7 @@ clipboard_manager_start (XfceClipboardManager *manager,
   return TRUE;
 }
 
-typedef struct _ClipboardData
-{
-  GtkSelectionData **selection_data;
-  guint n_selection_data;
-} ClipboardData;
 
-static void
-clipboard_get (GtkClipboard *clipboard,
-               GtkSelectionData *selection_data,
-               guint info,
-               gpointer _data)
-{
-  ClipboardData *data = _data;
-  if (data->selection_data[info] != NULL)
-    gtk_selection_data_set (selection_data,
-                            gtk_selection_data_get_data_type (data->selection_data[info]),
-                            gtk_selection_data_get_format (data->selection_data[info]),
-                            gtk_selection_data_get_data (data->selection_data[info]),
-                            gtk_selection_data_get_length (data->selection_data[info]));
-}
-
-static void
-clipboard_clear (GtkClipboard *clipboard,
-                 gpointer _data)
-{
-  ClipboardData *data = _data;
-  for (guint n = 0; n < data->n_selection_data; n++)
-    {
-      if (data->selection_data[n] != NULL)
-        gtk_selection_data_free (data->selection_data[n]);
-    }
-  g_free (data->selection_data);
-  g_free (data);
-}
-
-#define WAIT_CANCELLED (event != manager->current_event)
-
-static void
-owner_change (GtkClipboard *clipboard,
-              GdkEventOwnerChange *event,
-              XfceClipboardManager *manager)
-{
-  GdkAtom *targets;
-  gint n_targets;
-
-  /* we're only interested in clients gaining ownership and we should not cancel
-   * an ongoing storage when a client loses ownership */
-  if (event->owner == NULL)
-    return;
-
-  manager->current_event = event;
-  manager->is_image_available = FALSE;
-  if (gtk_clipboard_wait_for_targets (clipboard, &targets, &n_targets))
-    {
-      if (!WAIT_CANCELLED)
-        {
-          /*
-           * This piece of code concerns the copying of "real" images, to fix issues such as #105. If there's
-           * text and image data, we're probably in a case like copying formulas in LibreOffice (#112, #135),
-           * so best leave it to the X11 code. On the other hand, if we wanted to use this code in this case
-           * too, we'd also have to test the text data changes below, to refeed the clipboard when only these
-           * change.
-           */
-          manager->is_image_available = gtk_targets_include_image (targets, n_targets, FALSE)
-                                        && !gtk_targets_include_text (targets, n_targets)
-                                        && !gtk_targets_include_uri (targets, n_targets);
-
-          /* exception, for lack of a better option: see https://gitlab.xfce.org/xfce/libxfce4ui/-/issues/141 */
-          if (manager->is_image_available)
-            {
-              for (gint n = 0; n < n_targets; n++)
-                {
-                  if (manager->krita_atom == targets[n])
-                    {
-                      manager->is_image_available = FALSE;
-                      break;
-                    }
-                }
-            }
-
-          if (manager->is_image_available)
-            {
-              GdkPixbuf *image = gtk_clipboard_wait_for_image (clipboard);
-              if (image != NULL)
-                {
-                  GBytes *bytes = gdk_pixbuf_read_pixel_bytes (image);
-                  if (!WAIT_CANCELLED && (manager->image == NULL || !g_bytes_equal (bytes, manager->bytes)))
-                    {
-                      GtkTargetList *list;
-                      GtkSelectionData **selection_data;
-
-                      if (manager->image != NULL)
-                        {
-                          g_object_unref (manager->image);
-                          g_bytes_unref (manager->bytes);
-                        }
-                      manager->image = g_object_ref (image);
-                      manager->bytes = g_bytes_ref (bytes);
-
-                      list = gtk_target_list_new (NULL, 0);
-                      selection_data = g_new0 (GtkSelectionData *, n_targets);
-                      for (gint n = 0; n < n_targets && !WAIT_CANCELLED; n++)
-                        {
-                          gtk_target_list_add (list, targets[n], GTK_TARGET_SAME_APP, n);
-                          selection_data[n] = gtk_clipboard_wait_for_contents (clipboard, targets[n]);
-                        }
-
-                      if (!WAIT_CANCELLED)
-                        {
-                          GtkTargetEntry *entries = gtk_target_table_new_from_list (list, &n_targets);
-                          ClipboardData *data = g_new (ClipboardData, 1);
-                          data->n_selection_data = n_targets;
-                          data->selection_data = selection_data;
-                          gtk_clipboard_set_with_data (clipboard, entries, n_targets, clipboard_get, clipboard_clear, data);
-                          gtk_target_table_free (entries, n_targets);
-                        }
-                      else
-                        {
-                          for (gint n = 0; n < n_targets; n++)
-                            {
-                              if (selection_data[n] != NULL)
-                                gtk_selection_data_free (selection_data[n]);
-                            }
-                          g_free (selection_data);
-                        }
-
-                      gtk_target_list_unref (list);
-                    }
-
-                  g_object_unref (image);
-                  g_bytes_unref (bytes);
-                }
-            }
-          else if (manager->image != NULL)
-            {
-              g_clear_object (&manager->image);
-              g_clear_pointer (&manager->bytes, g_bytes_unref);
-            }
-        }
-
-      g_free (targets);
-    }
-}
 
 /**
  * xfce_clipboard_manager_new: (constructor)
@@ -1296,9 +1140,6 @@ xfce_clipboard_manager_new (gboolean replace)
       g_object_unref (manager);
       return NULL;
     }
-
-  manager->krita_atom = gdk_atom_intern_static_string ("application/x-krita-node-internal-pointer");
-  g_signal_connect (gtk_clipboard_get (GDK_SELECTION_CLIPBOARD), "owner-change", G_CALLBACK (owner_change), manager);
 
   return manager;
 }
