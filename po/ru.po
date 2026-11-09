@@ -76,7 +76,7 @@ msgstr "Да"
 
 #: libxfce4ui/xfce-dialogs.c:456 libxfce4kbd-private/xfce-shortcuts-xfwm4.c:42
 msgid "Cancel"
-msgstr "Отменить"
+msgstr "Отмена"
 
 #: libxfce4ui/xfce-dialogs.c:515
 msgid "Close window with multiple tabs?"
@@ -116,11 +116,11 @@ msgstr "_Больше не спрашивать"
 
 #: libxfce4ui/xfce-sm-client.c:1507
 msgid "Session management client ID"
-msgstr "ID клиента менеджера сеансов"
+msgstr "ИД клиента менеджера сеансов"
 
 #: libxfce4ui/xfce-sm-client.c:1507
 msgid "ID"
-msgstr "ID"
+msgstr "ИД"
 
 #: libxfce4ui/xfce-sm-client.c:1508
 msgid "Disable session management"
