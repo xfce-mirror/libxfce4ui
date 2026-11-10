@@ -150,7 +150,9 @@ xfce_clipboard_manager_handle_store (XfceDbusClipboardManager *skeleton,
 XfceClipboardManager *
 xfce_clipboard_manager_new (gboolean replace)
 {
+#if defined(ENABLE_WAYLAND) || defined(ENABLE_X11)
   GdkDisplay *display = gdk_display_get_default ();
+#endif
 
 #ifdef ENABLE_WAYLAND
   if (GDK_IS_WAYLAND_DISPLAY (display))
