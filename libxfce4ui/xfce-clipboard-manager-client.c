@@ -40,9 +40,9 @@
 #include <gdk/gdkwayland.h>
 #endif
 
+#include "libxfce4ui-private.h"
 #include "xfce-clipboard-manager-client.h"
 #include "xfce-clipboard-manager-dbus.h"
-#include "libxfce4ui-private.h"
 #include "libxfce4ui-visibility.h"
 
 
@@ -95,7 +95,9 @@ clipboard_store_cb (GObject *source,
 gboolean
 xfce_clipboard_manager_supports_persistence (void)
 {
+#if defined(ENABLE_X11) || defined(ENABLE_WAYLAND)
   GdkDisplay *display = gdk_display_get_default ();
+#endif
 
 #ifdef ENABLE_X11
   if (GDK_IS_X11_DISPLAY (display))
@@ -168,7 +170,9 @@ xfce_clipboard_manager_supports_persistence (void)
 gboolean
 xfce_clipboard_manager_store (void)
 {
+#if defined(ENABLE_X11) || defined(ENABLE_WAYLAND)
   GdkDisplay *display = gdk_display_get_default ();
+#endif
 
 #ifdef ENABLE_X11
   if (GDK_IS_X11_DISPLAY (display))

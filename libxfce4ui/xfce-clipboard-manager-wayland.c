@@ -25,13 +25,12 @@
 
 #include <errno.h>
 #include <fcntl.h>
+#include <gdk/gdkwayland.h>
+#include <gio/gunixoutputstream.h>
+#include <gtk/gtk.h>
 #include <poll.h>
 #include <string.h>
 #include <unistd.h>
-
-#include <gio/gunixoutputstream.h>
-#include <gdk/gdkwayland.h>
-#include <gtk/gtk.h>
 
 #include "ext-data-control-v1-client.h"
 #include "xfce-clipboard-manager-wayland.h"
@@ -67,28 +66,34 @@ struct _XfceClipboardManagerWayland
 
 
 
-static void xfce_clipboard_manager_wayland_finalize (GObject *object);
+static void
+xfce_clipboard_manager_wayland_finalize (GObject *object);
 
-static gboolean xfce_clipboard_manager_wayland_persist (XfceClipboardManager *manager);
+static gboolean
+xfce_clipboard_manager_wayland_persist (XfceClipboardManager *manager);
 
-static void registry_global (void *data, struct wl_registry *registry,
-                             uint32_t id, const char *interface, uint32_t version);
-static void registry_global_remove (void *data, struct wl_registry *registry, uint32_t id);
+static void
+registry_global (void *data, struct wl_registry *registry, uint32_t id, const char *interface, uint32_t version);
+static void
+registry_global_remove (void *data, struct wl_registry *registry, uint32_t id);
 
-static void device_data_offer (void *data, struct ext_data_control_device_v1 *device,
-                               struct ext_data_control_offer_v1 *offer);
-static void device_selection (void *data, struct ext_data_control_device_v1 *device,
-                              struct ext_data_control_offer_v1 *offer);
-static void device_finished (void *data, struct ext_data_control_device_v1 *device);
-static void device_primary_selection (void *data, struct ext_data_control_device_v1 *device,
-                                      struct ext_data_control_offer_v1 *offer);
+static void
+device_data_offer (void *data, struct ext_data_control_device_v1 *device, struct ext_data_control_offer_v1 *offer);
+static void
+device_selection (void *data, struct ext_data_control_device_v1 *device, struct ext_data_control_offer_v1 *offer);
+static void
+device_finished (void *data, struct ext_data_control_device_v1 *device);
 
-static void offer_offer (void *data, struct ext_data_control_offer_v1 *offer,
-                         const char *mime_type);
+static void
+device_primary_selection (void *data, struct ext_data_control_device_v1 *device, struct ext_data_control_offer_v1 *offer);
 
-static void source_send (void *data, struct ext_data_control_source_v1 *source,
-                         const char *mime_type, int32_t fd);
-static void source_cancelled (void *data, struct ext_data_control_source_v1 *source);
+static void
+offer_offer (void *data, struct ext_data_control_offer_v1 *offer, const char *mime_type);
+
+static void
+source_send (void *data, struct ext_data_control_source_v1 *source, const char *mime_type, int32_t fd);
+static void
+source_cancelled (void *data, struct ext_data_control_source_v1 *source);
 
 
 

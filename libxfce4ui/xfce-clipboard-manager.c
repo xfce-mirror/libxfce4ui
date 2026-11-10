@@ -33,17 +33,19 @@
 
 #ifdef ENABLE_X11
 #include <gdk/gdkx.h>
+
 #include "xfce-clipboard-manager-x11.h"
 #endif
 
 #ifdef ENABLE_WAYLAND
 #include <gdk/gdkwayland.h>
+
 #include "xfce-clipboard-manager-wayland.h"
 #endif
 
-#include "xfce-clipboard-manager.h"
-#include "xfce-clipboard-manager-dbus.h"
 #include "libxfce4ui-private.h"
+#include "xfce-clipboard-manager-dbus.h"
+#include "xfce-clipboard-manager.h"
 #include "libxfce4ui-visibility.h"
 
 
