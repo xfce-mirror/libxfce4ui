@@ -681,7 +681,7 @@ xfce_item_list_view_read_model_flags (XfceItemListView *view)
 
   if (flags & XFCE_ITEM_LIST_MODEL_ADDABLE)
     xfce_item_list_view_add_menu_item (view, index++, FALSE, FALSE,
-                                       _("_Add new item"), _("Add new item"),
+                                       _("_Add"), _("Add new item"),
                                        "list-add-symbolic",
                                        "xfce-item-list-view.add-item");
 
