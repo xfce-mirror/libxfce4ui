@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2026-05-22 12:45+0200\n"
+"POT-Creation-Date: 2026-11-13 00:46+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: Ufuk Furkan Öztürk <ufukfurkanozturk@gmail.com>, 2024,2026\n"
 "Language-Team: Turkish (http://app.transifex.com/xfce/libxfce4ui/language/tr/)\n"
@@ -179,7 +179,7 @@ msgstr "Kullanım kılavuzunu okuyun"
 #. Create cancel button
 #. add the "Cancel" button
 #: libxfce4ui/xfce-dialogs.c:268 libxfce4ui/xfce-dialogs.c:526
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:252
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:262
 #: xfce-desktop-item-edit/main.c:351 xfce-desktop-item-edit/main.c:545
 #: xfce-desktop-item-edit/xfce-die-command-entry.c:262
 #: xfce-desktop-item-edit/xfce-die-editor.c:648
@@ -355,37 +355,37 @@ msgstr "_Arama simgesi:"
 msgid "Clear search field"
 msgstr "Arama alanını temizle"
 
-#: libxfce4ui/xfce-sm-client.c:1503
+#: libxfce4ui/xfce-sm-client.c:1513
 msgid "Session management client ID"
 msgstr "Oturum yönetimi istemci kimliği"
 
-#: libxfce4ui/xfce-sm-client.c:1503
+#: libxfce4ui/xfce-sm-client.c:1513
 msgid "ID"
 msgstr "Kimlik"
 
-#: libxfce4ui/xfce-sm-client.c:1504
+#: libxfce4ui/xfce-sm-client.c:1514
 msgid "Disable session management"
 msgstr "Oturum yönetimini devre dışı bırak"
 
-#: libxfce4ui/xfce-sm-client.c:1514
+#: libxfce4ui/xfce-sm-client.c:1524
 msgid "Session management options"
 msgstr "Oturum yönetimi seçenekleri"
 
-#: libxfce4ui/xfce-sm-client.c:1514
+#: libxfce4ui/xfce-sm-client.c:1524
 msgid "Show session management options"
 msgstr "Oturum yönetimi seçeneklerini göster"
 
-#: libxfce4ui/xfce-sm-client.c:1688
+#: libxfce4ui/xfce-sm-client.c:1706
 #, c-format
 msgid "Failed to connect to the session manager: %s"
 msgstr "Oturum yöneticisine bağlanırken hata oluştu: %s"
 
-#: libxfce4ui/xfce-sm-client.c:1697
+#: libxfce4ui/xfce-sm-client.c:1715
 msgid "Session manager did not return a valid client id"
 msgstr "Oturum yöneticisi geçerli istemci kimliği döndürmedi"
 
 #. print warning for user
-#: libxfce4ui/xfce-spawn.c:388
+#: libxfce4ui/xfce-spawn.c:350
 #, c-format
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
@@ -393,71 +393,71 @@ msgid ""
 msgstr "\"%s\" çalışma dizini yok. \"%s\" oluşturulurken kullanılmayacak."
 
 #. retrieve the error and warning messages
-#: libxfce4ui/xfce-filename-input.c:230
+#: libxfce4ui/xfce-filename-input.c:228
 msgid "Filename is too long"
 msgstr "Dosya adı çok uzun"
 
-#: libxfce4ui/xfce-filename-input.c:231
+#: libxfce4ui/xfce-filename-input.c:229
 msgid "Directory separator illegal in filename"
 msgstr "Dosya adında dizin ayırıcısı kullanılamaz"
 
-#: libxfce4ui/xfce-filename-input.c:232
+#: libxfce4ui/xfce-filename-input.c:230
 msgid "Filenames should not start or end with a space"
 msgstr "Dosya adları boşlukla başlamamalı veya bitmemelidir"
 
-#: libxfce4ui/xfce-item-list-view.c:331
+#: libxfce4ui/xfce-item-list-view.c:337
 msgid "Active"
 msgstr "Etkin"
 
-#: libxfce4ui/xfce-item-list-view.c:348
+#: libxfce4ui/xfce-item-list-view.c:354
 msgid "Name"
 msgstr "Ad"
 
-#: libxfce4ui/xfce-item-list-view.c:657
+#: libxfce4ui/xfce-item-list-view.c:669
 msgid "Move _up"
 msgstr "Yukarı _taşı"
 
-#: libxfce4ui/xfce-item-list-view.c:657
+#: libxfce4ui/xfce-item-list-view.c:669
 msgid "Move currently selected item up by one row"
 msgstr "Seçili ögeyi bir satır yukarı taşı"
 
-#: libxfce4ui/xfce-item-list-view.c:661
+#: libxfce4ui/xfce-item-list-view.c:673
 msgid "Move _down"
 msgstr "Aşağı _taşı"
 
-#: libxfce4ui/xfce-item-list-view.c:661
+#: libxfce4ui/xfce-item-list-view.c:673
 msgid "Move currently selected item down by one row"
 msgstr "Seçili ögeyi bir satır aşağı taşı"
 
-#: libxfce4ui/xfce-item-list-view.c:672
-msgid "_Add new item"
-msgstr "Yeni öğe _ekle"
+#: libxfce4ui/xfce-item-list-view.c:684
+msgid "_Add"
+msgstr "_Ekle"
 
-#: libxfce4ui/xfce-item-list-view.c:672
+#: libxfce4ui/xfce-item-list-view.c:684
 msgid "Add new item"
 msgstr "Yeni öğe ekle"
 
-#: libxfce4ui/xfce-item-list-view.c:678
+#: libxfce4ui/xfce-item-list-view.c:690
 msgid "_Remove"
 msgstr "_Kaldır"
 
-#: libxfce4ui/xfce-item-list-view.c:678
+#: libxfce4ui/xfce-item-list-view.c:690
 msgid "Remove currently selected items"
 msgstr "Şu anda seçili öğeleri kaldır"
 
-#: libxfce4ui/xfce-item-list-view.c:684
+#: libxfce4ui/xfce-item-list-view.c:696
 msgid "_Edit"
 msgstr "_Düzenle"
 
-#: libxfce4ui/xfce-item-list-view.c:684
+#: libxfce4ui/xfce-item-list-view.c:696
 msgid "Edit the currently selected item"
 msgstr "Seçili ögeyi düzenle"
 
-#: libxfce4ui/xfce-item-list-view.c:690
+#: libxfce4ui/xfce-item-list-view.c:702
 msgid "Reset to de_faults"
 msgstr "Varsayılanlara sı_fırla"
 
-#: libxfce4ui/xfce-item-list-view.c:690
+#: libxfce4ui/xfce-item-list-view.c:702
 msgid "Reset all items to default settings"
 msgstr "Tüm öğeleri varsayılan ayarlara sıfırla"
 
@@ -517,74 +517,74 @@ msgstr "%s için çelişen eylemler"
 msgid "This shortcut is already being used for something else."
 msgstr "Bu kısayol başka bir şey için de kullanılmış durumda."
 
-#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:88
-#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:125
+#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:81
+#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:118
 msgid "Shortcuts Editor"
 msgstr "Kısayol Düzenleyici"
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:490
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:485
 msgid "The current shortcut. Click to edit..."
 msgstr "Geçerli kısayol. Düzenlemek için tıklayın..."
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:502
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:497
 msgid "Clear the shortcut"
 msgstr "Kısayolu temizle"
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:514
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:509
 msgid "Restore the default shortcut"
 msgstr "Varsayılan kısayolu geri yükle"
 
 #. skip leading slash
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:668
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:758
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:663
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:753
 #, c-format
 msgid "This keyboard shortcut is currently used by: '%s'"
 msgstr "Bu klavye kısayolunu şu kullanıyor: '%s'"
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:671
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:761
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:666
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:756
 msgid "Keyboard shortcut already in use"
 msgstr "Klavye kısayolu zaten kullanılıyor"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:215
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:225
 msgid "Window Manager Action Shortcut"
 msgstr "Pencere Yönetimi Eylemi Kısayolu"
 
 #. TRANSLATORS: this string will be used to create an explanation for
 #. * the user in a following string
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:218
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:234
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:228
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:244
 msgid "action"
 msgstr "eylem"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:223
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:233
 msgid "Command Shortcut"
 msgstr "Komut Kısayolu"
 
 #. TRANSLATORS: this string will be used to create an explanation for
 #. * the user in a following string
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:226
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:236
 msgid "command"
 msgstr "komut"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:231
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:241
 msgid "Shortcut"
 msgstr "Kısayol"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:246
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:256
 msgid "Clear"
 msgstr "Temizle"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:269
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:279
 #, c-format
 msgid "Press keyboard keys to trigger the %s '%s'."
 msgstr "%s '%s' tetiklemek için klavye tuşlarına basın."
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:291
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:301
 msgid "Please press a key"
 msgstr "Lütfen bir tuşa basın"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:347
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:379
 msgid "Could not grab the keyboard."
 msgstr "Klavye yakalanamadı."
 
@@ -1048,12 +1048,12 @@ msgid "Unable to initialize GTK+."
 msgstr "GTK+ başlatılamıyor."
 
 #: xfce4-about/main.c:536 xfce-desktop-item-edit/main.c:202
-#: xfce-open/main.c:762
+#: xfce-open/main.c:753
 msgid "The Xfce development team. All rights reserved."
 msgstr "Xfce geliştirme takımı. Tüm hakları saklıdır."
 
 #: xfce4-about/main.c:537 xfce-desktop-item-edit/main.c:210
-#: xfce-open/main.c:771
+#: xfce-open/main.c:762
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "Lütfen hataları <%s> adresine bildirin."
@@ -1101,22 +1101,22 @@ msgstr "Xfce Hakkında"
 msgid "Information about the Xfce Desktop Environment"
 msgstr "Xfce Masaüstü Ortamı ile ilgili bilgi"
 
-#: xfce4-about/system-info.c:495 xfce4-about/system-info.c:517
-#: xfce4-about/system-info.c:636 xfce4-about/system-info.c:685
+#: xfce4-about/system-info.c:494 xfce4-about/system-info.c:515
+#: xfce4-about/system-info.c:634 xfce4-about/system-info.c:683
 msgid "Unknown"
 msgstr "Bilinmeyen"
 
 #. translators: This is the type of architecture for the OS
-#: xfce4-about/system-info.c:620
+#: xfce4-about/system-info.c:618
 msgid "64-bit (32-bit userspace)"
 msgstr "64 bit (32 bit kullanıcı uzamı)"
 
 #. translators: This is the type of architecture for the OS
-#: xfce4-about/system-info.c:623
+#: xfce4-about/system-info.c:621
 msgid "64-bit"
 msgstr "64 bit"
 
-#: xfce4-about/system-info.c:623
+#: xfce4-about/system-info.c:621
 msgid "32-bit"
 msgstr "32 bit"
 
@@ -1124,7 +1124,7 @@ msgstr "32 bit"
 #. * example:
 #. * "Fedora 25 (Workstation Edition); Build ID: xyz" or
 #. * "Ubuntu 16.04 LTS; Build ID: jki"
-#: xfce4-about/system-info.c:693
+#: xfce4-about/system-info.c:691
 #, c-format
 msgid "%s; Build ID: %s"
 msgstr "%s; İnşa Kimliği: %s"
@@ -1210,15 +1210,15 @@ msgstr "Sürüm bilgisini yazdır ve çık"
 msgid "[FILE|FOLDER]"
 msgstr "[DOSYA|KLASÖR]"
 
-#: xfce-desktop-item-edit/main.c:200 xfce-open/main.c:760
+#: xfce-desktop-item-edit/main.c:200 xfce-open/main.c:751
 msgid "os-cillation e.K. All rights reserved."
 msgstr "os-cillation e.K. Tüm hakları saklıdır."
 
-#: xfce-desktop-item-edit/main.c:204 xfce-open/main.c:764
+#: xfce-desktop-item-edit/main.c:204 xfce-open/main.c:755
 msgid "Written by Benedikt Meurer <benny@xfce.org>."
 msgstr "Yazan Benedikt Meurer <benny@xfce.org>."
 
-#: xfce-desktop-item-edit/main.c:205 xfce-open/main.c:766
+#: xfce-desktop-item-edit/main.c:205 xfce-open/main.c:757
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -1324,7 +1324,7 @@ msgstr "S_imge:"
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
 #. dialog if no icon selected
 #: xfce-desktop-item-edit/xfce-die-editor.c:447
-#: xfce-desktop-item-edit/xfce-die-editor.c:1306
+#: xfce-desktop-item-edit/xfce-die-editor.c:1300
 msgid "No icon"
 msgstr "Simge yok"
 
@@ -1374,52 +1374,52 @@ msgstr "_Tamam"
 msgid "Select a working directory"
 msgstr "Çalışma dizinini seç"
 
-#: xfce-desktop-item-edit/xfce-die-editor.c:1308
+#: xfce-desktop-item-edit/xfce-die-editor.c:1302
 msgid "Icon not found"
 msgstr "Simge bulunamadı"
 
-#: xfce-desktop-item-edit/xfce-die-utils.c:210
+#: xfce-desktop-item-edit/xfce-die-utils.c:209
 msgid "File location is not a regular file or directory"
 msgstr "Dosya yeri düzenli dosya veya dizin değil"
 
-#: xfce-open/main.c:218
+#: xfce-open/main.c:216
 msgid "Usage: xfce-open [URLs...]"
 msgstr "Kullanım: xfce-open [URLs...]"
 
-#: xfce-open/main.c:219
+#: xfce-open/main.c:217
 msgid "       xfce-open --launch TYPE [PARAMETERs...]"
 msgstr "       xfce-open --launch TYPE [PARAMETERs...]"
 
-#: xfce-open/main.c:221
+#: xfce-open/main.c:219
 msgid "  -?, --help                          Print this help message and exit"
 msgstr "  -?, --help                          Bu mesajı yazdır ve çık"
 
-#: xfce-open/main.c:222
+#: xfce-open/main.c:220
 msgid ""
 "  -V, --version                       Print version information and exit"
 msgstr "  -V, --version                       Sürüm bilgisini yazdır ve çık"
 
-#: xfce-open/main.c:224
+#: xfce-open/main.c:222
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
 msgstr "  --launch TÜR [PARAMETREler...]      TÜR'e karşılık gelen uygulamayı,\n                                      seçilen parametrelere göre başlat."
 
-#: xfce-open/main.c:228
+#: xfce-open/main.c:226
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
 msgstr "  --working-directory DIRECTORY       --launch seçeneğinin kullanıldığı, uygulamaların\n                                        öntanımlı çalışma dizini."
 
-#: xfce-open/main.c:231
+#: xfce-open/main.c:229
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "--launch komutu tarafından desteklenen TÜR'ler:"
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
 #. TerminalEmulator),
 #. * since the xfce4-mime-helper utility will not accept localized TYPEs.
-#: xfce-open/main.c:237
+#: xfce-open/main.c:235
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1431,7 +1431,7 @@ msgid ""
 "  VideoPlayer      - The preferred Video Player."
 msgstr "WebTarayıcı      - Tercih edilen Web Tarayıcısı.\nE-postaOkuyucu      - Tercih edilen E-posta Okuyucu.\nDosyaYöneticisi      - Tercih edilen Dosya Yöneticisi.\nUçbirimEmülatörü      - Tercih edilen Uçbirim Emülatörü.\nMetinEditörü      - Tercih edilen Metin Editörü.\nGörüntüGösterici      - Tercih edilen Görüntü Gösterici.\nSesOynatıcı      - Tercih edilen Ses Oynatıcı.\nVideoOynatıcı      - Tercih edilen Video Oynatıcı."
 
-#: xfce-open/main.c:247
+#: xfce-open/main.c:245
 msgid ""
 "If you don't specify the --launch option, xfce-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1440,16 +1440,16 @@ msgid ""
 "you can pass the command line that should be run in the terminal)."
 msgstr "--launch seçeneğini belirtmezseniz, xfce-open belirtilen tüm dosyaları açacaktır.\nTercih edilen URL işleyicileriyle birlikte URL'ler. Aksi takdirde, --launch'ı belirtirseniz\nseçeneği, çalıştırmak istediğiniz tercih edilen uygulamayı seçebilir ve\nuygulamaya ek parametreler geçirin (örneğin TerminalEmulator için\nterminalde çalıştırılması gereken komut satırını geçebilirsiniz)."
 
-#: xfce-open/main.c:422
+#: xfce-open/main.c:420
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Tercih edilen uygulama, \"%s\" sıralamasına göre açılamadı."
 
-#: xfce-open/main.c:713
+#: xfce-open/main.c:704
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "\"%s\" ögesinin URI-planını taramak olanaksız."
 
-#: xfce-open/main.c:727
+#: xfce-open/main.c:718
 msgid "Failed to open URI."
 msgstr "Kaynak adresi açılamadı."
