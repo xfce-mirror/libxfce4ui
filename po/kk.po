@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2026-05-22 12:45+0200\n"
+"POT-Creation-Date: 2026-11-13 00:46+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2009,2015-2017,2019-2022,2024,2026\n"
 "Language-Team: Kazakh (http://app.transifex.com/xfce/libxfce4ui/language/kk/)\n"
@@ -165,7 +165,7 @@ msgstr "Нұсқаулықты оқу"
 #. Create cancel button
 #. add the "Cancel" button
 #: libxfce4ui/xfce-dialogs.c:268 libxfce4ui/xfce-dialogs.c:526
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:252
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:262
 #: xfce-desktop-item-edit/main.c:351 xfce-desktop-item-edit/main.c:545
 #: xfce-desktop-item-edit/xfce-die-command-entry.c:262
 #: xfce-desktop-item-edit/xfce-die-editor.c:648
@@ -341,37 +341,37 @@ msgstr "_Таңбашаны іздеу:"
 msgid "Clear search field"
 msgstr "Іздеу өрісін тазарту"
 
-#: libxfce4ui/xfce-sm-client.c:1503
+#: libxfce4ui/xfce-sm-client.c:1513
 msgid "Session management client ID"
 msgstr "Сессиялар басқарушысының клиент ID-і"
 
-#: libxfce4ui/xfce-sm-client.c:1503
+#: libxfce4ui/xfce-sm-client.c:1513
 msgid "ID"
 msgstr "ID"
 
-#: libxfce4ui/xfce-sm-client.c:1504
+#: libxfce4ui/xfce-sm-client.c:1514
 msgid "Disable session management"
 msgstr "Сессияларды басқаруын сөндіру"
 
-#: libxfce4ui/xfce-sm-client.c:1514
+#: libxfce4ui/xfce-sm-client.c:1524
 msgid "Session management options"
 msgstr "Сессияларды басқару опциялары"
 
-#: libxfce4ui/xfce-sm-client.c:1514
+#: libxfce4ui/xfce-sm-client.c:1524
 msgid "Show session management options"
 msgstr "Сессияларды басқарудың опцияларын көрсету"
 
-#: libxfce4ui/xfce-sm-client.c:1688
+#: libxfce4ui/xfce-sm-client.c:1706
 #, c-format
 msgid "Failed to connect to the session manager: %s"
 msgstr "Сессияларды басқарушыға байланысты орнату сәтсіз аяқталды: %s"
 
-#: libxfce4ui/xfce-sm-client.c:1697
+#: libxfce4ui/xfce-sm-client.c:1715
 msgid "Session manager did not return a valid client id"
 msgstr "Сессияны басқарушысы дұрыс клиент ID-ін қайтармады"
 
 #. print warning for user
-#: libxfce4ui/xfce-spawn.c:388
+#: libxfce4ui/xfce-spawn.c:350
 #, c-format
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
@@ -379,71 +379,71 @@ msgid ""
 msgstr "\"%s\" жұмыс бумасы жоқ болып тұр. Ол \"%s\" жасалғанда қолданылмайды."
 
 #. retrieve the error and warning messages
-#: libxfce4ui/xfce-filename-input.c:230
+#: libxfce4ui/xfce-filename-input.c:228
 msgid "Filename is too long"
 msgstr "Файл аты тым ұзын"
 
-#: libxfce4ui/xfce-filename-input.c:231
+#: libxfce4ui/xfce-filename-input.c:229
 msgid "Directory separator illegal in filename"
 msgstr "Файл атында бумалар ажыратқышы жарамсыз"
 
-#: libxfce4ui/xfce-filename-input.c:232
+#: libxfce4ui/xfce-filename-input.c:230
 msgid "Filenames should not start or end with a space"
 msgstr "Файл аттару бос аралықпен басталмауы және аяқталмауы тиіс"
 
-#: libxfce4ui/xfce-item-list-view.c:331
+#: libxfce4ui/xfce-item-list-view.c:337
 msgid "Active"
 msgstr "Белсенді"
 
-#: libxfce4ui/xfce-item-list-view.c:348
+#: libxfce4ui/xfce-item-list-view.c:354
 msgid "Name"
 msgstr "Аты"
 
-#: libxfce4ui/xfce-item-list-view.c:657
+#: libxfce4ui/xfce-item-list-view.c:669
 msgid "Move _up"
 msgstr "Ж_оғары жылжыту"
 
-#: libxfce4ui/xfce-item-list-view.c:657
+#: libxfce4ui/xfce-item-list-view.c:669
 msgid "Move currently selected item up by one row"
 msgstr "Таңдаулы тұрған элементті төмен жылжыту"
 
-#: libxfce4ui/xfce-item-list-view.c:661
+#: libxfce4ui/xfce-item-list-view.c:673
 msgid "Move _down"
 msgstr "Тө_мен жылжыту"
 
-#: libxfce4ui/xfce-item-list-view.c:661
+#: libxfce4ui/xfce-item-list-view.c:673
 msgid "Move currently selected item down by one row"
 msgstr "Таңдалған нәрсені бір жолға жоғары жылжыту"
 
-#: libxfce4ui/xfce-item-list-view.c:672
-msgid "_Add new item"
-msgstr "Ж_аңа элементті қосу"
+#: libxfce4ui/xfce-item-list-view.c:684
+msgid "_Add"
+msgstr "Қ_осу"
 
-#: libxfce4ui/xfce-item-list-view.c:672
+#: libxfce4ui/xfce-item-list-view.c:684
 msgid "Add new item"
 msgstr "Жаңа элементті қосу"
 
-#: libxfce4ui/xfce-item-list-view.c:678
+#: libxfce4ui/xfce-item-list-view.c:690
 msgid "_Remove"
 msgstr "Өші_ру"
 
-#: libxfce4ui/xfce-item-list-view.c:678
+#: libxfce4ui/xfce-item-list-view.c:690
 msgid "Remove currently selected items"
 msgstr "Ағымдағы таңдалған элементті өшіру"
 
-#: libxfce4ui/xfce-item-list-view.c:684
+#: libxfce4ui/xfce-item-list-view.c:696
 msgid "_Edit"
 msgstr "Түз_ету"
 
-#: libxfce4ui/xfce-item-list-view.c:684
+#: libxfce4ui/xfce-item-list-view.c:696
 msgid "Edit the currently selected item"
 msgstr "Ағымдағы таңдаулы тұрған элементті баптау"
 
-#: libxfce4ui/xfce-item-list-view.c:690
+#: libxfce4ui/xfce-item-list-view.c:702
 msgid "Reset to de_faults"
 msgstr "Баст_апқы түріне келтіру"
 
-#: libxfce4ui/xfce-item-list-view.c:690
+#: libxfce4ui/xfce-item-list-view.c:702
 msgid "Reset all items to default settings"
 msgstr "Барлық элементтерді бастапқы мәндеріне тастайды"
 
@@ -503,74 +503,74 @@ msgstr "%s үшін ерегісетін әрекеттер"
 msgid "This shortcut is already being used for something else."
 msgstr "Жарлық қазір басқа бір әрекет үшін орнатылып тұр."
 
-#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:88
-#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:125
+#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:81
+#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:118
 msgid "Shortcuts Editor"
 msgstr "Жарлықтар түзеткіші"
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:490
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:485
 msgid "The current shortcut. Click to edit..."
 msgstr "Ағымдағы жарлық. Түзету үшін шертіңіз..."
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:502
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:497
 msgid "Clear the shortcut"
 msgstr "Жарлықты тазарту"
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:514
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:509
 msgid "Restore the default shortcut"
 msgstr "Бастапқы жарлықты қалпына келтіру"
 
 #. skip leading slash
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:668
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:758
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:663
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:753
 #, c-format
 msgid "This keyboard shortcut is currently used by: '%s'"
 msgstr "Бұл пернетақта жарлығы келесі үшін қолданылуда: '%s'"
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:671
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:761
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:666
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:756
 msgid "Keyboard shortcut already in use"
 msgstr "Пернетақта қолданылуда болып тұр"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:215
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:225
 msgid "Window Manager Action Shortcut"
 msgstr "Терезелер басқарушысы әрекетінің жарлығы"
 
 #. TRANSLATORS: this string will be used to create an explanation for
 #. * the user in a following string
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:218
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:234
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:228
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:244
 msgid "action"
 msgstr "әрекет"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:223
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:233
 msgid "Command Shortcut"
 msgstr "Команда жарлығы"
 
 #. TRANSLATORS: this string will be used to create an explanation for
 #. * the user in a following string
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:226
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:236
 msgid "command"
 msgstr "команда"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:231
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:241
 msgid "Shortcut"
 msgstr "Жарлық"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:246
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:256
 msgid "Clear"
 msgstr "Тазарту"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:269
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:279
 #, c-format
 msgid "Press keyboard keys to trigger the %s '%s'."
 msgstr "%s '%s' жөнелту үшін пернетақта пернелерін басыңыз."
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:291
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:301
 msgid "Please press a key"
 msgstr "Пернені басыңыз"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:347
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:379
 msgid "Could not grab the keyboard."
 msgstr "Пернетақта басқаруын алу мүмкін емес."
 
@@ -1034,12 +1034,12 @@ msgid "Unable to initialize GTK+."
 msgstr "GTK+ іске қосу мүмкін емес."
 
 #: xfce4-about/main.c:536 xfce-desktop-item-edit/main.c:202
-#: xfce-open/main.c:762
+#: xfce-open/main.c:753
 msgid "The Xfce development team. All rights reserved."
 msgstr "Xfce өндіру тобы. Барлық құқықтары қорғалған."
 
 #: xfce4-about/main.c:537 xfce-desktop-item-edit/main.c:210
-#: xfce-open/main.c:771
+#: xfce-open/main.c:762
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "Қателер жөнінде осында хабарлаңыз: <%s>."
@@ -1087,22 +1087,22 @@ msgstr "Xfce туралы"
 msgid "Information about the Xfce Desktop Environment"
 msgstr "Xfce жұмыс үстел ортасы туралы ақпарат"
 
-#: xfce4-about/system-info.c:495 xfce4-about/system-info.c:517
-#: xfce4-about/system-info.c:636 xfce4-about/system-info.c:685
+#: xfce4-about/system-info.c:494 xfce4-about/system-info.c:515
+#: xfce4-about/system-info.c:634 xfce4-about/system-info.c:683
 msgid "Unknown"
 msgstr "Белгісіз"
 
 #. translators: This is the type of architecture for the OS
-#: xfce4-about/system-info.c:620
+#: xfce4-about/system-info.c:618
 msgid "64-bit (32-bit userspace)"
 msgstr "64-bit (32-биттік пайдаланушы ортасы)"
 
 #. translators: This is the type of architecture for the OS
-#: xfce4-about/system-info.c:623
+#: xfce4-about/system-info.c:621
 msgid "64-bit"
 msgstr "64-биттік"
 
-#: xfce4-about/system-info.c:623
+#: xfce4-about/system-info.c:621
 msgid "32-bit"
 msgstr "32-биттік"
 
@@ -1110,7 +1110,7 @@ msgstr "32-биттік"
 #. * example:
 #. * "Fedora 25 (Workstation Edition); Build ID: xyz" or
 #. * "Ubuntu 16.04 LTS; Build ID: jki"
-#: xfce4-about/system-info.c:693
+#: xfce4-about/system-info.c:691
 #, c-format
 msgid "%s; Build ID: %s"
 msgstr "%s; Жинақ ID: %s"
@@ -1196,15 +1196,15 @@ msgstr "Нұсқа ақпаратын шығару мен шығу"
 msgid "[FILE|FOLDER]"
 msgstr "[ФАЙЛ|БУМА]"
 
-#: xfce-desktop-item-edit/main.c:200 xfce-open/main.c:760
+#: xfce-desktop-item-edit/main.c:200 xfce-open/main.c:751
 msgid "os-cillation e.K. All rights reserved."
 msgstr "os-cillation e.K. Барлық құқықтары қорғалған."
 
-#: xfce-desktop-item-edit/main.c:204 xfce-open/main.c:764
+#: xfce-desktop-item-edit/main.c:204 xfce-open/main.c:755
 msgid "Written by Benedikt Meurer <benny@xfce.org>."
 msgstr "Benedikt Meurer <benny@xfce.org> жазған."
 
-#: xfce-desktop-item-edit/main.c:205 xfce-open/main.c:766
+#: xfce-desktop-item-edit/main.c:205 xfce-open/main.c:757
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -1310,7 +1310,7 @@ msgstr "Таңба_ша:"
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
 #. dialog if no icon selected
 #: xfce-desktop-item-edit/xfce-die-editor.c:447
-#: xfce-desktop-item-edit/xfce-die-editor.c:1306
+#: xfce-desktop-item-edit/xfce-die-editor.c:1300
 msgid "No icon"
 msgstr "Таңбашасы жоқ"
 
@@ -1360,52 +1360,52 @@ msgstr "_ОК"
 msgid "Select a working directory"
 msgstr "Жұмыс бумасын таңдаңыз"
 
-#: xfce-desktop-item-edit/xfce-die-editor.c:1308
+#: xfce-desktop-item-edit/xfce-die-editor.c:1302
 msgid "Icon not found"
 msgstr "Таңбаша табылмады"
 
-#: xfce-desktop-item-edit/xfce-die-utils.c:210
+#: xfce-desktop-item-edit/xfce-die-utils.c:209
 msgid "File location is not a regular file or directory"
 msgstr "Файл орналасуы кәдімгі файл не бума емес"
 
-#: xfce-open/main.c:218
+#: xfce-open/main.c:216
 msgid "Usage: xfce-open [URLs...]"
 msgstr "Қолданылуы: xfce-open [URL-дер...]"
 
-#: xfce-open/main.c:219
+#: xfce-open/main.c:217
 msgid "       xfce-open --launch TYPE [PARAMETERs...]"
 msgstr "       xfce-open --launch ТҮРІ [ПАРАМЕТРЛЕР...]"
 
-#: xfce-open/main.c:221
+#: xfce-open/main.c:219
 msgid "  -?, --help                          Print this help message and exit"
 msgstr "  -?, --help                          Осы көмек ақпаратын шығару мен шығу"
 
-#: xfce-open/main.c:222
+#: xfce-open/main.c:220
 msgid ""
 "  -V, --version                       Print version information and exit"
 msgstr "  -V, --version                       Нұсқа ақпаратын шығару мен шығу"
 
-#: xfce-open/main.c:224
+#: xfce-open/main.c:222
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
 msgstr "  --launch ТҮР [ПАРАМЕТРлер...]    ТҮРдің таңдамалы қолданбасын\n                                      міндетті емес ПАРАМЕТРмен жөнелту, бұл жердегі\n                                      ТҮР - төмендегі мәндердің біреуі."
 
-#: xfce-open/main.c:228
+#: xfce-open/main.c:226
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
 msgstr "  --working-directory БУМА         --launch опциясымен қолданылатын қолданбалар\n                                      үшін негізгі жұмыс бумасы."
 
-#: xfce-open/main.c:231
+#: xfce-open/main.c:229
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "Келесі ТҮРлерге ғана --launch командасында қолдау бар:"
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
 #. TerminalEmulator),
 #. * since the xfce4-mime-helper utility will not accept localized TYPEs.
-#: xfce-open/main.c:237
+#: xfce-open/main.c:235
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1417,7 +1417,7 @@ msgid ""
 "  VideoPlayer      - The preferred Video Player."
 msgstr "WebBrowser — таңдаулы веб-браузер.\nMailReader — таңдаулы пошта клиенті.\nFileManager — таңдаулы файл менеджері.\nTerminalEmulator — таңдаулы терминал эмуляторы.\nTextEditor — таңдаулы мәтіндік редактор.\nImageViewer — таңдаулы кескіндерді қарау құралы.\nAudioPlayer — таңдаулы аудио ойнатқыш.\nVideoPlayer — таңдаулы бейне ойнатқыш."
 
-#: xfce-open/main.c:247
+#: xfce-open/main.c:245
 msgid ""
 "If you don't specify the --launch option, xfce-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1426,16 +1426,16 @@ msgid ""
 "you can pass the command line that should be run in the terminal)."
 msgstr "Егер сіз --launch опциясын көрсетпесеңіз, xfce-open көрсетілген URL-ды\nсәйкес URL өндеуіштермен ашады. Немесе, --launch опциясы көрсетілсе,\nжөнелтілетін таңдамалы қолданбаны таңдай аласыз, және қосымша\nпараметрлерді көрсете аласыз (мыс. терминал эмуляторы үшін терминалда\nорындалатын командалық жол болуы мүмкін)."
 
-#: xfce-open/main.c:422
+#: xfce-open/main.c:420
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "\"%s\" санаты үшін таңдамалы қолданбаны жөнелту сәтсіз аяқталды."
 
-#: xfce-open/main.c:713
+#: xfce-open/main.c:704
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "\"%s\" үшін URI-схемасын анықтау мүмкін емес."
 
-#: xfce-open/main.c:727
+#: xfce-open/main.c:718
 msgid "Failed to open URI."
 msgstr "URI ашу сәтсіз аяқталды."
