@@ -7,7 +7,7 @@
 # Marius Ghita, 2022
 # Marius Ghita, 2022
 # Mișu Moldovan <dumol@xfce.org>, 2015
-# Remus-Gabriel Chelu <remusgabriel.chelu@disroot.org>, 2024-2025
+# Remus-Gabriel Chelu <remusgabriel.chelu@disroot.org>, 2024-2026
 # ThinkRoot99, 2017
 # Yupy <yupy_17y@yahoo.com>, 2017
 msgid ""
@@ -16,7 +16,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2026-11-13 00:46+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Yupy <yupy_17y@yahoo.com>, 2017\n"
+"Last-Translator: Remus-Gabriel Chelu <remusgabriel.chelu@disroot.org>, 2024-2026\n"
 "Language-Team: Romanian (http://app.transifex.com/xfce/libxfce4ui/language/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -223,7 +223,7 @@ msgstr "Această fereastră are %d file deschise. Închiderea acestei ferestre v
 
 #: libxfce4ui/xfce-dialogs.c:522
 msgid "Warning"
-msgstr "Atenționare"
+msgstr "Atenție"
 
 #: libxfce4ui/xfce-dialogs.c:527
 msgid "Close T_ab"
