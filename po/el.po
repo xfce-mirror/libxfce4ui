@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2026-03-16 00:45+0100\n"
+"POT-Creation-Date: 2026-11-13 00:46+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: Ioannis LM, 2022-2023,2025-2026\n"
 "Language-Team: Greek (http://app.transifex.com/xfce/libxfce4ui/language/el/)\n"
@@ -174,7 +174,7 @@ msgstr "Ανάγνωση"
 #. Create cancel button
 #. add the "Cancel" button
 #: libxfce4ui/xfce-dialogs.c:268 libxfce4ui/xfce-dialogs.c:526
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:252
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:262
 #: xfce-desktop-item-edit/main.c:351 xfce-desktop-item-edit/main.c:545
 #: xfce-desktop-item-edit/xfce-die-command-entry.c:262
 #: xfce-desktop-item-edit/xfce-die-editor.c:648
@@ -350,37 +350,37 @@ msgstr "_Εικονίδιο αναζήτησης:"
 msgid "Clear search field"
 msgstr "Εκκαθάριση του πεδίου αναζήτησης"
 
-#: libxfce4ui/xfce-sm-client.c:1503
+#: libxfce4ui/xfce-sm-client.c:1513
 msgid "Session management client ID"
 msgstr "ID υπηρεσίας του διαχειριστή συνεδρίας"
 
-#: libxfce4ui/xfce-sm-client.c:1503
+#: libxfce4ui/xfce-sm-client.c:1513
 msgid "ID"
 msgstr "ID"
 
-#: libxfce4ui/xfce-sm-client.c:1504
+#: libxfce4ui/xfce-sm-client.c:1514
 msgid "Disable session management"
 msgstr "Απενεργοποίηση του διαχειριστή συνεδρίας"
 
-#: libxfce4ui/xfce-sm-client.c:1514
+#: libxfce4ui/xfce-sm-client.c:1524
 msgid "Session management options"
 msgstr "Επιλογές του διαχειριστή συνεδρίας"
 
-#: libxfce4ui/xfce-sm-client.c:1514
+#: libxfce4ui/xfce-sm-client.c:1524
 msgid "Show session management options"
 msgstr "Εμφάνιση επιλογών του διαχειριστή συνεδρίας"
 
-#: libxfce4ui/xfce-sm-client.c:1688
+#: libxfce4ui/xfce-sm-client.c:1706
 #, c-format
 msgid "Failed to connect to the session manager: %s"
 msgstr "Αποτυχία σύνδεσης με τον διαχειριστή συνεδρίας: %s"
 
-#: libxfce4ui/xfce-sm-client.c:1697
+#: libxfce4ui/xfce-sm-client.c:1715
 msgid "Session manager did not return a valid client id"
 msgstr "Ο διαχειριστής συνεδρίας επέστρεψε μη έγκυρο id υπηρεσίας"
 
 #. print warning for user
-#: libxfce4ui/xfce-spawn.c:388
+#: libxfce4ui/xfce-spawn.c:350
 #, c-format
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
@@ -388,71 +388,71 @@ msgid ""
 msgstr "Ο κατάλογος εργασίας \"%s\" δεν υπάρχει. Δε θα χρησιμοποιηθεί κατά τη δημιουργία του \"%s\"."
 
 #. retrieve the error and warning messages
-#: libxfce4ui/xfce-filename-input.c:230
+#: libxfce4ui/xfce-filename-input.c:228
 msgid "Filename is too long"
 msgstr "Το όνομα του αρχείου είναι υπερβολικά μεγάλο"
 
-#: libxfce4ui/xfce-filename-input.c:231
+#: libxfce4ui/xfce-filename-input.c:229
 msgid "Directory separator illegal in filename"
 msgstr "Στο όνομα του αρχείου δεν επιτρέπεται το διαχωριστικό καταλόγου"
 
-#: libxfce4ui/xfce-filename-input.c:232
+#: libxfce4ui/xfce-filename-input.c:230
 msgid "Filenames should not start or end with a space"
 msgstr "Τα ονόματα των αρχείων δεν πρέπει να αρχίζουν ή να τελειώνουν με κενό χαρακτήρα"
 
-#: libxfce4ui/xfce-item-list-view.c:331
+#: libxfce4ui/xfce-item-list-view.c:337
 msgid "Active"
 msgstr "Ενεργό"
 
-#: libxfce4ui/xfce-item-list-view.c:348
+#: libxfce4ui/xfce-item-list-view.c:354
 msgid "Name"
 msgstr "Όνομα"
 
-#: libxfce4ui/xfce-item-list-view.c:657
+#: libxfce4ui/xfce-item-list-view.c:669
 msgid "Move _up"
 msgstr "Μετακίνηση επάν_ω"
 
-#: libxfce4ui/xfce-item-list-view.c:657
+#: libxfce4ui/xfce-item-list-view.c:669
 msgid "Move currently selected item up by one row"
 msgstr "Μετακίνηση του επιλεγμένου αντικειμένου μια γραμμή επάνω"
 
-#: libxfce4ui/xfce-item-list-view.c:661
+#: libxfce4ui/xfce-item-list-view.c:673
 msgid "Move _down"
 msgstr "Μετακίνηση κά_τω"
 
-#: libxfce4ui/xfce-item-list-view.c:661
+#: libxfce4ui/xfce-item-list-view.c:673
 msgid "Move currently selected item down by one row"
 msgstr "Μετακίνηση του επιλεγμένου αντικειμένου μια γραμμή κάτω"
 
-#: libxfce4ui/xfce-item-list-view.c:672
-msgid "_Add new item"
-msgstr "Προσθήκ_η νέου αντικειμένου"
+#: libxfce4ui/xfce-item-list-view.c:684
+msgid "_Add"
+msgstr "_Προσθήκη"
 
-#: libxfce4ui/xfce-item-list-view.c:672
+#: libxfce4ui/xfce-item-list-view.c:684
 msgid "Add new item"
 msgstr "Προσθήκη νέου αντικειμένου"
 
-#: libxfce4ui/xfce-item-list-view.c:678
+#: libxfce4ui/xfce-item-list-view.c:690
 msgid "_Remove"
 msgstr "_Αφαίρεση"
 
-#: libxfce4ui/xfce-item-list-view.c:678
+#: libxfce4ui/xfce-item-list-view.c:690
 msgid "Remove currently selected items"
 msgstr "Αφαίρεση όλων των επιλεγμένων"
 
-#: libxfce4ui/xfce-item-list-view.c:684
+#: libxfce4ui/xfce-item-list-view.c:696
 msgid "_Edit"
 msgstr "_Επεξεργασία"
 
-#: libxfce4ui/xfce-item-list-view.c:684
+#: libxfce4ui/xfce-item-list-view.c:696
 msgid "Edit the currently selected item"
 msgstr "Επεξεργασία του επιλεγμένου αντικειμένου"
 
-#: libxfce4ui/xfce-item-list-view.c:690
+#: libxfce4ui/xfce-item-list-view.c:702
 msgid "Reset to de_faults"
 msgstr "Επανα_φορά"
 
-#: libxfce4ui/xfce-item-list-view.c:690
+#: libxfce4ui/xfce-item-list-view.c:702
 msgid "Reset all items to default settings"
 msgstr "Επαναφορά όλων στις προεπιλεγμένες ρυθμίσεις"
 
@@ -512,74 +512,74 @@ msgstr "Συγκρουόμενες ενέργειες για το %s"
 msgid "This shortcut is already being used for something else."
 msgstr "Αυτή η συντόμευση χρησιμοποιείται ήδη για κάτι άλλο."
 
-#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:88
-#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:125
+#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:81
+#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:118
 msgid "Shortcuts Editor"
 msgstr "Επεξεργαστής συντομεύσεων"
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:490
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:485
 msgid "The current shortcut. Click to edit..."
 msgstr "Η τρέχουσα συντόμευση. Πατήστε για επεξεργασία..."
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:502
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:497
 msgid "Clear the shortcut"
 msgstr "Αφαίρεση της συντόμευσης"
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:514
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:509
 msgid "Restore the default shortcut"
 msgstr "Επαναφορά της προεπιλεγμένης συντόμευσης"
 
 #. skip leading slash
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:668
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:758
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:663
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:753
 #, c-format
 msgid "This keyboard shortcut is currently used by: '%s'"
 msgstr "Η συντόμευση πληκτρολογίου χρησιμοποιείται από το: '%s'"
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:671
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:761
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:666
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:756
 msgid "Keyboard shortcut already in use"
 msgstr "Η συντόμευση πληκτρολογίου χρησιμοποιείται ήδη"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:215
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:225
 msgid "Window Manager Action Shortcut"
 msgstr "Συντόμευση ενέργειας του διαχειριστή παραθύρων"
 
 #. TRANSLATORS: this string will be used to create an explanation for
 #. * the user in a following string
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:218
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:234
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:228
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:244
 msgid "action"
 msgstr "ενέργεια"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:223
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:233
 msgid "Command Shortcut"
 msgstr "Συντόμευση εντολής"
 
 #. TRANSLATORS: this string will be used to create an explanation for
 #. * the user in a following string
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:226
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:236
 msgid "command"
 msgstr "εντολή"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:231
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:241
 msgid "Shortcut"
 msgstr "Συντόμευση"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:246
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:256
 msgid "Clear"
 msgstr "Καθαρισμός"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:269
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:279
 #, c-format
 msgid "Press keyboard keys to trigger the %s '%s'."
 msgstr "Πατήστε πλήκτρα στο πληκτρολόγιο για να ενεργοποιήσετε την %s '%s'."
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:291
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:301
 msgid "Please press a key"
 msgstr "Παρακαλώ πατήστε ένα πλήκτρο"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:347
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:379
 msgid "Could not grab the keyboard."
 msgstr "Δεν είναι δυνατή η δέσμευση του πληκτρολογίου."
 
@@ -1043,12 +1043,12 @@ msgid "Unable to initialize GTK+."
 msgstr "Αδύνατη η προετοιμασία GTK+."
 
 #: xfce4-about/main.c:536 xfce-desktop-item-edit/main.c:202
-#: xfce-open/main.c:762
+#: xfce-open/main.c:753
 msgid "The Xfce development team. All rights reserved."
 msgstr "Η ομάδα ανάπτυξης Xfce. Με την επιφύλαξη παντός νόμιμου δικαιώματος."
 
 #: xfce4-about/main.c:537 xfce-desktop-item-edit/main.c:210
-#: xfce-open/main.c:771
+#: xfce-open/main.c:762
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "Παρακαλώ αναφέρετε σφάλματα στο <%s>."
@@ -1096,22 +1096,22 @@ msgstr "Περί του Xfce"
 msgid "Information about the Xfce Desktop Environment"
 msgstr "Πληροφορίες σχετικά με το περιβάλλον εργασίας Xfce"
 
-#: xfce4-about/system-info.c:495 xfce4-about/system-info.c:517
-#: xfce4-about/system-info.c:636 xfce4-about/system-info.c:685
+#: xfce4-about/system-info.c:494 xfce4-about/system-info.c:515
+#: xfce4-about/system-info.c:634 xfce4-about/system-info.c:683
 msgid "Unknown"
 msgstr "Άγνωστο"
 
 #. translators: This is the type of architecture for the OS
-#: xfce4-about/system-info.c:620
+#: xfce4-about/system-info.c:618
 msgid "64-bit (32-bit userspace)"
 msgstr "64-bit (σε περιβάλλον 32-bit)"
 
 #. translators: This is the type of architecture for the OS
-#: xfce4-about/system-info.c:623
+#: xfce4-about/system-info.c:621
 msgid "64-bit"
 msgstr "64-bit"
 
-#: xfce4-about/system-info.c:623
+#: xfce4-about/system-info.c:621
 msgid "32-bit"
 msgstr "32-bit"
 
@@ -1119,7 +1119,7 @@ msgstr "32-bit"
 #. * example:
 #. * "Fedora 25 (Workstation Edition); Build ID: xyz" or
 #. * "Ubuntu 16.04 LTS; Build ID: jki"
-#: xfce4-about/system-info.c:693
+#: xfce4-about/system-info.c:691
 #, c-format
 msgid "%s; Build ID: %s"
 msgstr "%s; ID κατασκευής: %s"
@@ -1205,15 +1205,15 @@ msgstr "Εμφάνιση πληροφοριών έκδοσης και έξοδο
 msgid "[FILE|FOLDER]"
 msgstr "[ΑΡΧΕΙΟ|ΦΑΚΕΛΟΣ]"
 
-#: xfce-desktop-item-edit/main.c:200 xfce-open/main.c:760
+#: xfce-desktop-item-edit/main.c:200 xfce-open/main.c:751
 msgid "os-cillation e.K. All rights reserved."
 msgstr "os-cillation e.K. Με την επιφύλαξη παντός νόμιμου δικαιώματος."
 
-#: xfce-desktop-item-edit/main.c:204 xfce-open/main.c:764
+#: xfce-desktop-item-edit/main.c:204 xfce-open/main.c:755
 msgid "Written by Benedikt Meurer <benny@xfce.org>."
 msgstr "Γραμμένο από τον Benedikt Meuer <benny@xfce.org>."
 
-#: xfce-desktop-item-edit/main.c:205 xfce-open/main.c:766
+#: xfce-desktop-item-edit/main.c:205 xfce-open/main.c:757
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -1318,9 +1318,8 @@ msgstr "Εικονί_διο:"
 
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
 #. dialog if no icon selected
-#. setup a label to tell that no icon was selected
 #: xfce-desktop-item-edit/xfce-die-editor.c:447
-#: xfce-desktop-item-edit/xfce-die-editor.c:1302
+#: xfce-desktop-item-edit/xfce-die-editor.c:1300
 msgid "No icon"
 msgstr "Χωρίς εικονίδιο"
 
@@ -1370,48 +1369,52 @@ msgstr "_Εντάξει"
 msgid "Select a working directory"
 msgstr "Επιλέξτε τον κατάλογο εργασίας"
 
-#: xfce-desktop-item-edit/xfce-die-utils.c:210
-msgid "File location is not a regular file or directory"
-msgstr "Η τοποθεσία του αρχείου δεν είναι ένα κανονικό αρχείο ή κατάλογος"
+#: xfce-desktop-item-edit/xfce-die-editor.c:1302
+msgid "Icon not found"
+msgstr "Δεν βρέθηκε το εικονίδιο"
 
-#: xfce-open/main.c:218
+#: xfce-desktop-item-edit/xfce-die-utils.c:209
+msgid "File location is not a regular file or directory"
+msgstr "Η διαδρομή του αρχείου δεν αντιστοιχεί σε κανονικό αρχείο ή κατάλογο"
+
+#: xfce-open/main.c:216
 msgid "Usage: xfce-open [URLs...]"
 msgstr "Χρήση: xfce-open [Διευθύνσεις...]"
 
-#: xfce-open/main.c:219
+#: xfce-open/main.c:217
 msgid "       xfce-open --launch TYPE [PARAMETERs...]"
 msgstr "        xfce-open --launch ΤΥΠΟΣ [ΠΑΡΑΜΕΤΡΟΙ...]"
 
-#: xfce-open/main.c:221
+#: xfce-open/main.c:219
 msgid "  -?, --help                          Print this help message and exit"
 msgstr "  -?, --help                          Εμφάνιση βοήθειας και έξοδος"
 
-#: xfce-open/main.c:222
+#: xfce-open/main.c:220
 msgid ""
 "  -V, --version                       Print version information and exit"
 msgstr "  -V, --version                       Εμφάνιση πληροφοριών έκδοσης και έξοδος"
 
-#: xfce-open/main.c:224
+#: xfce-open/main.c:222
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
 msgstr "  --launch ΤΥΠΟΣ [ΠΑΡΑΜΕΤΡΟΙ...]       Εκτέλεση της προτιμώμενης εφαρμογής του\n                                      ΤΥΠΟΥ με προαιρετικές τις ΠΑΡΑΜΕΤΡΟΥΣ,\n                                      όπου ΤΥΠΟΣ είναι ένα από τα παρακάτω."
 
-#: xfce-open/main.c:228
+#: xfce-open/main.c:226
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
 msgstr "  --working-directory ΚΑΤΑΛΟΓΟΣ       Προεπιλεγμένος κατάλογος λειτουργίας\n                                      εφαρμογής όταν χρησιμοποιείται η επιλογή --launch."
 
-#: xfce-open/main.c:231
+#: xfce-open/main.c:229
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "Οι παρακάτω ΤΥΠΟI υποστηρίζονται για την εντολή --launch:"
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
 #. TerminalEmulator),
 #. * since the xfce4-mime-helper utility will not accept localized TYPEs.
-#: xfce-open/main.c:237
+#: xfce-open/main.c:235
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1423,7 +1426,7 @@ msgid ""
 "  VideoPlayer      - The preferred Video Player."
 msgstr "WebBrowser       - Ο προτιμώμενος περιηγητής διαδικτύου.\nMailReader       - Η προτιμώμενη εφαρμογή αλληλογραφίας.\nFileManager      - Ο προτιμώμενος διαχειριστής αρχείων.\nTerminalEmulator - Ο προτιμώμενος εξομοιωτής τερματικού.\nTextEditor      - Η προτιμώμενη εφαρμογή επεξεργασίας κειμένου.\nImageViewer     - Η προτιμώμενη εφαρμογή προβολής εικόνων.\nAudioPlayer     - Η προτιμώμενη εφαρμογή αναπαραγωγής ήχου.\nVideoPlayer     - Η προτιμώμενη εφαρμογή αναπαραγωγής βίντεο."
 
-#: xfce-open/main.c:247
+#: xfce-open/main.c:245
 msgid ""
 "If you don't specify the --launch option, xfce-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1432,16 +1435,16 @@ msgid ""
 "you can pass the command line that should be run in the terminal)."
 msgstr "Εάν δεν δώσετε επιλογή --launch, το xfce-open θα ανοίξει όλες τις διευθύνσεις\nμε τον προτιμώμενο χειριστή. Διαφορετικά, αν δώσετε --launch μπορείτε\nνα επιλέξετε την εφαρμογή που θέλετε να τρέξει και να περάσετε επί πλέον\nπαραμέτρους (π.χ. στην εφαρμογή τερματικού μπορείτε να περάσετε τη γραμμή \nεντολών που πρέπει να εκτελεστεί στο τερματικό)."
 
-#: xfce-open/main.c:422
+#: xfce-open/main.c:420
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Απέτυχε η εκτέλεση της προτιμώμενης εφαρμογής για την κατηγορία \"%s\"."
 
-#: xfce-open/main.c:713
+#: xfce-open/main.c:704
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "Αδύνατη η εύρεση σχήματος URI του \"%s\"."
 
-#: xfce-open/main.c:727
+#: xfce-open/main.c:718
 msgid "Failed to open URI."
 msgstr "Απέτυχε το άνοιγμα του URI."
