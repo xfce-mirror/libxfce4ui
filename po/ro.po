@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2026-05-22 12:45+0200\n"
+"POT-Creation-Date: 2026-11-13 00:46+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: Yupy <yupy_17y@yahoo.com>, 2017\n"
 "Language-Team: Romanian (http://app.transifex.com/xfce/libxfce4ui/language/ro/)\n"
@@ -171,7 +171,7 @@ msgstr "Citiți manualul"
 #. Create cancel button
 #. add the "Cancel" button
 #: libxfce4ui/xfce-dialogs.c:268 libxfce4ui/xfce-dialogs.c:526
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:252
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:262
 #: xfce-desktop-item-edit/main.c:351 xfce-desktop-item-edit/main.c:545
 #: xfce-desktop-item-edit/xfce-die-command-entry.c:262
 #: xfce-desktop-item-edit/xfce-die-editor.c:648
@@ -347,37 +347,37 @@ msgstr "_Căutare pictogramă:"
 msgid "Clear search field"
 msgstr "Curăță câmpul de căutare"
 
-#: libxfce4ui/xfce-sm-client.c:1503
+#: libxfce4ui/xfce-sm-client.c:1513
 msgid "Session management client ID"
 msgstr "ID-ul clientului administratorului de sesiune"
 
-#: libxfce4ui/xfce-sm-client.c:1503
+#: libxfce4ui/xfce-sm-client.c:1513
 msgid "ID"
 msgstr "ID"
 
-#: libxfce4ui/xfce-sm-client.c:1504
+#: libxfce4ui/xfce-sm-client.c:1514
 msgid "Disable session management"
 msgstr "Dezactivare administrare de sesiune"
 
-#: libxfce4ui/xfce-sm-client.c:1514
+#: libxfce4ui/xfce-sm-client.c:1524
 msgid "Session management options"
 msgstr "Opțiuni pentru administrarea sesiunii"
 
-#: libxfce4ui/xfce-sm-client.c:1514
+#: libxfce4ui/xfce-sm-client.c:1524
 msgid "Show session management options"
 msgstr "Afișează opțiunile de administrare a sesiunii"
 
-#: libxfce4ui/xfce-sm-client.c:1688
+#: libxfce4ui/xfce-sm-client.c:1706
 #, c-format
 msgid "Failed to connect to the session manager: %s"
 msgstr "Conectarea la administratorul de sesiune a eșuat: %s"
 
-#: libxfce4ui/xfce-sm-client.c:1697
+#: libxfce4ui/xfce-sm-client.c:1715
 msgid "Session manager did not return a valid client id"
 msgstr "Administratorul de sesiune nu a returnat un ID valid de client"
 
 #. print warning for user
-#: libxfce4ui/xfce-spawn.c:388
+#: libxfce4ui/xfce-spawn.c:350
 #, c-format
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
@@ -385,71 +385,71 @@ msgid ""
 msgstr "Directorul curent „%s” nu mai există. Nu va fi utilizat la crearea „%s”."
 
 #. retrieve the error and warning messages
-#: libxfce4ui/xfce-filename-input.c:230
+#: libxfce4ui/xfce-filename-input.c:228
 msgid "Filename is too long"
 msgstr "Numele fișierului este prea lung."
 
-#: libxfce4ui/xfce-filename-input.c:231
+#: libxfce4ui/xfce-filename-input.c:229
 msgid "Directory separator illegal in filename"
 msgstr "Separatorul de directoare este ilegal în numele fișierului"
 
-#: libxfce4ui/xfce-filename-input.c:232
+#: libxfce4ui/xfce-filename-input.c:230
 msgid "Filenames should not start or end with a space"
 msgstr "Numele fișierelor nu trebuie să înceapă sau să se termine cu un spațiu"
 
-#: libxfce4ui/xfce-item-list-view.c:331
+#: libxfce4ui/xfce-item-list-view.c:337
 msgid "Active"
 msgstr "Activă"
 
-#: libxfce4ui/xfce-item-list-view.c:348
+#: libxfce4ui/xfce-item-list-view.c:354
 msgid "Name"
 msgstr "Nume"
 
-#: libxfce4ui/xfce-item-list-view.c:657
+#: libxfce4ui/xfce-item-list-view.c:669
 msgid "Move _up"
 msgstr "Mută s_us"
 
-#: libxfce4ui/xfce-item-list-view.c:657
+#: libxfce4ui/xfce-item-list-view.c:669
 msgid "Move currently selected item up by one row"
 msgstr "Mutați elementul selectat cu un rând mai sus"
 
-#: libxfce4ui/xfce-item-list-view.c:661
+#: libxfce4ui/xfce-item-list-view.c:673
 msgid "Move _down"
 msgstr "Mută _jos"
 
-#: libxfce4ui/xfce-item-list-view.c:661
+#: libxfce4ui/xfce-item-list-view.c:673
 msgid "Move currently selected item down by one row"
 msgstr "Mută elementul selectat cu un rând mai jos"
 
-#: libxfce4ui/xfce-item-list-view.c:672
-msgid "_Add new item"
-msgstr "_Adaugă un element nou"
+#: libxfce4ui/xfce-item-list-view.c:684
+msgid "_Add"
+msgstr "_Adaugă"
 
-#: libxfce4ui/xfce-item-list-view.c:672
+#: libxfce4ui/xfce-item-list-view.c:684
 msgid "Add new item"
 msgstr "Adaugă un element nou"
 
-#: libxfce4ui/xfce-item-list-view.c:678
+#: libxfce4ui/xfce-item-list-view.c:690
 msgid "_Remove"
 msgstr "_Elimină"
 
-#: libxfce4ui/xfce-item-list-view.c:678
+#: libxfce4ui/xfce-item-list-view.c:690
 msgid "Remove currently selected items"
 msgstr "Elimină elementele selectate în prezent"
 
-#: libxfce4ui/xfce-item-list-view.c:684
+#: libxfce4ui/xfce-item-list-view.c:696
 msgid "_Edit"
 msgstr "_Editare"
 
-#: libxfce4ui/xfce-item-list-view.c:684
+#: libxfce4ui/xfce-item-list-view.c:696
 msgid "Edit the currently selected item"
 msgstr "Editați elementul selectat"
 
-#: libxfce4ui/xfce-item-list-view.c:690
+#: libxfce4ui/xfce-item-list-view.c:702
 msgid "Reset to de_faults"
 msgstr "Restabilește valorile implicite"
 
-#: libxfce4ui/xfce-item-list-view.c:690
+#: libxfce4ui/xfce-item-list-view.c:702
 msgid "Reset all items to default settings"
 msgstr "Restabilește toate elementele la valorile implicite"
 
@@ -509,74 +509,74 @@ msgstr "Acțiuni în conflict pentru „%s”"
 msgid "This shortcut is already being used for something else."
 msgstr "Această combinație de taste este deja folosită pentru altceva."
 
-#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:88
-#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:125
+#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:81
+#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:118
 msgid "Shortcuts Editor"
 msgstr "Editorul de combinații de taste"
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:490
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:485
 msgid "The current shortcut. Click to edit..."
 msgstr "Combinația de taste curentă. Faceți clic pentru a edita..."
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:502
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:497
 msgid "Clear the shortcut"
 msgstr "Ștergeți combinația de taste"
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:514
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:509
 msgid "Restore the default shortcut"
 msgstr "Restaurați combinația de taste implicită"
 
 #. skip leading slash
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:668
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:758
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:663
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:753
 #, c-format
 msgid "This keyboard shortcut is currently used by: '%s'"
 msgstr "Această combinație de taste este utilizată în prezent de: „%s”"
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:671
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:761
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:666
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:756
 msgid "Keyboard shortcut already in use"
 msgstr "Această combinație de taste este deja utilizată"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:215
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:225
 msgid "Window Manager Action Shortcut"
 msgstr "Combinație de taste asociată unei acțiuni a administratorului de ferestre"
 
 #. TRANSLATORS: this string will be used to create an explanation for
 #. * the user in a following string
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:218
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:234
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:228
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:244
 msgid "action"
 msgstr "acțiunea"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:223
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:233
 msgid "Command Shortcut"
 msgstr "Combinație de taste pentru comandă"
 
 #. TRANSLATORS: this string will be used to create an explanation for
 #. * the user in a following string
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:226
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:236
 msgid "command"
 msgstr "comanda"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:231
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:241
 msgid "Shortcut"
 msgstr "Combinație de taste"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:246
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:256
 msgid "Clear"
 msgstr "Șterge"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:269
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:279
 #, c-format
 msgid "Press keyboard keys to trigger the %s '%s'."
 msgstr "Apăsați combinația de taste pentru a declanșa %s „%s”."
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:291
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:301
 msgid "Please press a key"
 msgstr "Apăsați o tastă"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:347
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:379
 msgid "Could not grab the keyboard."
 msgstr "Nu s-au putut captura tastele utilizate."
 
@@ -1040,12 +1040,12 @@ msgid "Unable to initialize GTK+."
 msgstr "Nu s-a putut inițializa GTK+."
 
 #: xfce4-about/main.c:536 xfce-desktop-item-edit/main.c:202
-#: xfce-open/main.c:762
+#: xfce-open/main.c:753
 msgid "The Xfce development team. All rights reserved."
 msgstr "Echipa de dezvoltare Xfce. Toate drepturile sunt rezervate."
 
 #: xfce4-about/main.c:537 xfce-desktop-item-edit/main.c:210
-#: xfce-open/main.c:771
+#: xfce-open/main.c:762
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "Raportați problemele la <%s>."
@@ -1093,22 +1093,22 @@ msgstr "Despre Xfce"
 msgid "Information about the Xfce Desktop Environment"
 msgstr "Informații despre mediul grafic de birou Xfce"
 
-#: xfce4-about/system-info.c:495 xfce4-about/system-info.c:517
-#: xfce4-about/system-info.c:636 xfce4-about/system-info.c:685
+#: xfce4-about/system-info.c:494 xfce4-about/system-info.c:515
+#: xfce4-about/system-info.c:634 xfce4-about/system-info.c:683
 msgid "Unknown"
 msgstr "Necunoscută"
 
 #. translators: This is the type of architecture for the OS
-#: xfce4-about/system-info.c:620
+#: xfce4-about/system-info.c:618
 msgid "64-bit (32-bit userspace)"
 msgstr "64 de biți (spațiu de utilizator pe 32 de biți)"
 
 #. translators: This is the type of architecture for the OS
-#: xfce4-about/system-info.c:623
+#: xfce4-about/system-info.c:621
 msgid "64-bit"
 msgstr "64-biți"
 
-#: xfce4-about/system-info.c:623
+#: xfce4-about/system-info.c:621
 msgid "32-bit"
 msgstr "32-biți"
 
@@ -1116,7 +1116,7 @@ msgstr "32-biți"
 #. * example:
 #. * "Fedora 25 (Workstation Edition); Build ID: xyz" or
 #. * "Ubuntu 16.04 LTS; Build ID: jki"
-#: xfce4-about/system-info.c:693
+#: xfce4-about/system-info.c:691
 #, c-format
 msgid "%s; Build ID: %s"
 msgstr "%s; ID de compilare: %s"
@@ -1202,15 +1202,15 @@ msgstr "Afișează informațiile despre versiune și iese"
 msgid "[FILE|FOLDER]"
 msgstr "[FIȘIER|DOSAR]"
 
-#: xfce-desktop-item-edit/main.c:200 xfce-open/main.c:760
+#: xfce-desktop-item-edit/main.c:200 xfce-open/main.c:751
 msgid "os-cillation e.K. All rights reserved."
 msgstr "os-cillation e.K. Toate drepturile rezervate."
 
-#: xfce-desktop-item-edit/main.c:204 xfce-open/main.c:764
+#: xfce-desktop-item-edit/main.c:204 xfce-open/main.c:755
 msgid "Written by Benedikt Meurer <benny@xfce.org>."
 msgstr "Scris de Benedikt Meurer <benny@xfce.org>."
 
-#: xfce-desktop-item-edit/main.c:205 xfce-open/main.c:766
+#: xfce-desktop-item-edit/main.c:205 xfce-open/main.c:757
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -1316,7 +1316,7 @@ msgstr "P_ictogramă:"
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
 #. dialog if no icon selected
 #: xfce-desktop-item-edit/xfce-die-editor.c:447
-#: xfce-desktop-item-edit/xfce-die-editor.c:1306
+#: xfce-desktop-item-edit/xfce-die-editor.c:1300
 msgid "No icon"
 msgstr "Fără pictogramă"
 
@@ -1366,52 +1366,52 @@ msgstr "_Ok"
 msgid "Select a working directory"
 msgstr "Selectați un director de lucru"
 
-#: xfce-desktop-item-edit/xfce-die-editor.c:1308
+#: xfce-desktop-item-edit/xfce-die-editor.c:1302
 msgid "Icon not found"
 msgstr "Pictograma nu a fost găsită"
 
-#: xfce-desktop-item-edit/xfce-die-utils.c:210
+#: xfce-desktop-item-edit/xfce-die-utils.c:209
 msgid "File location is not a regular file or directory"
 msgstr "Ruta fișierului nu este un fișier ori director obișnuit"
 
-#: xfce-open/main.c:218
+#: xfce-open/main.c:216
 msgid "Usage: xfce-open [URLs...]"
 msgstr "Utilizare: xfce-open [URL-uri...]"
 
-#: xfce-open/main.c:219
+#: xfce-open/main.c:217
 msgid "       xfce-open --launch TYPE [PARAMETERs...]"
 msgstr "       xfce-open --launch TIP [PARAMETRI...]"
 
-#: xfce-open/main.c:221
+#: xfce-open/main.c:219
 msgid "  -?, --help                          Print this help message and exit"
 msgstr "  -?, --help                          afișează acest mesasj de ajutor și iese"
 
-#: xfce-open/main.c:222
+#: xfce-open/main.c:220
 msgid ""
 "  -V, --version                       Print version information and exit"
 msgstr "  -V, --version                       afișează informațiile despre versiune și iese"
 
-#: xfce-open/main.c:224
+#: xfce-open/main.c:222
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
 msgstr "  --launch TIP [PARAMETRI...]         lansează aplicația preferată de tipul TIP\n                                      cu parametrii opționali PARAMETRI, unde\n                                      TIP are una dintre valorile de mai jos"
 
-#: xfce-open/main.c:228
+#: xfce-open/main.c:226
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
 msgstr "  --working-directory DIRECTOR        directorul de lucru implicit pentru aplicații\n                                      când se utilizează opțiunea „--launch”"
 
-#: xfce-open/main.c:231
+#: xfce-open/main.c:229
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "Următoarele valori TIP sunt acceptate de către opțiunea „--launch”:"
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
 #. TerminalEmulator),
 #. * since the xfce4-mime-helper utility will not accept localized TYPEs.
-#: xfce-open/main.c:237
+#: xfce-open/main.c:235
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1423,7 +1423,7 @@ msgid ""
 "  VideoPlayer      - The preferred Video Player."
 msgstr "  WebBrowser       - Navigatorul web preferat.\n  MailReader       - Clientul de poștă electronică preferat.\n  FileManager      - Gestionarul de fișiere preferat.\n  TerminalEmulator - Emulatorul de terminal preferat.\n  TextEditor       - Editorul de text preferat.\n  ImageViewer      - Vizorul de imagini preferat.\n  AudioPlayer      - Programul de redare audio preferat.\n  VideoPlayer      - Programul de redare video preferat."
 
-#: xfce-open/main.c:247
+#: xfce-open/main.c:245
 msgid ""
 "If you don't specify the --launch option, xfce-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1432,16 +1432,16 @@ msgid ""
 "you can pass the command line that should be run in the terminal)."
 msgstr "Dacă nu specificați opțiunea „--launch”, xfce-open va deschide toate adresele URL\nspecificate cu gestionarii (aplicațiile) lor de adrese preferați. În caz contrar,\ndacă specificați opțiunea „--launch”, puteți selecta aplicația preferată pe care\ndoriți să o rulați și puteți transmite parametri suplimentari aplicației\n(de exemplu, pentru TerminalEmulator puteți transmite linia de comandă care ar\ntrebui să fie rulată în terminal)."
 
-#: xfce-open/main.c:422
+#: xfce-open/main.c:420
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Nu s-a putut lansa aplicația preferată pentru categoria „%s”."
 
-#: xfce-open/main.c:713
+#: xfce-open/main.c:704
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "Nu s-a putut detecta schema URI pentru „%s”."
 
-#: xfce-open/main.c:727
+#: xfce-open/main.c:718
 msgid "Failed to open URI."
 msgstr "URI-ul nu a putut fi deschis."
