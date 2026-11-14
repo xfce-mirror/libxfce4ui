@@ -177,7 +177,7 @@ msgstr "Preberite priročnik"
 #: xfce-desktop-item-edit/xfce-die-editor.c:648
 #: xfce-desktop-item-edit/xfce-die-editor.c:692
 msgid "_Cancel"
-msgstr "_Prekliči"
+msgstr "P_rekliči"
 
 #: libxfce4ui/xfce-dialogs.c:269
 msgid "_Read Online"
@@ -341,7 +341,7 @@ msgstr "Izberi _ikono iz:"
 #. search filter
 #: libxfce4ui/xfce-icon-chooser-dialog.c:237
 msgid "_Search icon:"
-msgstr "_Poišči ikono:"
+msgstr "P_oišči ikono:"
 
 #: libxfce4ui/xfce-icon-chooser-dialog.c:249
 msgid "Clear search field"
@@ -1223,7 +1223,7 @@ msgstr "%s je na uporabo BREZ KAKRŠNEKOLI GARANCIJE,\nkopije %s lahko širite p
 #. add the "Create"/"Save" button (as default)
 #: xfce-desktop-item-edit/main.c:355
 msgid "C_reate"
-msgstr "_Ustvari"
+msgstr "Ustv_ari"
 
 #: xfce-desktop-item-edit/main.c:355 xfce-desktop-item-edit/main.c:546
 msgid "_Save"
@@ -1311,7 +1311,7 @@ msgstr "_Delovna mapa:"
 #. avoid mnemonic conflicts
 #: xfce-desktop-item-edit/xfce-die-editor.c:433
 msgid "_Icon:"
-msgstr "_Ikona:"
+msgstr "I_kona:"
 
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
 #. dialog if no icon selected
