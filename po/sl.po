@@ -1318,7 +1318,7 @@ msgstr "I_kona:"
 #: xfce-desktop-item-edit/xfce-die-editor.c:447
 #: xfce-desktop-item-edit/xfce-die-editor.c:1300
 msgid "No icon"
-msgstr "Nobene ikone"
+msgstr "Brez ikone"
 
 #: xfce-desktop-item-edit/xfce-die-editor.c:453
 msgid "Options:"
