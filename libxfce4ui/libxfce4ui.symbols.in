@@ -87,11 +87,16 @@ xfce_filename_input_get_entry
 xfce_filename_input_sensitise_widget
 xfce_filename_input_desensitise_widget
 
-@BEGIN_X11_SYMBOLS@
 # file:xfce-clipboard-manager
 xfce_clipboard_manager_get_type
 xfce_clipboard_manager_new
+xfce_clipboard_manager_register_dbus_object
 
+# file:xfce-clipboard-manager-client
+xfce_clipboard_manager_supports_persistence
+xfce_clipboard_manager_store
+
+@BEGIN_X11_SYMBOLS@
 # file:xfce-sm-client
 xfce_sm_client_get_type
 xfce_sm_client_get_option_group

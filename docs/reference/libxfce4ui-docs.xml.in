@@ -60,6 +60,7 @@
   <part id="libxfce4ui-sm">
     <title>Xfce Session Management Support</title>
     <xi:include href="xml/xfce-clipboard-manager.xml"/>
+    <xi:include href="xml/xfce-clipboard-manager-client.xml"/>
     <xi:include href="xml/xfce-sm-client.xml"/>
     <xi:include href="xml/xfce-screensaver.xml"/>
   </part>
