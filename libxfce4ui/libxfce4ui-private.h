@@ -24,6 +24,9 @@
 
 G_BEGIN_DECLS
 
+#define XFCE_CLIPBOARD_MANAGER_DBUS_NAME "org.xfce.ClipboardManager"
+#define XFCE_CLIPBOARD_MANAGER_DBUS_PATH "/org/xfce/ClipboardManager"
+
 G_GNUC_INTERNAL GdkPixbuf *
 xfce_gdk_pixbuf_colorize (const GdkPixbuf *source,
                           const GdkColor *color) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
