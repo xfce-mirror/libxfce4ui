@@ -21,8 +21,8 @@
 #error "Only <libxfce4ui/libxfce4ui.h> can be included directly, this file is not part of the public API."
 #endif
 
-#ifndef __XFCE_CLIPBOARD_MANAGER_H__
-#define __XFCE_CLIPBOARD_MANAGER_H__
+#ifndef __XFCE_CLIPBOARD_MANAGER_X11_H__
+#define __XFCE_CLIPBOARD_MANAGER_X11_H__
 
 #include <glib-object.h>
 
@@ -36,4 +36,4 @@ xfce_clipboard_manager_new (gboolean replace);
 
 G_END_DECLS
 
-#endif /* __XFCE_CLIPBOARD_MANAGER_H__ */
+#endif /* __XFCE_CLIPBOARD_MANAGER_X11_H__ */
