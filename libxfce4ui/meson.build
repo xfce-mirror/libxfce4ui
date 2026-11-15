@@ -10,6 +10,8 @@ libxfce4ui_enum_headers = [
 
 libxfce4ui_headers = libxfce4ui_enum_headers + [
   'xfce-cell-renderer-icon.h',
+  'xfce-clipboard-manager.h',
+  'xfce-clipboard-manager-client.h',
   'xfce-dialogs.h',
   'xfce-execute.h',
   'xfce-filename-input.h',
@@ -44,7 +46,6 @@ libxfce4ui_config_h = configure_file(
 
 if enable_x11
 libxfce4ui_headers += [
-  'xfce-clipboard-manager.h',
   'xfce-sm-client.h',
 ]
 endif
@@ -52,6 +53,8 @@ endif
 libxfce4ui_sources_gir = [
   'libxfce4ui-config.c',
   'xfce-cell-renderer-icon.c',
+  'xfce-clipboard-manager.c',
+  'xfce-clipboard-manager-client.c',
   'xfce-dialogs.c',
   'xfce-execute.c',
   'xfce-filename-input.c',
@@ -72,7 +75,6 @@ libxfce4ui_sources_gir = [
 
 if enable_x11
 libxfce4ui_sources_gir += [
-  'xfce-clipboard-manager.c',
   'xfce-sm-client.c',
 ]
 endif
@@ -86,6 +88,28 @@ libxfce4ui_sources = libxfce4ui_sources_gir + [
   'xfce-thumbnail.c',
   'xfce-thumbnail.h',
 ]
+
+if enable_x11
+libxfce4ui_sources += [
+  'xfce-clipboard-manager-x11.c',
+  'xfce-clipboard-manager-x11.h',
+]
+endif
+
+if enable_wayland
+libxfce4ui_sources += [
+  'xfce-clipboard-manager-wayland.c',
+  'xfce-clipboard-manager-wayland.h',
+]
+endif
+
+libxfce4ui_sources += gnome.gdbus_codegen(
+  'xfce-clipboard-manager-dbus',
+  sources: 'xfce-clipboard-manager-dbus.xml',
+  interface_prefix: 'org.xfce.',
+  namespace: 'XfceDbus',
+  install_header: false,
+)
 
 libxfce4ui_sources += gnome.genmarshal(
   'libxfce4ui-marshal',
@@ -165,6 +189,10 @@ libxfce4ui_sources += configure_file(
   command: [xdt_gen_visibility, '--kind=source', '@INPUT@', '@OUTPUT@'],
 )
 
+if enable_wayland
+  libxfce4ui_sources += wayland_protocols_generated_sources
+endif
+
 libxfce4ui_resources_c = gnome.compile_resources(
   'libxfce4ui-resources',
   'resources' / 'libxfce4ui.gresource.xml',
@@ -183,6 +211,7 @@ libxfce4ui_deps = [
   gdk_pixbuf,
   libintl,
   libxfce4util,
+  wayland_deps,
   xfconf,
   x11_deps,
   libm,

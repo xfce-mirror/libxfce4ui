@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Gaël Bonithon <gael@xfce.org>
+ * Copyright (c) 2026 The Xfce Development Team
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -24,15 +24,39 @@
 #ifndef __XFCE_CLIPBOARD_MANAGER_H__
 #define __XFCE_CLIPBOARD_MANAGER_H__
 
-#include <glib-object.h>
+#include <gio/gio.h>
 
 G_BEGIN_DECLS
 
 #define XFCE_TYPE_CLIPBOARD_MANAGER (xfce_clipboard_manager_get_type ())
-G_DECLARE_FINAL_TYPE (XfceClipboardManager, xfce_clipboard_manager, XFCE, CLIPBOARD_MANAGER, GObject)
+G_DECLARE_DERIVABLE_TYPE (XfceClipboardManager, xfce_clipboard_manager, XFCE, CLIPBOARD_MANAGER, GObject)
+
+/**
+ * XfceClipboardManagerClass:
+ * @persist: persists the current clipboard data, called when a client invokes
+ *           the Store() D-Bus method, see xfce_clipboard_manager_register_dbus_object()
+ *
+ * Class structure for #XfceClipboardManager, implemented by each
+ * windowing-system backend.
+ *
+ * Since: 4.21.10
+ **/
+struct _XfceClipboardManagerClass
+{
+  /*< private >*/
+  GObjectClass __parent__;
+
+  /*< public >*/
+  gboolean (*persist) (XfceClipboardManager *manager);
+};
 
 XfceClipboardManager *
 xfce_clipboard_manager_new (gboolean replace);
+
+gboolean
+xfce_clipboard_manager_register_dbus_object (XfceClipboardManager *manager,
+                                             GDBusConnection *connection,
+                                             GError **error);
 
 G_END_DECLS
 
