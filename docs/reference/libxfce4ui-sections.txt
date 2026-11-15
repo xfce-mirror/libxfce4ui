@@ -136,6 +136,12 @@ xfce_clipboard_manager_get_type
 </SECTION>
 
 <SECTION>
+<FILE>xfce-clipboard-manager-client</FILE>
+xfce_clipboard_manager_supports_persistence
+xfce_clipboard_manager_store
+</SECTION>
+
+<SECTION>
 <FILE>xfce-sm-client</FILE>
 XfceSMClient
 XfceSMClientPriority
