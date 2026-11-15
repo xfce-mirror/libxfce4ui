@@ -96,6 +96,13 @@ libxfce4ui_sources += [
 ]
 endif
 
+if enable_wayland
+libxfce4ui_sources += [
+  'xfce-clipboard-manager-wayland.c',
+  'xfce-clipboard-manager-wayland.h',
+]
+endif
+
 libxfce4ui_sources += gnome.gdbus_codegen(
   'xfce-clipboard-manager-dbus',
   sources: 'xfce-clipboard-manager-dbus.xml',

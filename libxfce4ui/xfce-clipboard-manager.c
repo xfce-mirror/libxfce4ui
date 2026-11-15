@@ -37,6 +37,12 @@
 #include "xfce-clipboard-manager-x11.h"
 #endif
 
+#ifdef ENABLE_WAYLAND
+#include <gdk/gdkwayland.h>
+
+#include "xfce-clipboard-manager-wayland.h"
+#endif
+
 #include "libxfce4ui-private.h"
 #include "xfce-clipboard-manager-dbus.h"
 #include "xfce-clipboard-manager.h"
@@ -132,6 +138,7 @@ xfce_clipboard_manager_handle_store (XfceDbusClipboardManager *skeleton,
 /**
  * xfce_clipboard_manager_new:
  * @replace: whether or not to replace an existing clipboard manager
+ *           (only meaningful on X11, ignored on Wayland)
  *
  * Creates a new clipboard manager for the current display backend.
  *
@@ -143,9 +150,16 @@ xfce_clipboard_manager_handle_store (XfceDbusClipboardManager *skeleton,
 XfceClipboardManager *
 xfce_clipboard_manager_new (gboolean replace)
 {
-#ifdef ENABLE_X11
+#if defined(ENABLE_WAYLAND) || defined(ENABLE_X11)
   GdkDisplay *display = gdk_display_get_default ();
+#endif
 
+#ifdef ENABLE_WAYLAND
+  if (GDK_IS_WAYLAND_DISPLAY (display))
+    return XFCE_CLIPBOARD_MANAGER (xfce_clipboard_manager_wayland_new ());
+#endif
+
+#ifdef ENABLE_X11
   if (GDK_IS_X11_DISPLAY (display))
     return XFCE_CLIPBOARD_MANAGER (xfce_clipboard_manager_x11_new (replace));
 #endif
