@@ -20,7 +20,7 @@ if get_option('gtk-doc')
   ]
   if not enable_x11
     ignored_headers += [
-      'xfce-clipboard-manager.h',
+      'xfce-clipboard-manager-x11.h',
       'xfce-sm-client.h',
     ]
   endif

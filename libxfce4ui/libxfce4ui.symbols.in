@@ -88,7 +88,7 @@ xfce_filename_input_sensitise_widget
 xfce_filename_input_desensitise_widget
 
 @BEGIN_X11_SYMBOLS@
-# file:xfce-clipboard-manager
+# file:xfce-clipboard-manager-x11
 xfce_clipboard_manager_get_type
 xfce_clipboard_manager_new
 
