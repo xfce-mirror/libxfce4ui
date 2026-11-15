@@ -182,6 +182,10 @@ libxfce4ui_sources += configure_file(
   command: [xdt_gen_visibility, '--kind=source', '@INPUT@', '@OUTPUT@'],
 )
 
+if enable_wayland
+  libxfce4ui_sources += wayland_protocols_generated_sources
+endif
+
 libxfce4ui_resources_c = gnome.compile_resources(
   'libxfce4ui-resources',
   'resources' / 'libxfce4ui.gresource.xml',
@@ -200,6 +204,7 @@ libxfce4ui_deps = [
   gdk_pixbuf,
   libintl,
   libxfce4util,
+  wayland_deps,
   xfconf,
   x11_deps,
   libm,
