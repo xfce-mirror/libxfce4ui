@@ -24,15 +24,15 @@
 #ifndef __XFCE_CLIPBOARD_MANAGER_X11_H__
 #define __XFCE_CLIPBOARD_MANAGER_X11_H__
 
-#include <glib-object.h>
+#include <libxfce4ui/xfce-clipboard-manager.h>
 
 G_BEGIN_DECLS
 
-#define XFCE_TYPE_CLIPBOARD_MANAGER (xfce_clipboard_manager_get_type ())
-G_DECLARE_FINAL_TYPE (XfceClipboardManager, xfce_clipboard_manager, XFCE, CLIPBOARD_MANAGER, GObject)
+#define XFCE_TYPE_CLIPBOARD_MANAGER_X11 (xfce_clipboard_manager_x11_get_type ())
+G_DECLARE_FINAL_TYPE (XfceClipboardManagerX11, xfce_clipboard_manager_x11, XFCE, CLIPBOARD_MANAGER_X11, XfceClipboardManager)
 
-XfceClipboardManager *
-xfce_clipboard_manager_new (gboolean replace);
+XfceClipboardManagerX11 *
+xfce_clipboard_manager_x11_new (gboolean replace);
 
 G_END_DECLS
 

@@ -87,11 +87,11 @@ xfce_filename_input_get_entry
 xfce_filename_input_sensitise_widget
 xfce_filename_input_desensitise_widget
 
-@BEGIN_X11_SYMBOLS@
-# file:xfce-clipboard-manager-x11
+# file:xfce-clipboard-manager
 xfce_clipboard_manager_get_type
 xfce_clipboard_manager_new
 
+@BEGIN_X11_SYMBOLS@
 # file:xfce-sm-client
 xfce_sm_client_get_type
 xfce_sm_client_get_option_group
