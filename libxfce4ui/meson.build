@@ -11,6 +11,7 @@ libxfce4ui_enum_headers = [
 libxfce4ui_headers = libxfce4ui_enum_headers + [
   'xfce-cell-renderer-icon.h',
   'xfce-clipboard-manager.h',
+  'xfce-clipboard-manager-client.h',
   'xfce-dialogs.h',
   'xfce-execute.h',
   'xfce-filename-input.h',
@@ -53,6 +54,7 @@ libxfce4ui_sources_gir = [
   'libxfce4ui-config.c',
   'xfce-cell-renderer-icon.c',
   'xfce-clipboard-manager.c',
+  'xfce-clipboard-manager-client.c',
   'xfce-dialogs.c',
   'xfce-execute.c',
   'xfce-filename-input.c',
