@@ -102,12 +102,24 @@ G_DEFINE_FINAL_TYPE (XfceClipboardManagerX11, xfce_clipboard_manager_x11, XFCE_T
 
 
 
+static gboolean
+xfce_clipboard_manager_x11_persist (XfceClipboardManager *manager)
+{
+  /* X11 persistence is handled automatically via the ICCCM SAVE_TARGETS
+   * protocol. Nothing to do here. */
+  return TRUE;
+}
+
+
+
 static void
 xfce_clipboard_manager_x11_class_init (XfceClipboardManagerX11Class *klass)
 {
   GObjectClass *object_class = G_OBJECT_CLASS (klass);
+  XfceClipboardManagerClass *manager_class = XFCE_CLIPBOARD_MANAGER_CLASS (klass);
 
   object_class->finalize = xfce_clipboard_manager_x11_finalize;
+  manager_class->persist = xfce_clipboard_manager_x11_persist;
 }
 
 static void

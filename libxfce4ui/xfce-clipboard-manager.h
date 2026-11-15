@@ -24,7 +24,7 @@
 #ifndef __XFCE_CLIPBOARD_MANAGER_H__
 #define __XFCE_CLIPBOARD_MANAGER_H__
 
-#include <glib-object.h>
+#include <gio/gio.h>
 
 G_BEGIN_DECLS
 
@@ -33,6 +33,8 @@ G_DECLARE_DERIVABLE_TYPE (XfceClipboardManager, xfce_clipboard_manager, XFCE, CL
 
 /**
  * XfceClipboardManagerClass:
+ * @persist: persists the current clipboard data, called when a client invokes
+ *           the Store() D-Bus method, see xfce_clipboard_manager_register_dbus_object()
  *
  * Class structure for #XfceClipboardManager, implemented by each
  * windowing-system backend.
@@ -43,10 +45,18 @@ struct _XfceClipboardManagerClass
 {
   /*< private >*/
   GObjectClass __parent__;
+
+  /*< public >*/
+  gboolean (*persist) (XfceClipboardManager *manager);
 };
 
 XfceClipboardManager *
 xfce_clipboard_manager_new (gboolean replace);
+
+gboolean
+xfce_clipboard_manager_register_dbus_object (XfceClipboardManager *manager,
+                                             GDBusConnection *connection,
+                                             GError **error);
 
 G_END_DECLS
 
