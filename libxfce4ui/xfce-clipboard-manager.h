@@ -1,4 +1,5 @@
 /*
+ * Copyright (c) 2024 Gaël Bonithon <gael@xfce.org>
  * Copyright (c) 2026 The Xfce Development Team
  *
  * This library is free software; you can redistribute it and/or
