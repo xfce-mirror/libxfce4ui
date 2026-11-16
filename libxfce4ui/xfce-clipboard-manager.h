@@ -26,6 +26,7 @@
 #define __XFCE_CLIPBOARD_MANAGER_H__
 
 #include <gio/gio.h>
+#include <glib-object.h>
 
 G_BEGIN_DECLS
 
