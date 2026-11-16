@@ -100,11 +100,7 @@ xfce_clipboard_manager_dispose (GObject *object)
       g_clear_object (&priv->skeleton);
     }
 
-  if (priv->owner_id != 0)
-    {
-      g_bus_unown_name (priv->owner_id);
-      priv->owner_id = 0;
-    }
+  g_clear_handle_id (&priv->owner_id, g_bus_unown_name);
 
   G_OBJECT_CLASS (xfce_clipboard_manager_parent_class)->dispose (object);
 }
