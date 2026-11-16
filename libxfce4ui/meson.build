@@ -100,7 +100,7 @@ libxfce4ui_sources += gnome.gdbus_codegen(
   'xfce-clipboard-manager-dbus',
   sources: 'xfce-clipboard-manager-dbus.xml',
   interface_prefix: 'org.xfce.',
-  namespace: 'XfceDbus',
+  namespace: 'XfceDBus',
   install_header: false,
 )
 
