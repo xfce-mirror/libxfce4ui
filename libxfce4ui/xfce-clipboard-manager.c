@@ -44,7 +44,7 @@
 
 
 
-typedef struct
+typedef struct _XfceClipboardManagerPrivate
 {
   XfceDBusClipboardManager *skeleton;
   guint owner_id;
