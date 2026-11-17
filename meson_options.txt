@@ -20,6 +20,13 @@ option(
 )
 
 option(
+  'cambalache',
+  type: 'feature',
+  value: 'disabled',
+  description: 'Generate files for libxfce4ui integration in Cambalache UI designer',
+)
+
+option(
   'visibility',
   type: 'boolean',
   value: true,
