@@ -28,7 +28,6 @@
 #include <gdk/gdkwayland.h>
 #include <gio/gunixoutputstream.h>
 #include <gtk/gtk.h>
-#include <string.h>
 #include <unistd.h>
 
 #include "ext-data-control-v1-client.h"
