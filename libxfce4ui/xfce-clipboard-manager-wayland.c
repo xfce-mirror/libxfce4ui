@@ -146,11 +146,7 @@ xfce_clipboard_manager_wayland_init (XfceClipboardManagerWayland *manager)
 static void
 clear_incoming_offer (XfceClipboardManagerWayland *manager)
 {
-  if (manager->incoming_offer != NULL)
-    {
-      ext_data_control_offer_v1_destroy (manager->incoming_offer);
-      manager->incoming_offer = NULL;
-    }
+  g_clear_pointer (&manager->incoming_offer, ext_data_control_offer_v1_destroy);
   g_clear_pointer (&manager->incoming_mime_types, g_ptr_array_unref);
 }
 
@@ -159,11 +155,7 @@ clear_incoming_offer (XfceClipboardManagerWayland *manager)
 static void
 clear_active_offer (XfceClipboardManagerWayland *manager)
 {
-  if (manager->active_offer != NULL)
-    {
-      ext_data_control_offer_v1_destroy (manager->active_offer);
-      manager->active_offer = NULL;
-    }
+  g_clear_pointer (&manager->active_offer, ext_data_control_offer_v1_destroy);
   g_clear_pointer (&manager->active_mime_types, g_ptr_array_unref);
 }
 
@@ -180,11 +172,7 @@ clear_cached_contents (XfceClipboardManagerWayland *manager)
 static void
 clear_source (XfceClipboardManagerWayland *manager)
 {
-  if (manager->dc_source != NULL)
-    {
-      ext_data_control_source_v1_destroy (manager->dc_source);
-      manager->dc_source = NULL;
-    }
+  g_clear_pointer (&manager->dc_source, ext_data_control_source_v1_destroy);
 }
 
 
@@ -199,12 +187,9 @@ xfce_clipboard_manager_wayland_finalize (GObject *object)
   clear_active_offer (manager);
   clear_incoming_offer (manager);
 
-  if (manager->dc_device != NULL)
-    ext_data_control_device_v1_destroy (manager->dc_device);
-  if (manager->dc_manager != NULL)
-    ext_data_control_manager_v1_destroy (manager->dc_manager);
-  if (manager->wl_registry != NULL)
-    wl_registry_destroy (manager->wl_registry);
+  g_clear_pointer (&manager->dc_device, ext_data_control_device_v1_destroy);
+  g_clear_pointer (&manager->dc_manager, ext_data_control_manager_v1_destroy);
+  g_clear_pointer (&manager->wl_registry, wl_registry_destroy);
 
   G_OBJECT_CLASS (xfce_clipboard_manager_wayland_parent_class)->finalize (object);
 }
@@ -533,10 +518,8 @@ device_selection (void *data,
 
   clear_active_offer (manager);
 
-  manager->active_offer = manager->incoming_offer;
-  manager->active_mime_types = manager->incoming_mime_types;
-  manager->incoming_offer = NULL;
-  manager->incoming_mime_types = NULL;
+  manager->active_offer = g_steal_pointer (&manager->incoming_offer);
+  manager->active_mime_types = g_steal_pointer (&manager->incoming_mime_types);
 }
 
 
@@ -549,12 +532,7 @@ device_finished (void *data,
 
   clear_active_offer (manager);
   clear_incoming_offer (manager);
-
-  if (manager->dc_device != NULL)
-    {
-      ext_data_control_device_v1_destroy (manager->dc_device);
-      manager->dc_device = NULL;
-    }
+  g_clear_pointer (&manager->dc_device, ext_data_control_device_v1_destroy);
 }
 
 
@@ -626,8 +604,7 @@ source_cancelled (void *data,
 
   if (manager->dc_source == source)
     {
-      ext_data_control_source_v1_destroy (manager->dc_source);
-      manager->dc_source = NULL;
+      g_clear_pointer (&manager->dc_source, ext_data_control_source_v1_destroy);
       clear_cached_contents (manager);
     }
   else
