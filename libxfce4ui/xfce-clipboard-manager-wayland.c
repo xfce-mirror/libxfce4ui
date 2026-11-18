@@ -28,7 +28,6 @@
 #include <gdk/gdkwayland.h>
 #include <gio/gunixoutputstream.h>
 #include <gtk/gtk.h>
-#include <poll.h>
 #include <string.h>
 #include <unistd.h>
 
@@ -228,11 +227,11 @@ read_all_from_fd (int fd, int timeout_ms)
   GByteArray *buf = g_byte_array_new ();
   guint8 chunk[65536];
   gssize nread;
-  struct pollfd pfd = { .fd = fd, .events = POLLIN };
+  GPollFD pfd = { .fd = fd, .events = G_IO_IN };
 
   while (TRUE)
     {
-      int ret = poll (&pfd, 1, timeout_ms);
+      gint ret = g_poll (&pfd, 1, timeout_ms);
       if (ret == 0)
         {
           g_warning ("Clipboard read timed out after %d ms", timeout_ms);
