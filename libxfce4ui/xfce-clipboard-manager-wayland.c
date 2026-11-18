@@ -27,6 +27,7 @@
 #include <fcntl.h>
 #include <gdk/gdkwayland.h>
 #include <gio/gunixoutputstream.h>
+#include <glib-unix.h>
 #include <gtk/gtk.h>
 #include <unistd.h>
 
@@ -291,14 +292,14 @@ receive_mime_data (XfceClipboardManagerWayland *manager,
                    const gchar *mime_type)
 {
   int fds[2];
+  GError *error = NULL;
 
-  if (pipe (fds) < 0)
+  if (!g_unix_open_pipe (fds, O_CLOEXEC, &error))
     {
-      g_warning ("Failed to create pipe: %s", g_strerror (errno));
+      g_warning ("Failed to create pipe: %s", error->message);
+      g_error_free (error);
       return g_bytes_new (NULL, 0);
     }
-  fcntl (fds[0], F_SETFD, FD_CLOEXEC);
-  fcntl (fds[1], F_SETFD, FD_CLOEXEC);
 
   ext_data_control_offer_v1_receive (offer, mime_type, fds[1]);
   close (fds[1]);
