@@ -32,6 +32,8 @@ dependency_versions = {
   'epoxy': '>= 1.5.10',
   'gudev': '>= 238',
   'gir': '>= 1.80.1',
+
+  'wayland-protocols': '>= 1.39',
 }
 
 glib = dependency('glib-2.0', version: dependency_versions['glib'])
@@ -86,7 +88,7 @@ if enable_wayland
   wayland_scanner_path = wayland_scanner.get_variable(pkgconfig: 'wayland_scanner')
   wayland_scanner_bin = find_program(wayland_scanner_path, required: true)
 
-  wayland_protocols_dep = dependency('wayland-protocols', required: true)
+  wayland_protocols_dep = dependency('wayland-protocols', version: dependency_versions['wayland-protocols'], required: true)
   wayland_protocols_dir = wayland_protocols_dep.get_variable(pkgconfig: 'pkgdatadir')
 endif
 
