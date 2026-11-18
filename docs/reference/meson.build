@@ -42,6 +42,9 @@ if get_option('gtk-doc')
       'libxfce4ui',
     ],
     ignore_headers: ignored_headers,
+    mkdb_args: [
+      '--ignore-files=xfce-clipboard-manager-dbus.c',
+    ],
     main_xml: meson.project_build_root() / 'docs' / 'reference' / 'libxfce4ui-docs.xml',
     dependencies: [
       libxfce4ui_dep,
