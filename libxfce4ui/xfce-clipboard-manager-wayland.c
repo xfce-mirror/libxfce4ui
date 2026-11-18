@@ -270,18 +270,48 @@ read_all_from_fd (int fd, int timeout_ms)
 
 
 static void
-write_all_to_fd (int fd, const guint8 *data, gsize len)
+write_bytes_to_fd_cb (GObject *source,
+                      GAsyncResult *res,
+                      gpointer user_data)
 {
-  GOutputStream *stream = g_unix_output_stream_new (fd, TRUE);
+  GBytes *bytes = user_data;
   GError *error = NULL;
 
-  if (!g_output_stream_write_all (stream, data, len, NULL, NULL, &error))
+  if (!g_output_stream_write_all_finish (G_OUTPUT_STREAM (source), res, NULL, &error))
     {
       g_warning ("Clipboard write error: %s", error->message);
       g_error_free (error);
     }
 
-  g_object_unref (stream);
+  g_bytes_unref (bytes);
+  g_object_unref (source);
+}
+
+
+
+/* Writes asynchronously so a slow or stuck receiver cannot block the main
+ * loop. The extra ref keeps the data alive even if the cache is cleared
+ * while the transfer is still in progress. */
+static void
+write_bytes_to_fd (int fd, GBytes *bytes)
+{
+  GOutputStream *stream;
+  GError *error = NULL;
+  gconstpointer data;
+  gsize size;
+
+  if (!g_unix_set_fd_nonblocking (fd, TRUE, &error))
+    {
+      g_warning ("Failed to make clipboard fd non-blocking: %s", error->message);
+      g_error_free (error);
+      close (fd);
+      return;
+    }
+
+  stream = g_unix_output_stream_new (fd, TRUE);
+  data = g_bytes_get_data (bytes, &size);
+  g_output_stream_write_all_async (stream, data, size, G_PRIORITY_DEFAULT, NULL,
+                                   write_bytes_to_fd_cb, g_bytes_ref (bytes));
 }
 
 
@@ -567,9 +597,7 @@ source_send (void *data,
       MimeData *md = g_ptr_array_index (manager->cached_contents, i);
       if (g_strcmp0 (md->mime_type, mime_type) == 0)
         {
-          gsize size;
-          const guint8 *bytes_data = g_bytes_get_data (md->data, &size);
-          write_all_to_fd (fd, bytes_data, size);
+          write_bytes_to_fd (fd, md->data);
           return;
         }
     }
