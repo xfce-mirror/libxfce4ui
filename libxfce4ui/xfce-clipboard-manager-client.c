@@ -103,12 +103,12 @@ xfce_clipboard_manager_supports_persistence (void)
 #ifdef ENABLE_WAYLAND
   if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
     {
-      GDBusConnection *conn;
+      GDBusConnection *connection;
       GVariant *result;
       GError *error = NULL;
       gboolean has_owner = FALSE;
 
-      conn = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, &error);
+      connection = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, &error);
       if (G_UNLIKELY (error))
         {
           g_warning ("Failed to connect to session bus: %s", error->message);
@@ -116,7 +116,7 @@ xfce_clipboard_manager_supports_persistence (void)
           return FALSE;
         }
 
-      result = g_dbus_connection_call_sync (conn,
+      result = g_dbus_connection_call_sync (connection,
                                             "org.freedesktop.DBus",
                                             "/org/freedesktop/DBus",
                                             "org.freedesktop.DBus",
@@ -139,7 +139,7 @@ xfce_clipboard_manager_supports_persistence (void)
           has_owner = FALSE;
         }
 
-      g_object_unref (conn);
+      g_object_unref (connection);
       return has_owner;
     }
 #endif
