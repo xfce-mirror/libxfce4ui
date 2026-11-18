@@ -313,19 +313,6 @@ receive_mime_data (XfceClipboardManagerWayland *manager,
 
 
 static gboolean
-mime_type_in_list (const gchar *mime, const gchar **list)
-{
-  for (; *list != NULL; list++)
-    {
-      if (g_strcmp0 (mime, *list) == 0)
-        return TRUE;
-    }
-  return FALSE;
-}
-
-
-
-static gboolean
 cache_selection (XfceClipboardManagerWayland *manager)
 {
   struct ext_data_control_offer_v1 *offer;
@@ -356,12 +343,9 @@ cache_selection (XfceClipboardManagerWayland *manager)
   for (guint i = 0; i < mime_types->len; i++)
     {
       const gchar *mime = g_ptr_array_index (mime_types, i);
-      gboolean skip = FALSE;
+      gboolean skip = g_strv_contains (skip_types, mime);
       GBytes *data;
       gsize size;
-
-      if (mime_type_in_list (mime, skip_types))
-        skip = TRUE;
 
       /* Skip duplicates */
       if (!skip)
