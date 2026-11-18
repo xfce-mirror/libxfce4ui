@@ -4,15 +4,15 @@
 # 
 # Translators:
 # Loc Huynh <https://github.com/hthienloc>, 2025
-# Loc Huynh, 2025
+# Huỳnh Thiện Lộc, 2025
 # Vinh <kureikain@gmail.com>, 2012
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2026-03-16 00:45+0100\n"
+"POT-Creation-Date: 2026-11-13 00:46+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Loc Huynh, 2025\n"
+"Last-Translator: Huỳnh Thiện Lộc, 2025\n"
 "Language-Team: Vietnamese (http://app.transifex.com/xfce/libxfce4ui/language/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -167,7 +167,7 @@ msgstr "Đọc tài liệu hướng dẫn"
 #. Create cancel button
 #. add the "Cancel" button
 #: libxfce4ui/xfce-dialogs.c:268 libxfce4ui/xfce-dialogs.c:526
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:252
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:262
 #: xfce-desktop-item-edit/main.c:351 xfce-desktop-item-edit/main.c:545
 #: xfce-desktop-item-edit/xfce-die-command-entry.c:262
 #: xfce-desktop-item-edit/xfce-die-editor.c:648
@@ -343,37 +343,37 @@ msgstr "_Tìm biểu tượng:"
 msgid "Clear search field"
 msgstr "Xóa trường tìm kiếm"
 
-#: libxfce4ui/xfce-sm-client.c:1503
+#: libxfce4ui/xfce-sm-client.c:1513
 msgid "Session management client ID"
 msgstr "ID client quản lý phiên"
 
-#: libxfce4ui/xfce-sm-client.c:1503
+#: libxfce4ui/xfce-sm-client.c:1513
 msgid "ID"
 msgstr "ID"
 
-#: libxfce4ui/xfce-sm-client.c:1504
+#: libxfce4ui/xfce-sm-client.c:1514
 msgid "Disable session management"
 msgstr "Tắt quản lý phiên"
 
-#: libxfce4ui/xfce-sm-client.c:1514
+#: libxfce4ui/xfce-sm-client.c:1524
 msgid "Session management options"
 msgstr "Tùy chọn quản lý phiên"
 
-#: libxfce4ui/xfce-sm-client.c:1514
+#: libxfce4ui/xfce-sm-client.c:1524
 msgid "Show session management options"
 msgstr "Hiển thị tùy chọn quản lý phiên"
 
-#: libxfce4ui/xfce-sm-client.c:1688
+#: libxfce4ui/xfce-sm-client.c:1706
 #, c-format
 msgid "Failed to connect to the session manager: %s"
 msgstr "Không thể kết nối tới trình quản lý phiên: %s"
 
-#: libxfce4ui/xfce-sm-client.c:1697
+#: libxfce4ui/xfce-sm-client.c:1715
 msgid "Session manager did not return a valid client id"
 msgstr "Trình quản lý phiên không trả về ID client hợp lệ"
 
 #. print warning for user
-#: libxfce4ui/xfce-spawn.c:388
+#: libxfce4ui/xfce-spawn.c:350
 #, c-format
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
@@ -381,71 +381,71 @@ msgid ""
 msgstr "Thư mục làm việc \"%s\" không tồn tại. Nó sẽ không được dùng khi khởi chạy \"%s\"."
 
 #. retrieve the error and warning messages
-#: libxfce4ui/xfce-filename-input.c:230
+#: libxfce4ui/xfce-filename-input.c:228
 msgid "Filename is too long"
 msgstr "Tên tệp quá dài"
 
-#: libxfce4ui/xfce-filename-input.c:231
+#: libxfce4ui/xfce-filename-input.c:229
 msgid "Directory separator illegal in filename"
 msgstr ""
 
-#: libxfce4ui/xfce-filename-input.c:232
+#: libxfce4ui/xfce-filename-input.c:230
 msgid "Filenames should not start or end with a space"
 msgstr "Tên tệp không được bắt đầu hoặc kết thúc bằng dấu cách"
 
-#: libxfce4ui/xfce-item-list-view.c:331
+#: libxfce4ui/xfce-item-list-view.c:337
 msgid "Active"
 msgstr "Hoạt động"
 
-#: libxfce4ui/xfce-item-list-view.c:348
+#: libxfce4ui/xfce-item-list-view.c:354
 msgid "Name"
 msgstr "Tên"
 
-#: libxfce4ui/xfce-item-list-view.c:657
+#: libxfce4ui/xfce-item-list-view.c:669
 msgid "Move _up"
 msgstr "Di chuyển _lên"
 
-#: libxfce4ui/xfce-item-list-view.c:657
+#: libxfce4ui/xfce-item-list-view.c:669
 msgid "Move currently selected item up by one row"
 msgstr "Di chuyển mục đang chọn lên trên một hàng"
 
-#: libxfce4ui/xfce-item-list-view.c:661
+#: libxfce4ui/xfce-item-list-view.c:673
 msgid "Move _down"
 msgstr "Di chuyển _xuống"
 
-#: libxfce4ui/xfce-item-list-view.c:661
+#: libxfce4ui/xfce-item-list-view.c:673
 msgid "Move currently selected item down by one row"
 msgstr "Di chuyển mục đang chọn xuống dưới một hàng"
 
-#: libxfce4ui/xfce-item-list-view.c:672
-msgid "_Add new item"
-msgstr "_Thêm mục mới"
+#: libxfce4ui/xfce-item-list-view.c:684
+msgid "_Add"
+msgstr "_Thêm"
 
-#: libxfce4ui/xfce-item-list-view.c:672
+#: libxfce4ui/xfce-item-list-view.c:684
 msgid "Add new item"
 msgstr "Thêm mục mới"
 
-#: libxfce4ui/xfce-item-list-view.c:678
+#: libxfce4ui/xfce-item-list-view.c:690
 msgid "_Remove"
 msgstr "_Xóa"
 
-#: libxfce4ui/xfce-item-list-view.c:678
+#: libxfce4ui/xfce-item-list-view.c:690
 msgid "Remove currently selected items"
 msgstr "Xóa các mục đang chọn"
 
-#: libxfce4ui/xfce-item-list-view.c:684
+#: libxfce4ui/xfce-item-list-view.c:696
 msgid "_Edit"
 msgstr "_Chỉnh sửa"
 
-#: libxfce4ui/xfce-item-list-view.c:684
+#: libxfce4ui/xfce-item-list-view.c:696
 msgid "Edit the currently selected item"
 msgstr "Chỉnh sửa mục đang chọn"
 
-#: libxfce4ui/xfce-item-list-view.c:690
+#: libxfce4ui/xfce-item-list-view.c:702
 msgid "Reset to de_faults"
 msgstr "Đặt lại về _mặc định"
 
-#: libxfce4ui/xfce-item-list-view.c:690
+#: libxfce4ui/xfce-item-list-view.c:702
 msgid "Reset all items to default settings"
 msgstr "Đặt lại tất cả mục về thiết lập mặc định"
 
@@ -505,74 +505,74 @@ msgstr "Xung đột hành động cho %s"
 msgid "This shortcut is already being used for something else."
 msgstr "Phím tắt này đã được dùng cho mục đích khác."
 
-#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:88
-#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:125
+#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:81
+#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:118
 msgid "Shortcuts Editor"
 msgstr "Trình chỉnh sửa phím tắt"
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:490
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:485
 msgid "The current shortcut. Click to edit..."
 msgstr "Phím tắt hiện tại. Nhấp để chỉnh sửa…"
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:502
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:497
 msgid "Clear the shortcut"
 msgstr "Xóa phím tắt"
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:514
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:509
 msgid "Restore the default shortcut"
 msgstr "Khôi phục phím tắt mặc định"
 
 #. skip leading slash
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:668
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:758
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:663
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:753
 #, c-format
 msgid "This keyboard shortcut is currently used by: '%s'"
 msgstr "Phím tắt này hiện đang được sử dụng bởi: '%s'"
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:671
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:761
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:666
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:756
 msgid "Keyboard shortcut already in use"
 msgstr "Phím tắt đã được sử dụng"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:215
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:225
 msgid "Window Manager Action Shortcut"
 msgstr "Phím tắt hành động trình quản lý cửa sổ"
 
 #. TRANSLATORS: this string will be used to create an explanation for
 #. * the user in a following string
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:218
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:234
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:228
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:244
 msgid "action"
 msgstr "hành động"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:223
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:233
 msgid "Command Shortcut"
 msgstr "Phím tắt lệnh"
 
 #. TRANSLATORS: this string will be used to create an explanation for
 #. * the user in a following string
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:226
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:236
 msgid "command"
 msgstr "lệnh"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:231
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:241
 msgid "Shortcut"
 msgstr "Phím tắt"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:246
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:256
 msgid "Clear"
 msgstr "Xóa"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:269
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:279
 #, c-format
 msgid "Press keyboard keys to trigger the %s '%s'."
 msgstr "Nhấn phím để gán cho %s '%s'."
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:291
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:301
 msgid "Please press a key"
 msgstr "Vui lòng nhấn một phím"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:347
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:379
 msgid "Could not grab the keyboard."
 msgstr "Không thể bắt bàn phím."
 
@@ -1036,12 +1036,12 @@ msgid "Unable to initialize GTK+."
 msgstr "Không thể khởi tạo GTK+."
 
 #: xfce4-about/main.c:536 xfce-desktop-item-edit/main.c:202
-#: xfce-open/main.c:762
+#: xfce-open/main.c:753
 msgid "The Xfce development team. All rights reserved."
 msgstr "Nhóm phát triển Xfce. Bảo lưu mọi quyền."
 
 #: xfce4-about/main.c:537 xfce-desktop-item-edit/main.c:210
-#: xfce-open/main.c:771
+#: xfce-open/main.c:762
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "Vui lòng báo lỗi tại <%s>."
@@ -1089,22 +1089,22 @@ msgstr "Giới thiệu Xfce"
 msgid "Information about the Xfce Desktop Environment"
 msgstr "Thông tin về môi trường desktop Xfce"
 
-#: xfce4-about/system-info.c:495 xfce4-about/system-info.c:517
-#: xfce4-about/system-info.c:636 xfce4-about/system-info.c:685
+#: xfce4-about/system-info.c:494 xfce4-about/system-info.c:515
+#: xfce4-about/system-info.c:634 xfce4-about/system-info.c:683
 msgid "Unknown"
 msgstr "Không rõ"
 
 #. translators: This is the type of architecture for the OS
-#: xfce4-about/system-info.c:620
+#: xfce4-about/system-info.c:618
 msgid "64-bit (32-bit userspace)"
 msgstr "64-bit (không gian người dùng 32-bit)"
 
 #. translators: This is the type of architecture for the OS
-#: xfce4-about/system-info.c:623
+#: xfce4-about/system-info.c:621
 msgid "64-bit"
 msgstr "64-bit"
 
-#: xfce4-about/system-info.c:623
+#: xfce4-about/system-info.c:621
 msgid "32-bit"
 msgstr "32-bit"
 
@@ -1112,7 +1112,7 @@ msgstr "32-bit"
 #. * example:
 #. * "Fedora 25 (Workstation Edition); Build ID: xyz" or
 #. * "Ubuntu 16.04 LTS; Build ID: jki"
-#: xfce4-about/system-info.c:693
+#: xfce4-about/system-info.c:691
 #, c-format
 msgid "%s; Build ID: %s"
 msgstr "%s; ID bản dựng: %s"
@@ -1198,15 +1198,15 @@ msgstr "In thông tin phiên bản và thoát"
 msgid "[FILE|FOLDER]"
 msgstr "[TỆP|THƯ_MỤC]"
 
-#: xfce-desktop-item-edit/main.c:200 xfce-open/main.c:760
+#: xfce-desktop-item-edit/main.c:200 xfce-open/main.c:751
 msgid "os-cillation e.K. All rights reserved."
 msgstr "os-cillation e.K. Mọi quyền được bảo lưu."
 
-#: xfce-desktop-item-edit/main.c:204 xfce-open/main.c:764
+#: xfce-desktop-item-edit/main.c:204 xfce-open/main.c:755
 msgid "Written by Benedikt Meurer <benny@xfce.org>."
 msgstr "Được viết bởi Benedikt Meurer <benny@xfce.org>."
 
-#: xfce-desktop-item-edit/main.c:205 xfce-open/main.c:766
+#: xfce-desktop-item-edit/main.c:205 xfce-open/main.c:757
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -1311,9 +1311,8 @@ msgstr "_Biểu tượng:"
 
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
 #. dialog if no icon selected
-#. setup a label to tell that no icon was selected
 #: xfce-desktop-item-edit/xfce-die-editor.c:447
-#: xfce-desktop-item-edit/xfce-die-editor.c:1302
+#: xfce-desktop-item-edit/xfce-die-editor.c:1300
 msgid "No icon"
 msgstr "Không biểu tượng"
 
@@ -1363,48 +1362,52 @@ msgstr "_Đồng ý"
 msgid "Select a working directory"
 msgstr "Chọn thư mục làm việc"
 
-#: xfce-desktop-item-edit/xfce-die-utils.c:210
+#: xfce-desktop-item-edit/xfce-die-editor.c:1302
+msgid "Icon not found"
+msgstr ""
+
+#: xfce-desktop-item-edit/xfce-die-utils.c:209
 msgid "File location is not a regular file or directory"
 msgstr "Vị trí tệp không phải tệp hay thư mục bình thường"
 
-#: xfce-open/main.c:218
+#: xfce-open/main.c:216
 msgid "Usage: xfce-open [URLs...]"
 msgstr "Cách dùng: xfce-open [URL...]"
 
-#: xfce-open/main.c:219
+#: xfce-open/main.c:217
 msgid "       xfce-open --launch TYPE [PARAMETERs...]"
 msgstr "xfce-open --launch LOẠI [THAM SỐ...]"
 
-#: xfce-open/main.c:221
+#: xfce-open/main.c:219
 msgid "  -?, --help                          Print this help message and exit"
 msgstr "-?, --help In tin nhắn trợ giúp này và thoát"
 
-#: xfce-open/main.c:222
+#: xfce-open/main.c:220
 msgid ""
 "  -V, --version                       Print version information and exit"
 msgstr "-V, --version In thông tin phiên bản và thoát"
 
-#: xfce-open/main.c:224
+#: xfce-open/main.c:222
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
 msgstr "  --launch LOẠI [THAM SỐ...]       Khởi chạy ứng dụng ưa thích của\n                                      LOẠI với các THAM SỐ tùy chọn, trong đó\n                                      LOẠI là một trong các giá trị sau."
 
-#: xfce-open/main.c:228
+#: xfce-open/main.c:226
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
 msgstr "  --working-directory THƯ MỤC       Thư mục làm việc mặc định cho các ứng dụng\n                                      khi sử dụng tùy chọn --launch."
 
-#: xfce-open/main.c:231
+#: xfce-open/main.c:229
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "Các KIỂU sau được hỗ trợ cho lệnh --launch:"
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
 #. TerminalEmulator),
 #. * since the xfce4-mime-helper utility will not accept localized TYPEs.
-#: xfce-open/main.c:237
+#: xfce-open/main.c:235
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1416,7 +1419,7 @@ msgid ""
 "  VideoPlayer      - The preferred Video Player."
 msgstr "  WebBrowser       - Trình duyệt web ưa thích.\n  MailReader       - Trình đọc thư ưa thích.\n  FileManager      - Trình quản lý tệp ưa thích.\n  TerminalEmulator - Trình mô phỏng terminal ưa thích.\n  TextEditor       - Trình soạn thảo văn bản ưa thích.\n  ImageViewer      - Trình xem ảnh ưa thích.\n  AudioPlayer      - Trình xem ảnh ưa thích.\n  VideoPlayer      - Trình phát video ưa thích."
 
-#: xfce-open/main.c:247
+#: xfce-open/main.c:245
 msgid ""
 "If you don't specify the --launch option, xfce-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1425,16 +1428,16 @@ msgid ""
 "you can pass the command line that should be run in the terminal)."
 msgstr "Nếu không dùng tùy chọn --launch, xfce-open sẽ mở mọi URL đã chỉ định bằng\ntrình xử lý ưu tiên tương ứng. Ngược lại, nếu dùng --launch, bạn có thể\nchọn ứng dụng ưu tiên muốn chạy và truyền thêm tham số cho ứng dụng\n(ví dụ: với TerminalEmulator, bạn có thể truyền lệnh cần chạy trong terminal)."
 
-#: xfce-open/main.c:422
+#: xfce-open/main.c:420
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Không thể khởi chạy ứng dụng ưu tiên cho danh mục \"%s\"."
 
-#: xfce-open/main.c:713
+#: xfce-open/main.c:704
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "Không phát hiện được giao thức URI của \"%s\"."
 
-#: xfce-open/main.c:727
+#: xfce-open/main.c:718
 msgid "Failed to open URI."
 msgstr "Không thể mở URI."

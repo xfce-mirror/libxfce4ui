@@ -185,7 +185,7 @@ xfce_clipboard_manager_store (void)
 #ifdef ENABLE_WAYLAND
   if (GDK_IS_WAYLAND_DISPLAY (display))
     {
-      XfceDbusClipboardManager *proxy;
+      XfceDBusClipboardManager *proxy;
       GError *error = NULL;
       StoreData data = { .loop = NULL, .success = FALSE };
 

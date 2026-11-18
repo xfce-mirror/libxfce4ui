@@ -50,16 +50,16 @@
 
 
 
-typedef struct
+typedef struct _XfceClipboardManagerPrivate
 {
-  XfceDbusClipboardManager *skeleton;
+  XfceDBusClipboardManager *skeleton;
   guint owner_id;
 } XfceClipboardManagerPrivate;
 
 static void
 xfce_clipboard_manager_dispose (GObject *object);
 static gboolean
-xfce_clipboard_manager_handle_store (XfceDbusClipboardManager *skeleton,
+xfce_clipboard_manager_handle_store (XfceDBusClipboardManager *skeleton,
                                      GDBusMethodInvocation *invocation,
                                      XfceClipboardManager *manager);
 
@@ -106,11 +106,7 @@ xfce_clipboard_manager_dispose (GObject *object)
       g_clear_object (&priv->skeleton);
     }
 
-  if (priv->owner_id != 0)
-    {
-      g_bus_unown_name (priv->owner_id);
-      priv->owner_id = 0;
-    }
+  g_clear_handle_id (&priv->owner_id, g_bus_unown_name);
 
   G_OBJECT_CLASS (xfce_clipboard_manager_parent_class)->dispose (object);
 }
@@ -118,7 +114,7 @@ xfce_clipboard_manager_dispose (GObject *object)
 
 
 static gboolean
-xfce_clipboard_manager_handle_store (XfceDbusClipboardManager *skeleton,
+xfce_clipboard_manager_handle_store (XfceDBusClipboardManager *skeleton,
                                      GDBusMethodInvocation *invocation,
                                      XfceClipboardManager *manager)
 {
@@ -192,7 +188,7 @@ xfce_clipboard_manager_register_dbus_object (XfceClipboardManager *manager,
                                              GError **error)
 {
   XfceClipboardManagerPrivate *priv;
-  XfceDbusClipboardManager *skeleton;
+  XfceDBusClipboardManager *skeleton;
 
   g_return_val_if_fail (XFCE_IS_CLIPBOARD_MANAGER (manager), FALSE);
   g_return_val_if_fail (G_IS_DBUS_CONNECTION (connection), FALSE);
