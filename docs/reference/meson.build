@@ -13,7 +13,9 @@ if get_option('gtk-doc')
   )
 
   ignored_headers = [
+    'libxfce4ui-private.h',
     'libxfce4ui-visibility.h',
+    'xfce-clipboard-manager-dbus.h',
     'xfce-clipboard-manager-x11.h',
     'xfce-icon-chooser-model.h',
     'xfce-thumbnail-preview.h',
@@ -40,6 +42,9 @@ if get_option('gtk-doc')
       'libxfce4ui',
     ],
     ignore_headers: ignored_headers,
+    mkdb_args: [
+      '--ignore-files=xfce-clipboard-manager-dbus.c',
+    ],
     main_xml: meson.project_build_root() / 'docs' / 'reference' / 'libxfce4ui-docs.xml',
     dependencies: [
       libxfce4ui_dep,
