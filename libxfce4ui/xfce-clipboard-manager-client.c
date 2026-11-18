@@ -95,17 +95,13 @@ clipboard_store_cb (GObject *source,
 gboolean
 xfce_clipboard_manager_supports_persistence (void)
 {
-#if defined(ENABLE_X11) || defined(ENABLE_WAYLAND)
-  GdkDisplay *display = gdk_display_get_default ();
-#endif
-
 #ifdef ENABLE_X11
-  if (GDK_IS_X11_DISPLAY (display))
-    return gdk_display_supports_clipboard_persistence (display);
+  if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+    return gdk_display_supports_clipboard_persistence (gdk_display_get_default ());
 #endif
 
 #ifdef ENABLE_WAYLAND
-  if (GDK_IS_WAYLAND_DISPLAY (display))
+  if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
     {
       GDBusConnection *conn;
       GVariant *result;
@@ -170,12 +166,8 @@ xfce_clipboard_manager_supports_persistence (void)
 gboolean
 xfce_clipboard_manager_store (void)
 {
-#if defined(ENABLE_X11) || defined(ENABLE_WAYLAND)
-  GdkDisplay *display = gdk_display_get_default ();
-#endif
-
 #ifdef ENABLE_X11
-  if (GDK_IS_X11_DISPLAY (display))
+  if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
     {
       gtk_clipboard_store (gtk_clipboard_get (GDK_SELECTION_CLIPBOARD));
       return TRUE;
@@ -183,7 +175,7 @@ xfce_clipboard_manager_store (void)
 #endif
 
 #ifdef ENABLE_WAYLAND
-  if (GDK_IS_WAYLAND_DISPLAY (display))
+  if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
     {
       XfceDBusClipboardManager *proxy;
       GError *error = NULL;
