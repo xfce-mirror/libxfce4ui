@@ -36,6 +36,11 @@
 
 
 
+#define READ_CHUNK_SIZE 65536
+#define READ_TIMEOUT_MS 2000
+
+
+
 typedef struct
 {
   gchar *mime_type;
@@ -225,7 +230,7 @@ static GBytes *
 read_all_from_fd (int fd, int timeout_ms)
 {
   GByteArray *buf = g_byte_array_new ();
-  guint8 chunk[65536];
+  guint8 chunk[READ_CHUNK_SIZE];
   gssize nread;
   GPollFD pfd = { .fd = fd, .events = G_IO_IN };
 
@@ -336,7 +341,7 @@ receive_mime_data (XfceClipboardManagerWayland *manager,
 
   wl_display_flush (manager->wl_display);
 
-  return read_all_from_fd (fds[0], 2000);
+  return read_all_from_fd (fds[0], READ_TIMEOUT_MS);
 }
 
 
