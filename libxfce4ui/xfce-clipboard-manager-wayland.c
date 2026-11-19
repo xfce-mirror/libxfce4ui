@@ -354,7 +354,8 @@ cache_selection (XfceClipboardManagerWayland *manager)
   GPtrArray *contents;
 
   /* X11 atoms (meaningless on Wayland), ICO variants (GTK offers but
-   * can't produce), and misc container aliases */
+   * can't produce), misc container aliases, and AVIF (encoding a large
+   * image can block the source client for tens of seconds) */
   static const gchar *skip_types[] = {
     "SAVE_TARGETS", "TARGETS", "MULTIPLE", "DELETE",
     "INSERT_PROPERTY", "INSERT_SELECTION", "TIMESTAMP",
@@ -362,7 +363,7 @@ cache_selection (XfceClipboardManagerWayland *manager)
     "image/x-icon", "image/x-ico", "image/x-win-bitmap",
     "image/vnd.microsoft.icon", "application/ico",
     "image/ico", "image/icon", "text/ico",
-    "audio/x-riff",
+    "audio/x-riff", "image/avif",
     NULL
   };
 
