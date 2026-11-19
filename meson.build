@@ -32,6 +32,8 @@ dependency_versions = {
   'epoxy': '>= 1.5.10',
   'gudev': '>= 238',
   'gir': '>= 1.80.1',
+
+  'wayland-protocols': '>= 1.45',
 }
 
 glib = dependency('glib-2.0', version: dependency_versions['glib'])
@@ -54,6 +56,7 @@ x11_deps += dependency('x11', version: dependency_versions['libx11'], required: 
 # Feature: 'wayland'
 wayland_deps = []
 wayland_deps += dependency('gdk-wayland-3.0', version: dependency_versions['gtk'], required: get_option('wayland'))
+wayland_deps += dependency('wayland-client', required: get_option('wayland'))
 
 feature_cflags = []
 
@@ -80,6 +83,13 @@ foreach dep : wayland_deps
 endforeach
 if enable_wayland
   feature_cflags += '-DENABLE_WAYLAND=1'
+
+  wayland_scanner = dependency('wayland-scanner', required: true, native: true)
+  wayland_scanner_path = wayland_scanner.get_variable(pkgconfig: 'wayland_scanner')
+  wayland_scanner_bin = find_program(wayland_scanner_path, required: true)
+
+  wayland_protocols_dep = dependency('wayland-protocols', version: dependency_versions['wayland-protocols'], required: true)
+  wayland_protocols_dir = wayland_protocols_dep.get_variable(pkgconfig: 'pkgdatadir')
 endif
 
 if not enable_x11 and not enable_wayland
@@ -280,6 +290,9 @@ xfce_revision_h = vcs_tag(
   replace_string: '@REVISION@',
 )
 
+if enable_wayland
+  subdir('protocols')
+endif
 subdir('libxfce4ui')
 subdir('docs' / 'reference')
 subdir('icons')
