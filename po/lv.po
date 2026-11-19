@@ -4,13 +4,14 @@
 # 
 # Translators:
 # Rihards Priedītis <rprieditis@gmail.com>, 2009
+# Rihards Priedītis <rprieditis@gmail.com>, 2009,2026
 msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2025-11-05 00:45+0100\n"
+"POT-Creation-Date: 2026-11-13 00:46+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Rihards Priedītis <rprieditis@gmail.com>, 2009\n"
+"Last-Translator: Rihards Priedītis <rprieditis@gmail.com>, 2009,2026\n"
 "Language-Team: Latvian (http://app.transifex.com/xfce/libxfce4ui/language/lv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,11 +21,11 @@ msgstr ""
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:116
 msgid "License"
-msgstr ""
+msgstr "Licence"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:340
 msgid "About the Xfce Desktop Environment"
-msgstr ""
+msgstr "Par Xfce darbvirsmas vidi"
 
 #. add the "Help" button
 #: libxfce4ui/resources/xfce4-about-dialog.glade:358
@@ -38,7 +39,7 @@ msgstr "_Aizvērt"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:437
 msgid "Device"
-msgstr ""
+msgstr "Ierīce"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:449
 #: libxfce4ui/resources/xfce4-about-dialog.glade:474
@@ -56,53 +57,53 @@ msgstr "etiķete"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:462
 msgid "OS Name"
-msgstr ""
+msgstr "OS nosaukums"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:487
 msgid "OS Type"
-msgstr ""
+msgstr "OS tips"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:512
 msgid "Distributor"
-msgstr ""
+msgstr "Izplatītājs"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:538
 msgid "Xfce Version"
-msgstr ""
+msgstr "Xfce versija"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:564
 msgid "GTK Version"
-msgstr ""
+msgstr "GTK versija"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:589
 msgid "Kernel Version"
-msgstr ""
+msgstr "Kodola versija"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:614
 msgid "Windowing System"
-msgstr ""
+msgstr "Logu sistēma"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:640
 msgid "CPU"
-msgstr ""
+msgstr "CPU"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:666
 msgid "Memory"
-msgstr ""
+msgstr "Atmiņa"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:691
 msgid "GPU"
-msgstr ""
+msgstr "GPU"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:724
 msgid "System"
-msgstr ""
+msgstr "Sistēma"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:766
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured desktop environment.\n"
 "The following programs are part of the Xfce core:"
-msgstr ""
+msgstr "Xfce ir programmu kopums, kas kopā veido pilnvērtīgu darbvirsmas vidi.\nXfce kodolā ietilpst šādas programmas:"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:804
 msgid ""
@@ -113,59 +114,59 @@ msgid ""
 "Thank you for your interest in Xfce.\n"
 "\n"
 "\t- The Xfce Development Team"
-msgstr ""
+msgstr "Xfce ir arī izstrādes platforma ar vairākām bibliotēkām, kas palīdz programmētājiem veidot lietotnes, kuras labi iederas darbvirsmas vidē.\n\nXfce komponenti tiek licencēti ar brīvām vai atvērtā pirmkoda licencēm: lietotnes — ar GPL vai BSDL, bibliotēkas — ar LGPL vai BSDL. Plašāku informāciju skatiet dokumentācijā, pirmkodā vai Xfce tīmekļa vietnē (<a href=\"https://www.xfce.org\">https://www.xfce.org</a>).\n\nPaldies par interesi par Xfce.\n\n\t— Xfce izstrādātāju komanda"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:834
 msgid "About"
-msgstr ""
+msgstr "Par"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:868
 msgid "Credits"
-msgstr ""
+msgstr "Pateicības"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:947
 msgid "GPL"
-msgstr ""
+msgstr "GPL"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:960
 msgid "LGPL"
-msgstr ""
+msgstr "LGPL"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:973
 msgid "BSD"
-msgstr ""
+msgstr "BSD"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:1003
 msgid "Copyright"
-msgstr ""
+msgstr "Autortiesības"
 
 #: libxfce4ui/xfce-dialogs.c:104
 msgid "Failed to open web browser for online documentation"
-msgstr ""
+msgstr "Neizdevās atvērt tīmekļa pārlūku tiešsaistes dokumentācijai"
 
 #: libxfce4ui/xfce-dialogs.c:260
 #, c-format
 msgid "Do you want to read the %s manual online?"
-msgstr ""
+msgstr "Vai vēlaties lasīt %s rokasgrāmatu tiešsaistē?"
 
 #: libxfce4ui/xfce-dialogs.c:262
 msgid "Do you want to read the manual online?"
-msgstr ""
+msgstr "Vai vēlaties lasīt rokasgrāmatu tiešsaistē?"
 
 #: libxfce4ui/xfce-dialogs.c:264
 msgid ""
 "You will be redirected to the documentation website where the help pages are"
 " maintained and translated."
-msgstr ""
+msgstr "Tiks atvērta dokumentācijas tīmekļa vietne, kurā tiek uzturētas un tulkotas palīdzības lapas."
 
 #: libxfce4ui/xfce-dialogs.c:266
 msgid "Read the manual"
-msgstr ""
+msgstr "Lasīt rokasgrāmatu"
 
 #. Create cancel button
 #. add the "Cancel" button
 #: libxfce4ui/xfce-dialogs.c:268 libxfce4ui/xfce-dialogs.c:526
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:252
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:262
 #: xfce-desktop-item-edit/main.c:351 xfce-desktop-item-edit/main.c:545
 #: xfce-desktop-item-edit/xfce-die-command-entry.c:262
 #: xfce-desktop-item-edit/xfce-die-editor.c:648
@@ -175,11 +176,11 @@ msgstr "A_tcelt"
 
 #: libxfce4ui/xfce-dialogs.c:269
 msgid "_Read Online"
-msgstr ""
+msgstr "_Lasīt tiešsaistē"
 
 #: libxfce4ui/xfce-dialogs.c:278
 msgid "_Always go directly to the online documentation"
-msgstr ""
+msgstr "_Vienmēr atvērt tiešsaistes dokumentāciju uzreiz"
 
 #: libxfce4ui/xfce-dialogs.c:327 libxfce4ui/xfce-dialogs.c:362
 #: libxfce4ui/xfce-dialogs.c:398
@@ -188,11 +189,11 @@ msgstr "Aizvērt"
 
 #: libxfce4ui/xfce-dialogs.c:445
 msgid "No"
-msgstr ""
+msgstr "Nē"
 
 #: libxfce4ui/xfce-dialogs.c:447
 msgid "Yes"
-msgstr ""
+msgstr "Jā"
 
 #: libxfce4ui/xfce-dialogs.c:451 libxfce4kbd-private/xfce-shortcuts-xfwm4.c:39
 msgid "Cancel"
@@ -200,32 +201,32 @@ msgstr "Atcelt"
 
 #: libxfce4ui/xfce-dialogs.c:510
 msgid "Close window with multiple tabs?"
-msgstr ""
+msgstr "Aizvērt logu ar vairākām cilnēm?"
 
 #: libxfce4ui/xfce-dialogs.c:512
 msgid ""
 "This window has multiple tabs open. Closing this window will also close all "
 "its tabs."
-msgstr ""
+msgstr "Šajā logā ir atvērtas vairākas cilnes. Aizverot šo logu, tiks aizvērtas arī visas tā cilnes."
 
 #: libxfce4ui/xfce-dialogs.c:515
 #, c-format
 msgid ""
 "This window has %d tabs open. Closing this window will also close all its "
 "tabs."
-msgstr ""
+msgstr "Šajā logā ir atvērtas cilnes (%d). Aizverot šo logu, tiks aizvērtas arī visas tā cilnes."
 
 #: libxfce4ui/xfce-dialogs.c:522
 msgid "Warning"
-msgstr "Uzmanību"
+msgstr "Brīdinājums"
 
 #: libxfce4ui/xfce-dialogs.c:527
 msgid "Close T_ab"
-msgstr ""
+msgstr "Aizvērt _cilni"
 
 #: libxfce4ui/xfce-dialogs.c:528
 msgid "Close _Window"
-msgstr ""
+msgstr "Aizvērt _logu"
 
 #: libxfce4ui/xfce-dialogs.c:533
 msgid "Do _not ask me again"
@@ -234,22 +235,22 @@ msgstr "Vairs man _nejautāt"
 #: libxfce4ui/xfce-gdk-pixbuf-extensions.c:786
 #, c-format
 msgid "Failed to open file \"%s\": %s"
-msgstr "Neizdevās atvērt failu \"%s\": %s"
+msgstr "Neizdevās atvērt failu „%s”: %s"
 
 #: libxfce4ui/xfce-gdk-pixbuf-extensions.c:859
 #, c-format
 msgid "Failed to read file \"%s\": %s"
-msgstr "Neizdevās nolasīt failu \"%s\": %s"
+msgstr "Neizdevās nolasīt failu „%s”: %s"
 
 #: libxfce4ui/xfce-gdk-pixbuf-extensions.c:906
 #, c-format
 msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr "Neizdevās ielādēt attēlu \"%s\": Iemesls nav zināms, iespējams attēla fails ir bojāts"
+msgstr "Neizdevās ielādēt attēlu „%s”: nezināms iemesls, iespējams, attēla fails ir bojāts"
 
 #: libxfce4ui/xfce-gtk-extensions.c:1321
 #, c-format
 msgid "Failed to open \"%s\"."
-msgstr "Neizdevās atvērt \"%s\"."
+msgstr "Neizdevās atvērt „%s”."
 
 #. XFCE_ICON_CHOOSER_CONTEXT_ACTIONS
 #: libxfce4ui/xfce-icon-chooser-dialog.c:119
@@ -289,7 +290,7 @@ msgstr "Emocijzīmes"
 #. XFCE_ICON_CHOOSER_CONTEXT_MIME_TYPES
 #: libxfce4ui/xfce-icon-chooser-dialog.c:133
 msgid "File Type Icons"
-msgstr "Faila tipa ikonas"
+msgstr "Failu tipu ikonas"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_PLACES
 #: libxfce4ui/xfce-icon-chooser-dialog.c:135
@@ -304,12 +305,12 @@ msgstr "Statusa ikonas"
 #. XFCE_ICON_CHOOSER_CONTEXT_STOCK
 #: libxfce4ui/xfce-icon-chooser-dialog.c:139
 msgid "Stock Icons"
-msgstr ""
+msgstr "Standarta ikonas"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_OTHER
 #: libxfce4ui/xfce-icon-chooser-dialog.c:141
 msgid "Uncategorized Icons"
-msgstr "Negrupētās ikonas"
+msgstr "Nekategorizētas ikonas"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_ALL
 #: libxfce4ui/xfce-icon-chooser-dialog.c:145
@@ -325,7 +326,7 @@ msgstr "Attēlu faili"
 #. XFCE_ICON_CHOOSER_CONTEXT_NO_ICON
 #: libxfce4ui/xfce-icon-chooser-dialog.c:153
 msgid "No Icon"
-msgstr ""
+msgstr "Bez ikonas"
 
 #. setup the context combo box
 #: libxfce4ui/xfce-icon-chooser-dialog.c:221
@@ -335,124 +336,124 @@ msgstr "Izvēlēties _ikonu no:"
 #. search filter
 #: libxfce4ui/xfce-icon-chooser-dialog.c:237
 msgid "_Search icon:"
-msgstr "Meklēt ikonu:"
+msgstr "_Meklēt ikonu:"
 
 #: libxfce4ui/xfce-icon-chooser-dialog.c:249
 msgid "Clear search field"
 msgstr "Notīrīt meklēšanas lauku"
 
-#: libxfce4ui/xfce-sm-client.c:1503
+#: libxfce4ui/xfce-sm-client.c:1513
 msgid "Session management client ID"
-msgstr "Sesijas pārvaldības klienta ID"
+msgstr "Sesiju pārvaldības klienta ID"
 
-#: libxfce4ui/xfce-sm-client.c:1503
+#: libxfce4ui/xfce-sm-client.c:1513
 msgid "ID"
 msgstr "ID"
 
-#: libxfce4ui/xfce-sm-client.c:1504
+#: libxfce4ui/xfce-sm-client.c:1514
 msgid "Disable session management"
-msgstr "Izslēgt sesijas pārvaldību"
+msgstr "Atspējot sesiju pārvaldību"
 
-#: libxfce4ui/xfce-sm-client.c:1514
+#: libxfce4ui/xfce-sm-client.c:1524
 msgid "Session management options"
-msgstr "Sesijas pārvaldības opcijas"
+msgstr "Sesiju pārvaldības opcijas"
 
-#: libxfce4ui/xfce-sm-client.c:1514
+#: libxfce4ui/xfce-sm-client.c:1524
 msgid "Show session management options"
-msgstr "Rādīt sesijas pārvaldības opcijas"
+msgstr "Rādīt sesiju pārvaldības opcijas"
 
-#: libxfce4ui/xfce-sm-client.c:1688
+#: libxfce4ui/xfce-sm-client.c:1706
 #, c-format
 msgid "Failed to connect to the session manager: %s"
-msgstr ""
+msgstr "Neizdevās savienoties ar sesiju pārvaldnieku: %s"
 
-#: libxfce4ui/xfce-sm-client.c:1697
+#: libxfce4ui/xfce-sm-client.c:1715
 msgid "Session manager did not return a valid client id"
-msgstr "Sesijas pārvaldnieks neatgrieza derīgu clienta id"
+msgstr "Sesiju pārvaldnieks neatgrieza derīgu klienta ID"
 
 #. print warning for user
-#: libxfce4ui/xfce-spawn.c:383
+#: libxfce4ui/xfce-spawn.c:350
 #, c-format
 msgid ""
 "Working directory \"%s\" does not exist. It won't be used when spawning "
 "\"%s\"."
-msgstr ""
+msgstr "Darba direktorija „%s” neeksistē. Palaižot „%s”, tā netiks izmantota."
 
 #. retrieve the error and warning messages
-#: libxfce4ui/xfce-filename-input.c:230
+#: libxfce4ui/xfce-filename-input.c:228
 msgid "Filename is too long"
-msgstr ""
+msgstr "Faila nosaukums ir pārāk garš"
 
-#: libxfce4ui/xfce-filename-input.c:231
-msgid "Directory separator illegal in file name"
-msgstr ""
+#: libxfce4ui/xfce-filename-input.c:229
+msgid "Directory separator illegal in filename"
+msgstr "Direktoriju atdalītājs faila nosaukumā nav atļauts"
 
-#: libxfce4ui/xfce-filename-input.c:232
+#: libxfce4ui/xfce-filename-input.c:230
 msgid "Filenames should not start or end with a space"
-msgstr ""
+msgstr "Faila nosaukums nedrīkst sākties vai beigties ar atstarpi"
 
-#: libxfce4ui/xfce-item-list-view.c:331
+#: libxfce4ui/xfce-item-list-view.c:337
 msgid "Active"
 msgstr "Aktīvs"
 
-#: libxfce4ui/xfce-item-list-view.c:348
+#: libxfce4ui/xfce-item-list-view.c:354
 msgid "Name"
 msgstr "Nosaukums"
 
-#: libxfce4ui/xfce-item-list-view.c:653
+#: libxfce4ui/xfce-item-list-view.c:669
 msgid "Move _up"
-msgstr ""
+msgstr "Pārvietot _augšup"
 
-#: libxfce4ui/xfce-item-list-view.c:653
+#: libxfce4ui/xfce-item-list-view.c:669
 msgid "Move currently selected item up by one row"
-msgstr ""
+msgstr "Pārvietot pašlaik atlasīto vienumu par vienu rindu augšup"
 
-#: libxfce4ui/xfce-item-list-view.c:657
+#: libxfce4ui/xfce-item-list-view.c:673
 msgid "Move _down"
-msgstr ""
+msgstr "Pārvietot _lejup"
 
-#: libxfce4ui/xfce-item-list-view.c:657
+#: libxfce4ui/xfce-item-list-view.c:673
 msgid "Move currently selected item down by one row"
-msgstr ""
+msgstr "Pārvietot pašlaik atlasīto vienumu par vienu rindu lejup"
 
-#: libxfce4ui/xfce-item-list-view.c:668
-msgid "_Add new item"
-msgstr ""
+#: libxfce4ui/xfce-item-list-view.c:684
+msgid "_Add"
+msgstr "_Pievienot"
 
-#: libxfce4ui/xfce-item-list-view.c:668
+#: libxfce4ui/xfce-item-list-view.c:684
 msgid "Add new item"
-msgstr ""
+msgstr "Pievienot jaunu vienumu"
 
-#: libxfce4ui/xfce-item-list-view.c:674
+#: libxfce4ui/xfce-item-list-view.c:690
 msgid "_Remove"
 msgstr "_Noņemt"
 
-#: libxfce4ui/xfce-item-list-view.c:674
+#: libxfce4ui/xfce-item-list-view.c:690
 msgid "Remove currently selected items"
-msgstr ""
+msgstr "Noņemt pašlaik atlasītos vienumus"
 
-#: libxfce4ui/xfce-item-list-view.c:680
+#: libxfce4ui/xfce-item-list-view.c:696
 msgid "_Edit"
 msgstr "_Rediģēt"
 
-#: libxfce4ui/xfce-item-list-view.c:680
+#: libxfce4ui/xfce-item-list-view.c:696
 msgid "Edit the currently selected item"
-msgstr ""
+msgstr "Rediģēt pašlaik atlasīto vienumu"
 
-#: libxfce4ui/xfce-item-list-view.c:686
+#: libxfce4ui/xfce-item-list-view.c:702
 msgid "Reset to de_faults"
-msgstr ""
+msgstr "Atiestatīt uz _noklusējumu"
 
-#: libxfce4ui/xfce-item-list-view.c:686
+#: libxfce4ui/xfce-item-list-view.c:702
 msgid "Reset all items to default settings"
-msgstr ""
+msgstr "Atiestatīt visus vienumus uz noklusējuma iestatījumiem"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:44
 #, c-format
 msgid ""
 "This shortcut is already being used for the action '%s'. Which action do you"
 " want to use?"
-msgstr ""
+msgstr "Šis īsinājumtaustiņš jau tiek izmantots darbībai „%s”. Kuru darbību vēlaties izmantot?"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:45
 #: libxfce4kbd-private/xfce-shortcuts.c:48
@@ -460,7 +461,7 @@ msgstr ""
 #: libxfce4kbd-private/xfce-shortcuts.c:54
 #, c-format
 msgid "Use '%s'"
-msgstr "Izmantot \"%s\""
+msgstr "Izmantot „%s”"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:45
 #: libxfce4kbd-private/xfce-shortcuts.c:48
@@ -468,7 +469,7 @@ msgstr "Izmantot \"%s\""
 #: libxfce4kbd-private/xfce-shortcuts.c:54
 #, c-format
 msgid "Keep '%s'"
-msgstr "Paturēt \"%s\""
+msgstr "Paturēt „%s”"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:47
 #: libxfce4kbd-private/xfce-shortcuts.c:50
@@ -476,115 +477,115 @@ msgstr "Paturēt \"%s\""
 msgid ""
 "This shortcut is already being used for the command '%s'. Which action do "
 "you want to use?"
-msgstr "Šo īsceļu jau izmanto komandai \"%s\". Kuru darbību vēlaties izmantot?"
+msgstr "Šis īsinājumtaustiņš jau tiek izmantots komandai „%s”. Kuru darbību vēlaties izmantot?"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:53
 #, c-format
 msgid ""
 "This shortcut is already being used by the action '%s'. Which action do you "
 "want to use?"
-msgstr ""
+msgstr "Šo īsinājumtaustiņu jau izmanto darbība „%s”. Kuru darbību vēlaties izmantot?"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:105
 msgid "Please use another key combination."
-msgstr ""
+msgstr "Lūdzu, izmantojiet citu taustiņu kombināciju."
 
 #: libxfce4kbd-private/xfce-shortcuts.c:105
 #, c-format
 msgid "%s already triggers this action."
-msgstr ""
+msgstr "%s jau izraisa šo darbību."
 
 #: libxfce4kbd-private/xfce-shortcuts.c:110
 #, c-format
 msgid "Conflicting actions for %s"
-msgstr "Konfliktējošas darbības priekš %s"
+msgstr "Konfliktējošas darbības taustiņiem %s"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:170
 msgid "This shortcut is already being used for something else."
-msgstr "Šo īsceļu jau izmanto kaut kam citam."
+msgstr "Šis īsinājumtaustiņš jau tiek izmantots kaut kam citam."
 
-#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:88
-#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:125
+#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:81
+#: libxfce4kbd-private/xfce-shortcuts-editor-dialog.c:118
 msgid "Shortcuts Editor"
-msgstr ""
+msgstr "Īsinājumtaustiņu redaktors"
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:490
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:485
 msgid "The current shortcut. Click to edit..."
-msgstr ""
+msgstr "Pašreizējais īsinājumtaustiņš. Noklikšķiniet, lai rediģētu…"
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:502
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:497
 msgid "Clear the shortcut"
-msgstr ""
+msgstr "Notīrīt īsinājumtaustiņu"
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:514
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:509
 msgid "Restore the default shortcut"
-msgstr ""
+msgstr "Atjaunot noklusējuma īsinājumtaustiņu"
 
 #. skip leading slash
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:668
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:758
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:663
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:753
 #, c-format
 msgid "This keyboard shortcut is currently used by: '%s'"
-msgstr ""
+msgstr "Šo īsinājumtaustiņu pašlaik izmanto: „%s”"
 
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:671
-#: libxfce4kbd-private/xfce-shortcuts-editor.c:761
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:666
+#: libxfce4kbd-private/xfce-shortcuts-editor.c:756
 msgid "Keyboard shortcut already in use"
-msgstr ""
+msgstr "Īsinājumtaustiņš jau tiek izmantots"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:215
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:225
 msgid "Window Manager Action Shortcut"
-msgstr "Logu pārvaldnieku darbību īsceļi"
+msgstr "Logu pārvaldnieka darbības īsinājumtaustiņš"
 
 #. TRANSLATORS: this string will be used to create an explanation for
 #. * the user in a following string
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:218
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:234
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:228
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:244
 msgid "action"
-msgstr ""
+msgstr "darbība"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:223
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:233
 msgid "Command Shortcut"
-msgstr "Komandas īsceļs"
+msgstr "Komandas īsinājumtaustiņš"
 
 #. TRANSLATORS: this string will be used to create an explanation for
 #. * the user in a following string
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:226
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:236
 msgid "command"
-msgstr ""
+msgstr "komanda"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:231
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:241
 msgid "Shortcut"
-msgstr "Īsceļš"
+msgstr "Īsinājumtaustiņš"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:246
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:256
 msgid "Clear"
 msgstr "Notīrīt"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:269
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:279
 #, c-format
 msgid "Press keyboard keys to trigger the %s '%s'."
-msgstr ""
+msgstr "Nospiediet tastatūras taustiņus, ar kuriem izsaukt: %s „%s”."
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:291
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:301
 msgid "Please press a key"
-msgstr ""
+msgstr "Lūdzu, nospiediet taustiņu"
 
-#: libxfce4kbd-private/xfce-shortcut-dialog.c:347
+#: libxfce4kbd-private/xfce-shortcut-dialog.c:379
 msgid "Could not grab the keyboard."
-msgstr "Nevarēja notvert klaviatūru."
+msgstr "Neizdevās pārtvert tastatūru."
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:34
 msgid "Window operations menu"
-msgstr "Loga operāciju izvēlne"
+msgstr "Loga darbību izvēlne"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:35
 msgid "Up"
-msgstr "Uz augšu"
+msgstr "Augšup"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:36
 msgid "Down"
-msgstr "Uz leju"
+msgstr "Lejup"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:37
 msgid "Left"
@@ -596,15 +597,15 @@ msgstr "Pa labi"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:40
 msgid "Cycle windows"
-msgstr "Ciklot starp logiem"
+msgstr "Pārslēgt logus pēc kārtas"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:41
 msgid "Cycle windows (Reverse)"
-msgstr "Ciklot starp logiem (pretējā virzienā)"
+msgstr "Pārslēgt logus pēc kārtas (pretējā virzienā)"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:42
 msgid "Switch window for same application"
-msgstr "Pārslēgt logu, tai pašai lietotnei"
+msgstr "Pārslēgt tās pašas lietotnes logus"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:43
 msgid "Switch application"
@@ -636,15 +637,15 @@ msgstr "Pārvietot logu"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:50
 msgid "Resize window"
-msgstr "Mainīt izmēru"
+msgstr "Mainīt loga izmēru"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:51
 msgid "Shade window"
-msgstr "Ēnot logu"
+msgstr "Uzrullēt logu"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:52
 msgid "Stick window"
-msgstr "Pielipināt logu"
+msgstr "Piespraust logu"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:53
 msgid "Raise window"
@@ -652,11 +653,11 @@ msgstr "Pacelt logu"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:54
 msgid "Lower window"
-msgstr "Nocelt logu"
+msgstr "Nolaist logu"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:55
 msgid "Raise or lower window"
-msgstr ""
+msgstr "Pacelt vai nolaist logu"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:56
 msgid "Fill window"
@@ -672,131 +673,131 @@ msgstr "Aizpildīt logu vertikāli"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:59
 msgid "Toggle above"
-msgstr "Pārslēgt uz augšu"
+msgstr "Pārslēgt „vienmēr virspusē”"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:60
 msgid "Toggle fullscreen"
-msgstr "Pārslēgt uz pilnekrānu režīmu"
+msgstr "Pārslēgt pilnekrāna režīmu"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:61
 msgid "Move window to lower monitor"
-msgstr ""
+msgstr "Pārvietot logu uz apakšējo monitoru"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:62
 msgid "Move window to left monitor"
-msgstr ""
+msgstr "Pārvietot logu uz kreiso monitoru"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:63
 msgid "Move window to right monitor"
-msgstr ""
+msgstr "Pārvietot logu uz labo monitoru"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:64
 msgid "Move window to upper monitor"
-msgstr ""
+msgstr "Pārvietot logu uz augšējo monitoru"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:65
 msgid "Move window to upper workspace"
-msgstr "Pārvietot logu uz augšējo darbavietu"
+msgstr "Pārvietot logu uz augšējo darba vietu"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:66
 msgid "Move window to bottom workspace"
-msgstr "Pārvietot logu uz apakšējo darbavietu"
+msgstr "Pārvietot logu uz apakšējo darba vietu"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:67
 msgid "Move window to left workspace"
-msgstr "Pārvietot logu uz kreiso darbavietu"
+msgstr "Pārvietot logu uz kreiso darba vietu"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:68
 msgid "Move window to right workspace"
-msgstr "Pārvietot logu uz labo darbavietu"
+msgstr "Pārvietot logu uz labo darba vietu"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:69
 msgid "Move window to previous workspace"
-msgstr "Pārvietot logu uz iepriekšējo darbavietu"
+msgstr "Pārvietot logu uz iepriekšējo darba vietu"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:70
 msgid "Move window to next workspace"
-msgstr "Pārvietot logu uz nākamo darbavietu"
+msgstr "Pārvietot logu uz nākamo darba vietu"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:71
 msgid "Move window to workspace 1"
-msgstr "Pārvietot logu uz darbavietu 1"
+msgstr "Pārvietot logu uz darba vietu 1"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:72
 msgid "Move window to workspace 2"
-msgstr "Pārvietot logu uz darbavietu 2"
+msgstr "Pārvietot logu uz darba vietu 2"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:73
 msgid "Move window to workspace 3"
-msgstr "Pārvietot logu uz darbavietu 3"
+msgstr "Pārvietot logu uz darba vietu 3"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:74
 msgid "Move window to workspace 4"
-msgstr "Pārvietot logu uz darbavietu 4"
+msgstr "Pārvietot logu uz darba vietu 4"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:75
 msgid "Move window to workspace 5"
-msgstr "Pārvietot logu uz darbavietu 5"
+msgstr "Pārvietot logu uz darba vietu 5"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:76
 msgid "Move window to workspace 6"
-msgstr "Pārvietot logu uz darbavietu 6"
+msgstr "Pārvietot logu uz darba vietu 6"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:77
 msgid "Move window to workspace 7"
-msgstr "Pārvietot logu uz darbavietu 7"
+msgstr "Pārvietot logu uz darba vietu 7"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:78
 msgid "Move window to workspace 8"
-msgstr "Pārvietot logu uz darbavietu 8"
+msgstr "Pārvietot logu uz darba vietu 8"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:79
 msgid "Move window to workspace 9"
-msgstr "Pārvietot logu uz darbavietu 9"
+msgstr "Pārvietot logu uz darba vietu 9"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:80
 msgid "Move window to workspace 10"
-msgstr "Pārvietot logu uz darbavietu 10"
+msgstr "Pārvietot logu uz darba vietu 10"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:81
 msgid "Move window to workspace 11"
-msgstr "Pārvietot logu uz darbavietu 11"
+msgstr "Pārvietot logu uz darba vietu 11"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:82
 msgid "Move window to workspace 12"
-msgstr "Pārvietot logu uz darbavietu 12"
+msgstr "Pārvietot logu uz darba vietu 12"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:83
 msgid "Tile window to the top"
-msgstr ""
+msgstr "Izklāt logu ekrāna augšdaļā"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:84
 msgid "Tile window to the bottom"
-msgstr ""
+msgstr "Izklāt logu ekrāna apakšdaļā"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:85
 msgid "Tile window to the left"
-msgstr ""
+msgstr "Izklāt logu ekrāna kreisajā pusē"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:86
 msgid "Tile window to the right"
-msgstr ""
+msgstr "Izklāt logu ekrāna labajā pusē"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:87
 msgid "Tile window to the top-left"
-msgstr ""
+msgstr "Izklāt logu augšējā kreisajā stūrī"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:88
 msgid "Tile window to the top-right"
-msgstr ""
+msgstr "Izklāt logu augšējā labajā stūrī"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:89
 msgid "Tile window to the bottom-left"
-msgstr ""
+msgstr "Izklāt logu apakšējā kreisajā stūrī"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:90
 msgid "Tile window to the bottom-right"
-msgstr ""
+msgstr "Izklāt logu apakšējā labajā stūrī"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:91
 msgid "Show desktop"
@@ -804,91 +805,91 @@ msgstr "Rādīt darbvirsmu"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:92
 msgid "Upper workspace"
-msgstr "Augšējā darbavieta"
+msgstr "Augšējā darba vieta"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:93
 msgid "Bottom workspace"
-msgstr "Apakšējā darbavieta"
+msgstr "Apakšējā darba vieta"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:94
 msgid "Left workspace"
-msgstr "Kreisā darbavieta"
+msgstr "Kreisā darba vieta"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:95
 msgid "Right workspace"
-msgstr "Labā darbavieta"
+msgstr "Labā darba vieta"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:96
 msgid "Previous workspace"
-msgstr "Iepriekšējā darbavieta"
+msgstr "Iepriekšējā darba vieta"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:97
 msgid "Next workspace"
-msgstr "Nākamā darbavieta"
+msgstr "Nākamā darba vieta"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:98
 msgid "Workspace 1"
-msgstr "Darbavieta 1"
+msgstr "Darba vieta 1"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:99
 msgid "Workspace 2"
-msgstr "Darbavieta 2"
+msgstr "Darba vieta 2"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:100
 msgid "Workspace 3"
-msgstr "Darbavieta 3"
+msgstr "Darba vieta 3"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:101
 msgid "Workspace 4"
-msgstr "Darbavieta 4"
+msgstr "Darba vieta 4"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:102
 msgid "Workspace 5"
-msgstr "Darbavieta 5"
+msgstr "Darba vieta 5"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:103
 msgid "Workspace 6"
-msgstr "Darbavieta 6"
+msgstr "Darba vieta 6"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:104
 msgid "Workspace 7"
-msgstr "Darbavieta 7"
+msgstr "Darba vieta 7"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:105
 msgid "Workspace 8"
-msgstr "Darbavieta 8"
+msgstr "Darba vieta 8"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:106
 msgid "Workspace 9"
-msgstr "Darbavieta 9"
+msgstr "Darba vieta 9"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:107
 msgid "Workspace 10"
-msgstr "Darbavieta 10"
+msgstr "Darba vieta 10"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:108
 msgid "Workspace 11"
-msgstr "Darbavieta 11"
+msgstr "Darba vieta 11"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:109
 msgid "Workspace 12"
-msgstr "Darbavieta 12"
+msgstr "Darba vieta 12"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:110
 msgid "Add workspace"
-msgstr "Pievienot darbavietu"
+msgstr "Pievienot darba vietu"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:111
 msgid "Add adjacent workspace"
-msgstr "Pievienot blakus darbavietu"
+msgstr "Pievienot blakus darba vietu"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:112
 msgid "Delete last workspace"
-msgstr "Dzēst pēdējo darbavietu"
+msgstr "Dzēst pēdējo darba vietu"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:113
 msgid "Delete active workspace"
-msgstr "Dzēst aktīvo darbavietu"
+msgstr "Dzēst aktīvo darba vietu"
 
 #: xfce4-about/main.c:63
 msgid "Version information"
@@ -896,7 +897,7 @@ msgstr "Versijas informācija"
 
 #: xfce4-about/main.c:173
 msgid "GPUs"
-msgstr ""
+msgstr "GPU"
 
 #: xfce4-about/main.c:190
 msgid "Window Manager"
@@ -904,7 +905,7 @@ msgstr "Logu pārvaldnieks"
 
 #: xfce4-about/main.c:191
 msgid "Handles the placement of windows on the screen."
-msgstr ""
+msgstr "Pārvalda logu izvietojumu ekrānā."
 
 #: xfce4-about/main.c:194
 msgid "Panel"
@@ -912,15 +913,15 @@ msgstr "Panelis"
 
 #: xfce4-about/main.c:195
 msgid "Provides a home for window buttons, launchers, app menu and more."
-msgstr ""
+msgstr "Vieta logu pogām, palaidējiem, lietotņu izvēlnei un citam."
 
 #: xfce4-about/main.c:198
 msgid "Desktop Manager"
-msgstr ""
+msgstr "Darbvirsmas pārvaldnieks"
 
 #: xfce4-about/main.c:199
 msgid "Sets desktop backgrounds, handles icons and more."
-msgstr ""
+msgstr "Iestata darbvirsmas fonus, pārvalda ikonas u. c."
 
 #: xfce4-about/main.c:202
 msgid "File Manager"
@@ -928,24 +929,24 @@ msgstr "Failu pārvaldnieks"
 
 #: xfce4-about/main.c:203
 msgid "Manages your files in a modern, easy-to-use and fast way."
-msgstr ""
+msgstr "Pārvalda jūsu failus moderni, ērti un ātri."
 
 #: xfce4-about/main.c:206
 msgid "Volume Manager"
-msgstr ""
+msgstr "Sējumu pārvaldnieks"
 
 #: xfce4-about/main.c:207
 msgid "Manages removable drives and media for Thunar."
-msgstr ""
+msgstr "Pārvalda Thunar noņemamos diskus un datu nesējus."
 
 #: xfce4-about/main.c:210
 msgid "Session Manager"
-msgstr ""
+msgstr "Sesiju pārvaldnieks"
 
 #: xfce4-about/main.c:211
 msgid ""
 "Saves and restores your session, handles startup, autostart and shutdown."
-msgstr ""
+msgstr "Saglabā un atjauno sesiju, pārvalda startēšanu, automātisko palaišanu un izslēgšanu."
 
 #: xfce4-about/main.c:214
 msgid "Settings Manager"
@@ -953,7 +954,7 @@ msgstr "Iestatījumu pārvaldnieks"
 
 #: xfce4-about/main.c:215
 msgid "Configures appearance, display, keyboard and mouse settings."
-msgstr ""
+msgstr "Iestata izskatu, displeju, tastatūru un peli."
 
 #: xfce4-about/main.c:218
 msgid "Application Finder"
@@ -961,51 +962,51 @@ msgstr "Lietotņu meklētājs"
 
 #: xfce4-about/main.c:219
 msgid "Quickly finds and launches applications installed on your system."
-msgstr ""
+msgstr "Ātri atrod un palaiž sistēmā instalētās lietotnes."
 
 #: xfce4-about/main.c:222
 msgid "Settings Daemon"
-msgstr ""
+msgstr "Iestatījumu dēmons"
 
 #: xfce4-about/main.c:223
 msgid "Stores your settings in a D-Bus-based configuration system."
-msgstr ""
+msgstr "Glabā iestatījumus uz D-Bus balstītā konfigurācijas sistēmā."
 
 #: xfce4-about/main.c:226
 msgid "A Menu Library"
-msgstr ""
+msgstr "Izvēlņu bibliotēka"
 
 #: xfce4-about/main.c:227
 msgid "Implements a freedesktop.org compliant menu based on GLib and GIO."
-msgstr ""
+msgstr "Īsteno uz GLib un GIO balstītu freedesktop.org prasībām atbilstošu izvēlni."
 
 #: xfce4-about/main.c:230
 msgid "Thumbnails Service"
-msgstr ""
+msgstr "Sīktēlu pakalpojums"
 
 #: xfce4-about/main.c:231
 msgid "Implements the thumbnail management D-Bus specification."
-msgstr ""
+msgstr "Īsteno sīktēlu pārvaldības D-Bus specifikāciju."
 
 #: xfce4-about/main.c:284
 msgid "Please see <https://www.xfce.org/about/credits>"
-msgstr ""
+msgstr "Skatiet <https://www.xfce.org/about/credits>"
 
 #: xfce4-about/main.c:338
 msgid ""
 "If you know of anyone missing from this list; don't hesitate and file a bug "
 "on <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
-msgstr ""
+msgstr "Ja zināt kādu, kura šajā sarakstā trūkst, nevilcinieties un iesniedziet kļūdas ziņojumu <https://gitlab.xfce.org/xfce/libxfce4ui/-/issues> ."
 
 #: xfce4-about/main.c:343
 msgid "Thanks to all who helped making this software available!"
-msgstr ""
+msgstr "Paldies visiem, kas palīdzēja padarīt šo programmatūru pieejamu!"
 
 #: xfce4-about/main.c:360
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
-msgstr ""
+msgstr "Xfce 4 autortiesības pieder Olivier Fourdan (fourdan@xfce.org). Atsevišķo komponentu autortiesības pieder to attiecīgajiem autoriem."
 
 #: xfce4-about/main.c:366
 msgid ""
@@ -1013,7 +1014,7 @@ msgid ""
 "the GNU Library General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
+msgstr "Pakotnes libxfce4ui un libxfce4util tiek izplatītas saskaņā ar GNU Bibliotēku vispārējās publiskās licences noteikumiem, kā tos publicējis Brīvās programmatūras fonds (Free Software Foundation), — licences 2. versiju vai (pēc jūsu izvēles) jebkuru vēlāku versiju."
 
 #: xfce4-about/main.c:374
 msgid ""
@@ -1022,113 +1023,113 @@ msgid ""
 "of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
+msgstr "Pakotnes thunar, xfce4-appfinder, xfce4-panel, xfce4-session, xfce4-settings, xfconf, xfdesktop un xfwm4 tiek izplatītas saskaņā ar GNU Vispārējās publiskās licences noteikumiem, kā tos publicējis Brīvās programmatūras fonds (Free Software Foundation), — licences 2. versiju vai (pēc jūsu izvēles) jebkuru vēlāku versiju."
 
 #: xfce4-about/main.c:521
 #, c-format
 msgid "Type '%s --help' for usage information."
-msgstr ""
+msgstr "Lai uzzinātu, kā lietot, ievadiet „%s --help”."
 
 #: xfce4-about/main.c:527
 msgid "Unable to initialize GTK+."
-msgstr "Nevarēja inicializēt GTK+."
+msgstr "Neizdevās inicializēt GTK+."
 
 #: xfce4-about/main.c:536 xfce-desktop-item-edit/main.c:202
-#: xfce-open/main.c:762
+#: xfce-open/main.c:753
 msgid "The Xfce development team. All rights reserved."
-msgstr "Xfce izstrādes komanda. Visas tiesības paturētas."
+msgstr "Xfce izstrādātāju komanda. Visas tiesības paturētas."
 
 #: xfce4-about/main.c:537 xfce-desktop-item-edit/main.c:210
-#: xfce-open/main.c:771
+#: xfce-open/main.c:762
 #, c-format
 msgid "Please report bugs to <%s>."
-msgstr "Lūdzu, ziņot par kļūdām uz <%s>"
+msgstr "Lūdzu, ziņojiet par kļūdām <%s>."
 
 #: xfce4-about/main.c:546
 msgid "Failed to load interface"
-msgstr ""
+msgstr "Neizdevās ielādēt saskarni"
 
 #. { N_("Project Lead"),
 #. xfce_contributors_lead
 #. },
 #: xfce4-about/contributors.h:142
 msgid "Core developers"
-msgstr ""
+msgstr "Galvenie izstrādātāji"
 
 #: xfce4-about/contributors.h:144
 msgid "Active contributors"
-msgstr ""
+msgstr "Aktīvie līdzstrādnieki"
 
 #: xfce4-about/contributors.h:146
 msgid "Servers maintained by"
-msgstr ""
+msgstr "Serverus uztur"
 
 #: xfce4-about/contributors.h:148
 msgid "Translations supervision"
-msgstr ""
+msgstr "Tulkošanas pārraudzība"
 
 #: xfce4-about/contributors.h:150
 msgid "Documentation supervision"
-msgstr ""
+msgstr "Dokumentācijas pārraudzība"
 
 #: xfce4-about/contributors.h:152
 msgid "Translators"
-msgstr ""
+msgstr "Tulkotāji"
 
 #: xfce4-about/contributors.h:154
 msgid "Previous contributors"
-msgstr ""
+msgstr "Iepriekšējie līdzstrādnieki"
 
 #: xfce4-about/xfce4-about.desktop.in:11
 msgid "About Xfce"
-msgstr ""
+msgstr "Par Xfce"
 
 #: xfce4-about/xfce4-about.desktop.in:12
 msgid "Information about the Xfce Desktop Environment"
-msgstr ""
+msgstr "Informācija par Xfce darbvirsmas vidi"
 
-#: xfce4-about/system-info.c:495 xfce4-about/system-info.c:517
-#: xfce4-about/system-info.c:636 xfce4-about/system-info.c:685
+#: xfce4-about/system-info.c:494 xfce4-about/system-info.c:515
+#: xfce4-about/system-info.c:634 xfce4-about/system-info.c:683
 msgid "Unknown"
 msgstr "Nezināms"
 
 #. translators: This is the type of architecture for the OS
-#: xfce4-about/system-info.c:620
+#: xfce4-about/system-info.c:618
 msgid "64-bit (32-bit userspace)"
-msgstr ""
+msgstr "64 bitu (32 bitu lietotāja telpa)"
 
 #. translators: This is the type of architecture for the OS
-#: xfce4-about/system-info.c:623
+#: xfce4-about/system-info.c:621
 msgid "64-bit"
-msgstr ""
+msgstr "64 bitu"
 
-#: xfce4-about/system-info.c:623
+#: xfce4-about/system-info.c:621
 msgid "32-bit"
-msgstr ""
+msgstr "32 bitu"
 
 #. translators: This is the name of the OS, followed by the build ID, for
 #. * example:
 #. * "Fedora 25 (Workstation Edition); Build ID: xyz" or
 #. * "Ubuntu 16.04 LTS; Build ID: jki"
-#: xfce4-about/system-info.c:693
+#: xfce4-about/system-info.c:691
 #, c-format
 msgid "%s; Build ID: %s"
-msgstr ""
+msgstr "%s; būvējuma ID: %s"
 
 #: tests/test-ui.c:106
 #, c-format
 msgid ""
 "A file named \"%s\" already exists in this directory, the file hasn't been "
 "added."
-msgstr ""
+msgstr "Šajā direktorijā jau ir fails ar nosaukumu „%s”, fails netika pievienots."
 
 #: tests/test-ui.c:117
 msgid "Failed to migrate the old panel configuration"
-msgstr ""
+msgstr "Neizdevās migrēt veco paneļa konfigurāciju"
 
 #: tests/test-ui.c:167 tests/test-ui.c:192
 msgid "Customize settings stored by Xfconf"
-msgstr "Pielāgot uzstādījumus, kurus glabā Xfconf"
+msgstr "Pielāgot Xfconf glabātos iestatījumus"
 
 #. --- constants ---
 #: xfce-desktop-item-edit/main.c:57
@@ -1141,7 +1142,7 @@ msgstr "Izveidot saiti"
 
 #: xfce-desktop-item-edit/main.c:57
 msgid "Create Directory"
-msgstr "Izveidot direktoriju"
+msgstr "Izveidot mapi"
 
 #: xfce-desktop-item-edit/main.c:58
 msgid "Edit Launcher"
@@ -1153,39 +1154,39 @@ msgstr "Rediģēt saiti"
 
 #: xfce-desktop-item-edit/main.c:58
 msgid "Edit Directory"
-msgstr "Labot direktoriju"
+msgstr "Rediģēt mapi"
 
 #: xfce-desktop-item-edit/main.c:84
 msgid "Create a new desktop file in the given directory"
-msgstr "Izveidot jaunu darbvirsmas failu, dotajā direktorijā"
+msgstr "Izveidot jaunu .desktop failu norādītajā direktorijā"
 
 #: xfce-desktop-item-edit/main.c:85
 msgid "Type of desktop file to create (Application or Link)"
-msgstr "Veidojamā darbvirsmas faila tips (lietotne vai saite)"
+msgstr "Veidojamā .desktop faila tips (Application vai Link)"
 
 #: xfce-desktop-item-edit/main.c:86
 msgid "Preset name when creating a desktop file"
-msgstr "Noklusētais nosaukums, kad veido darbvirsmas failu"
+msgstr "Sākotnējais nosaukums, veidojot .desktop failu"
 
 #: xfce-desktop-item-edit/main.c:87
 msgid "Preset comment when creating a desktop file"
-msgstr "Noklusētais komentārs, kad veido darbvirsmas failu"
+msgstr "Sākotnējais komentārs, veidojot .desktop failu"
 
 #: xfce-desktop-item-edit/main.c:88
 msgid "Preset command when creating a launcher"
-msgstr "Noklusētā komanda, kad veido palaidēju"
+msgstr "Sākotnējā komanda, veidojot palaidēju"
 
 #: xfce-desktop-item-edit/main.c:89
 msgid "Preset URL when creating a link"
-msgstr "Noklusētais URL, kad veido saiti"
+msgstr "Sākotnējais URL, veidojot saiti"
 
 #: xfce-desktop-item-edit/main.c:90
 msgid "Preset icon when creating a desktop file"
-msgstr "Noklusētā ikona, kad veido darbvirsmas failu"
+msgstr "Sākotnējā ikona, veidojot .desktop failu"
 
 #: xfce-desktop-item-edit/main.c:91
 msgid "Print the final saved URI after creating or editing the file"
-msgstr ""
+msgstr "Pēc faila izveides vai rediģēšanas izdrukāt galīgo saglabāto URI"
 
 #: xfce-desktop-item-edit/main.c:92
 msgid "Print version information and exit"
@@ -1196,15 +1197,15 @@ msgstr "Izdrukāt versijas informāciju un iziet"
 msgid "[FILE|FOLDER]"
 msgstr "[FAILS|MAPE]"
 
-#: xfce-desktop-item-edit/main.c:200 xfce-open/main.c:760
+#: xfce-desktop-item-edit/main.c:200 xfce-open/main.c:751
 msgid "os-cillation e.K. All rights reserved."
-msgstr ""
+msgstr "os-cillation e.K. Visas tiesības paturētas."
 
-#: xfce-desktop-item-edit/main.c:204 xfce-open/main.c:764
+#: xfce-desktop-item-edit/main.c:204 xfce-open/main.c:755
 msgid "Written by Benedikt Meurer <benny@xfce.org>."
-msgstr "Autors Benedikt Meurer <benny@xfce.org>."
+msgstr "Autors: Benedikt Meurer <benny@xfce.org>."
 
-#: xfce-desktop-item-edit/main.c:205 xfce-open/main.c:766
+#: xfce-desktop-item-edit/main.c:205 xfce-open/main.c:757
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -1212,7 +1213,7 @@ msgid ""
 "the GNU Lesser General Public License which can be found in the\n"
 "%s source package.\n"
 "\n"
-msgstr "%s ir BEZ JEBKĀDĀM GARANTIJĀM,\nJūs varat izplatīt %s zem GNU Lesser General Public License\nnosacījumiem, kuri ir atrodami pirmavota pakotnē %s \n\n\n"
+msgstr "%s tiek piedāvāta BEZ JEBKĀDĀM GARANTIJĀM.\n%s kopijas drīkst tālāk izplatīt saskaņā ar\nGNU Mazākās vispārējās publiskās licences noteikumiem, kas atrodami\n%s pirmkoda pakotnē.\n\n"
 
 #. add the "Create"/"Save" button (as default)
 #: xfce-desktop-item-edit/main.c:355
@@ -1221,27 +1222,27 @@ msgstr "Iz_veidot"
 
 #: xfce-desktop-item-edit/main.c:355 xfce-desktop-item-edit/main.c:546
 msgid "_Save"
-msgstr ""
+msgstr "_Saglabāt"
 
 #. create failed, ask the user to specify a file name
 #: xfce-desktop-item-edit/main.c:543
 msgid "Choose filename"
-msgstr "Norādiet faila nosaukumu"
+msgstr "Izvēlieties faila nosaukumu"
 
 #: xfce-desktop-item-edit/main.c:669
 #, c-format
 msgid "Failed to create \"%s\"."
-msgstr "Neizdevās izveidot \"%s\"."
+msgstr "Neizdevās izveidot „%s”."
 
 #: xfce-desktop-item-edit/main.c:669
 #, c-format
 msgid "Failed to save \"%s\"."
-msgstr "Neizdevās saglabāt \"%s\""
+msgstr "Neizdevās saglabāt „%s”."
 
 #. allocate the file chooser
 #: xfce-desktop-item-edit/xfce-die-command-entry.c:260
 msgid "Select an Application"
-msgstr "Norādiet lietotni"
+msgstr "Izvēlieties lietotni"
 
 #: xfce-desktop-item-edit/xfce-die-command-entry.c:263
 msgid "_Open"
@@ -1269,7 +1270,7 @@ msgstr "Ruby skripti"
 
 #: xfce-desktop-item-edit/xfce-die-command-entry.c:307
 msgid "Shell Scripts"
-msgstr "Čaukas skripti"
+msgstr "Čaulas skripti"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
@@ -1299,7 +1300,7 @@ msgstr "_URL:"
 #. conflicts
 #: xfce-desktop-item-edit/xfce-die-editor.c:394
 msgid "Working _Directory:"
-msgstr "Darba direktorija:"
+msgstr "_Darba mape:"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
@@ -1309,11 +1310,10 @@ msgstr "_Ikona:"
 
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
 #. dialog if no icon selected
-#. setup a label to tell that no icon was selected
 #: xfce-desktop-item-edit/xfce-die-editor.c:447
-#: xfce-desktop-item-edit/xfce-die-editor.c:1302
+#: xfce-desktop-item-edit/xfce-die-editor.c:1300
 msgid "No icon"
-msgstr "Nav ikonas"
+msgstr "Bez ikonas"
 
 #: xfce-desktop-item-edit/xfce-die-editor.c:453
 msgid "Options:"
@@ -1325,14 +1325,14 @@ msgstr "Opcijas:"
 #. and xfce4-panel.
 #: xfce-desktop-item-edit/xfce-die-editor.c:465
 msgid "Use _startup notification"
-msgstr "Izmantot _sāknēšanas paziņošanu"
+msgstr "Izmantot _startēšanas paziņojumu"
 
 #: xfce-desktop-item-edit/xfce-die-editor.c:466
 msgid ""
 "Select this option to enable startup notification when the command is run "
 "from the file manager or the menu. Not every application supports startup "
 "notification."
-msgstr "Izvēlaties šo opciju, lai ieslēgtu sāknēšanas paziņošanu, kad komanda tiek palaista no failu pārvaldnieka, vai izvēlnes. Ne visas lietotnes atbalsta sāknēšanas paziņošanu."
+msgstr "Atzīmējiet šo opciju, lai iespējotu startēšanas paziņojumu, kad komanda tiek palaista no failu pārvaldnieka vai izvēlnes. Ne visas lietotnes atbalsta startēšanas paziņojumu."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
 #. avoid mnemonic conflicts
@@ -1344,12 +1344,12 @@ msgstr "Palaist _terminālī"
 
 #: xfce-desktop-item-edit/xfce-die-editor.c:485
 msgid "Select this option to run the command in a terminal window."
-msgstr "Izvēlaties, šo opciju, ja vēlaties, lai komanda tiek izpildīta termināla logā"
+msgstr "Atzīmējiet šo opciju, lai komandu palaistu termināļa logā."
 
 #. allocate the icon chooser dialog
 #: xfce-desktop-item-edit/xfce-die-editor.c:647
 msgid "Select an icon"
-msgstr "Norādiet ikonu"
+msgstr "Izvēlieties ikonu"
 
 #: xfce-desktop-item-edit/xfce-die-editor.c:649
 #: xfce-desktop-item-edit/xfce-die-editor.c:693
@@ -1359,50 +1359,54 @@ msgstr "_Labi"
 #. allocate the file chooser dialog
 #: xfce-desktop-item-edit/xfce-die-editor.c:690
 msgid "Select a working directory"
-msgstr "Izvēlēties darba direktoriju"
+msgstr "Izvēlieties darba mapi"
 
-#: xfce-desktop-item-edit/xfce-die-utils.c:210
+#: xfce-desktop-item-edit/xfce-die-editor.c:1302
+msgid "Icon not found"
+msgstr "Ikona nav atrasta"
+
+#: xfce-desktop-item-edit/xfce-die-utils.c:209
 msgid "File location is not a regular file or directory"
-msgstr "Fila atrašanās vieta nav parasts fails vai direktorija"
+msgstr "Faila atrašanās vieta nav parasts fails vai direktorija"
 
-#: xfce-open/main.c:218
+#: xfce-open/main.c:216
 msgid "Usage: xfce-open [URLs...]"
-msgstr ""
+msgstr "Lietošana: xfce-open [URL...]"
+
+#: xfce-open/main.c:217
+msgid "       xfce-open --launch TYPE [PARAMETERs...]"
+msgstr "       xfce-open --launch TIPS [PARAMETRI...]"
 
 #: xfce-open/main.c:219
-msgid "       xfce-open --launch TYPE [PARAMETERs...]"
-msgstr ""
-
-#: xfce-open/main.c:221
 msgid "  -?, --help                          Print this help message and exit"
-msgstr "  -?, --help                          Izdrukā šo palīdzības ziņu un iziet"
+msgstr "  -?, --help                          Izdrukāt šo palīdzību un iziet"
 
-#: xfce-open/main.c:222
+#: xfce-open/main.c:220
 msgid ""
 "  -V, --version                       Print version information and exit"
-msgstr "  -V, --version                       Izdrukā versijas informāciju un iziet"
+msgstr "  -V, --version                       Izdrukāt versijas informāciju un iziet"
 
-#: xfce-open/main.c:224
+#: xfce-open/main.c:222
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
-msgstr "  --launch TIPS [PARAMETRI...]       Palaist vēlamo TIPA lietotni\n                                      ar neobligātiem PARAMETRIEM, kur TIPS\n                                      ir kāda no sekojošām vērtībām."
+msgstr "  --launch TIPS [PARAMETRI...]        Palaist vēlamo TIPA lietotni ar\n                                      neobligātiem PARAMETRIEM, kur TIPS ir\n                                      viena no tālāk norādītajām vērtībām."
 
-#: xfce-open/main.c:228
+#: xfce-open/main.c:226
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
-msgstr "  --working-directory DIREKTORIJA       Noklusētā darba direktorija priekš lietotnes,\n                                      kad izmanto --lunch opciju."
+msgstr "  --working-directory DIREKTORIJA     Lietotņu noklusējuma darba direktorija,\n                                      lietojot opciju --launch."
 
-#: xfce-open/main.c:231
+#: xfce-open/main.c:229
 msgid "The following TYPEs are supported for the --launch command:"
-msgstr "--lunch komandas atbalstītie TIPI:"
+msgstr "Komandai --launch atbalstītie TIPI:"
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
 #. TerminalEmulator),
 #. * since the xfce4-mime-helper utility will not accept localized TYPEs.
-#: xfce-open/main.c:237
+#: xfce-open/main.c:235
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1412,27 +1416,27 @@ msgid ""
 "  ImageViewer      - The preferred Image Viewer.\n"
 "  AudioPlayer      - The preferred Audio Player.\n"
 "  VideoPlayer      - The preferred Video Player."
-msgstr ""
+msgstr "  WebBrowser       — vēlamais tīmekļa pārlūks.\n  MailReader       — vēlamais e-pasta lasītājs.\n  FileManager      — vēlamais failu pārvaldnieks.\n  TerminalEmulator — vēlamais termināļa emulators.\n  TextEditor       — vēlamais teksta redaktors.\n  ImageViewer      — vēlamais attēlu skatītājs.\n  AudioPlayer      — vēlamais audio atskaņotājs.\n  VideoPlayer      — vēlamais video atskaņotājs."
 
-#: xfce-open/main.c:247
+#: xfce-open/main.c:245
 msgid ""
 "If you don't specify the --launch option, xfce-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
 "option, you can select which preferred application you want to run, and\n"
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
-msgstr ""
+msgstr "Ja opcija --launch nav norādīta, xfce-open atver visus norādītos URL ar\nto vēlamajiem URL apstrādātājiem. Ja opcija --launch ir norādīta, var\nizvēlēties, kuru vēlamo lietotni palaist, un nodot tai papildu parametrus\n(piemēram, TerminalEmulator var nodot komandrindu, kas jāpalaiž terminālī)."
 
-#: xfce-open/main.c:422
+#: xfce-open/main.c:420
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
-msgstr "Neizdevās palaist vēlamo aplikāciju no kategorijas \"%s\"."
+msgstr "Neizdevās palaist kategorijas „%s” vēlamo lietotni."
 
-#: xfce-open/main.c:713
+#: xfce-open/main.c:704
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
-msgstr "Nevar noteikt URI-shēmu priekš \"%s\"."
+msgstr "Neizdevās noteikt „%s” URI shēmu."
 
-#: xfce-open/main.c:727
+#: xfce-open/main.c:718
 msgid "Failed to open URI."
-msgstr ""
+msgstr "Neizdevās atvērt URI."
