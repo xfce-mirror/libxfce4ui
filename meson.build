@@ -33,7 +33,7 @@ dependency_versions = {
   'gudev': '>= 238',
   'gir': '>= 1.80.1',
 
-  'wayland-protocols': '>= 1.39',
+  'wayland-protocols': '>= 1.45',
 }
 
 glib = dependency('glib-2.0', version: dependency_versions['glib'])
