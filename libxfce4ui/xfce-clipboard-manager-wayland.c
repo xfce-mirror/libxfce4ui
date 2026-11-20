@@ -28,10 +28,12 @@
 #include <gdk/gdkwayland.h>
 #include <gio/gunixoutputstream.h>
 #include <glib-unix.h>
+#include <glib/gi18n-lib.h>
 #include <gtk/gtk.h>
 #include <unistd.h>
 
 #include "ext-data-control-v1-client.h"
+#include "xfce-clipboard-manager-private.h"
 #include "xfce-clipboard-manager-wayland.h"
 
 
@@ -74,7 +76,8 @@ static void
 xfce_clipboard_manager_wayland_finalize (GObject *object);
 
 static gboolean
-xfce_clipboard_manager_wayland_persist (XfceClipboardManager *manager);
+xfce_clipboard_manager_wayland_persist (XfceClipboardManager *manager,
+                                        GError **error);
 
 static void
 registry_global (void *data, struct wl_registry *registry, uint32_t id, const char *interface, uint32_t version);
@@ -227,10 +230,11 @@ cached_contents_array_new (void)
 
 
 static GBytes *
-read_all_from_fd (int fd, int timeout_ms)
+read_all_from_fd (int fd, int timeout_ms, GError **error)
 {
   GByteArray *buf = g_byte_array_new ();
   guint8 chunk[READ_CHUNK_SIZE];
+  gboolean success = FALSE;
   gssize nread;
   GPollFD pfd = { .fd = fd, .events = G_IO_IN };
 
@@ -239,14 +243,22 @@ read_all_from_fd (int fd, int timeout_ms)
       gint ret = g_poll (&pfd, 1, timeout_ms);
       if (ret == 0)
         {
-          g_warning ("Clipboard read timed out after %d ms", timeout_ms);
+          g_set_error (error,
+                       XFCE_CLIPBOARD_MANAGER_ERROR,
+                       XFCE_CLIPBOARD_MANAGER_ERROR_READ_FAILED,
+                       _("Clipboard read timed out after %d ms"),
+                       timeout_ms);
           break;
         }
       else if (ret < 0)
         {
           if (errno == EINTR)
             continue;
-          g_warning ("Clipboard poll error: %s", g_strerror (errno));
+          g_set_error (error,
+                       XFCE_CLIPBOARD_MANAGER_ERROR,
+                       XFCE_CLIPBOARD_MANAGER_ERROR_READ_FAILED,
+                       _("Clipboard poll failed: %s"),
+                       g_strerror (errno));
           break;
         }
 
@@ -257,19 +269,31 @@ read_all_from_fd (int fd, int timeout_ms)
         }
       else if (nread == 0)
         {
+          success = TRUE;
           break;
         }
       else
         {
           if (errno == EINTR)
             continue;
-          g_warning ("Clipboard read error: %s", g_strerror (errno));
+          g_set_error (error,
+                       XFCE_CLIPBOARD_MANAGER_ERROR,
+                       XFCE_CLIPBOARD_MANAGER_ERROR_READ_FAILED,
+                       _("Clipboard read failed: %s"),
+                       g_strerror (errno));
           break;
         }
     }
 
   close (fd);
-  return g_byte_array_free_to_bytes (buf);
+
+  if (success)
+    return g_byte_array_free_to_bytes (buf);
+  else
+    {
+      g_byte_array_free (buf, TRUE);
+      return FALSE;
+    }
 }
 
 
@@ -324,30 +348,26 @@ write_bytes_to_fd (int fd, GBytes *bytes)
 static GBytes *
 receive_mime_data (XfceClipboardManagerWayland *manager,
                    struct ext_data_control_offer_v1 *offer,
-                   const gchar *mime_type)
+                   const gchar *mime_type,
+                   GError **error)
 {
   int fds[2];
-  GError *error = NULL;
 
-  if (!g_unix_open_pipe (fds, O_CLOEXEC, &error))
-    {
-      g_warning ("Failed to create pipe: %s", error->message);
-      g_error_free (error);
-      return g_bytes_new (NULL, 0);
-    }
+  if (!g_unix_open_pipe (fds, O_CLOEXEC, error))
+    return NULL;
 
   ext_data_control_offer_v1_receive (offer, mime_type, fds[1]);
   close (fds[1]);
 
   wl_display_flush (manager->wl_display);
 
-  return read_all_from_fd (fds[0], READ_TIMEOUT_MS);
+  return read_all_from_fd (fds[0], READ_TIMEOUT_MS, error);
 }
 
 
 
 static gboolean
-cache_selection (XfceClipboardManagerWayland *manager)
+cache_selection (XfceClipboardManagerWayland *manager, GError **error)
 {
   struct ext_data_control_offer_v1 *offer;
   GPtrArray *mime_types;
@@ -371,7 +391,13 @@ cache_selection (XfceClipboardManagerWayland *manager)
   mime_types = manager->active_mime_types;
 
   if (offer == NULL || mime_types == NULL || mime_types->len == 0)
-    return FALSE;
+    {
+      g_set_error_literal (error,
+                           XFCE_CLIPBOARD_MANAGER_ERROR,
+                           XFCE_CLIPBOARD_MANAGER_ERROR_NO_SELECTION,
+                           _("There is no selection to persist"));
+      return FALSE;
+    }
 
   contents = cached_contents_array_new ();
 
@@ -418,7 +444,7 @@ cache_selection (XfceClipboardManagerWayland *manager)
       if (skip)
         continue;
 
-      data = receive_mime_data (manager, offer, mime);
+      data = receive_mime_data (manager, offer, mime, error);
       size = g_bytes_get_size (data);
 
       if (size > 0)
@@ -435,6 +461,10 @@ cache_selection (XfceClipboardManagerWayland *manager)
   if (contents->len == 0)
     {
       g_ptr_array_unref (contents);
+      g_set_error_literal (error,
+                           XFCE_CLIPBOARD_MANAGER_ERROR,
+                           XFCE_CLIPBOARD_MANAGER_ERROR_NO_SELECTION,
+                           _("The selection was empty"));
       return FALSE;
     }
 
@@ -680,21 +710,22 @@ xfce_clipboard_manager_wayland_new (void)
  * Returns TRUE if data was successfully cached and ownership taken.
  */
 static gboolean
-xfce_clipboard_manager_wayland_persist (XfceClipboardManager *clipboard_manager)
+xfce_clipboard_manager_wayland_persist (XfceClipboardManager *clipboard_manager,
+                                        GError **error)
 {
   XfceClipboardManagerWayland *manager = XFCE_CLIPBOARD_MANAGER_WAYLAND (clipboard_manager);
 
   /* Ensure active_offer reflects the latest selection event */
   wl_display_roundtrip (manager->wl_display);
 
-  if (manager->active_offer == NULL || manager->active_mime_types == NULL)
+  if (manager->cached_contents != NULL
+      && manager->cached_contents->len > 0
+      && (manager->active_offer == NULL || manager->active_mime_types == NULL))
     {
-      if (manager->cached_contents != NULL && manager->cached_contents->len > 0)
-        return TRUE;
-      return FALSE;
+      return TRUE;
     }
 
-  if (!cache_selection (manager))
+  if (!cache_selection (manager, error))
     return FALSE;
 
   become_selection_owner (manager);
