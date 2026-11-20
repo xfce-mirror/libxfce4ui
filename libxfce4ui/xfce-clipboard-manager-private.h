@@ -31,8 +31,22 @@ struct _XfceClipboardManagerClass
   GObjectClass __parent__;
 
   /*< public >*/
-  gboolean (*persist) (XfceClipboardManager *manager);
+  gboolean (*persist) (XfceClipboardManager *manager,
+                       GError **error);
 };
+
+#define XFCE_CLIPBOARD_MANAGER_ERROR (xfce_clipboard_manager_error_get_quark ())
+
+typedef enum
+{
+  XFCE_CLIPBOARD_MANAGER_ERROR_NO_SELECTION,
+  XFCE_CLIPBOARD_MANAGER_ERROR_READ_FAILED,
+} XfceClipboardManagerError;
+
+GType
+xfce_clipboard_manager_error_get_type (void);
+GQuark
+xfce_clipboard_manager_error_get_quark (void);
 
 G_END_DECLS
 
