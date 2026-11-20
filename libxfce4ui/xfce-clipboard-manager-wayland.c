@@ -496,6 +496,7 @@ become_selection_owner (XfceClipboardManagerWayland *manager)
     return;
 
   clear_source (manager);
+  clear_active_offer (manager);
 
   manager->dc_source = ext_data_control_manager_v1_create_data_source (manager->dc_manager);
   ext_data_control_source_v1_add_listener (manager->dc_source, &source_listener, manager);
