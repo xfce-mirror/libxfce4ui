@@ -75,6 +75,18 @@ xfce_clipboard_manager_handle_store (XfceDBusClipboardManager *skeleton,
  **/
 G_DEFINE_ABSTRACT_TYPE_WITH_PRIVATE (XfceClipboardManager, xfce_clipboard_manager, G_TYPE_OBJECT)
 
+G_DEFINE_ENUM_TYPE ("XfceClipboardMangerError",
+                    xfce_clipboard_manager_error,
+                    G_DEFINE_ENUM_VALUE (XFCE_CLIPBOARD_MANAGER_ERROR_NO_SELECTION, "NoSelection"),
+                    G_DEFINE_ENUM_VALUE (XFCE_CLIPBOARD_MANAGER_ERROR_READ_FAILED, "ReadFailed"))
+
+
+
+static const GDBusErrorEntry xfce_clipboard_manager_error_entries[] = {
+  { XFCE_CLIPBOARD_MANAGER_ERROR_NO_SELECTION, XFCE_CLIPBOARD_MANAGER_DBUS_NAME ".Error.NoSelection" },
+  { XFCE_CLIPBOARD_MANAGER_ERROR_READ_FAILED, XFCE_CLIPBOARD_MANAGER_DBUS_NAME ".Error.ReadFailed" },
+};
+
 
 
 static void
@@ -120,13 +132,32 @@ xfce_clipboard_manager_handle_store (XfceDBusClipboardManager *skeleton,
 {
   XfceClipboardManagerClass *klass = XFCE_CLIPBOARD_MANAGER_GET_CLASS (manager);
   gboolean success = TRUE;
+  GError *error = NULL;
 
   if (klass->persist != NULL)
-    success = klass->persist (manager);
+    success = klass->persist (manager, &error);
 
-  xfce_dbus_clipboard_manager_complete_store (skeleton, invocation, success);
+  if (success)
+    xfce_dbus_clipboard_manager_complete_store (skeleton, invocation);
+  else
+    g_dbus_method_invocation_take_error (invocation, error);
 
   return TRUE;
+}
+
+
+
+GQuark
+xfce_clipboard_manager_error_get_quark (void)
+{
+  static volatile gsize quark = 0;
+
+  g_dbus_error_register_error_domain ("xfce_clipboard_manager_error",
+                                      &quark,
+                                      xfce_clipboard_manager_error_entries,
+                                      G_N_ELEMENTS (xfce_clipboard_manager_error_entries));
+
+  return quark;
 }
 
 
