@@ -3,6 +3,7 @@
 #
 libxfce4ui/resources/xfce4-about-dialog.glade
 libxfce4ui/libxfce4ui-config.c
+libxfce4ui/xfce-clipboard-manager-wayland.c
 libxfce4ui/xfce-dialogs.c
 libxfce4ui/xfce-gdk-extensions.c
 libxfce4ui/xfce-gdk-pixbuf-extensions.c
