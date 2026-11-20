@@ -45,7 +45,7 @@
 
 #include "libxfce4ui-private.h"
 #include "xfce-clipboard-manager-dbus.h"
-#include "xfce-clipboard-manager.h"
+#include "xfce-clipboard-manager-private.h"
 #include "libxfce4ui-visibility.h"
 
 

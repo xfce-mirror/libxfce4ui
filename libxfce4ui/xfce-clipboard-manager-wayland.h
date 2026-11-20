@@ -17,14 +17,10 @@
  * MA 02110-1301 USA
  */
 
-#if !defined(_LIBXFCE4UI_INSIDE_LIBXFCE4UI_H) && !defined(LIBXFCE4UI_COMPILATION)
-#error "Only <libxfce4ui/libxfce4ui.h> can be included directly, this file is not part of the public API."
-#endif
-
 #ifndef __XFCE_CLIPBOARD_MANAGER_WAYLAND_H__
 #define __XFCE_CLIPBOARD_MANAGER_WAYLAND_H__
 
-#include <libxfce4ui/xfce-clipboard-manager.h>
+#include "xfce-clipboard-manager-private.h"
 
 G_BEGIN_DECLS
 
