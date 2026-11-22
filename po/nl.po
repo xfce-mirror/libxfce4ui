@@ -245,7 +245,7 @@ msgstr "Kon bestand '%s' niet lezen: %s"
 #: libxfce4ui/xfce-gdk-pixbuf-extensions.c:906
 #, c-format
 msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr "Kon afbeelding \"%s\" niet laden: onbekende reden, waarschijnlijk een beschadigd afbeeldingbestand"
+msgstr "Kon afbeelding '%s' niet laden: onbekende reden, waarschijnlijk een beschadigd afbeeldingsbestand"
 
 #: libxfce4ui/xfce-gtk-extensions.c:1321
 #, c-format
@@ -285,7 +285,7 @@ msgstr "Emblemen"
 #. XFCE_ICON_CHOOSER_CONTEXT_EMOTES
 #: libxfce4ui/xfce-icon-chooser-dialog.c:131
 msgid "Emoticons"
-msgstr "Emoticons"
+msgstr "Emotiepictogrammen"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_MIME_TYPES
 #: libxfce4ui/xfce-icon-chooser-dialog.c:133
@@ -321,7 +321,7 @@ msgstr "Alle pictogrammen"
 #: libxfce4ui/xfce-icon-chooser-dialog.c:149
 #: libxfce4ui/xfce-icon-chooser-dialog.c:296
 msgid "Image Files"
-msgstr "Afbeeldingen"
+msgstr "Afbeeldingsbestanden"
 
 #. XFCE_ICON_CHOOSER_CONTEXT_NO_ICON
 #: libxfce4ui/xfce-icon-chooser-dialog.c:153
@@ -382,15 +382,15 @@ msgstr "Werkmap '%s' bestaat niet. Hij zal niet worden gebruikt wanneer '%s' wor
 #. retrieve the error and warning messages
 #: libxfce4ui/xfce-filename-input.c:228
 msgid "Filename is too long"
-msgstr "Bestandnaam is te lang"
+msgstr "Bestandsnaam is te lang"
 
 #: libxfce4ui/xfce-filename-input.c:229
 msgid "Directory separator illegal in filename"
-msgstr "Mapscheidingsteken illegaal in bestandnaam"
+msgstr "Mapscheidingsteken illegaal in bestandsnaam"
 
 #: libxfce4ui/xfce-filename-input.c:230
 msgid "Filenames should not start or end with a space"
-msgstr "Bestandnamen mogen niet beginnen of eindigen met een spatie"
+msgstr "Bestandsnamen mogen niet beginnen of eindigen met een spatie"
 
 #: libxfce4ui/xfce-item-list-view.c:337
 msgid "Active"
@@ -577,7 +577,7 @@ msgstr "Kon het toetsenbord niet bemachtigen."
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:34
 msgid "Window operations menu"
-msgstr "Vensteractiesmenu"
+msgstr "Menu voor vensteracties"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:35
 msgid "Up"
@@ -597,11 +597,11 @@ msgstr "Rechts"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:40
 msgid "Cycle windows"
-msgstr "Vensters roteren"
+msgstr "Cyclisch door vensters schuiven"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:41
 msgid "Cycle windows (Reverse)"
-msgstr "Vensters roteren (achterwaarts)"
+msgstr "Cyclisch door vensters schuiven (achterwaarts)"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:42
 msgid "Switch window for same application"
@@ -649,7 +649,7 @@ msgstr "Plak venster vast"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:53
 msgid "Raise window"
-msgstr "Haal venster omhoog"
+msgstr "Verhef venster"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:54
 msgid "Lower window"
@@ -657,7 +657,7 @@ msgstr "Minimaliseer venster"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:55
 msgid "Raise or lower window"
-msgstr "Venster omhoog halen of minimaliseren"
+msgstr "Venster verheffen of minimaliseren"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:56
 msgid "Fill window"
@@ -681,19 +681,19 @@ msgstr "Schakel schermvullend om"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:61
 msgid "Move window to lower monitor"
-msgstr "Venster verplaatsen naar onderste beeldscherm"
+msgstr "Verplaats venster naar onderste beeldscherm"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:62
 msgid "Move window to left monitor"
-msgstr "Venster verplaatsen naar linkerbeeldscherm"
+msgstr "Verplaats venster naar linkerbeeldscherm"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:63
 msgid "Move window to right monitor"
-msgstr "Venster verplaatsen naar rechterbeeldscherm"
+msgstr "Verplaats venster naar rechterbeeldscherm"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:64
 msgid "Move window to upper monitor"
-msgstr "Venster verplaatsen naar bovenste beeldscherm"
+msgstr "Verplaats venster naar bovenste beeldscherm"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:65
 msgid "Move window to upper workspace"
@@ -769,11 +769,11 @@ msgstr "Verplaats venster naar werkblad 12"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:83
 msgid "Tile window to the top"
-msgstr "Plaats venstertegel naar boven"
+msgstr "Plaats venstertegel bovenaan"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:84
 msgid "Tile window to the bottom"
-msgstr "Plaats venstertegel naar beneden"
+msgstr "Plaats venstertegel onderaan"
 
 #: libxfce4kbd-private/xfce-shortcuts-xfwm4.c:85
 msgid "Tile window to the left"
@@ -905,7 +905,7 @@ msgstr "Vensterbeheerder"
 
 #: xfce4-about/main.c:191
 msgid "Handles the placement of windows on the screen."
-msgstr "Bedient de plaatsing van vensters op het scherm."
+msgstr "Verzorgt de plaatsing van vensters op het scherm."
 
 #: xfce4-about/main.c:194
 msgid "Panel"
@@ -933,7 +933,7 @@ msgstr "Beheert uw bestanden op een moderne, makkelijke en snelle manier."
 
 #: xfce4-about/main.c:206
 msgid "Volume Manager"
-msgstr "Volumebeheer"
+msgstr "Opslagmediabeheer"
 
 #: xfce4-about/main.c:207
 msgid "Manages removable drives and media for Thunar."
@@ -1006,7 +1006,7 @@ msgstr "Dank aan allen die geholpen hebben om deze programmatuur beschikbaar te 
 msgid ""
 "Xfce 4 is copyright Olivier Fourdan (fourdan@xfce.org). The different "
 "components are copyrighted by their respective authors."
-msgstr "Xfce 4 behoort auteursrechtelijk aan Olivier Fourdan (fourdan@xfce.org). De verschillende onderdelen behoren auteursrechtelijk aan hun respectievelijke makers."
+msgstr "Xfce 4 behoort auteursrechtelijk toe aan Olivier Fourdan (fourdan@xfce.org). De verschillende onderdelen behoren auteursrechtelijk toe aan hun respectievelijke makers."
 
 #: xfce4-about/main.c:366
 msgid ""
@@ -1178,7 +1178,7 @@ msgstr "Vooringestelde opdracht bij het maken van een nieuwe starter"
 
 #: xfce-desktop-item-edit/main.c:89
 msgid "Preset URL when creating a link"
-msgstr "Vooringestelde URL bij het maken van een nieuwe koppeling"
+msgstr "Vooringesteld webadres bij het maken van een nieuwe koppeling"
 
 #: xfce-desktop-item-edit/main.c:90
 msgid "Preset icon when creating a desktop file"
@@ -1227,7 +1227,7 @@ msgstr "O_pslaan"
 #. create failed, ask the user to specify a file name
 #: xfce-desktop-item-edit/main.c:543
 msgid "Choose filename"
-msgstr "Kies bestandnaam"
+msgstr "Kies bestandsnaam"
 
 #: xfce-desktop-item-edit/main.c:669
 #, c-format
@@ -1332,7 +1332,7 @@ msgid ""
 "Select this option to enable startup notification when the command is run "
 "from the file manager or the menu. Not every application supports startup "
 "notification."
-msgstr "Selecteer deze optie om opstartmelding in te schakelen wanneer deze opdracht wordt uitgevoerd vanuit de bestandbeheerder of het menu. Niet elke toepassing ondersteunt opstartmelding."
+msgstr "Kies deze optie om opstartmeldingen mogelijk te maken wanneer deze opdracht wordt uitgevoerd vanuit de bestandbeheerder of het menu. Niet elke toepassing ondersteunt opstartmeldingen."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
 #. avoid mnemonic conflicts
@@ -1344,7 +1344,7 @@ msgstr "In _terminal uitvoeren"
 
 #: xfce-desktop-item-edit/xfce-die-editor.c:485
 msgid "Select this option to run the command in a terminal window."
-msgstr "Selecteer deze optie om de opdracht in een terminalvenster uit te voeren."
+msgstr "Kies deze optie om de opdracht in een terminalvenster uit te voeren."
 
 #. allocate the icon chooser dialog
 #: xfce-desktop-item-edit/xfce-die-editor.c:647
