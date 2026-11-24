@@ -81,6 +81,7 @@ endif
 
 libxfce4ui_sources = libxfce4ui_sources_gir + [
   'libxfce4ui-private.h',
+  'xfce-clipboard-manager-private.h',
   'xfce-icon-chooser-model.c',
   'xfce-icon-chooser-model.h',
   'xfce-thumbnail-preview.c',

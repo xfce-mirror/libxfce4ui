@@ -65,10 +65,19 @@ clipboard_store_cb (GObject *source,
   StoreData *data = user_data;
   GError *error = NULL;
 
-  if (!xfce_dbus_clipboard_manager_call_store_finish (XFCE_DBUS_CLIPBOARD_MANAGER (source),
-                                                      &data->success, res, &error))
+  data->success = xfce_dbus_clipboard_manager_call_store_finish (XFCE_DBUS_CLIPBOARD_MANAGER (source),
+                                                                 res,
+                                                                 &error);
+  if (!data->success)
     {
-      g_warning ("Clipboard store failed: %s", error->message);
+      gchar *message;
+      if (g_dbus_error_is_remote_error (error))
+        message = g_dbus_error_get_remote_error (error);
+      else
+        message = g_strdup (error->message);
+
+      g_message ("Clipboard store failed: %s", message);
+      g_free (message);
       g_error_free (error);
     }
 
