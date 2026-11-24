@@ -4,6 +4,7 @@
 # 
 # Translators:
 # enolp <enolp@softastur.org>, 2015-2016,2020,2024
+# Ḥavi Margallo, 2026
 # Ḷḷumex03, 2014
 # Ḷḷumex03, 2014
 # Ḷḷumex03, 2014
@@ -13,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2026-11-13 00:46+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
-"Last-Translator: Ḷḷumex03, 2014\n"
+"Last-Translator: Ḥavi Margallo, 2026\n"
 "Language-Team: Asturian (http://app.transifex.com/xfce/libxfce4ui/language/ast/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -33,7 +34,7 @@ msgstr "Tocante al entornu d'escritoriu XFCE"
 #: libxfce4ui/resources/xfce4-about-dialog.glade:358
 #: xfce-desktop-item-edit/main.c:345
 msgid "_Help"
-msgstr "A_yuda"
+msgstr "A_ida"
 
 #: libxfce4ui/resources/xfce4-about-dialog.glade:374
 msgid "_Close"
@@ -388,7 +389,7 @@ msgstr "El nome del ficheru ye mui llongu"
 
 #: libxfce4ui/xfce-filename-input.c:229
 msgid "Directory separator illegal in filename"
-msgstr ""
+msgstr "Separtador de direutoriu non permitíu nel nome d'archivu"
 
 #: libxfce4ui/xfce-filename-input.c:230
 msgid "Filenames should not start or end with a space"
@@ -404,7 +405,7 @@ msgstr "Nome"
 
 #: libxfce4ui/xfce-item-list-view.c:669
 msgid "Move _up"
-msgstr ""
+msgstr "X_ubir"
 
 #: libxfce4ui/xfce-item-list-view.c:669
 msgid "Move currently selected item up by one row"
@@ -412,7 +413,7 @@ msgstr "Mover l'oxetu esbilláu anguaño una filera hacia arriba"
 
 #: libxfce4ui/xfce-item-list-view.c:673
 msgid "Move _down"
-msgstr ""
+msgstr "Baxar _d"
 
 #: libxfce4ui/xfce-item-list-view.c:673
 msgid "Move currently selected item down by one row"
@@ -424,7 +425,7 @@ msgstr "_Amestar"
 
 #: libxfce4ui/xfce-item-list-view.c:684
 msgid "Add new item"
-msgstr ""
+msgstr "Añedir oxetu"
 
 #: libxfce4ui/xfce-item-list-view.c:690
 msgid "_Remove"
@@ -432,7 +433,7 @@ msgstr "_Desaniciar"
 
 #: libxfce4ui/xfce-item-list-view.c:690
 msgid "Remove currently selected items"
-msgstr ""
+msgstr "Esborrar l'oxetu esbilláu"
 
 #: libxfce4ui/xfce-item-list-view.c:696
 msgid "_Edit"
@@ -444,11 +445,11 @@ msgstr "Editar l'oxetu esbilláu aunguaño"
 
 #: libxfce4ui/xfce-item-list-view.c:702
 msgid "Reset to de_faults"
-msgstr ""
+msgstr "Reafitar a valor por de_feutu"
 
 #: libxfce4ui/xfce-item-list-view.c:702
 msgid "Reset all items to default settings"
-msgstr ""
+msgstr "Reafitar tolos valores a los sos axustes predeterminaos"
 
 #: libxfce4kbd-private/xfce-shortcuts.c:44
 #, c-format
@@ -1016,7 +1017,7 @@ msgid ""
 "the GNU Library General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
-msgstr ""
+msgstr "Los paquetes libxfce4ui ya libxfce4util distribuyense polos términos de la Llicencia pal públicu xeneral GNU, sigún lo espublizáu pola Free Software Foundation; bien seya la versión 2 de la llicencia o (sigún prefieras) cualesquier versión postrera."
 
 #: xfce4-about/main.c:374
 msgid ""
@@ -1188,7 +1189,7 @@ msgstr "L'iconu preafitáu al crear un ficheru d'escritoriu"
 
 #: xfce-desktop-item-edit/main.c:91
 msgid "Print the final saved URI after creating or editing the file"
-msgstr ""
+msgstr "Imprentar el URI guardáu dempués de crear o editar el ficheru "
 
 #: xfce-desktop-item-edit/main.c:92
 msgid "Print version information and exit"
@@ -1201,7 +1202,7 @@ msgstr "[FICHERU|CARPETA]"
 
 #: xfce-desktop-item-edit/main.c:200 xfce-open/main.c:751
 msgid "os-cillation e.K. All rights reserved."
-msgstr ""
+msgstr "os-cillation e.K.  Tolos drechos acutaos"
 
 #: xfce-desktop-item-edit/main.c:204 xfce-open/main.c:755
 msgid "Written by Benedikt Meurer <benny@xfce.org>."
@@ -1365,7 +1366,7 @@ msgstr "Esbilla d'un direutoriu de trabayu"
 
 #: xfce-desktop-item-edit/xfce-die-editor.c:1302
 msgid "Icon not found"
-msgstr ""
+msgstr "Nun s'atopó'l iconu"
 
 #: xfce-desktop-item-edit/xfce-die-utils.c:209
 msgid "File location is not a regular file or directory"
@@ -1373,11 +1374,11 @@ msgstr "L'allugamientu nun ye un direutoriu o ficheru válidu"
 
 #: xfce-open/main.c:216
 msgid "Usage: xfce-open [URLs...]"
-msgstr ""
+msgstr "Usu: xfce-open [URLs...]"
 
 #: xfce-open/main.c:217
 msgid "       xfce-open --launch TYPE [PARAMETERs...]"
-msgstr ""
+msgstr "       xfce-open --launch TYPE [PARAMETERs...]"
 
 #: xfce-open/main.c:219
 msgid "  -?, --help                          Print this help message and exit"
@@ -1418,7 +1419,7 @@ msgid ""
 "  ImageViewer      - The preferred Image Viewer.\n"
 "  AudioPlayer      - The preferred Audio Player.\n"
 "  VideoPlayer      - The preferred Video Player."
-msgstr ""
+msgstr "WebBrowser       - El restolador web preferíu.\nMailReader          - El llector de correos preferíu.\nFileManager        - El xestor de ficheros preferíu.\nTerminalEmulator - L'emulador de la terminal preferíu.\nTextEditor - L'editor de testu preferíu.\nImageViewer - El visor d'imáxenes preferíu.\nAudioPlayer - El reproductor d'audiu preferíu.\nVideoPlayer - El reproductor de videu preferíu."
 
 #: xfce-open/main.c:245
 msgid ""
@@ -1427,7 +1428,7 @@ msgid ""
 "option, you can select which preferred application you want to run, and\n"
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
-msgstr ""
+msgstr "Si nun especifiques la opción --launch, xfce-open va abrir toles URLs especificaes\ncolos sos handlers d'URL. Si especifiques la opción --launch, puedes esbillar\ncuala ye la aplicación que quies que s'execute ya añedir otros parámetros\n(ex: Pa TerminalEmulator puedes escoyer la llinia de comandos qu'ha d'executase\nna terminal)."
 
 #: xfce-open/main.c:420
 #, c-format
