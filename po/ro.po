@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2026-11-13 00:46+0100\n"
+"POT-Creation-Date: 2026-11-25 00:46+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: Remus-Gabriel Chelu <remusgabriel.chelu@disroot.org>, 2024-2026\n"
 "Language-Team: Romanian (http://app.transifex.com/xfce/libxfce4ui/language/ro/)\n"
@@ -144,6 +144,34 @@ msgstr "BSD"
 #: libxfce4ui/resources/xfce4-about-dialog.glade:1003
 msgid "Copyright"
 msgstr "Drepturi de autor"
+
+#: libxfce4ui/xfce-clipboard-manager-wayland.c:249
+#, c-format
+msgid "Clipboard read timed out after %d ms"
+msgstr "Citirea din clipboard a expirat după %d ms"
+
+#: libxfce4ui/xfce-clipboard-manager-wayland.c:260
+#, c-format
+msgid "Clipboard poll failed: %s"
+msgstr "Interogarea clipboard-ului a eșuat: %s"
+
+#: libxfce4ui/xfce-clipboard-manager-wayland.c:282
+#, c-format
+msgid "Clipboard read failed: %s"
+msgstr "Citirea clipboard-ului a eșuat: %s"
+
+#: libxfce4ui/xfce-clipboard-manager-wayland.c:398
+msgid "There is no selection to persist"
+msgstr "Nu există nicio selecție de păstrat"
+
+#: libxfce4ui/xfce-clipboard-manager-wayland.c:461
+#, c-format
+msgid "Clipboard read for type %s returned no data"
+msgstr "Citirea din clipboard pentru tipul %s nu a returnat niciun fel de date"
+
+#: libxfce4ui/xfce-clipboard-manager-wayland.c:479
+msgid "The selection was empty"
+msgstr "Selecția era goală"
 
 #: libxfce4ui/xfce-dialogs.c:104
 msgid "Failed to open web browser for online documentation"

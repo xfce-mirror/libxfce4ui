@@ -5,3 +5,6 @@ dialog_* skip = false
 // xfce-titled-dialog.h
 TitledDialog
   .new_with_* skip = false
+
+// xfce-clipboard-manager.c
+ClipboardManager.new skip
