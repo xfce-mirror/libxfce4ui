@@ -642,19 +642,26 @@ main (gint argc, gchar **argv)
     {
       if (argc > 1)
         {
-          /* NOTE: see the comment at the top of this document! */
+          g_autofree gchar *helper = g_find_program_in_path ("xfce4-mime-helper");
 
-          /* combine all specified parameters to one parameter string */
-          join = g_string_new (NULL);
-          for (i = 1; argv[i] != NULL; i++)
+          /* The fallback passes the parameter directly to the application.
+           * The MIME helper and terminal command lines need shell quoting. */
+          if (helper == NULL && !g_str_equal (opt_launch, "TerminalEmulator"))
             {
-              /* separate the arguments */
-              if (i > 1)
-                join = g_string_append_c (join, ' ');
-
-              xfce_g_string_append_quoted (join, argv[i]);
+              parameter = g_strjoinv (" ", argv + 1);
             }
-          parameter = g_string_free_and_steal (join);
+          else
+            {
+              join = g_string_new (NULL);
+              for (i = 1; argv[i] != NULL; i++)
+                {
+                  if (i > 1)
+                    g_string_append_c (join, ' ');
+
+                  xfce_g_string_append_quoted (join, argv[i]);
+                }
+              parameter = g_string_free_and_steal (join);
+            }
         }
       else
         {
