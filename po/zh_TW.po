@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2026-11-13 00:46+0100\n"
+"POT-Creation-Date: 2026-11-25 00:46+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: 黃柏諺 <s8321414@gmail.com>, 2019-2026\n"
 "Language-Team: Chinese (Taiwan) (http://app.transifex.com/xfce/libxfce4ui/language/zh_TW/)\n"
@@ -141,6 +141,34 @@ msgstr "BSD"
 #: libxfce4ui/resources/xfce4-about-dialog.glade:1003
 msgid "Copyright"
 msgstr "著作權所有"
+
+#: libxfce4ui/xfce-clipboard-manager-wayland.c:249
+#, c-format
+msgid "Clipboard read timed out after %d ms"
+msgstr "剪貼簿讀取逾時，耗時 %d 毫秒"
+
+#: libxfce4ui/xfce-clipboard-manager-wayland.c:260
+#, c-format
+msgid "Clipboard poll failed: %s"
+msgstr "剪貼簿輪詢失敗：%s"
+
+#: libxfce4ui/xfce-clipboard-manager-wayland.c:282
+#, c-format
+msgid "Clipboard read failed: %s"
+msgstr "剪貼簿讀取失敗：%s"
+
+#: libxfce4ui/xfce-clipboard-manager-wayland.c:398
+msgid "There is no selection to persist"
+msgstr "沒有要保留的選項"
+
+#: libxfce4ui/xfce-clipboard-manager-wayland.c:461
+#, c-format
+msgid "Clipboard read for type %s returned no data"
+msgstr "讀取剪貼簿以取得類型 %s 時，未回傳任何資料"
+
+#: libxfce4ui/xfce-clipboard-manager-wayland.c:479
+msgid "The selection was empty"
+msgstr "選取為空"
 
 #: libxfce4ui/xfce-dialogs.c:104
 msgid "Failed to open web browser for online documentation"
