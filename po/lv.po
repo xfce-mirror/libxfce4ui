@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2026-11-13 00:46+0100\n"
+"POT-Creation-Date: 2026-11-25 00:46+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: Rihards Priedītis <rprieditis@gmail.com>, 2009,2026\n"
 "Language-Team: Latvian (http://app.transifex.com/xfce/libxfce4ui/language/lv/)\n"
@@ -139,6 +139,34 @@ msgstr "BSD"
 #: libxfce4ui/resources/xfce4-about-dialog.glade:1003
 msgid "Copyright"
 msgstr "Autortiesības"
+
+#: libxfce4ui/xfce-clipboard-manager-wayland.c:249
+#, c-format
+msgid "Clipboard read timed out after %d ms"
+msgstr "Starpliktuves nolasīšanai iestājās noildze pēc %d ms"
+
+#: libxfce4ui/xfce-clipboard-manager-wayland.c:260
+#, c-format
+msgid "Clipboard poll failed: %s"
+msgstr "Starpliktuves aptauja neizdevās: %s"
+
+#: libxfce4ui/xfce-clipboard-manager-wayland.c:282
+#, c-format
+msgid "Clipboard read failed: %s"
+msgstr "Starpliktuves nolasīšana neizdevās: %s"
+
+#: libxfce4ui/xfce-clipboard-manager-wayland.c:398
+msgid "There is no selection to persist"
+msgstr "Nav atlases, ko saglabāt"
+
+#: libxfce4ui/xfce-clipboard-manager-wayland.c:461
+#, c-format
+msgid "Clipboard read for type %s returned no data"
+msgstr "Starpliktuves nolasīšana tipam %s neatgrieza datus"
+
+#: libxfce4ui/xfce-clipboard-manager-wayland.c:479
+msgid "The selection was empty"
+msgstr "Atlase bija tukša"
 
 #: libxfce4ui/xfce-dialogs.c:104
 msgid "Failed to open web browser for online documentation"
