@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2026-11-13 00:46+0100\n"
+"POT-Creation-Date: 2026-11-25 00:46+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: Andreas Eitel <github-aneitel@online.de>, 2019-2026\n"
 "Language-Team: German (http://app.transifex.com/xfce/libxfce4ui/language/de/)\n"
@@ -142,6 +142,34 @@ msgstr "BSD"
 #: libxfce4ui/resources/xfce4-about-dialog.glade:1003
 msgid "Copyright"
 msgstr "Urheberrecht"
+
+#: libxfce4ui/xfce-clipboard-manager-wayland.c:249
+#, c-format
+msgid "Clipboard read timed out after %d ms"
+msgstr "Zeitüberschreitung beim Lesen der Zwischenablage nach %d ms"
+
+#: libxfce4ui/xfce-clipboard-manager-wayland.c:260
+#, c-format
+msgid "Clipboard poll failed: %s"
+msgstr "Abruf der Zwischenablage fehlgeschlagen: %s"
+
+#: libxfce4ui/xfce-clipboard-manager-wayland.c:282
+#, c-format
+msgid "Clipboard read failed: %s"
+msgstr "Fehler beim Auslesen der Zwischenablage: %s"
+
+#: libxfce4ui/xfce-clipboard-manager-wayland.c:398
+msgid "There is no selection to persist"
+msgstr "Es gibt keine Auswahl, die gespeichert werden soll"
+
+#: libxfce4ui/xfce-clipboard-manager-wayland.c:461
+#, c-format
+msgid "Clipboard read for type %s returned no data"
+msgstr "Beim Auslesen der Zwischenablage für Typ %s wurden keine Daten zurückgegeben"
+
+#: libxfce4ui/xfce-clipboard-manager-wayland.c:479
+msgid "The selection was empty"
+msgstr "Die Auswahl war leer"
 
 #: libxfce4ui/xfce-dialogs.c:104
 msgid "Failed to open web browser for online documentation"
