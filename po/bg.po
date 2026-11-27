@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libxfce4ui\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2026-11-13 00:46+0100\n"
+"POT-Creation-Date: 2026-11-25 00:46+0100\n"
 "PO-Revision-Date: 2013-07-02 20:33+0000\n"
 "Last-Translator: Kiril Kirilov <cybercop_montana@abv.bg>, 2015-2017,2019-2026\n"
 "Language-Team: Bulgarian (http://app.transifex.com/xfce/libxfce4ui/language/bg/)\n"
@@ -142,6 +142,34 @@ msgstr "BSD"
 #: libxfce4ui/resources/xfce4-about-dialog.glade:1003
 msgid "Copyright"
 msgstr "Авторски права"
+
+#: libxfce4ui/xfce-clipboard-manager-wayland.c:249
+#, c-format
+msgid "Clipboard read timed out after %d ms"
+msgstr "Времето за четене от клипборда изтече след %d ms"
+
+#: libxfce4ui/xfce-clipboard-manager-wayland.c:260
+#, c-format
+msgid "Clipboard poll failed: %s"
+msgstr "Запитването към клипборда е неуспешно: %s"
+
+#: libxfce4ui/xfce-clipboard-manager-wayland.c:282
+#, c-format
+msgid "Clipboard read failed: %s"
+msgstr "Четенето от клипборда е неуспешно: %s"
+
+#: libxfce4ui/xfce-clipboard-manager-wayland.c:398
+msgid "There is no selection to persist"
+msgstr "Няма селекция за запазване"
+
+#: libxfce4ui/xfce-clipboard-manager-wayland.c:461
+#, c-format
+msgid "Clipboard read for type %s returned no data"
+msgstr "Четенето от клипборда за тип %s не върна данни"
+
+#: libxfce4ui/xfce-clipboard-manager-wayland.c:479
+msgid "The selection was empty"
+msgstr "Селекцията беше празна"
 
 #: libxfce4ui/xfce-dialogs.c:104
 msgid "Failed to open web browser for online documentation"
