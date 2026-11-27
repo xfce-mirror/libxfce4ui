@@ -63,6 +63,7 @@
     <xi:include href="xml/xfce-clipboard-manager-client.xml"/>
     <xi:include href="xml/xfce-sm-client.xml"/>
     <xi:include href="xml/xfce-screensaver.xml"/>
+    <xi:include href="xml/xfce-shortcuts-portal.xml"/>
   </part>
   <index id="api-index-full">
     <title>Index of all symbols</title>

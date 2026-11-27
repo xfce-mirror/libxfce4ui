@@ -128,6 +128,11 @@ xfce_screensaver_new
 xfce_screensaver_inhibit
 xfce_screensaver_lock
 
+# file:xfce-shortcuts-portal
+xfce_shortcuts_portal_get_type
+xfce_shortcuts_portal_new
+xfce_shortcuts_portal_set_keys
+
 # file:xfce-titled-dialog
 xfce_titled_dialog_get_type
 xfce_titled_dialog_new attr:G_GNUC_MALLOC

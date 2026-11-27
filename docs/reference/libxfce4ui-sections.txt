@@ -200,6 +200,16 @@ xfce_screensaver_get_type
 </SECTION>
 
 <SECTION>
+<FILE>xfce-shortcuts-portal</FILE>
+XfceShortcutsPortal
+xfce_shortcuts_portal_new
+xfce_shortcuts_portal_set_keys
+<SUBSECTION Standard>
+XFCE_TYPE_SHORTCUTS_PORTAL
+xfce_shortcuts_portal_get_type
+</SECTION>
+
+<SECTION>
 <FILE>xfce-filename-input</FILE>
 XfceFilenameInput
 xfce_filename_input_get_text
