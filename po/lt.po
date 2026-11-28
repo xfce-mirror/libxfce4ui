@@ -144,26 +144,26 @@ msgstr "Autorių teisės"
 #: libxfce4ui/xfce-clipboard-manager-wayland.c:249
 #, c-format
 msgid "Clipboard read timed out after %d ms"
-msgstr ""
+msgstr "Iškarpinės skaitymui skirtas laikas pasibaigė po %d ms"
 
 #: libxfce4ui/xfce-clipboard-manager-wayland.c:260
 #, c-format
 msgid "Clipboard poll failed: %s"
-msgstr ""
+msgstr "Iškarpinės apklausa patyrė nesėkmę: %s"
 
 #: libxfce4ui/xfce-clipboard-manager-wayland.c:282
 #, c-format
 msgid "Clipboard read failed: %s"
-msgstr ""
+msgstr "Iškarpinės skaitymas patyrė nesėkmę: %s"
 
 #: libxfce4ui/xfce-clipboard-manager-wayland.c:398
 msgid "There is no selection to persist"
-msgstr ""
+msgstr "Nėra jokio žymėjimo, kuris išliktų"
 
 #: libxfce4ui/xfce-clipboard-manager-wayland.c:461
 #, c-format
 msgid "Clipboard read for type %s returned no data"
-msgstr ""
+msgstr "Iškarpinės skaitymas, skirtas %s tipui, negrąžino jokių duomenų"
 
 #: libxfce4ui/xfce-clipboard-manager-wayland.c:479
 msgid "The selection was empty"
