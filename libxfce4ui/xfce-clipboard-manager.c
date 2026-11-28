@@ -231,15 +231,14 @@ XfceClipboardManager *
 xfce_clipboard_manager_new (gboolean replace)
 {
   XfceClipboardManager *manager = NULL;
-  GdkDisplay *display = gdk_display_get_default ();
 
 #ifdef ENABLE_WAYLAND
-  if (GDK_IS_WAYLAND_DISPLAY (display))
+  if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
     manager = XFCE_CLIPBOARD_MANAGER (xfce_clipboard_manager_wayland_new ());
 #endif
 
 #ifdef ENABLE_X11
-  if (GDK_IS_X11_DISPLAY (display))
+  if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
     manager = XFCE_CLIPBOARD_MANAGER (xfce_clipboard_manager_x11_new (replace));
 #endif
 
