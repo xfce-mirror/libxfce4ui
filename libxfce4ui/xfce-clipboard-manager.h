@@ -36,11 +36,6 @@ G_DECLARE_DERIVABLE_TYPE (XfceClipboardManager, xfce_clipboard_manager, XFCE, CL
 XfceClipboardManager *
 xfce_clipboard_manager_new (gboolean replace);
 
-gboolean
-xfce_clipboard_manager_register_dbus_object (XfceClipboardManager *manager,
-                                             GDBusConnection *connection,
-                                             GError **error);
-
 G_END_DECLS
 
 #endif /* __XFCE_CLIPBOARD_MANAGER_H__ */

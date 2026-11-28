@@ -62,6 +62,12 @@ static gboolean
 xfce_clipboard_manager_handle_store (XfceDBusClipboardManager *skeleton,
                                      GDBusMethodInvocation *invocation,
                                      XfceClipboardManager *manager);
+static void
+xfce_clipboard_manager_bus_acquired (GDBusConnection *connection,
+                                     const gchar *name,
+                                     gpointer user_data);
+static void
+xfce_clipboard_manager_own_name (XfceClipboardManager *manager);
 
 
 
@@ -162,12 +168,59 @@ xfce_clipboard_manager_error_get_quark (void)
 
 
 
+static void
+xfce_clipboard_manager_bus_acquired (GDBusConnection *connection,
+                                     const gchar *name,
+                                     gpointer user_data)
+{
+  XfceClipboardManager *manager = XFCE_CLIPBOARD_MANAGER (user_data);
+  XfceClipboardManagerPrivate *priv = xfce_clipboard_manager_get_instance_private (manager);
+  GError *error = NULL;
+
+  priv->skeleton = xfce_dbus_clipboard_manager_skeleton_new ();
+  g_signal_connect (priv->skeleton, "handle-store", G_CALLBACK (xfce_clipboard_manager_handle_store), manager);
+
+  if (!g_dbus_interface_skeleton_export (G_DBUS_INTERFACE_SKELETON (priv->skeleton),
+                                         connection,
+                                         XFCE_CLIPBOARD_MANAGER_DBUS_PATH,
+                                         &error))
+    {
+      g_warning ("Failed to export %s: %s", XFCE_CLIPBOARD_MANAGER_DBUS_PATH, error->message);
+      g_error_free (error);
+      g_signal_handlers_disconnect_by_data (priv->skeleton, manager);
+      g_clear_object (&priv->skeleton);
+    }
+}
+
+
+
+static void
+xfce_clipboard_manager_own_name (XfceClipboardManager *manager)
+{
+  XfceClipboardManagerPrivate *priv = xfce_clipboard_manager_get_instance_private (manager);
+
+  priv->owner_id = g_bus_own_name (G_BUS_TYPE_SESSION,
+                                   XFCE_CLIPBOARD_MANAGER_DBUS_NAME,
+                                   G_BUS_NAME_OWNER_FLAGS_NONE,
+                                   xfce_clipboard_manager_bus_acquired,
+                                   NULL, NULL, manager, NULL);
+}
+
+
+
 /**
  * xfce_clipboard_manager_new:
  * @replace: whether or not to replace an existing clipboard manager
  *           (only meaningful on X11, ignored on Wayland)
  *
  * Creates a new clipboard manager for the current display backend.
+ *
+ * Ownership of the org.xfce.ClipboardManager name on the session bus
+ * is also requested, so clients can, for example, request clipboard
+ * persistence with xfce_clipboard_manager_store().
+ * This is done asynchronously; if another process already owns the name,
+ * the request is queued until it is released. The name is released when
+ * the manager is disposed.
  *
  * Return value: (nullable) (transfer full): A new #XfceClipboardManager
  * instance or %NULL on failure.
@@ -177,72 +230,23 @@ xfce_clipboard_manager_error_get_quark (void)
 XfceClipboardManager *
 xfce_clipboard_manager_new (gboolean replace)
 {
+  XfceClipboardManager *manager = NULL;
+  GdkDisplay *display = gdk_display_get_default ();
+
 #ifdef ENABLE_WAYLAND
-  if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
-    return XFCE_CLIPBOARD_MANAGER (xfce_clipboard_manager_wayland_new ());
+  if (GDK_IS_WAYLAND_DISPLAY (display))
+    manager = XFCE_CLIPBOARD_MANAGER (xfce_clipboard_manager_wayland_new ());
 #endif
 
 #ifdef ENABLE_X11
-  if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
-    return XFCE_CLIPBOARD_MANAGER (xfce_clipboard_manager_x11_new (replace));
+  if (GDK_IS_X11_DISPLAY (display))
+    manager = XFCE_CLIPBOARD_MANAGER (xfce_clipboard_manager_x11_new (replace));
 #endif
 
-  return NULL;
-}
+  if (manager != NULL)
+    xfce_clipboard_manager_own_name (manager);
 
-
-
-/**
- * xfce_clipboard_manager_register_dbus_object:
- * @manager: an #XfceClipboardManager
- * @connection: a #GDBusConnection
- * @error: return location for a #GError, or %NULL
- *
- * Registers the org.xfce.ClipboardManager interface for @manager on
- * @connection and requests the org.xfce.ClipboardManager bus name, so
- * that clients can request clipboard persistence with
- * xfce_clipboard_manager_store(). If the name is already owned, e.g. by
- * another instance, the request is queued until it is released. The
- * object and the name are released when @manager is disposed.
- *
- * Return value: %TRUE on success, %FALSE if @error is set.
- *
- * Since: 4.21.10
- **/
-gboolean
-xfce_clipboard_manager_register_dbus_object (XfceClipboardManager *manager,
-                                             GDBusConnection *connection,
-                                             GError **error)
-{
-  XfceClipboardManagerPrivate *priv;
-  XfceDBusClipboardManager *skeleton;
-
-  g_return_val_if_fail (XFCE_IS_CLIPBOARD_MANAGER (manager), FALSE);
-  g_return_val_if_fail (G_IS_DBUS_CONNECTION (connection), FALSE);
-  g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
-
-  priv = xfce_clipboard_manager_get_instance_private (manager);
-  g_return_val_if_fail (priv->skeleton == NULL, FALSE);
-
-  skeleton = xfce_dbus_clipboard_manager_skeleton_new ();
-  g_signal_connect (skeleton, "handle-store", G_CALLBACK (xfce_clipboard_manager_handle_store), manager);
-
-  if (!g_dbus_interface_skeleton_export (G_DBUS_INTERFACE_SKELETON (skeleton),
-                                         connection,
-                                         XFCE_CLIPBOARD_MANAGER_DBUS_PATH,
-                                         error))
-    {
-      g_object_unref (skeleton);
-      return FALSE;
-    }
-
-  priv->skeleton = skeleton;
-  priv->owner_id = g_bus_own_name_on_connection (connection,
-                                                 XFCE_CLIPBOARD_MANAGER_DBUS_NAME,
-                                                 G_BUS_NAME_OWNER_FLAGS_NONE,
-                                                 NULL, NULL, NULL, NULL);
-
-  return TRUE;
+  return manager;
 }
 
 
